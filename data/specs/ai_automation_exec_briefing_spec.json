@@ -1,0 +1,147 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "AI-based Work Automation Adoption Strategy: 2026 Executive Decision Briefing",
+  "theme_path": "../../config/pptx_theme.example.json",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/ai_automation_exec_briefing.pptx",
+  "slides": [
+    {
+      "layout": "template_slide",
+      "source_mode": "blank",
+      "shapes": [
+        {"left": 0.0, "top": 0.0, "width": 13.33, "height": 7.5, "fill": "#F7F9FC"},
+        {"left": 0.0, "top": 0.0, "width": 0.32, "height": 7.5, "fill": "#0B4F6C"},
+        {"left": 10.8, "top": 0.0, "width": 2.53, "height": 7.5, "fill": "#E6F4F1"},
+        {"left": 9.85, "top": 1.0, "width": 2.0, "height": 2.0, "geometry": "ellipse", "fill": "#01BAEF"},
+        {"left": 10.55, "top": 2.45, "width": 1.65, "height": 1.65, "geometry": "ellipse", "fill": "#31C48D"},
+        {"left": 9.6, "top": 4.0, "width": 1.15, "height": 1.15, "geometry": "ellipse", "fill": "#F2C94C"}
+      ],
+      "text_boxes": [
+        {"left": 0.78, "top": 0.55, "width": 3.8, "height": 0.3, "text": "2026 Executive Decision Briefing", "font_size": 12, "color": "#4B5563", "bold": true},
+        {"left": 0.78, "top": 1.45, "width": 8.8, "height": 1.75, "text": "AI-based Work Automation Adoption Strategy", "font_size": 40, "color": "#111827", "bold": true, "max_chars_per_line": 30},
+        {"left": 0.82, "top": 3.55, "width": 7.4, "height": 0.65, "text": "Scale automation where cycle time, quality, and control evidence can be measured.", "font_size": 18, "color": "#374151", "max_chars_per_line": 58},
+        {"left": 0.82, "top": 6.75, "width": 5.8, "height": 0.25, "text": "Production E2E validation deck | ppt-test", "font_size": 10, "color": "#6B7280"}
+      ]
+    },
+    {
+      "layout": "template_slide",
+      "source_mode": "blank",
+      "shapes": [
+        {"left": 0.0, "top": 0.0, "width": 13.33, "height": 7.5, "fill": "#FFFFFF"},
+        {"left": 0.7, "top": 1.9, "width": 2.65, "height": 3.8, "fill": "#F1F5F9", "line": "#D1D5DB"},
+        {"left": 3.65, "top": 1.9, "width": 2.65, "height": 3.8, "fill": "#F1F5F9", "line": "#D1D5DB"},
+        {"left": 6.6, "top": 1.9, "width": 2.65, "height": 3.8, "fill": "#F1F5F9", "line": "#D1D5DB"},
+        {"left": 9.55, "top": 1.9, "width": 2.65, "height": 3.8, "fill": "#F1F5F9", "line": "#D1D5DB"},
+        {"left": 0.7, "top": 5.95, "width": 11.5, "height": 0.08, "fill": "#0B4F6C"}
+      ],
+      "text_boxes": [
+        {"left": 0.7, "top": 0.55, "width": 5.6, "height": 0.55, "text": "Decision agenda", "font_size": 30, "color": "#111827", "bold": true},
+        {"left": 0.72, "top": 1.18, "width": 7.6, "height": 0.35, "text": "Four leadership decisions frame the 2026 adoption strategy.", "font_size": 14, "color": "#4B5563"},
+        {"left": 0.95, "top": 2.25, "width": 0.8, "height": 0.35, "text": "01", "font_size": 18, "color": "#0B4F6C", "bold": true},
+        {"left": 0.95, "top": 3.05, "width": 1.8, "height": 0.35, "text": "Why now", "font_size": 18, "color": "#111827", "bold": true},
+        {"left": 0.95, "top": 3.75, "width": 1.95, "height": 0.8, "text": "Productivity pressure and AI maturity now intersect.", "font_size": 12, "color": "#4B5563", "max_chars_per_line": 22},
+        {"left": 3.9, "top": 2.25, "width": 0.8, "height": 0.35, "text": "02", "font_size": 18, "color": "#0B4F6C", "bold": true},
+        {"left": 3.9, "top": 3.05, "width": 1.95, "height": 0.5, "text": "Where to scale", "font_size": 18, "color": "#111827", "bold": true, "max_chars_per_line": 18},
+        {"left": 3.9, "top": 3.75, "width": 1.95, "height": 0.8, "text": "Prioritize repeatable workflows with measurable controls.", "font_size": 12, "color": "#4B5563", "max_chars_per_line": 22},
+        {"left": 6.85, "top": 2.25, "width": 0.8, "height": 0.35, "text": "03", "font_size": 18, "color": "#0B4F6C", "bold": true},
+        {"left": 6.85, "top": 3.05, "width": 1.95, "height": 0.5, "text": "How to govern", "font_size": 18, "color": "#111827", "bold": true, "max_chars_per_line": 18},
+        {"left": 6.85, "top": 3.75, "width": 1.95, "height": 0.8, "text": "Treat automation as an operating-model change.", "font_size": 12, "color": "#4B5563", "max_chars_per_line": 22},
+        {"left": 9.8, "top": 2.25, "width": 0.8, "height": 0.35, "text": "04", "font_size": 18, "color": "#0B4F6C", "bold": true},
+        {"left": 9.8, "top": 3.05, "width": 1.95, "height": 0.5, "text": "What to decide", "font_size": 18, "color": "#111827", "bold": true, "max_chars_per_line": 18},
+        {"left": 9.8, "top": 3.75, "width": 1.95, "height": 0.8, "text": "Fund owners, pilots, and adoption gates.", "font_size": 12, "color": "#4B5563", "max_chars_per_line": 22}
+      ]
+    },
+    {
+      "layout": "blueprint_overlay",
+      "source_mode": "blank",
+      "shapes": [
+        {"left": 0.0, "top": 0.0, "width": 13.33, "height": 7.5, "fill": "#F7F9FC"},
+        {"left": 0.72, "top": 1.7, "width": 5.65, "height": 3.9, "fill": "#FFFFFF", "line": "#CBD5E1"},
+        {"left": 6.95, "top": 1.7, "width": 5.65, "height": 3.9, "fill": "#FFFFFF", "line": "#CBD5E1"},
+        {"left": 0.72, "top": 6.15, "width": 11.88, "height": 0.35, "fill": "#0B4F6C"}
+      ],
+      "text_boxes": [
+        {"left": 0.72, "top": 0.55, "width": 5.8, "height": 0.5, "text": "Executive summary", "font_size": 30, "color": "#111827", "bold": true},
+        {"left": 1.05, "top": 2.1, "width": 3.8, "height": 0.35, "text": "Strategic stance", "font_size": 18, "color": "#0B4F6C", "bold": true},
+        {"left": 1.05, "top": 2.85, "width": 4.55, "height": 1.0, "text": "Scale automation where cycle time, quality, and compliance can be measured.", "font_size": 18, "color": "#111827", "bold": true, "max_chars_per_line": 34},
+        {"left": 7.28, "top": 2.1, "width": 3.8, "height": 0.35, "text": "2026 decision", "font_size": 18, "color": "#0B4F6C", "bold": true},
+        {"left": 7.28, "top": 2.85, "width": 4.7, "height": 1.2, "text": "AI automation is ready to scale, but value depends on workflow ownership and governance.", "font_size": 17, "color": "#111827", "bold": true, "max_chars_per_line": 36},
+        {"left": 1.0, "top": 6.22, "width": 8.5, "height": 0.22, "text": "Summary | executive briefing", "font_size": 10, "color": "#FFFFFF"}
+      ]
+    },
+    {
+      "layout": "blueprint_overlay",
+      "source_mode": "blank",
+      "shapes": [
+        {"left": 0.0, "top": 0.0, "width": 13.33, "height": 7.5, "fill": "#FFFFFF"},
+        {"left": 0.7, "top": 2.55, "width": 5.7, "height": 1.25, "fill": "#F1F5F9", "line": "#D1D5DB"},
+        {"left": 6.9, "top": 2.55, "width": 5.7, "height": 1.25, "fill": "#F1F5F9", "line": "#D1D5DB"},
+        {"left": 0.7, "top": 4.25, "width": 5.7, "height": 1.25, "fill": "#F1F5F9", "line": "#D1D5DB"},
+        {"left": 6.9, "top": 4.25, "width": 5.7, "height": 1.25, "fill": "#F1F5F9", "line": "#D1D5DB"}
+      ],
+      "text_boxes": [
+        {"left": 0.7, "top": 0.48, "width": 2.3, "height": 0.3, "text": "ADOPTION GAP", "font_size": 12, "color": "#0B4F6C", "bold": true},
+        {"left": 0.7, "top": 1.0, "width": 8.3, "height": 1.25, "text": "Four execution gaps keep pilots from becoming enterprise capability.", "font_size": 26, "color": "#111827", "bold": true, "max_chars_per_line": 42},
+        {"left": 1.0, "top": 2.8, "width": 0.5, "height": 0.35, "text": "1", "font_size": 20, "color": "#0B4F6C", "bold": true},
+        {"left": 1.65, "top": 2.8, "width": 3.8, "height": 0.45, "text": "Demand starts before workflow design.", "font_size": 15, "color": "#111827", "bold": true, "max_chars_per_line": 34},
+        {"left": 7.2, "top": 2.8, "width": 0.5, "height": 0.35, "text": "2", "font_size": 20, "color": "#0B4F6C", "bold": true},
+        {"left": 7.85, "top": 2.8, "width": 3.8, "height": 0.45, "text": "Owners lack adoption targets.", "font_size": 15, "color": "#111827", "bold": true, "max_chars_per_line": 34},
+        {"left": 1.0, "top": 4.5, "width": 0.5, "height": 0.35, "text": "3", "font_size": 20, "color": "#0B4F6C", "bold": true},
+        {"left": 1.65, "top": 4.5, "width": 3.8, "height": 0.45, "text": "Controls are defined too late.", "font_size": 15, "color": "#111827", "bold": true, "max_chars_per_line": 34},
+        {"left": 7.2, "top": 4.5, "width": 0.5, "height": 0.35, "text": "4", "font_size": 20, "color": "#0B4F6C", "bold": true},
+        {"left": 7.85, "top": 4.5, "width": 3.8, "height": 0.45, "text": "Value evidence is inconsistent.", "font_size": 15, "color": "#111827", "bold": true, "max_chars_per_line": 34}
+      ]
+    },
+    {
+      "layout": "template_slide",
+      "source_mode": "blank",
+      "shapes": [
+        {"left": 0.0, "top": 0.0, "width": 13.33, "height": 7.5, "fill": "#F7F9FC"},
+        {"left": 0.85, "top": 3.0, "width": 2.2, "height": 2.0, "fill": "#FFFFFF", "line": "#CBD5E1"},
+        {"left": 3.85, "top": 3.0, "width": 2.2, "height": 2.0, "fill": "#FFFFFF", "line": "#CBD5E1"},
+        {"left": 6.85, "top": 3.0, "width": 2.2, "height": 2.0, "fill": "#FFFFFF", "line": "#CBD5E1"},
+        {"left": 9.85, "top": 3.0, "width": 2.2, "height": 2.0, "fill": "#FFFFFF", "line": "#CBD5E1"},
+        {"left": 3.18, "top": 3.88, "width": 0.4, "height": 0.06, "fill": "#31C48D"},
+        {"left": 6.18, "top": 3.88, "width": 0.4, "height": 0.06, "fill": "#31C48D"},
+        {"left": 9.18, "top": 3.88, "width": 0.4, "height": 0.06, "fill": "#31C48D"}
+      ],
+      "text_boxes": [
+        {"left": 0.82, "top": 0.52, "width": 3.2, "height": 0.3, "text": "STRATEGY", "font_size": 12, "color": "#0B4F6C", "bold": true},
+        {"left": 0.82, "top": 1.05, "width": 7.9, "height": 0.75, "text": "Capability scaling", "font_size": 30, "color": "#111827", "bold": true},
+        {"left": 0.84, "top": 1.82, "width": 7.6, "height": 0.42, "text": "Separate high-value automation from experimentation noise.", "font_size": 15, "color": "#4B5563"},
+        {"left": 1.22, "top": 3.33, "width": 1.4, "height": 0.35, "text": "01", "font_size": 18, "color": "#0B4F6C", "bold": true, "align": "center"},
+        {"left": 1.05, "top": 4.03, "width": 1.8, "height": 0.55, "text": "Map repeatable work", "font_size": 15, "color": "#111827", "bold": true, "align": "center", "max_chars_per_line": 18},
+        {"left": 4.22, "top": 3.33, "width": 1.4, "height": 0.35, "text": "02", "font_size": 18, "color": "#0B4F6C", "bold": true, "align": "center"},
+        {"left": 4.05, "top": 4.03, "width": 1.8, "height": 0.55, "text": "Rank by value and risk", "font_size": 15, "color": "#111827", "bold": true, "align": "center", "max_chars_per_line": 18},
+        {"left": 7.22, "top": 3.33, "width": 1.4, "height": 0.35, "text": "03", "font_size": 18, "color": "#0B4F6C", "bold": true, "align": "center"},
+        {"left": 7.05, "top": 4.03, "width": 1.8, "height": 0.55, "text": "Assign workflow owners", "font_size": 15, "color": "#111827", "bold": true, "align": "center", "max_chars_per_line": 18},
+        {"left": 10.22, "top": 3.33, "width": 1.4, "height": 0.35, "text": "04", "font_size": 18, "color": "#0B4F6C", "bold": true, "align": "center"},
+        {"left": 10.05, "top": 4.03, "width": 1.8, "height": 0.55, "text": "Scale with controls", "font_size": 15, "color": "#111827", "bold": true, "align": "center", "max_chars_per_line": 18}
+      ]
+    },
+    {
+      "layout": "template_slide",
+      "source_mode": "blank",
+      "shapes": [
+        {"left": 0.0, "top": 0.0, "width": 13.33, "height": 7.5, "fill": "#FFFFFF"},
+        {"left": 0.8, "top": 2.55, "width": 2.65, "height": 2.0, "geometry": "ellipse", "fill": "#E6F4F1", "line": "#31C48D"},
+        {"left": 4.0, "top": 2.55, "width": 2.65, "height": 2.0, "geometry": "ellipse", "fill": "#E6F4F1", "line": "#31C48D"},
+        {"left": 7.2, "top": 2.55, "width": 2.65, "height": 2.0, "geometry": "ellipse", "fill": "#E6F4F1", "line": "#31C48D"},
+        {"left": 10.05, "top": 1.65, "width": 2.45, "height": 4.5, "fill": "#0B4F6C"}
+      ],
+      "text_boxes": [
+        {"left": 0.8, "top": 0.52, "width": 7.0, "height": 0.85, "text": "Adoption investment must rebalance", "font_size": 26, "color": "#111827", "bold": true, "max_chars_per_line": 35},
+        {"left": 0.82, "top": 1.55, "width": 7.1, "height": 0.32, "text": "Target mix: 35% workflow redesign, 25% platform, 20% enablement, 20% controls.", "font_size": 12, "color": "#4B5563"},
+        {"left": 1.45, "top": 3.1, "width": 1.4, "height": 0.55, "text": "35%", "font_size": 28, "color": "#111827", "bold": true, "align": "center"},
+        {"left": 1.1, "top": 3.85, "width": 2.0, "height": 0.35, "text": "Workflow redesign", "font_size": 12, "color": "#4B5563", "align": "center"},
+        {"left": 4.65, "top": 3.1, "width": 1.4, "height": 0.55, "text": "25%", "font_size": 28, "color": "#111827", "bold": true, "align": "center"},
+        {"left": 4.3, "top": 3.85, "width": 2.0, "height": 0.35, "text": "Platform", "font_size": 12, "color": "#4B5563", "align": "center"},
+        {"left": 7.85, "top": 3.1, "width": 1.4, "height": 0.55, "text": "20%", "font_size": 28, "color": "#111827", "bold": true, "align": "center"},
+        {"left": 7.5, "top": 3.85, "width": 2.0, "height": 0.35, "text": "Enablement", "font_size": 12, "color": "#4B5563", "align": "center"},
+        {"left": 10.42, "top": 2.05, "width": 1.85, "height": 0.3, "text": "DECISION", "font_size": 11, "color": "#BDEFE6", "bold": true},
+        {"left": 10.42, "top": 2.72, "width": 1.85, "height": 1.75, "text": "Authorize a 90-day portfolio, name executive owners, and require value evidence.", "font_size": 12, "color": "#FFFFFF", "bold": true, "max_chars_per_line": 24}
+      ]
+    }
+  ]
+}

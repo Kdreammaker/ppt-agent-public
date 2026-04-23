@@ -1,0 +1,80 @@
+{
+  "version": "0.1",
+  "scale": {
+    "quality_score": "1.0-5.0",
+    "design_tier": ["production", "candidate", "structure", "experimental"],
+    "usage_policy": ["production_ready", "curate_before_use", "structure_only", "analysis_only"]
+  },
+  "library_defaults": {
+    "template_library_04_v1": {
+      "design_tier": "structure",
+      "quality_score": 2.4,
+      "usage_policy": "structure_only",
+      "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+    },
+    "template_library_01_v1": {
+      "design_tier": "production",
+      "quality_score": 4.2,
+      "usage_policy": "production_ready",
+      "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+    },
+    "template_library_02_v1": {
+      "design_tier": "production",
+      "quality_score": 4.4,
+      "usage_policy": "production_ready",
+      "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+    },
+    "template_library_03_v1": {
+      "design_tier": "production",
+      "quality_score": 4.1,
+      "usage_policy": "production_ready",
+      "design_notes": "Best reference for screenshot-led project cases, result bullets, pill tags, and portfolio-style narrative pages."
+    }
+  },
+  "slides": {
+    "template_library_04_v1.cover_brand_right_v1": {
+      "quality_score": 2.8,
+      "usage_policy": "curate_before_use",
+      "design_notes": "Usable as a simple corporate cover base, but needs stronger visual treatment or preserved hero assets."
+    },
+    "template_library_04_v1.toc_visual_tiles_v1": {
+      "quality_score": 2.7,
+      "usage_policy": "curate_before_use",
+      "design_notes": "Conceptually useful TOC structure, but current slide still behaves like placeholder-heavy template material."
+    },
+    "template_library_04_v1.summary_two_panel_v1": {
+      "quality_score": 2.9,
+      "usage_policy": "curate_before_use",
+      "design_notes": "Useful for meeting summary structure; visual polish should be supplied by builder-generated cards and footer."
+    },
+    "template_library_04_v1.issue_2x2_v1": {
+      "quality_score": 3.0,
+      "usage_policy": "curate_before_use",
+      "design_notes": "2x2 issue structure is reusable, but dense business content needs custom text sizing and card treatment."
+    },
+    "template_library_01_v1.channel_cover_v1": {
+      "quality_score": 4.5,
+      "design_notes": "Clean, high-contrast cover with strong blue field and centered title. Good model for branded opening slides."
+    },
+    "template_library_01_v1.service_intro_cards_v1": {
+      "quality_score": 4.3,
+      "design_notes": "Good reference for compact service cards and icon-led grouping."
+    },
+    "template_library_02_v1.problem_story_v1": {
+      "quality_score": 4.6,
+      "design_notes": "Good reference for evidence-led problem framing with chart plus narrative bullets."
+    },
+    "template_library_02_v1.finance_closing_v1": {
+      "quality_score": 4.6,
+      "design_notes": "Strong closing page with CTA, proof image, and clear contact/action hierarchy."
+    },
+    "template_library_03_v1.project_case_v1": {
+      "quality_score": 4.4,
+      "design_notes": "Good screenshot-plus-outcome slide for internal proof or case-study reporting."
+    },
+    "template_library_03_v1.portfolio_closing_v1": {
+      "quality_score": 4.2,
+      "design_notes": "Balanced closing layout with large title and contact modules."
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "visual_content_image_gate_v1",
+  "mode_actions": {
+    "assistant": "warning",
+    "auto": "error"
+  },
+  "usable_materializations": [
+    "local_file_reference",
+    "user_supplied",
+    "generated",
+    "approved_generated",
+    "approved_external_materialized"
+  ],
+  "visual_tone_tokens": [
+    "visual",
+    "image",
+    "photo",
+    "photography",
+    "guide",
+    "travel",
+    "food",
+    "beverage",
+    "friendly"
+  ],
+  "sample_specs": [
+    "data/specs/business_growth_review_spec.json",
+    "data/specs/travel_experience_plan_spec.json",
+    "data/specs/seasonal_seafood_guide_spec.json"
+  ],
+  "reports": {
+    "json": "outputs/reports/visual_content_image_gate_validation.json",
+    "markdown": "outputs/reports/visual_content_image_gate_validation.md"
+  }
+}

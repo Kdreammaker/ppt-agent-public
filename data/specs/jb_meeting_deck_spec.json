@@ -1,0 +1,146 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "JB Meeting Internal Share",
+  "catalog_path": "../../config/template_catalog.json",
+  "theme_path": "../../config/pptx_theme.example.json",
+  "output_path": "../../outputs/decks/jb_meeting_internal_share_deck_system.pptx",
+  "recipe": "meeting_share_core",
+  "slides": [
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "sales",
+        "preferred_variant": "cover/narrative-sales"
+      },
+      "text_slots": {
+        "title": "전북은행 미팅\n전달 정리",
+        "subtitle": "핵심 포인트\n단순 콘텐츠 탑재보다\n활성화 구조와 운영 신뢰 중심으로 접근",
+        "footer_note": "JB meeting internal share | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "report",
+        "preferred_variant": "summary/4up-message-grid",
+        "fallback_variants": [
+          "summary/two-panel"
+        ]
+      },
+      "text_slots": {
+        "eyebrow": "01",
+        "title": "미팅 한눈에",
+        "subtitle": "전북은행은 지금\n'콘텐츠 탑재'보다 '활성화 구조와 운영 신뢰'를 먼저 본다.",
+        "message_1_title": "미팅 메타",
+        "message_1_body": "일시: 2026.04.17 14:01 / 약 53분\n대상: 전북은행 모바일플랫폼부\n목적: 보난자랩 디지털자산 데이터·콘텐츠\n적용 가능성 논의\n범위: 시장 데이터 / 뉴스 / 종목 정보\n공지·이벤트 / API·ASP 방식\n비용 / 운영 안정성 / UI·UX 반영",
+        "message_2_title": "고객이 본 핵심",
+        "message_2_body": "단순 시세·뉴스보다 '활성화 효과'",
+        "message_3_title": "핵심 우려",
+        "message_3_body": "동일 앱 내 역할 혼선,\n비용 대비 효과, 운영 리스크",
+        "message_4_title": "권장 방향",
+        "message_4_body": "ASP로 작게 시작하고,\n효과 확인 후 API·푸시로 확장",
+        "footer_note": "JB meeting internal share | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "issue",
+        "scope": "report",
+        "preferred_variant": "issue/2x2-cards"
+      },
+      "text_slots": {
+        "eyebrow": "02",
+        "title": "고객 우려 4대 포인트",
+        "subtitle": "전북은행이 크게 본 쟁점은\n활성화, 데이터 역할, 투자 범위, 운영 안정성의 4가지다.",
+        "card_1_number": "1",
+        "card_1_title": "활성화 구조",
+        "card_1_body": "시세·뉴스만으로는\nMAU 개선 효과가 제한적\n트리거·푸시·이벤트 구조 필요",
+        "card_2_number": "2",
+        "card_2_title": "역할 구분",
+        "card_2_body": "거래소 직접 데이터와\n보난자랩 데이터의 역할이\n명확히 구분돼야 함",
+        "card_3_number": "3",
+        "card_3_title": "작게 시작",
+        "card_3_body": "처음부터 크게 넓히기보다\n작게 시작해 효과를\n확인하고 싶어 함",
+        "card_4_number": "4",
+        "card_4_title": "운영 안정성",
+        "card_4_body": "실시간 전달·트래픽 대응·장애 처리 등\n운영 안정성을 먼저\n확인하려 함",
+        "footer_note": "JB meeting internal share | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "strategy",
+        "scope": "sales",
+        "preferred_variant": "strategy/sales-step-story",
+        "fallback_variants": [
+          "strategy/4-step-solution"
+        ]
+      },
+      "text_slots": {
+        "title": "단계적 제안 구조",
+        "subtitle": "권장안은 'ASP 선도입 + API·이벤트 확장'의 단계형 구조다.",
+        "footer_note": "ASP만 단독 제안하기보다, 초기 효과 검증과 이후 확장을 함께 보여주는 제안이 설득력 있다.",
+        "step_1_title": "빠른 가시화",
+        "step_1_body": "시세·뉴스·순위 화면\n빠르게 붙여 초기 검증",
+        "step_2_title": "API 확장",
+        "step_2_body": "API·WebSocket 기반\n실시간 공지·이벤트 확장",
+        "step_3_title": "이벤트 연계",
+        "step_3_body": "상장·급등·거래대금 변화를\n푸시·앱 이벤트로 연결",
+        "step_4_title": "운영 신뢰",
+        "step_4_body": "안정성·장애 대응 경험으로\n의사결정 부담 완화"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "report",
+        "preferred_variant": "summary/4up-message-grid",
+        "fallback_variants": [
+          "summary/two-panel"
+        ]
+      },
+      "text_slots": {
+        "eyebrow": "04",
+        "title": "사내 공유 메시지",
+        "subtitle": "사내 공유에서는 아래 4가지 메시지를\n앞세우는 편이 효과적이다.",
+        "message_1_title": "통합 데이터",
+        "message_1_body": "국내 5대 거래소를 통합·표준화한 데이터라는 점을 전면에 둔다.",
+        "message_2_title": "역할 분리",
+        "message_2_body": "거래소 직접 데이터는 거래 기능,\n보난자랩은 시장 전체 관점의 정보 보강 역할로 설명한다.",
+        "message_3_title": "활성화 구조",
+        "message_3_body": "ASP는 빠른 실행용,\nAPI는 고도화·푸시 연계용이라는 2단 구조로 설명한다.",
+        "message_4_title": "운영 신뢰",
+        "message_4_body": "실시간 처리·장애 대응·운영 경험을 함께 제시해\n금융기관의 의사결정 부담을 낮춘다.",
+        "footer_note": "JB meeting internal share | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "closing",
+        "scope": "sales",
+        "preferred_variant": "closing/discussion-next-step",
+        "fallback_variants": [
+          "closing/goal-grid"
+        ]
+      },
+      "text_slots": {
+        "title": "후속 액션",
+        "subtitle": "향후 2주 안에 고객 의사결정 자료 패키지를\n완성하는 것이 목표다.",
+        "cta_title": "추가 협의 포인트",
+        "cta_body": "ASP 선도입 후 API 확장 여부 / 푸시·이벤트 연계 방식\nUI·UX 반영 수준 / 자산 조회 등 활성화 기능 연계",
+        "footer_note": "05",
+        "text_1": "이번 주\nASP 제안 패키지\n정리\nOwner  영업·사업\nDue  이번 주\nOutput  화면 범위 / 예시 캡처 /\n비용 구조 정리본",
+        "text_2": "다음 주\nAPI·이벤트\n시나리오 보강\nOwner  제품·기술\nDue  다음 주\nOutput  API 항목 정리\nWebSocket 연계안\n푸시·이벤트 연계안",
+        "text_3": "후속 미팅\n고객 우선순위\n재확인\nOwner  공동 협의\nDue  차기 미팅 전\nOutput  도입 범위 / 일정 /\n타 부서 연계 포인트"
+      }
+    }
+  ],
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json"
+}

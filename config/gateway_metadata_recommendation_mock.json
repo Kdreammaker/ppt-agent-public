@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "mock_id": "gateway_metadata_recommendation_mock",
+  "contract_version": "0.2.0",
+  "contract_family": "recommendation_intelligence",
+  "status": "local_fixture_only",
+  "request_type": "recommend_templates",
+  "gateway_call_enabled": false,
+  "real_gateway_recommendation_enabled": false,
+  "preflight_payload_preview_required": true,
+  "uses_b49_reference_dna": true,
+  "fixture_backed_only": true,
+  "forbidden_request_fields": [
+    "full_spec_json",
+    "generated_html_document",
+    "binary_pptx_content",
+    "generated_pptx_binary",
+    "local_image_binaries",
+    "raw_reference_files",
+    "raw_reference_paths",
+    "proprietary_template_contents",
+    "source_file_contents",
+    "secrets_or_tokens",
+    "workspace_code_raw"
+  ],
+  "allowed_request_fields": [
+    "request_id",
+    "request_type",
+    "workspace_policy",
+    "operating_mode",
+    "deck_type",
+    "industry",
+    "tone",
+    "slide_count",
+    "slide_purposes",
+    "asset_intent_summaries",
+    "quality_gap_summary",
+    "reference_dna_summaries",
+    "entitlement_handle",
+    "preflight_payload_preview",
+    "consent"
+  ],
+  "consent": {
+    "gateway_enabled": false,
+    "local_asset_metadata_visible": false,
+    "file_upload_allowed": false,
+    "final_artifact_upload_allowed": false,
+    "full_content_upload_allowed": false,
+    "telemetry_enabled": false,
+    "learning_collection_enabled": false
+  },
+  "mock_responses": {
+    "template_recommendation": {
+      "status": "mocked",
+      "recommendation_type": "template_family",
+      "recommendations": [
+        {
+          "template_family": "production_ready_sales_finance",
+          "rationale": "Matches analytical business deck with production-ready B49 DNA summaries.",
+          "requires_entitlement": false
+        }
+      ]
+    },
+    "palette_recommendation": {
+      "status": "mocked",
+      "recommendation_type": "palette",
+      "recommendations": [
+        {
+          "asset_class": "palette",
+          "palette_hint": "navy_orange_high_contrast",
+          "rationale": "B49 DNA shows finance/report templates have stronger hierarchy with navy plus accent color."
+        }
+      ]
+    },
+    "asset_class_recommendation": {
+      "status": "mocked",
+      "recommendation_type": "asset_class",
+      "recommendations": [
+        {
+          "asset_class": "image",
+          "policy": "user_supplied_or_generated_only",
+          "rationale": "Image slots remain placeholders; no raw local folder scan or binary materialization."
+        }
+      ]
+    },
+    "review_suggestion": {
+      "status": "mocked",
+      "recommendation_type": "review_action",
+      "recommendations": [
+        {
+          "action": "prefer_medium_density_first_beta_demo",
+          "rationale": "B49 quality gap summary found dense and low-foreground slides in the current golden path."
+        }
+      ]
+    }
+  },
+  "fixtures": [
+    {
+      "name": "valid_metadata_only_business_growth",
+      "expected": "valid"
+    },
+    {
+      "name": "reject_full_spec_payload",
+      "expected": "invalid",
+      "extra_request_fields": {
+        "full_spec_json": {
+          "name": "should not be sent"
+        }
+      }
+    },
+    {
+      "name": "reject_generated_html_payload",
+      "expected": "invalid",
+      "extra_request_fields": {
+        "generated_html_document": "<html>forbidden</html>"
+      }
+    },
+    {
+      "name": "reject_raw_reference_paths",
+      "expected": "invalid",
+      "extra_request_fields": {
+        "raw_reference_paths": [
+          "assets/slides/references/example.pptx"
+        ]
+      }
+    },
+    {
+      "name": "reject_raw_workspace_code",
+      "expected": "invalid",
+      "extra_request_fields": {
+        "workspace_code_raw": "fixture_raw_workspace_code_token"
+      }
+    }
+  ],
+  "local_fallback_behavior": {
+    "gateway_denied": "continue_with_local_only_template_selection",
+    "gateway_unavailable": "continue_with_local_only_template_selection",
+    "gateway_skipped_by_consent": "do_not_retry_or_upload",
+    "payload_out_of_policy": "block_gateway_call_and_write_local_rejection_summary",
+    "recommendation_disabled_initial_beta": "use_fixture_backed_metadata_mock_only"
+  }
+}

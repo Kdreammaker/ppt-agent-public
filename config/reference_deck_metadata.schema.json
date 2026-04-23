@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reference_deck_metadata.schema.json",
+  "title": "Reference Deck Metadata",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "reference_id", "source_pptx", "source_checksum", "slide_count", "deck_type_primary", "parser"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "reference_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*_[0-9]{3}$"
+    },
+    "source_pptx": {
+      "type": "string"
+    },
+    "source_checksum": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "slide_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "deck_type_primary": {
+      "type": "string"
+    },
+    "parser": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.log
+
+# Generated deck outputs and validation artifacts
+outputs/
+graphify-out/
+
+# Source/reference materials excluded from publication
+archive/
+assets/slides/references/
+assets/slides/categorizing/
+assets/slides/library/**/*.pptx
+assets/slides/library/**/*.png
+assets/images/charts/
+data/reference/
+data/inputs/
+
+# Local installers and downloaded binaries
+tools/installers/
+*.msi
+
+# Office lock files
+~$*

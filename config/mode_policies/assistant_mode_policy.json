@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "mode": "assistant",
+  "uses": {
+    "deck_intake": true,
+    "reference_knowledge_graph": true,
+    "template_pattern_catalog": true,
+    "template_design_dna": true,
+    "variant_review": true
+  },
+  "required_questions": [
+    "audience",
+    "primary_goal",
+    "deck_type",
+    "tone_or_style_direction"
+  ],
+  "optional_questions": [
+    "brand constraints",
+    "review depth",
+    "preferred examples",
+    "must avoid"
+  ],
+  "design_brief_fields": [
+    "audience",
+    "goal",
+    "tone",
+    "density",
+    "template scope",
+    "risk notes"
+  ],
+  "ascii_layout_planning_required": false,
+  "style_negotiation_fields": [
+    "color system",
+    "typography",
+    "visual density",
+    "narrative rhythm"
+  ],
+  "template_suggestion_count": 3,
+  "graph_explanation_level": "summarize matched nodes and rejected candidates without exposing raw candidate slides as selectable templates",
+  "user_confirmation_points": [
+    "before full-deck build when style direction is ambiguous",
+    "before promoting any reference slide into template patterns or runtime templates"
+  ],
+  "default_assumptions": [
+    "Ask early when design intent is missing.",
+    "Show graph-backed template or pattern choices when the user wants control.",
+    "Keep raw references out of runtime template selection."
+  ],
+  "fallback_rules": [
+    "If graph artifacts are missing, use JSON catalogs and explain the limitation.",
+    "If pattern catalog is empty, rely on production templates and Design DNA.",
+    "If user does not confirm promotion, keep references in library metadata only."
+  ]
+}

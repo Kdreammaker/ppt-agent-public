@@ -1,0 +1,7878 @@
+{
+  "version": "0.1",
+  "library_id": "template_library_02_v1",
+  "slides": {
+    "template_library_02_v1.alpha_signal_timeline_v1": {
+      "slide_id": "template_library_02_v1.alpha_signal_timeline_v1",
+      "template_key": "alpha_signal_timeline_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 4,
+      "purpose": "strategy",
+      "variant": "strategy/signal-timeline",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 10,
+          "shape_name": "slot:title",
+          "fingerprint": "이슈 발생",
+          "bounds": {
+            "left": 1.115,
+            "top": 2.96,
+            "width": 0.728,
+            "height": 0.188
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 15,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "노이즈 혼재",
+          "bounds": {
+            "left": 2.732,
+            "top": 2.96,
+            "width": 0.886,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_1_title",
+          "shape_index": 20,
+          "shape_name": "slot:step_1_title",
+          "fingerprint": "시간 지연",
+          "bounds": {
+            "left": 4.511,
+            "top": 2.96,
+            "width": 0.728,
+            "height": 0.188
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_1_body",
+          "shape_index": 25,
+          "shape_name": "slot:step_1_body",
+          "fingerprint": "매니저/애널리스트",
+          "bounds": {
+            "left": 5.889,
+            "top": 2.96,
+            "width": 1.361,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_2_title",
+          "shape_index": 30,
+          "shape_name": "slot:step_2_title",
+          "fingerprint": "후행적 매매",
+          "bounds": {
+            "left": 7.831,
+            "top": 2.971,
+            "width": 0.886,
+            "height": 0.188
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_2_body",
+          "shape_index": 35,
+          "shape_name": "slot:step_2_body",
+          "fingerprint": "Alpha 소실",
+          "bounds": {
+            "left": 9.577,
+            "top": 2.971,
+            "width": 0.874,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_3_title",
+          "shape_index": 40,
+          "shape_name": "slot:step_3_title",
+          "fingerprint": "전략 신뢰도",
+          "bounds": {
+            "left": 11.289,
+            "top": 2.971,
+            "width": 0.886,
+            "height": 0.188
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_3_body",
+          "shape_index": 11,
+          "shape_name": "slot:step_3_body",
+          "fingerprint": "(뉴스/공시)",
+          "bounds": {
+            "left": 1.016,
+            "top": 3.158,
+            "width": 0.921,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_4_title",
+          "shape_index": 16,
+          "shape_name": "slot:step_4_title",
+          "fingerprint": "(루머 확산)",
+          "bounds": {
+            "left": 2.713,
+            "top": 3.158,
+            "width": 0.919,
+            "height": 0.188
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_4_body",
+          "shape_index": 21,
+          "shape_name": "slot:step_4_body",
+          "fingerprint": "(+24h)",
+          "bounds": {
+            "left": 4.601,
+            "top": 3.158,
+            "width": 0.546,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "footer_note",
+          "shape_index": 26,
+          "shape_name": "slot:footer_note",
+          "fingerprint": "수동 분석",
+          "bounds": {
+            "left": 6.209,
+            "top": 3.158,
+            "width": 0.728,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 31,
+          "shape_name": "slot:text_1",
+          "fingerprint": "(이미 주가 반영)",
+          "bounds": {
+            "left": 7.611,
+            "top": 3.169,
+            "width": 1.331,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 36,
+          "shape_name": "slot:text_2",
+          "fingerprint": "수익률 저하",
+          "bounds": {
+            "left": 9.57,
+            "top": 3.169,
+            "width": 0.886,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 41,
+          "shape_name": "slot:text_3",
+          "fingerprint": "하락",
+          "bounds": {
+            "left": 11.547,
+            "top": 3.169,
+            "width": 0.365,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 42,
+          "shape_name": "slot:text_4",
+          "fingerprint": "❌",
+          "bounds": {
+            "left": 2.49,
+            "top": 3.646,
+            "width": 0.5,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 43,
+          "shape_name": "slot:text_5",
+          "fingerprint": "정보 지연",
+          "bounds": {
+            "left": 2.75,
+            "top": 3.646,
+            "width": 1.125,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 44,
+          "shape_name": "slot:text_6",
+          "fingerprint": "후행적 데이터에 의존",
+          "bounds": {
+            "left": 3.75,
+            "top": 3.646,
+            "width": 2.25,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 45,
+          "shape_name": "slot:text_7",
+          "fingerprint": "👉 주관적 해석으로 인한 오류 발생",
+          "bounds": {
+            "left": 5.677,
+            "top": 3.656,
+            "width": 3.684,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 27,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_8",
+          "shape_index": 46,
+          "shape_name": "slot:text_8",
+          "fingerprint": "👉 시장 대비 초과 수익 창출 한계",
+          "bounds": {
+            "left": 8.646,
+            "top": 3.656,
+            "width": 3.609,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 27,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_9",
+          "shape_index": 49,
+          "shape_name": "slot:text_9",
+          "fingerprint": "Template System Sentiment",
+          "bounds": {
+            "left": 5.677,
+            "top": 4.375,
+            "width": 2.5,
+            "height": 0.297
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_10",
+          "shape_index": 50,
+          "shape_name": "slot:text_10",
+          "fingerprint": "(Add Alpha Data)",
+          "bounds": {
+            "left": 8.038,
+            "top": 4.431,
+            "width": 1.612,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_11",
+          "shape_index": 54,
+          "shape_name": "slot:text_11",
+          "fingerprint": "실시간 Buzz 모니터링",
+          "bounds": {
+            "left": 2.295,
+            "top": 5.408,
+            "width": 1.691,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_12",
+          "shape_index": 74,
+          "shape_name": "slot:text_12",
+          "fingerprint": "백테스팅 지원",
+          "bounds": {
+            "left": 9.681,
+            "top": 5.408,
+            "width": 1.044,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_13",
+          "shape_index": 59,
+          "shape_name": "slot:text_13",
+          "fingerprint": "Sentiment 정량화",
+          "bounds": {
+            "left": 4.781,
+            "top": 5.419,
+            "width": 1.406,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_14",
+          "shape_index": 67,
+          "shape_name": "slot:text_14",
+          "fingerprint": "투자 전략 통합 API",
+          "bounds": {
+            "left": 7.085,
+            "top": 5.429,
+            "width": 1.438,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_15",
+          "shape_index": 55,
+          "shape_name": "slot:text_15",
+          "fingerprint": "(뉴스+커뮤니티)",
+          "bounds": {
+            "left": 2.517,
+            "top": 5.606,
+            "width": 1.238,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_16",
+          "shape_index": 75,
+          "shape_name": "slot:text_16",
+          "fingerprint": "(Alpha 검증)",
+          "bounds": {
+            "left": 9.699,
+            "top": 5.606,
+            "width": 1.005,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_17",
+          "shape_index": 60,
+          "shape_name": "slot:text_17",
+          "fingerprint": "(긍/부정 Score)",
+          "bounds": {
+            "left": 4.868,
+            "top": 5.617,
+            "width": 1.228,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_18",
+          "shape_index": 68,
+          "shape_name": "slot:text_18",
+          "fingerprint": "Python",
+          "bounds": {
+            "left": 6.948,
+            "top": 5.702,
+            "width": 0.469,
+            "height": 0.146
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_19",
+          "shape_index": 69,
+          "shape_name": "slot:text_19",
+          "fingerprint": "RestAPI",
+          "bounds": {
+            "left": 7.548,
+            "top": 5.702,
+            "width": 0.49,
+            "height": 0.146
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_20",
+          "shape_index": 70,
+          "shape_name": "slot:text_20",
+          "fingerprint": "Excel",
+          "bounds": {
+            "left": 8.235,
+            "top": 5.702,
+            "width": 0.355,
+            "height": 0.146
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_21",
+          "shape_index": 76,
+          "shape_name": "slot:text_21",
+          "fingerprint": "✅",
+          "bounds": {
+            "left": 0.951,
+            "top": 6.063,
+            "width": 0.5,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_22",
+          "shape_index": 77,
+          "shape_name": "slot:text_22",
+          "fingerprint": "0.5초 포착",
+          "bounds": {
+            "left": 1.212,
+            "top": 6.063,
+            "width": 1.179,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_23",
+          "shape_index": 78,
+          "shape_name": "slot:text_23",
+          "fingerprint": "공개된 커뮤니티 데이터의 조기 감지",
+          "bounds": {
+            "left": 2.296,
+            "top": 6.114,
+            "width": 2.787,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 20,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_24",
+          "shape_index": 84,
+          "shape_name": "slot:text_24",
+          "fingerprint": "4/ 12",
+          "bounds": {
+            "left": 12.479,
+            "top": 6.882,
+            "width": 0.534,
+            "height": 0.198
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.323,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 5,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 4.511,
+            "top": 1.88,
+            "width": 0.292,
+            "height": 0.292
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 9,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 1.375,
+            "top": 2.552,
+            "width": 0.188,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 14,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 3.083,
+            "top": 2.552,
+            "width": 0.167,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 19,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 4.75,
+            "top": 2.531,
+            "width": 0.229,
+            "height": 0.229
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 24,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 6.469,
+            "top": 2.552,
+            "width": 0.188,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 29,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 8.177,
+            "top": 2.563,
+            "width": 0.188,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_8",
+          "shape_index": 34,
+          "shape_name": "slot:image_8",
+          "bounds": {
+            "left": 9.906,
+            "top": 2.563,
+            "width": 0.188,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_9",
+          "shape_index": 39,
+          "shape_name": "slot:image_9",
+          "bounds": {
+            "left": 11.635,
+            "top": 2.563,
+            "width": 0.188,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_10",
+          "shape_index": 48,
+          "shape_name": "slot:image_10",
+          "bounds": {
+            "left": 5.313,
+            "top": 4.375,
+            "width": 0.292,
+            "height": 0.292
+          }
+        },
+        {
+          "slot": "image_11",
+          "shape_index": 53,
+          "shape_name": "slot:image_11",
+          "bounds": {
+            "left": 3.042,
+            "top": 5.0,
+            "width": 0.188,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_12",
+          "shape_index": 58,
+          "shape_name": "slot:image_12",
+          "bounds": {
+            "left": 5.406,
+            "top": 5.021,
+            "width": 0.167,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_13",
+          "shape_index": 63,
+          "shape_name": "slot:image_13",
+          "bounds": {
+            "left": 7.729,
+            "top": 5.021,
+            "width": 0.167,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_14",
+          "shape_index": 73,
+          "shape_name": "slot:image_14",
+          "bounds": {
+            "left": 10.104,
+            "top": 5.0,
+            "width": 0.188,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_15",
+          "shape_index": 81,
+          "shape_name": "slot:image_15",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_16",
+          "shape_index": 82,
+          "shape_name": "slot:image_16",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_02_v1.before_after_compare_v1": {
+      "slide_id": "template_library_02_v1.before_after_compare_v1",
+      "template_key": "before_after_compare_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 3,
+      "purpose": "analysis",
+      "variant": "analysis/before-after",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 14,
+          "shape_name": "slot:title",
+          "fingerprint": "IR 담당자 (Manual)",
+          "bounds": {
+            "left": 6.24,
+            "top": 1.798,
+            "width": 2.306,
+            "height": 0.292
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 9,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "IR 담당자 (Manual)",
+          "bounds": {
+            "left": 0.75,
+            "top": 1.861,
+            "width": 2.306,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 17,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 25,
+          "shape_name": "slot:body_1",
+          "fingerprint": "느린 의사결정",
+          "bounds": {
+            "left": 11.324,
+            "top": 2.703,
+            "width": 0.73,
+            "height": 0.48
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 12,
+          "shape_name": "slot:body_2",
+          "fingerprint": "Template System (AI Intelligence)",
+          "bounds": {
+            "left": 0.854,
+            "top": 2.767,
+            "width": 3.05,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 22,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 16,
+          "shape_name": "slot:body_3",
+          "fingerprint": "뉴스",
+          "bounds": {
+            "left": 6.461,
+            "top": 2.829,
+            "width": 0.396,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 20,
+          "shape_name": "slot:body_4",
+          "fingerprint": "게시판",
+          "bounds": {
+            "left": 8.332,
+            "top": 2.829,
+            "width": 0.553,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_5",
+          "shape_index": 13,
+          "shape_name": "slot:body_5",
+          "fingerprint": "실시간 교차 분석. 객관적 인과관계 규명.",
+          "bounds": {
+            "left": 0.854,
+            "top": 3.115,
+            "width": 4.284,
+            "height": 0.271
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 32,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_6",
+          "shape_index": 18,
+          "shape_name": "slot:body_6",
+          "fingerprint": "주가",
+          "bounds": {
+            "left": 7.44,
+            "top": 3.35,
+            "width": 0.396,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 26,
+          "shape_name": "slot:text_1",
+          "fingerprint": "24시간 이상 소요",
+          "bounds": {
+            "left": 11.094,
+            "top": 3.414,
+            "width": 1.24,
+            "height": 0.438
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 27,
+          "shape_name": "slot:text_2",
+          "fingerprint": "Template System (AI Intelligence)",
+          "bounds": {
+            "left": 6.24,
+            "top": 4.309,
+            "width": 3.05,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 22,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 36,
+          "shape_name": "slot:text_3",
+          "fingerprint": "Template System Engine",
+          "bounds": {
+            "left": 9.697,
+            "top": 5.081,
+            "width": 0.698,
+            "height": 0.48
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 29,
+          "shape_name": "slot:text_4",
+          "fingerprint": "뉴스",
+          "bounds": {
+            "left": 6.461,
+            "top": 5.308,
+            "width": 0.396,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 33,
+          "shape_name": "slot:text_5",
+          "fingerprint": "게시판",
+          "bounds": {
+            "left": 8.332,
+            "top": 5.308,
+            "width": 0.553,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 40,
+          "shape_name": "slot:text_6",
+          "fingerprint": "인사이트",
+          "bounds": {
+            "left": 11.345,
+            "top": 5.32,
+            "width": 0.77,
+            "height": 0.24
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 37,
+          "shape_name": "slot:text_7",
+          "fingerprint": "(통합분석)",
+          "bounds": {
+            "left": 9.672,
+            "top": 5.571,
+            "width": 0.749,
+            "height": 0.188
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_8",
+          "shape_index": 31,
+          "shape_name": "slot:text_8",
+          "fingerprint": "주가",
+          "bounds": {
+            "left": 7.44,
+            "top": 5.746,
+            "width": 0.396,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_9",
+          "shape_index": 42,
+          "shape_name": "slot:text_9",
+          "fingerprint": "1시간 이내",
+          "bounds": {
+            "left": 11.313,
+            "top": 6.001,
+            "width": 0.929,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_10",
+          "shape_index": 46,
+          "shape_name": "slot:text_10",
+          "fingerprint": "3/ 12",
+          "bounds": {
+            "left": 12.479,
+            "top": 6.882,
+            "width": 0.534,
+            "height": 0.198
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.323,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 6,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.417,
+            "top": 3.719,
+            "width": 0.042,
+            "height": 0.979
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 8,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 0.417,
+            "top": 1.875,
+            "width": 0.198,
+            "height": 0.229
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 11,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 0.417,
+            "top": 2.813,
+            "width": 0.292,
+            "height": 0.229
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 21,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 9.167,
+            "top": 2.802,
+            "width": 0.333,
+            "height": 0.271
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 22,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 9.688,
+            "top": 2.531,
+            "width": 0.708,
+            "height": 0.813
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 23,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 10.646,
+            "top": 2.802,
+            "width": 0.333,
+            "height": 0.271
+          }
+        },
+        {
+          "slot": "image_8",
+          "shape_index": 34,
+          "shape_name": "slot:image_8",
+          "bounds": {
+            "left": 9.167,
+            "top": 5.281,
+            "width": 0.333,
+            "height": 0.271
+          }
+        },
+        {
+          "slot": "image_9",
+          "shape_index": 38,
+          "shape_name": "slot:image_9",
+          "bounds": {
+            "left": 10.646,
+            "top": 5.281,
+            "width": 0.333,
+            "height": 0.271
+          }
+        },
+        {
+          "slot": "image_10",
+          "shape_index": 41,
+          "shape_name": "slot:image_10",
+          "bounds": {
+            "left": 12.052,
+            "top": 5.063,
+            "width": 0.229,
+            "height": 0.229
+          }
+        },
+        {
+          "slot": "image_11",
+          "shape_index": 43,
+          "shape_name": "slot:image_11",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_12",
+          "shape_index": 44,
+          "shape_name": "slot:image_12",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_02_v1.core_technology_v1": {
+      "slide_id": "template_library_02_v1.core_technology_v1",
+      "template_key": "core_technology_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 7,
+      "purpose": "analysis",
+      "variant": "analysis/core-technology",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 2,
+          "shape_name": "slot:title",
+          "fingerprint": "핵심 기술 (Core Technology)",
+          "bounds": {
+            "left": 3.307,
+            "top": 0.516,
+            "width": 7.053,
+            "height": 0.563
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 36,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 9,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "통합 데이터 분석",
+          "bounds": {
+            "left": 0.667,
+            "top": 2.107,
+            "width": 2.104,
+            "height": 0.323
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 15,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 12,
+          "shape_name": "slot:body_1",
+          "fingerprint": "강력하고 범용적 크롤링",
+          "bounds": {
+            "left": 0.667,
+            "top": 3.089,
+            "width": 2.844,
+            "height": 0.323
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 21,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 15,
+          "shape_name": "slot:body_2",
+          "fingerprint": "핵심 데이터 추출",
+          "bounds": {
+            "left": 0.667,
+            "top": 4.333,
+            "width": 2.104,
+            "height": 0.323
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 15,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 5,
+          "shape_name": "slot:body_3",
+          "fingerprint": "도메인 최적화",
+          "bounds": {
+            "left": 0.667,
+            "top": 5.587,
+            "width": 2.104,
+            "height": 0.323
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 15,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 20,
+          "shape_name": "slot:body_4",
+          "fingerprint": "7/ 12",
+          "bounds": {
+            "left": 12.479,
+            "top": 6.882,
+            "width": 0.534,
+            "height": 0.198
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.323,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 4,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.417,
+            "top": 5.628,
+            "width": 0.26,
+            "height": 0.24
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 7,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 5.476,
+            "top": 2.068,
+            "width": 7.302,
+            "height": 4.469
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 8,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 0.417,
+            "top": 2.149,
+            "width": 0.26,
+            "height": 0.24
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 11,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 0.417,
+            "top": 3.13,
+            "width": 0.26,
+            "height": 0.24
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 14,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 0.417,
+            "top": 4.374,
+            "width": 0.26,
+            "height": 0.24
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 17,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_8",
+          "shape_index": 18,
+          "shape_name": "slot:image_8",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [
+        {
+          "slot": "trend_chart",
+          "bounds": {
+            "left": 5.72,
+            "top": 2.3,
+            "width": 3.05,
+            "height": 3.55
+          }
+        }
+      ],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      },
+      "editable_table_slots": [
+        {
+          "slot": "metric_table",
+          "bounds": {
+            "left": 8.95,
+            "top": 2.3,
+            "width": 3.45,
+            "height": 3.55
+          }
+        }
+      ]
+    },
+    "template_library_02_v1.finance_closing_v1": {
+      "slide_id": "template_library_02_v1.finance_closing_v1",
+      "template_key": "finance_closing_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 12,
+      "purpose": "closing",
+      "variant": "closing/finance-cta",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 2,
+          "shape_name": "slot:title",
+          "fingerprint": "마무리 (Closing)",
+          "bounds": {
+            "left": -0.104,
+            "top": 0.396,
+            "width": 13.542,
+            "height": 0.553
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 24,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 4,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "PoC 협업 문의 및 맞춤형 개발 상담",
+          "bounds": {
+            "left": 0.417,
+            "top": 2.173,
+            "width": 3.734,
+            "height": 0.303
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 36,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "cta_title",
+          "shape_index": 7,
+          "shape_name": "slot:cta_title",
+          "fingerprint": "PoC 협업 제안하기",
+          "bounds": {
+            "left": 2.441,
+            "top": 3.533,
+            "width": 1.75,
+            "height": 0.261
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "contact_email",
+          "shape_index": 9,
+          "shape_name": "slot:contact_email",
+          "fingerprint": "business@template_system.io",
+          "bounds": {
+            "left": 0.677,
+            "top": 4.354,
+            "width": 2.203,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 32,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "website",
+          "shape_index": 12,
+          "shape_name": "slot:website",
+          "fingerprint": "www.template_system.io",
+          "bounds": {
+            "left": 3.24,
+            "top": 4.354,
+            "width": 1.557,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 32,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.313,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 8,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.417,
+            "top": 4.375,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 11,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 2.98,
+            "top": 4.375,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 13,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 6.107,
+            "top": 2.158,
+            "width": 6.792,
+            "height": 4.323
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 14,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 1.392,
+            "top": 4.257,
+            "width": 3.146,
+            "height": 3.146
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 15,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 16,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_02_v1.finance_cover_v1": {
+      "slide_id": "template_library_02_v1.finance_cover_v1",
+      "template_key": "finance_cover_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 1,
+      "purpose": "cover",
+      "variant": "cover/finance-sales",
+      "scope": "sales",
+      "mode": "patch",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.26,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 2,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 4.705,
+            "top": 0.587,
+            "width": 3.927,
+            "height": 3.927
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 5,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 6,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "hero_panel",
+          "left": 0.55,
+          "top": 0.78,
+          "width": 7.55,
+          "height": 5.95
+        },
+        {
+          "slot": "footer_meta",
+          "left": 0.95,
+          "top": 5.7,
+          "width": 5.5,
+          "height": 0.4
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_02_v1.poc_process_v1": {
+      "slide_id": "template_library_02_v1.poc_process_v1",
+      "template_key": "poc_process_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 10,
+      "purpose": "process",
+      "variant": "process/poc-steps",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 35,
+          "shape_name": "slot:title",
+          "fingerprint": "PoC 협업 프로세스",
+          "bounds": {
+            "left": 3.844,
+            "top": 0.483,
+            "width": 5.418,
+            "height": 0.709
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 28,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 36,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "맞춤형 개발과 검증을 통한 단계적 협업",
+          "bounds": {
+            "left": 4.19,
+            "top": 1.263,
+            "width": 4.799,
+            "height": 0.355
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 35,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_1_title",
+          "shape_index": 18,
+          "shape_name": "slot:step_1_title",
+          "fingerprint": "01",
+          "bounds": {
+            "left": 2.102,
+            "top": 2.976,
+            "width": 0.386,
+            "height": 0.355
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_1_body",
+          "shape_index": 22,
+          "shape_name": "slot:step_1_body",
+          "fingerprint": "02",
+          "bounds": {
+            "left": 5.019,
+            "top": 2.976,
+            "width": 0.386,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_2_title",
+          "shape_index": 26,
+          "shape_name": "slot:step_2_title",
+          "fingerprint": "03",
+          "bounds": {
+            "left": 7.936,
+            "top": 2.976,
+            "width": 0.386,
+            "height": 0.355
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_2_body",
+          "shape_index": 30,
+          "shape_name": "slot:step_2_body",
+          "fingerprint": "04",
+          "bounds": {
+            "left": 10.852,
+            "top": 2.976,
+            "width": 0.386,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_3_title",
+          "shape_index": 19,
+          "shape_name": "slot:step_3_title",
+          "fingerprint": "요구사항 분석",
+          "bounds": {
+            "left": 1.523,
+            "top": 3.776,
+            "width": 1.54,
+            "height": 0.313
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_3_body",
+          "shape_index": 23,
+          "shape_name": "slot:step_3_body",
+          "fingerprint": "PoC 개발",
+          "bounds": {
+            "left": 4.703,
+            "top": 3.776,
+            "width": 1.012,
+            "height": 0.313
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_4_title",
+          "shape_index": 27,
+          "shape_name": "slot:step_4_title",
+          "fingerprint": "백테스팅 및 검증",
+          "bounds": {
+            "left": 7.169,
+            "top": 3.776,
+            "width": 1.913,
+            "height": 0.313
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 14,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "step_4_body",
+          "shape_index": 31,
+          "shape_name": "slot:step_4_body",
+          "fingerprint": "서비스 개발 논의",
+          "bounds": {
+            "left": 10.085,
+            "top": 3.776,
+            "width": 1.913,
+            "height": 0.313
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 14,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "footer_note",
+          "shape_index": 20,
+          "shape_name": "slot:footer_note",
+          "fingerprint": "고객사 니즈 파악 및 PoC 범위 제안",
+          "bounds": {
+            "left": 1.615,
+            "top": 4.166,
+            "width": 1.355,
+            "height": 0.5
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 24,
+          "shape_name": "slot:text_1",
+          "fingerprint": "모델링 및 초기 테스트 진행",
+          "bounds": {
+            "left": 4.557,
+            "top": 4.166,
+            "width": 1.303,
+            "height": 0.5
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 28,
+          "shape_name": "slot:text_2",
+          "fingerprint": "데이터 정합성 확인 및 성과 검증",
+          "bounds": {
+            "left": 7.392,
+            "top": 4.166,
+            "width": 1.469,
+            "height": 0.5
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 32,
+          "shape_name": "slot:text_3",
+          "fingerprint": "검증 결과 기반 맞춤형 도입 협의",
+          "bounds": {
+            "left": 10.391,
+            "top": 4.166,
+            "width": 1.303,
+            "height": 0.5
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 7,
+          "shape_name": "slot:text_4",
+          "fingerprint": "Data Verification",
+          "bounds": {
+            "left": 3.615,
+            "top": 5.673,
+            "width": 1.313,
+            "height": 0.532
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 11,
+          "shape_name": "slot:text_5",
+          "fingerprint": "Logic Tuning",
+          "bounds": {
+            "left": 5.965,
+            "top": 5.843,
+            "width": 1.414,
+            "height": 0.271
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 15,
+          "shape_name": "slot:text_6",
+          "fingerprint": "Prototype",
+          "bounds": {
+            "left": 8.526,
+            "top": 5.843,
+            "width": 1.084,
+            "height": 0.271
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 12,
+          "shape_name": "slot:text_7",
+          "fingerprint": "로직 유효성 확인",
+          "bounds": {
+            "left": 6.009,
+            "top": 6.147,
+            "width": 1.326,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_8",
+          "shape_index": 16,
+          "shape_name": "slot:text_8",
+          "fingerprint": "결과 리포트 제공",
+          "bounds": {
+            "left": 8.405,
+            "top": 6.147,
+            "width": 1.326,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_9",
+          "shape_index": 8,
+          "shape_name": "slot:text_9",
+          "fingerprint": "데이터 정합성 검증",
+          "bounds": {
+            "left": 3.528,
+            "top": 6.24,
+            "width": 1.487,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_10",
+          "shape_index": 34,
+          "shape_name": "slot:text_10",
+          "fingerprint": "10 / 12",
+          "bounds": {
+            "left": 12.479,
+            "top": 6.882,
+            "width": 0.534,
+            "height": 0.198
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.323,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 2,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 1.938,
+            "top": 3.021,
+            "width": 9.458,
+            "height": 0.042
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 3,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 4,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 6,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 4.161,
+            "top": 5.149,
+            "width": 0.219,
+            "height": 0.25
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 10,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 6.557,
+            "top": 5.28,
+            "width": 0.219,
+            "height": 0.25
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 14,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 8.938,
+            "top": 5.28,
+            "width": 0.25,
+            "height": 0.25
+          }
+        },
+        {
+          "slot": "image_8",
+          "shape_index": 17,
+          "shape_name": "slot:image_8",
+          "bounds": {
+            "left": 1.875,
+            "top": 2.734,
+            "width": 0.833,
+            "height": 0.833
+          }
+        },
+        {
+          "slot": "image_9",
+          "shape_index": 21,
+          "shape_name": "slot:image_9",
+          "bounds": {
+            "left": 4.792,
+            "top": 2.734,
+            "width": 0.833,
+            "height": 0.833
+          }
+        },
+        {
+          "slot": "image_10",
+          "shape_index": 25,
+          "shape_name": "slot:image_10",
+          "bounds": {
+            "left": 7.708,
+            "top": 2.734,
+            "width": 0.833,
+            "height": 0.833
+          }
+        },
+        {
+          "slot": "image_11",
+          "shape_index": 29,
+          "shape_name": "slot:image_11",
+          "bounds": {
+            "left": 10.625,
+            "top": 2.734,
+            "width": 0.833,
+            "height": 0.833
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_02_v1.problem_story_v1": {
+      "slide_id": "template_library_02_v1.problem_story_v1",
+      "template_key": "problem_story_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 2,
+      "purpose": "issue",
+      "variant": "issue/pain-story",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 5,
+          "shape_name": "slot:title",
+          "fingerprint": "\"모두가 같은 데이터를 본다면,",
+          "bounds": {
+            "left": 0.688,
+            "top": 1.757,
+            "width": 4.167,
+            "height": 0.25
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 24,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 6,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "더 이상 그것은 Alpha가 아닙니다.\"",
+          "bounds": {
+            "left": 0.688,
+            "top": 2.028,
+            "width": 4.084,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 34,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "pain_1_title",
+          "shape_index": 9,
+          "shape_name": "slot:pain_1_title",
+          "fingerprint": "데이터의 한계",
+          "bounds": {
+            "left": 0.833,
+            "top": 3.649,
+            "width": 1.563,
+            "height": 0.271
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "pain_1_body",
+          "shape_index": 12,
+          "shape_name": "slot:pain_1_body",
+          "fingerprint": "시장 반응 지연",
+          "bounds": {
+            "left": 0.833,
+            "top": 4.378,
+            "width": 1.705,
+            "height": 0.271
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "pain_2_title",
+          "shape_index": 15,
+          "shape_name": "slot:pain_2_title",
+          "fingerprint": "감정 변수 누락",
+          "bounds": {
+            "left": 0.833,
+            "top": 5.107,
+            "width": 1.705,
+            "height": 0.271
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "footer_note",
+          "shape_index": 25,
+          "shape_name": "slot:footer_note",
+          "fingerprint": "Footer note",
+          "bounds": {
+            "left": 0.72,
+            "top": 6.98,
+            "width": 11.893,
+            "height": 0.22
+          },
+          "font_role": "body",
+          "color_token": "gray",
+          "bold": false,
+          "align": "center",
+          "max_lines": 1,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 90,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.323,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 4,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.417,
+            "top": 1.56,
+            "width": 0.042,
+            "height": 1.189
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 8,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 0.464,
+            "top": 3.677,
+            "width": 0.219,
+            "height": 0.25
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 11,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 0.448,
+            "top": 4.406,
+            "width": 0.25,
+            "height": 0.25
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 14,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 0.448,
+            "top": 5.135,
+            "width": 0.25,
+            "height": 0.25
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 18,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 6.458,
+            "top": 1.979,
+            "width": 5.833,
+            "height": 3.75
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 21,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_8",
+          "shape_index": 22,
+          "shape_name": "slot:image_8",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_02_v1.proof_metrics_v1": {
+      "slide_id": "template_library_02_v1.proof_metrics_v1",
+      "template_key": "proof_metrics_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 6,
+      "purpose": "chart",
+      "variant": "chart/proof-metrics",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 2,
+          "shape_name": "slot:title",
+          "fingerprint": "글로벌에서 입증된 Sentiment의 가치",
+          "bounds": {
+            "left": -0.104,
+            "top": 0.51,
+            "width": 13.542,
+            "height": 0.625
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 60,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 18,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "1",
+          "bounds": {
+            "left": 6.427,
+            "top": 1.667,
+            "width": 0.396,
+            "height": 0.334
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 19,
+          "shape_name": "slot:body_1",
+          "fingerprint": "개인투자자 중심 시장",
+          "bounds": {
+            "left": 7.188,
+            "top": 1.667,
+            "width": 5.73,
+            "height": 0.365
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 42,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 6,
+          "shape_name": "slot:body_2",
+          "fingerprint": "YTD 2025 Alpha",
+          "bounds": {
+            "left": 0.875,
+            "top": 1.823,
+            "width": 2.146,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 11,
+          "shape_name": "slot:body_3",
+          "fingerprint": "3-Year Alpha",
+          "bounds": {
+            "left": 3.557,
+            "top": 1.823,
+            "width": 2.146,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 7,
+          "shape_name": "slot:body_4",
+          "fingerprint": "+16.58%p",
+          "bounds": {
+            "left": 0.875,
+            "top": 2.099,
+            "width": 2.146,
+            "height": 0.407
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_5",
+          "shape_index": 12,
+          "shape_name": "slot:body_5",
+          "fingerprint": "+13.91%p",
+          "bounds": {
+            "left": 3.557,
+            "top": 2.099,
+            "width": 2.146,
+            "height": 0.407
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_6",
+          "shape_index": 8,
+          "shape_name": "slot:body_6",
+          "fingerprint": "vs S&P 500",
+          "bounds": {
+            "left": 0.875,
+            "top": 2.574,
+            "width": 2.146,
+            "height": 0.178
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 13,
+          "shape_name": "slot:text_1",
+          "fingerprint": "누적 초과수익",
+          "bounds": {
+            "left": 3.557,
+            "top": 2.574,
+            "width": 2.228,
+            "height": 0.178
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 22,
+          "shape_name": "slot:text_2",
+          "fingerprint": "2",
+          "bounds": {
+            "left": 6.427,
+            "top": 3.173,
+            "width": 0.396,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 23,
+          "shape_name": "slot:text_3",
+          "fingerprint": "높은 변동성과 기회",
+          "bounds": {
+            "left": 7.188,
+            "top": 3.173,
+            "width": 5.73,
+            "height": 0.365
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 42,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 26,
+          "shape_name": "slot:text_4",
+          "fingerprint": "3",
+          "bounds": {
+            "left": 6.427,
+            "top": 4.679,
+            "width": 0.396,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 27,
+          "shape_name": "slot:text_5",
+          "fingerprint": "즉시 검증 가능한 데이터",
+          "bounds": {
+            "left": 7.188,
+            "top": 4.679,
+            "width": 5.73,
+            "height": 0.365
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 42,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 32,
+          "shape_name": "slot:text_6",
+          "fingerprint": "6/ 12",
+          "bounds": {
+            "left": 12.479,
+            "top": 6.882,
+            "width": 0.534,
+            "height": 0.198
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "footer_note",
+          "shape_index": 33,
+          "shape_name": "slot:footer_note",
+          "fingerprint": "Footer note",
+          "bounds": {
+            "left": 0.72,
+            "top": 6.98,
+            "width": 11.893,
+            "height": 0.22
+          },
+          "font_role": "body",
+          "color_token": "gray",
+          "bold": false,
+          "align": "center",
+          "max_lines": 1,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 90,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.323,
+            "width": 12.5,
+            "height": 0.021
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 14,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.625,
+            "top": 3.158,
+            "width": 5.208,
+            "height": 3.125
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 29,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 30,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_02_v1.roi_threepillars_v1": {
+      "slide_id": "template_library_02_v1.roi_threepillars_v1",
+      "template_key": "roi_threepillars_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 11,
+      "purpose": "analysis",
+      "variant": "analysis/roi-three-pillars",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 2,
+          "shape_name": "slot:title",
+          "fingerprint": "기대 효과 (Expected ROI)",
+          "bounds": {
+            "left": 3.573,
+            "top": 0.396,
+            "width": 6.188,
+            "height": 0.521
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 32,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 7,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "Alpha Generation",
+          "bounds": {
+            "left": 0.875,
+            "top": 2.956,
+            "width": 2.678,
+            "height": 0.323
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 20,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 8,
+          "shape_name": "slot:body_1",
+          "fingerprint": "Sentiment 팩터로 초과수익 창출",
+          "bounds": {
+            "left": 0.417,
+            "top": 3.406,
+            "width": 5.646,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 42,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 10,
+          "shape_name": "slot:body_2",
+          "fingerprint": "Strategy Accuracy",
+          "bounds": {
+            "left": 0.875,
+            "top": 4.071,
+            "width": 2.864,
+            "height": 0.323
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 21,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 13,
+          "shape_name": "slot:body_3",
+          "fingerprint": "Risk Control",
+          "bounds": {
+            "left": 0.875,
+            "top": 5.185,
+            "width": 1.86,
+            "height": 0.323
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 13,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 21,
+          "shape_name": "slot:body_4",
+          "fingerprint": "11 / 12",
+          "bounds": {
+            "left": 12.479,
+            "top": 6.882,
+            "width": 0.534,
+            "height": 0.198
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.323,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 6,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.458,
+            "top": 2.99,
+            "width": 0.25,
+            "height": 0.25
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 9,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 0.458,
+            "top": 4.104,
+            "width": 0.25,
+            "height": 0.25
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 12,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 0.458,
+            "top": 5.219,
+            "width": 0.25,
+            "height": 0.25
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 17,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 6.573,
+            "top": 1.781,
+            "width": 6.125,
+            "height": 4.354
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 18,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 19,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_02_v1.service_components_v1": {
+      "slide_id": "template_library_02_v1.service_components_v1",
+      "template_key": "service_components_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 5,
+      "purpose": "summary",
+      "variant": "summary/service-components",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 20,
+          "shape_name": "slot:title",
+          "fingerprint": "Sentiment",
+          "bounds": {
+            "left": 6.744,
+            "top": 2.05,
+            "width": 1.042,
+            "height": 0.532
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 38,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "Buzz Vol",
+          "bounds": {
+            "left": 9.225,
+            "top": 2.05,
+            "width": 0.844,
+            "height": 0.532
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "card_1_title",
+          "shape_index": 56,
+          "shape_name": "slot:card_1_title",
+          "fingerprint": "Clean API",
+          "bounds": {
+            "left": 11.561,
+            "top": 2.05,
+            "width": 0.948,
+            "height": 0.532
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "card_1_body",
+          "shape_index": 22,
+          "shape_name": "slot:card_1_body",
+          "fingerprint": "일별/분별 긍부정 지수",
+          "bounds": {
+            "left": 6.5,
+            "top": 3.008,
+            "width": 1.864,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 13,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "card_2_title",
+          "shape_index": 40,
+          "shape_name": "slot:card_2_title",
+          "fingerprint": "실시간 언급량 추이",
+          "bounds": {
+            "left": 8.885,
+            "top": 3.008,
+            "width": 1.586,
+            "height": 0.25
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "card_2_body",
+          "shape_index": 58,
+          "shape_name": "slot:card_2_body",
+          "fingerprint": "표준 JSON 포맷",
+          "bounds": {
+            "left": 11.271,
+            "top": 3.008,
+            "width": 1.286,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "card_3_title",
+          "shape_index": 7,
+          "shape_name": "slot:card_3_title",
+          "fingerprint": "Sentiment Score",
+          "bounds": {
+            "left": 0.813,
+            "top": 3.115,
+            "width": 3.142,
+            "height": 0.365
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "card_3_body",
+          "shape_index": 6,
+          "shape_name": "slot:card_3_body",
+          "fingerprint": "1",
+          "bounds": {
+            "left": 0.385,
+            "top": 3.141,
+            "width": 0.355,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "card_4_title",
+          "shape_index": 25,
+          "shape_name": "slot:card_4_title",
+          "fingerprint": "감성 키워드 추출",
+          "bounds": {
+            "left": 6.5,
+            "top": 3.737,
+            "width": 1.415,
+            "height": 0.25
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "card_4_body",
+          "shape_index": 43,
+          "shape_name": "slot:card_4_body",
+          "fingerprint": "급상승 키워드 알림",
+          "bounds": {
+            "left": 8.885,
+            "top": 3.737,
+            "width": 1.586,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 61,
+          "shape_name": "slot:text_1",
+          "fingerprint": "실시간/배치 지원",
+          "bounds": {
+            "left": 11.271,
+            "top": 3.737,
+            "width": 1.415,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 11,
+          "shape_name": "slot:text_2",
+          "fingerprint": "Buzz Volume",
+          "bounds": {
+            "left": 0.813,
+            "top": 4.281,
+            "width": 3.73,
+            "height": 0.365
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 27,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 10,
+          "shape_name": "slot:text_3",
+          "fingerprint": "2",
+          "bounds": {
+            "left": 0.385,
+            "top": 4.307,
+            "width": 0.355,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 28,
+          "shape_name": "slot:text_4",
+          "fingerprint": "문장별 Scoring",
+          "bounds": {
+            "left": 6.5,
+            "top": 4.467,
+            "width": 1.302,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 46,
+          "shape_name": "slot:text_5",
+          "fingerprint": "채널별 비중 분석",
+          "bounds": {
+            "left": 8.885,
+            "top": 4.467,
+            "width": 1.415,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 64,
+          "shape_name": "slot:text_6",
+          "fingerprint": "백테스팅 데이터셋",
+          "bounds": {
+            "left": 11.271,
+            "top": 4.467,
+            "width": 1.483,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 31,
+          "shape_name": "slot:text_7",
+          "fingerprint": "섹터 평균 비교",
+          "bounds": {
+            "left": 6.5,
+            "top": 5.196,
+            "width": 1.242,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_8",
+          "shape_index": 49,
+          "shape_name": "slot:text_8",
+          "fingerprint": "이상 징후 포착",
+          "bounds": {
+            "left": 8.885,
+            "top": 5.196,
+            "width": 1.242,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_9",
+          "shape_index": 67,
+          "shape_name": "slot:text_9",
+          "fingerprint": "노이즈 필터링 완료",
+          "bounds": {
+            "left": 11.271,
+            "top": 5.196,
+            "width": 1.586,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_10",
+          "shape_index": 15,
+          "shape_name": "slot:text_10",
+          "fingerprint": "Clean Data API",
+          "bounds": {
+            "left": 0.813,
+            "top": 5.448,
+            "width": 3.24,
+            "height": 0.365
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 24,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_11",
+          "shape_index": 14,
+          "shape_name": "slot:text_11",
+          "fingerprint": "3",
+          "bounds": {
+            "left": 0.385,
+            "top": 5.475,
+            "width": 0.355,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_12",
+          "shape_index": 34,
+          "shape_name": "slot:text_12",
+          "fingerprint": "Data Connected",
+          "bounds": {
+            "left": 6.408,
+            "top": 5.788,
+            "width": 1.451,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_13",
+          "shape_index": 52,
+          "shape_name": "slot:text_13",
+          "fingerprint": "Signal Detected",
+          "bounds": {
+            "left": 8.793,
+            "top": 5.788,
+            "width": 1.463,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_14",
+          "shape_index": 70,
+          "shape_name": "slot:text_14",
+          "fingerprint": "Ready to Plug-in",
+          "bounds": {
+            "left": 11.179,
+            "top": 5.788,
+            "width": 1.538,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_15",
+          "shape_index": 75,
+          "shape_name": "slot:text_15",
+          "fingerprint": "5/ 12",
+          "bounds": {
+            "left": 12.479,
+            "top": 6.882,
+            "width": 0.534,
+            "height": 0.198
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.323,
+            "width": 12.5,
+            "height": 0.021
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 19,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 6.473,
+            "top": 2.222,
+            "width": 0.188,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 21,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 6.24,
+            "top": 3.019,
+            "width": 0.167,
+            "height": 0.198
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 23,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 6.24,
+            "top": 3.477,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 24,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 6.24,
+            "top": 3.748,
+            "width": 0.167,
+            "height": 0.198
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 26,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 6.24,
+            "top": 4.206,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 27,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 6.24,
+            "top": 4.477,
+            "width": 0.167,
+            "height": 0.198
+          }
+        },
+        {
+          "slot": "image_8",
+          "shape_index": 29,
+          "shape_name": "slot:image_8",
+          "bounds": {
+            "left": 6.24,
+            "top": 4.935,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_9",
+          "shape_index": 30,
+          "shape_name": "slot:image_9",
+          "bounds": {
+            "left": 6.24,
+            "top": 5.206,
+            "width": 0.167,
+            "height": 0.198
+          }
+        },
+        {
+          "slot": "image_10",
+          "shape_index": 32,
+          "shape_name": "slot:image_10",
+          "bounds": {
+            "left": 6.24,
+            "top": 5.665,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_11",
+          "shape_index": 37,
+          "shape_name": "slot:image_11",
+          "bounds": {
+            "left": 8.954,
+            "top": 2.222,
+            "width": 0.188,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_12",
+          "shape_index": 39,
+          "shape_name": "slot:image_12",
+          "bounds": {
+            "left": 8.625,
+            "top": 3.029,
+            "width": 0.167,
+            "height": 0.167
+          }
+        },
+        {
+          "slot": "image_13",
+          "shape_index": 41,
+          "shape_name": "slot:image_13",
+          "bounds": {
+            "left": 8.625,
+            "top": 3.477,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_14",
+          "shape_index": 42,
+          "shape_name": "slot:image_14",
+          "bounds": {
+            "left": 8.625,
+            "top": 3.779,
+            "width": 0.167,
+            "height": 0.135
+          }
+        },
+        {
+          "slot": "image_15",
+          "shape_index": 44,
+          "shape_name": "slot:image_15",
+          "bounds": {
+            "left": 8.625,
+            "top": 4.206,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_16",
+          "shape_index": 45,
+          "shape_name": "slot:image_16",
+          "bounds": {
+            "left": 8.625,
+            "top": 4.487,
+            "width": 0.167,
+            "height": 0.167
+          }
+        },
+        {
+          "slot": "image_17",
+          "shape_index": 47,
+          "shape_name": "slot:image_17",
+          "bounds": {
+            "left": 8.625,
+            "top": 4.935,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_18",
+          "shape_index": 48,
+          "shape_name": "slot:image_18",
+          "bounds": {
+            "left": 8.625,
+            "top": 5.217,
+            "width": 0.167,
+            "height": 0.167
+          }
+        },
+        {
+          "slot": "image_19",
+          "shape_index": 50,
+          "shape_name": "slot:image_19",
+          "bounds": {
+            "left": 8.625,
+            "top": 5.665,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_20",
+          "shape_index": 55,
+          "shape_name": "slot:image_20",
+          "bounds": {
+            "left": 11.29,
+            "top": 2.222,
+            "width": 0.188,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_21",
+          "shape_index": 57,
+          "shape_name": "slot:image_21",
+          "bounds": {
+            "left": 11.01,
+            "top": 3.029,
+            "width": 0.167,
+            "height": 0.167
+          }
+        },
+        {
+          "slot": "image_22",
+          "shape_index": 59,
+          "shape_name": "slot:image_22",
+          "bounds": {
+            "left": 11.01,
+            "top": 3.477,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_23",
+          "shape_index": 60,
+          "shape_name": "slot:image_23",
+          "bounds": {
+            "left": 11.01,
+            "top": 3.748,
+            "width": 0.167,
+            "height": 0.198
+          }
+        },
+        {
+          "slot": "image_24",
+          "shape_index": 62,
+          "shape_name": "slot:image_24",
+          "bounds": {
+            "left": 11.01,
+            "top": 4.206,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_25",
+          "shape_index": 63,
+          "shape_name": "slot:image_25",
+          "bounds": {
+            "left": 11.01,
+            "top": 4.487,
+            "width": 0.167,
+            "height": 0.167
+          }
+        },
+        {
+          "slot": "image_26",
+          "shape_index": 65,
+          "shape_name": "slot:image_26",
+          "bounds": {
+            "left": 11.01,
+            "top": 4.935,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_27",
+          "shape_index": 66,
+          "shape_name": "slot:image_27",
+          "bounds": {
+            "left": 11.01,
+            "top": 5.237,
+            "width": 0.167,
+            "height": 0.135
+          }
+        },
+        {
+          "slot": "image_28",
+          "shape_index": 68,
+          "shape_name": "slot:image_28",
+          "bounds": {
+            "left": 11.01,
+            "top": 5.665,
+            "width": 1.75,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_29",
+          "shape_index": 72,
+          "shape_name": "slot:image_29",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_30",
+          "shape_index": 73,
+          "shape_name": "slot:image_30",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_02_v1.signal_speed_v1": {
+      "slide_id": "template_library_02_v1.signal_speed_v1",
+      "template_key": "signal_speed_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 8,
+      "purpose": "chart",
+      "variant": "chart/single-metric-story",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 10,
+          "shape_name": "slot:title",
+          "fingerprint": "0.5",
+          "bounds": {
+            "left": 1.25,
+            "top": 1.855,
+            "width": 2.733,
+            "height": 1.459
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 14,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 26,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "09:55:00",
+          "bounds": {
+            "left": 8.156,
+            "top": 1.938,
+            "width": 4.459,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 33,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 27,
+          "shape_name": "slot:body_1",
+          "fingerprint": "커뮤니티 최초 언급",
+          "bounds": {
+            "left": 8.156,
+            "top": 2.177,
+            "width": 4.542,
+            "height": 0.282
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 34,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 11,
+          "shape_name": "slot:body_2",
+          "fingerprint": "초",
+          "bounds": {
+            "left": 3.218,
+            "top": 2.48,
+            "width": 0.807,
+            "height": 0.938
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 28,
+          "shape_name": "slot:body_3",
+          "fingerprint": "개인 투자자 관심 급증 시작",
+          "bounds": {
+            "left": 8.156,
+            "top": 2.5,
+            "width": 4.542,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 34,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 14,
+          "shape_name": "slot:body_4",
+          "fingerprint": "0.5초 감지",
+          "bounds": {
+            "left": 1.667,
+            "top": 3.496,
+            "width": 2.34,
+            "height": 0.313
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 17,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_5",
+          "shape_index": 13,
+          "shape_name": "slot:body_5",
+          "fingerprint": "1",
+          "bounds": {
+            "left": 1.208,
+            "top": 3.517,
+            "width": 0.375,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_6",
+          "shape_index": 34,
+          "shape_name": "slot:body_6",
+          "fingerprint": "Template System Detect",
+          "bounds": {
+            "left": 11.156,
+            "top": 3.673,
+            "width": 1.407,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 33,
+          "shape_name": "slot:text_1",
+          "fingerprint": "09:55:30",
+          "bounds": {
+            "left": 8.167,
+            "top": 3.699,
+            "width": 0.732,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 6,
+          "shape_name": "slot:text_2",
+          "fingerprint": "4분 30초 Golden Time 확보",
+          "bounds": {
+            "left": 8.01,
+            "top": 3.854,
+            "width": 2.094,
+            "height": 0.365
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 15,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 35,
+          "shape_name": "slot:text_3",
+          "fingerprint": "시그널 감지 & 알림",
+          "bounds": {
+            "left": 8.167,
+            "top": 4.006,
+            "width": 4.521,
+            "height": 0.282
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 33,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 36,
+          "shape_name": "slot:text_4",
+          "fingerprint": "뉴스보다 빠른 감지",
+          "bounds": {
+            "left": 8.167,
+            "top": 4.329,
+            "width": 4.521,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 33,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 18,
+          "shape_name": "slot:text_5",
+          "fingerprint": "Golden Time 확보",
+          "bounds": {
+            "left": 1.667,
+            "top": 4.6,
+            "width": 2.275,
+            "height": 0.313
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 17,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 17,
+          "shape_name": "slot:text_6",
+          "fingerprint": "2",
+          "bounds": {
+            "left": 1.208,
+            "top": 4.621,
+            "width": 0.375,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 41,
+          "shape_name": "slot:text_7",
+          "fingerprint": "10:00:00",
+          "bounds": {
+            "left": 8.156,
+            "top": 5.646,
+            "width": 4.459,
+            "height": 0.219
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 33,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_8",
+          "shape_index": 22,
+          "shape_name": "slot:text_8",
+          "fingerprint": "Alpha 기회",
+          "bounds": {
+            "left": 1.667,
+            "top": 5.704,
+            "width": 2.546,
+            "height": 0.313
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 19,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_9",
+          "shape_index": 21,
+          "shape_name": "slot:text_9",
+          "fingerprint": "3",
+          "bounds": {
+            "left": 1.208,
+            "top": 5.725,
+            "width": 0.375,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_10",
+          "shape_index": 42,
+          "shape_name": "slot:text_10",
+          "fingerprint": "뉴스 속보 보도",
+          "bounds": {
+            "left": 8.156,
+            "top": 5.885,
+            "width": 4.542,
+            "height": 0.282
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 34,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_11",
+          "shape_index": 43,
+          "shape_name": "slot:text_11",
+          "fingerprint": "주가 반응 이미 종료 (늦은 대응)",
+          "bounds": {
+            "left": 8.156,
+            "top": 6.208,
+            "width": 4.542,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 34,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_12",
+          "shape_index": 49,
+          "shape_name": "slot:text_12",
+          "fingerprint": "8/ 12",
+          "bounds": {
+            "left": 12.479,
+            "top": 6.882,
+            "width": 0.534,
+            "height": 0.198
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.323,
+            "width": 12.5,
+            "height": 0.021
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 5,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 7.333,
+            "top": 1.979,
+            "width": 0.042,
+            "height": 4.583
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 7,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 7.781,
+            "top": 3.964,
+            "width": 0.146,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 8,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 7.333,
+            "top": 3.229,
+            "width": 0.042,
+            "height": 1.667
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 30,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 7.224,
+            "top": 2.042,
+            "width": 0.26,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 31,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 7.938,
+            "top": 3.496,
+            "width": 4.771,
+            "height": 1.215
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 37,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 7.056,
+            "top": 3.573,
+            "width": 0.596,
+            "height": 0.596
+          }
+        },
+        {
+          "slot": "image_8",
+          "shape_index": 38,
+          "shape_name": "slot:image_8",
+          "bounds": {
+            "left": 7.245,
+            "top": 3.745,
+            "width": 0.219,
+            "height": 0.26
+          }
+        },
+        {
+          "slot": "image_9",
+          "shape_index": 45,
+          "shape_name": "slot:image_9",
+          "bounds": {
+            "left": 7.25,
+            "top": 5.75,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_10",
+          "shape_index": 46,
+          "shape_name": "slot:image_10",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_11",
+          "shape_index": 47,
+          "shape_name": "slot:image_11",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_02_v1.vertical_use_cases_v1": {
+      "slide_id": "template_library_02_v1.vertical_use_cases_v1",
+      "template_key": "vertical_use_cases_v1",
+      "library_id": "template_library_02_v1",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "library_slide_no": 9,
+      "purpose": "analysis",
+      "variant": "analysis/vertical-use-cases",
+      "scope": "sales",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 3,
+          "shape_name": "slot:title",
+          "fingerprint": "도메인별 특화 학습 개발 중",
+          "bounds": {
+            "left": 0.312,
+            "top": 1.278,
+            "width": 12.719,
+            "height": 0.303
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 60,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 5,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "Case 1: Fintech",
+          "bounds": {
+            "left": 0.667,
+            "top": 2.101,
+            "width": 3.271,
+            "height": 0.303
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 24,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 6,
+          "shape_name": "slot:body_1",
+          "fingerprint": "규제 / 정책 과민 반응 감지",
+          "bounds": {
+            "left": 0.667,
+            "top": 2.526,
+            "width": 3.355,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 8,
+          "shape_name": "slot:body_2",
+          "fingerprint": "\" 데이터 3법 수혜 기대감 과열 경고 \"",
+          "bounds": {
+            "left": 0.667,
+            "top": 2.859,
+            "width": 3.23,
+            "height": 0.396
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 24,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 10,
+          "shape_name": "slot:body_3",
+          "fingerprint": "Case 2: Bio/Pharma",
+          "bounds": {
+            "left": 0.667,
+            "top": 3.667,
+            "width": 3.407,
+            "height": 0.303
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 11,
+          "shape_name": "slot:body_4",
+          "fingerprint": "임상 / 기술수출 루머 감지",
+          "bounds": {
+            "left": 0.667,
+            "top": 4.092,
+            "width": 3.49,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 26,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_5",
+          "shape_index": 13,
+          "shape_name": "slot:body_5",
+          "fingerprint": "\" 파이프라인 부작용 은폐설 팩트체크 \"",
+          "bounds": {
+            "left": 0.667,
+            "top": 4.426,
+            "width": 3.365,
+            "height": 0.396
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_6",
+          "shape_index": 19,
+          "shape_name": "slot:body_6",
+          "fingerprint": "9/ 12",
+          "bounds": {
+            "left": 12.479,
+            "top": 6.882,
+            "width": 0.534,
+            "height": 0.198
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 1,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.417,
+            "top": 0.323,
+            "width": 12.501,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 4,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.417,
+            "top": 2.101,
+            "width": 0.042,
+            "height": 1.042
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 9,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 0.417,
+            "top": 3.667,
+            "width": 0.042,
+            "height": 1.042
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 14,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 5.938,
+            "top": 1.892,
+            "width": 6.771,
+            "height": 4.375
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 16,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 0.417,
+            "top": 6.75,
+            "width": 12.5,
+            "height": 0.01
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 17,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 0.417,
+            "top": 7.188,
+            "width": 12.5,
+            "height": 0.01
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    }
+  }
+}

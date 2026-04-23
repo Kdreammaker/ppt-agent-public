@@ -1,0 +1,98 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "Report Auto Selection Sample",
+  "theme_path": "../../config/pptx_theme.example.json",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/report_auto_selection_sample.pptx",
+  "slides": [
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "report",
+        "preferred_variant": "cover/right-hero"
+      },
+      "text_slots": {
+        "title": "Report System Demo",
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "toc",
+        "scope": "report",
+        "preferred_variant": "toc/visual-tiles",
+        "fallback_variants": [
+          "toc/simple-index"
+        ]
+      },
+      "text_slots": {
+        "title": "Briefing Route",
+        "subtitle": "Auto-selected TOC variant with generic fallback",
+        "toc_1_number": "Context",
+        "toc_1_title": "Signals",
+        "toc_1_body": "Implications",
+        "toc_2_number": "Actions",
+        "toc_2_title": "Brief intro",
+        "toc_2_body": "Key trend set",
+        "toc_3_number": "Risks",
+        "toc_3_title": "Immediate next steps",
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "report",
+        "preferred_variant": "summary/two-panel"
+      },
+      "text_slots": {
+        "title": "Executive Summary",
+        "subtitle": "This slide was chosen by purpose and scope.",
+        "left_card_title": "Decision",
+        "left_card_body": "Use generic report slides first when exact scope is missing.",
+        "right_card_title": "Impact",
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "issue",
+        "scope": "report",
+        "preferred_variant": "issue/2x2-cards"
+      },
+      "text_slots": {
+        "eyebrow": "Key Issues",
+        "title": "Generic issue framing selected for report scope.",
+        "subtitle": "Selection",
+        "card_1_number": "Fit",
+        "card_1_title": "Fallback",
+        "card_1_body": "Generic scope reuse",
+        "card_2_number": "Blueprint",
+        "card_2_title": "Slot-based overlay",
+        "card_2_body": "Preview",
+        "card_3_number": "Index",
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "closing",
+        "scope": "report",
+        "preferred_variant": "closing/goal-grid"
+      },
+      "text_slots": {
+        "eyebrow": "Conclusion",
+        "title": "Unified template search is ready.",
+        "subtitle": "Next Build",
+        "goal_statement": "Use this pattern for new decks and refine blueprints over time.",
+        "footer_note": "Template system sample"
+      }
+    }
+  ]
+}

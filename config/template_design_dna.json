@@ -1,0 +1,1683 @@
+{
+  "version": "1.0",
+  "generated_from": {
+    "reference_catalog_path": "config/reference_catalog.json",
+    "blueprint_path": "config/template_blueprints.json",
+    "overrides_path": "config/template_design_dna_overrides.json"
+  },
+  "slides": {
+    "template_library_01_v1.channel_cover_v1": {
+      "template_key": "channel_cover_v1",
+      "library_id": "template_library_01_v1",
+      "purpose": "cover",
+      "scope": "sales",
+      "density": "light",
+      "tone": [
+        "sales",
+        "executive"
+      ],
+      "structure": "story",
+      "visual_weight": "visual_first",
+      "content_capacity": {
+        "text_slots": 3,
+        "image_slots": 1,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 326
+      },
+      "footer_supported": true,
+      "best_for": [
+        "cover slides",
+        "sales scope",
+        "story structure",
+        "buyer-facing narrative"
+      ],
+      "avoid_for": [
+        "dense technical explanation"
+      ],
+      "override_applied": false
+    },
+    "template_library_01_v1.data_method_v1": {
+      "template_key": "data_method_v1",
+      "library_id": "template_library_01_v1",
+      "purpose": "process",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "analytical",
+        "technical"
+      ],
+      "structure": "process",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 23,
+        "image_slots": 9,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 3261
+      },
+      "footer_supported": true,
+      "best_for": [
+        "process slides",
+        "sales scope",
+        "process structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_01_v1.discussion_closing_v1": {
+      "template_key": "discussion_closing_v1",
+      "library_id": "template_library_01_v1",
+      "purpose": "closing",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "executive"
+      ],
+      "structure": "story",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 13,
+        "image_slots": 8,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 2051
+      },
+      "footer_supported": true,
+      "best_for": [
+        "closing slides",
+        "sales scope",
+        "story structure",
+        "buyer-facing narrative"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_01_v1.expansion_story_v1": {
+      "template_key": "expansion_story_v1",
+      "library_id": "template_library_01_v1",
+      "purpose": "strategy",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "technical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 19,
+        "image_slots": 16,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 2891
+      },
+      "footer_supported": true,
+      "best_for": [
+        "strategy slides",
+        "sales scope",
+        "comparison structure",
+        "buyer-facing narrative"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_01_v1.partnership_goal_v1": {
+      "template_key": "partnership_goal_v1",
+      "library_id": "template_library_01_v1",
+      "purpose": "closing",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "executive"
+      ],
+      "structure": "story",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 10,
+        "image_slots": 8,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1716
+      },
+      "footer_supported": true,
+      "best_for": [
+        "closing slides",
+        "sales scope",
+        "story structure",
+        "buyer-facing narrative"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_01_v1.pilot_program_v1": {
+      "template_key": "pilot_program_v1",
+      "library_id": "template_library_01_v1",
+      "purpose": "process",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "technical"
+      ],
+      "structure": "process",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 13,
+        "image_slots": 7,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 2751
+      },
+      "footer_supported": true,
+      "best_for": [
+        "process slides",
+        "sales scope",
+        "process structure",
+        "buyer-facing narrative"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_01_v1.prioritization_metric_v1": {
+      "template_key": "prioritization_metric_v1",
+      "library_id": "template_library_01_v1",
+      "purpose": "analysis",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "analytical"
+      ],
+      "structure": "metric",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 13,
+        "image_slots": 4,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 2976
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "sales scope",
+        "metric structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_01_v1.sales_strategy_steps_v1": {
+      "template_key": "sales_strategy_steps_v1",
+      "library_id": "template_library_01_v1",
+      "purpose": "strategy",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "technical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 15,
+        "image_slots": 9,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1480
+      },
+      "footer_supported": true,
+      "best_for": [
+        "strategy slides",
+        "sales scope",
+        "comparison structure",
+        "buyer-facing narrative"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_01_v1.service_intro_cards_v1": {
+      "template_key": "service_intro_cards_v1",
+      "library_id": "template_library_01_v1",
+      "purpose": "summary",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "executive"
+      ],
+      "structure": "grid",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 10,
+        "image_slots": 7,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 802
+      },
+      "footer_supported": true,
+      "best_for": [
+        "summary slides",
+        "sales scope",
+        "grid structure",
+        "buyer-facing narrative"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_01_v1.service_model_v1": {
+      "template_key": "service_model_v1",
+      "library_id": "template_library_01_v1",
+      "purpose": "process",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "technical"
+      ],
+      "structure": "process",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 17,
+        "image_slots": 16,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 3066
+      },
+      "footer_supported": true,
+      "best_for": [
+        "process slides",
+        "sales scope",
+        "process structure",
+        "buyer-facing narrative"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_02_v1.alpha_signal_timeline_v1": {
+      "template_key": "alpha_signal_timeline_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "strategy",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "analytical",
+        "technical"
+      ],
+      "structure": "timeline",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 35,
+        "image_slots": 16,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 2316
+      },
+      "footer_supported": true,
+      "best_for": [
+        "strategy slides",
+        "sales scope",
+        "timeline structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_02_v1.before_after_compare_v1": {
+      "template_key": "before_after_compare_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "analysis",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "analytical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 18,
+        "image_slots": 12,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1281
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "sales scope",
+        "comparison structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_02_v1.core_technology_v1": {
+      "template_key": "core_technology_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "analysis",
+      "scope": "sales",
+      "density": "medium",
+      "tone": [
+        "sales",
+        "analytical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 6,
+        "image_slots": 8,
+        "chart_slots": 1,
+        "table_slots": 1,
+        "estimated_text_budget": 498
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "sales scope",
+        "comparison structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [],
+      "override_applied": false
+    },
+    "template_library_02_v1.finance_closing_v1": {
+      "template_key": "finance_closing_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "closing",
+      "scope": "sales",
+      "density": "medium",
+      "tone": [
+        "sales",
+        "analytical",
+        "executive"
+      ],
+      "structure": "story",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 5,
+        "image_slots": 7,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 662
+      },
+      "footer_supported": false,
+      "best_for": [
+        "closing slides",
+        "sales scope",
+        "story structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [],
+      "override_applied": false
+    },
+    "template_library_02_v1.finance_cover_v1": {
+      "template_key": "finance_cover_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "cover",
+      "scope": "sales",
+      "density": "medium",
+      "tone": [
+        "sales",
+        "analytical",
+        "executive"
+      ],
+      "structure": "story",
+      "visual_weight": "visual_first",
+      "content_capacity": {
+        "text_slots": 0,
+        "image_slots": 4,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 0
+      },
+      "footer_supported": false,
+      "best_for": [
+        "cover slides",
+        "sales scope",
+        "story structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "dense technical explanation",
+        "multi-point body copy"
+      ],
+      "override_applied": false
+    },
+    "template_library_02_v1.poc_process_v1": {
+      "template_key": "poc_process_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "process",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "analytical",
+        "technical"
+      ],
+      "structure": "process",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 21,
+        "image_slots": 11,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1419
+      },
+      "footer_supported": true,
+      "best_for": [
+        "process slides",
+        "sales scope",
+        "process structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_02_v1.problem_story_v1": {
+      "template_key": "problem_story_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "issue",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "analytical"
+      ],
+      "structure": "grid",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 6,
+        "image_slots": 8,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 532
+      },
+      "footer_supported": true,
+      "best_for": [
+        "issue slides",
+        "sales scope",
+        "grid structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_02_v1.proof_metrics_v1": {
+      "template_key": "proof_metrics_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "chart",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "analytical"
+      ],
+      "structure": "metric",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 15,
+        "image_slots": 4,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1620
+      },
+      "footer_supported": true,
+      "best_for": [
+        "chart slides",
+        "sales scope",
+        "metric structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_02_v1.roi_threepillars_v1": {
+      "template_key": "roi_threepillars_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "analysis",
+      "scope": "sales",
+      "density": "medium",
+      "tone": [
+        "sales",
+        "analytical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 6,
+        "image_slots": 7,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 636
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "sales scope",
+        "comparison structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [],
+      "override_applied": false
+    },
+    "template_library_02_v1.service_components_v1": {
+      "template_key": "service_components_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "summary",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "analytical",
+        "executive"
+      ],
+      "structure": "grid",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 25,
+        "image_slots": 30,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1671
+      },
+      "footer_supported": false,
+      "best_for": [
+        "summary slides",
+        "sales scope",
+        "grid structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_02_v1.signal_speed_v1": {
+      "template_key": "signal_speed_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "chart",
+      "scope": "sales",
+      "density": "dense",
+      "tone": [
+        "sales",
+        "analytical"
+      ],
+      "structure": "metric",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 20,
+        "image_slots": 11,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 2142
+      },
+      "footer_supported": false,
+      "best_for": [
+        "chart slides",
+        "sales scope",
+        "metric structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_02_v1.vertical_use_cases_v1": {
+      "template_key": "vertical_use_cases_v1",
+      "library_id": "template_library_02_v1",
+      "purpose": "analysis",
+      "scope": "sales",
+      "density": "medium",
+      "tone": [
+        "sales",
+        "analytical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 8,
+        "image_slots": 6,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 985
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "sales scope",
+        "comparison structure",
+        "buyer-facing narrative",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [],
+      "override_applied": false
+    },
+    "template_library_03_v1.improvement_case_v1": {
+      "template_key": "improvement_case_v1",
+      "library_id": "template_library_03_v1",
+      "purpose": "analysis",
+      "scope": "portfolio",
+      "density": "dense",
+      "tone": [
+        "portfolio",
+        "analytical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 13,
+        "image_slots": 5,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1396
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "portfolio scope",
+        "comparison structure",
+        "project storytelling",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_03_v1.org_initiative_case_v1": {
+      "template_key": "org_initiative_case_v1",
+      "library_id": "template_library_03_v1",
+      "purpose": "analysis",
+      "scope": "portfolio",
+      "density": "dense",
+      "tone": [
+        "portfolio",
+        "analytical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 16,
+        "image_slots": 5,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1546
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "portfolio scope",
+        "comparison structure",
+        "project storytelling",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_03_v1.patent_case_v1": {
+      "template_key": "patent_case_v1",
+      "library_id": "template_library_03_v1",
+      "purpose": "analysis",
+      "scope": "portfolio",
+      "density": "dense",
+      "tone": [
+        "portfolio",
+        "analytical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 15,
+        "image_slots": 5,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1496
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "portfolio scope",
+        "comparison structure",
+        "project storytelling",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_03_v1.portfolio_closing_v1": {
+      "template_key": "portfolio_closing_v1",
+      "library_id": "template_library_03_v1",
+      "purpose": "closing",
+      "scope": "portfolio",
+      "density": "dense",
+      "tone": [
+        "portfolio",
+        "executive"
+      ],
+      "structure": "story",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 7,
+        "image_slots": 11,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 794
+      },
+      "footer_supported": true,
+      "best_for": [
+        "closing slides",
+        "portfolio scope",
+        "story structure",
+        "project storytelling"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_03_v1.portfolio_cover_v1": {
+      "template_key": "portfolio_cover_v1",
+      "library_id": "template_library_03_v1",
+      "purpose": "cover",
+      "scope": "portfolio",
+      "density": "medium",
+      "tone": [
+        "portfolio",
+        "executive"
+      ],
+      "structure": "story",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 7,
+        "image_slots": 2,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 554
+      },
+      "footer_supported": true,
+      "best_for": [
+        "cover slides",
+        "portfolio scope",
+        "story structure",
+        "project storytelling"
+      ],
+      "avoid_for": [],
+      "override_applied": false
+    },
+    "template_library_03_v1.profile_resume_v1": {
+      "template_key": "profile_resume_v1",
+      "library_id": "template_library_03_v1",
+      "purpose": "team",
+      "scope": "portfolio",
+      "density": "dense",
+      "tone": [
+        "portfolio"
+      ],
+      "structure": "grid",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 42,
+        "image_slots": 20,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 3938
+      },
+      "footer_supported": false,
+      "best_for": [
+        "team slides",
+        "portfolio scope",
+        "grid structure",
+        "project storytelling"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_03_v1.project_case_v1": {
+      "template_key": "project_case_v1",
+      "library_id": "template_library_03_v1",
+      "purpose": "analysis",
+      "scope": "portfolio",
+      "density": "dense",
+      "tone": [
+        "portfolio",
+        "analytical"
+      ],
+      "structure": "metric",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 12,
+        "image_slots": 5,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1148
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "portfolio scope",
+        "metric structure",
+        "project storytelling",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_03_v1.project_case_v2": {
+      "template_key": "project_case_v2",
+      "library_id": "template_library_03_v1",
+      "purpose": "analysis",
+      "scope": "portfolio",
+      "density": "dense",
+      "tone": [
+        "portfolio",
+        "analytical"
+      ],
+      "structure": "metric",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 15,
+        "image_slots": 9,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1426
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "portfolio scope",
+        "metric structure",
+        "project storytelling",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_03_v1.project_case_v3": {
+      "template_key": "project_case_v3",
+      "library_id": "template_library_03_v1",
+      "purpose": "analysis",
+      "scope": "portfolio",
+      "density": "dense",
+      "tone": [
+        "portfolio",
+        "analytical"
+      ],
+      "structure": "metric",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 20,
+        "image_slots": 7,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1931
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "portfolio scope",
+        "metric structure",
+        "project storytelling",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_03_v1.single_owner_case_v1": {
+      "template_key": "single_owner_case_v1",
+      "library_id": "template_library_03_v1",
+      "purpose": "analysis",
+      "scope": "portfolio",
+      "density": "dense",
+      "tone": [
+        "portfolio",
+        "analytical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 19,
+        "image_slots": 7,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1981
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "portfolio scope",
+        "comparison structure",
+        "project storytelling",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.company_history_v1": {
+      "template_key": "company_history_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "timeline",
+      "scope": "report",
+      "density": "medium",
+      "tone": [
+        "executive"
+      ],
+      "structure": "timeline",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 8,
+        "image_slots": 0,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1300
+      },
+      "footer_supported": true,
+      "best_for": [
+        "timeline slides",
+        "report scope",
+        "timeline structure"
+      ],
+      "avoid_for": [
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.competition_matrix_v1": {
+      "template_key": "competition_matrix_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "analysis",
+      "scope": "report",
+      "density": "medium",
+      "tone": [
+        "analytical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 9,
+        "image_slots": 1,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1045
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "report scope",
+        "comparison structure",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.cover_brand_right_v1": {
+      "template_key": "cover_brand_right_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "cover",
+      "scope": "generic",
+      "density": "light",
+      "tone": [
+        "executive",
+        "conservative"
+      ],
+      "structure": "story",
+      "visual_weight": "visual_first",
+      "content_capacity": {
+        "text_slots": 2,
+        "image_slots": 1,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 162
+      },
+      "footer_supported": true,
+      "best_for": [
+        "formal executive report opening",
+        "high-trust strategy briefings",
+        "restrained narrative setup"
+      ],
+      "avoid_for": [
+        "high-emotion sales pitch",
+        "dense analytical body copy"
+      ],
+      "override_applied": true,
+      "review_notes": "Use when clarity and restraint matter more than visual novelty."
+    },
+    "template_library_04_v1.financial_mix_chart_v1": {
+      "template_key": "financial_mix_chart_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "chart",
+      "scope": "report",
+      "density": "light",
+      "tone": [
+        "analytical"
+      ],
+      "structure": "metric",
+      "visual_weight": "visual_first",
+      "content_capacity": {
+        "text_slots": 4,
+        "image_slots": 2,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 620
+      },
+      "footer_supported": false,
+      "best_for": [
+        "chart slides",
+        "report scope",
+        "metric structure",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "content-specific chart claims without source-template cleanup",
+        "production chart pages that require editable percentage labels"
+      ],
+      "override_applied": true,
+      "review_notes": "Contains static chart artwork and labels; use only when those visuals match the message or after template cleanup exposes them as slots."
+    },
+    "template_library_04_v1.financial_timeline_chart_v1": {
+      "template_key": "financial_timeline_chart_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "chart",
+      "scope": "report",
+      "density": "dense",
+      "tone": [
+        "analytical"
+      ],
+      "structure": "timeline",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 18,
+        "image_slots": 7,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1450
+      },
+      "footer_supported": false,
+      "best_for": [
+        "chart slides",
+        "report scope",
+        "timeline structure",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.goal_grid_v1": {
+      "template_key": "goal_grid_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "closing",
+      "scope": "generic",
+      "density": "medium",
+      "tone": [
+        "executive"
+      ],
+      "structure": "grid",
+      "visual_weight": "visual_first",
+      "content_capacity": {
+        "text_slots": 5,
+        "image_slots": 3,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 562
+      },
+      "footer_supported": true,
+      "best_for": [
+        "closing slides",
+        "generic scope",
+        "grid structure"
+      ],
+      "avoid_for": [
+        "dense technical explanation",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.gtm_checkpoint_flow_v1": {
+      "template_key": "gtm_checkpoint_flow_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "strategy",
+      "scope": "generic",
+      "density": "medium",
+      "tone": [
+        "executive",
+        "technical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 7,
+        "image_slots": 0,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 855
+      },
+      "footer_supported": false,
+      "best_for": [
+        "operating model checkpoints",
+        "phased delivery governance",
+        "decision-ready implementation paths"
+      ],
+      "avoid_for": [
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": true,
+      "review_notes": "Preferred process slide for executive governance narratives."
+    },
+    "template_library_04_v1.gtm_metric_blocks_v1": {
+      "template_key": "gtm_metric_blocks_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "strategy",
+      "scope": "generic",
+      "density": "medium",
+      "tone": [
+        "technical"
+      ],
+      "structure": "metric",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 13,
+        "image_slots": 0,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1330
+      },
+      "footer_supported": true,
+      "best_for": [
+        "strategy slides",
+        "generic scope",
+        "metric structure"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.gtm_quadrant_v1": {
+      "template_key": "gtm_quadrant_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "strategy",
+      "scope": "generic",
+      "density": "medium",
+      "tone": [
+        "technical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "visual_first",
+      "content_capacity": {
+        "text_slots": 4,
+        "image_slots": 1,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 745
+      },
+      "footer_supported": false,
+      "best_for": [
+        "strategy slides",
+        "generic scope",
+        "comparison structure"
+      ],
+      "avoid_for": [
+        "dense technical explanation",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.issue_2x2_v1": {
+      "template_key": "issue_2x2_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "issue",
+      "scope": "generic",
+      "density": "dense",
+      "tone": [
+        "executive"
+      ],
+      "structure": "grid",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 16,
+        "image_slots": 0,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1302
+      },
+      "footer_supported": true,
+      "best_for": [
+        "issue slides",
+        "generic scope",
+        "grid structure"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.market_comparison_blocks_v1": {
+      "template_key": "market_comparison_blocks_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "analysis",
+      "scope": "report",
+      "density": "medium",
+      "tone": [
+        "analytical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 8,
+        "image_slots": 3,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1010
+      },
+      "footer_supported": false,
+      "best_for": [
+        "analysis slides",
+        "report scope",
+        "comparison structure",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.market_stat_cards_v1": {
+      "template_key": "market_stat_cards_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "market",
+      "scope": "report",
+      "density": "medium",
+      "tone": [
+        "analytical"
+      ],
+      "structure": "metric",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 7,
+        "image_slots": 0,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1135
+      },
+      "footer_supported": false,
+      "best_for": [
+        "market slides",
+        "report scope",
+        "metric structure",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "production market sizing pages before static artifact cleanup",
+        "content requiring fully editable metric labels"
+      ],
+      "override_applied": true,
+      "review_notes": "Static metric artwork should be converted to slots or removed before this template is used as a polished production chart slide."
+    },
+    "template_library_04_v1.market_tam_sam_som_v1": {
+      "template_key": "market_tam_sam_som_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "market",
+      "scope": "report",
+      "density": "medium",
+      "tone": [
+        "analytical"
+      ],
+      "structure": "metric",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 7,
+        "image_slots": 1,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1135
+      },
+      "footer_supported": false,
+      "best_for": [
+        "market slides",
+        "report scope",
+        "metric structure",
+        "evidence-backed analysis"
+      ],
+      "avoid_for": [
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.proposal_grid_4up_v1": {
+      "template_key": "proposal_grid_4up_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "summary",
+      "scope": "generic",
+      "density": "medium",
+      "tone": [
+        "executive"
+      ],
+      "structure": "grid",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 12,
+        "image_slots": 4,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1242
+      },
+      "footer_supported": true,
+      "best_for": [
+        "summary slides",
+        "generic scope",
+        "grid structure"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.rebranding_keywords_v1": {
+      "template_key": "rebranding_keywords_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "summary",
+      "scope": "generic",
+      "density": "light",
+      "tone": [
+        "executive"
+      ],
+      "structure": "story",
+      "visual_weight": "visual_first",
+      "content_capacity": {
+        "text_slots": 3,
+        "image_slots": 1,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 690
+      },
+      "footer_supported": false,
+      "best_for": [
+        "summary slides",
+        "generic scope",
+        "story structure"
+      ],
+      "avoid_for": [
+        "dense technical explanation",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.roadmap_timeline_v1": {
+      "template_key": "roadmap_timeline_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "timeline",
+      "scope": "generic",
+      "density": "medium",
+      "tone": [
+        "executive"
+      ],
+      "structure": "timeline",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 5,
+        "image_slots": 0,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 544
+      },
+      "footer_supported": false,
+      "best_for": [
+        "timeline slides",
+        "generic scope",
+        "timeline structure"
+      ],
+      "avoid_for": [
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.scale_checkpoint_flow_v2": {
+      "template_key": "scale_checkpoint_flow_v2",
+      "library_id": "template_library_04_v1",
+      "purpose": "strategy",
+      "scope": "generic",
+      "density": "medium",
+      "tone": [
+        "technical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 6,
+        "image_slots": 0,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 850
+      },
+      "footer_supported": false,
+      "best_for": [
+        "strategy slides",
+        "generic scope",
+        "comparison structure"
+      ],
+      "avoid_for": [
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.solution_4step_v1": {
+      "template_key": "solution_4step_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "strategy",
+      "scope": "generic",
+      "density": "dense",
+      "tone": [
+        "technical"
+      ],
+      "structure": "comparison",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 9,
+        "image_slots": 4,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 922
+      },
+      "footer_supported": true,
+      "best_for": [
+        "strategy slides",
+        "generic scope",
+        "comparison structure"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.summary_two_panel_v1": {
+      "template_key": "summary_two_panel_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "summary",
+      "scope": "generic",
+      "density": "medium",
+      "tone": [
+        "executive"
+      ],
+      "structure": "story",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 6,
+        "image_slots": 1,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 730
+      },
+      "footer_supported": true,
+      "best_for": [
+        "summary slides",
+        "generic scope",
+        "story structure"
+      ],
+      "avoid_for": [
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.team_profile_grid_v1": {
+      "template_key": "team_profile_grid_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "team",
+      "scope": "report",
+      "density": "medium",
+      "tone": [
+        "executive"
+      ],
+      "structure": "grid",
+      "visual_weight": "visual_first",
+      "content_capacity": {
+        "text_slots": 3,
+        "image_slots": 4,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 690
+      },
+      "footer_supported": false,
+      "best_for": [
+        "team slides",
+        "report scope",
+        "grid structure"
+      ],
+      "avoid_for": [
+        "dense technical explanation",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.toc_simple_index_v1": {
+      "template_key": "toc_simple_index_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "toc",
+      "scope": "generic",
+      "density": "light",
+      "tone": [
+        "executive"
+      ],
+      "structure": "grid",
+      "visual_weight": "balanced",
+      "content_capacity": {
+        "text_slots": 2,
+        "image_slots": 0,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 296
+      },
+      "footer_supported": false,
+      "best_for": [
+        "toc slides",
+        "generic scope",
+        "grid structure"
+      ],
+      "avoid_for": [
+        "multi-point body copy",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    },
+    "template_library_04_v1.toc_visual_tiles_v1": {
+      "template_key": "toc_visual_tiles_v1",
+      "library_id": "template_library_04_v1",
+      "purpose": "toc",
+      "scope": "generic",
+      "density": "dense",
+      "tone": [
+        "executive"
+      ],
+      "structure": "grid",
+      "visual_weight": "text_heavy",
+      "content_capacity": {
+        "text_slots": 15,
+        "image_slots": 4,
+        "chart_slots": 0,
+        "table_slots": 0,
+        "estimated_text_budget": 1204
+      },
+      "footer_supported": true,
+      "best_for": [
+        "toc slides",
+        "generic scope",
+        "grid structure"
+      ],
+      "avoid_for": [
+        "minimal-text visual moments",
+        "unreviewed production use without operator check"
+      ],
+      "override_applied": false
+    }
+  }
+}

@@ -1,0 +1,1522 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-04-23T06:34:03.031985Z",
+  "policy_id": "clean_release_export_policy",
+  "audience": "public_thin_installer_candidate",
+  "source": "git ls-files",
+  "output_root": "C:/Users/kimjo/Downloads/ppt-test/outputs/clean_release_export/ppt-agent-public",
+  "summary": {
+    "tracked_files": 309,
+    "exported_files": 185,
+    "excluded_candidates": 94,
+    "allowlisted_deny_matches": 0,
+    "token_hits": 0,
+    "required_missing": 0,
+    "required_sample_missing": 0,
+    "errors": 0,
+    "warnings": 0
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size_bytes": 275,
+      "sha256": "7f5ce219a7f6a450a5df1c16a4f38c5d7d25b519c866692544b4e107cbc832e4"
+    },
+    {
+      "path": ".github/workflows/smoke-test.yml",
+      "size_bytes": 3201,
+      "sha256": "1ed3b3fe8b46c7cd07bdef69c14de3ef9029e83ac45c3e5e699f4f18b9523dd6"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 576,
+      "sha256": "a4b3515ce9acc913e05f008756a6df4ed98c3383a5bec9aeabc1d356cc5a9b89"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 9958,
+      "sha256": "39a45629606a301f87bc50c8dd455247289bf6b306f09bb28d037b7523c49265"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 3987,
+      "sha256": "fffc975002608c1617a7123f5531afe68c025a4d5d0498271a373b42c1d8fb2d"
+    },
+    {
+      "path": "assets/fonts/README.md",
+      "size_bytes": 263,
+      "sha256": "b6ed3e705c5622acc78eb88dedfd147e98018cc610a709a4ed2e32ce3f332f7a"
+    },
+    {
+      "path": "assets/icons/README.md",
+      "size_bytes": 166,
+      "sha256": "2528c7e7cd18e0811271cba3306321406b3d52949cbe5944eb50a7629fc4a40f"
+    },
+    {
+      "path": "config/agent_task_contract.schema.json",
+      "size_bytes": 2568,
+      "sha256": "24d82a73afeb8b008b457892b6367b9507023f78c65496bb32ebb1ff2581c0fb"
+    },
+    {
+      "path": "config/beta_output_quality_policy.json",
+      "size_bytes": 1173,
+      "sha256": "0291ed774110c543e2a42316ec0d785f169bc234bd171d3b0abf259cc17fbe7c"
+    },
+    {
+      "path": "config/blueprint_mode_policy.json",
+      "size_bytes": 990,
+      "sha256": "10d6ff1022ccb767c868a4d1702ae5555f4d5732abb74c11ffa0038b5d80013d"
+    },
+    {
+      "path": "config/deck_design_review_gate.json",
+      "size_bytes": 464,
+      "sha256": "b49863f263b1eda306f3f6c9933d558ed914938e45c0800af470a0e3602a9fbe"
+    },
+    {
+      "path": "config/deck_intake.schema.json",
+      "size_bytes": 11137,
+      "sha256": "565073ccb9a9c50d1e50f3d21191f03700a40df23b1630c1cb335f6a01b5073e"
+    },
+    {
+      "path": "config/deck_spec.schema.json",
+      "size_bytes": 30522,
+      "sha256": "e41b3b3942975e04bfba09cbb1a193b5aff611cdc6756dfe0ac2a4e17bd6bf52"
+    },
+    {
+      "path": "config/document_rag_intake_evaluation_policy.json",
+      "size_bytes": 12722,
+      "sha256": "fd5e4f768aeb4cffbc31ac19dab5ff50b8b19d271a5ebbe9d54152a2e4e6ebb0"
+    },
+    {
+      "path": "config/gateway_metadata_recommendation_mock.json",
+      "size_bytes": 4217,
+      "sha256": "25d2e28ecf73d17d73d1daf118a59cc65b8876c6e2a8a194143f91d0853c29c1"
+    },
+    {
+      "path": "config/industry_storyline_taxonomy.json",
+      "size_bytes": 8598,
+      "sha256": "5de292eeb2646b40f93b50b758a00dea9b3e3b3b39713e3b4a9a759d413c08bb"
+    },
+    {
+      "path": "config/local_diagnostic_support_bundle_policy.json",
+      "size_bytes": 2112,
+      "sha256": "0ccd1ca05eb1fd85cecba1a231d5f804eb12036a26f4e5cb354ec6c264d8ce02"
+    },
+    {
+      "path": "config/mcp_adapter_manifest.json",
+      "size_bytes": 4866,
+      "sha256": "a31be54f4648acfa181f046e11dd285eeeb28741de1901cbb457b3d8f3c45050"
+    },
+    {
+      "path": "config/mode_policies/assistant_mode_policy.json",
+      "size_bytes": 1618,
+      "sha256": "208b1d9ea025bcccb28c08ead921d812998e1e547adebb5a65f0d58e97423c5a"
+    },
+    {
+      "path": "config/mode_policies/auto_mode_policy.json",
+      "size_bytes": 1356,
+      "sha256": "dc9cdc81687972bec2824fae3d84016436fb9d5174f5b4804c60e4d5db06d778"
+    },
+    {
+      "path": "config/mode_policies/schema.json",
+      "size_bytes": 661,
+      "sha256": "11cb13ee995b6ef7cdc67e5ed1646f2916838bbe3469c0ebaa5ac66b5dcfaab5"
+    },
+    {
+      "path": "config/output_delivery_manifest.schema.json",
+      "size_bytes": 4738,
+      "sha256": "1c1b3edb58b4e8712a3c96316c8e95a3a00f2c31df5c68620c06434a8121a5db"
+    },
+    {
+      "path": "config/output_quality_gate_policy.json",
+      "size_bytes": 832,
+      "sha256": "be47576a79a5f29176e3d46c293ca001b74fa0c7c256ce125fa1534394098f99"
+    },
+    {
+      "path": "config/ppt_asset_catalog.json",
+      "size_bytes": 72669,
+      "sha256": "37129b9a66be82511e8de91e05e33fcc4f3cb4bf486e8ef29a99223069933424"
+    },
+    {
+      "path": "config/ppt_asset_catalog.schema.json",
+      "size_bytes": 3315,
+      "sha256": "b1c41cba744a08e3aa7b62e640b29cb4ce7a3d90e41fa3c489451e9dff4920f4"
+    },
+    {
+      "path": "config/ppt_asset_roots.json",
+      "size_bytes": 454,
+      "sha256": "7169b4f525ca542a0d929d6a1233680d474ef9c9861e25bed5172857a48fdf85"
+    },
+    {
+      "path": "config/pptx_theme.example.json",
+      "size_bytes": 504,
+      "sha256": "0da8aa9cc687995daf6620eebdbcee2cc292bd87572a4f6d0fc4d792bb633626"
+    },
+    {
+      "path": "config/pptx_theme.neutral_modern.json",
+      "size_bytes": 512,
+      "sha256": "1e34801cc7fc33d0acc27a6fa598ffee37c08fd7dafe3ae222e24d7f4948c99e"
+    },
+    {
+      "path": "config/production_template_manifest.json",
+      "size_bytes": 37490,
+      "sha256": "2e028b203fe24d7321ca55240e2b6ec0b665eed8b958c936bbabe4f3276073f0"
+    },
+    {
+      "path": "config/project_manifest.schema.json",
+      "size_bytes": 2576,
+      "sha256": "904bcb64f7daeb8b296401e58cd74b17add1c2d7541cd53bee366bf29246f6d4"
+    },
+    {
+      "path": "config/public_cli_command_contract.json",
+      "size_bytes": 14208,
+      "sha256": "e77ed189ecd0b191d74f9f89311e4badb1704cb1a9f63452c45cd50b4f4569f3"
+    },
+    {
+      "path": "config/public_gate_sync_manifest_fixture.json",
+      "size_bytes": 1331,
+      "sha256": "b705436149599779414e12a41649cf6052e688c4c1f12909d0047df9840f0169"
+    },
+    {
+      "path": "config/public_gate_sync_policy.json",
+      "size_bytes": 1968,
+      "sha256": "92b48ee92b1818b016b72ecf87a849a1c0727971b4d2d0e002d12c3e560ba737"
+    },
+    {
+      "path": "config/public_gate_toolkit_dependency_policy.json",
+      "size_bytes": 2764,
+      "sha256": "e177cb4f407611fa97303bc21dc9f8e9840dd674fbd04420238ee0dc413f5de5"
+    },
+    {
+      "path": "config/public_private_ci_boundary_policy.json",
+      "size_bytes": 4318,
+      "sha256": "d2e66b3a036704d39f59c24517314bd7535a613ced4366c489ba29bd5f781892"
+    },
+    {
+      "path": "config/reference_catalog.json",
+      "size_bytes": 65547,
+      "sha256": "85be07f66687d5f66886ff75f39079f04d6969a1416af15f874b64b68e94c326"
+    },
+    {
+      "path": "config/reference_curation_catalog.json",
+      "size_bytes": 1117,
+      "sha256": "69a94f8b920c0b33b26fe486b8e9a6e854419bb83364122a9a5cfe87f049c28d"
+    },
+    {
+      "path": "config/reference_deck_index.schema.json",
+      "size_bytes": 3604,
+      "sha256": "c282f87e64b9b1d5ba824567c5621779e87f94bb7ba1af03163dd5ac3fb63c03"
+    },
+    {
+      "path": "config/reference_deck_metadata.schema.json",
+      "size_bytes": 835,
+      "sha256": "71ff5f2d62be243e7a462144e4420e930abfe3ac3bff8062e6f7b65b7e9c2244"
+    },
+    {
+      "path": "config/reference_knowledge_graph.json",
+      "size_bytes": 198415,
+      "sha256": "ad82ba8ff5bad700a4ef62f6e9bc0a1c17ed4e972e9eef94ba83ad92ad026adb"
+    },
+    {
+      "path": "config/reference_knowledge_graph.schema.json",
+      "size_bytes": 816,
+      "sha256": "046dab8e8161401b1c686fa99c00783583c737e78164534df2cd41116fdceca4"
+    },
+    {
+      "path": "config/reference_quality_dna_policy.json",
+      "size_bytes": 1665,
+      "sha256": "27878e6e4272619543b306baa61965842a559b0663dc59c818f58034194557d4"
+    },
+    {
+      "path": "config/reference_quality_labels.schema.json",
+      "size_bytes": 2141,
+      "sha256": "9a998f584229b6f0dc3fde61f97719a12b29936e41ca782f4d7a0542e30412a9"
+    },
+    {
+      "path": "config/reference_slide_metadata.schema.json",
+      "size_bytes": 1143,
+      "sha256": "a97def408bcba5aa01ccf28787c65923ec575667ebb7e72a4be5e32472617cc8"
+    },
+    {
+      "path": "config/reference_style_profiles.json",
+      "size_bytes": 74961,
+      "sha256": "ce194230759877afaaa59af3fe4a7a6fa31d0c491d03057b573531fb459d16ae"
+    },
+    {
+      "path": "config/run_manifest.schema.json",
+      "size_bytes": 2562,
+      "sha256": "5a43ff9601a2645b31235f9633e531a830d887301c81633760a265f0eb558725"
+    },
+    {
+      "path": "config/security_permission_policy.json",
+      "size_bytes": 3956,
+      "sha256": "b81542b293c7ad4faaf8d3a9633855695cd315573b58a0644ddc8abdd0fc9629"
+    },
+    {
+      "path": "config/slide_feedback_memory.json",
+      "size_bytes": 2450,
+      "sha256": "f0bd6789afa4140dd7292d85ca930f3d8879f8002b05aa6243c626a14bf1ff95"
+    },
+    {
+      "path": "config/template_blueprint_overrides.json",
+      "size_bytes": 34417,
+      "sha256": "bed288a56c5bfd2fdfa4f67ef0826c22b1e5b6bb99a92f74481ef8e4917dc721"
+    },
+    {
+      "path": "config/template_blueprints.json",
+      "size_bytes": 735688,
+      "sha256": "f482a5886aa0c100488197ac5385551c91e103496fab850c3d4ffba760232850"
+    },
+    {
+      "path": "config/template_blueprints/registry.json",
+      "size_bytes": 581,
+      "sha256": "679aa4569c576cf0cc0db150f51ab7c468ce3cb951757e73f811b008db04e181"
+    },
+    {
+      "path": "config/template_blueprints/template_library_01_v1.json",
+      "size_bytes": 161345,
+      "sha256": "b989a5087b15cb4011e7638e4ad08dce279c716457396b8cc8cf45784b5f2c7c"
+    },
+    {
+      "path": "config/template_blueprints/template_library_02_v1.json",
+      "size_bytes": 199404,
+      "sha256": "183adb7d56aa96785444ec368416f390cacf0180b41dc83e36ab80b792edc66d"
+    },
+    {
+      "path": "config/template_blueprints/template_library_03_v1.json",
+      "size_bytes": 183147,
+      "sha256": "0152246c24f467ef5fdd7577b589376771c6e2d33148e3fd8af2a94b8c9311f0"
+    },
+    {
+      "path": "config/template_blueprints/template_library_04_v1.json",
+      "size_bytes": 192102,
+      "sha256": "969d7b6c0fa800ae1fdfd921a13f16d94fa564b75ba494124cef2493ecc9e1c4"
+    },
+    {
+      "path": "config/template_catalog.json",
+      "size_bytes": 3427,
+      "sha256": "b06d5513b146a8969b3579fcf0872fb2d4cd667c3a8a1ffb06637090b51225b2"
+    },
+    {
+      "path": "config/template_design_dna.json",
+      "size_bytes": 47153,
+      "sha256": "0700a243fbd048d417ec447be5f501304c416775d75aafa72670eee51d1e98ff"
+    },
+    {
+      "path": "config/template_design_dna_overrides.json",
+      "size_bytes": 1648,
+      "sha256": "9899305c7ae86de892117f23126d039600980b4f06aa0fe95595e6ff67c8925f"
+    },
+    {
+      "path": "config/template_library_catalog.json",
+      "size_bytes": 14465,
+      "sha256": "6337d667e34bcc992918094d8795225d49790e7520929686d86bff27015bba3f"
+    },
+    {
+      "path": "config/template_pattern_catalog.json",
+      "size_bytes": 1791,
+      "sha256": "dbcb1f8fffc22202aa7275f36c513accfaf4a6a291aeb49bbf1fdfdbe3b668ed"
+    },
+    {
+      "path": "config/template_pattern_catalog.schema.json",
+      "size_bytes": 718,
+      "sha256": "f6578cf97d449e2aa4610b9e2a72e1044bd077b5b629090fb3c54b5f183284d3"
+    },
+    {
+      "path": "config/template_quality_overrides.json",
+      "size_bytes": 3659,
+      "sha256": "e40526c87f700b10c113d60732b6417e007a42c36faea64fb042b9bc83c5f8a3"
+    },
+    {
+      "path": "config/template_slot_name_manifest.json",
+      "size_bytes": 387492,
+      "sha256": "cf94a950d454247404a6dfa635a75aacca09ba2e7a46a2a55ea5d42ed276b854"
+    },
+    {
+      "path": "config/template_text_dna_cleanup.json",
+      "size_bytes": 11757,
+      "sha256": "b12ec02b25cea4480f2d4efee834e7f5eb3b07132b30ccbaeb0199b7c6a54169"
+    },
+    {
+      "path": "config/visual_content_image_gate_policy.json",
+      "size_bytes": 819,
+      "sha256": "0c4b00e1dd695b9a624d140f5686a31c474d15cc6cc2d245b1ef3f14fa26d20f"
+    },
+    {
+      "path": "config/workspace_code_admin_fixture_policy.json",
+      "size_bytes": 5862,
+      "sha256": "4482e40d0488f331f03c866fc428bee8e0396c314a8bf4cd22a713af811e5036"
+    },
+    {
+      "path": "config/workspace_code_entitlement_contract.json",
+      "size_bytes": 2880,
+      "sha256": "aad2cbc3d4fcaeafb6a9ffb323c3a056375b58621369c250a121aa6935da2977"
+    },
+    {
+      "path": "data/intake/ai_automation_exec_briefing.json",
+      "size_bytes": 3172,
+      "sha256": "c6470ae9703ad6a26922e75882eaaa06434fd7b3bc2dd733710fd5ab4131a293"
+    },
+    {
+      "path": "data/intake/business_growth_review.json",
+      "size_bytes": 2097,
+      "sha256": "2d5c16e1160cfc7fbbab04c27f847cc2bebd57f198567a62c65b10ee1962641f"
+    },
+    {
+      "path": "data/intake/portfolio_case_review.json",
+      "size_bytes": 2161,
+      "sha256": "0cce66e0d7a843693eac0a82313ff9509e92cbb4ffb648118dd1ac3a6f28edb8"
+    },
+    {
+      "path": "data/intake/report_exec_briefing.json",
+      "size_bytes": 2152,
+      "sha256": "6055bbd5a718c46ec0bac7da288e9dc31802db60d8816ed75d98fcbdf7ebcf5b"
+    },
+    {
+      "path": "data/intake/sales_solution_pitch.json",
+      "size_bytes": 2022,
+      "sha256": "b3a6ce5437170e067616ee6d706bce8f653ca5f5abad995445516174e649eb12"
+    },
+    {
+      "path": "data/intake/seasonal_seafood_guide.json",
+      "size_bytes": 2124,
+      "sha256": "60c3fada552299016a8f4635ff0adcd1fa58725a3bd7f817850030093b8fa18e"
+    },
+    {
+      "path": "data/intake/travel_experience_plan.json",
+      "size_bytes": 2122,
+      "sha256": "bd8b774c63eae2e35a81b669b9261148929cb7495623dbdc1498ac288f1db042"
+    },
+    {
+      "path": "data/specs/ai_automation_exec_briefing_spec.json",
+      "size_bytes": 13733,
+      "sha256": "471d0708ba3014c698fa64f04a5aafe280a11e91706921b199aafa2234994c52"
+    },
+    {
+      "path": "data/specs/business_growth_review_spec.json",
+      "size_bytes": 26692,
+      "sha256": "18fa213880d59ad7332f93916cfd133fb6ea3715ba115f109a0605a1f6beea50"
+    },
+    {
+      "path": "data/specs/chart_table_slot_sample_spec.json",
+      "size_bytes": 1308,
+      "sha256": "2ec56042ac18e05b625e6b9c7dc12ec1936b45c9406019730827003b3d36f5f8"
+    },
+    {
+      "path": "data/specs/jb_meeting_blueprint_spec.json",
+      "size_bytes": 7720,
+      "sha256": "4b5229d47840a7d4612024f9b13ca6baff59b845ad8373bc2139ee537fc7c6de"
+    },
+    {
+      "path": "data/specs/jb_meeting_component_modular_spec.json",
+      "size_bytes": 4450,
+      "sha256": "a4f4aa798a5b84f64d291f698f0c16de00f50e64380a4c818837ab1a8be7d18e"
+    },
+    {
+      "path": "data/specs/jb_meeting_component_preset_spec.json",
+      "size_bytes": 3037,
+      "sha256": "9c64a8f7063d76e9a2a3f9d9e273a8ef176a648c9d352e5f73bfeba4acef6c36"
+    },
+    {
+      "path": "data/specs/jb_meeting_deck_spec.json",
+      "size_bytes": 7329,
+      "sha256": "c84354a81dec1a5ee5c7d5bce5ac4b3d777ddc8ac1bd2ea9b1a79952ddc97a9f"
+    },
+    {
+      "path": "data/specs/jb_meeting_design_elevated_spec.json",
+      "size_bytes": 6612,
+      "sha256": "0e09ec74b557973003e45b14d36af8aa572bf601ffabb432179f97d75add6a7a"
+    },
+    {
+      "path": "data/specs/jb_meeting_selected_layout_spec.json",
+      "size_bytes": 6987,
+      "sha256": "9e7e7008c0085c1034d6409ff3da5529f6909a65ccc75951c0e018e64a9f0eb2"
+    },
+    {
+      "path": "data/specs/portfolio_auto_selection_sample.json",
+      "size_bytes": 3620,
+      "sha256": "5bbc4e5b3686692b3a4615732566c0063fb423ab991fc016f35bd8c1279f1765"
+    },
+    {
+      "path": "data/specs/public_smoke_blank_spec.json",
+      "size_bytes": 2080,
+      "sha256": "b4450120d521756380d5914b883f2ba9b6bb99f7a237a99c90b68f0ce694c135"
+    },
+    {
+      "path": "data/specs/report_auto_selection_sample.json",
+      "size_bytes": 3185,
+      "sha256": "ebcf69cc3eee5d363c8cfd159591bc5c48b30ae126e5824d05a40301e579fd45"
+    },
+    {
+      "path": "data/specs/report_exec_briefing_spec.json",
+      "size_bytes": 3443,
+      "sha256": "5f29ebaaeea4ef12c1baa326ed64d514a4e34bcbf8577ccad5d101eab2e28555"
+    },
+    {
+      "path": "data/specs/sales_auto_selection_sample.json",
+      "size_bytes": 3469,
+      "sha256": "1cb294d50fdcc6529b7acd7ff3bf01e88dc11fda00410426bade0d0da1d6a914"
+    },
+    {
+      "path": "data/specs/seasonal_seafood_guide_spec.json",
+      "size_bytes": 27994,
+      "sha256": "996f23fc4df162b81f9c11aed989c41b6fb65109b5ae9f957e26433ca561b2a2"
+    },
+    {
+      "path": "data/specs/template_slide_sample_spec.json",
+      "size_bytes": 851,
+      "sha256": "d53398030908e3d9d594d95daa2c1b309dc3479ceae660320f5ec1117d39e597"
+    },
+    {
+      "path": "data/specs/travel_experience_plan_spec.json",
+      "size_bytes": 30026,
+      "sha256": "0b0d57dc09836522a1b0a956ea2f4450c44b349b1794461f150c13a6d98f8132"
+    },
+    {
+      "path": "data/specs/variant_review_sample.json",
+      "size_bytes": 2357,
+      "sha256": "1d636f2bd262c7a5754b1231bce77e24446757af08585aadd3905bfcdc13bb24"
+    },
+    {
+      "path": "docs/ASCII_BLUEPRINT_PREBUILD_FLOW.md",
+      "size_bytes": 2587,
+      "sha256": "8f8705aecd52139289377495efc8d04af717f5b0ce3dfcbd6c4071d7b9c2ec27"
+    },
+    {
+      "path": "docs/ASPECT_RATIO_COMPATIBILITY.md",
+      "size_bytes": 2372,
+      "sha256": "a8cfc5ebed91ba6b6349849dd80111cb0586d6f9a07f62df9ff07ca57bba8190"
+    },
+    {
+      "path": "docs/ASSET_AWARE_SPEC_COMPOSER.md",
+      "size_bytes": 2592,
+      "sha256": "10054c098c27b5b5df880a5a2e1567de8d4d13c3d0c1a54fd69a28b1ca7ac03f"
+    },
+    {
+      "path": "docs/CI_PR_GATE.md",
+      "size_bytes": 4457,
+      "sha256": "57f7602bb5dfebf09604bf7b00477c3cb0949f299cb1364973a6b342a1647eb0"
+    },
+    {
+      "path": "docs/COMPONENT_SYSTEM.md",
+      "size_bytes": 1612,
+      "sha256": "361c996d5dda3bf6f8533fa107a606ee0db9b33931ca3346053913c9d123fd50"
+    },
+    {
+      "path": "docs/DECK_INTAKE_GUIDE.md",
+      "size_bytes": 4709,
+      "sha256": "45e170055959fa835ebf91b12a4688afa82443ab6128ed3215f7b503c650610f"
+    },
+    {
+      "path": "docs/DECK_SPEC.md",
+      "size_bytes": 7545,
+      "sha256": "79cbf5a09fa614b3470abe87589921a275317a2ea815bf9975c89befff42edc6"
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "size_bytes": 8106,
+      "sha256": "80b501f3ee272a0b413148a3894648fae0b4b8838264d7d87c23e31c6b5b717f"
+    },
+    {
+      "path": "docs/DESIGN_AGENT_PROMPT_CROSSWALK.md",
+      "size_bytes": 7272,
+      "sha256": "ae83482d725399a30ecb5b58b42bef46f4712e935838fed26d9c7c7a2e44fe18"
+    },
+    {
+      "path": "docs/HTML_FINAL_OUTPUT_TRACK.md",
+      "size_bytes": 3012,
+      "sha256": "6b2d318c1cf510d67cb8a04457b82a17c5459141ce8c8ce8c8d40a2e2de45e77"
+    },
+    {
+      "path": "docs/INDUSTRY_AWARE_SPEC_COMPOSER.md",
+      "size_bytes": 3647,
+      "sha256": "965ed841374b4dd3c1cea9abe5a87f5868efc19ce803a79cc05208d861471612"
+    },
+    {
+      "path": "docs/LLM_SUMMARIZATION_GUARDRAIL.md",
+      "size_bytes": 4985,
+      "sha256": "177fab837549c62e3b590ebcd9d5b3b4ada5920c9e7b9b410d34442258bcbe77"
+    },
+    {
+      "path": "docs/MINIMUM_DECK_QUALITY_GUIDE.md",
+      "size_bytes": 7346,
+      "sha256": "faf5300187c99f7bf56e807c594e9513d2af0e7ecc509d071d3e69f347f9675f"
+    },
+    {
+      "path": "docs/PRODUCTION_TEMPLATE_GUIDE.md",
+      "size_bytes": 5214,
+      "sha256": "12f931b72702b2bb7b99111f74536fb33c5b9112037ffbd19a699eb16e1c3772"
+    },
+    {
+      "path": "docs/PROJECT_MANIFEST.md",
+      "size_bytes": 2450,
+      "sha256": "224937cea06e4b444f8336624e450e9f99f82682e2a4efb988f98f5503b9bb68"
+    },
+    {
+      "path": "docs/PUBLIC_GATE_PROJECT_BOOTSTRAP.md",
+      "size_bytes": 2236,
+      "sha256": "1023c10b1cb2fc2ca6eb509a8b5a1fadb27a3d41da382b9a9f25cc8bc8e93b04"
+    },
+    {
+      "path": "docs/PUBLIC_GATE_SYNC_PATH.md",
+      "size_bytes": 1551,
+      "sha256": "f4391ef553d72bc7e4a987a00bf973ae7a0b0298c4dcb41d97bc221dacef049c"
+    },
+    {
+      "path": "docs/PUBLIC_GATE_TOOLKIT_DEPENDENCY_BOUNDARY.md",
+      "size_bytes": 2000,
+      "sha256": "fc3dc21c23814f49bba748869900821f119232f6022a044b027c627892316da1"
+    },
+    {
+      "path": "docs/PUBLIC_PRIVATE_CI_BOUNDARY.md",
+      "size_bytes": 2053,
+      "sha256": "76d9b33d76bee69b0690b052dfb3d77bd72f441e9abbd624144f6321f70c3c28"
+    },
+    {
+      "path": "docs/REFERENCE_DESIGN_AUDIT.md",
+      "size_bytes": 5391,
+      "sha256": "cab577e370b42e11d83501e8f98dc1f3d271d92d44d7bececb599aaf7a3b8e62"
+    },
+    {
+      "path": "docs/REFERENCE_PIPELINE_BOUNDARY_AUDIT.md",
+      "size_bytes": 1978,
+      "sha256": "a908d63ed68acd9cf3318fb3cf2f1b2679ddfed25011540caa486be19f8d8099"
+    },
+    {
+      "path": "docs/RESPONSIVE_BLUEPRINT_CONTRACT.md",
+      "size_bytes": 3908,
+      "sha256": "e4e0bc87a9ea59233e4c2a1ad1ebca896a8fea7cc5ee400af0b400cdeb708193"
+    },
+    {
+      "path": "docs/RUN_OUTPUT_STRUCTURE.md",
+      "size_bytes": 7376,
+      "sha256": "bd89db0bb35bfd5d383decd9f8bc2a6b01bbf477b6dc6beb6b05d33b7d5a351d"
+    },
+    {
+      "path": "docs/SECURITY_PERMISSION_POLICY.md",
+      "size_bytes": 4027,
+      "sha256": "76dc881d29038e1f3033032b9ba9b312681e427bb211b0cf79c5315367c1df56"
+    },
+    {
+      "path": "docs/SLIDE_FEEDBACK_LOOP.md",
+      "size_bytes": 1234,
+      "sha256": "770672b006492684b2b8900007539ef56fb05115491f26f5d88ec17c2030b50d"
+    },
+    {
+      "path": "docs/TEMPLATE_BLUEPRINT_GUIDE.md",
+      "size_bytes": 7773,
+      "sha256": "faf3c969c1031dcf5b9b20cbecc0037beef6f2f4e5aefce8292c8398565ce535"
+    },
+    {
+      "path": "docs/TEMPLATE_CATALOG.md",
+      "size_bytes": 1873,
+      "sha256": "707fb89088e56cea35342fe1d090b7f181a2f1cb96cd990b8e2af088875d13c8"
+    },
+    {
+      "path": "docs/TEMPLATE_DESIGN_DNA.md",
+      "size_bytes": 3061,
+      "sha256": "532c6ba37b0e615a99ca3d9812ddc851fde9738da5f6708dcc057318624b8956"
+    },
+    {
+      "path": "docs/TEMPLATE_INDEX_DB.md",
+      "size_bytes": 2184,
+      "sha256": "f28d14cae13d8c24d84a4280870b0c3b145974dce3e3cfe7cfc3bfccab0cab1d"
+    },
+    {
+      "path": "docs/TEMPLATE_VARIANTS.md",
+      "size_bytes": 3430,
+      "sha256": "d58a86ae0241bad591495cea468dce642c879f37828d25a6ada4a29c2a3fde19"
+    },
+    {
+      "path": "docs/WORKSPACE_CODE_QUOTA_USAGE.md",
+      "size_bytes": 3027,
+      "sha256": "20f75fdfdf4e1f8ee8232dedb15b2bcfbaa5d4de54508ff2eb480c438f202abe"
+    },
+    {
+      "path": "docs/beta/CLI_MCP_GOLDEN_PATH.md",
+      "size_bytes": 1643,
+      "sha256": "d8fd2062ea74d57060706316d6dc430e88156f14e53734f45d4bfddaa3b03ce9"
+    },
+    {
+      "path": "docs/beta/INSTALL_AND_FIRST_RUN.md",
+      "size_bytes": 1565,
+      "sha256": "f32e5809857389eaab4e84b39bcfafa672286975323076a8bd6eb6a1ef64daf3"
+    },
+    {
+      "path": "docs/beta/PRIVACY_AND_SUPPORT.md",
+      "size_bytes": 1501,
+      "sha256": "33d12f99e07e5c394941b5e7c16a0418887498ff90bc3f5181025c38b4331c8f"
+    },
+    {
+      "path": "docs/beta/TROUBLESHOOTING.md",
+      "size_bytes": 1454,
+      "sha256": "6ec01bec54f1bcc202344867324bf2fd4d4d07d817e6af78baa6880c7111a711"
+    },
+    {
+      "path": "requirements.txt",
+      "size_bytes": 98,
+      "sha256": "0ecfd26454e277226273071fb19cc97918f19ca49eb73d64f2a1818b225168cd"
+    },
+    {
+      "path": "scripts/Prepare-PublicGateSync.ps1",
+      "size_bytes": 3430,
+      "sha256": "f6398be37eab9f5fe2382e2d7f51127198abf33814ae43254dd92500a732598e"
+    },
+    {
+      "path": "scripts/analyze_reference_designs.py",
+      "size_bytes": 12880,
+      "sha256": "bfb2d906a084dd1015d40862eff4af1dbea2dd42b898c4d646928cdf682ebc91"
+    },
+    {
+      "path": "scripts/analyze_reference_slide_metadata.py",
+      "size_bytes": 5582,
+      "sha256": "439aa4b994dbbeb71062fcb63b1481b684e710de6189164e6d5fcd620d90fc85"
+    },
+    {
+      "path": "scripts/analyze_responsive_blueprint_readiness.py",
+      "size_bytes": 10921,
+      "sha256": "883a2717a192c3307c57eb8f7c6080df656aa89669d5f59cfe2e8eaf873359cb"
+    },
+    {
+      "path": "scripts/apply_reference_review_labels.py",
+      "size_bytes": 12104,
+      "sha256": "369d9f6a8c08a38825447465e1e44c01d86e29c563c22de27056fb7154336356"
+    },
+    {
+      "path": "scripts/bootstrap_public_gate_workspace.py",
+      "size_bytes": 4411,
+      "sha256": "2f9d9145096f9c61c55678439114a61d8fdec98ecd7cc884e957bd03c154e037"
+    },
+    {
+      "path": "scripts/build_deck.py",
+      "size_bytes": 55490,
+      "sha256": "a7d04a284beff3346b0e71b9635530d3bcfd6730aebb4bfeb7f1065dbf216877"
+    },
+    {
+      "path": "scripts/build_dual_outputs.py",
+      "size_bytes": 5246,
+      "sha256": "7f7bf36514e9be932b2bbfeafb04cd923e8ba1829577b9d909a3b6d870454628"
+    },
+    {
+      "path": "scripts/build_html_deck.py",
+      "size_bytes": 20434,
+      "sha256": "07aa5ac9cba4b988516a9a050100bdacfc6126db1afccf33d7c137d4ce0fc887"
+    },
+    {
+      "path": "scripts/build_jb_meeting_ppt.py",
+      "size_bytes": 335,
+      "sha256": "33a45e7af0cc070cb62a3c352b29e2dc40520631d5c2c5bac0eabac4bd9a96f1"
+    },
+    {
+      "path": "scripts/build_ppt_asset_catalog.py",
+      "size_bytes": 17837,
+      "sha256": "0ec69baf863fad0ed3520fe211e3a2a7461e4aa104d556d7754f0b2e64532c6a"
+    },
+    {
+      "path": "scripts/build_production_template_index.py",
+      "size_bytes": 6685,
+      "sha256": "d545841504544304fc01458581a5db5ca67c2c71e3ec138130163cd47a8b7b3d"
+    },
+    {
+      "path": "scripts/build_reference_catalog.py",
+      "size_bytes": 17455,
+      "sha256": "ce7163a7edbd133b76f5b7634329d220bdf3fe352753690939faf4c3894eee3e"
+    },
+    {
+      "path": "scripts/build_reference_knowledge_graph.py",
+      "size_bytes": 5154,
+      "sha256": "3af3166a536581d49cd26d1e68b91bcb9fe1d5ea8b8f6248f58f15bc9e13b4c2"
+    },
+    {
+      "path": "scripts/build_reference_quality_dna.py",
+      "size_bytes": 15071,
+      "sha256": "04a25c1e99fac3e8a342f4b66ff5414736fa235a34584db364ce9cb23d740710"
+    },
+    {
+      "path": "scripts/build_system_template.py",
+      "size_bytes": 978,
+      "sha256": "1e7142133fd771611d15c32fc3e258d10d1b19350cfeea7f36c990b522928e46"
+    },
+    {
+      "path": "scripts/build_template_design_dna.py",
+      "size_bytes": 8589,
+      "sha256": "82740e775d03510f02c9df4986bac306f59ab0947e6bff343ba471f5d76631ab"
+    },
+    {
+      "path": "scripts/build_template_index_db.py",
+      "size_bytes": 10424,
+      "sha256": "051b548c6f1524f8244f366f2ce6e75a5776a432d13b0609ce0e3aea3a256315"
+    },
+    {
+      "path": "scripts/build_template_libraries.py",
+      "size_bytes": 2396,
+      "sha256": "59bc54bd40f6530e8247223d80ccf1c4d8bb5c6582a8760f24262337091ea12a"
+    },
+    {
+      "path": "scripts/build_template_pattern_catalog.py",
+      "size_bytes": 3122,
+      "sha256": "553cdbcb1ed27964dac8ec89196a3c10a030a7e0bc3a984e9533f8bf865ccd8d"
+    },
+    {
+      "path": "scripts/build_variant_review_deck.py",
+      "size_bytes": 5452,
+      "sha256": "25f895453b784b8ff8ca38ccf651c643a87cb8f9330d90e545587076acb41c36"
+    },
+    {
+      "path": "scripts/compose_deck_spec_from_intake.py",
+      "size_bytes": 64086,
+      "sha256": "3ae3905223346baecc58302560ead871753cf67382d93118f3510e1a2db11d79"
+    },
+    {
+      "path": "scripts/deliver_project_output.py",
+      "size_bytes": 9379,
+      "sha256": "8625b8ca2621363a2f33b7262f1b3efdbc2c48604ee710ddeea5ed937083189a"
+    },
+    {
+      "path": "scripts/diagnose_template_text_readback.py",
+      "size_bytes": 8238,
+      "sha256": "2a2d57165b895299f92160d05bed5d7ac68e26a094a62cecbab7bf4c66fca49e"
+    },
+    {
+      "path": "scripts/export_deck_schema.py",
+      "size_bytes": 673,
+      "sha256": "c72f347aa8355d68ef265a1764d35fda0f03007298f7ad38f180fea5c61451b5"
+    },
+    {
+      "path": "scripts/extract_reference_components.py",
+      "size_bytes": 3450,
+      "sha256": "1b69281d8211c274e248e3ff35947f9d4535bba71b3314674cf3e1c363828247"
+    },
+    {
+      "path": "scripts/inspect_template_aspect_ratios.py",
+      "size_bytes": 6493,
+      "sha256": "38b118c4de0bbe8c2c1b18fa0c82b42c0c79be17556ccb9115f1e624389ca6be"
+    },
+    {
+      "path": "scripts/inspect_template_static_artifacts.py",
+      "size_bytes": 4811,
+      "sha256": "a8fe26d0c84e1a0af84f88b3473c65b3e592fa96fd490dd0da229963f6b4b576"
+    },
+    {
+      "path": "scripts/manage_template_slot_names.py",
+      "size_bytes": 22469,
+      "sha256": "a8da540bc2f04ee21df7796cca8da957ead29b4b1add804f5903b18d8c22527a"
+    },
+    {
+      "path": "scripts/mcp_adapter.py",
+      "size_bytes": 10403,
+      "sha256": "6c1c3a562b27e555b583a6a5ed0c1341af3fc009812f25af2aa9dd56d9b9326c"
+    },
+    {
+      "path": "scripts/mock_gateway_metadata_recommendation.py",
+      "size_bytes": 14329,
+      "sha256": "147ee23f34816a84a8f0ea288033526d7371155abb0404d80e275cfbba222f23"
+    },
+    {
+      "path": "scripts/normalize_reference_files.py",
+      "size_bytes": 10307,
+      "sha256": "3e6dc077667945696848a7f06b75e72ddc23031421030845d8687d00ef324f91"
+    },
+    {
+      "path": "scripts/output_bundles.py",
+      "size_bytes": 11096,
+      "sha256": "c8edff3e50bba9737ee1f04c0f42e64bf73f55a1cea1ba849530c17ff3c555fb"
+    },
+    {
+      "path": "scripts/parse_reference_deck.py",
+      "size_bytes": 17343,
+      "sha256": "a380feb5bd5fbfa2cf36fcfb9c6a4f54add42f6ac749c5d6d9aad447eb7466b6"
+    },
+    {
+      "path": "scripts/patch_deck_spec.py",
+      "size_bytes": 9604,
+      "sha256": "5b6eee05e5a1dc84fcd807a6a3413ccfa6dafdc668fba4bc8db1832ba4bd9abd"
+    },
+    {
+      "path": "scripts/ppt_cli_history.py",
+      "size_bytes": 7333,
+      "sha256": "2ebdda0ca2578e47482f066c17b1ed161de8bc42593764da289b748a5a0cd1cb"
+    },
+    {
+      "path": "scripts/ppt_cli_workspace.py",
+      "size_bytes": 27744,
+      "sha256": "631dbb1da20e88e0c3e9bdf321437e216bb8e5aee2cd667734665ce7e776babf"
+    },
+    {
+      "path": "scripts/ppt_support_bundle.py",
+      "size_bytes": 20635,
+      "sha256": "d1c932bbc90a7138e98de27b46001d63d34cf6766d8499a32d25aa742d37e79d"
+    },
+    {
+      "path": "scripts/ppt_system.py",
+      "size_bytes": 19617,
+      "sha256": "33de54ebcf8a97b806151cbb0c59748348c18d904d639fd7dacd24a87e188658"
+    },
+    {
+      "path": "scripts/ppt_workspace_entitlement.py",
+      "size_bytes": 19144,
+      "sha256": "fe53d9be7e6f83d4d14f133b5d7e0e3d6a41e0fa88c1b4bbf81190779452e000"
+    },
+    {
+      "path": "scripts/promote_reference_candidates.py",
+      "size_bytes": 7642,
+      "sha256": "72ed4161495625a096f2dcdfba83f40d7ac8d37bcace8a6945294beae2adfc9f"
+    },
+    {
+      "path": "scripts/recommend_assistant_templates.py",
+      "size_bytes": 15031,
+      "sha256": "05e767e964f751e903762a14c52b825eccc2273b1d159c3a3b7e0b46a0b0f269"
+    },
+    {
+      "path": "scripts/reference_pipeline.py",
+      "size_bytes": 13203,
+      "sha256": "f8b618dbca7399e245b78dabe9e4341485b7591492aaa45e91a09319f012dbe6"
+    },
+    {
+      "path": "scripts/render_ascii_blueprint.py",
+      "size_bytes": 21727,
+      "sha256": "9de0bf05cb75b38a08724ed5fd86dc0c8f4059dcf973a7ac28268dea2b7e83fd"
+    },
+    {
+      "path": "scripts/render_template_thumbnails.py",
+      "size_bytes": 11338,
+      "sha256": "d81c7f5a785a662b9a8d6aa3714e4c93318331455191ab0d39070d6566f39b85"
+    },
+    {
+      "path": "scripts/run_auto_self_correction.py",
+      "size_bytes": 11854,
+      "sha256": "80719697e690e402624ae8d7c0ca4ad95e51faf3fedadca5fe196b3ff86d420d"
+    },
+    {
+      "path": "scripts/send_delivery_slack_message.py",
+      "size_bytes": 6388,
+      "sha256": "69f504b63efb6b70897130130be0943f0acb01c7054c93a56f7a80c446a0fbfc"
+    },
+    {
+      "path": "scripts/sync_reference_quality_buckets.py",
+      "size_bytes": 6612,
+      "sha256": "e03ba566c6e8cfb5f2a08270bb7801cd0cdcba7a84c149faadefd52a91531598"
+    },
+    {
+      "path": "system/__init__.py",
+      "size_bytes": 37,
+      "sha256": "0c861a73249cf0fe24e4e541bf198becd71a33d8bf158681b0fa66553806215f"
+    },
+    {
+      "path": "system/blueprint_loader.py",
+      "size_bytes": 3215,
+      "sha256": "12288a3e343bb983b2dc0f9c9d1c706a83f61cbd93f21b891562618f6fa1de61"
+    },
+    {
+      "path": "system/deck_models.py",
+      "size_bytes": 12258,
+      "sha256": "51372d4a1f402ed636acfef99ccc90603fe212d618fcfa1ef6eb4dc647ba3722"
+    },
+    {
+      "path": "system/intake_models.py",
+      "size_bytes": 4534,
+      "sha256": "87b0bc5d6bc7957257d3dd3ebef50b403d9d243a493742826b4f4752ddbc806e"
+    },
+    {
+      "path": "system/layouts/__init__.py",
+      "size_bytes": 101,
+      "sha256": "2d9b533e904128a46a3b09b32e3e52dc8b34fdc4aeea63d41ebd4a9b21165c01"
+    },
+    {
+      "path": "system/pptx_system.py",
+      "size_bytes": 17904,
+      "sha256": "5349de542eb952f995d7e0252b5e8b7ca6ea634957acf134704d0f86a971dd89"
+    },
+    {
+      "path": "system/template_engine.py",
+      "size_bytes": 15773,
+      "sha256": "5615f4cebc8274e97dbb7bdaf0699fed1e88f41710b0d22d3f8ff46f559f0f6f"
+    },
+    {
+      "path": "system/template_text_dna.py",
+      "size_bytes": 2357,
+      "sha256": "60bf257b496f8771ac562dc34cecdf5085442c827be856cf5eb81908532a5ec8"
+    },
+    {
+      "path": "system/text_summarizer.py",
+      "size_bytes": 5998,
+      "sha256": "36eb66d99e8a1d3925fba16f3d457779268d2031c9a905f7ffe9156fd50bf247"
+    }
+  ],
+  "excluded_candidates": [
+    {
+      "path": ".github/workflows/regression-gate.yml",
+      "patterns": [
+        "^\\.github/workflows/regression-gate\\.yml$"
+      ]
+    },
+    {
+      "path": "config/beta_documentation_pack_policy.json",
+      "patterns": [
+        "beta_documentation_pack_policy"
+      ]
+    },
+    {
+      "path": "config/beta_packaging_dry_run_policy.json",
+      "patterns": [
+        "beta_packaging_dry_run"
+      ]
+    },
+    {
+      "path": "config/clean_release_export_policy.json",
+      "patterns": [
+        "clean_release_export_policy"
+      ]
+    },
+    {
+      "path": "config/invite_beta_acceptance_matrix.json",
+      "patterns": [
+        "(^|/)invite_beta_.*"
+      ]
+    },
+    {
+      "path": "config/invite_beta_final_qa_policy.json",
+      "patterns": [
+        "(^|/)invite_beta_.*"
+      ]
+    },
+    {
+      "path": "config/invite_beta_release_boundary.json",
+      "patterns": [
+        "(^|/)invite_beta_.*"
+      ]
+    },
+    {
+      "path": "config/invite_beta_release_candidate_gate.json",
+      "patterns": [
+        "(^|/)invite_beta_.*"
+      ]
+    },
+    {
+      "path": "config/output_delivery_policy.json",
+      "patterns": [
+        "output_delivery_policy"
+      ]
+    },
+    {
+      "path": "config/output_delivery_policy.schema.json",
+      "patterns": [
+        "output_delivery_policy"
+      ]
+    },
+    {
+      "path": "config/post_beta_cto_product_review_policy.json",
+      "patterns": [
+        "^.*cto.*review.*$"
+      ]
+    },
+    {
+      "path": "config/private_admin_gateway_activation_service_contract.json",
+      "patterns": [
+        "(^|/)private_.*"
+      ]
+    },
+    {
+      "path": "config/private_gateway_contract_v0.json",
+      "patterns": [
+        "(^|/)private_.*"
+      ]
+    },
+    {
+      "path": "config/private_invite_installer_boundary.json",
+      "patterns": [
+        "(^|/)private_.*"
+      ]
+    },
+    {
+      "path": "config/public_private_repo_split_policy.json",
+      "patterns": [
+        "public_private_repo_split_policy"
+      ]
+    },
+    {
+      "path": "config/workspace_code_issuance_policy.json",
+      "patterns": [
+        "workspace_code_issuance"
+      ]
+    },
+    {
+      "path": "docs/EXTERNAL_ASSET_SYSTEM_INTEGRATION_PREP.md",
+      "patterns": [
+        "^docs/EXTERNAL_ASSET_SYSTEM_INTEGRATION_PREP\\.md$"
+      ]
+    },
+    {
+      "path": "docs/PPT_DESIGN_ASSET_LIBRARY.md",
+      "patterns": [
+        "^docs/PPT_DESIGN_ASSET_LIBRARY\\.md$"
+      ]
+    },
+    {
+      "path": "docs/PRIVATE_ADMIN_GATEWAY_ACTIVATION_SERVICE.md",
+      "patterns": [
+        "(^|/)private_.*"
+      ]
+    },
+    {
+      "path": "docs/reference_review_inputs/b19_legacy_seafood_canonical_labels.json",
+      "patterns": [
+        "(^|/)reference_review_inputs/"
+      ]
+    },
+    {
+      "path": "docs/reference_review_inputs/b9_generated_015_labels.json",
+      "patterns": [
+        "(^|/)reference_review_inputs/"
+      ]
+    },
+    {
+      "path": "scripts/build_beta_packaging_dry_run.py",
+      "patterns": [
+        "beta_packaging_dry_run"
+      ]
+    },
+    {
+      "path": "scripts/build_clean_release_export.py",
+      "patterns": [
+        "^scripts/build_clean_release_export\\.py$"
+      ]
+    },
+    {
+      "path": "scripts/run_regression_gate.py",
+      "patterns": [
+        "^scripts/run_regression_gate\\.py$"
+      ]
+    },
+    {
+      "path": "scripts/test_industry_spec_composer.py",
+      "patterns": [
+        "^scripts/test_"
+      ]
+    },
+    {
+      "path": "scripts/test_intake_composer_guardrails.py",
+      "patterns": [
+        "^scripts/test_"
+      ]
+    },
+    {
+      "path": "scripts/test_llm_summary_guardrail.py",
+      "patterns": [
+        "^scripts/test_"
+      ]
+    },
+    {
+      "path": "scripts/test_runtime_enhancements.py",
+      "patterns": [
+        "^scripts/test_"
+      ]
+    },
+    {
+      "path": "scripts/test_variation_penalty.py",
+      "patterns": [
+        "^scripts/test_"
+      ]
+    },
+    {
+      "path": "scripts/validate_ascii_blueprint.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_asset_aware_composer.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_assistant_visual_recommendations.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_auto_self_correction_report.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_beta_documentation_pack.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_beta_output_quality.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_beta_packaging_dry_run.py",
+      "patterns": [
+        "beta_packaging_dry_run",
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_blueprint_mode_policy.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_chart_table_slots.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_clean_release_export.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_cli_history.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_deck_design_review.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_deck_intake.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_design_quality.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_document_rag_intake_evaluation.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_dual_output_flow.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_gateway_contract_hardening.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_gateway_metadata_recommendation_mock.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_golden_path_beta_ux.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_html_output.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_invite_beta_acceptance_matrix.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_invite_beta_final_qa.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_invite_beta_release_boundary.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_invite_beta_release_candidate_gate.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_local_diagnostic_support_bundle.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_local_path_hardening.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_mcp_adapter.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_mode_policies.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_output_delivery_manifest.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_output_delivery_policy.py",
+      "patterns": [
+        "output_delivery_policy",
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_output_quality_gates.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_pattern_selection_intelligence.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_post_beta_cto_product_review.py",
+      "patterns": [
+        "^.*cto.*review.*$",
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_ppt_asset_catalog.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_pptx_package.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_private_admin_gateway_activation_service.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_private_gateway_contract.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_private_invite_installer.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_project_manifest.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_public_cli_contract.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_public_cli_workspace.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_public_gate_sync_path.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_public_gate_toolkit_dependency.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_public_private_ci_boundary.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_public_private_repo_split.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_public_thin_ppt_smoke.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_reference_curation.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_reference_deck_index.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_reference_knowledge_graph.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_reference_quality_dna.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_reference_slide_metadata.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_run_manifest.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_security_permission_policy.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_slide_feedback_memory.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_spec_patch_flow.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_template_blueprints.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_template_design_dna.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_template_pattern_catalog.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_template_text_dna_cleanup.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_visual_content_image_gate.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_visual_drift.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_visual_smoke.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_workspace_code_admin_fixtures.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_workspace_code_entitlement.py",
+      "patterns": [
+        "^scripts/validate_"
+      ]
+    },
+    {
+      "path": "scripts/validate_workspace_code_issuance_masking.py",
+      "patterns": [
+        "workspace_code_issuance",
+        "^scripts/validate_"
+      ]
+    }
+  ],
+  "allowlisted_deny_matches": [],
+  "token_hits": [],
+  "required_missing": [],
+  "required_sample_missing": [],
+  "warnings": [],
+  "errors": []
+}

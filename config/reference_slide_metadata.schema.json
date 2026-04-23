@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reference_slide_metadata.schema.json",
+  "title": "Reference Slide Metadata",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "reference_id", "slides"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "reference_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*_[0-9]{3}$"
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["schema_version", "identity", "curation"],
+        "properties": {
+          "schema_version": {
+            "const": "1.0"
+          },
+          "identity": {
+            "type": "object",
+            "required": ["slide_id", "reference_id", "source_file", "source_checksum", "source_slide_no", "preview_png", "one_slide_pptx", "asset_stem"]
+          },
+          "curation": {
+            "type": "object",
+            "required": ["quality_label", "curation_stage", "promotion_status", "human_review_status"]
+          }
+        }
+      }
+    }
+  }
+}

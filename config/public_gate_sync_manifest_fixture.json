@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "manifest_id": "public_gate_sync_fixture_20260423",
+  "created_at": "2026-04-23T14:00:00+09:00",
+  "source_boundary": {
+    "private_reference_outputs_included": false,
+    "binary_assets_included": false,
+    "registry_exports_included": false,
+    "local_absolute_paths_included": false,
+    "drive_linkage_included": false,
+    "work_logs_included": false,
+    "workspace_manifests_included": false
+  },
+  "public_gate_target": {
+    "repository_url": "https://github.com/Kdreammaker/ai-asset-contribution-gate",
+    "mode": "dry_run_first",
+    "write_requires_operator_approval": true
+  },
+  "candidate_metadata": [
+    {
+      "candidate_id": "candidate_public_safe_001",
+      "asset_type": "image_metadata",
+      "title": "Public-safe sample visual candidate",
+      "description": "Metadata-only fixture for validating public gate candidate intake shape.",
+      "declared_license": "operator_review_required",
+      "source_summary_hash": "2a44d4b3cbeccf96d7f851c4864a1f43c3aa219ac0f92af91383de0714b146d3",
+      "ai_generation_disclosure": "ai_generated_or_ai_assisted",
+      "safety_review_status": "pending_public_gate_review"
+    }
+  ],
+  "operator_approval": {
+    "approval_recorded": false,
+    "approved_by": null,
+    "approved_at": null,
+    "public_write_allowed": false
+  }
+}

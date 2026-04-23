@@ -1,0 +1,24 @@
+{
+  "name": "neutral-modern-report",
+  "font_family": "Malgun Gothic",
+  "colors": {
+    "primary": "#1E3A8A",
+    "accent_1": "#F97316",
+    "accent_2": "#2563EB",
+    "dark": "#111827",
+    "gray": "#6B7280",
+    "mid": "#9CA3AF",
+    "white": "#FFFFFF",
+    "light": "#F8FAFC",
+    "panel": "#EFF6FF",
+    "border": "#DBEAFE"
+  },
+  "sizes": {
+    "cover_title": 32,
+    "hero_title": 24,
+    "section_header": 11.5,
+    "card_title": 16,
+    "body_strong": 13,
+    "body": 11.5
+  }
+}

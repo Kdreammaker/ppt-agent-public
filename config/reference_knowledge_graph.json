@@ -1,0 +1,6207 @@
+{
+  "schema_version": "1.0",
+  "generated_from": [
+    "config/reference_catalog.json",
+    "config/template_design_dna.json",
+    "assets/slides/library/*/metadata/*.json"
+  ],
+  "nodes": [
+    {
+      "id": "audience:analytical",
+      "type": "audience",
+      "label": "analytical"
+    },
+    {
+      "id": "audience:conservative",
+      "type": "audience",
+      "label": "conservative"
+    },
+    {
+      "id": "audience:executive",
+      "type": "audience",
+      "label": "executive"
+    },
+    {
+      "id": "audience:portfolio",
+      "type": "audience",
+      "label": "portfolio"
+    },
+    {
+      "id": "audience:sales",
+      "type": "audience",
+      "label": "sales"
+    },
+    {
+      "id": "audience:technical",
+      "type": "audience",
+      "label": "technical"
+    },
+    {
+      "id": "category:analysis",
+      "type": "category",
+      "label": "analysis"
+    },
+    {
+      "id": "category:chart",
+      "type": "category",
+      "label": "chart"
+    },
+    {
+      "id": "category:closing",
+      "type": "category",
+      "label": "closing"
+    },
+    {
+      "id": "category:cover",
+      "type": "category",
+      "label": "cover"
+    },
+    {
+      "id": "category:general",
+      "type": "category",
+      "label": "general"
+    },
+    {
+      "id": "category:issue",
+      "type": "category",
+      "label": "issue"
+    },
+    {
+      "id": "category:market",
+      "type": "category",
+      "label": "market"
+    },
+    {
+      "id": "category:process",
+      "type": "category",
+      "label": "process"
+    },
+    {
+      "id": "category:strategy",
+      "type": "category",
+      "label": "strategy"
+    },
+    {
+      "id": "category:summary",
+      "type": "category",
+      "label": "summary"
+    },
+    {
+      "id": "category:team",
+      "type": "category",
+      "label": "team"
+    },
+    {
+      "id": "category:timeline",
+      "type": "category",
+      "label": "timeline"
+    },
+    {
+      "id": "category:toc",
+      "type": "category",
+      "label": "toc"
+    },
+    {
+      "id": "deck_type:generic",
+      "type": "deck_type",
+      "label": "generic"
+    },
+    {
+      "id": "deck_type:portfolio",
+      "type": "deck_type",
+      "label": "portfolio"
+    },
+    {
+      "id": "deck_type:report",
+      "type": "deck_type",
+      "label": "report"
+    },
+    {
+      "id": "deck_type:sales",
+      "type": "deck_type",
+      "label": "sales"
+    },
+    {
+      "id": "layout:comparison",
+      "type": "layout",
+      "label": "comparison"
+    },
+    {
+      "id": "layout:dense",
+      "type": "layout",
+      "label": "dense"
+    },
+    {
+      "id": "layout:grid",
+      "type": "layout",
+      "label": "grid"
+    },
+    {
+      "id": "layout:light",
+      "type": "layout",
+      "label": "light"
+    },
+    {
+      "id": "layout:medium",
+      "type": "layout",
+      "label": "medium"
+    },
+    {
+      "id": "layout:metric",
+      "type": "layout",
+      "label": "metric"
+    },
+    {
+      "id": "layout:process",
+      "type": "layout",
+      "label": "process"
+    },
+    {
+      "id": "layout:story",
+      "type": "layout",
+      "label": "story"
+    },
+    {
+      "id": "layout:timeline",
+      "type": "layout",
+      "label": "timeline"
+    },
+    {
+      "id": "production_template:template_library_01_v1.channel_cover_v1",
+      "type": "production_template",
+      "label": "template_library_01_v1.channel_cover_v1",
+      "purpose": "cover",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_01_v1.data_method_v1",
+      "type": "production_template",
+      "label": "template_library_01_v1.data_method_v1",
+      "purpose": "process",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_01_v1.discussion_closing_v1",
+      "type": "production_template",
+      "label": "template_library_01_v1.discussion_closing_v1",
+      "purpose": "closing",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_01_v1.expansion_story_v1",
+      "type": "production_template",
+      "label": "template_library_01_v1.expansion_story_v1",
+      "purpose": "strategy",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_01_v1.partnership_goal_v1",
+      "type": "production_template",
+      "label": "template_library_01_v1.partnership_goal_v1",
+      "purpose": "closing",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_01_v1.pilot_program_v1",
+      "type": "production_template",
+      "label": "template_library_01_v1.pilot_program_v1",
+      "purpose": "process",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "type": "production_template",
+      "label": "template_library_01_v1.prioritization_metric_v1",
+      "purpose": "analysis",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "type": "production_template",
+      "label": "template_library_01_v1.sales_strategy_steps_v1",
+      "purpose": "strategy",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "type": "production_template",
+      "label": "template_library_01_v1.service_intro_cards_v1",
+      "purpose": "summary",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_01_v1.service_model_v1",
+      "type": "production_template",
+      "label": "template_library_01_v1.service_model_v1",
+      "purpose": "process",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.alpha_signal_timeline_v1",
+      "purpose": "strategy",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.before_after_compare_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.before_after_compare_v1",
+      "purpose": "analysis",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.core_technology_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.core_technology_v1",
+      "purpose": "analysis",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.finance_closing_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.finance_closing_v1",
+      "purpose": "closing",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.finance_cover_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.finance_cover_v1",
+      "purpose": "cover",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.poc_process_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.poc_process_v1",
+      "purpose": "process",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.problem_story_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.problem_story_v1",
+      "purpose": "issue",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.proof_metrics_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.proof_metrics_v1",
+      "purpose": "chart",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.roi_threepillars_v1",
+      "purpose": "analysis",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.service_components_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.service_components_v1",
+      "purpose": "summary",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.signal_speed_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.signal_speed_v1",
+      "purpose": "chart",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "type": "production_template",
+      "label": "template_library_02_v1.vertical_use_cases_v1",
+      "purpose": "analysis",
+      "scope": "sales"
+    },
+    {
+      "id": "production_template:template_library_03_v1.improvement_case_v1",
+      "type": "production_template",
+      "label": "template_library_03_v1.improvement_case_v1",
+      "purpose": "analysis",
+      "scope": "portfolio"
+    },
+    {
+      "id": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "type": "production_template",
+      "label": "template_library_03_v1.org_initiative_case_v1",
+      "purpose": "analysis",
+      "scope": "portfolio"
+    },
+    {
+      "id": "production_template:template_library_03_v1.patent_case_v1",
+      "type": "production_template",
+      "label": "template_library_03_v1.patent_case_v1",
+      "purpose": "analysis",
+      "scope": "portfolio"
+    },
+    {
+      "id": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "type": "production_template",
+      "label": "template_library_03_v1.portfolio_closing_v1",
+      "purpose": "closing",
+      "scope": "portfolio"
+    },
+    {
+      "id": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "type": "production_template",
+      "label": "template_library_03_v1.portfolio_cover_v1",
+      "purpose": "cover",
+      "scope": "portfolio"
+    },
+    {
+      "id": "production_template:template_library_03_v1.profile_resume_v1",
+      "type": "production_template",
+      "label": "template_library_03_v1.profile_resume_v1",
+      "purpose": "team",
+      "scope": "portfolio"
+    },
+    {
+      "id": "production_template:template_library_03_v1.project_case_v1",
+      "type": "production_template",
+      "label": "template_library_03_v1.project_case_v1",
+      "purpose": "analysis",
+      "scope": "portfolio"
+    },
+    {
+      "id": "production_template:template_library_03_v1.project_case_v2",
+      "type": "production_template",
+      "label": "template_library_03_v1.project_case_v2",
+      "purpose": "analysis",
+      "scope": "portfolio"
+    },
+    {
+      "id": "production_template:template_library_03_v1.project_case_v3",
+      "type": "production_template",
+      "label": "template_library_03_v1.project_case_v3",
+      "purpose": "analysis",
+      "scope": "portfolio"
+    },
+    {
+      "id": "production_template:template_library_03_v1.single_owner_case_v1",
+      "type": "production_template",
+      "label": "template_library_03_v1.single_owner_case_v1",
+      "purpose": "analysis",
+      "scope": "portfolio"
+    },
+    {
+      "id": "production_template:template_library_04_v1.company_history_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.company_history_v1",
+      "purpose": "timeline",
+      "scope": "report"
+    },
+    {
+      "id": "production_template:template_library_04_v1.competition_matrix_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.competition_matrix_v1",
+      "purpose": "analysis",
+      "scope": "report"
+    },
+    {
+      "id": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.cover_brand_right_v1",
+      "purpose": "cover",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.financial_mix_chart_v1",
+      "purpose": "chart",
+      "scope": "report"
+    },
+    {
+      "id": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.financial_timeline_chart_v1",
+      "purpose": "chart",
+      "scope": "report"
+    },
+    {
+      "id": "production_template:template_library_04_v1.goal_grid_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.goal_grid_v1",
+      "purpose": "closing",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.gtm_checkpoint_flow_v1",
+      "purpose": "strategy",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.gtm_metric_blocks_v1",
+      "purpose": "strategy",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.gtm_quadrant_v1",
+      "purpose": "strategy",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.issue_2x2_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.issue_2x2_v1",
+      "purpose": "issue",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.market_comparison_blocks_v1",
+      "purpose": "analysis",
+      "scope": "report"
+    },
+    {
+      "id": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.market_stat_cards_v1",
+      "purpose": "market",
+      "scope": "report"
+    },
+    {
+      "id": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.market_tam_sam_som_v1",
+      "purpose": "market",
+      "scope": "report"
+    },
+    {
+      "id": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.proposal_grid_4up_v1",
+      "purpose": "summary",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.rebranding_keywords_v1",
+      "purpose": "summary",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.roadmap_timeline_v1",
+      "purpose": "timeline",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "type": "production_template",
+      "label": "template_library_04_v1.scale_checkpoint_flow_v2",
+      "purpose": "strategy",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.solution_4step_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.solution_4step_v1",
+      "purpose": "strategy",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.summary_two_panel_v1",
+      "purpose": "summary",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.team_profile_grid_v1",
+      "purpose": "team",
+      "scope": "report"
+    },
+    {
+      "id": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.toc_simple_index_v1",
+      "purpose": "toc",
+      "scope": "generic"
+    },
+    {
+      "id": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "type": "production_template",
+      "label": "template_library_04_v1.toc_visual_tiles_v1",
+      "purpose": "toc",
+      "scope": "generic"
+    },
+    {
+      "id": "quality_label:good",
+      "type": "quality_label",
+      "label": "good"
+    },
+    {
+      "id": "quality_label:weak",
+      "type": "quality_label",
+      "label": "weak"
+    },
+    {
+      "id": "slide:generated_004_s001",
+      "type": "slide",
+      "label": "generated_004_s001",
+      "quality": "weak"
+    },
+    {
+      "id": "slide:generated_015_s002",
+      "type": "slide",
+      "label": "generated_015_s002",
+      "quality": "good"
+    },
+    {
+      "id": "slide:generated_016_s001",
+      "type": "slide",
+      "label": "generated_016_s001",
+      "quality": "good"
+    },
+    {
+      "id": "style:2x2",
+      "type": "style_cluster",
+      "label": "2x2"
+    },
+    {
+      "id": "style:4-step",
+      "type": "style_cluster",
+      "label": "4-step"
+    },
+    {
+      "id": "style:ai",
+      "type": "style_cluster",
+      "label": "ai"
+    },
+    {
+      "id": "style:alignment",
+      "type": "style_cluster",
+      "label": "alignment"
+    },
+    {
+      "id": "style:alpha",
+      "type": "style_cluster",
+      "label": "alpha"
+    },
+    {
+      "id": "style:analysis",
+      "type": "style_cluster",
+      "label": "analysis"
+    },
+    {
+      "id": "style:before-after",
+      "type": "style_cluster",
+      "label": "before-after"
+    },
+    {
+      "id": "style:blocks",
+      "type": "style_cluster",
+      "label": "blocks"
+    },
+    {
+      "id": "style:brand",
+      "type": "style_cluster",
+      "label": "brand"
+    },
+    {
+      "id": "style:branding",
+      "type": "style_cluster",
+      "label": "branding"
+    },
+    {
+      "id": "style:capability",
+      "type": "style_cluster",
+      "label": "capability"
+    },
+    {
+      "id": "style:cards",
+      "type": "style_cluster",
+      "label": "cards"
+    },
+    {
+      "id": "style:case-study",
+      "type": "style_cluster",
+      "label": "case-study"
+    },
+    {
+      "id": "style:chart",
+      "type": "style_cluster",
+      "label": "chart"
+    },
+    {
+      "id": "style:checkpoint",
+      "type": "style_cluster",
+      "label": "checkpoint"
+    },
+    {
+      "id": "style:clean",
+      "type": "style_cluster",
+      "label": "clean"
+    },
+    {
+      "id": "style:closing",
+      "type": "style_cluster",
+      "label": "closing"
+    },
+    {
+      "id": "style:company",
+      "type": "style_cluster",
+      "label": "company"
+    },
+    {
+      "id": "style:comparison",
+      "type": "style_cluster",
+      "label": "comparison"
+    },
+    {
+      "id": "style:competitive",
+      "type": "style_cluster",
+      "label": "competitive"
+    },
+    {
+      "id": "style:components",
+      "type": "style_cluster",
+      "label": "components"
+    },
+    {
+      "id": "style:corporate",
+      "type": "style_cluster",
+      "label": "corporate"
+    },
+    {
+      "id": "style:cover",
+      "type": "style_cluster",
+      "label": "cover"
+    },
+    {
+      "id": "style:cta",
+      "type": "style_cluster",
+      "label": "cta"
+    },
+    {
+      "id": "style:data",
+      "type": "style_cluster",
+      "label": "data"
+    },
+    {
+      "id": "style:decision",
+      "type": "style_cluster",
+      "label": "decision"
+    },
+    {
+      "id": "style:dense",
+      "type": "style_cluster",
+      "label": "dense"
+    },
+    {
+      "id": "style:diagram",
+      "type": "style_cluster",
+      "label": "diagram"
+    },
+    {
+      "id": "style:discussion",
+      "type": "style_cluster",
+      "label": "discussion"
+    },
+    {
+      "id": "style:evidence",
+      "type": "style_cluster",
+      "label": "evidence"
+    },
+    {
+      "id": "style:expansion",
+      "type": "style_cluster",
+      "label": "expansion"
+    },
+    {
+      "id": "style:finance",
+      "type": "style_cluster",
+      "label": "finance"
+    },
+    {
+      "id": "style:financial",
+      "type": "style_cluster",
+      "label": "financial"
+    },
+    {
+      "id": "style:flow",
+      "type": "style_cluster",
+      "label": "flow"
+    },
+    {
+      "id": "style:four-tile",
+      "type": "style_cluster",
+      "label": "four-tile"
+    },
+    {
+      "id": "style:goal",
+      "type": "style_cluster",
+      "label": "goal"
+    },
+    {
+      "id": "style:grid",
+      "type": "style_cluster",
+      "label": "grid"
+    },
+    {
+      "id": "style:growth",
+      "type": "style_cluster",
+      "label": "growth"
+    },
+    {
+      "id": "style:gtm",
+      "type": "style_cluster",
+      "label": "gtm"
+    },
+    {
+      "id": "style:hero",
+      "type": "style_cluster",
+      "label": "hero"
+    },
+    {
+      "id": "style:history",
+      "type": "style_cluster",
+      "label": "history"
+    },
+    {
+      "id": "style:horizontal",
+      "type": "style_cluster",
+      "label": "horizontal"
+    },
+    {
+      "id": "style:image-right",
+      "type": "style_cluster",
+      "label": "image-right"
+    },
+    {
+      "id": "style:improvement",
+      "type": "style_cluster",
+      "label": "improvement"
+    },
+    {
+      "id": "style:index",
+      "type": "style_cluster",
+      "label": "index"
+    },
+    {
+      "id": "style:industry",
+      "type": "style_cluster",
+      "label": "industry"
+    },
+    {
+      "id": "style:initiative",
+      "type": "style_cluster",
+      "label": "initiative"
+    },
+    {
+      "id": "style:introduction",
+      "type": "style_cluster",
+      "label": "introduction"
+    },
+    {
+      "id": "style:ip",
+      "type": "style_cluster",
+      "label": "ip"
+    },
+    {
+      "id": "style:issue",
+      "type": "style_cluster",
+      "label": "issue"
+    },
+    {
+      "id": "style:keyword",
+      "type": "style_cluster",
+      "label": "keyword"
+    },
+    {
+      "id": "style:kpi",
+      "type": "style_cluster",
+      "label": "kpi"
+    },
+    {
+      "id": "style:light",
+      "type": "style_cluster",
+      "label": "light"
+    },
+    {
+      "id": "style:market",
+      "type": "style_cluster",
+      "label": "market"
+    },
+    {
+      "id": "style:market-size",
+      "type": "style_cluster",
+      "label": "market-size"
+    },
+    {
+      "id": "style:matrix",
+      "type": "style_cluster",
+      "label": "matrix"
+    },
+    {
+      "id": "style:medium",
+      "type": "style_cluster",
+      "label": "medium"
+    },
+    {
+      "id": "style:meeting",
+      "type": "style_cluster",
+      "label": "meeting"
+    },
+    {
+      "id": "style:message",
+      "type": "style_cluster",
+      "label": "message"
+    },
+    {
+      "id": "style:messages",
+      "type": "style_cluster",
+      "label": "messages"
+    },
+    {
+      "id": "style:method",
+      "type": "style_cluster",
+      "label": "method"
+    },
+    {
+      "id": "style:metric",
+      "type": "style_cluster",
+      "label": "metric"
+    },
+    {
+      "id": "style:metrics",
+      "type": "style_cluster",
+      "label": "metrics"
+    },
+    {
+      "id": "style:milestone",
+      "type": "style_cluster",
+      "label": "milestone"
+    },
+    {
+      "id": "style:minimal",
+      "type": "style_cluster",
+      "label": "minimal"
+    },
+    {
+      "id": "style:mix",
+      "type": "style_cluster",
+      "label": "mix"
+    },
+    {
+      "id": "style:multi-block",
+      "type": "style_cluster",
+      "label": "multi-block"
+    },
+    {
+      "id": "style:narrative",
+      "type": "style_cluster",
+      "label": "narrative"
+    },
+    {
+      "id": "style:next-step",
+      "type": "style_cluster",
+      "label": "next-step"
+    },
+    {
+      "id": "style:operating-model",
+      "type": "style_cluster",
+      "label": "operating-model"
+    },
+    {
+      "id": "style:organization",
+      "type": "style_cluster",
+      "label": "organization"
+    },
+    {
+      "id": "style:outcome",
+      "type": "style_cluster",
+      "label": "outcome"
+    },
+    {
+      "id": "style:ownership",
+      "type": "style_cluster",
+      "label": "ownership"
+    },
+    {
+      "id": "style:pain-point",
+      "type": "style_cluster",
+      "label": "pain-point"
+    },
+    {
+      "id": "style:partner",
+      "type": "style_cluster",
+      "label": "partner"
+    },
+    {
+      "id": "style:partner-facing",
+      "type": "style_cluster",
+      "label": "partner-facing"
+    },
+    {
+      "id": "style:partnership",
+      "type": "style_cluster",
+      "label": "partnership"
+    },
+    {
+      "id": "style:patent",
+      "type": "style_cluster",
+      "label": "patent"
+    },
+    {
+      "id": "style:personal",
+      "type": "style_cluster",
+      "label": "personal"
+    },
+    {
+      "id": "style:personal-brand",
+      "type": "style_cluster",
+      "label": "personal-brand"
+    },
+    {
+      "id": "style:phased",
+      "type": "style_cluster",
+      "label": "phased"
+    },
+    {
+      "id": "style:pilot",
+      "type": "style_cluster",
+      "label": "pilot"
+    },
+    {
+      "id": "style:poc",
+      "type": "style_cluster",
+      "label": "poc"
+    },
+    {
+      "id": "style:portfolio",
+      "type": "style_cluster",
+      "label": "portfolio"
+    },
+    {
+      "id": "style:prioritization",
+      "type": "style_cluster",
+      "label": "prioritization"
+    },
+    {
+      "id": "style:problem",
+      "type": "style_cluster",
+      "label": "problem"
+    },
+    {
+      "id": "style:process",
+      "type": "style_cluster",
+      "label": "process"
+    },
+    {
+      "id": "style:profile",
+      "type": "style_cluster",
+      "label": "profile"
+    },
+    {
+      "id": "style:program",
+      "type": "style_cluster",
+      "label": "program"
+    },
+    {
+      "id": "style:project",
+      "type": "style_cluster",
+      "label": "project"
+    },
+    {
+      "id": "style:project-showcase",
+      "type": "style_cluster",
+      "label": "project-showcase"
+    },
+    {
+      "id": "style:proof",
+      "type": "style_cluster",
+      "label": "proof"
+    },
+    {
+      "id": "style:proposal",
+      "type": "style_cluster",
+      "label": "proposal"
+    },
+    {
+      "id": "style:quadrant",
+      "type": "style_cluster",
+      "label": "quadrant"
+    },
+    {
+      "id": "style:resume",
+      "type": "style_cluster",
+      "label": "resume"
+    },
+    {
+      "id": "style:roi",
+      "type": "style_cluster",
+      "label": "roi"
+    },
+    {
+      "id": "style:sales",
+      "type": "style_cluster",
+      "label": "sales"
+    },
+    {
+      "id": "style:scale-up",
+      "type": "style_cluster",
+      "label": "scale-up"
+    },
+    {
+      "id": "style:service",
+      "type": "style_cluster",
+      "label": "service"
+    },
+    {
+      "id": "style:signal",
+      "type": "style_cluster",
+      "label": "signal"
+    },
+    {
+      "id": "style:solo-builder",
+      "type": "style_cluster",
+      "label": "solo-builder"
+    },
+    {
+      "id": "style:solution",
+      "type": "style_cluster",
+      "label": "solution"
+    },
+    {
+      "id": "style:speed",
+      "type": "style_cluster",
+      "label": "speed"
+    },
+    {
+      "id": "style:stats",
+      "type": "style_cluster",
+      "label": "stats"
+    },
+    {
+      "id": "style:step",
+      "type": "style_cluster",
+      "label": "step"
+    },
+    {
+      "id": "style:steps",
+      "type": "style_cluster",
+      "label": "steps"
+    },
+    {
+      "id": "style:story",
+      "type": "style_cluster",
+      "label": "story"
+    },
+    {
+      "id": "style:strategy",
+      "type": "style_cluster",
+      "label": "strategy"
+    },
+    {
+      "id": "style:structured",
+      "type": "style_cluster",
+      "label": "structured"
+    },
+    {
+      "id": "style:summary",
+      "type": "style_cluster",
+      "label": "summary"
+    },
+    {
+      "id": "style:team",
+      "type": "style_cluster",
+      "label": "team"
+    },
+    {
+      "id": "style:technology",
+      "type": "style_cluster",
+      "label": "technology"
+    },
+    {
+      "id": "style:thank-you",
+      "type": "style_cluster",
+      "label": "thank-you"
+    },
+    {
+      "id": "style:three-block",
+      "type": "style_cluster",
+      "label": "three-block"
+    },
+    {
+      "id": "style:three-pillars",
+      "type": "style_cluster",
+      "label": "three-pillars"
+    },
+    {
+      "id": "style:timeline",
+      "type": "style_cluster",
+      "label": "timeline"
+    },
+    {
+      "id": "style:toc",
+      "type": "style_cluster",
+      "label": "toc"
+    },
+    {
+      "id": "style:two-column",
+      "type": "style_cluster",
+      "label": "two-column"
+    },
+    {
+      "id": "style:use-case",
+      "type": "style_cluster",
+      "label": "use-case"
+    },
+    {
+      "id": "style:value",
+      "type": "style_cluster",
+      "label": "value"
+    },
+    {
+      "id": "style:vertical",
+      "type": "style_cluster",
+      "label": "vertical"
+    },
+    {
+      "id": "style:visual",
+      "type": "style_cluster",
+      "label": "visual"
+    }
+  ],
+  "edges": [
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "category:cover",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "layout:light",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "layout:story",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "style:cover",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "style:light",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "style:narrative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "style:partner",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "style:partner-facing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.channel_cover_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "category:process",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "layout:process",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "style:data",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "style:diagram",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "style:method",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "style:narrative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "style:partner-facing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "style:process",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.data_method_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "category:closing",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "layout:story",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "style:closing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "style:discussion",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "style:narrative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "style:next-step",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "style:partner-facing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.discussion_closing_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "category:strategy",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "style:expansion",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "style:growth",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "style:narrative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "style:partner-facing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "style:story",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.expansion_story_v1",
+      "target": "style:strategy",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "category:closing",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "layout:story",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "style:alignment",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "style:closing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "style:goal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "style:narrative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "style:partner-facing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "style:partnership",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.partnership_goal_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "category:process",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "layout:process",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "style:narrative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "style:partner-facing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "style:pilot",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "style:process",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "style:program",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "style:proposal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.pilot_program_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "layout:metric",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "style:metric",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "style:narrative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "style:partner-facing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "style:prioritization",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.prioritization_metric_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "category:strategy",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "style:narrative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "style:partner-facing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "style:step",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.sales_strategy_steps_v1",
+      "target": "style:strategy",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "category:summary",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "layout:grid",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "style:cards",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "style:introduction",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "style:narrative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "style:partner-facing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "style:service",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_intro_cards_v1",
+      "target": "style:summary",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "category:process",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "layout:process",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "style:narrative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "style:operating-model",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "style:partner-facing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "style:process",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_01_v1.service_model_v1",
+      "target": "style:service",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "category:strategy",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "layout:timeline",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "style:alpha",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "style:signal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "style:strategy",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.alpha_signal_timeline_v1",
+      "target": "style:timeline",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "style:before-after",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "style:comparison",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.before_after_compare_v1",
+      "target": "style:value",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "style:capability",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.core_technology_v1",
+      "target": "style:technology",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "category:closing",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "layout:story",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "style:closing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "style:cta",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_closing_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "category:cover",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "layout:story",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "style:cover",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.finance_cover_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "category:process",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "layout:process",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "style:poc",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "style:process",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.poc_process_v1",
+      "target": "style:steps",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "category:issue",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "layout:grid",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "style:issue",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "style:pain-point",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "style:problem",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.problem_story_v1",
+      "target": "style:story",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "category:chart",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "layout:metric",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "style:chart",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "style:evidence",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "style:metrics",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "style:proof",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.proof_metrics_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "style:roi",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "style:three-pillars",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.roi_threepillars_v1",
+      "target": "style:value",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "category:summary",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "layout:grid",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "style:cards",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "style:components",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "style:service",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.service_components_v1",
+      "target": "style:summary",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "category:chart",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "layout:metric",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "style:chart",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "style:metric",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "style:proof",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.signal_speed_v1",
+      "target": "style:speed",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "audience:sales",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "deck_type:sales",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "style:ai",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "style:finance",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "style:industry",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "style:sales",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "style:use-case",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_02_v1.vertical_use_cases_v1",
+      "target": "style:vertical",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "audience:portfolio",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "deck_type:portfolio",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "style:improvement",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "style:outcome",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "style:personal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "style:portfolio",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "style:project",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.improvement_case_v1",
+      "target": "style:project-showcase",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "audience:portfolio",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "deck_type:portfolio",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "style:initiative",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "style:organization",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "style:personal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "style:portfolio",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "style:project",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.org_initiative_case_v1",
+      "target": "style:project-showcase",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "audience:portfolio",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "deck_type:portfolio",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "style:ip",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "style:patent",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "style:personal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "style:portfolio",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "style:project",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.patent_case_v1",
+      "target": "style:project-showcase",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "audience:portfolio",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "deck_type:portfolio",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "category:closing",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "layout:story",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "style:closing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "style:personal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "style:portfolio",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "style:project-showcase",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_closing_v1",
+      "target": "style:thank-you",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "audience:portfolio",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "deck_type:portfolio",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "category:cover",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "layout:story",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "style:cover",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "style:personal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "style:personal-brand",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "style:portfolio",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.portfolio_cover_v1",
+      "target": "style:project-showcase",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "audience:portfolio",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "deck_type:portfolio",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "category:team",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "layout:grid",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "style:personal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "style:portfolio",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "style:profile",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "style:project-showcase",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "style:resume",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.profile_resume_v1",
+      "target": "style:team",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "audience:portfolio",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "deck_type:portfolio",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "layout:metric",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "style:case-study",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "style:metric",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "style:personal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "style:portfolio",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "style:project",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v1",
+      "target": "style:project-showcase",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "audience:portfolio",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "deck_type:portfolio",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "layout:metric",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "style:case-study",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "style:metric",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "style:personal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "style:portfolio",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "style:project",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v2",
+      "target": "style:project-showcase",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "audience:portfolio",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "deck_type:portfolio",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "layout:metric",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "style:case-study",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "style:metric",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "style:personal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "style:portfolio",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "style:project",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.project_case_v3",
+      "target": "style:project-showcase",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "audience:portfolio",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "deck_type:portfolio",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "style:ownership",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "style:personal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "style:portfolio",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "style:project",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "style:project-showcase",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_03_v1.single_owner_case_v1",
+      "target": "style:solo-builder",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "deck_type:report",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "category:timeline",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "layout:timeline",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "style:company",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "style:history",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.company_history_v1",
+      "target": "style:timeline",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "deck_type:report",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "style:comparison",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "style:competitive",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "style:matrix",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.competition_matrix_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "audience:conservative",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "category:cover",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "layout:light",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "layout:story",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "style:brand",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "style:cover",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "style:hero",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "style:image-right",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "style:light",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.cover_brand_right_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "deck_type:report",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "category:chart",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "layout:light",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "layout:metric",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "style:chart",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "style:financial",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "style:light",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "style:mix",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_mix_chart_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "deck_type:report",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "category:chart",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "layout:timeline",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "style:chart",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "style:financial",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.financial_timeline_chart_v1",
+      "target": "style:timeline",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "category:closing",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "layout:grid",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "style:closing",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "style:goal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "style:grid",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.goal_grid_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "category:strategy",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "style:checkpoint",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "style:flow",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "style:step",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "style:strategy",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_checkpoint_flow_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "category:strategy",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "layout:metric",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "style:blocks",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "style:kpi",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "style:metrics",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "style:strategy",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_metric_blocks_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "category:strategy",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "style:decision",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "style:gtm",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "style:quadrant",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "style:strategy",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.gtm_quadrant_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "category:issue",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "layout:grid",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "style:2x2",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "style:cards",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "style:issue",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.issue_2x2_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "deck_type:report",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "category:analysis",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "style:analysis",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "style:comparison",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "style:market",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "style:multi-block",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_comparison_blocks_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "deck_type:report",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "category:market",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "layout:metric",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "style:cards",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "style:market",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "style:stats",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_stat_cards_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "audience:analytical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "deck_type:report",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "category:market",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "layout:metric",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "style:market",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "style:market-size",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.market_tam_sam_som_v1",
+      "target": "style:three-block",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "category:summary",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "layout:grid",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "style:grid",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "style:messages",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "style:proposal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.proposal_grid_4up_v1",
+      "target": "style:summary",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "category:summary",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "layout:light",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "layout:story",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "style:branding",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "style:keyword",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "style:light",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "style:message",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.rebranding_keywords_v1",
+      "target": "style:summary",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "category:timeline",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "layout:timeline",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "style:horizontal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "style:milestone",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.roadmap_timeline_v1",
+      "target": "style:timeline",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "category:strategy",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "style:checkpoint",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "style:flow",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "style:scale-up",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "style:strategy",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.scale_checkpoint_flow_v2",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "audience:technical",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "category:strategy",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "layout:comparison",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "style:4-step",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "style:phased",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "style:solution",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "style:strategy",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.solution_4step_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "category:summary",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "layout:story",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "style:meeting",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "style:summary",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.summary_two_panel_v1",
+      "target": "style:two-column",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "deck_type:report",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "category:team",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "layout:grid",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "layout:medium",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "style:grid",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "style:medium",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "style:profile",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.team_profile_grid_v1",
+      "target": "style:team",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "category:toc",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "layout:grid",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "layout:light",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "style:index",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "style:light",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "style:minimal",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_simple_index_v1",
+      "target": "style:toc",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "audience:executive",
+      "type": "FITS_AUDIENCE",
+      "confidence": 0.65,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "deck_type:generic",
+      "type": "FITS_DECK_TYPE",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "category:toc",
+      "type": "HAS_CATEGORY",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "layout:dense",
+      "type": "HAS_LAYOUT",
+      "confidence": 1.0,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "layout:grid",
+      "type": "HAS_LAYOUT",
+      "confidence": 0.75,
+      "source_artifact": "template_design_dna"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "style:clean",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "style:corporate",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "style:dense",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "style:four-tile",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "style:index",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "style:structured",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "style:toc",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "production_template:template_library_04_v1.toc_visual_tiles_v1",
+      "target": "style:visual",
+      "type": "HAS_STYLE",
+      "confidence": 0.8,
+      "source_artifact": "reference_catalog"
+    },
+    {
+      "source": "slide:generated_004_s001",
+      "target": "category:general",
+      "type": "HAS_CATEGORY",
+      "confidence": 0.35,
+      "source_artifact": "semantic_seed"
+    },
+    {
+      "source": "slide:generated_004_s001",
+      "target": "quality_label:weak",
+      "type": "HAS_QUALITY",
+      "confidence": 1.0,
+      "source_artifact": "library_metadata"
+    },
+    {
+      "source": "slide:generated_015_s002",
+      "target": "category:general",
+      "type": "HAS_CATEGORY",
+      "confidence": 0.35,
+      "source_artifact": "semantic_seed"
+    },
+    {
+      "source": "slide:generated_015_s002",
+      "target": "quality_label:good",
+      "type": "HAS_QUALITY",
+      "confidence": 1.0,
+      "source_artifact": "library_metadata"
+    },
+    {
+      "source": "slide:generated_016_s001",
+      "target": "category:general",
+      "type": "HAS_CATEGORY",
+      "confidence": 0.35,
+      "source_artifact": "semantic_seed"
+    },
+    {
+      "source": "slide:generated_016_s001",
+      "target": "quality_label:good",
+      "type": "HAS_QUALITY",
+      "confidence": 1.0,
+      "source_artifact": "library_metadata"
+    }
+  ]
+}

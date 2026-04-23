@@ -1,0 +1,1353 @@
+{
+  "$defs": {
+    "AssetIntent": {
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "enum": [
+            "image_placeholder",
+            "icon",
+            "chart_preset",
+            "palette",
+            "typography",
+            "theme"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "asset_class": {
+          "enum": [
+            "palette",
+            "typography",
+            "icon",
+            "image",
+            "chart_preset",
+            "theme"
+          ],
+          "title": "Asset Class",
+          "type": "string"
+        },
+        "asset_id": {
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "slide_number": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Slide Number"
+        },
+        "slot": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Slot"
+        },
+        "purpose": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Purpose"
+        },
+        "industry": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Industry"
+        },
+        "tone": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tone",
+          "type": "array"
+        },
+        "aspect_ratio": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aspect Ratio"
+        },
+        "query": {
+          "additionalProperties": true,
+          "title": "Query",
+          "type": "object"
+        },
+        "source_policy": {
+          "enum": [
+            "finalized_catalog",
+            "local_user_asset_policy",
+            "external_registry_reference"
+          ],
+          "title": "Source Policy",
+          "type": "string"
+        },
+        "materialization": {
+          "enum": [
+            "metadata_only",
+            "runtime_materialization_required",
+            "local_config_reference",
+            "local_code_reference"
+          ],
+          "title": "Materialization",
+          "type": "string"
+        },
+        "license_action": {
+          "title": "License Action",
+          "type": "string"
+        },
+        "risk_level": {
+          "title": "Risk Level",
+          "type": "string"
+        },
+        "candidate_asset_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Candidate Asset Ids",
+          "type": "array"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "role",
+        "asset_class",
+        "asset_id",
+        "source_policy",
+        "materialization",
+        "license_action",
+        "risk_level"
+      ],
+      "title": "AssetIntent",
+      "type": "object"
+    },
+    "BarChartItem": {
+      "additionalProperties": false,
+      "properties": {
+        "left": {
+          "title": "Left",
+          "type": "number"
+        },
+        "top": {
+          "title": "Top",
+          "type": "number"
+        },
+        "width": {
+          "title": "Width",
+          "type": "number"
+        },
+        "height": {
+          "title": "Height",
+          "type": "number"
+        },
+        "categories": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Categories",
+          "type": "array"
+        },
+        "values": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Values",
+          "type": "array"
+        }
+      },
+      "required": [
+        "left",
+        "top",
+        "width",
+        "height",
+        "categories",
+        "values"
+      ],
+      "title": "BarChartItem",
+      "type": "object"
+    },
+    "BlueprintOverlaySlide": {
+      "additionalProperties": false,
+      "properties": {
+        "layout": {
+          "const": "blueprint_overlay",
+          "title": "Layout",
+          "type": "string"
+        },
+        "base_slide_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Base Slide Key"
+        },
+        "template_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Template Key"
+        },
+        "base_slide_no": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Base Slide No"
+        },
+        "slide_selector": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SlideSelector"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_mode": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceMode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "keep_shape_indices": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Keep Shape Indices",
+          "type": "array"
+        },
+        "shapes": {
+          "items": {
+            "$ref": "#/$defs/ShapeItem"
+          },
+          "title": "Shapes",
+          "type": "array"
+        },
+        "text_boxes": {
+          "items": {
+            "$ref": "#/$defs/TextBoxItem"
+          },
+          "title": "Text Boxes",
+          "type": "array"
+        },
+        "images": {
+          "items": {
+            "$ref": "#/$defs/ImageItem"
+          },
+          "title": "Images",
+          "type": "array"
+        },
+        "bar_charts": {
+          "items": {
+            "$ref": "#/$defs/BarChartItem"
+          },
+          "title": "Bar Charts",
+          "type": "array"
+        },
+        "speaker_notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Speaker Notes",
+          "type": "array"
+        },
+        "report_notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Report Notes",
+          "type": "array"
+        },
+        "text_slots": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Text Slots",
+          "type": "object"
+        },
+        "text_values": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Text Values",
+          "type": "array"
+        },
+        "image_slots": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Image Slots",
+          "type": "object"
+        },
+        "chart_slots": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ChartSlotData"
+          },
+          "title": "Chart Slots",
+          "type": "object"
+        },
+        "table_slots": {
+          "additionalProperties": {
+            "$ref": "#/$defs/TableSlotData"
+          },
+          "title": "Table Slots",
+          "type": "object"
+        },
+        "slot_overrides": {
+          "additionalProperties": {
+            "$ref": "#/$defs/SlotOverride"
+          },
+          "title": "Slot Overrides",
+          "type": "object"
+        },
+        "clear_unfilled_slots": {
+          "default": true,
+          "title": "Clear Unfilled Slots",
+          "type": "boolean"
+        },
+        "clear_unfilled_image_slots": {
+          "default": false,
+          "title": "Clear Unfilled Image Slots",
+          "type": "boolean"
+        },
+        "clear_residual_placeholders": {
+          "default": true,
+          "title": "Clear Residual Placeholders",
+          "type": "boolean"
+        },
+        "clear_residual_text_patterns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Clear Residual Text Patterns",
+          "type": "array"
+        }
+      },
+      "required": [
+        "layout"
+      ],
+      "title": "BlueprintOverlaySlide",
+      "type": "object"
+    },
+    "ChartSlotData": {
+      "additionalProperties": false,
+      "properties": {
+        "chart_type": {
+          "const": "bar",
+          "default": "bar",
+          "title": "Chart Type",
+          "type": "string"
+        },
+        "categories": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Categories",
+          "type": "array"
+        },
+        "values": {
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1,
+          "title": "Values",
+          "type": "array"
+        }
+      },
+      "required": [
+        "categories",
+        "values"
+      ],
+      "title": "ChartSlotData",
+      "type": "object"
+    },
+    "ImageItem": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "left": {
+          "title": "Left",
+          "type": "number"
+        },
+        "top": {
+          "title": "Top",
+          "type": "number"
+        },
+        "width": {
+          "title": "Width",
+          "type": "number"
+        },
+        "height": {
+          "title": "Height",
+          "type": "number"
+        }
+      },
+      "required": [
+        "path",
+        "left",
+        "top",
+        "width",
+        "height"
+      ],
+      "title": "ImageItem",
+      "type": "object"
+    },
+    "ShapeItem": {
+      "additionalProperties": false,
+      "properties": {
+        "left": {
+          "title": "Left",
+          "type": "number"
+        },
+        "top": {
+          "title": "Top",
+          "type": "number"
+        },
+        "width": {
+          "title": "Width",
+          "type": "number"
+        },
+        "height": {
+          "title": "Height",
+          "type": "number"
+        },
+        "geometry": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Geometry"
+        },
+        "fill": {
+          "anyOf": [
+            {
+              "pattern": "^#?[0-9A-Fa-f]{6}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fill"
+        },
+        "line": {
+          "anyOf": [
+            {
+              "pattern": "^#?[0-9A-Fa-f]{6}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line"
+        },
+        "line_width": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line Width"
+        },
+        "radius": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Radius"
+        },
+        "rotation": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rotation"
+        }
+      },
+      "required": [
+        "left",
+        "top",
+        "width",
+        "height"
+      ],
+      "title": "ShapeItem",
+      "type": "object"
+    },
+    "SlideSelector": {
+      "additionalProperties": false,
+      "properties": {
+        "purpose": {
+          "title": "Purpose",
+          "type": "string"
+        },
+        "scope": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scope"
+        },
+        "preferred_variant": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Preferred Variant"
+        },
+        "fallback_variants": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Fallback Variants",
+          "type": "array"
+        },
+        "required_tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Tags",
+          "type": "array"
+        },
+        "tone": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tone",
+          "type": "array"
+        },
+        "preferred_density": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Preferred Density"
+        },
+        "preferred_structure": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Preferred Structure"
+        },
+        "preferred_visual_weight": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Preferred Visual Weight"
+        },
+        "source_library": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Library"
+        },
+        "min_quality_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Quality Score"
+        },
+        "preferred_design_tier": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Preferred Design Tier"
+        },
+        "usage_policies": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Usage Policies",
+          "type": "array"
+        },
+        "prefer_high_quality": {
+          "default": true,
+          "title": "Prefer High Quality",
+          "type": "boolean"
+        },
+        "use_variation_penalty": {
+          "default": true,
+          "title": "Use Variation Penalty",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "purpose"
+      ],
+      "title": "SlideSelector",
+      "type": "object"
+    },
+    "SlotOverride": {
+      "additionalProperties": false,
+      "properties": {
+        "font_role": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Font Role"
+        },
+        "font_size": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Font Size"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "bold": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bold"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Align"
+        },
+        "max_chars_per_line": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Chars Per Line"
+        },
+        "max_lines": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Lines"
+        },
+        "fit_strategy": {
+          "anyOf": [
+            {
+              "enum": [
+                "preserve_template",
+                "shrink",
+                "manual_wrap"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fit Strategy"
+        }
+      },
+      "title": "SlotOverride",
+      "type": "object"
+    },
+    "SourceMode": {
+      "enum": [
+        "import",
+        "blank"
+      ],
+      "title": "SourceMode",
+      "type": "string"
+    },
+    "TableSlotData": {
+      "additionalProperties": false,
+      "properties": {
+        "headers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Headers",
+          "type": "array"
+        },
+        "rows": {
+          "items": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "number"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "minItems": 1,
+          "title": "Rows",
+          "type": "array"
+        }
+      },
+      "required": [
+        "rows"
+      ],
+      "title": "TableSlotData",
+      "type": "object"
+    },
+    "TemplateSlide": {
+      "additionalProperties": false,
+      "properties": {
+        "layout": {
+          "const": "template_slide",
+          "title": "Layout",
+          "type": "string"
+        },
+        "base_slide_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Base Slide Key"
+        },
+        "template_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Template Key"
+        },
+        "base_slide_no": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Base Slide No"
+        },
+        "slide_selector": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SlideSelector"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_mode": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceMode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "keep_shape_indices": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Keep Shape Indices",
+          "type": "array"
+        },
+        "shapes": {
+          "items": {
+            "$ref": "#/$defs/ShapeItem"
+          },
+          "title": "Shapes",
+          "type": "array"
+        },
+        "text_boxes": {
+          "items": {
+            "$ref": "#/$defs/TextBoxItem"
+          },
+          "title": "Text Boxes",
+          "type": "array"
+        },
+        "images": {
+          "items": {
+            "$ref": "#/$defs/ImageItem"
+          },
+          "title": "Images",
+          "type": "array"
+        },
+        "bar_charts": {
+          "items": {
+            "$ref": "#/$defs/BarChartItem"
+          },
+          "title": "Bar Charts",
+          "type": "array"
+        },
+        "speaker_notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Speaker Notes",
+          "type": "array"
+        },
+        "report_notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Report Notes",
+          "type": "array"
+        },
+        "text_slots": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Text Slots",
+          "type": "object"
+        },
+        "text_values": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Text Values",
+          "type": "array"
+        },
+        "image_slots": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Image Slots",
+          "type": "object"
+        },
+        "chart_slots": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ChartSlotData"
+          },
+          "title": "Chart Slots",
+          "type": "object"
+        },
+        "table_slots": {
+          "additionalProperties": {
+            "$ref": "#/$defs/TableSlotData"
+          },
+          "title": "Table Slots",
+          "type": "object"
+        },
+        "slot_overrides": {
+          "additionalProperties": {
+            "$ref": "#/$defs/SlotOverride"
+          },
+          "title": "Slot Overrides",
+          "type": "object"
+        },
+        "clear_unfilled_slots": {
+          "default": true,
+          "title": "Clear Unfilled Slots",
+          "type": "boolean"
+        },
+        "clear_unfilled_image_slots": {
+          "default": false,
+          "title": "Clear Unfilled Image Slots",
+          "type": "boolean"
+        },
+        "clear_residual_placeholders": {
+          "default": true,
+          "title": "Clear Residual Placeholders",
+          "type": "boolean"
+        },
+        "clear_residual_text_patterns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Clear Residual Text Patterns",
+          "type": "array"
+        }
+      },
+      "required": [
+        "layout"
+      ],
+      "title": "TemplateSlide",
+      "type": "object"
+    },
+    "TextBoxItem": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "left": {
+          "title": "Left",
+          "type": "number"
+        },
+        "top": {
+          "title": "Top",
+          "type": "number"
+        },
+        "width": {
+          "title": "Width",
+          "type": "number"
+        },
+        "height": {
+          "title": "Height",
+          "type": "number"
+        },
+        "font_size": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Font Size"
+        },
+        "font_role": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Font Role"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "bold": {
+          "default": false,
+          "title": "Bold",
+          "type": "boolean"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Align"
+        },
+        "max_chars_per_line": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Chars Per Line"
+        }
+      },
+      "required": [
+        "text",
+        "left",
+        "top",
+        "width",
+        "height"
+      ],
+      "title": "TextBoxItem",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "$Schema"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "project_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Project Id"
+    },
+    "aspect_ratio": {
+      "default": "16:9",
+      "enum": [
+        "16:9",
+        "4:3"
+      ],
+      "title": "Aspect Ratio",
+      "type": "string"
+    },
+    "catalog_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Catalog Path"
+    },
+    "reference_catalog_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reference Catalog Path"
+    },
+    "blueprint_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Blueprint Path"
+    },
+    "mode_policy": {
+      "default": "auto",
+      "enum": [
+        "auto",
+        "assistant"
+      ],
+      "title": "Mode Policy",
+      "type": "string"
+    },
+    "theme_path": {
+      "title": "Theme Path",
+      "type": "string"
+    },
+    "theme_accent_overrides": {
+      "additionalProperties": {
+        "pattern": "^#?[0-9A-Fa-f]{6}$",
+        "type": "string"
+      },
+      "propertyNames": {
+        "enum": [
+          "accent1",
+          "accent2",
+          "accent3",
+          "accent4",
+          "accent5",
+          "accent6"
+        ]
+      },
+      "title": "Theme Accent Overrides",
+      "type": "object"
+    },
+    "source_template": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Template"
+    },
+    "output_path": {
+      "title": "Output Path",
+      "type": "string"
+    },
+    "design_brief_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Design Brief Path"
+    },
+    "doc_paths": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Doc Paths",
+      "type": "array"
+    },
+    "recipe": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Recipe"
+    },
+    "asset_intents": {
+      "items": {
+        "$ref": "#/$defs/AssetIntent"
+      },
+      "title": "Asset Intents",
+      "type": "array"
+    },
+    "slides": {
+      "items": {
+        "discriminator": {
+          "mapping": {
+            "blueprint_overlay": "#/$defs/BlueprintOverlaySlide",
+            "template_slide": "#/$defs/TemplateSlide"
+          },
+          "propertyName": "layout"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/BlueprintOverlaySlide"
+          },
+          {
+            "$ref": "#/$defs/TemplateSlide"
+          }
+        ]
+      },
+      "minItems": 1,
+      "title": "Slides",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "theme_path",
+    "output_path",
+    "slides"
+  ],
+  "title": "PPTX Deck Spec",
+  "type": "object",
+  "$id": "https://local.ppt-test/deck_spec.schema.json"
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "Executive Market Briefing",
+  "project_id": "executive_market_briefing",
+  "theme_path": "../../config/pptx_theme.example.json",
+  "mode_policy": "auto",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/report_exec_briefing.pptx",
+  "doc_paths": [],
+  "slides": [
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "text_slots": {
+        "title": "Executive Market Briefing",
+        "footer_note": "Draft | executive_market_briefing"
+      },
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "report",
+        "prefer_high_quality": true,
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "use_variation_penalty": true
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "text_slots": {
+        "title": "Decision agenda",
+        "footer_note": "Draft | executive_market_briefing"
+      },
+      "slide_selector": {
+        "purpose": "toc",
+        "scope": "report",
+        "prefer_high_quality": true,
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "use_variation_penalty": true
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "text_slots": {
+        "title": "Executive summary",
+        "footer_note": "Draft | executive_market_briefing"
+      },
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "report",
+        "prefer_high_quality": true,
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "use_variation_penalty": true
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "text_slots": {
+        "title": "Key market signals",
+        "footer_note": "Draft | executive_market_briefing"
+      },
+      "slide_selector": {
+        "purpose": "market",
+        "scope": "report",
+        "prefer_high_quality": true,
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "use_variation_penalty": true
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "text_slots": {
+        "title": "Decision implications",
+        "footer_note": "Draft | executive_market_briefing"
+      },
+      "slide_selector": {
+        "purpose": "analysis",
+        "scope": "report",
+        "prefer_high_quality": true,
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "use_variation_penalty": true
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "text_slots": {
+        "title": "Next steps",
+        "footer_note": "Draft | executive_market_briefing"
+      },
+      "slide_selector": {
+        "purpose": "closing",
+        "scope": "report",
+        "prefer_high_quality": true,
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "use_variation_penalty": true
+      }
+    }
+  ]
+}

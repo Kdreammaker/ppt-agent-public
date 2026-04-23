@@ -1,0 +1,1027 @@
+{
+  "version": "0.1",
+  "workspace": "C:/Users/kimjo/Downloads/ppt-test",
+  "production_ready_count": 32,
+  "purpose_manifest": {
+    "cover": {
+      "coverage": "production_ready",
+      "recommended": [
+        {
+          "slide_id": "template_library_01_v1.channel_cover_v1",
+          "library_id": "template_library_01_v1",
+          "template_key": "channel_cover_v1",
+          "purpose": "cover",
+          "variant": "cover/narrative-sales",
+          "scope": "sales",
+          "style_tags": [
+            "cover",
+            "light",
+            "narrative",
+            "partner",
+            "partner-facing",
+            "sales"
+          ],
+          "density": "light",
+          "quality_score": 4.5,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+          "library_slide_no": 1,
+          "design_notes": "Clean, high-contrast cover with strong blue field and centered title. Good model for branded opening slides."
+        },
+        {
+          "slide_id": "template_library_02_v1.finance_cover_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "finance_cover_v1",
+          "purpose": "cover",
+          "variant": "cover/finance-sales",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "cover",
+            "finance",
+            "medium",
+            "sales"
+          ],
+          "density": "medium",
+          "quality_score": 4.4,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 1,
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+        },
+        {
+          "slide_id": "template_library_03_v1.portfolio_cover_v1",
+          "library_id": "template_library_03_v1",
+          "template_key": "portfolio_cover_v1",
+          "purpose": "cover",
+          "variant": "cover/portfolio",
+          "scope": "portfolio",
+          "style_tags": [
+            "cover",
+            "medium",
+            "personal",
+            "personal-brand",
+            "portfolio",
+            "project-showcase"
+          ],
+          "density": "medium",
+          "quality_score": 4.1,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+          "library_slide_no": 1,
+          "design_notes": "Best reference for screenshot-led project cases, result bullets, pill tags, and portfolio-style narrative pages."
+        }
+      ],
+      "fallback": [],
+      "recommended_selector": {
+        "purpose": "cover",
+        "scope": "sales",
+        "preferred_variant": "cover/narrative-sales",
+        "source_library": "template_library_01_v1",
+        "min_quality_score": 4.4,
+        "usage_policies": [
+          "production_ready"
+        ]
+      }
+    },
+    "toc": {
+      "coverage": "gap",
+      "recommended": [],
+      "fallback": [
+        {
+          "slide_id": "template_library_04_v1.toc_visual_tiles_v1",
+          "library_id": "template_library_04_v1",
+          "template_key": "toc_visual_tiles_v1",
+          "purpose": "toc",
+          "variant": "toc/visual-tiles",
+          "scope": "generic",
+          "style_tags": [
+            "clean",
+            "corporate",
+            "dense",
+            "four-tile",
+            "index",
+            "structured",
+            "toc",
+            "visual"
+          ],
+          "density": "dense",
+          "quality_score": 2.7,
+          "design_tier": "structure",
+          "usage_policy": "curate_before_use",
+          "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+          "library_slide_no": 22,
+          "design_notes": "Conceptually useful TOC structure, but current slide still behaves like placeholder-heavy template material."
+        },
+        {
+          "slide_id": "template_library_04_v1.toc_simple_index_v1",
+          "library_id": "template_library_04_v1",
+          "template_key": "toc_simple_index_v1",
+          "purpose": "toc",
+          "variant": "toc/simple-index",
+          "scope": "generic",
+          "style_tags": [
+            "clean",
+            "corporate",
+            "index",
+            "light",
+            "minimal",
+            "structured",
+            "toc"
+          ],
+          "density": "light",
+          "quality_score": 2.4,
+          "design_tier": "structure",
+          "usage_policy": "structure_only",
+          "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+          "library_slide_no": 21,
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+        }
+      ],
+      "recommended_selector": null
+    },
+    "summary": {
+      "coverage": "production_ready",
+      "recommended": [
+        {
+          "slide_id": "template_library_02_v1.service_components_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "service_components_v1",
+          "purpose": "summary",
+          "variant": "summary/service-components",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "cards",
+            "components",
+            "dense",
+            "finance",
+            "sales",
+            "service",
+            "summary"
+          ],
+          "density": "dense",
+          "quality_score": 4.4,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 5,
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+        },
+        {
+          "slide_id": "template_library_01_v1.service_intro_cards_v1",
+          "library_id": "template_library_01_v1",
+          "template_key": "service_intro_cards_v1",
+          "purpose": "summary",
+          "variant": "summary/service-intro-cards",
+          "scope": "sales",
+          "style_tags": [
+            "cards",
+            "dense",
+            "introduction",
+            "narrative",
+            "partner-facing",
+            "sales",
+            "service",
+            "summary"
+          ],
+          "density": "dense",
+          "quality_score": 4.3,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+          "library_slide_no": 2,
+          "design_notes": "Good reference for compact service cards and icon-led grouping."
+        }
+      ],
+      "fallback": [
+        {
+          "slide_id": "template_library_04_v1.summary_two_panel_v1",
+          "library_id": "template_library_04_v1",
+          "template_key": "summary_two_panel_v1",
+          "purpose": "summary",
+          "variant": "summary/two-panel",
+          "scope": "generic",
+          "style_tags": [
+            "clean",
+            "corporate",
+            "medium",
+            "meeting",
+            "structured",
+            "summary",
+            "two-column"
+          ],
+          "density": "medium",
+          "quality_score": 2.9,
+          "design_tier": "structure",
+          "usage_policy": "curate_before_use",
+          "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+          "library_slide_no": 2,
+          "design_notes": "Useful for meeting summary structure; visual polish should be supplied by builder-generated cards and footer."
+        }
+      ],
+      "recommended_selector": {
+        "purpose": "summary",
+        "scope": "sales",
+        "preferred_variant": "summary/service-components",
+        "source_library": "template_library_02_v1",
+        "min_quality_score": 4.300000000000001,
+        "usage_policies": [
+          "production_ready"
+        ]
+      }
+    },
+    "issue": {
+      "coverage": "production_ready",
+      "recommended": [
+        {
+          "slide_id": "template_library_02_v1.problem_story_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "problem_story_v1",
+          "purpose": "issue",
+          "variant": "issue/pain-story",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "dense",
+            "finance",
+            "issue",
+            "pain-point",
+            "problem",
+            "sales",
+            "story"
+          ],
+          "density": "dense",
+          "quality_score": 4.6,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 2,
+          "design_notes": "Good reference for evidence-led problem framing with chart plus narrative bullets."
+        }
+      ],
+      "fallback": [
+        {
+          "slide_id": "template_library_04_v1.issue_2x2_v1",
+          "library_id": "template_library_04_v1",
+          "template_key": "issue_2x2_v1",
+          "purpose": "issue",
+          "variant": "issue/2x2-cards",
+          "scope": "generic",
+          "style_tags": [
+            "2x2",
+            "cards",
+            "clean",
+            "corporate",
+            "dense",
+            "issue",
+            "structured"
+          ],
+          "density": "dense",
+          "quality_score": 3.0,
+          "design_tier": "structure",
+          "usage_policy": "curate_before_use",
+          "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+          "library_slide_no": 17,
+          "design_notes": "2x2 issue structure is reusable, but dense business content needs custom text sizing and card treatment."
+        }
+      ],
+      "recommended_selector": {
+        "purpose": "issue",
+        "scope": "sales",
+        "preferred_variant": "issue/pain-story",
+        "source_library": "template_library_02_v1",
+        "min_quality_score": 4.5,
+        "usage_policies": [
+          "production_ready"
+        ]
+      }
+    },
+    "analysis": {
+      "coverage": "production_ready",
+      "recommended": [
+        {
+          "slide_id": "template_library_03_v1.project_case_v1",
+          "library_id": "template_library_03_v1",
+          "template_key": "project_case_v1",
+          "purpose": "analysis",
+          "variant": "analysis/project-case-metric-1",
+          "scope": "portfolio",
+          "style_tags": [
+            "analysis",
+            "case-study",
+            "dense",
+            "metric",
+            "personal",
+            "portfolio",
+            "project",
+            "project-showcase"
+          ],
+          "density": "dense",
+          "quality_score": 4.4,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+          "library_slide_no": 3,
+          "design_notes": "Good screenshot-plus-outcome slide for internal proof or case-study reporting."
+        },
+        {
+          "slide_id": "template_library_02_v1.before_after_compare_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "before_after_compare_v1",
+          "purpose": "analysis",
+          "variant": "analysis/before-after",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "analysis",
+            "before-after",
+            "comparison",
+            "dense",
+            "finance",
+            "sales",
+            "value"
+          ],
+          "density": "dense",
+          "quality_score": 4.4,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 3,
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+        },
+        {
+          "slide_id": "template_library_02_v1.core_technology_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "core_technology_v1",
+          "purpose": "analysis",
+          "variant": "analysis/core-technology",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "analysis",
+            "capability",
+            "finance",
+            "medium",
+            "sales",
+            "technology"
+          ],
+          "density": "medium",
+          "quality_score": 4.4,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 7,
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+        },
+        {
+          "slide_id": "template_library_02_v1.vertical_use_cases_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "vertical_use_cases_v1",
+          "purpose": "analysis",
+          "variant": "analysis/vertical-use-cases",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "analysis",
+            "finance",
+            "industry",
+            "medium",
+            "sales",
+            "use-case",
+            "vertical"
+          ],
+          "density": "medium",
+          "quality_score": 4.4,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 9,
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+        }
+      ],
+      "fallback": [],
+      "recommended_selector": {
+        "purpose": "analysis",
+        "scope": "portfolio",
+        "preferred_variant": "analysis/project-case-metric-1",
+        "source_library": "template_library_03_v1",
+        "min_quality_score": 4.300000000000001,
+        "usage_policies": [
+          "production_ready"
+        ]
+      }
+    },
+    "chart": {
+      "coverage": "production_ready",
+      "recommended": [
+        {
+          "slide_id": "template_library_02_v1.proof_metrics_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "proof_metrics_v1",
+          "purpose": "chart",
+          "variant": "chart/proof-metrics",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "chart",
+            "dense",
+            "evidence",
+            "finance",
+            "metrics",
+            "proof",
+            "sales"
+          ],
+          "density": "dense",
+          "quality_score": 4.4,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 6,
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+        },
+        {
+          "slide_id": "template_library_02_v1.signal_speed_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "signal_speed_v1",
+          "purpose": "chart",
+          "variant": "chart/single-metric-story",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "chart",
+            "dense",
+            "finance",
+            "metric",
+            "proof",
+            "sales",
+            "speed"
+          ],
+          "density": "dense",
+          "quality_score": 4.4,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 8,
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+        }
+      ],
+      "fallback": [
+        {
+          "slide_id": "template_library_04_v1.financial_timeline_chart_v1",
+          "library_id": "template_library_04_v1",
+          "template_key": "financial_timeline_chart_v1",
+          "purpose": "chart",
+          "variant": "chart/financial-timeline",
+          "scope": "report",
+          "style_tags": [
+            "chart",
+            "clean",
+            "corporate",
+            "dense",
+            "financial",
+            "structured",
+            "timeline"
+          ],
+          "density": "dense",
+          "quality_score": 2.4,
+          "design_tier": "structure",
+          "usage_policy": "structure_only",
+          "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+          "library_slide_no": 11,
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+        }
+      ],
+      "recommended_selector": {
+        "purpose": "chart",
+        "scope": "sales",
+        "preferred_variant": "chart/proof-metrics",
+        "source_library": "template_library_02_v1",
+        "min_quality_score": 4.300000000000001,
+        "usage_policies": [
+          "production_ready"
+        ]
+      }
+    },
+    "process": {
+      "coverage": "production_ready",
+      "recommended": [
+        {
+          "slide_id": "template_library_02_v1.poc_process_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "poc_process_v1",
+          "purpose": "process",
+          "variant": "process/poc-steps",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "dense",
+            "finance",
+            "poc",
+            "process",
+            "sales",
+            "steps"
+          ],
+          "density": "dense",
+          "quality_score": 4.4,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 10,
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+        },
+        {
+          "slide_id": "template_library_01_v1.data_method_v1",
+          "library_id": "template_library_01_v1",
+          "template_key": "data_method_v1",
+          "purpose": "process",
+          "variant": "process/method-diagram",
+          "scope": "sales",
+          "style_tags": [
+            "data",
+            "dense",
+            "diagram",
+            "method",
+            "narrative",
+            "partner-facing",
+            "process",
+            "sales"
+          ],
+          "density": "dense",
+          "quality_score": 4.2,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+          "library_slide_no": 3,
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+        },
+        {
+          "slide_id": "template_library_01_v1.service_model_v1",
+          "library_id": "template_library_01_v1",
+          "template_key": "service_model_v1",
+          "purpose": "process",
+          "variant": "process/service-operating-model",
+          "scope": "sales",
+          "style_tags": [
+            "dense",
+            "narrative",
+            "operating-model",
+            "partner-facing",
+            "process",
+            "sales",
+            "service"
+          ],
+          "density": "dense",
+          "quality_score": 4.2,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+          "library_slide_no": 7,
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+        },
+        {
+          "slide_id": "template_library_01_v1.pilot_program_v1",
+          "library_id": "template_library_01_v1",
+          "template_key": "pilot_program_v1",
+          "purpose": "process",
+          "variant": "process/pilot-program",
+          "scope": "sales",
+          "style_tags": [
+            "dense",
+            "narrative",
+            "partner-facing",
+            "pilot",
+            "process",
+            "program",
+            "proposal",
+            "sales"
+          ],
+          "density": "dense",
+          "quality_score": 4.2,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+          "library_slide_no": 8,
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+        }
+      ],
+      "fallback": [],
+      "recommended_selector": {
+        "purpose": "process",
+        "scope": "sales",
+        "preferred_variant": "process/poc-steps",
+        "source_library": "template_library_02_v1",
+        "min_quality_score": 4.300000000000001,
+        "usage_policies": [
+          "production_ready"
+        ]
+      }
+    },
+    "strategy": {
+      "coverage": "production_ready",
+      "recommended": [
+        {
+          "slide_id": "template_library_02_v1.alpha_signal_timeline_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "alpha_signal_timeline_v1",
+          "purpose": "strategy",
+          "variant": "strategy/signal-timeline",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "alpha",
+            "dense",
+            "finance",
+            "sales",
+            "signal",
+            "strategy",
+            "timeline"
+          ],
+          "density": "dense",
+          "quality_score": 4.4,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 4,
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+        },
+        {
+          "slide_id": "template_library_01_v1.sales_strategy_steps_v1",
+          "library_id": "template_library_01_v1",
+          "template_key": "sales_strategy_steps_v1",
+          "purpose": "strategy",
+          "variant": "strategy/sales-step-story",
+          "scope": "sales",
+          "style_tags": [
+            "dense",
+            "narrative",
+            "partner-facing",
+            "sales",
+            "step",
+            "strategy"
+          ],
+          "density": "dense",
+          "quality_score": 4.2,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+          "library_slide_no": 5,
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+        },
+        {
+          "slide_id": "template_library_01_v1.expansion_story_v1",
+          "library_id": "template_library_01_v1",
+          "template_key": "expansion_story_v1",
+          "purpose": "strategy",
+          "variant": "strategy/expansion-story",
+          "scope": "sales",
+          "style_tags": [
+            "dense",
+            "expansion",
+            "growth",
+            "narrative",
+            "partner-facing",
+            "sales",
+            "story",
+            "strategy"
+          ],
+          "density": "dense",
+          "quality_score": 4.2,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+          "library_slide_no": 6,
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+        }
+      ],
+      "fallback": [],
+      "recommended_selector": {
+        "purpose": "strategy",
+        "scope": "sales",
+        "preferred_variant": "strategy/signal-timeline",
+        "source_library": "template_library_02_v1",
+        "min_quality_score": 4.300000000000001,
+        "usage_policies": [
+          "production_ready"
+        ]
+      }
+    },
+    "timeline": {
+      "coverage": "gap",
+      "recommended": [],
+      "fallback": [
+        {
+          "slide_id": "template_library_04_v1.company_history_v1",
+          "library_id": "template_library_04_v1",
+          "template_key": "company_history_v1",
+          "purpose": "timeline",
+          "variant": "timeline/company-history",
+          "scope": "report",
+          "style_tags": [
+            "clean",
+            "company",
+            "corporate",
+            "history",
+            "light",
+            "structured",
+            "timeline"
+          ],
+          "density": "light",
+          "quality_score": 2.4,
+          "design_tier": "structure",
+          "usage_policy": "structure_only",
+          "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+          "library_slide_no": 13,
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+        },
+        {
+          "slide_id": "template_library_04_v1.roadmap_timeline_v1",
+          "library_id": "template_library_04_v1",
+          "template_key": "roadmap_timeline_v1",
+          "purpose": "timeline",
+          "variant": "timeline/horizontal-roadmap",
+          "scope": "generic",
+          "style_tags": [
+            "clean",
+            "corporate",
+            "horizontal",
+            "medium",
+            "milestone",
+            "structured",
+            "timeline"
+          ],
+          "density": "medium",
+          "quality_score": 2.4,
+          "design_tier": "structure",
+          "usage_policy": "structure_only",
+          "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+          "library_slide_no": 5,
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+        }
+      ],
+      "recommended_selector": null
+    },
+    "market": {
+      "coverage": "gap",
+      "recommended": [],
+      "fallback": [
+        {
+          "slide_id": "template_library_04_v1.market_tam_sam_som_v1",
+          "library_id": "template_library_04_v1",
+          "template_key": "market_tam_sam_som_v1",
+          "purpose": "market",
+          "variant": "market/tam-sam-som",
+          "scope": "report",
+          "style_tags": [
+            "clean",
+            "corporate",
+            "market",
+            "market-size",
+            "medium",
+            "structured",
+            "three-block"
+          ],
+          "density": "medium",
+          "quality_score": 2.4,
+          "design_tier": "structure",
+          "usage_policy": "structure_only",
+          "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+          "library_slide_no": 3,
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+        },
+        {
+          "slide_id": "template_library_04_v1.market_stat_cards_v1",
+          "library_id": "template_library_04_v1",
+          "template_key": "market_stat_cards_v1",
+          "purpose": "market",
+          "variant": "market/stat-cards",
+          "scope": "report",
+          "style_tags": [
+            "cards",
+            "clean",
+            "corporate",
+            "market",
+            "medium",
+            "stats",
+            "structured"
+          ],
+          "density": "medium",
+          "quality_score": 2.4,
+          "design_tier": "structure",
+          "usage_policy": "structure_only",
+          "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+          "library_slide_no": 14,
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+        }
+      ],
+      "recommended_selector": null
+    },
+    "team": {
+      "coverage": "production_ready",
+      "recommended": [
+        {
+          "slide_id": "template_library_03_v1.profile_resume_v1",
+          "library_id": "template_library_03_v1",
+          "template_key": "profile_resume_v1",
+          "purpose": "team",
+          "variant": "team/resume-card",
+          "scope": "portfolio",
+          "style_tags": [
+            "dense",
+            "personal",
+            "portfolio",
+            "profile",
+            "project-showcase",
+            "resume",
+            "team"
+          ],
+          "density": "dense",
+          "quality_score": 4.1,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+          "library_slide_no": 2,
+          "design_notes": "Best reference for screenshot-led project cases, result bullets, pill tags, and portfolio-style narrative pages."
+        }
+      ],
+      "fallback": [
+        {
+          "slide_id": "template_library_04_v1.team_profile_grid_v1",
+          "library_id": "template_library_04_v1",
+          "template_key": "team_profile_grid_v1",
+          "purpose": "team",
+          "variant": "team/profile-grid",
+          "scope": "report",
+          "style_tags": [
+            "clean",
+            "corporate",
+            "grid",
+            "medium",
+            "profile",
+            "structured",
+            "team"
+          ],
+          "density": "medium",
+          "quality_score": 2.4,
+          "design_tier": "structure",
+          "usage_policy": "structure_only",
+          "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+          "library_slide_no": 10,
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+        }
+      ],
+      "recommended_selector": {
+        "purpose": "team",
+        "scope": "portfolio",
+        "preferred_variant": "team/resume-card",
+        "source_library": "template_library_03_v1",
+        "min_quality_score": 4.0,
+        "usage_policies": [
+          "production_ready"
+        ]
+      }
+    },
+    "closing": {
+      "coverage": "production_ready",
+      "recommended": [
+        {
+          "slide_id": "template_library_02_v1.finance_closing_v1",
+          "library_id": "template_library_02_v1",
+          "template_key": "finance_closing_v1",
+          "purpose": "closing",
+          "variant": "closing/finance-cta",
+          "scope": "sales",
+          "style_tags": [
+            "ai",
+            "closing",
+            "cta",
+            "finance",
+            "medium",
+            "sales"
+          ],
+          "density": "medium",
+          "quality_score": 4.6,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+          "library_slide_no": 12,
+          "design_notes": "Strong closing page with CTA, proof image, and clear contact/action hierarchy."
+        },
+        {
+          "slide_id": "template_library_01_v1.partnership_goal_v1",
+          "library_id": "template_library_01_v1",
+          "template_key": "partnership_goal_v1",
+          "purpose": "closing",
+          "variant": "closing/partnership-goal",
+          "scope": "sales",
+          "style_tags": [
+            "alignment",
+            "closing",
+            "dense",
+            "goal",
+            "narrative",
+            "partner-facing",
+            "partnership",
+            "sales"
+          ],
+          "density": "dense",
+          "quality_score": 4.2,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+          "library_slide_no": 9,
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+        },
+        {
+          "slide_id": "template_library_03_v1.portfolio_closing_v1",
+          "library_id": "template_library_03_v1",
+          "template_key": "portfolio_closing_v1",
+          "purpose": "closing",
+          "variant": "closing/portfolio-thank-you",
+          "scope": "portfolio",
+          "style_tags": [
+            "closing",
+            "dense",
+            "personal",
+            "portfolio",
+            "project-showcase",
+            "thank-you"
+          ],
+          "density": "dense",
+          "quality_score": 4.2,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+          "library_slide_no": 10,
+          "design_notes": "Balanced closing layout with large title and contact modules."
+        },
+        {
+          "slide_id": "template_library_01_v1.discussion_closing_v1",
+          "library_id": "template_library_01_v1",
+          "template_key": "discussion_closing_v1",
+          "purpose": "closing",
+          "variant": "closing/discussion-next-step",
+          "scope": "sales",
+          "style_tags": [
+            "closing",
+            "dense",
+            "discussion",
+            "narrative",
+            "next-step",
+            "partner-facing",
+            "sales"
+          ],
+          "density": "dense",
+          "quality_score": 4.2,
+          "design_tier": "production",
+          "usage_policy": "production_ready",
+          "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+          "library_slide_no": 10,
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+        }
+      ],
+      "fallback": [],
+      "recommended_selector": {
+        "purpose": "closing",
+        "scope": "sales",
+        "preferred_variant": "closing/finance-cta",
+        "source_library": "template_library_02_v1",
+        "min_quality_score": 4.5,
+        "usage_policies": [
+          "production_ready"
+        ]
+      }
+    }
+  },
+  "recommended_sets": {
+    "data_story": [
+      "template_library_02_v1.problem_story_v1",
+      "template_library_02_v1.proof_metrics_v1",
+      "template_library_02_v1.signal_speed_v1",
+      "template_library_02_v1.roi_threepillars_v1",
+      "template_library_02_v1.finance_closing_v1"
+    ],
+    "service_story": [
+      "template_library_01_v1.channel_cover_v1",
+      "template_library_01_v1.service_intro_cards_v1",
+      "template_library_01_v1.data_method_v1",
+      "template_library_01_v1.sales_strategy_steps_v1",
+      "template_library_01_v1.discussion_closing_v1"
+    ],
+    "case_study": [
+      "template_library_03_v1.portfolio_cover_v1",
+      "template_library_03_v1.project_case_v1",
+      "template_library_03_v1.project_case_v2",
+      "template_library_03_v1.improvement_case_v1",
+      "template_library_03_v1.portfolio_closing_v1"
+    ]
+  },
+  "known_gaps": [
+    "toc",
+    "timeline",
+    "market"
+  ]
+}

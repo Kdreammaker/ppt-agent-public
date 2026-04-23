@@ -1,0 +1,96 @@
+{
+  "$schema": "../../config/deck_intake.schema.json",
+  "intake_version": "1.0",
+  "name": "AI-based Work Automation Adoption Strategy: 2026 Executive Decision Briefing",
+  "audience": {
+    "primary": "Executive leadership team",
+    "secondary": [
+      "Business unit heads",
+      "Transformation office",
+      "IT and risk leaders"
+    ],
+    "knowledge_level": "informed",
+    "decision_role": "decision_maker"
+  },
+  "presentation_context": {
+    "setting": "2026 executive decision briefing",
+    "delivery_mode": "live",
+    "duration_minutes": 25,
+    "presenter_role": "Chief transformation officer",
+    "locale": "en-US"
+  },
+  "primary_goal": "Align leadership on where to scale AI-based work automation, how to govern adoption, and what decisions are needed for the next 90 days.",
+  "deck_type": "strategy",
+  "tone": [
+    "executive",
+    "analytical",
+    "conservative"
+  ],
+  "slide_count_range": {
+    "min": 7,
+    "max": 9
+  },
+  "brand_or_template_scope": {
+    "preferred_scope": "report",
+    "preferred_template_keys": [
+      "cover_brand_right_v1",
+      "toc_visual_tiles_v1",
+      "summary_two_panel_v1",
+      "issue_2x2_v1",
+      "solution_4step_v1",
+      "pilot_program_v1",
+      "financial_mix_chart_v1",
+      "goal_grid_v1"
+    ],
+    "required_template_library": null,
+    "theme_path": "../../config/pptx_theme.example.json",
+    "notes": "Prefer report and generic executive templates; allow one sales-scope process template when it fits an adoption operating model."
+  },
+  "content_density": "medium",
+  "variation_level": "single_path",
+  "review_requirements": {
+    "needs_variant_review": false,
+    "requires_rationale_report": true,
+    "requires_slot_map": true,
+    "reviewers": [
+      "operator",
+      "executive sponsor"
+    ],
+    "approval_mode": "operator_review"
+  },
+  "must_include": [
+    "Decision agenda",
+    "Executive summary",
+    "Adoption barriers",
+    "Strategic adoption model",
+    "90-day execution process",
+    "Investment and value evidence",
+    "Leadership decisions"
+  ],
+  "must_avoid": [
+    "Spec-level header or footer fields",
+    "Python-drawn slide chrome",
+    "Unreviewed automatic 4:3 stretching",
+    "Mandatory LLM summarization"
+  ],
+  "source_materials": [
+    {
+      "path": "data/intake/ai_automation_exec_briefing.json",
+      "kind": "json",
+      "description": "Structured intent for the new production-readiness authoring test."
+    }
+  ],
+  "output_preferences": {
+    "output_spec_path": "data/specs/ai_automation_exec_briefing_spec.json",
+    "output_deck_path": "outputs/decks/ai_automation_exec_briefing.pptx",
+    "required_reports": [
+      "outputs/reports/ai_automation_exec_briefing_slide_selection_rationale.json",
+      "outputs/reports/ai_automation_exec_briefing_deck_slot_map.json",
+      "outputs/reports/ai_automation_exec_briefing_text_overflow.json",
+      "outputs/reports/ai_automation_exec_briefing_visual_smoke.json",
+      "outputs/reports/ai_automation_exec_briefing_quality.json",
+      "outputs/reports/deck_design_review.json"
+    ]
+  },
+  "notes": "This intake is the post-CTO real authoring test and should remain template-first."
+}

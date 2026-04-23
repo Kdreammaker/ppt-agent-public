@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "public_gate_sync_policy",
+  "status": "dry_run_first",
+  "public_gate": "https://github.com/Kdreammaker/ai-asset-contribution-gate",
+  "powershell_entrypoint": "scripts/Prepare-PublicGateSync.ps1",
+  "existing_private_powershell_inventory": [],
+  "inventory_note": "No tracked .ps1 entrypoints existed before B84 in this repository.",
+  "default_mode": "dry_run",
+  "public_repo_write_default": false,
+  "public_repo_write_requires_operator_approval": true,
+  "token_handling": {
+    "read_tokens": false,
+    "print_tokens": false,
+    "commit_tokens": false,
+    "credential_source": "operator_environment_or_external_private_runner_only"
+  },
+  "sync_manifest": {
+    "fixture_path": "config/public_gate_sync_manifest_fixture.json",
+    "allowed_top_level_fields": [
+      "schema_version",
+      "manifest_id",
+      "created_at",
+      "source_boundary",
+      "public_gate_target",
+      "candidate_metadata",
+      "operator_approval"
+    ],
+    "required_candidate_fields": [
+      "candidate_id",
+      "asset_type",
+      "title",
+      "description",
+      "declared_license",
+      "source_summary_hash",
+      "ai_generation_disclosure",
+      "safety_review_status"
+    ]
+  },
+  "allowed_payloads": [
+    "public_safe_candidate_metadata",
+    "license_declaration",
+    "ai_generation_disclosure",
+    "safety_review_status",
+    "hash_only_source_summary",
+    "public_gate_fixture_shape"
+  ],
+  "forbidden_payloads": [
+    "raw_references",
+    "binary_assets",
+    "registry_exports",
+    "local_absolute_paths",
+    "drive_linkage",
+    "work_logs",
+    "workspace_manifests",
+    "tokens",
+    "secrets",
+    "raw_workspace_codes"
+  ],
+  "dry_run_outputs": [
+    "outputs/reports/public_gate_sync_dry_run.json"
+  ],
+  "validation_commands": [
+    "python scripts/validate_public_gate_sync_path.py",
+    "python scripts/validate_clean_release_export.py",
+    "python scripts/run_regression_gate.py"
+  ]
+}

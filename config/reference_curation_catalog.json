@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "reference_root": "assets/slides/references",
+  "curation_root": "assets/slides/categorizing",
+  "production_catalog_path": "config/reference_catalog.json",
+  "raw_reference_policy": {
+    "raw_pptx_direct_use": "forbidden",
+    "candidate_direct_use": "forbidden",
+    "promotion_required_for_template_catalog": true,
+    "notes": "Raw reference decks and candidate slides are analysis inputs only. Only approved/promoted templates may be added to production reference_catalog/template_blueprints/template_design_dna."
+  },
+  "quality_labels": ["good", "normal", "weak"],
+  "candidate_labels": ["good_candidate", "normal_candidate", "weak_candidate"],
+  "promotion_policy": {
+    "good_candidate": "pending_human_review_for_possible_good_library_entry",
+    "normal_candidate": "pending_human_review_for_possible_normal_library_entry",
+    "weak_candidate": "pending_human_review_for_possible_weak_library_entry",
+    "good": "eligible_for_template_promotion_after_review",
+    "normal": "analysis_only_or_structure_reference",
+    "weak": "negative_example_only"
+  },
+  "decks": []
+}

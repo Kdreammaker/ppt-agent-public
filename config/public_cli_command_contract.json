@@ -1,0 +1,408 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "public_cli_mvp_command_contract",
+  "status": "mvp_contract",
+  "principles": {
+    "canonical_engine": "public_cli",
+    "mcp_policy": "thin_adapter_after_cli_contract_stabilizes",
+    "local_only_default": true,
+    "gateway_enabled_default": false,
+    "upload_allowed_default": false,
+    "telemetry_default": "disabled",
+    "result_payload_policy": "concise_summary_paths_and_manifest_links_not_full_artifacts"
+  },
+  "workspace_outputs": {
+    "intake": "intake/",
+    "specs": "specs/",
+    "pptx": "decks/",
+    "html": "html/",
+    "reports": "reports/",
+    "previews": "previews/",
+    "local_state": ".ppt-agent/"
+  },
+  "machine_summary_contract": {
+    "format": "json",
+    "max_summary_chars": 4000,
+    "must_include": [
+      "command",
+      "status",
+      "artifact_paths",
+      "validation_summary",
+      "policy_summary"
+    ],
+    "must_not_include": [
+      "full_spec_json",
+      "full_html_document",
+      "binary_pptx_content",
+      "source_file_contents",
+      "secrets_or_tokens"
+    ]
+  },
+  "first_run_healthcheck": {
+    "standalone_exe_required": false,
+    "minimum_python": "3.11",
+    "required_checks": [
+      "os",
+      "python",
+      "path_lookup",
+      "powershell",
+      "python_package_pptx",
+      "python_package_pillow",
+      "python_package_pymupdf",
+      "python_package_pydantic",
+      "workspace_write",
+      "mcp_adapter_policy"
+    ],
+    "optional_checks": [
+      "node",
+      "npx",
+      "libreoffice",
+      "cjk_font"
+    ],
+    "mcp_setup_policy": "same_cli_package_api_same_local_consent_no_upload",
+    "failure_message_policy": "machine_json_plus_human_markdown_with_fix_hints"
+  },
+  "commands": [
+    {
+      "name": "init",
+      "purpose": "Create or verify a local PPT workspace, local config, consent, README, and output folders.",
+      "current_status": "implemented_workspace_scaffold",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_cli_workspace.py init --workspace <workspace>",
+        "planned_entrypoint": "scripts/ppt_cli_workspace.py init"
+      },
+      "inputs": [
+        "workspace_path",
+        "consent_mode"
+      ],
+      "outputs": [
+        "README.md",
+        ".ppt-agent/config.json",
+        ".ppt-agent/consent.json"
+      ],
+      "exit_codes": {
+        "0": "workspace initialized or verified",
+        "2": "required consent or path validation failed"
+      }
+    },
+    {
+      "name": "healthcheck",
+      "purpose": "Check local dependencies and write a human and machine-readable readiness report.",
+      "current_status": "implemented_workspace_scaffold",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_cli_workspace.py healthcheck --workspace <workspace>",
+        "planned_entrypoint": "scripts/ppt_cli_workspace.py healthcheck"
+      },
+      "inputs": [
+        "workspace_path"
+      ],
+      "outputs": [
+        ".ppt-agent/healthcheck.json",
+        "reports/healthcheck.md",
+        "actionable dependency and setup hints"
+      ],
+      "exit_codes": {
+        "0": "required dependencies ready",
+        "1": "required dependency missing",
+        "3": "optional dependency missing"
+      }
+    },
+    {
+      "name": "plan",
+      "purpose": "Render an ASCII structure blueprint from intake or spec. Assistant Mode shows it before final output generation and requires an explicit approve/revise/continue/skip decision; Auto Mode skips it by default unless explicitly requested.",
+      "current_status": "implemented_local_wrapper",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_system.py blueprint <input> --kind auto --approval-mode assistant",
+        "planned_entrypoint": "ppt-agent plan --intake intake/example.json --ascii-blueprint"
+      },
+      "inputs": [
+        "intake_or_spec_path",
+        "approval_mode",
+        "skip_blueprint_policy",
+        "explicit_continue_or_skip_decision"
+      ],
+      "outputs": [
+        "reports/<deck_id>_ascii_blueprint.md",
+        "reports/<deck_id>_ascii_blueprint.json"
+      ],
+      "exit_codes": {
+        "0": "blueprint rendered",
+        "1": "input invalid"
+      }
+    },
+    {
+      "name": "compose",
+      "purpose": "Create a deck spec from a validated intake file.",
+      "current_status": "implemented_local_wrapper",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_system.py compose-spec <intake>",
+        "planned_entrypoint": "ppt-agent compose --intake intake/example.json --output specs/example.json"
+      },
+      "inputs": [
+        "intake_path",
+        "output_spec_path"
+      ],
+      "outputs": [
+        "specs/<deck_id>.json",
+        "reports/<deck_id>_composer_summary.json"
+      ],
+      "exit_codes": {
+        "0": "spec composed",
+        "1": "intake or composed spec invalid"
+      }
+    },
+    {
+      "name": "patch",
+      "purpose": "Apply one targeted slide or slot update without rewriting a full spec.",
+      "current_status": "implemented_patch_wrapper",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_system.py patch-spec <spec> --slide <n> --text-slot <slot> --value <value>",
+        "planned_entrypoint": "ppt-agent patch --spec specs/example.json --slide 3 --slot title --value \"New title\""
+      },
+      "inputs": [
+        "spec_path",
+        "slide_number",
+        "patch_operation",
+        "slot",
+        "value_or_json_payload"
+      ],
+      "outputs": [
+        "reports/<deck_id>_patch_summary.json",
+        "reports/<deck_id>_patch_summary.md",
+        "outputs/spec_patch_backups/<deck_id>_<timestamp>.json"
+      ],
+      "exit_codes": {
+        "0": "patch validated and applied",
+        "1": "patch rejected without mutating source spec"
+      }
+    },
+    {
+      "name": "build",
+      "purpose": "Build local PPTX and HTML outputs from one spec, with validation available in the same command family.",
+      "current_status": "implemented_dual_output_wrapper",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_system.py build-outputs <spec> --validate",
+        "planned_entrypoint": "ppt-agent build --spec specs/example.json --pptx --html --validate"
+      },
+      "inputs": [
+        "spec_path",
+        "output_types",
+        "validate"
+      ],
+      "outputs": [
+        "decks/<deck_id>.pptx",
+        "html/<deck_id>/index.html",
+        "reports/<deck_id>_build_summary.json"
+      ],
+      "exit_codes": {
+        "0": "requested outputs built",
+        "1": "build or validation failed"
+      }
+    },
+    {
+      "name": "validate",
+      "purpose": "Run focused or full local validators for specs, PPTX, HTML, reports, manifests, and gates.",
+      "current_status": "implemented_local_wrapper",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_system.py gate",
+        "planned_entrypoint": "ppt-agent validate --spec specs/example.json --outputs all"
+      },
+      "inputs": [
+        "spec_path",
+        "output_paths",
+        "scope"
+      ],
+      "outputs": [
+        "reports/<deck_id>_validation_summary.json",
+        "reports/<deck_id>_validation_summary.md"
+      ],
+      "exit_codes": {
+        "0": "validation passed",
+        "1": "validation failed"
+      }
+    },
+    {
+      "name": "assets",
+      "purpose": "Register local assets under explicit consent and relative workspace paths.",
+      "current_status": "planned_b39",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": null,
+        "planned_entrypoint": "ppt-agent assets register --path assets/images/example.png"
+      },
+      "inputs": [
+        "asset_path",
+        "asset_class",
+        "license_note",
+        "gateway_metadata_visible"
+      ],
+      "outputs": [
+        "assets/asset_registry.json"
+      ],
+      "exit_codes": {
+        "0": "asset registered",
+        "2": "consent or path policy rejected the asset"
+      }
+    },
+    {
+      "name": "gateway",
+      "purpose": "Configure optional metadata-first gateway mode, activate workspace-code entitlement, inspect request summaries, and dry-run fixture-backed metadata recommendation mocks.",
+      "current_status": "implemented_workspace_code_entitlement_and_metadata_mock",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoints": [
+          "python scripts/ppt_workspace_entitlement.py activate --workspace <workspace> --workspace-code <code>",
+          "python scripts/ppt_workspace_entitlement.py status --workspace <workspace>",
+          "python scripts/ppt_workspace_entitlement.py check --workspace <workspace> --feature <feature>",
+          "python scripts/mock_gateway_metadata_recommendation.py --spec <spec> --check"
+        ],
+        "planned_entrypoint": "ppt-agent gateway configure"
+      },
+      "inputs": [
+        "workspace_path",
+        "workspace_code",
+        "requested_feature",
+        "gateway_enabled",
+        "metadata_visible",
+        "file_upload_allowed",
+        "mode"
+      ],
+      "outputs": [
+        ".ppt-agent/gateway.json",
+        ".ppt-agent/entitlement.json",
+        ".ppt-agent/gateway_requests/",
+        "reports/gateway_metadata_recommendation_mock.json"
+      ],
+      "exit_codes": {
+        "0": "gateway config updated or inspected",
+        "2": "policy rejected gateway operation"
+      }
+    },
+    {
+      "name": "history",
+      "purpose": "Create local snapshots, list recent runs, and roll back specs without uploading content.",
+      "current_status": "implemented_local_history",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_cli_history.py snapshot|history|rollback --workspace <workspace>",
+        "planned_entrypoint": "ppt-agent history; ppt-agent rollback --run-id <run_id>"
+      },
+      "inputs": [
+        "workspace_path",
+        "spec_path",
+        "run_id",
+        "artifact_refs"
+      ],
+      "outputs": [
+        ".ppt-agent/runs/<run_id>/snapshot_manifest.json",
+        ".ppt-agent/runs/<run_id>/spec_snapshot.json"
+      ],
+      "exit_codes": {
+        "0": "snapshot, history, or rollback completed",
+        "1": "snapshot, history, or rollback failed"
+      }
+    },
+    {
+      "name": "support-bundle",
+      "purpose": "Create an explicit local diagnostic bundle for support without telemetry, automatic upload, raw workspace codes, local file contents, generated decks, generated HTML, image binaries, template binaries, or private planning documents.",
+      "current_status": "implemented_local_sanitized_bundle",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_support_bundle.py --workspace <workspace> --check",
+        "planned_entrypoint": "ppt-agent support-bundle --workspace <workspace>"
+      },
+      "inputs": [
+        "workspace_path",
+        "report_limit",
+        "include_repo_summaries"
+      ],
+      "outputs": [
+        "reports/support_bundle/support_bundle.json",
+        "reports/support_bundle/support_bundle.md",
+        "reports/support_bundle/support_bundle.zip"
+      ],
+      "exit_codes": {
+        "0": "sanitized support bundle created",
+        "1": "support bundle privacy validation failed"
+      }
+    },
+    {
+      "name": "deliver",
+      "purpose": "Run optional delivery adapters such as Drive Desktop, Slack bridge, or future hosted output.",
+      "current_status": "implemented_local_wrapper_for_existing_policy",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/deliver_project_output.py <project_manifest>",
+        "planned_entrypoint": "ppt-agent deliver --project outputs/projects/<project_id>/project_manifest.json"
+      },
+      "inputs": [
+        "project_manifest_path",
+        "delivery_target",
+        "explicit_share_confirmation"
+      ],
+      "outputs": [
+        "outputs/projects/<project_id>/delivery_manifest.json",
+        "reports/<deck_id>_delivery_summary.json"
+      ],
+      "exit_codes": {
+        "0": "delivery completed or recorded",
+        "2": "explicit delivery consent missing"
+      }
+    }
+  ],
+  "mcp_adapter_policy": {
+    "status": "deferred_until_cli_contract_stabilizes",
+    "first_allowed_backlog_item": "B43",
+    "adapter_shape": "thin_wrapper_over_cli_or_package_apis",
+    "forbidden_in_mvp": [
+      "parallel_renderer_logic",
+      "parallel_composer_logic",
+      "full_workspace_scan",
+      "default_content_upload",
+      "default_gateway_call"
+    ]
+  }
+}

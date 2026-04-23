@@ -1,0 +1,87 @@
+name: Smoke Test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  public-smoke:
+    name: Public-thin smoke
+    runs-on: windows-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Compile public CLI modules
+        shell: pwsh
+        run: |
+          python -m py_compile .\scripts\ppt_cli_workspace.py .\scripts\ppt_workspace_entitlement.py .\scripts\ppt_support_bundle.py .\system\deck_models.py
+
+      - name: Validate public JSON fixtures
+        shell: pwsh
+        run: |
+          python -m json.tool .\config\public_cli_command_contract.json | Out-Null
+          python -m json.tool .\data\intake\business_growth_review.json | Out-Null
+          python -m json.tool .\data\specs\business_growth_review_spec.json | Out-Null
+          python -m json.tool .\data\specs\public_smoke_blank_spec.json | Out-Null
+
+      - name: Install runtime dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r .\requirements.txt
+
+      - name: Verify workspace init
+        shell: pwsh
+        run: |
+          python .\scripts\ppt_cli_workspace.py init --workspace .\outputs\smoke_workspace --force-readme
+          if (!(Test-Path .\outputs\smoke_workspace\README.md)) {
+            throw "Workspace README was not created."
+          }
+
+      - name: Verify workspace healthcheck
+        shell: pwsh
+        run: |
+          python .\scripts\ppt_cli_workspace.py healthcheck --workspace .\outputs\smoke_workspace
+
+      - name: Verify public gate smoke
+        shell: pwsh
+        run: |
+          python .\scripts\validate_public_gate_toolkit_dependency.py
+          python .\scripts\validate_public_gate_sync_path.py
+          python .\scripts\bootstrap_public_gate_workspace.py --workspace .\outputs\smoke_bootstrap_workspace --force-readme
+
+      - name: Verify public PPT build smoke
+        shell: pwsh
+        run: |
+          python .\scripts\build_deck.py .\data\specs\public_smoke_blank_spec.json
+          if (!(Test-Path .\outputs\decks\public_thin_smoke.pptx)) {
+            throw "Public smoke PPTX was not created."
+          }
+          python -c "from pptx import Presentation; Presentation(r'.\outputs\decks\public_thin_smoke.pptx'); print('pptx_open=ok')"
+
+      - name: Verify public-safe boundary
+        shell: pwsh
+        run: |
+          $forbidden = @(
+            ("cto" + "-review/"),
+            ("plan" + ".md"),
+            ("docs/REFERENCE_PIPELINE_" + "WORK_LOG.md"),
+            ("docs/AGENT_" + "HANDOFF_GUIDE.md"),
+            ("assets/slides/" + "references/")
+          )
+          $files = Get-ChildItem -Recurse -File | Where-Object { $_.FullName -notmatch "\\.git\\" -and $_.FullName -notmatch "\\outputs\\" -and $_.FullName -notmatch "\\.github\\workflows\\smoke-test.yml$" }
+          foreach ($token in $forbidden) {
+            $hits = $files | Select-String -SimpleMatch $token
+            if ($hits) {
+              throw "Forbidden public token found: $token"
+            }
+          }

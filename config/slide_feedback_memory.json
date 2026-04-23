@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "memories": [
+    {
+      "id": "korea_q2_seasonal_seafood_composer_review_2026_04",
+      "description": "Slide-by-slide operator feedback from the Korea Q2 seasonal seafood guide comparison. This memory turns the comparison into reusable composer policy rather than a one-off deck edit.",
+      "match": {
+        "name_contains": ["seafood", "해산물"],
+        "setting_contains": ["seafood", "해산물", "editorial guide"],
+        "source_path_contains": ["korea_q2_seasonal_seafood_guide_v2"]
+      },
+      "source_deck_policy": {
+        "prefer_source_project_deck": true,
+        "reuse_source_slides": [2, 3, 7, 8, 9]
+      },
+      "composer_policy": {
+        "regenerate_slides": [1, 4, 5, 6],
+        "editable_visuals_required": true,
+        "avoid_picture_cards": true,
+        "avoid_repeated_icon_kind": true,
+        "meaningful_cover_panel": true
+      },
+      "slide_preferences": [
+        {
+          "slide": 1,
+          "winner": "composer",
+          "reason": "Composer cover direction is preferred, but the right-side visual must carry clear Q2 calendar meaning."
+        },
+        {
+          "slide": 2,
+          "winner": "source",
+          "reason": "V2 is cleaner and carries more useful design brief information."
+        },
+        {
+          "slide": 3,
+          "winner": "source",
+          "reason": "V2 has a richer and clearer seasonal map."
+        },
+        {
+          "slide": 4,
+          "winner": "composer",
+          "reason": "Composer month-card direction is better when visuals are editable and not repeated."
+        },
+        {
+          "slide": 5,
+          "winner": "composer",
+          "reason": "Composer month-card direction is better when visuals are editable and not repeated."
+        },
+        {
+          "slide": 6,
+          "winner": "composer",
+          "reason": "Composer month-card direction is better when visuals are editable and not repeated."
+        },
+        {
+          "slide": 7,
+          "winner": "source",
+          "reason": "V2 pairing matrix is preferred."
+        },
+        {
+          "slide": 8,
+          "winner": "source",
+          "reason": "V2 course-flow slide is preferred."
+        },
+        {
+          "slide": 9,
+          "winner": "source",
+          "reason": "V2 QA content is preferred; generated appendix slides must be visually distinct from body slides."
+        }
+      ]
+    }
+  ]
+}

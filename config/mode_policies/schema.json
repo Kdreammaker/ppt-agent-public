@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mode_policy.schema.json",
+  "title": "PPT Mode Policy",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "mode", "uses", "default_assumptions", "fallback_rules"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "mode": {
+      "enum": ["auto", "assistant"]
+    },
+    "uses": {
+      "type": "object"
+    },
+    "default_assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fallback_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

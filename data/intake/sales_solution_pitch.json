@@ -1,0 +1,71 @@
+{
+  "$schema": "../../config/deck_intake.schema.json",
+  "intake_version": "1.0",
+  "name": "Solution Pitch",
+  "audience": {
+    "primary": "Prospective enterprise buyer",
+    "secondary": [
+      "Technical evaluator",
+      "Procurement reviewer"
+    ],
+    "knowledge_level": "informed",
+    "decision_role": "mixed"
+  },
+  "presentation_context": {
+    "setting": "Sales discovery follow-up",
+    "delivery_mode": "leave_behind",
+    "duration_minutes": 15,
+    "presenter_role": "Account executive",
+    "locale": "en-US"
+  },
+  "primary_goal": "Connect buyer pain points to a concise solution narrative and next meeting ask.",
+  "deck_type": "sales",
+  "tone": [
+    "sales",
+    "visual",
+    "friendly"
+  ],
+  "slide_count_range": {
+    "min": 6,
+    "max": 10
+  },
+  "brand_or_template_scope": {
+    "preferred_scope": "sales",
+    "preferred_template_keys": [],
+    "required_template_library": null,
+    "theme_path": "../../config/pptx_theme.example.json",
+    "notes": "Prefer sales-scoped cover, issue, and closing templates when available."
+  },
+  "content_density": "low",
+  "variation_level": "light_variants",
+  "review_requirements": {
+    "needs_variant_review": false,
+    "requires_rationale_report": true,
+    "requires_slot_map": true,
+    "reviewers": [
+      "sales lead"
+    ],
+    "approval_mode": "stakeholder_review"
+  },
+  "must_include": [
+    "Customer problem framing",
+    "Solution value",
+    "Proof points",
+    "Clear call to action"
+  ],
+  "must_avoid": [
+    "Dense analyst-style tables",
+    "Unsupported chart slots",
+    "Generic claims without proof"
+  ],
+  "source_materials": [],
+  "output_preferences": {
+    "output_spec_path": "data/specs/sales_solution_pitch_spec.json",
+    "output_deck_path": "outputs/decks/sales_solution_pitch.pptx",
+    "required_reports": [
+      "outputs/reports/slide_selection_rationale.json",
+      "outputs/reports/deck_slot_map.json"
+    ]
+  },
+  "notes": "Use review-friendly slot names so sales feedback can target exact slide regions."
+}

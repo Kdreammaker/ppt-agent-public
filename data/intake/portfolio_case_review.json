@@ -1,0 +1,78 @@
+{
+  "$schema": "../../config/deck_intake.schema.json",
+  "intake_version": "1.0",
+  "name": "Portfolio Case Review",
+  "audience": {
+    "primary": "Hiring panel",
+    "secondary": [
+      "Design reviewer",
+      "Product reviewer"
+    ],
+    "knowledge_level": "expert",
+    "decision_role": "reviewer"
+  },
+  "presentation_context": {
+    "setting": "Portfolio presentation",
+    "delivery_mode": "live",
+    "duration_minutes": 25,
+    "presenter_role": "Candidate",
+    "locale": "en-US"
+  },
+  "primary_goal": "Show project context, decision quality, execution craft, and measurable impact.",
+  "deck_type": "portfolio",
+  "tone": [
+    "portfolio",
+    "visual",
+    "analytical"
+  ],
+  "slide_count_range": {
+    "min": 7,
+    "max": 12
+  },
+  "brand_or_template_scope": {
+    "preferred_scope": "portfolio",
+    "preferred_template_keys": [],
+    "required_template_library": null,
+    "theme_path": "../../config/pptx_theme.example.json",
+    "notes": "Use portfolio scope before generic fallback."
+  },
+  "content_density": "medium",
+  "variation_level": "variant_review",
+  "review_requirements": {
+    "needs_variant_review": true,
+    "requires_rationale_report": true,
+    "requires_slot_map": true,
+    "reviewers": [
+      "portfolio owner"
+    ],
+    "approval_mode": "operator_review"
+  },
+  "must_include": [
+    "Project framing",
+    "Role and constraints",
+    "Decision moments",
+    "Impact evidence",
+    "Closing slide"
+  ],
+  "must_avoid": [
+    "Confidential client names",
+    "Spec-level footer fields",
+    "Ad hoc generated layouts"
+  ],
+  "source_materials": [
+    {
+      "path": "data/inputs/01_jb_meeting_summary_clean.docx",
+      "kind": "docx",
+      "description": "Example source document for narrative extraction."
+    }
+  ],
+  "output_preferences": {
+    "output_spec_path": "data/specs/portfolio_case_review_spec.json",
+    "output_deck_path": "outputs/decks/portfolio_case_review.pptx",
+    "required_reports": [
+      "outputs/reports/variant_review_rationale.md",
+      "outputs/reports/deck_slot_map.json"
+    ]
+  },
+  "notes": "This intake intentionally requests variant review for later Bundle E workflows."
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "workspace_code_entitlement_contract",
+  "status": "invite_beta_contract",
+  "activation_model": "workspace_code_only",
+  "license_key_supported": false,
+  "payment_supported": false,
+  "subscription_supported": false,
+  "credits_supported": false,
+  "telemetry_enabled": false,
+  "upload_allowed": false,
+  "raw_code_storage_allowed": false,
+  "request_fields": [
+    "request_id",
+    "cli_version",
+    "package_version",
+    "workspace_code_hash",
+    "workspace_code_mask",
+    "workspace_instance_hash",
+    "local_user_hash",
+    "requested_feature",
+    "operating_mode",
+    "consent_summary"
+  ],
+  "response_fields": [
+    "request_id",
+    "status",
+    "allowed",
+    "entitlements",
+    "expires_at",
+    "package_channel",
+    "feature_flags",
+    "quota_summary",
+    "model_versions",
+    "reason"
+  ],
+  "local_state_path": ".ppt-agent/entitlement.json",
+  "local_usage_state_path": ".ppt-agent/usage.json",
+  "local_state_integrity": {
+    "entitlement_json_write": "atomic_replace",
+    "usage_json_write": "file_lock_plus_atomic_replace",
+    "usage_lock_path": ".ppt-agent/usage.json.lock",
+    "support_bundle_output_boundary": "workspace_child_only",
+    "raw_workspace_code_committed_artifacts_allowed": false
+  },
+  "quota_policy": {
+    "max_activations_per_code": 3,
+    "daily_call_limit": 100,
+    "daily_reset_time": "00:00:00",
+    "daily_reset_timezone": "local_machine_timezone",
+    "public_cli_can_show_remaining_quota": true,
+    "public_cli_can_show_active_counts": true,
+    "public_cli_can_show_user_list": false,
+    "private_admin_tracks_users": true,
+    "private_admin_user_identity_policy": "hash_or_private_system_user_id_only",
+    "raw_user_identity_storage_allowed": false,
+    "raw_machine_fingerprint_storage_allowed": false
+  },
+  "model_versions": {
+    "cli": "0.1.0",
+    "workspace_contract": "0.2.0",
+    "composer": "deterministic_intake_composer_v0",
+    "renderer": "template_slide_renderer_v0",
+    "mcp_adapter": "thin_cli_adapter_v0",
+    "gateway_contract": "0.2.0",
+    "premium_recommendation": "disabled"
+  },
+  "masking": {
+    "display": "first4_last4",
+    "hash": "sha256",
+    "forbidden_outputs": [
+      "raw_workspace_code",
+      "full_license_key",
+      "gateway_secret",
+      "payment_token"
+    ]
+  },
+  "mock_codes": {
+    "allowed_contains": "ALLOW",
+    "denied_contains": "DENY",
+    "expired_contains": "EXPR",
+    "revoked_contains": "REVK",
+    "rotated_contains": "ROTA"
+  },
+  "default_entitlements": [
+    "invite_beta_cli_mvp",
+    "private_package_access",
+    "mcp_developer_preview"
+  ],
+  "required_policy": {
+    "local_only_usable_without_code": true,
+    "gateway_required_for_local_only": false,
+    "file_upload_allowed": false,
+    "full_content_upload_allowed": false,
+    "human_approval_required_before_distribution": true
+  }
+}

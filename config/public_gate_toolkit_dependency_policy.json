@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "public_gate_toolkit_dependency_policy",
+  "status": "active_boundary",
+  "public_asset_contribution_gate": {
+    "repository_url": "https://github.com/Kdreammaker/ai-asset-contribution-gate",
+    "repository_full_name": "Kdreammaker/ai-asset-contribution-gate",
+    "default_branch": "main",
+    "license": "Apache-2.0",
+    "observed_at": "2026-04-23T13:30:00+09:00",
+    "observed_head_sha": "57de80b808bd9cc28216a9e0b6f12058a666e227"
+  },
+  "dependency_decision": {
+    "preferred_mode": "tagged_release_or_pinned_commit_external_toolkit",
+    "fallback_mode": "manual_reviewed_sync_export",
+    "submodule_default": false,
+    "vendored_default": false,
+    "unversioned_clone_default": false,
+    "reason": "Keep the private system from publishing or cloning private materials into the public gate while still making public-safe schemas, validators, fixtures, CLI entrypoints, and smoke checks reproducible."
+  },
+  "allowed_public_gate_surfaces": [
+    "schemas",
+    "validators",
+    "fixture_format",
+    "cli_script_entrypoints",
+    "public_safe_smoke_checks",
+    "license_notice"
+  ],
+  "private_only_surfaces": [
+    "private_reference_analysis_outputs",
+    "private_assetization_results",
+    "binary_assets",
+    "registry_activation_data",
+    "workspace_manifests",
+    "secrets",
+    "drive_linkage",
+    "work_logs",
+    "local_absolute_paths",
+    "raw_workspace_codes"
+  ],
+  "trust_policy": {
+    "pin_required": true,
+    "pin_kind": "tag_or_commit_sha",
+    "review_required_before_update": true,
+    "update_requires_clean_public_smoke": true,
+    "update_requires_private_boundary_validators": true,
+    "rollback_requires_previous_known_good_pin": true,
+    "public_repo_write_requires_operator_approval": true
+  },
+  "update_flow": [
+    "Fetch public gate release/tag metadata or default-branch commit SHA.",
+    "Record the candidate version and pin in the private dependency manifest.",
+    "Run public-safe schema/fixture/smoke checks against the candidate.",
+    "Run private boundary validators before any sync or release-candidate promotion.",
+    "Update the private pin only after operator review.",
+    "Keep the previous known-good pin available for rollback."
+  ],
+  "forbidden_flows": [
+    "automatic upload of private references to the public gate",
+    "default telemetry or usage reporting through the public gate",
+    "public materialization of private assets",
+    "publishing workspace manifests or registry activation data",
+    "committing raw local paths, Drive links, tokens, workspace codes, or work logs"
+  ],
+  "validation_commands": [
+    "python scripts/validate_public_gate_toolkit_dependency.py",
+    "python scripts/validate_clean_release_export.py"
+  ]
+}

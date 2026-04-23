@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "roots": [
+    {
+      "root_id": "icons",
+      "path": "assets/icons",
+      "default_license": "unknown",
+      "allowed_for_ppt": true
+    },
+    {
+      "root_id": "fonts",
+      "path": "assets/fonts",
+      "default_license": "unknown",
+      "allowed_for_ppt": true
+    },
+    {
+      "root_id": "images",
+      "path": "assets/images",
+      "default_license": "unknown",
+      "allowed_for_ppt": true
+    }
+  ]
+}

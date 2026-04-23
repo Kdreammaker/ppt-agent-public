@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "reference_quality_lightweight_dna",
+  "status": "invite_beta_pre_recommendation_gate",
+  "raw_reference_assetization_allowed": false,
+  "raw_reference_direct_use_allowed": false,
+  "public_export_allowed_by_default": false,
+  "minimum_production_quality_score": 4.0,
+  "allowed_production_usage_policies": [
+    "production_ready"
+  ],
+  "blocked_usage_policies": [
+    "candidate",
+    "curate_before_use",
+    "structure_only",
+    "raw_only",
+    "blocked"
+  ],
+  "lightweight_dna_fields": [
+    "slide_archetype",
+    "layout_role",
+    "visual_density",
+    "palette_hints",
+    "typography_hints",
+    "chart_table_style_hints",
+    "image_treatment",
+    "best_for",
+    "avoid_for"
+  ],
+  "forbidden_report_fields": [
+    "raw_file_contents",
+    "local_image_binaries",
+    "extracted_asset_binaries",
+    "full_template_xml",
+    "full_slide_text",
+    "workspace_codes",
+    "tokens_or_credentials"
+  ],
+  "reference_folder_policy": {
+    "folder": "assets/slides/references",
+    "default_classification": "raw_only",
+    "may_be_summarized_locally": true,
+    "may_be_exported_publicly": false,
+    "promotion_required_for_production_selection": true
+  },
+  "quality_gap_sources": [
+    "outputs/reports/business_growth_review_visual_smoke.json",
+    "outputs/reports/business_growth_review_slide_selection_rationale.json",
+    "outputs/reports/business_growth_review_text_overflow.json",
+    "outputs/reports/business_growth_review_dual_output_summary.json"
+  ],
+  "output_paths": {
+    "json": "outputs/reports/reference_quality_dna.json",
+    "markdown": "outputs/reports/reference_quality_dna.md"
+  }
+}

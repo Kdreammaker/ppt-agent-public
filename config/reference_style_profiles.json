@@ -1,0 +1,3487 @@
+{
+  "version": "0.1",
+  "workspace": "C:/Users/kimjo/Downloads/ppt-test",
+  "profiles": [
+    {
+      "library_id": "template_library_04_v1",
+      "scope": "report",
+      "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+      "source_path": "assets/slides/references/template.pptx",
+      "slide_count": 22,
+      "avg_shape_count": 16.7,
+      "avg_text_chars": 235.0,
+      "avg_image_count": 1.7,
+      "layout_signatures": [
+        [
+          "image-led",
+          8
+        ],
+        [
+          "open-canvas",
+          6
+        ],
+        [
+          "text-card-system",
+          4
+        ],
+        [
+          "minimal-cover-or-divider",
+          3
+        ],
+        [
+          "dense-card-system",
+          1
+        ]
+      ],
+      "dominant_fills": [
+        [
+          "#0540F3",
+          15
+        ],
+        [
+          "#26D07C",
+          7
+        ],
+        [
+          "#00249C",
+          1
+        ],
+        [
+          "#D6D5FF",
+          1
+        ],
+        [
+          "#9EACFF",
+          1
+        ],
+        [
+          "#87B975",
+          1
+        ],
+        [
+          "#B575AE",
+          1
+        ],
+        [
+          "#002FFE",
+          1
+        ],
+        [
+          "#FFC000",
+          1
+        ]
+      ],
+      "dominant_lines": [
+        [
+          "#0540F3",
+          11
+        ],
+        [
+          "#26D07C",
+          4
+        ],
+        [
+          "#B575AE",
+          1
+        ],
+        [
+          "#002FFE",
+          1
+        ],
+        [
+          "#3EB1DD",
+          1
+        ]
+      ],
+      "dominant_font_names": [
+        [
+          "맑은 고딕",
+          285
+        ],
+        [
+          "맑��� 고딕",
+          2
+        ],
+        [
+          "Pretendard",
+          1
+        ],
+        [
+          "맑은 ���딕",
+          1
+        ]
+      ],
+      "dominant_font_colors": [
+        [
+          "#0540F3",
+          22
+        ],
+        [
+          "#FFFFFF",
+          21
+        ],
+        [
+          "#000000",
+          10
+        ],
+        [
+          "#004BF7",
+          8
+        ],
+        [
+          "#2A2A2A",
+          4
+        ],
+        [
+          "#0048ED",
+          1
+        ]
+      ],
+      "slides": [
+        {
+          "slide_no": 1,
+          "shape_count": 4,
+          "text_shape_count": 2,
+          "picture_count": 1,
+          "group_count": 0,
+          "text_chars": 82,
+          "layout_signature": "minimal-cover-or-divider",
+          "dominant_fills": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              3
+            ]
+          ],
+          "dominant_font_colors": [],
+          "font_size_min": 14.0,
+          "font_size_max": 48.0,
+          "font_size_avg": 36.7,
+          "left_edge_avg": 2.85,
+          "top_edge_avg": 2.03
+        },
+        {
+          "slide_no": 2,
+          "shape_count": 11,
+          "text_shape_count": 6,
+          "picture_count": 1,
+          "group_count": 3,
+          "text_chars": 593,
+          "layout_signature": "open-canvas",
+          "dominant_fills": [],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              21
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              4
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 11.5,
+          "left_edge_avg": 3.73,
+          "top_edge_avg": 3.36
+        },
+        {
+          "slide_no": 3,
+          "shape_count": 17,
+          "text_shape_count": 8,
+          "picture_count": 1,
+          "group_count": 2,
+          "text_chars": 297,
+          "layout_signature": "text-card-system",
+          "dominant_fills": [
+            [
+              "#26D07C",
+              1
+            ],
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              22
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#000000",
+              10
+            ],
+            [
+              "#FFFFFF",
+              5
+            ],
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 10.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 17.9,
+          "left_edge_avg": 3.87,
+          "top_edge_avg": 3.05
+        },
+        {
+          "slide_no": 4,
+          "shape_count": 14,
+          "text_shape_count": 10,
+          "picture_count": 1,
+          "group_count": 1,
+          "text_chars": 203,
+          "layout_signature": "text-card-system",
+          "dominant_fills": [],
+          "dominant_lines": [
+            [
+              "#0540F3",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              13
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              3
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 14.2,
+          "left_edge_avg": 3.01,
+          "top_edge_avg": 3.14
+        },
+        {
+          "slide_no": 5,
+          "shape_count": 16,
+          "text_shape_count": 6,
+          "picture_count": 0,
+          "group_count": 0,
+          "text_chars": 472,
+          "layout_signature": "open-canvas",
+          "dominant_fills": [
+            [
+              "#0540F3",
+              3
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#0540F3",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              18
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 10.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 13.2,
+          "left_edge_avg": 3.89,
+          "top_edge_avg": 3.62
+        },
+        {
+          "slide_no": 6,
+          "shape_count": 21,
+          "text_shape_count": 5,
+          "picture_count": 1,
+          "group_count": 3,
+          "text_chars": 203,
+          "layout_signature": "open-canvas",
+          "dominant_fills": [
+            [
+              "#00249C",
+              1
+            ],
+            [
+              "#D6D5FF",
+              1
+            ],
+            [
+              "#9EACFF",
+              1
+            ],
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#0540F3",
+              4
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              10
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 12.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 16.1,
+          "left_edge_avg": 4.59,
+          "top_edge_avg": 3.5
+        },
+        {
+          "slide_no": 7,
+          "shape_count": 22,
+          "text_shape_count": 14,
+          "picture_count": 0,
+          "group_count": 0,
+          "text_chars": 184,
+          "layout_signature": "text-card-system",
+          "dominant_fills": [
+            [
+              "#26D07C",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#26D07C",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              16
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#FFFFFF",
+              6
+            ],
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 18.6,
+          "left_edge_avg": 6.05,
+          "top_edge_avg": 3.86
+        },
+        {
+          "slide_no": 8,
+          "shape_count": 21,
+          "text_shape_count": 8,
+          "picture_count": 0,
+          "group_count": 4,
+          "text_chars": 161,
+          "layout_signature": "text-card-system",
+          "dominant_fills": [
+            [
+              "#0540F3",
+              3
+            ],
+            [
+              "#26D07C",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#26D07C",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              9
+            ],
+            [
+              "Pretendard",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              1
+            ],
+            [
+              "#FFFFFF",
+              1
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 17.6,
+          "left_edge_avg": 4.78,
+          "top_edge_avg": 3.53
+        },
+        {
+          "slide_no": 9,
+          "shape_count": 13,
+          "text_shape_count": 7,
+          "picture_count": 0,
+          "group_count": 1,
+          "text_chars": 153,
+          "layout_signature": "open-canvas",
+          "dominant_fills": [
+            [
+              "#26D07C",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#26D07C",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              9
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#FFFFFF",
+              5
+            ],
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 16.9,
+          "left_edge_avg": 2.63,
+          "top_edge_avg": 3.02
+        },
+        {
+          "slide_no": 10,
+          "shape_count": 12,
+          "text_shape_count": 3,
+          "picture_count": 4,
+          "group_count": 4,
+          "text_chars": 103,
+          "layout_signature": "image-led",
+          "dominant_fills": [],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              4
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 19.0,
+          "left_edge_avg": 2.89,
+          "top_edge_avg": 3.27
+        },
+        {
+          "slide_no": 11,
+          "shape_count": 33,
+          "text_shape_count": 19,
+          "picture_count": 7,
+          "group_count": 3,
+          "text_chars": 189,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#0540F3",
+              5
+            ]
+          ],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              21
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 10.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 13.6,
+          "left_edge_avg": 4.82,
+          "top_edge_avg": 3.83
+        },
+        {
+          "slide_no": 12,
+          "shape_count": 10,
+          "text_shape_count": 5,
+          "picture_count": 2,
+          "group_count": 1,
+          "text_chars": 144,
+          "layout_signature": "image-led",
+          "dominant_fills": [],
+          "dominant_lines": [
+            [
+              "#26D07C",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              9
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              3
+            ]
+          ],
+          "font_size_min": 12.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 18.1,
+          "left_edge_avg": 4.14,
+          "top_edge_avg": 3.1
+        },
+        {
+          "slide_no": 13,
+          "shape_count": 11,
+          "text_shape_count": 7,
+          "picture_count": 0,
+          "group_count": 0,
+          "text_chars": 96,
+          "layout_signature": "open-canvas",
+          "dominant_fills": [],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              8
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 16.0,
+          "left_edge_avg": 2.98,
+          "top_edge_avg": 2.94
+        },
+        {
+          "slide_no": 14,
+          "shape_count": 17,
+          "text_shape_count": 7,
+          "picture_count": 0,
+          "group_count": 3,
+          "text_chars": 227,
+          "layout_signature": "open-canvas",
+          "dominant_fills": [
+            [
+              "#26D07C",
+              2
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              9
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 12.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 15.8,
+          "left_edge_avg": 3.71,
+          "top_edge_avg": 3.25
+        },
+        {
+          "slide_no": 15,
+          "shape_count": 6,
+          "text_shape_count": 3,
+          "picture_count": 1,
+          "group_count": 1,
+          "text_chars": 108,
+          "layout_signature": "minimal-cover-or-divider",
+          "dominant_fills": [],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              4
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 19.0,
+          "left_edge_avg": 2.6,
+          "top_edge_avg": 3.08
+        },
+        {
+          "slide_no": 16,
+          "shape_count": 22,
+          "text_shape_count": 8,
+          "picture_count": 3,
+          "group_count": 5,
+          "text_chars": 138,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#0540F3",
+              1
+            ],
+            [
+              "#26D07C",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              9
+            ],
+            [
+              "맑은 ���딕",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#0540F3",
+              1
+            ]
+          ],
+          "font_size_min": 12.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 17.8,
+          "left_edge_avg": 4.56,
+          "top_edge_avg": 4.07
+        },
+        {
+          "slide_no": 17,
+          "shape_count": 29,
+          "text_shape_count": 21,
+          "picture_count": 0,
+          "group_count": 0,
+          "text_chars": 363,
+          "layout_signature": "dense-card-system",
+          "dominant_fills": [],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              24
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#FFFFFF",
+              4
+            ],
+            [
+              "#004BF7",
+              2
+            ],
+            [
+              "#2A2A2A",
+              1
+            ],
+            [
+              "#0048ED",
+              1
+            ]
+          ],
+          "font_size_min": 6.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 16.7,
+          "left_edge_avg": 4.67,
+          "top_edge_avg": 3.82
+        },
+        {
+          "slide_no": 18,
+          "shape_count": 23,
+          "text_shape_count": 8,
+          "picture_count": 4,
+          "group_count": 3,
+          "text_chars": 224,
+          "layout_signature": "image-led",
+          "dominant_fills": [],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              14
+            ],
+            [
+              "맑��� 고딕",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#004BF7",
+              2
+            ],
+            [
+              "#2A2A2A",
+              1
+            ]
+          ],
+          "font_size_min": 12.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 17.6,
+          "left_edge_avg": 5.05,
+          "top_edge_avg": 3.74
+        },
+        {
+          "slide_no": 19,
+          "shape_count": 20,
+          "text_shape_count": 12,
+          "picture_count": 4,
+          "group_count": 0,
+          "text_chars": 680,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#87B975",
+              1
+            ],
+            [
+              "#B575AE",
+              1
+            ],
+            [
+              "#002FFE",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#B575AE",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              27
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#004BF7",
+              2
+            ],
+            [
+              "#2A2A2A",
+              1
+            ]
+          ],
+          "font_size_min": 8.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 12.4,
+          "left_edge_avg": 4.16,
+          "top_edge_avg": 3.5
+        },
+        {
+          "slide_no": 20,
+          "shape_count": 18,
+          "text_shape_count": 4,
+          "picture_count": 3,
+          "group_count": 7,
+          "text_chars": 76,
+          "layout_signature": "image-led",
+          "dominant_fills": [],
+          "dominant_lines": [
+            [
+              "#002FFE",
+              1
+            ],
+            [
+              "#3EB1DD",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              6
+            ],
+            [
+              "맑��� 고딕",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#004BF7",
+              2
+            ],
+            [
+              "#2A2A2A",
+              1
+            ]
+          ],
+          "font_size_min": 10.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 22.6,
+          "left_edge_avg": 4.67,
+          "top_edge_avg": 3.47
+        },
+        {
+          "slide_no": 21,
+          "shape_count": 3,
+          "text_shape_count": 2,
+          "picture_count": 0,
+          "group_count": 0,
+          "text_chars": 53,
+          "layout_signature": "minimal-cover-or-divider",
+          "dominant_fills": [],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              6
+            ]
+          ],
+          "dominant_font_colors": [],
+          "font_size_min": 24.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 26.0,
+          "left_edge_avg": 1.33,
+          "top_edge_avg": 1.7
+        },
+        {
+          "slide_no": 22,
+          "shape_count": 25,
+          "text_shape_count": 15,
+          "picture_count": 4,
+          "group_count": 0,
+          "text_chars": 422,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFC000",
+              1
+            ]
+          ],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "맑은 고딕",
+              23
+            ]
+          ],
+          "dominant_font_colors": [],
+          "font_size_min": 4.0,
+          "font_size_max": 34.0,
+          "font_size_avg": 16.2,
+          "left_edge_avg": 5.3,
+          "top_edge_avg": 3.04
+        }
+      ]
+    },
+    {
+      "library_id": "template_library_01_v1",
+      "scope": "sales",
+      "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+      "source_path": "not_published",
+      "slide_count": 10,
+      "avg_shape_count": 42,
+      "avg_text_chars": 502.8,
+      "avg_image_count": 8.5,
+      "layout_signatures": [
+        [
+          "image-led",
+          9
+        ],
+        [
+          "open-canvas",
+          1
+        ]
+      ],
+      "dominant_fills": [
+        [
+          "#1E3A8A",
+          96
+        ],
+        [
+          "#FFFFFF",
+          14
+        ],
+        [
+          "#EFF6FF",
+          4
+        ],
+        [
+          "#F59E0B",
+          1
+        ],
+        [
+          "#6B7280",
+          1
+        ]
+      ],
+      "dominant_lines": [
+        [
+          "#FFFFFF",
+          78
+        ],
+        [
+          "#1E3A8A",
+          42
+        ]
+      ],
+      "dominant_font_names": [
+        [
+          "Noto Sans KR",
+          246
+        ]
+      ],
+      "dominant_font_colors": [
+        [
+          "#6B7280",
+          140
+        ],
+        [
+          "#1E3A8A",
+          89
+        ],
+        [
+          "#FFFFFF",
+          17
+        ]
+      ],
+      "slides": [
+        {
+          "slide_no": 1,
+          "shape_count": 6,
+          "text_shape_count": 4,
+          "picture_count": 1,
+          "group_count": 0,
+          "text_chars": 108,
+          "layout_signature": "open-canvas",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              4
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#FFFFFF",
+              4
+            ]
+          ],
+          "font_size_min": 24.0,
+          "font_size_max": 54.0,
+          "font_size_avg": 33.0,
+          "left_edge_avg": 0.3,
+          "top_edge_avg": 4.99
+        },
+        {
+          "slide_no": 2,
+          "shape_count": 42,
+          "text_shape_count": 19,
+          "picture_count": 7,
+          "group_count": 0,
+          "text_chars": 498,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              12
+            ],
+            [
+              "#FFFFFF",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              7
+            ],
+            [
+              "#1E3A8A",
+              6
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              20
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              10
+            ],
+            [
+              "#1E3A8A",
+              10
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 15.9,
+          "left_edge_avg": 7.08,
+          "top_edge_avg": 4.47
+        },
+        {
+          "slide_no": 3,
+          "shape_count": 57,
+          "text_shape_count": 30,
+          "picture_count": 9,
+          "group_count": 0,
+          "text_chars": 489,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              12
+            ],
+            [
+              "#EFF6FF",
+              4
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              12
+            ],
+            [
+              "#1E3A8A",
+              4
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              32
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              14
+            ],
+            [
+              "#1E3A8A",
+              14
+            ],
+            [
+              "#FFFFFF",
+              4
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 16.2,
+          "left_edge_avg": 7.43,
+          "top_edge_avg": 5.75
+        },
+        {
+          "slide_no": 4,
+          "shape_count": 30,
+          "text_shape_count": 18,
+          "picture_count": 4,
+          "group_count": 0,
+          "text_chars": 468,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              6
+            ],
+            [
+              "#F59E0B",
+              1
+            ],
+            [
+              "#6B7280",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              6
+            ],
+            [
+              "#1E3A8A",
+              5
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              19
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              9
+            ],
+            [
+              "#1E3A8A",
+              7
+            ],
+            [
+              "#FFFFFF",
+              3
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 18.9,
+          "left_edge_avg": 6.52,
+          "top_edge_avg": 6.03
+        },
+        {
+          "slide_no": 5,
+          "shape_count": 36,
+          "text_shape_count": 20,
+          "picture_count": 9,
+          "group_count": 0,
+          "text_chars": 418,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              6
+            ],
+            [
+              "#FFFFFF",
+              3
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              9
+            ],
+            [
+              "#1E3A8A",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              21
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              10
+            ],
+            [
+              "#1E3A8A",
+              8
+            ],
+            [
+              "#FFFFFF",
+              3
+            ]
+          ],
+          "font_size_min": 12.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 16.0,
+          "left_edge_avg": 8.39,
+          "top_edge_avg": 5.17
+        },
+        {
+          "slide_no": 6,
+          "shape_count": 65,
+          "text_shape_count": 24,
+          "picture_count": 16,
+          "group_count": 0,
+          "text_chars": 594,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              22
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              15
+            ],
+            [
+              "#1E3A8A",
+              7
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              27
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              18
+            ],
+            [
+              "#1E3A8A",
+              9
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 14.9,
+          "left_edge_avg": 6.98,
+          "top_edge_avg": 6.59
+        },
+        {
+          "slide_no": 7,
+          "shape_count": 51,
+          "text_shape_count": 23,
+          "picture_count": 16,
+          "group_count": 0,
+          "text_chars": 526,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              9
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#1E3A8A",
+              6
+            ],
+            [
+              "#FFFFFF",
+              3
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              25
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              19
+            ],
+            [
+              "#1E3A8A",
+              6
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 15.0,
+          "left_edge_avg": 7.12,
+          "top_edge_avg": 5.37
+        },
+        {
+          "slide_no": 8,
+          "shape_count": 44,
+          "text_shape_count": 27,
+          "picture_count": 7,
+          "group_count": 0,
+          "text_chars": 711,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              6
+            ],
+            [
+              "#1E3A8A",
+              4
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#1E3A8A",
+              6
+            ],
+            [
+              "#FFFFFF",
+              4
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              34
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              19
+            ],
+            [
+              "#1E3A8A",
+              15
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 15.0,
+          "left_edge_avg": 6.78,
+          "top_edge_avg": 5.28
+        },
+        {
+          "slide_no": 9,
+          "shape_count": 46,
+          "text_shape_count": 22,
+          "picture_count": 8,
+          "group_count": 0,
+          "text_chars": 627,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              13
+            ],
+            [
+              "#FFFFFF",
+              4
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              13
+            ],
+            [
+              "#1E3A8A",
+              4
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              31
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              14
+            ],
+            [
+              "#1E3A8A",
+              14
+            ],
+            [
+              "#FFFFFF",
+              3
+            ]
+          ],
+          "font_size_min": 12.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 14.9,
+          "left_edge_avg": 5.92,
+          "top_edge_avg": 5.25
+        },
+        {
+          "slide_no": 10,
+          "shape_count": 43,
+          "text_shape_count": 24,
+          "picture_count": 8,
+          "group_count": 0,
+          "text_chars": 589,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              11
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              8
+            ],
+            [
+              "#1E3A8A",
+              3
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              33
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              27
+            ],
+            [
+              "#1E3A8A",
+              6
+            ]
+          ],
+          "font_size_min": 13.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 14.7,
+          "left_edge_avg": 6.44,
+          "top_edge_avg": 5.98
+        }
+      ]
+    },
+    {
+      "library_id": "template_library_02_v1",
+      "scope": "sales",
+      "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "source_path": "not_published",
+      "slide_count": 12,
+      "avg_shape_count": 35.9,
+      "avg_text_chars": 349,
+      "avg_image_count": 10.3,
+      "layout_signatures": [
+        [
+          "image-led",
+          12
+        ]
+      ],
+      "dominant_fills": [
+        [
+          "#FFFFFF",
+          40
+        ],
+        [
+          "#F97316",
+          14
+        ],
+        [
+          "#F3F4F6",
+          12
+        ],
+        [
+          "#1E3A8A",
+          12
+        ],
+        [
+          "#DBEAFE",
+          3
+        ],
+        [
+          "#10B981",
+          3
+        ],
+        [
+          "#EFF6FF",
+          2
+        ],
+        [
+          "#E0F2FE",
+          2
+        ],
+        [
+          "#E5E7EB",
+          1
+        ],
+        [
+          "#FFF7ED",
+          1
+        ]
+      ],
+      "dominant_lines": [
+        [
+          "#FFFFFF",
+          69
+        ],
+        [
+          "#1E3A8A",
+          8
+        ],
+        [
+          "#E5E7EB",
+          5
+        ],
+        [
+          "#F97316",
+          4
+        ],
+        [
+          "#9CA3AF",
+          3
+        ],
+        [
+          "#BAE6FD",
+          1
+        ],
+        [
+          "#6B7280",
+          1
+        ],
+        [
+          "#E2E8F0",
+          1
+        ]
+      ],
+      "dominant_font_names": [
+        [
+          "Noto Sans KR",
+          236
+        ],
+        [
+          "Inter",
+          34
+        ]
+      ],
+      "dominant_font_colors": [
+        [
+          "#6B7280",
+          120
+        ],
+        [
+          "#1E3A8A",
+          67
+        ],
+        [
+          "#4B5563",
+          30
+        ],
+        [
+          "#FFFFFF",
+          21
+        ],
+        [
+          "#F97316",
+          18
+        ],
+        [
+          "#9CA3AF",
+          6
+        ],
+        [
+          "#F98523",
+          3
+        ],
+        [
+          "#000000",
+          2
+        ],
+        [
+          "#1F2937",
+          2
+        ],
+        [
+          "#0369A1",
+          1
+        ]
+      ],
+      "slides": [
+        {
+          "slide_no": 1,
+          "shape_count": 7,
+          "text_shape_count": 3,
+          "picture_count": 4,
+          "group_count": 0,
+          "text_chars": 131,
+          "layout_signature": "image-led",
+          "dominant_fills": [],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              4
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#1E3A8A",
+              2
+            ],
+            [
+              "#6B7280",
+              2
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 33.0,
+          "font_size_avg": 23.2,
+          "left_edge_avg": 1.66,
+          "top_edge_avg": 4.33
+        },
+        {
+          "slide_no": 2,
+          "shape_count": 24,
+          "text_shape_count": 15,
+          "picture_count": 8,
+          "group_count": 0,
+          "text_chars": 458,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#F97316",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Inter",
+              15
+            ],
+            [
+              "Noto Sans KR",
+              3
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              9
+            ],
+            [
+              "#1E3A8A",
+              8
+            ],
+            [
+              "#4B5563",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 13.7,
+          "left_edge_avg": 2.19,
+          "top_edge_avg": 3.94
+        },
+        {
+          "slide_no": 3,
+          "shape_count": 46,
+          "text_shape_count": 23,
+          "picture_count": 12,
+          "group_count": 0,
+          "text_chars": 331,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              6
+            ],
+            [
+              "#F3F4F6",
+              1
+            ],
+            [
+              "#EFF6FF",
+              1
+            ],
+            [
+              "#E5E7EB",
+              1
+            ],
+            [
+              "#F97316",
+              1
+            ],
+            [
+              "#E0F2FE",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              4
+            ],
+            [
+              "#1E3A8A",
+              4
+            ],
+            [
+              "#9CA3AF",
+              3
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              27
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              12
+            ],
+            [
+              "#1E3A8A",
+              10
+            ],
+            [
+              "#FFFFFF",
+              3
+            ],
+            [
+              "#F97316",
+              2
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 13.3,
+          "left_edge_avg": 6.1,
+          "top_edge_avg": 3.83
+        },
+        {
+          "slide_no": 4,
+          "shape_count": 84,
+          "text_shape_count": 41,
+          "picture_count": 16,
+          "group_count": 0,
+          "text_chars": 503,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              11
+            ],
+            [
+              "#F3F4F6",
+              7
+            ],
+            [
+              "#1E3A8A",
+              3
+            ],
+            [
+              "#DBEAFE",
+              3
+            ],
+            [
+              "#F97316",
+              2
+            ],
+            [
+              "#FFF7ED",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              25
+            ],
+            [
+              "#F97316",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              42
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#4B5563",
+              21
+            ],
+            [
+              "#6B7280",
+              11
+            ],
+            [
+              "#1E3A8A",
+              6
+            ],
+            [
+              "#F97316",
+              4
+            ]
+          ],
+          "font_size_min": 8.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 12.1,
+          "left_edge_avg": 5.56,
+          "top_edge_avg": 3.88
+        },
+        {
+          "slide_no": 5,
+          "shape_count": 75,
+          "text_shape_count": 32,
+          "picture_count": 30,
+          "group_count": 0,
+          "text_chars": 499,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              6
+            ],
+            [
+              "#F97316",
+              4
+            ],
+            [
+              "#10B981",
+              3
+            ],
+            [
+              "#1E3A8A",
+              2
+            ],
+            [
+              "#F3F4F6",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              13
+            ],
+            [
+              "#1E3A8A",
+              2
+            ],
+            [
+              "#F97316",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              37
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              23
+            ],
+            [
+              "#1E3A8A",
+              6
+            ],
+            [
+              "#FFFFFF",
+              6
+            ],
+            [
+              "#F97316",
+              2
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 13.6,
+          "left_edge_avg": 6.66,
+          "top_edge_avg": 4.01
+        },
+        {
+          "slide_no": 6,
+          "shape_count": 32,
+          "text_shape_count": 21,
+          "picture_count": 4,
+          "group_count": 0,
+          "text_chars": 402,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              5
+            ],
+            [
+              "#1E3A8A",
+              3
+            ],
+            [
+              "#F97316",
+              2
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              6
+            ],
+            [
+              "#E5E7EB",
+              2
+            ],
+            [
+              "#1E3A8A",
+              1
+            ],
+            [
+              "#F97316",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              23
+            ],
+            [
+              "Inter",
+              7
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              12
+            ],
+            [
+              "#1E3A8A",
+              7
+            ],
+            [
+              "#F97316",
+              3
+            ],
+            [
+              "#9CA3AF",
+              3
+            ],
+            [
+              "#FFFFFF",
+              3
+            ],
+            [
+              "#000000",
+              2
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 13.5,
+          "left_edge_avg": 3.7,
+          "top_edge_avg": 3.28
+        },
+        {
+          "slide_no": 7,
+          "shape_count": 20,
+          "text_shape_count": 12,
+          "picture_count": 8,
+          "group_count": 0,
+          "text_chars": 336,
+          "layout_signature": "image-led",
+          "dominant_fills": [],
+          "dominant_lines": [],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              15
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              9
+            ],
+            [
+              "#1E3A8A",
+              5
+            ],
+            [
+              "#F98523",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 13.8,
+          "left_edge_avg": 1.73,
+          "top_edge_avg": 3.95
+        },
+        {
+          "slide_no": 8,
+          "shape_count": 49,
+          "text_shape_count": 26,
+          "picture_count": 11,
+          "group_count": 0,
+          "text_chars": 367,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              9
+            ],
+            [
+              "#F97316",
+              3
+            ],
+            [
+              "#F3F4F6",
+              1
+            ],
+            [
+              "#E0F2FE",
+              1
+            ],
+            [
+              "#6B7280",
+              1
+            ],
+            [
+              "#EFF6FF",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              10
+            ],
+            [
+              "#E5E7EB",
+              3
+            ],
+            [
+              "#BAE6FD",
+              1
+            ],
+            [
+              "#6B7280",
+              1
+            ],
+            [
+              "#1E3A8A",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              32
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              8
+            ],
+            [
+              "#1E3A8A",
+              6
+            ],
+            [
+              "#4B5563",
+              6
+            ],
+            [
+              "#F97316",
+              5
+            ],
+            [
+              "#FFFFFF",
+              4
+            ],
+            [
+              "#1F2937",
+              2
+            ],
+            [
+              "#0369A1",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 105.0,
+          "font_size_avg": 16.7,
+          "left_edge_avg": 5.09,
+          "top_edge_avg": 3.95
+        },
+        {
+          "slide_no": 9,
+          "shape_count": 19,
+          "text_shape_count": 11,
+          "picture_count": 6,
+          "group_count": 0,
+          "text_chars": 263,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#F3F4F6",
+              2
+            ],
+            [
+              "#FFFFFF",
+              2
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              4
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              12
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              5
+            ],
+            [
+              "#1E3A8A",
+              4
+            ],
+            [
+              "#4B5563",
+              2
+            ],
+            [
+              "#F98523",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 15.4,
+          "left_edge_avg": 1.71,
+          "top_edge_avg": 3.72
+        },
+        {
+          "slide_no": 10,
+          "shape_count": 36,
+          "text_shape_count": 22,
+          "picture_count": 11,
+          "group_count": 0,
+          "text_chars": 262,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              3
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              3
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              26
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              13
+            ],
+            [
+              "#1E3A8A",
+              8
+            ],
+            [
+              "#FFFFFF",
+              4
+            ],
+            [
+              "#F97316",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 14.3,
+          "left_edge_avg": 5.48,
+          "top_edge_avg": 4.28
+        },
+        {
+          "slide_no": 11,
+          "shape_count": 21,
+          "text_shape_count": 11,
+          "picture_count": 7,
+          "group_count": 0,
+          "text_chars": 297,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#1E3A8A",
+              1
+            ],
+            [
+              "#FFFFFF",
+              1
+            ],
+            [
+              "#F8FAFC",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              2
+            ],
+            [
+              "#E2E8F0",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              11
+            ],
+            [
+              "Inter",
+              3
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              9
+            ],
+            [
+              "#1E3A8A",
+              4
+            ],
+            [
+              "#F98523",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 30.0,
+          "font_size_avg": 15.2,
+          "left_edge_avg": 2.21,
+          "top_edge_avg": 3.63
+        },
+        {
+          "slide_no": 12,
+          "shape_count": 18,
+          "text_shape_count": 10,
+          "picture_count": 7,
+          "group_count": 0,
+          "text_chars": 339,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#F97316",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              1
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Inter",
+              9
+            ],
+            [
+              "Noto Sans KR",
+              4
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              7
+            ],
+            [
+              "#9CA3AF",
+              3
+            ],
+            [
+              "#1E3A8A",
+              1
+            ],
+            [
+              "#F97316",
+              1
+            ],
+            [
+              "#FFFFFF",
+              1
+            ]
+          ],
+          "font_size_min": 8.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 13.7,
+          "left_edge_avg": 1.96,
+          "top_edge_avg": 4.11
+        }
+      ]
+    },
+    {
+      "library_id": "template_library_03_v1",
+      "scope": "portfolio",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "source_path": "not_published",
+      "slide_count": 10,
+      "avg_shape_count": 38.4,
+      "avg_text_chars": 265.4,
+      "avg_image_count": 7.6,
+      "layout_signatures": [
+        [
+          "image-led",
+          10
+        ]
+      ],
+      "dominant_fills": [
+        [
+          "#FFFFFF",
+          45
+        ],
+        [
+          "#F3F4F6",
+          29
+        ],
+        [
+          "#F9FAFB",
+          29
+        ],
+        [
+          "#EFF6FF",
+          14
+        ],
+        [
+          "#DBEAFE",
+          7
+        ],
+        [
+          "#4B5563",
+          7
+        ],
+        [
+          "#EEF2FF",
+          5
+        ],
+        [
+          "#1A2332",
+          2
+        ],
+        [
+          "#E5E7EB",
+          2
+        ],
+        [
+          "#2563EB",
+          2
+        ]
+      ],
+      "dominant_lines": [
+        [
+          "#FFFFFF",
+          108
+        ],
+        [
+          "#E5E7EB",
+          24
+        ],
+        [
+          "#F3F4F6",
+          17
+        ]
+      ],
+      "dominant_font_names": [
+        [
+          "Noto Sans KR",
+          218
+        ],
+        [
+          "ui-monospace",
+          8
+        ]
+      ],
+      "dominant_font_colors": [
+        [
+          "#1A2332",
+          57
+        ],
+        [
+          "#6B7280",
+          47
+        ],
+        [
+          "#4B5563",
+          37
+        ],
+        [
+          "#9CA3AF",
+          21
+        ],
+        [
+          "#374151",
+          18
+        ],
+        [
+          "#FFFFFF",
+          12
+        ],
+        [
+          "#2563EB",
+          11
+        ],
+        [
+          "#1E40AF",
+          7
+        ],
+        [
+          "#4F46E5",
+          5
+        ],
+        [
+          "#1F2937",
+          2
+        ]
+      ],
+      "slides": [
+        {
+          "slide_no": 1,
+          "shape_count": 17,
+          "text_shape_count": 7,
+          "picture_count": 2,
+          "group_count": 0,
+          "text_chars": 94,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              6
+            ],
+            [
+              "#F3F4F6",
+              4
+            ],
+            [
+              "#1A2332",
+              2
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              12
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              9
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#374151",
+              4
+            ],
+            [
+              "#4B5563",
+              2
+            ],
+            [
+              "#2563EB",
+              1
+            ],
+            [
+              "#111827",
+              1
+            ],
+            [
+              "#1D4ED8",
+              1
+            ]
+          ],
+          "font_size_min": 10.0,
+          "font_size_max": 72.0,
+          "font_size_avg": 20.9,
+          "left_edge_avg": 4.1,
+          "top_edge_avg": 3.39
+        },
+        {
+          "slide_no": 2,
+          "shape_count": 76,
+          "text_shape_count": 45,
+          "picture_count": 20,
+          "group_count": 0,
+          "text_chars": 554,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#EFF6FF",
+              4
+            ],
+            [
+              "#F3F4F6",
+              3
+            ],
+            [
+              "#FFFFFF",
+              2
+            ],
+            [
+              "#E5E7EB",
+              2
+            ],
+            [
+              "#F9FAFB",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              7
+            ],
+            [
+              "#F3F4F6",
+              3
+            ],
+            [
+              "#E5E7EB",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              49
+            ],
+            [
+              "ui-monospace",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#374151",
+              14
+            ],
+            [
+              "#4B5563",
+              13
+            ],
+            [
+              "#1A2332",
+              9
+            ],
+            [
+              "#6B7280",
+              9
+            ],
+            [
+              "#9CA3AF",
+              3
+            ],
+            [
+              "#1F2937",
+              2
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 36.0,
+          "font_size_avg": 12.0,
+          "left_edge_avg": 5.78,
+          "top_edge_avg": 4.32
+        },
+        {
+          "slide_no": 3,
+          "shape_count": 34,
+          "text_shape_count": 17,
+          "picture_count": 5,
+          "group_count": 0,
+          "text_chars": 270,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              5
+            ],
+            [
+              "#F9FAFB",
+              4
+            ],
+            [
+              "#F3F4F6",
+              3
+            ],
+            [
+              "#DBEAFE",
+              1
+            ],
+            [
+              "#4B5563",
+              1
+            ],
+            [
+              "#EFF6FF",
+              1
+            ],
+            [
+              "#EEF2FF",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              11
+            ],
+            [
+              "#E5E7EB",
+              3
+            ],
+            [
+              "#F3F4F6",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              19
+            ],
+            [
+              "ui-monospace",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#1A2332",
+              6
+            ],
+            [
+              "#6B7280",
+              5
+            ],
+            [
+              "#4B5563",
+              3
+            ],
+            [
+              "#9CA3AF",
+              2
+            ],
+            [
+              "#1E40AF",
+              1
+            ],
+            [
+              "#FFFFFF",
+              1
+            ],
+            [
+              "#2563EB",
+              1
+            ],
+            [
+              "#4F46E5",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 27.0,
+          "font_size_avg": 13.5,
+          "left_edge_avg": 5.57,
+          "top_edge_avg": 3.32
+        },
+        {
+          "slide_no": 4,
+          "shape_count": 40,
+          "text_shape_count": 19,
+          "picture_count": 9,
+          "group_count": 0,
+          "text_chars": 286,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              4
+            ],
+            [
+              "#F9FAFB",
+              4
+            ],
+            [
+              "#F3F4F6",
+              3
+            ],
+            [
+              "#DBEAFE",
+              1
+            ],
+            [
+              "#4B5563",
+              1
+            ],
+            [
+              "#EFF6FF",
+              1
+            ],
+            [
+              "#EEF2FF",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              10
+            ],
+            [
+              "#E5E7EB",
+              3
+            ],
+            [
+              "#F3F4F6",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              21
+            ],
+            [
+              "ui-monospace",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#1A2332",
+              6
+            ],
+            [
+              "#6B7280",
+              5
+            ],
+            [
+              "#FFFFFF",
+              3
+            ],
+            [
+              "#4B5563",
+              3
+            ],
+            [
+              "#9CA3AF",
+              2
+            ],
+            [
+              "#1E40AF",
+              1
+            ],
+            [
+              "#2563EB",
+              1
+            ],
+            [
+              "#4F46E5",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 27.0,
+          "font_size_avg": 13.4,
+          "left_edge_avg": 5.82,
+          "top_edge_avg": 3.48
+        },
+        {
+          "slide_no": 5,
+          "shape_count": 42,
+          "text_shape_count": 20,
+          "picture_count": 7,
+          "group_count": 0,
+          "text_chars": 227,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              5
+            ],
+            [
+              "#F9FAFB",
+              4
+            ],
+            [
+              "#F3F4F6",
+              3
+            ],
+            [
+              "#2563EB",
+              2
+            ],
+            [
+              "#DBEAFE",
+              1
+            ],
+            [
+              "#4B5563",
+              1
+            ],
+            [
+              "#FEF2F2",
+              1
+            ],
+            [
+              "#ECFDF5",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              14
+            ],
+            [
+              "#E5E7EB",
+              3
+            ],
+            [
+              "#F3F4F6",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              23
+            ],
+            [
+              "ui-monospace",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              5
+            ],
+            [
+              "#1A2332",
+              5
+            ],
+            [
+              "#FFFFFF",
+              3
+            ],
+            [
+              "#9CA3AF",
+              3
+            ],
+            [
+              "#4B5563",
+              3
+            ],
+            [
+              "#1E40AF",
+              1
+            ],
+            [
+              "#2563EB",
+              1
+            ],
+            [
+              "#DC2626",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 27.0,
+          "font_size_avg": 13.6,
+          "left_edge_avg": 6.15,
+          "top_edge_avg": 3.6
+        },
+        {
+          "slide_no": 6,
+          "shape_count": 43,
+          "text_shape_count": 21,
+          "picture_count": 7,
+          "group_count": 0,
+          "text_chars": 304,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              6
+            ],
+            [
+              "#F9FAFB",
+              5
+            ],
+            [
+              "#F3F4F6",
+              3
+            ],
+            [
+              "#DBEAFE",
+              1
+            ],
+            [
+              "#4B5563",
+              1
+            ],
+            [
+              "#EFF6FF",
+              1
+            ],
+            [
+              "#EEF2FF",
+              1
+            ],
+            [
+              "#F5F3FF",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              14
+            ],
+            [
+              "#E5E7EB",
+              4
+            ],
+            [
+              "#F3F4F6",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              24
+            ],
+            [
+              "ui-monospace",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#1A2332",
+              7
+            ],
+            [
+              "#6B7280",
+              6
+            ],
+            [
+              "#4B5563",
+              4
+            ],
+            [
+              "#FFFFFF",
+              2
+            ],
+            [
+              "#9CA3AF",
+              2
+            ],
+            [
+              "#1E40AF",
+              1
+            ],
+            [
+              "#2563EB",
+              1
+            ],
+            [
+              "#4F46E5",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 27.0,
+          "font_size_avg": 13.6,
+          "left_edge_avg": 6.12,
+          "top_edge_avg": 3.71
+        },
+        {
+          "slide_no": 7,
+          "shape_count": 34,
+          "text_shape_count": 17,
+          "picture_count": 5,
+          "group_count": 0,
+          "text_chars": 218,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              5
+            ],
+            [
+              "#F9FAFB",
+              4
+            ],
+            [
+              "#F3F4F6",
+              3
+            ],
+            [
+              "#DBEAFE",
+              1
+            ],
+            [
+              "#4B5563",
+              1
+            ],
+            [
+              "#EFF6FF",
+              1
+            ],
+            [
+              "#EEF2FF",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              11
+            ],
+            [
+              "#E5E7EB",
+              3
+            ],
+            [
+              "#F3F4F6",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              20
+            ],
+            [
+              "ui-monospace",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#1A2332",
+              6
+            ],
+            [
+              "#6B7280",
+              5
+            ],
+            [
+              "#4B5563",
+              3
+            ],
+            [
+              "#2563EB",
+              2
+            ],
+            [
+              "#9CA3AF",
+              2
+            ],
+            [
+              "#1E40AF",
+              1
+            ],
+            [
+              "#FFFFFF",
+              1
+            ],
+            [
+              "#4F46E5",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 27.0,
+          "font_size_avg": 14.1,
+          "left_edge_avg": 5.57,
+          "top_edge_avg": 3.32
+        },
+        {
+          "slide_no": 8,
+          "shape_count": 34,
+          "text_shape_count": 17,
+          "picture_count": 5,
+          "group_count": 0,
+          "text_chars": 224,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              5
+            ],
+            [
+              "#F9FAFB",
+              4
+            ],
+            [
+              "#F3F4F6",
+              3
+            ],
+            [
+              "#DBEAFE",
+              1
+            ],
+            [
+              "#4B5563",
+              1
+            ],
+            [
+              "#EFF6FF",
+              1
+            ],
+            [
+              "#EEF2FF",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              11
+            ],
+            [
+              "#E5E7EB",
+              3
+            ],
+            [
+              "#F3F4F6",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              19
+            ],
+            [
+              "ui-monospace",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#1A2332",
+              6
+            ],
+            [
+              "#6B7280",
+              5
+            ],
+            [
+              "#4B5563",
+              3
+            ],
+            [
+              "#9CA3AF",
+              2
+            ],
+            [
+              "#1E40AF",
+              1
+            ],
+            [
+              "#FFFFFF",
+              1
+            ],
+            [
+              "#2563EB",
+              1
+            ],
+            [
+              "#4F46E5",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 27.0,
+          "font_size_avg": 13.5,
+          "left_edge_avg": 5.51,
+          "top_edge_avg": 3.32
+        },
+        {
+          "slide_no": 9,
+          "shape_count": 35,
+          "text_shape_count": 17,
+          "picture_count": 5,
+          "group_count": 0,
+          "text_chars": 254,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#FFFFFF",
+              6
+            ],
+            [
+              "#F3F4F6",
+              3
+            ],
+            [
+              "#F9FAFB",
+              3
+            ],
+            [
+              "#DBEAFE",
+              1
+            ],
+            [
+              "#4B5563",
+              1
+            ],
+            [
+              "#EFF6FF",
+              1
+            ],
+            [
+              "#ECFDF5",
+              1
+            ],
+            [
+              "#F5F3FF",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              12
+            ],
+            [
+              "#E5E7EB",
+              3
+            ],
+            [
+              "#F3F4F6",
+              2
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              19
+            ],
+            [
+              "ui-monospace",
+              1
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#6B7280",
+              5
+            ],
+            [
+              "#1A2332",
+              5
+            ],
+            [
+              "#4B5563",
+              3
+            ],
+            [
+              "#9CA3AF",
+              2
+            ],
+            [
+              "#1E40AF",
+              1
+            ],
+            [
+              "#FFFFFF",
+              1
+            ],
+            [
+              "#2563EB",
+              1
+            ],
+            [
+              "#059669",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 27.0,
+          "font_size_avg": 13.5,
+          "left_edge_avg": 5.73,
+          "top_edge_avg": 3.32
+        },
+        {
+          "slide_no": 10,
+          "shape_count": 29,
+          "text_shape_count": 12,
+          "picture_count": 11,
+          "group_count": 0,
+          "text_chars": 223,
+          "layout_signature": "image-led",
+          "dominant_fills": [
+            [
+              "#EFF6FF",
+              4
+            ],
+            [
+              "#F3F4F6",
+              1
+            ],
+            [
+              "#FFFFFF",
+              1
+            ]
+          ],
+          "dominant_lines": [
+            [
+              "#FFFFFF",
+              6
+            ]
+          ],
+          "dominant_font_names": [
+            [
+              "Noto Sans KR",
+              15
+            ]
+          ],
+          "dominant_font_colors": [
+            [
+              "#1A2332",
+              7
+            ],
+            [
+              "#9CA3AF",
+              3
+            ],
+            [
+              "#6B7280",
+              2
+            ],
+            [
+              "#2563EB",
+              2
+            ],
+            [
+              "#D1D5DB",
+              1
+            ]
+          ],
+          "font_size_min": 9.0,
+          "font_size_max": 45.0,
+          "font_size_avg": 13.5,
+          "left_edge_avg": 4.74,
+          "top_edge_avg": 4.14
+        }
+      ]
+    }
+  ]
+}

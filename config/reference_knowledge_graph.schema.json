@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reference_knowledge_graph.schema.json",
+  "title": "Reference Knowledge Graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_from", "nodes", "edges"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "generated_from": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "label"],
+        "additionalProperties": true
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "target", "type"],
+        "additionalProperties": true
+      }
+    }
+  }
+}

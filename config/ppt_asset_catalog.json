@@ -1,0 +1,1771 @@
+{
+  "schema_version": "1.1",
+  "generated_from": "config/ppt_asset_roots.json",
+  "generated_from_details": {
+    "local_roots": "config/ppt_asset_roots.json",
+    "theme_configs": [
+      "config/pptx_theme.example.json",
+      "config/pptx_theme.neutral_modern.json"
+    ],
+    "chart_presets": [
+      "chart_preset.simple_bar_chart"
+    ],
+    "image_policies": [
+      "image_policy.user_supplied_or_generated"
+    ],
+    "external_registry": {
+      "enabled": true,
+      "workspace_ref": "sibling:assets achivement for work",
+      "source": "downloaded-assets/registry/recommended-assets.json",
+      "public_contribution_gate": "https://github.com/Kdreammaker/ai-asset-contribution-gate",
+      "private_reference_analysis_required": true,
+      "records": 48,
+      "policy": "registry-first; active recommended records only; no external mutation"
+    }
+  },
+  "selection_policy": {
+    "raw_folders_are_not_source_of_truth": true,
+    "external_assets_are_registry_references_only": true,
+    "do_not_hard_code_external_absolute_paths": true,
+    "brand_assets_require_explicit_request": true,
+    "public_asset_contribution_gate": "https://github.com/Kdreammaker/ai-asset-contribution-gate",
+    "public_gate_usage": "candidate intake and safety review only",
+    "private_reference_analysis_required": true,
+    "private_assetization_required": true,
+    "private_registry_activation_required": true,
+    "workspace_asset_transfer": {
+      "allowed_by_default": false,
+      "requires_manifest": true,
+      "requires_explicit_approval": true,
+      "public_exposure_allowed": false,
+      "forbidden_public_payloads": [
+        "private references",
+        "binary assets",
+        "registry exports",
+        "local absolute paths",
+        "Drive linkage",
+        "work logs"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "asset_id": "chart_preset.simple_bar_chart",
+      "asset_class": "chart_preset",
+      "source_type": "local_code",
+      "source_path": "system/pptx_system.py",
+      "license": "internal-code",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "chart",
+        "bar",
+        "data_visualization"
+      ],
+      "recommended_use": "basic bar-chart slot rendering",
+      "kind": "chart_preset",
+      "preset_name": "simple_bar_chart"
+    },
+    {
+      "asset_id": "external.blog_webpage_visuals.uxwing.article_icon_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "free-with-restrictions",
+      "license_action": "check-source-policy",
+      "risk_level": "medium",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "blog_webpage_visuals",
+        "icon",
+        "uxwing"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:8a69a7445c090017080e9f1aea65dc450894a0ea676bed6f3e93137a9898b76c:953ea6d341b1",
+      "external_set_id": "blog-webpage-visuals",
+      "external_source_name": "UXWing",
+      "external_asset_name": "article-icon.svg",
+      "external_relative_path": "icons\\uxwing-selected\\article-icon.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Use as visual material for documents, reports, decks, blogs, and webpages. Do not treat as a redistributable open-source icon package. Additional selected SVG from saved public UXWing image sitemaps; matched terms: article;content;seo. Required action: check-source-policy."
+      }
+    },
+    {
+      "asset_id": "external.blog_webpage_visuals.uxwing.blogger_website_icon_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "free-with-restrictions",
+      "license_action": "check-source-policy",
+      "risk_level": "medium",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "blog_webpage_visuals",
+        "icon",
+        "uxwing"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:4918096f4460b25c8687d48d7454ce81821905bb1c3789d1d65b9095c59d08a9:a09ca57efef4",
+      "external_set_id": "blog-webpage-visuals",
+      "external_source_name": "UXWing",
+      "external_asset_name": "blogger-website-icon.svg",
+      "external_relative_path": "icons\\uxwing-selected\\blogger-website-icon.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Use as visual material for documents, reports, decks, blogs, and webpages. Do not treat as a redistributable open-source icon package. Additional selected SVG from saved public UXWing image sitemaps; matched terms: blog;content;web;website. Required action: check-source-policy."
+      }
+    },
+    {
+      "asset_id": "external.blog_webpage_visuals.uxwing.business_presentation_icon_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "free-with-restrictions",
+      "license_action": "check-source-policy",
+      "risk_level": "medium",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "blog_webpage_visuals",
+        "icon",
+        "uxwing"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:06b80a7a7c8c36d5adefc2f9685fa3f12dc0350f3cf986c9af327dce9057374b:a61ae259d0b7",
+      "external_set_id": "blog-webpage-visuals",
+      "external_source_name": "UXWing",
+      "external_asset_name": "business-presentation-icon.svg",
+      "external_relative_path": "icons\\uxwing-selected\\business-presentation-icon.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Use as visual material for documents, reports, decks, blogs, and webpages. Do not treat as a redistributable open-source icon package. Selected from public UXWing image sitemaps by approved keywords; robots/license snapshots saved. Required action: check-source-policy."
+      }
+    },
+    {
+      "asset_id": "external.blog_webpage_visuals.uxwing.computer_report_icon_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "free-with-restrictions",
+      "license_action": "check-source-policy",
+      "risk_level": "medium",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "blog_webpage_visuals",
+        "icon",
+        "uxwing"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:33751a8e4079c8e5afffb0d9c133a1193baeda122fe30b62b3593f3ae937c661:a798200773ef",
+      "external_set_id": "blog-webpage-visuals",
+      "external_source_name": "UXWing",
+      "external_asset_name": "computer-report-icon.svg",
+      "external_relative_path": "icons\\uxwing-selected\\computer-report-icon.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Use as visual material for documents, reports, decks, blogs, and webpages. Do not treat as a redistributable open-source icon package. Selected from public UXWing image sitemaps by approved keywords; robots/license snapshots saved. Required action: check-source-policy."
+      }
+    },
+    {
+      "asset_id": "external.blog_webpage_visuals.uxwing.content_layout_view_icon_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "free-with-restrictions",
+      "license_action": "check-source-policy",
+      "risk_level": "medium",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "blog_webpage_visuals",
+        "icon",
+        "uxwing"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:256ac291ab482be772a02c2e2fb49663bd631ea20e29bbef73a0897b21fd58ee:4ef2a48965dd",
+      "external_set_id": "blog-webpage-visuals",
+      "external_source_name": "UXWing",
+      "external_asset_name": "content-layout-view-icon.svg",
+      "external_relative_path": "icons\\uxwing-selected\\content-layout-view-icon.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Use as visual material for documents, reports, decks, blogs, and webpages. Do not treat as a redistributable open-source icon package. Additional selected SVG from saved public UXWing image sitemaps; matched terms: content;layout;web. Required action: check-source-policy."
+      }
+    },
+    {
+      "asset_id": "external.blog_webpage_visuals.uxwing.dashboard_monitoring_icon_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "free-with-restrictions",
+      "license_action": "check-source-policy",
+      "risk_level": "medium",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "blog_webpage_visuals",
+        "icon",
+        "uxwing"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:87b4a70d53f9c5d95d5491d16dbd7f16c6ee34781e1630c9213633ea0b57f2c1:f465acce9b47",
+      "external_set_id": "blog-webpage-visuals",
+      "external_source_name": "UXWing",
+      "external_asset_name": "dashboard-monitoring-icon.svg",
+      "external_relative_path": "icons\\uxwing-selected\\dashboard-monitoring-icon.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Use as visual material for documents, reports, decks, blogs, and webpages. Do not treat as a redistributable open-source icon package. Selected from public UXWing image sitemaps by approved keywords; robots/license snapshots saved. Required action: check-source-policy."
+      }
+    },
+    {
+      "asset_id": "external.blog_webpage_visuals.uxwing.document_approve_icon_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "free-with-restrictions",
+      "license_action": "check-source-policy",
+      "risk_level": "medium",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "blog_webpage_visuals",
+        "icon",
+        "uxwing"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:1c1c25d34f714c7e481deb84c5e5db2fefdc27e9999f9ad019057c25c9d8e93f:ea922035e216",
+      "external_set_id": "blog-webpage-visuals",
+      "external_source_name": "UXWing",
+      "external_asset_name": "document-approve-icon.svg",
+      "external_relative_path": "icons\\uxwing-selected\\document-approve-icon.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Use as visual material for documents, reports, decks, blogs, and webpages. Do not treat as a redistributable open-source icon package. Selected from public UXWing image sitemaps by approved keywords; robots/license snapshots saved. Required action: check-source-policy."
+      }
+    },
+    {
+      "asset_id": "external.blog_webpage_visuals.uxwing.web_app_analytics_icon_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "free-with-restrictions",
+      "license_action": "check-source-policy",
+      "risk_level": "medium",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "blog_webpage_visuals",
+        "icon",
+        "uxwing"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:1e6fc306171d8ecb157bebef1300c38b1d9256e505c80e82fd4fb6299eaa0da3:2ff7fd02a7a0",
+      "external_set_id": "blog-webpage-visuals",
+      "external_source_name": "UXWing",
+      "external_asset_name": "web-app-analytics-icon.svg",
+      "external_relative_path": "icons\\uxwing-selected\\web-app-analytics-icon.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Use as visual material for documents, reports, decks, blogs, and webpages. Do not treat as a redistributable open-source icon package. Selected from public UXWing image sitemaps by approved keywords; robots/license snapshots saved. Required action: check-source-policy."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.lucide.icons_bar_chart_2_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:5f72983d484d64f0ff7f36eb970ac04910dedd1adfb64a106234c3535c806bfb:31c3d26c2ed1",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\bar-chart-2.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\bar-chart-2.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.lucide.icons_file_line_chart_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:80380bfafffe99285f073bd4df1d7de3a3945bf1188bd72c7733050e95448ee8:23ec4de93f3c",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\file-line-chart.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\file-line-chart.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.lucide.icons_file_pie_chart_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:da638c6dad7ccee5d7bcc35f837c0462070fbeb66cc484068a5e26a5d10a38bd:2cf3ce7dfa18",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\file-pie-chart.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\file-pie-chart.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_calendar_event_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:3ea1bfc4eec755c19d548dffc7a2bcea30b6cf74a9f59ed672c9fd6799d544f6:ceade44b57a6",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\filled\\calendar-event.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\filled\\calendar-event.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_chart_area_line_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:134c24407c4914695d5faaa9cd232449f141df1f7cb315756395f47ebd55abd3:688cfe80811f",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\filled\\chart-area-line.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\filled\\chart-area-line.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_cloud_computing_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:5b6f1d68e197522cce86d2ec54f69263d2221808e82102e2271cc742450af7a1:70c3e6cc2c35",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\filled\\cloud-computing.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\filled\\cloud-computing.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_database_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:49be3e6f1308b26cdc4a920da122e38f79bec78ee8d75a4abc95fd257cca108d:e7525af3b57a",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\filled\\database.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\filled\\database.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_file_text_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:a1028dcdc2792b70c3766c64fca04236dbd0035feab74335bd24244789c9f14c:d32e7eaeda8a",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\filled\\file-text.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\filled\\file-text.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_presentation_analytics_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:530fcafef5b523867075484fc88fb3f56d9e76fae9469ab30b45d7134daeae2d:cf530a0a4182",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\filled\\presentation-analytics.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\filled\\presentation-analytics.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_shield_check_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:04c566e3117d496f4767e7bab3b9b78e104a00819f1497ddb98ff0cfddb80f05:8792068618f0",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\filled\\shield-check.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\filled\\shield-check.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_outline_server_2_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "dashboard_report_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:906921c95ffcb3345f5c754b82f50934c7d65e17721dc229b54448478e6893a6:d9363904c32f",
+      "external_set_id": "dashboard-report-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\outline\\server-2.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\outline\\server-2.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_arrow_left_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:5530f546744447af5899d4c48011aaeb6db1c84113c979249460fabd189681fc:e1fb34297f49",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\arrow-left.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\arrow-left.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_arrow_right_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:990af35bf72009320c02bd79b23aa9e081e0af3ab0e45a4be3c2020b54172fe5:7a9996dad329",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\arrow-right.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\arrow-right.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_check_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:0f07f2abfc8a9fc51aa0a92ff479695c7f0acd12516029546aa9bd5ffbd68ef5:20979277dcc5",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\check.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\check.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_edit_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:6759abd32cd7d3974048d0b74f70ba72cec7d27d325013677484aea2b1a7a65b:9fd2f421cd43",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\edit.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\edit.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_home_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:8aec6f549b8386d5797bf7a8d0ab127bb2f297cb8a5a1ebad4754281959b15ca:be5b4c700e64",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\home.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\home.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_menu_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:96c39271892dd706d4c9baaa606425d3e6d5f793fa97acaa393884ee40c11c84:b5fa873e8c6d",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\menu.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\menu.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_plus_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:311b875029e805f333d0e93ed17203b6bf89cb1e48eb052f3cf75b7b660bb758:1ed67046fa8f",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\plus.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\plus.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_search_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:4f840c9b065591391b2f3eaab5a2deb2b249921fd39dce135a15f3a0a68dad8a:11871518b17c",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\search.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\search.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_settings_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:3c7bee2696ce0c2d48d34e813f4fcda31f0ad21ab9309aee3751cde4280ad737:05bf4fc9eb7a",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\settings.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\settings.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_trash_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:dcebd10928fc9683dcd7f07945a0f96952b8444764881adcdb63e3efe88b99c8:9e30944a681d",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\trash.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\trash.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_user_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:eae3b3b2400031ddd5ec869327d127a96014e5f63aa6e06658dd5d4e90661aa8:8dbd58f70e9d",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\user.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\user.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.default_ui_icons.lucide.icons_x_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "default_ui_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:06f128d935e02f4d143d53b13f1f9d6042e0ed8c21bf8eb6cbd483ebcb4c1116:d5e19fd28fc6",
+      "external_set_id": "default-ui-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\x.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\x.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.korean_ui_fonts.noto_sans_kr.notosanskr_wght_ttf",
+      "asset_class": "typography",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-font",
+      "license_action": "check-license-file",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "korean_ui_fonts",
+        "font",
+        "noto_sans_kr"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "font",
+      "external_asset_uid": "sha256:194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252:8bae0ab34aa5",
+      "external_set_id": "korean-ui-fonts",
+      "external_source_name": "Noto Sans KR",
+      "external_asset_name": "NotoSansKR[wght].ttf",
+      "external_relative_path": "fonts\\noto-sans-kr\\NotoSansKR[wght].ttf",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Collected fonts usually come from open-font sources, but keep license files and verify before redistribution. Scanned from collected font source. Required action: check-license-file."
+      }
+    },
+    {
+      "asset_id": "external.korean_ui_fonts.pretendard.public_static_pretendard_bold_otf",
+      "asset_class": "typography",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-font",
+      "license_action": "check-license-file",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "korean_ui_fonts",
+        "font",
+        "pretendard"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "font",
+      "external_asset_uid": "sha256:2e91915fab54df71cc9598ebf608b2bdb54c6fe3c066ac61dff0bc44fca71cc7:827b58b411e9",
+      "external_set_id": "korean-ui-fonts",
+      "external_source_name": "Pretendard",
+      "external_asset_name": "public\\static\\Pretendard-Bold.otf",
+      "external_relative_path": "fonts\\pretendard\\public\\static\\Pretendard-Bold.otf",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Collected fonts usually come from open-font sources, but keep license files and verify before redistribution. Scanned from collected font source. Required action: check-license-file."
+      }
+    },
+    {
+      "asset_id": "external.korean_ui_fonts.pretendard.public_static_pretendard_regular_otf",
+      "asset_class": "typography",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-font",
+      "license_action": "check-license-file",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "korean_ui_fonts",
+        "font",
+        "pretendard"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "font",
+      "external_asset_uid": "sha256:3ffbacde6ab8411f1d2db54bb9b1f0b3ee2a738932033722cf0388c06aed1c93:833930d78cf6",
+      "external_set_id": "korean-ui-fonts",
+      "external_source_name": "Pretendard",
+      "external_asset_name": "public\\static\\Pretendard-Regular.otf",
+      "external_relative_path": "fonts\\pretendard\\public\\static\\Pretendard-Regular.otf",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Collected fonts usually come from open-font sources, but keep license files and verify before redistribution. Scanned from collected font source. Required action: check-license-file."
+      }
+    },
+    {
+      "asset_id": "external.korean_ui_fonts.pretendard.web_static_woff2_pretendard_regular_woff2",
+      "asset_class": "typography",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-font",
+      "license_action": "check-license-file",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "korean_ui_fonts",
+        "font",
+        "pretendard"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "font",
+      "external_asset_uid": "sha256:fad853f7f47c6c8b103171e7193fa095708cdcd70850a71d93aa5379e8a61d63:dd62a664b5e6",
+      "external_set_id": "korean-ui-fonts",
+      "external_source_name": "Pretendard",
+      "external_asset_name": "web\\static\\woff2\\Pretendard-Regular.woff2",
+      "external_relative_path": "fonts\\pretendard\\web\\static\\woff2\\Pretendard-Regular.woff2",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Collected fonts usually come from open-font sources, but keep license files and verify before redistribution. Scanned from collected font source. Required action: check-license-file."
+      }
+    },
+    {
+      "asset_id": "external.korean_ui_fonts.spoqa_han_sans.spoqahansansneo_all_spoqahansansneo_otf_original_spoqahansansneo_bold_otf",
+      "asset_class": "typography",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-font",
+      "license_action": "check-license-file",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "korean_ui_fonts",
+        "font",
+        "spoqa_han_sans"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "font",
+      "external_asset_uid": "sha256:47a25f01c527b605b65a83de3f578ea5eba154bdc37fe0846b9deb02318a777e:43fe06c6764b",
+      "external_set_id": "korean-ui-fonts",
+      "external_source_name": "Spoqa Han Sans",
+      "external_asset_name": "SpoqaHanSansNeo_all\\SpoqaHanSansNeo_OTF_original\\SpoqaHanSansNeo-Bold.otf",
+      "external_relative_path": "fonts\\spoqa-han-sans\\SpoqaHanSansNeo_all\\SpoqaHanSansNeo_OTF_original\\SpoqaHanSansNeo-Bold.otf",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Collected fonts usually come from open-font sources, but keep license files and verify before redistribution. Scanned from collected font source. Required action: check-license-file."
+      }
+    },
+    {
+      "asset_id": "external.korean_ui_fonts.spoqa_han_sans.spoqahansansneo_all_spoqahansansneo_otf_original_spoqahansansneo_regular_otf",
+      "asset_class": "typography",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-font",
+      "license_action": "check-license-file",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "korean_ui_fonts",
+        "font",
+        "spoqa_han_sans"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "font",
+      "external_asset_uid": "sha256:ba5aeca436d91553cb664070afa66f0715d81f59fee6e2a0c72cc7589b4937f4:7759ba5de1d2",
+      "external_set_id": "korean-ui-fonts",
+      "external_source_name": "Spoqa Han Sans",
+      "external_asset_name": "SpoqaHanSansNeo_all\\SpoqaHanSansNeo_OTF_original\\SpoqaHanSansNeo-Regular.otf",
+      "external_relative_path": "fonts\\spoqa-han-sans\\SpoqaHanSansNeo_all\\SpoqaHanSansNeo_OTF_original\\SpoqaHanSansNeo-Regular.otf",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Collected fonts usually come from open-font sources, but keep license files and verify before redistribution. Scanned from collected font source. Required action: check-license-file."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.lucide.icons_bug_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:5a8d9847221b11d7172b09d28a2df1cd389e3d044063e23ce5603b3a718021d5:149f9c475ba1",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\bug.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\bug.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.lucide.icons_code_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:5410b4a298a5134504585fbce676d43784722c8529d531c7fa75f8a64fab0499:87bcff44dda6",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\code.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\code.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.lucide.icons_git_branch_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:2282b13bc24722b844526e3f227d965f1930a32dba16085ad7679145ee9b8966:7735b43a97a8",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\git-branch.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\git-branch.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.lucide.icons_key_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:b9dd81faa6206bbfe98eb5b33745ce0bde9c970351f4ba2c6aaacbc5c6fc7eba:be5e0ed770dc",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\key.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\key.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.lucide.icons_lock_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:9adfc018fa8c1ae6373f89d64b2e96d6f2d5aa1ecdbe2a7d7036b904761d1acd:37feb1b73c22",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\lock.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\lock.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.lucide.icons_network_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:31541911209c7b7234095b89df115da13f024796638568606fd6c425503992fe:5302237065dc",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\network.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\network.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.lucide.icons_terminal_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "lucide"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:c7bb4a228dd0f5accc2545c40765626a5666b6df8778cf269a0faa698bc272ec:795177a2eac6",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Lucide",
+      "external_asset_name": "icons\\terminal.svg",
+      "external_relative_path": "icons\\open-source\\lucide\\icons\\terminal.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Good for generic UI icons and product interfaces. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.tabler_icons.icons_filled_cloud_computing_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:5b6f1d68e197522cce86d2ec54f69263d2221808e82102e2271cc742450af7a1:70c3e6cc2c35",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\filled\\cloud-computing.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\filled\\cloud-computing.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.tabler_icons.icons_filled_database_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:49be3e6f1308b26cdc4a920da122e38f79bec78ee8d75a4abc95fd257cca108d:e7525af3b57a",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\filled\\database.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\filled\\database.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.tabler_icons.icons_filled_shield_check_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:04c566e3117d496f4767e7bab3b9b78e104a00819f1497ddb98ff0cfddb80f05:8792068618f0",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\filled\\shield-check.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\filled\\shield-check.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "external.technical_security_cloud_icons.tabler_icons.icons_outline_server_2_svg",
+      "asset_class": "icon",
+      "source_type": "external_registry_reference",
+      "source_path": null,
+      "license": "open-source",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "external_registry",
+        "technical_security_cloud_icons",
+        "icon",
+        "tabler_icons"
+      ],
+      "recommended_use": "external registry reference for future PPT materialization",
+      "kind": "icon_svg",
+      "external_asset_uid": "sha256:906921c95ffcb3345f5c754b82f50934c7d65e17721dc229b54448478e6893a6:d9363904c32f",
+      "external_set_id": "technical-security-cloud-icons",
+      "external_source_name": "Tabler Icons",
+      "external_asset_name": "icons\\outline\\server-2.svg",
+      "external_relative_path": "icons\\open-source\\tabler-icons\\icons\\outline\\server-2.svg",
+      "policy_notes": {
+        "status": "active",
+        "brand_guidelines_required": false,
+        "attribution_required": false,
+        "notes_for_ai": "Safe default for generic UI icons. Scanned from collected open-source package/archive."
+      }
+    },
+    {
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "asset_class": "image",
+      "source_type": "local_config",
+      "source_path": "config/ppt_asset_roots.json",
+      "license": "user-provided-or-generated-policy",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "image",
+        "slot_policy",
+        "user_supplied",
+        "generated_asset_ready"
+      ],
+      "recommended_use": "image slot sourcing policy for user-provided or future generated visuals",
+      "kind": "illustration",
+      "policy_name": "user_supplied_or_generated_image",
+      "policy_notes": {
+        "binary_asset_included": false,
+        "requires_runtime_materialization": true,
+        "do_not_copy_external_assets": true
+      }
+    },
+    {
+      "asset_id": "images.brent_1y_chart",
+      "asset_class": "icon",
+      "source_type": "local_file",
+      "source_path": "assets/images/charts/brent_1y_chart.png",
+      "license": "unknown",
+      "license_action": "none",
+      "risk_level": "unknown",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "images",
+        "icon"
+      ],
+      "recommended_use": "ppt_support_asset",
+      "kind": "icon_png",
+      "cjk_support": null,
+      "installed_locally": null
+    },
+    {
+      "asset_id": "images.oecd_gasoline_snapshot",
+      "asset_class": "icon",
+      "source_type": "local_file",
+      "source_path": "assets/images/charts/oecd_gasoline_snapshot.png",
+      "license": "unknown",
+      "license_action": "none",
+      "risk_level": "unknown",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "images",
+        "icon"
+      ],
+      "recommended_use": "ppt_support_asset",
+      "kind": "icon_png",
+      "cjk_support": null,
+      "installed_locally": null
+    },
+    {
+      "asset_id": "palette.blue_green_report",
+      "asset_class": "palette",
+      "source_type": "local_config",
+      "source_path": "config/pptx_theme.example.json",
+      "license": "internal-config",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "palette",
+        "blue_green_report"
+      ],
+      "recommended_use": "theme color palette",
+      "kind": "palette",
+      "theme_name": "blue-green-report",
+      "colors": {
+        "primary": "#10213B",
+        "accent_1": "#1D49F3",
+        "accent_2": "#2ECE7B",
+        "dark": "#272727",
+        "gray": "#626D80",
+        "mid": "#7A8494",
+        "white": "#FFFFFF",
+        "light": "#F6F8FC",
+        "panel": "#EFF4FB",
+        "border": "#E0E5EE"
+      }
+    },
+    {
+      "asset_id": "palette.neutral_modern_report",
+      "asset_class": "palette",
+      "source_type": "local_config",
+      "source_path": "config/pptx_theme.neutral_modern.json",
+      "license": "internal-config",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "palette",
+        "neutral_modern_report"
+      ],
+      "recommended_use": "theme color palette",
+      "kind": "palette",
+      "theme_name": "neutral-modern-report",
+      "colors": {
+        "primary": "#1E3A8A",
+        "accent_1": "#F97316",
+        "accent_2": "#2563EB",
+        "dark": "#111827",
+        "gray": "#6B7280",
+        "mid": "#9CA3AF",
+        "white": "#FFFFFF",
+        "light": "#F8FAFC",
+        "panel": "#EFF6FF",
+        "border": "#DBEAFE"
+      }
+    },
+    {
+      "asset_id": "theme.blue_green_report",
+      "asset_class": "theme",
+      "source_type": "local_config",
+      "source_path": "config/pptx_theme.example.json",
+      "license": "internal-config",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "theme",
+        "blue_green_report"
+      ],
+      "recommended_use": "ppt theme config",
+      "kind": "theme",
+      "theme_name": "blue-green-report",
+      "font_family": "Malgun Gothic",
+      "color_roles": [
+        "accent_1",
+        "accent_2",
+        "border",
+        "dark",
+        "gray",
+        "light",
+        "mid",
+        "panel",
+        "primary",
+        "white"
+      ],
+      "font_size_roles": [
+        "body",
+        "body_strong",
+        "card_title",
+        "cover_title",
+        "hero_title",
+        "section_header"
+      ]
+    },
+    {
+      "asset_id": "theme.neutral_modern_report",
+      "asset_class": "theme",
+      "source_type": "local_config",
+      "source_path": "config/pptx_theme.neutral_modern.json",
+      "license": "internal-config",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "theme",
+        "neutral_modern_report"
+      ],
+      "recommended_use": "ppt theme config",
+      "kind": "theme",
+      "theme_name": "neutral-modern-report",
+      "font_family": "Malgun Gothic",
+      "color_roles": [
+        "accent_1",
+        "accent_2",
+        "border",
+        "dark",
+        "gray",
+        "light",
+        "mid",
+        "panel",
+        "primary",
+        "white"
+      ],
+      "font_size_roles": [
+        "body",
+        "body_strong",
+        "card_title",
+        "cover_title",
+        "hero_title",
+        "section_header"
+      ]
+    },
+    {
+      "asset_id": "typography.blue_green_report.malgun_gothic",
+      "asset_class": "typography",
+      "source_type": "local_config",
+      "source_path": "config/pptx_theme.example.json",
+      "license": "system-font-or-theme-config",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "typography",
+        "korean",
+        "malgun_gothic"
+      ],
+      "recommended_use": "theme typography defaults",
+      "kind": "font",
+      "font_family": "Malgun Gothic",
+      "cjk_support": true,
+      "installed_locally": null,
+      "font_size_roles": {
+        "cover_title": 30,
+        "hero_title": 23,
+        "section_header": 13,
+        "card_title": 17,
+        "body_strong": 13,
+        "body": 12
+      }
+    },
+    {
+      "asset_id": "typography.neutral_modern_report.malgun_gothic",
+      "asset_class": "typography",
+      "source_type": "local_config",
+      "source_path": "config/pptx_theme.neutral_modern.json",
+      "license": "system-font-or-theme-config",
+      "license_action": "none",
+      "risk_level": "low",
+      "production_eligible": true,
+      "allowed_for_ppt": true,
+      "style_tags": [
+        "typography",
+        "korean",
+        "malgun_gothic"
+      ],
+      "recommended_use": "theme typography defaults",
+      "kind": "font",
+      "font_family": "Malgun Gothic",
+      "cjk_support": true,
+      "installed_locally": null,
+      "font_size_roles": {
+        "cover_title": 32,
+        "hero_title": 24,
+        "section_header": 11.5,
+        "card_title": 16,
+        "body_strong": 13,
+        "body": 11.5
+      }
+    }
+  ]
+}

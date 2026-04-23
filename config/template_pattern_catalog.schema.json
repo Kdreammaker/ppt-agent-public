@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "template_pattern_catalog.schema.json",
+  "title": "Template Pattern Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_from", "patterns"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "generated_from": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "patterns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pattern_id", "pattern_name", "based_on_slide_ids", "category", "layout_type", "story_role", "promotion_status"],
+        "additionalProperties": true
+      }
+    }
+  }
+}

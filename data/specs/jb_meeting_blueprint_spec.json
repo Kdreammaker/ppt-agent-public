@@ -1,0 +1,183 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "JB Meeting Blueprint System Deck",
+  "theme_path": "../../config/pptx_theme.example.json",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/jb_meeting_blueprint_system.pptx",
+  "slides": [
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "report",
+        "preferred_variant": "cover/right-hero"
+      },
+      "text_slots": {
+        "title": "전북은행 미팅\n사내 공유 자료",
+        "footer_note": "JB meeting share | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "toc",
+        "scope": "report",
+        "preferred_variant": "toc/visual-tiles",
+        "fallback_variants": [
+          "toc/simple-index"
+        ]
+      },
+      "text_slots": {
+        "title": "목차",
+        "subtitle": "전북은행 논의 내용을 사내 실행 관점으로 재구성",
+        "toc_1_number": "01",
+        "toc_1_title": "미팅 요약",
+        "toc_1_body": "논의 배경과 핵심 결론",
+        "toc_2_number": "02",
+        "toc_2_title": "고객 우려",
+        "toc_2_body": "활성화, 역할, 비용, 안정성",
+        "toc_3_number": "03",
+        "toc_3_title": "제안 방향",
+        "toc_3_body": "ASP 선도입 후 API 확장",
+        "toc_4_number": "04",
+        "toc_4_title": "후속 실행",
+        "toc_4_body": "담당, 산출물, 협의 포인트",
+        "footer_note": "JB meeting share | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "report",
+        "preferred_variant": "summary/two-panel",
+        "fallback_variants": [
+          "summary/4up-message-grid"
+        ]
+      },
+      "text_slots": {
+        "title": "미팅 한눈에 보기",
+        "subtitle": "전북은행은 단순 콘텐츠 적재보다 서비스 활성화 구조와 운영 안정성을 먼저 검토하고 있습니다.",
+        "left_card_title": "미팅 메타",
+        "left_card_body": "일시: 2026.04.17\n대상: 전북은행 모바일플랫폼부\n범위: 시황 데이터, 이슈, 공시·이벤트, API·ASP 방식",
+        "right_card_title": "핵심 결론: 작게 시작하고 효과 확인 후 확장",
+        "footer_note": "JB meeting share | template-first system"
+      },
+      "clear_residual_text_patterns": [
+        "07 Market",
+        "Customer Analysis"
+      ]
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "issue",
+        "scope": "report",
+        "preferred_variant": "issue/2x2-cards"
+      },
+      "text_slots": {
+        "eyebrow": "ISSUE",
+        "title": "고객 우려 4대 포인트",
+        "subtitle": "고객은 기능 자체보다 실제 MAU 개선과 안정적 운영 가능성을 중점적으로 확인하려 합니다.",
+        "card_1_number": "1",
+        "card_1_title": "활성화 효과",
+        "card_1_body": "시세·이슈 제공만으로는 재방문 효과가 제한적입니다. 트리거와 알림 구조가 필요합니다.",
+        "card_2_number": "2",
+        "card_2_title": "데이터 역할",
+        "card_2_body": "거래 데이터와 보난자랩 시장 데이터의 역할을 명확히 구분해야 합니다.",
+        "card_3_number": "3",
+        "card_3_title": "비용 대비 효과",
+        "card_3_body": "초기부터 크게 붙이기보다 제한 범위에서 검증하는 접근을 선호합니다.",
+        "card_4_number": "4",
+        "card_4_title": "운영 안정성",
+        "card_4_body": "실시간 전달, 트래픽 대응, 장애 처리 경험을 의사결정 근거로 확인하려 합니다.",
+        "footer_note": "JB meeting share | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "strategy",
+        "scope": "report",
+        "preferred_variant": "strategy/4-step-solution",
+        "fallback_variants": [
+          "strategy/checkpoint-flow"
+        ]
+      },
+      "text_slots": {
+        "eyebrow": "STRATEGY",
+        "title": "권장 제안 구조",
+        "subtitle": "ASP 선도입으로 빠른 가시화를 만들고, 효과 확인 후 API·이벤트 연계로 확장합니다.",
+        "step_1_title": "빠른 가시화",
+        "step_2_title": "API 확장",
+        "step_3_title": "이벤트 연계",
+        "step_4_title": "운영 신뢰",
+        "conclusion": "초기 효과 검증과 향후 확장성을 함께 제시하는 단계형 제안이 적합합니다.",
+        "footer_note": "JB meeting share | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "report",
+        "preferred_variant": "summary/4up-message-grid",
+        "fallback_variants": [
+          "summary/two-panel"
+        ]
+      },
+      "text_slots": {
+        "eyebrow": "MESSAGE",
+        "title": "사내 공유 시 강조 포인트",
+        "subtitle": "다음 미팅과 제안서에서는 아래 네 가지 메시지를 일관되게 유지하는 것이 좋습니다.",
+        "message_1_title": "통합 데이터",
+        "message_1_body": "국내 주요 거래소를 통합·표준화한 데이터 기반을 전면에 둡니다.",
+        "message_2_title": "역할 분리",
+        "message_2_body": "거래 기능은 은행, 시장 정보와 맥락 제공은 보난자랩으로 구분합니다.",
+        "message_3_title": "활성화 구조",
+        "message_3_body": "ASP로 빠르게 시작하고 API로 고도화한다는 이중 구조를 제안합니다.",
+        "message_4_title": "운영 신뢰",
+        "message_4_body": "실시간 처리와 장애 대응 경험을 근거로 금융기관 리스크를 낮춥니다.",
+        "footer_note": "JB meeting share | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "timeline",
+        "scope": "report",
+        "preferred_variant": "timeline/horizontal-roadmap",
+        "fallback_variants": [
+          "timeline/company-history"
+        ]
+      },
+      "text_slots": {
+        "title": "후속 실행 계획",
+        "subtitle": "향후 2주 내 고객 의사결정에 필요한 자료 패키지를 완성합니다.",
+        "milestone_1": "이번 주\nASP 제안 패키지",
+        "milestone_2": "다음 주\nAPI·이벤트 시나리오",
+        "milestone_3": "후속 미팅\n도입 범위 확정",
+        "footer_note": "JB meeting share | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "closing",
+        "scope": "report",
+        "preferred_variant": "closing/goal-grid",
+        "fallback_variants": [
+          "closing/discussion-next-step"
+        ]
+      },
+      "text_slots": {
+        "eyebrow": "GOAL",
+        "title": "다음 의사결정 포인트",
+        "subtitle": "ASP 선도입 여부, API 확장 범위, UI·UX 반영 수준, 예산 조회와 활성화 기능 연계를 확인해야 합니다.",
+        "goal_statement": "목표: 제한 범위의 빠른 도입안과 확장 가능한 기술 로드맵을 동시에 제시",
+        "footer_note": "JB meeting share | template-first system"
+      }
+    }
+  ]
+}

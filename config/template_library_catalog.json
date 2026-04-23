@@ -1,0 +1,442 @@
+{
+  "version": "0.2",
+  "workspace": "C:/Users/kimjo/Downloads/ppt-test",
+  "libraries": [
+    {
+      "library_id": "template_library_04_v1",
+      "scope": "report",
+      "style_tags": ["corporate", "clean", "structured"],
+      "source_path": "assets/slides/references/template.pptx",
+      "output_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
+      "strategy": "trimmed_copy",
+      "description": "Curated report-style slides from the primary template, including reusable generic report blocks.",
+      "slides": [
+        {
+          "slide_no": 1,
+          "key": "cover_brand_right_v1",
+          "purpose": "cover",
+          "variant": "cover/right-hero",
+          "scope_override": "generic",
+          "style_tags": ["hero", "brand", "image-right"]
+        },
+        {
+          "slide_no": 16,
+          "key": "summary_two_panel_v1",
+          "purpose": "summary",
+          "variant": "summary/two-panel",
+          "scope_override": "generic",
+          "style_tags": ["two-column", "summary", "meeting"]
+        },
+        {
+          "slide_no": 17,
+          "key": "market_tam_sam_som_v1",
+          "purpose": "market",
+          "variant": "market/tam-sam-som",
+          "style_tags": ["market-size", "three-block"]
+        },
+        {
+          "slide_no": 18,
+          "key": "competition_matrix_v1",
+          "purpose": "analysis",
+          "variant": "analysis/competition-matrix",
+          "style_tags": ["matrix", "comparison", "competitive"]
+        },
+        {
+          "slide_no": 19,
+          "key": "roadmap_timeline_v1",
+          "purpose": "timeline",
+          "variant": "timeline/horizontal-roadmap",
+          "scope_override": "generic",
+          "style_tags": ["timeline", "horizontal", "milestone"]
+        },
+        {
+          "slide_no": 20,
+          "key": "gtm_quadrant_v1",
+          "purpose": "strategy",
+          "variant": "strategy/quadrant",
+          "scope_override": "generic",
+          "style_tags": ["quadrant", "gtm", "decision"]
+        },
+        {
+          "slide_no": 21,
+          "key": "gtm_metric_blocks_v1",
+          "purpose": "strategy",
+          "variant": "strategy/metric-blocks",
+          "scope_override": "generic",
+          "style_tags": ["metrics", "kpi", "blocks"]
+        },
+        {
+          "slide_no": 22,
+          "key": "gtm_checkpoint_flow_v1",
+          "purpose": "strategy",
+          "variant": "strategy/checkpoint-flow",
+          "scope_override": "generic",
+          "style_tags": ["checkpoint", "flow", "step"]
+        },
+        {
+          "slide_no": 23,
+          "key": "scale_checkpoint_flow_v2",
+          "purpose": "strategy",
+          "variant": "strategy/checkpoint-flow-alt",
+          "scope_override": "generic",
+          "style_tags": ["checkpoint", "flow", "scale-up"]
+        },
+        {
+          "slide_no": 25,
+          "key": "team_profile_grid_v1",
+          "purpose": "team",
+          "variant": "team/profile-grid",
+          "style_tags": ["team", "profile", "grid"]
+        },
+        {
+          "slide_no": 26,
+          "key": "financial_timeline_chart_v1",
+          "purpose": "chart",
+          "variant": "chart/financial-timeline",
+          "style_tags": ["financial", "timeline", "chart"]
+        },
+        {
+          "slide_no": 27,
+          "key": "financial_mix_chart_v1",
+          "purpose": "chart",
+          "variant": "chart/financial-mix",
+          "style_tags": ["financial", "mix", "chart"]
+        },
+        {
+          "slide_no": 31,
+          "key": "company_history_v1",
+          "purpose": "timeline",
+          "variant": "timeline/company-history",
+          "style_tags": ["history", "timeline", "company"]
+        },
+        {
+          "slide_no": 32,
+          "key": "market_stat_cards_v1",
+          "purpose": "market",
+          "variant": "market/stat-cards",
+          "style_tags": ["market", "stats", "cards"]
+        },
+        {
+          "slide_no": 33,
+          "key": "rebranding_keywords_v1",
+          "purpose": "summary",
+          "variant": "summary/keyword-story",
+          "scope_override": "generic",
+          "style_tags": ["keyword", "message", "branding"]
+        },
+        {
+          "slide_no": 34,
+          "key": "market_comparison_blocks_v1",
+          "purpose": "analysis",
+          "variant": "analysis/multi-block-comparison",
+          "style_tags": ["comparison", "multi-block", "market"]
+        },
+        {
+          "slide_no": 45,
+          "key": "issue_2x2_v1",
+          "purpose": "issue",
+          "variant": "issue/2x2-cards",
+          "scope_override": "generic",
+          "style_tags": ["issue", "2x2", "cards"]
+        },
+        {
+          "slide_no": 46,
+          "key": "solution_4step_v1",
+          "purpose": "strategy",
+          "variant": "strategy/4-step-solution",
+          "scope_override": "generic",
+          "style_tags": ["solution", "4-step", "phased"]
+        },
+        {
+          "slide_no": 50,
+          "key": "proposal_grid_4up_v1",
+          "purpose": "summary",
+          "variant": "summary/4up-message-grid",
+          "scope_override": "generic",
+          "style_tags": ["proposal", "grid", "messages"]
+        },
+        {
+          "slide_no": 58,
+          "key": "goal_grid_v1",
+          "purpose": "closing",
+          "variant": "closing/goal-grid",
+          "scope_override": "generic",
+          "style_tags": ["goal", "closing", "grid"]
+        },
+        {
+          "slide_no": 278,
+          "key": "toc_simple_index_v1",
+          "purpose": "toc",
+          "variant": "toc/simple-index",
+          "scope_override": "generic",
+          "style_tags": ["toc", "index", "minimal"]
+        },
+        {
+          "slide_no": 312,
+          "key": "toc_visual_tiles_v1",
+          "purpose": "toc",
+          "variant": "toc/visual-tiles",
+          "scope_override": "generic",
+          "style_tags": ["toc", "index", "visual", "four-tile"]
+        }
+      ]
+    },
+    {
+      "library_id": "template_library_01_v1",
+      "scope": "sales",
+      "style_tags": ["sales", "narrative", "partner-facing"],
+      "source_path": "not_published",
+      "output_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
+      "strategy": "trimmed_copy",
+      "description": "Narrative sales slides with partner-program framing and strong service storytelling.",
+      "slides": [
+        {
+          "slide_no": 1,
+          "key": "channel_cover_v1",
+          "purpose": "cover",
+          "variant": "cover/narrative-sales",
+          "style_tags": ["sales", "narrative", "partner"]
+        },
+        {
+          "slide_no": 2,
+          "key": "service_intro_cards_v1",
+          "purpose": "summary",
+          "variant": "summary/service-intro-cards",
+          "style_tags": ["service", "cards", "introduction"]
+        },
+        {
+          "slide_no": 3,
+          "key": "data_method_v1",
+          "purpose": "process",
+          "variant": "process/method-diagram",
+          "style_tags": ["method", "diagram", "data"]
+        },
+        {
+          "slide_no": 4,
+          "key": "prioritization_metric_v1",
+          "purpose": "analysis",
+          "variant": "analysis/prioritization-metric",
+          "style_tags": ["analysis", "prioritization", "metric"]
+        },
+        {
+          "slide_no": 5,
+          "key": "sales_strategy_steps_v1",
+          "purpose": "strategy",
+          "variant": "strategy/sales-step-story",
+          "style_tags": ["sales", "strategy", "step"]
+        },
+        {
+          "slide_no": 6,
+          "key": "expansion_story_v1",
+          "purpose": "strategy",
+          "variant": "strategy/expansion-story",
+          "style_tags": ["growth", "expansion", "story"]
+        },
+        {
+          "slide_no": 7,
+          "key": "service_model_v1",
+          "purpose": "process",
+          "variant": "process/service-operating-model",
+          "style_tags": ["service", "operating-model", "process"]
+        },
+        {
+          "slide_no": 8,
+          "key": "pilot_program_v1",
+          "purpose": "process",
+          "variant": "process/pilot-program",
+          "style_tags": ["pilot", "program", "proposal"]
+        },
+        {
+          "slide_no": 9,
+          "key": "partnership_goal_v1",
+          "purpose": "closing",
+          "variant": "closing/partnership-goal",
+          "style_tags": ["partnership", "goal", "alignment"]
+        },
+        {
+          "slide_no": 10,
+          "key": "discussion_closing_v1",
+          "purpose": "closing",
+          "variant": "closing/discussion-next-step",
+          "style_tags": ["discussion", "next-step", "closing"]
+        }
+      ]
+    },
+    {
+      "library_id": "template_library_02_v1",
+      "scope": "sales",
+      "style_tags": ["sales", "finance", "ai"],
+      "source_path": "not_published",
+      "output_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
+      "strategy": "trimmed_copy",
+      "description": "Finance and AI sales slides with stronger proof, PoC, and ROI framing.",
+      "slides": [
+        {
+          "slide_no": 1,
+          "key": "finance_cover_v1",
+          "purpose": "cover",
+          "variant": "cover/finance-sales",
+          "style_tags": ["finance", "sales", "ai"]
+        },
+        {
+          "slide_no": 2,
+          "key": "problem_story_v1",
+          "purpose": "issue",
+          "variant": "issue/pain-story",
+          "style_tags": ["problem", "pain-point", "story"]
+        },
+        {
+          "slide_no": 3,
+          "key": "before_after_compare_v1",
+          "purpose": "analysis",
+          "variant": "analysis/before-after",
+          "style_tags": ["before-after", "comparison", "value"]
+        },
+        {
+          "slide_no": 4,
+          "key": "alpha_signal_timeline_v1",
+          "purpose": "strategy",
+          "variant": "strategy/signal-timeline",
+          "style_tags": ["signal", "timeline", "alpha"]
+        },
+        {
+          "slide_no": 5,
+          "key": "service_components_v1",
+          "purpose": "summary",
+          "variant": "summary/service-components",
+          "style_tags": ["service", "components", "cards"]
+        },
+        {
+          "slide_no": 6,
+          "key": "proof_metrics_v1",
+          "purpose": "chart",
+          "variant": "chart/proof-metrics",
+          "style_tags": ["proof", "metrics", "evidence"]
+        },
+        {
+          "slide_no": 7,
+          "key": "core_technology_v1",
+          "purpose": "analysis",
+          "variant": "analysis/core-technology",
+          "style_tags": ["technology", "capability", "ai"]
+        },
+        {
+          "slide_no": 8,
+          "key": "signal_speed_v1",
+          "purpose": "chart",
+          "variant": "chart/single-metric-story",
+          "style_tags": ["metric", "speed", "proof"]
+        },
+        {
+          "slide_no": 9,
+          "key": "vertical_use_cases_v1",
+          "purpose": "analysis",
+          "variant": "analysis/vertical-use-cases",
+          "style_tags": ["use-case", "industry", "vertical"]
+        },
+        {
+          "slide_no": 10,
+          "key": "poc_process_v1",
+          "purpose": "process",
+          "variant": "process/poc-steps",
+          "style_tags": ["poc", "process", "steps"]
+        },
+        {
+          "slide_no": 11,
+          "key": "roi_threepillars_v1",
+          "purpose": "analysis",
+          "variant": "analysis/roi-three-pillars",
+          "style_tags": ["roi", "three-pillars", "value"]
+        },
+        {
+          "slide_no": 12,
+          "key": "finance_closing_v1",
+          "purpose": "closing",
+          "variant": "closing/finance-cta",
+          "style_tags": ["cta", "finance", "closing"]
+        }
+      ]
+    },
+    {
+      "library_id": "template_library_03_v1",
+      "scope": "portfolio",
+      "style_tags": ["portfolio", "personal", "project-showcase"],
+      "source_path": "not_published",
+      "output_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "strategy": "trimmed_copy",
+      "description": "Portfolio and project showcase slides for PM and case-study storytelling.",
+      "slides": [
+        {
+          "slide_no": 1,
+          "key": "portfolio_cover_v1",
+          "purpose": "cover",
+          "variant": "cover/portfolio",
+          "style_tags": ["portfolio", "personal-brand"]
+        },
+        {
+          "slide_no": 2,
+          "key": "profile_resume_v1",
+          "purpose": "team",
+          "variant": "team/resume-card",
+          "style_tags": ["resume", "profile", "portfolio"]
+        },
+        {
+          "slide_no": 3,
+          "key": "project_case_v1",
+          "purpose": "analysis",
+          "variant": "analysis/project-case-metric-1",
+          "style_tags": ["project", "case-study", "metric"]
+        },
+        {
+          "slide_no": 4,
+          "key": "project_case_v2",
+          "purpose": "analysis",
+          "variant": "analysis/project-case-metric-2",
+          "style_tags": ["project", "case-study", "metric"]
+        },
+        {
+          "slide_no": 5,
+          "key": "project_case_v3",
+          "purpose": "analysis",
+          "variant": "analysis/project-case-metric-3",
+          "style_tags": ["project", "case-study", "metric"]
+        },
+        {
+          "slide_no": 6,
+          "key": "single_owner_case_v1",
+          "purpose": "analysis",
+          "variant": "analysis/solo-builder-case",
+          "style_tags": ["project", "solo-builder", "ownership"]
+        },
+        {
+          "slide_no": 7,
+          "key": "patent_case_v1",
+          "purpose": "analysis",
+          "variant": "analysis/ip-case",
+          "style_tags": ["project", "patent", "ip"]
+        },
+        {
+          "slide_no": 8,
+          "key": "org_initiative_case_v1",
+          "purpose": "analysis",
+          "variant": "analysis/org-initiative",
+          "style_tags": ["project", "organization", "initiative"]
+        },
+        {
+          "slide_no": 9,
+          "key": "improvement_case_v1",
+          "purpose": "analysis",
+          "variant": "analysis/improvement-story",
+          "style_tags": ["project", "improvement", "outcome"]
+        },
+        {
+          "slide_no": 10,
+          "key": "portfolio_closing_v1",
+          "purpose": "closing",
+          "variant": "closing/portfolio-thank-you",
+          "style_tags": ["portfolio", "closing", "thank-you"]
+        }
+      ]
+    }
+  ]
+}

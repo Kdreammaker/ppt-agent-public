@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ppt_asset_catalog.schema.json",
+  "title": "PPT Asset Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_from", "assets"],
+  "properties": {
+    "schema_version": {
+      "enum": ["1.0", "1.1"]
+    },
+    "generated_from": {
+      "type": "string"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["asset_id", "asset_class", "source_type", "source_path", "kind", "license", "license_action", "risk_level", "production_eligible", "allowed_for_ppt", "style_tags", "recommended_use"],
+        "properties": {
+          "asset_id": {
+            "type": "string"
+          },
+          "source_path": {
+            "type": ["string", "null"]
+          },
+          "asset_class": {
+            "enum": ["palette", "typography", "icon", "image", "chart_preset", "theme"]
+          },
+          "source_type": {
+            "enum": ["local_file", "local_config", "local_code", "external_registry_reference"]
+          },
+          "kind": {
+            "enum": ["icon_svg", "icon_png", "illustration", "font", "texture", "theme", "palette", "chart_preset", "other"]
+          },
+          "license": {
+            "type": "string"
+          },
+          "allowed_for_ppt": {
+            "type": "boolean"
+          },
+          "license_action": {
+            "type": "string"
+          },
+          "risk_level": {
+            "enum": ["low", "medium", "high", "restricted", "unknown"]
+          },
+          "production_eligible": {
+            "type": "boolean"
+          },
+          "style_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "recommended_use": {
+            "type": "string"
+          },
+          "cjk_support": {
+            "type": ["boolean", "null"]
+          },
+          "installed_locally": {
+            "type": ["boolean", "null"]
+          },
+          "theme_name": {
+            "type": "string"
+          },
+          "font_family": {
+            "type": "string"
+          },
+          "color_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "font_size_roles": {
+            "type": ["array", "object"],
+            "items": {
+              "type": "string"
+            }
+          },
+          "colors": {
+            "type": "object"
+          },
+          "preset_name": {
+            "type": "string"
+          },
+          "policy_name": {
+            "type": "string"
+          },
+          "external_asset_uid": {
+            "type": "string"
+          },
+          "external_set_id": {
+            "type": "string"
+          },
+          "external_source_name": {
+            "type": "string"
+          },
+          "external_asset_name": {
+            "type": "string"
+          },
+          "external_relative_path": {
+            "type": ["string", "null"]
+          },
+          "policy_notes": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "generated_from_details": {
+      "type": "object"
+    },
+    "selection_policy": {
+      "type": "object"
+    }
+  }
+}

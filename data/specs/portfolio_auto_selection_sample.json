@@ -1,0 +1,108 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "Portfolio Auto Selection Sample",
+  "theme_path": "../../config/pptx_theme.example.json",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/portfolio_auto_selection_sample.pptx",
+  "slides": [
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "portfolio",
+        "preferred_variant": "cover/portfolio",
+        "fallback_variants": [
+          "cover/right-hero"
+        ]
+      },
+      "text_slots": {
+        "title": "Portfolio Deck Demo",
+        "name": "Exact portfolio cover selected before generic fallback.",
+        "tag_1": "Case-study selection",
+        "tag_2": "Reusable project storytelling",
+        "tag_3": "Demo",
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "toc",
+        "scope": "portfolio",
+        "preferred_variant": "toc/visual-tiles",
+        "fallback_variants": [
+          "toc/simple-index"
+        ]
+      },
+      "text_slots": {
+        "title": "Portfolio Route",
+        "subtitle": "Portfolio scope reuses generic structure slides",
+        "toc_1_number": "Profile",
+        "toc_1_title": "Cases",
+        "toc_1_body": "Impact",
+        "toc_2_number": "Close",
+        "toc_2_title": "Who built it",
+        "toc_2_body": "Representative work",
+        "toc_3_number": "Proof",
+        "toc_3_title": "Wrap-up",
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "portfolio",
+        "preferred_variant": "summary/two-panel"
+      },
+      "text_slots": {
+        "title": "Portfolio Summary",
+        "subtitle": "Generic summary slide selected because portfolio scope has no exact summary variant.",
+        "left_card_title": "Signal",
+        "left_card_body": "The selector prefers exact scope and then falls back to generic.",
+        "right_card_title": "Benefit",
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "issue",
+        "scope": "portfolio",
+        "preferred_variant": "issue/2x2-cards"
+      },
+      "text_slots": {
+        "eyebrow": "Portfolio Framing",
+        "title": "Generic issue slide reused for project framing.",
+        "subtitle": "Scope",
+        "card_1_number": "Scale",
+        "card_1_title": "Constraint",
+        "card_1_body": "Tight ownership",
+        "card_2_number": "Decision",
+        "card_2_title": "Prioritized execution",
+        "card_2_body": "Outcome",
+        "card_3_number": "Lift",
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "closing",
+        "scope": "portfolio",
+        "preferred_variant": "closing/portfolio-thank-you",
+        "fallback_variants": [
+          "closing/goal-grid"
+        ]
+      },
+      "text_slots": {
+        "title": "Next Steps",
+        "subtitle": "Portfolio-specific closing selected before generic fallback.",
+        "highlight_title": "Thank you",
+        "highlight_body": "This confirms exact-scope and generic fallback both work.",
+        "footer_note": "Template system sample"
+      }
+    }
+  ]
+}

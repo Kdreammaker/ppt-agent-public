@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "local_diagnostic_support_bundle_policy",
+  "status": "invite_beta_ready",
+  "principles": {
+    "explicit_user_action_required": true,
+    "telemetry_collection": "disabled",
+    "automatic_upload": false,
+    "default_destination": "local_workspace_reports",
+    "support_review_model": "user_may_inspect_before_sending"
+  },
+  "allowed_sections": [
+    "bundle_manifest",
+    "runtime_summary",
+    "workspace_policy_summary",
+    "entitlement_summary",
+    "healthcheck_summary",
+    "validation_report_summaries",
+    "command_output_snippets",
+    "gateway_request_summaries",
+    "reference_quality_summary",
+    "metadata_recommendation_summary"
+  ],
+  "forbidden_content": [
+    "raw_workspace_code",
+    "license_key",
+    "payment_or_subscription_record",
+    "credit_balance",
+    "slack_token",
+    "drive_token",
+    "api_key",
+    "full_spec_json",
+    "full_html_document",
+    "binary_pptx_content",
+    "image_binary",
+    "template_binary",
+    "raw_reference_file",
+    "source_file_contents",
+    "local_user_document_contents",
+    "private_cto_review",
+    "internal_plan_document"
+  ],
+  "allowed_artifacts": [
+    "support_bundle.json",
+    "support_bundle.md"
+  ],
+  "path_policy": {
+    "absolute_paths": "redact_or_hash",
+    "workspace_paths": "relative_only",
+    "external_paths": "redact"
+  },
+  "code_policy": {
+    "raw_code_storage_allowed": false,
+    "mask_required": true,
+    "hash_allowed": true,
+    "malformed_code_mask": "****"
+  },
+  "known_warning_policy": {
+    "mupdf_thumbnail_structure_tree": "non_blocking_if_regression_gate_passes"
+  },
+  "command_output_snippets_policy": {
+    "include_only_when_user_created_bundle": true,
+    "include_failed_command_snippets": true,
+    "max_snippets": 5,
+    "max_lines_per_stream": 8,
+    "max_chars_per_stream": 1200,
+    "redact_workspace_codes": true,
+    "redact_secrets": true,
+    "redact_absolute_paths": true,
+    "redact_raw_reference_paths": true,
+    "exclude_full_file_contents": true,
+    "exclude_generated_html": true,
+    "exclude_binary_artifacts": true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "generated_from": [
+    "assets/slides/library/good/metadata/*.json"
+  ],
+  "patterns": [
+    {
+      "pattern_id": "pattern_generated_015_s002",
+      "pattern_name": "general / toc",
+      "based_on_slide_ids": [
+        "generated_015_s002"
+      ],
+      "category": "general",
+      "layout_type": "unknown",
+      "story_role": "toc",
+      "recommended_audience": [],
+      "recommended_deck_type": [
+        "generated"
+      ],
+      "placeholder_roles": [],
+      "text_budget": {
+        "text_shape_count": 14
+      },
+      "image_budget": {
+        "picture_count": 0
+      },
+      "chart_budget": {
+        "chart_count": 0,
+        "table_count": 0
+      },
+      "style_rules": {
+        "font_families": [],
+        "visual_density": "unknown"
+      },
+      "best_for": [],
+      "avoid_for": [],
+      "promotion_status": "analysis_only"
+    },
+    {
+      "pattern_id": "pattern_generated_016_s001",
+      "pattern_name": "general / cover",
+      "based_on_slide_ids": [
+        "generated_016_s001"
+      ],
+      "category": "general",
+      "layout_type": "text_grid",
+      "story_role": "cover",
+      "recommended_audience": [],
+      "recommended_deck_type": [
+        "generated"
+      ],
+      "placeholder_roles": [],
+      "text_budget": {
+        "text_shape_count": 5
+      },
+      "image_budget": {
+        "picture_count": 1
+      },
+      "chart_budget": {
+        "chart_count": 0,
+        "table_count": 0
+      },
+      "style_rules": {
+        "font_families": [
+          "Malgun Gothic"
+        ],
+        "visual_density": "medium"
+      },
+      "best_for": [],
+      "avoid_for": [],
+      "promotion_status": "analysis_only"
+    }
+  ]
+}

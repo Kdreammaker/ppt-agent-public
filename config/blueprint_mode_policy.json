@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "assistant_auto_blueprint_policy",
+  "modes": {
+    "assistant": {
+      "default_visible": true,
+      "default_action": "show_blueprint",
+      "blocking": true,
+      "skip_allowed": true,
+      "requires_explicit_continue_for_build": true,
+      "description": "Assistant mode shows the structure blueprint before final file generation. The user or operator must explicitly approve, revise, continue, or skip before building PPTX/HTML outputs."
+    },
+    "auto": {
+      "default_visible": false,
+      "default_action": "skip_blueprint",
+      "blocking": false,
+      "skip_allowed": true,
+      "description": "Auto mode skips the blueprint checkpoint by default and records policy only when a blueprint is explicitly requested."
+    }
+  },
+  "final_file_generation_required_for_blueprint": false,
+  "policy_summary": {
+    "auto_default": "skip",
+    "assistant_default": "show_approval_checkpoint",
+    "human_can_override": true
+  }
+}

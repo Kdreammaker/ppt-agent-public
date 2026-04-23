@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "beta_output_quality_policy",
+  "status": "invite_beta_preflight",
+  "sample_intake": "data/intake/business_growth_review.json",
+  "sample_spec": "data/specs/business_growth_review_spec.json",
+  "sample_deck": "outputs/decks/business_growth_review.pptx",
+  "visual_smoke_report": "outputs/reports/business_growth_review_visual_smoke.json",
+  "reference_quality_report": "outputs/reports/reference_quality_dna.json",
+  "thresholds": {
+    "max_selected_dense_slides": 1,
+    "max_text_cutoff_events": 0,
+    "max_low_foreground_slides": 3,
+    "minimum_medium_or_light_ratio": 0.8
+  },
+  "required_template_keys": [
+    "channel_cover_v1",
+    "core_technology_v1",
+    "vertical_use_cases_v1",
+    "roi_threepillars_v1",
+    "alpha_signal_timeline_v1",
+    "finance_closing_v1"
+  ],
+  "notes": [
+    "B57 keeps the fix conservative: improve the first invite-beta business demo without changing raw-reference eligibility or introducing gateway recommendation.",
+    "Dedicated report templates should still be promoted later; this policy only prevents the beta sample from regressing to mostly dense/text-heavy selections."
+  ]
+}

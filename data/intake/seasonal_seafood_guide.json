@@ -1,0 +1,60 @@
+{
+  "$schema": "../../config/deck_intake.schema.json",
+  "intake_version": "1.0",
+  "name": "May Seasonal Seafood Guide",
+  "audience": {
+    "primary": "General consumers",
+    "secondary": ["Home cooks"],
+    "knowledge_level": "general",
+    "decision_role": "learner"
+  },
+  "presentation_context": {
+    "setting": "Web and social seafood guide",
+    "delivery_mode": "async_readout",
+    "duration_minutes": 8,
+    "presenter_role": "Food content creator",
+    "locale": "en-US"
+  },
+  "primary_goal": "Introduce seasonal May seafood and suggest simple dishes.",
+  "deck_type": "report",
+  "industry": "food_and_beverage",
+  "tone": ["friendly", "visual"],
+  "slide_count_range": {
+    "min": 6,
+    "max": 6
+  },
+  "brand_or_template_scope": {
+    "preferred_scope": null,
+    "preferred_template_keys": [],
+    "required_template_library": null,
+    "theme_path": "../../config/pptx_theme.example.json",
+    "notes": "Use consumer/editorial guide templates and avoid business case language."
+  },
+  "content_density": "medium",
+  "variation_level": "single_path",
+  "review_requirements": {
+    "needs_variant_review": false,
+    "requires_rationale_report": true,
+    "requires_slot_map": true,
+    "reviewers": ["operator"],
+    "approval_mode": "assistant"
+  },
+  "must_include": [
+    "Webfoot octopus - taurine-rich spring seafood; suggested dish: spicy stir-fry",
+    "Sea squirt - bright ocean flavor; suggested dish: bibimbap",
+    "Female blue crab - roe-rich and savory; suggested dish: soy-marinated crab",
+    "Buying and storage tips - how to choose and store fresh seafood"
+  ],
+  "must_avoid": [
+    "Business case labels",
+    "Dense text-only slides",
+    "Unverified seafood images"
+  ],
+  "source_materials": [],
+  "output_preferences": {
+    "output_spec_path": "data/specs/seasonal_seafood_guide_spec.json",
+    "output_deck_path": "outputs/decks/seasonal_seafood_guide.pptx",
+    "required_reports": ["outputs/reports/slide_selection_rationale.json", "outputs/reports/deck_slot_map.json"]
+  },
+  "notes": "Post-CTO B76 public-safe fixture for the first external seafood guide failure class."
+}

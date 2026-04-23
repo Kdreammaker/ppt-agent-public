@@ -1,0 +1,60 @@
+{
+  "$schema": "../../config/deck_intake.schema.json",
+  "intake_version": "1.0",
+  "name": "Travel Experience Plan",
+  "audience": {
+    "primary": "Experience planning team",
+    "secondary": ["Operations", "Partnerships"],
+    "knowledge_level": "general",
+    "decision_role": "mixed"
+  },
+  "presentation_context": {
+    "setting": "Destination experience planning workshop",
+    "delivery_mode": "workshop",
+    "duration_minutes": 25,
+    "presenter_role": "Experience strategist",
+    "locale": "en-US"
+  },
+  "primary_goal": "Shape a concise destination experience narrative and decide which route concept to prototype first.",
+  "deck_type": "portfolio",
+  "industry": "travel",
+  "tone": ["visual", "friendly", "analytical"],
+  "slide_count_range": {
+    "min": 6,
+    "max": 6
+  },
+  "brand_or_template_scope": {
+    "preferred_scope": null,
+    "preferred_template_keys": [],
+    "required_template_library": null,
+    "theme_path": "../../config/pptx_theme.example.json",
+    "notes": "Use the industry-aware travel profile and portfolio/case-study template family."
+  },
+  "content_density": "low",
+  "variation_level": "light_variants",
+  "review_requirements": {
+    "needs_variant_review": false,
+    "requires_rationale_report": true,
+    "requires_slot_map": true,
+    "reviewers": ["operator"],
+    "approval_mode": "operator_review"
+  },
+  "must_include": [
+    "Destination hook - why this route should feel memorable",
+    "Traveler profile - who the experience serves first",
+    "Signature moment - what visitors should remember",
+    "Prototype decision - which route concept moves forward"
+  ],
+  "must_avoid": [
+    "Finance-first template sequence",
+    "Dense business review language",
+    "Unverified image assets"
+  ],
+  "source_materials": [],
+  "output_preferences": {
+    "output_spec_path": "data/specs/travel_experience_plan_spec.json",
+    "output_deck_path": "outputs/decks/travel_experience_plan.pptx",
+    "required_reports": ["outputs/reports/slide_selection_rationale.json", "outputs/reports/deck_slot_map.json"]
+  },
+  "notes": "B27 sample for the travel industry profile."
+}

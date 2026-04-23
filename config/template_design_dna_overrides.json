@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "slides": {
+    "template_library_04_v1.cover_brand_right_v1": {
+      "tone": [
+        "executive",
+        "conservative"
+      ],
+      "best_for": [
+        "formal executive report opening",
+        "high-trust strategy briefings",
+        "restrained narrative setup"
+      ],
+      "avoid_for": [
+        "high-emotion sales pitch",
+        "dense analytical body copy"
+      ],
+      "review_notes": "Use when clarity and restraint matter more than visual novelty."
+    },
+    "template_library_04_v1.gtm_checkpoint_flow_v1": {
+      "tone": [
+        "executive",
+        "technical"
+      ],
+      "best_for": [
+        "operating model checkpoints",
+        "phased delivery governance",
+        "decision-ready implementation paths"
+      ],
+      "review_notes": "Preferred process slide for executive governance narratives."
+    },
+    "template_library_04_v1.financial_mix_chart_v1": {
+      "avoid_for": [
+        "content-specific chart claims without source-template cleanup",
+        "production chart pages that require editable percentage labels"
+      ],
+      "review_notes": "Contains static chart artwork and labels; use only when those visuals match the message or after template cleanup exposes them as slots."
+    },
+    "template_library_04_v1.market_stat_cards_v1": {
+      "avoid_for": [
+        "production market sizing pages before static artifact cleanup",
+        "content requiring fully editable metric labels"
+      ],
+      "review_notes": "Static metric artwork should be converted to slots or removed before this template is used as a polished production chart slide."
+    }
+  }
+}

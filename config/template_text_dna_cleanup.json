@@ -1,0 +1,280 @@
+{
+  "schema_version": "1.0",
+  "description": "Template fixed-copy cleanup records for production templates whose visual structure is useful but whose source sample text is not fully slot-modeled yet.",
+  "templates": {
+    "channel_cover_v1": {
+      "status": "residual_cleanup_active",
+      "quality_note": "Generic cover tagline is treated as removable template copy until the cover receives explicit tagline slots.",
+      "cleanup_patterns": [
+        {
+          "pattern": "Monitor, Analyze, Optimize",
+          "classification": "slot_candidate",
+          "reason": "Cover tagline should become an editable subtitle/tagline slot."
+        },
+        {
+          "pattern": "Investment | Marketing | Monitoring",
+          "classification": "slot_candidate",
+          "reason": "Cover category strip should be editable, not inherited from the source template."
+        }
+      ]
+    },
+    "service_components_v1": {
+      "status": "residual_cleanup_active",
+      "quality_note": "Signal-product service copy remains as fixed shapes around useful card slots.",
+      "cleanup_patterns": [
+        {
+          "pattern": "핵심 서비스 구성",
+          "classification": "slot_candidate",
+          "reason": "Section title is duplicated by editable title slots."
+        },
+        {
+          "pattern": "맞춤형 개발 가능한 Add Signal Data",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Source product claim is unrelated to generic business drafts."
+        },
+        {
+          "pattern": "텍스트 데이터를 -1 to +1",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static source-template data claim can leak into non-sentiment decks."
+        },
+        {
+          "pattern": "시장 관심도의 급증",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static source-template signal claim can leak into unrelated decks."
+        },
+        {
+          "pattern": "복잡한 전처리 없이 투자 전략",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static investment workflow claim is not safe for generic output."
+        },
+        {
+          "pattern": "Signal 기회 포착",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Source-template summary sentence is not editable yet."
+        },
+        {
+          "pattern": "DATA FIRST, PROBLEMS SOLVED, BOOST EVERYTHING.",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Template marketing slogan should not survive into generated decks."
+        }
+      ]
+    },
+    "core_technology_v1": {
+      "status": "residual_cleanup_active",
+      "quality_note": "Technology proof layout has fixed data-platform claims that are removed until converted to slots.",
+      "cleanup_patterns": [
+        {
+          "pattern": "고객사별 데이터 축적",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static source-template accuracy claim is unrelated to many industries."
+        },
+        {
+          "pattern": "뉴스, 게시판, 주가 데이터를 통합",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static source-template data-source claim is not safe by default."
+        },
+        {
+          "pattern": "수천 개 언론사의",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static scraping-engine claim should be editable before reuse."
+        },
+        {
+          "pattern": "AI 기반의 고급 전처리",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static preprocessing claim is not generally valid."
+        },
+        {
+          "pattern": "DATA FIRST, PROBLEMS SOLVED, BOOST EVERYTHING.",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Template marketing slogan should not survive into generated decks."
+        }
+      ]
+    },
+    "proof_metrics_v1": {
+      "status": "residual_cleanup_active",
+      "quality_note": "Metric slide has static ETF/source/disclaimer copy; keep layout but remove claims unless chart slots own the content.",
+      "cleanup_patterns": [
+        {
+          "pattern": "Market Index BUZZ ETF",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static market proof claim should not appear without source data."
+        },
+        {
+          "pattern": "과거 성과이며 미래 수익",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Source disclaimer is tied to the original finance sample."
+        },
+        {
+          "pattern": "한국 시장은 개인 비중",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static market explanation is not generic proof content."
+        },
+        {
+          "pattern": "이슈에 대한 빠른 반응 속도",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static signal explanation is not generic proof content."
+        },
+        {
+          "pattern": "Clean Data API 제공",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static API claim is not safe without explicit intake support."
+        },
+        {
+          "pattern": "DATA FIRST, PROBLEMS SOLVED, BOOST EVERYTHING.",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Template marketing slogan should not survive into generated decks."
+        }
+      ]
+    },
+    "alpha_signal_timeline_v1": {
+      "status": "residual_cleanup_active",
+      "quality_note": "Timeline structure is useful, but finance signal copy needs slot modeling before production reuse.",
+      "cleanup_patterns": [
+        {
+          "pattern": "Sentiment 팩터로 시장 반응",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static finance headline leaks source-template story."
+        },
+        {
+          "pattern": "뉴스보다 빠른 시그널",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static signal subhead leaks source-template story."
+        },
+        {
+          "pattern": "Traditional Investment Strategy",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static comparison label belongs to the original sample."
+        },
+        {
+          "pattern": "투자 전략에 즉시 적용 가능한 Clean Data",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static recommendation bullet is not generic."
+        },
+        {
+          "pattern": "Sharpe Ratio",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static portfolio metric claim is not generic."
+        },
+        {
+          "pattern": "DATA FIRST, PROBLEMS SOLVED, BOOST EVERYTHING.",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Template marketing slogan should not survive into generated decks."
+        }
+      ]
+    },
+    "finance_closing_v1": {
+      "status": "residual_cleanup_active",
+      "quality_note": "Closing slide has finance-specific CTA and legal copy that are removed until modeled as explicit contact/disclaimer slots.",
+      "cleanup_patterns": [
+        {
+          "pattern": "당신의 투자 전략에 검증된 Signal",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static CTA belongs to the source finance sample."
+        },
+        {
+          "pattern": "본 제안서의 성과 데이터",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static legal disclaimer should be supplied by deck content, not template residue."
+        },
+        {
+          "pattern": "Template System은 빅데이터",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static company disclaimer is source-template copy."
+        },
+        {
+          "pattern": "DATA FIRST, PROBLEMS SOLVED, BOOST EVERYTHING.",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Template marketing slogan should not survive into generated decks."
+        },
+        {
+          "pattern": "12 / 12",
+          "classification": "template_caveat",
+          "reason": "Static page-number residue should be replaced by future footer/page-number modeling."
+        }
+      ]
+    },
+    "project_case_v2": {
+      "status": "residual_cleanup_active",
+      "quality_note": "Portfolio case template includes personal SaaS project copy outside named slots.",
+      "cleanup_patterns": [
+        {
+          "pattern": "B2B SaaS 신규 사업",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static personal portfolio project copy is unrelated to travel drafts."
+        },
+        {
+          "pattern": "기획부터 프로토타입",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static execution claim belongs to the original portfolio sample."
+        },
+        {
+          "pattern": "사내 지식 베이스",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static SaaS implementation detail belongs to the original portfolio sample."
+        },
+        {
+          "pattern": "IR 커뮤니케이션 SaaS",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static CTA belongs to the original portfolio sample."
+        }
+      ]
+    },
+    "improvement_case_v1": {
+      "status": "residual_cleanup_active",
+      "quality_note": "Improvement case template has personal learning-case text outside named slots.",
+      "cleanup_patterns": [
+        {
+          "pattern": "SEO 비전문가",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static personal case copy is unrelated to most generated decks."
+        },
+        {
+          "pattern": "검색 유입 비중",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static performance claim belongs to the source sample."
+        },
+        {
+          "pattern": "AI 툴을 빠르게",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static personal capability claim belongs to the source sample."
+        },
+        {
+          "pattern": "학습 민첩성",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static capability label belongs to the source sample."
+        }
+      ]
+    },
+    "portfolio_closing_v1": {
+      "status": "residual_cleanup_active",
+      "quality_note": "Portfolio closing contact/recommendation text needs explicit contact-slot modeling before generic reuse.",
+      "cleanup_patterns": [
+        {
+          "pattern": "문제 해결사이자 학습 민첩성",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static personal recommendation quote belongs to the source sample."
+        },
+        {
+          "pattern": "동료 추천서",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static appendix/contact note belongs to the source sample."
+        },
+        {
+          "pattern": "Email",
+          "classification": "slot_candidate",
+          "reason": "Contact label should be tied to an explicit provided contact slot."
+        },
+        {
+          "pattern": "Mobile",
+          "classification": "slot_candidate",
+          "reason": "Contact label should be tied to an explicit provided contact slot."
+        },
+        {
+          "pattern": "Portfolio · Dae-geun Lee",
+          "classification": "residual_cleanup_pattern",
+          "reason": "Static personal footer belongs to the source sample."
+        }
+      ]
+    }
+  }
+}

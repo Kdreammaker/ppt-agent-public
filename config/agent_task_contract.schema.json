@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.ppt-test/agent_task_contract.schema.json",
+  "title": "Agent Task Contract",
+  "description": "Machine-readable task contract for agent-agnostic PPT system work.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "contract_version": {
+      "type": "string",
+      "pattern": "^1\\.0$"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "create_intake",
+        "create_spec",
+        "build_deck",
+        "validate_only",
+        "template_maintenance",
+        "report_generation",
+        "handoff_review"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string",
+      "description": "Human, agent, or automation responsible for this task."
+    },
+    "input_intake_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "input_spec_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "output_spec_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "output_deck_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "required_reports": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "validation_commands": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "allowed_write_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "forbidden_changes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "handoff_notes": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "in_progress",
+        "blocked",
+        "completed"
+      ]
+    }
+  },
+  "required": [
+    "contract_version",
+    "task_type",
+    "summary",
+    "validation_commands",
+    "allowed_write_paths",
+    "forbidden_changes",
+    "acceptance_criteria",
+    "handoff_notes"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "JB Meeting Component Preset Sample",
+  "theme_path": "../../config/pptx_theme.neutral_modern.json",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/jb_meeting_component_preset_system.pptx",
+  "slides": [
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "sales",
+        "preferred_variant": "cover/narrative-sales"
+      },
+      "text_slots": {
+        "title": "전북은행 미팅\n프리셋 기반 공유안",
+        "subtitle": "좌표와 배치 규칙을 JSON preset으로 분리합니다",
+        "footer_note": "JB meeting preset sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "toc",
+        "scope": "report",
+        "preferred_variant": "toc/visual-tiles"
+      },
+      "text_slots": {
+        "title": "Preset TOC",
+        "subtitle": "???? ?? ???? ?? ??",
+        "toc_1_number": "01",
+        "toc_1_title": "Meeting Insight",
+        "toc_1_body": "?? ???? ???",
+        "toc_2_number": "02",
+        "toc_2_title": "Customer Concerns",
+        "toc_2_body": "???? ?? ???",
+        "toc_3_number": "03",
+        "toc_3_title": "Execution Roadmap",
+        "toc_3_body": "ASP ?? ? API ??",
+        "toc_4_number": "04",
+        "toc_4_title": "Proposal Mock",
+        "toc_4_body": "??? ?? ?? ??",
+        "footer_note": "JB meeting preset sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "report",
+        "preferred_variant": "summary/4up-message-grid"
+      },
+      "text_slots": {
+        "eyebrow": "02",
+        "title": "Preset Decision Signals",
+        "subtitle": "?? ?? ???? ??? ?? ??? ??????.",
+        "message_1_title": "???",
+        "message_1_body": "??, ??, ??? ??? ??? ?????.",
+        "message_2_title": "?? ??",
+        "message_2_body": "?? ?? ???? ?? ??? ??? ??? ????.",
+        "message_3_title": "?? ??",
+        "message_3_body": "??? ??, ?? ??, ?? ??? ?????.",
+        "message_4_title": "???",
+        "message_4_body": "ASP ?? ? API? ??? ???? ?????.",
+        "footer_note": "JB meeting preset sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "timeline",
+        "scope": "report",
+        "preferred_variant": "timeline/horizontal-roadmap"
+      },
+      "text_slots": {
+        "title": "Preset Timeline",
+        "subtitle": "2? ? ???? ??? ???? ?? ??",
+        "milestone_1": "?? ?\nASP ?? ???",
+        "milestone_2": "?? ?\nAPI???? ????",
+        "milestone_3": "?? ??\n?? ?? ??",
+        "footer_note": "JB meeting preset sample | template-first system"
+      }
+    }
+  ]
+}

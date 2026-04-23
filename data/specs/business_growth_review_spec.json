@@ -1,0 +1,888 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "Growth Review",
+  "project_id": "growth_review",
+  "theme_path": "../../config/pptx_theme.neutral_modern.json",
+  "mode_policy": "assistant",
+  "recipe": "industry:business",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/business_growth_review.pptx",
+  "doc_paths": [],
+  "asset_intents": [
+    {
+      "role": "theme",
+      "asset_class": "theme",
+      "asset_id": "theme.neutral_modern_report",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "slot_kind": "theme",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_config_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "palette",
+      "asset_class": "palette",
+      "asset_id": "palette.neutral_modern_report",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "slot_kind": "palette",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_config_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "typography",
+      "asset_class": "typography",
+      "asset_id": "typography.neutral_modern_report.malgun_gothic",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "slot_kind": "typography",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_config_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "chart_preset",
+      "asset_class": "chart_preset",
+      "asset_id": "chart_preset.simple_bar_chart",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "slot_kind": "chart_preset",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_code_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 1,
+      "slot": "image_1",
+      "purpose": "cover",
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "purpose": "cover",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 2,
+      "slot": "image_1",
+      "purpose": "analysis",
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "icon",
+      "asset_class": "icon",
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_presentation_analytics_svg",
+      "slide_number": 2,
+      "slot": null,
+      "purpose": "analysis",
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "icon",
+        "aspect_ratio": "16:9",
+        "source_policy": "external_registry_metadata_only"
+      },
+      "source_policy": "external_registry_reference",
+      "materialization": "metadata_only",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [
+        "external.blog_webpage_visuals.uxwing.dashboard_monitoring_icon_svg",
+        "external.dashboard_report_icons.lucide.icons_bar_chart_2_svg",
+        "external.dashboard_report_icons.lucide.icons_file_line_chart_svg",
+        "external.dashboard_report_icons.tabler_icons.icons_filled_presentation_analytics_svg"
+      ],
+      "notes": "Icon recommendation metadata only; B31 does not materialize external registry files."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 3,
+      "slot": "image_1",
+      "purpose": "analysis",
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "icon",
+      "asset_class": "icon",
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_presentation_analytics_svg",
+      "slide_number": 3,
+      "slot": null,
+      "purpose": "analysis",
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "icon",
+        "aspect_ratio": "16:9",
+        "source_policy": "external_registry_metadata_only"
+      },
+      "source_policy": "external_registry_reference",
+      "materialization": "metadata_only",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [
+        "external.blog_webpage_visuals.uxwing.dashboard_monitoring_icon_svg",
+        "external.dashboard_report_icons.lucide.icons_bar_chart_2_svg",
+        "external.dashboard_report_icons.lucide.icons_file_line_chart_svg",
+        "external.dashboard_report_icons.tabler_icons.icons_filled_presentation_analytics_svg"
+      ],
+      "notes": "Icon recommendation metadata only; B31 does not materialize external registry files."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 4,
+      "slot": "image_1",
+      "purpose": "analysis",
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "icon",
+      "asset_class": "icon",
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_presentation_analytics_svg",
+      "slide_number": 4,
+      "slot": null,
+      "purpose": "analysis",
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "icon",
+        "aspect_ratio": "16:9",
+        "source_policy": "external_registry_metadata_only"
+      },
+      "source_policy": "external_registry_reference",
+      "materialization": "metadata_only",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [
+        "external.blog_webpage_visuals.uxwing.dashboard_monitoring_icon_svg",
+        "external.dashboard_report_icons.lucide.icons_bar_chart_2_svg",
+        "external.dashboard_report_icons.lucide.icons_file_line_chart_svg",
+        "external.dashboard_report_icons.tabler_icons.icons_filled_presentation_analytics_svg"
+      ],
+      "notes": "Icon recommendation metadata only; B31 does not materialize external registry files."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 5,
+      "slot": "image_1",
+      "purpose": "strategy",
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "purpose": "strategy",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 6,
+      "slot": "image_1",
+      "purpose": "closing",
+      "industry": "business",
+      "tone": [
+        "executive",
+        "analytical",
+        "conservative"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "business",
+        "tone": [
+          "executive",
+          "analytical",
+          "conservative"
+        ],
+        "purpose": "closing",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    }
+  ],
+  "slides": [
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Growth Review",
+        "subtitle": "Growth Review",
+        "footer_note": "Draft | growth_review"
+      },
+      "clear_residual_text_patterns": [
+        "노이즈는 버리고",
+        "신호 (Signal)"
+      ],
+      "template_key": "channel_cover_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "footer_note": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Market momentum",
+        "subtitle": "Market momentum",
+        "body_1": "demand is growing in priority segments",
+        "body_2": "shorten cycle time while preserving quality",
+        "body_3": "conversion, cycle time, and risk trend",
+        "body_4": "sequence the next investment in two waves"
+      },
+      "clear_residual_text_patterns": [
+        "노이즈는 버리고",
+        "신호 (Signal)"
+      ],
+      "template_key": "core_technology_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Operating focus",
+        "subtitle": "Operating focus",
+        "body_1": "shorten cycle time while preserving quality",
+        "body_2": "conversion, cycle time, and risk trend",
+        "body_3": "sequence the next investment in two waves"
+      },
+      "clear_residual_text_patterns": [
+        "노이즈는 버리고",
+        "신호 (Signal)"
+      ],
+      "template_key": "vertical_use_cases_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_5": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_6": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Proof metrics",
+        "subtitle": "Proof metrics",
+        "body_1": "conversion, cycle time, and risk trend",
+        "body_2": "sequence the next investment in two waves"
+      },
+      "clear_residual_text_patterns": [
+        "노이즈는 버리고",
+        "신호 (Signal)"
+      ],
+      "template_key": "roi_threepillars_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Decision path",
+        "subtitle": "Decision path",
+        "step_1_title": "Decision path",
+        "step_1_body": "sequence the next investment in two waves",
+        "footer_note": "Draft | growth_review",
+        "text_1": "sequence the next investment in two waves"
+      },
+      "clear_residual_text_patterns": [
+        "노이즈는 버리고",
+        "신호 (Signal)"
+      ],
+      "template_key": "alpha_signal_timeline_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "step_1_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "step_1_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "step_2_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "step_2_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "step_3_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "step_3_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "step_4_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "step_4_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "footer_note": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_5": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_6": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_7": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_8": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_9": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_10": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_11": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_12": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_13": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_14": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_15": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_16": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_17": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_18": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_19": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_20": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_21": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_22": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_23": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_24": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Next steps",
+        "subtitle": "Next steps",
+        "cta_title": "Next steps"
+      },
+      "clear_residual_text_patterns": [
+        "노이즈는 버리고",
+        "신호 (Signal)"
+      ],
+      "template_key": "finance_closing_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "cta_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "contact_email": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "website": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    }
+  ]
+}

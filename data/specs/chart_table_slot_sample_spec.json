@@ -1,0 +1,43 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "Chart and Table Slot Sample",
+  "theme_path": "../../config/pptx_theme.neutral_modern.json",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/chart_table_slot_sample.pptx",
+  "slides": [
+    {
+      "layout": "template_slide",
+      "template_key": "core_technology_v1",
+      "text_slots": {
+        "title": "Dynamic chart and table slots",
+        "subtitle": "분기별 성과 요약",
+        "body_1": "데이터 기반 우선순위",
+        "body_2": "운영 리스크 절감",
+        "body_3": "실행 지표 추적",
+        "body_4": "B26"
+      },
+      "chart_slots": {
+        "trend_chart": {
+          "chart_type": "bar",
+          "categories": ["Q1", "Q2", "Q3", "Q4"],
+          "values": [18, 27, 35, 46]
+        }
+      },
+      "table_slots": {
+        "metric_table": {
+          "headers": ["Metric", "Now", "Target"],
+          "rows": [
+            ["Cycle", "14d", "7d"],
+            ["Score", "82", "92"],
+            ["Risk", "Med", "Low"]
+          ]
+        }
+      },
+      "clear_residual_text_patterns": [
+        "핵심 데이터 추출",
+        "도메인 최적화"
+      ]
+    }
+  ]
+}

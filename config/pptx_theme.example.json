@@ -1,0 +1,24 @@
+{
+  "name": "blue-green-report",
+  "font_family": "Malgun Gothic",
+  "colors": {
+    "primary": "#10213B",
+    "accent_1": "#1D49F3",
+    "accent_2": "#2ECE7B",
+    "dark": "#272727",
+    "gray": "#626D80",
+    "mid": "#7A8494",
+    "white": "#FFFFFF",
+    "light": "#F6F8FC",
+    "panel": "#EFF4FB",
+    "border": "#E0E5EE"
+  },
+  "sizes": {
+    "cover_title": 30,
+    "hero_title": 23,
+    "section_header": 13,
+    "card_title": 17,
+    "body_strong": 13,
+    "body": 12
+  }
+}

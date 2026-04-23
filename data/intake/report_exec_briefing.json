@@ -1,0 +1,77 @@
+{
+  "$schema": "../../config/deck_intake.schema.json",
+  "intake_version": "1.0",
+  "name": "Executive Market Briefing",
+  "audience": {
+    "primary": "Senior leadership team",
+    "secondary": [
+      "Strategy leads",
+      "Finance reviewers"
+    ],
+    "knowledge_level": "informed",
+    "decision_role": "decision_maker"
+  },
+  "presentation_context": {
+    "setting": "Quarterly business review",
+    "delivery_mode": "live",
+    "duration_minutes": 20,
+    "presenter_role": "Strategy lead",
+    "locale": "en-US"
+  },
+  "primary_goal": "Summarize market signals and align on near-term decisions.",
+  "deck_type": "report",
+  "tone": [
+    "executive",
+    "analytical",
+    "conservative"
+  ],
+  "slide_count_range": {
+    "min": 5,
+    "max": 8
+  },
+  "brand_or_template_scope": {
+    "preferred_scope": "report",
+    "preferred_template_keys": [],
+    "required_template_library": null,
+    "theme_path": "../../config/pptx_theme.example.json",
+    "notes": "Use template_slide layouts and report-scoped selectors first."
+  },
+  "content_density": "medium",
+  "variation_level": "single_path",
+  "review_requirements": {
+    "needs_variant_review": false,
+    "requires_rationale_report": true,
+    "requires_slot_map": true,
+    "reviewers": [
+      "operator"
+    ],
+    "approval_mode": "operator_review"
+  },
+  "must_include": [
+    "Executive summary",
+    "Key market signals",
+    "Decision implications",
+    "Next steps"
+  ],
+  "must_avoid": [
+    "Spec-level header or footer fields",
+    "Python-drawn slide chrome",
+    "Unverified image or chart slots"
+  ],
+  "source_materials": [
+    {
+      "path": "data/reference/iran_us_oil_data.json",
+      "kind": "json",
+      "description": "Sample market data source for report-style content."
+    }
+  ],
+  "output_preferences": {
+    "output_spec_path": "data/specs/report_exec_briefing_spec.json",
+    "output_deck_path": "outputs/decks/report_exec_briefing.pptx",
+    "required_reports": [
+      "outputs/reports/slide_selection_rationale.json",
+      "outputs/reports/deck_slot_map.json"
+    ]
+  },
+  "notes": "This intake is a portable starting point for a report deck spec."
+}

@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "ppt_public_cli_thin_mcp_adapter",
+  "status": "spike",
+  "transport": "stdio_json_rpc",
+  "canonical_engine": "public_cli",
+  "policy": {
+    "adapter_shape": "thin_wrapper_over_cli_commands",
+    "local_only_default": true,
+    "gateway_required": false,
+    "upload_allowed_default": false,
+    "telemetry_default": "disabled",
+    "max_tools": 6,
+    "max_tool_description_chars": 360,
+    "max_total_description_chars": 1800,
+    "result_policy": "structured_summary_and_paths_only"
+  },
+  "forbidden_tool_families": [
+    "upload",
+    "public_share",
+    "deliver",
+    "materialize_external_asset",
+    "scan_unapproved_folders"
+  ],
+  "tools": [
+    {
+      "name": "plan_blueprint",
+      "description": "Render an ASCII structure blueprint from intake or spec. Returns paths and counts, not full deck contents or visual previews.",
+      "cli_mapping": "python scripts/ppt_system.py blueprint <input>",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "input_path": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "intake",
+              "spec"
+            ]
+          },
+          "approval_mode": {
+            "type": "string",
+            "enum": [
+              "assistant",
+              "auto"
+            ]
+          }
+        },
+        "required": [
+          "input_path"
+        ]
+      }
+    },
+    {
+      "name": "compose_spec",
+      "description": "Compose a deck spec from intake. Returns command status and artifact paths only.",
+      "cli_mapping": "python scripts/ppt_system.py compose-spec <intake>",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "intake_path": {
+            "type": "string"
+          },
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "intake_path"
+        ]
+      }
+    },
+    {
+      "name": "build_outputs",
+      "description": "Build local PPTX and HTML outputs from one spec using the CLI dual-output wrapper.",
+      "cli_mapping": "python scripts/ppt_system.py build-outputs <spec> --validate",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "spec_path": {
+            "type": "string"
+          },
+          "validate": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "spec_path"
+        ]
+      }
+    },
+    {
+      "name": "patch_slide_slot",
+      "description": "Apply one targeted spec patch. In-place writes require confirm_write=true; dry runs are allowed.",
+      "cli_mapping": "python scripts/ppt_system.py patch-spec <spec> --slide <n> ...",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "spec_path": {
+            "type": "string"
+          },
+          "slide": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "slot_kind": {
+            "type": "string",
+            "enum": [
+              "text",
+              "image",
+              "chart",
+              "table"
+            ]
+          },
+          "slot": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "json_payload": {
+            "type": "object"
+          },
+          "output": {
+            "type": "string"
+          },
+          "dry_run": {
+            "type": "boolean"
+          },
+          "confirm_write": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "spec_path",
+          "slide",
+          "slot_kind",
+          "slot"
+        ]
+      }
+    },
+    {
+      "name": "validate_outputs",
+      "description": "Run a selected local validator. Full regression requires confirm_expensive=true.",
+      "cli_mapping": "python scripts/<validator>.py",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "type": "string",
+            "enum": [
+              "public_cli_contract",
+              "private_gateway_contract",
+              "workspace",
+              "dual_output",
+              "spec_patch",
+              "cli_history",
+              "regression_gate"
+            ]
+          },
+          "confirm_expensive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "scope"
+        ]
+      }
+    },
+    {
+      "name": "summarize_project",
+      "description": "Read selected local summary reports and return compact status fields and paths.",
+      "cli_mapping": "local summary reader",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "report_path": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
+}

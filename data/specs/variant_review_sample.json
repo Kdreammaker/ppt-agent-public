@@ -1,0 +1,70 @@
+{
+  "name": "Variant Review Sample",
+  "theme_path": "../../config/pptx_theme.example.json",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/variant_review_sample.pptx",
+  "shared_content": {
+    "title": "AI Opportunity Briefing",
+    "subtitle": "Compare narrative directions before committing the full deck.",
+    "footer_note": "Variant review | template-first workflow"
+  },
+  "recommended_variant": "conservative",
+  "variants": [
+    {
+      "variant_id": "conservative",
+      "label": "Conservative report cover",
+      "strategy": "Executive, restrained, and suitable as a safe default.",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "report",
+        "preferred_variant": "cover/right-hero"
+      },
+      "text_slots": {}
+    },
+    {
+      "variant_id": "visual",
+      "label": "Portfolio-style visual opener",
+      "strategy": "More personal and visual, useful when the deck needs a case-study feel.",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "portfolio",
+        "preferred_variant": "cover/portfolio"
+      },
+      "text_slots": {
+        "name": "Design exploration",
+        "tag_1": "Intent",
+        "tag_2": "Evidence",
+        "tag_3": "Options",
+        "tag_4": "Decision"
+      }
+    },
+    {
+      "variant_id": "analytical",
+      "label": "Analytical summary",
+      "strategy": "Decision-first framing for review meetings that need tradeoffs and implications.",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "report",
+        "preferred_variant": "summary/two-panel"
+      },
+      "text_slots": {
+        "left_card_title": "Signal",
+        "left_card_body": "AI adoption pressure is rising, but readiness varies by team.",
+        "right_card_title": "Decision",
+        "right_card_body": "Prioritize workflows where quality and cycle time can be measured."
+      }
+    },
+    {
+      "variant_id": "sales",
+      "label": "Sales narrative opener",
+      "strategy": "Buyer-facing and more assertive, suitable for pitch or partner contexts.",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "sales",
+        "preferred_variant": "cover/narrative-sales"
+      },
+      "text_slots": {}
+    }
+  ]
+}

@@ -1,0 +1,891 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "May Seasonal Seafood Guide",
+  "project_id": "may_seasonal_seafood_guide",
+  "theme_path": "../../config/pptx_theme.example.json",
+  "mode_policy": "assistant",
+  "recipe": "industry:food_and_beverage",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/seasonal_seafood_guide.pptx",
+  "doc_paths": [],
+  "asset_intents": [
+    {
+      "role": "theme",
+      "asset_class": "theme",
+      "asset_id": "theme.blue_green_report",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "slot_kind": "theme",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_config_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "palette",
+      "asset_class": "palette",
+      "asset_id": "palette.blue_green_report",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "slot_kind": "palette",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_config_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "typography",
+      "asset_class": "typography",
+      "asset_id": "typography.blue_green_report.malgun_gothic",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "slot_kind": "typography",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_config_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "chart_preset",
+      "asset_class": "chart_preset",
+      "asset_id": "chart_preset.simple_bar_chart",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "slot_kind": "chart_preset",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_code_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 1,
+      "slot": "image_1",
+      "purpose": "cover",
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "purpose": "cover",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 2,
+      "slot": "image_1",
+      "purpose": "toc",
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "purpose": "toc",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "icon",
+      "asset_class": "icon",
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_shield_check_svg",
+      "slide_number": 2,
+      "slot": null,
+      "purpose": "toc",
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "purpose": "toc",
+        "slot_kind": "icon",
+        "aspect_ratio": "16:9",
+        "source_policy": "external_registry_metadata_only"
+      },
+      "source_policy": "external_registry_reference",
+      "materialization": "metadata_only",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [
+        "external.dashboard_report_icons.tabler_icons.icons_filled_presentation_analytics_svg",
+        "external.dashboard_report_icons.tabler_icons.icons_filled_shield_check_svg",
+        "external.default_ui_icons.lucide.icons_check_svg",
+        "external.default_ui_icons.lucide.icons_settings_svg",
+        "external.technical_security_cloud_icons.tabler_icons.icons_filled_shield_check_svg"
+      ],
+      "notes": "Icon recommendation metadata only; B31 does not materialize external registry files."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 3,
+      "slot": "image_1",
+      "purpose": "summary",
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "purpose": "summary",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "icon",
+      "asset_class": "icon",
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_shield_check_svg",
+      "slide_number": 3,
+      "slot": null,
+      "purpose": "summary",
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "purpose": "summary",
+        "slot_kind": "icon",
+        "aspect_ratio": "16:9",
+        "source_policy": "external_registry_metadata_only"
+      },
+      "source_policy": "external_registry_reference",
+      "materialization": "metadata_only",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [
+        "external.dashboard_report_icons.tabler_icons.icons_filled_presentation_analytics_svg",
+        "external.dashboard_report_icons.tabler_icons.icons_filled_shield_check_svg",
+        "external.default_ui_icons.lucide.icons_check_svg",
+        "external.default_ui_icons.lucide.icons_settings_svg",
+        "external.technical_security_cloud_icons.tabler_icons.icons_filled_shield_check_svg"
+      ],
+      "notes": "Icon recommendation metadata only; B31 does not materialize external registry files."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 4,
+      "slot": "image_1",
+      "purpose": "analysis",
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "icon",
+      "asset_class": "icon",
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_shield_check_svg",
+      "slide_number": 4,
+      "slot": null,
+      "purpose": "analysis",
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "icon",
+        "aspect_ratio": "16:9",
+        "source_policy": "external_registry_metadata_only"
+      },
+      "source_policy": "external_registry_reference",
+      "materialization": "metadata_only",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [
+        "external.dashboard_report_icons.tabler_icons.icons_filled_presentation_analytics_svg",
+        "external.dashboard_report_icons.tabler_icons.icons_filled_shield_check_svg",
+        "external.default_ui_icons.lucide.icons_check_svg",
+        "external.default_ui_icons.lucide.icons_settings_svg",
+        "external.technical_security_cloud_icons.tabler_icons.icons_filled_shield_check_svg"
+      ],
+      "notes": "Icon recommendation metadata only; B31 does not materialize external registry files."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 6,
+      "slot": "image_1",
+      "purpose": "closing",
+      "industry": "food_and_beverage",
+      "tone": [
+        "friendly",
+        "visual"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "food_and_beverage",
+        "tone": [
+          "friendly",
+          "visual"
+        ],
+        "purpose": "closing",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    }
+  ],
+  "slides": [
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "May Seasonal Seafood Guide",
+        "footer_note": "Draft | may_seasonal_seafood_guide"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링",
+        "Market | Customer Analysis",
+        "Financial | Funding History",
+        "Customer Analysis",
+        "Funding History"
+      ],
+      "template_key": "cover_brand_right_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "footer_note": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Decision agenda",
+        "subtitle": "Decision agenda",
+        "toc_1_number": "01",
+        "toc_1_title": "Webfoot octopus",
+        "toc_1_body": "taurine-rich spring seafood; suggested dish: spicy stir-fry",
+        "toc_2_number": "02",
+        "toc_2_title": "Sea squirt",
+        "toc_2_body": "bright ocean flavor; suggested dish: bibimbap",
+        "toc_3_number": "03",
+        "toc_3_title": "Female blue crab",
+        "toc_3_body": "roe-rich and savory; suggested dish: soy-marinated crab",
+        "toc_4_number": "04",
+        "toc_4_title": "Buying and storage tips",
+        "toc_4_body": "how to choose and store fresh seafood",
+        "footer_note": "Draft | may_seasonal_seafood_guide"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링",
+        "Market | Customer Analysis",
+        "Financial | Funding History",
+        "Customer Analysis",
+        "Funding History"
+      ],
+      "template_key": "toc_visual_tiles_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_1_number": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_1_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_1_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_2_number": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_2_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_2_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_3_number": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_3_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_3_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_4_number": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_4_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "toc_4_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "footer_note": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Webfoot octopus",
+        "subtitle": "Webfoot octopus",
+        "left_card_title": "Webfoot octopus",
+        "left_card_body": "taurine-rich spring seafood; suggested dish: spicy stir-fry",
+        "right_card_title": "Sea squirt",
+        "footer_note": "Draft | may_seasonal_seafood_guide"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링",
+        "Market | Customer Analysis",
+        "Financial | Funding History",
+        "Customer Analysis",
+        "Funding History"
+      ],
+      "template_key": "summary_two_panel_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "left_card_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "left_card_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "right_card_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "footer_note": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "eyebrow": "SUMMARY",
+        "title": "Sea squirt",
+        "subtitle": "Sea squirt",
+        "message_1_title": "Sea squirt",
+        "message_1_body": "bright ocean flavor; suggested dish: bibimbap",
+        "message_2_title": "Female blue crab",
+        "message_2_body": "roe-rich and savory; suggested dish: soy-marinated crab",
+        "message_3_title": "Buying and storage tips",
+        "message_3_body": "how to choose and store fresh seafood",
+        "footer_note": "Draft | may_seasonal_seafood_guide"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링",
+        "Market | Customer Analysis",
+        "Financial | Funding History",
+        "Customer Analysis",
+        "Funding History"
+      ],
+      "template_key": "proposal_grid_4up_v1",
+      "slot_overrides": {
+        "eyebrow": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "message_1_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "message_1_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "message_2_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "message_2_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "message_3_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "message_3_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "message_4_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "message_4_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "footer_note": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "eyebrow": "ISSUE",
+        "title": "Female blue crab",
+        "subtitle": "Female blue crab",
+        "card_1_number": "01",
+        "card_1_title": "Female blue crab",
+        "card_1_body": "roe-rich and savory; suggested dish: soy-marinated crab",
+        "card_2_number": "02",
+        "card_2_title": "Buying and storage tips",
+        "card_2_body": "how to choose and store fresh seafood",
+        "footer_note": "Draft | may_seasonal_seafood_guide"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링",
+        "Market | Customer Analysis",
+        "Financial | Funding History",
+        "Customer Analysis",
+        "Funding History"
+      ],
+      "template_key": "issue_2x2_v1",
+      "slot_overrides": {
+        "eyebrow": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_1_number": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_1_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_1_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_2_number": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_2_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_2_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_3_number": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_3_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_3_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_4_number": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_4_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "card_4_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "footer_note": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Buying and storage tips",
+        "subtitle": "Buying and storage tips",
+        "left_card_title": "Buying and storage tips",
+        "left_card_body": "how to choose and store fresh seafood",
+        "right_card_title": "Recommendation",
+        "footer_note": "Draft | may_seasonal_seafood_guide"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링",
+        "Market | Customer Analysis",
+        "Financial | Funding History",
+        "Customer Analysis",
+        "Funding History"
+      ],
+      "template_key": "summary_two_panel_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "left_card_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "left_card_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "right_card_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "footer_note": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    }
+  ]
+}

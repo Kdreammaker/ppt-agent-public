@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "security_permission_policy",
+  "status": "active",
+  "defaults": {
+    "local_only_mode": true,
+    "telemetry_enabled_by_default": false,
+    "automatic_upload_enabled_by_default": false,
+    "production_gateway_enabled_by_default": false,
+    "public_distribution_allowed_by_default": false,
+    "human_distribution_approval_required": true
+  },
+  "public_repo_boundary": {
+    "allowed": [
+      "public CLI contract",
+      "thin MCP adapter",
+      "public-safe sample intakes and specs",
+      "local workspace init and healthcheck",
+      "public asset contribution gate smoke fixtures",
+      "public-safe documentation"
+    ],
+    "forbidden_public": [
+      "tokens and secrets",
+      "GitHub Actions secrets",
+      "Drive links or permission records",
+      "Slack evidence or credentials",
+      "raw workspace codes",
+      "workspace manifests",
+      "work logs",
+      "reference analysis outputs",
+      "private assetization results",
+      "binary assets",
+      "registry activation data",
+      "support bundles",
+      "local absolute paths"
+    ]
+  },
+  "public_gate_contribution_flow": {
+    "purpose": "candidate metadata intake, schema validation, safety review, CLI/script smoke",
+    "metadata_only": true,
+    "public_repo_write_default": false,
+    "operator_approval_required_before_public_write": true,
+    "forbidden_payloads": [
+      "raw references",
+      "binary assets",
+      "registry exports",
+      "local absolute paths",
+      "Drive linkage",
+      "work logs",
+      "workspace manifests",
+      "tokens",
+      "secrets",
+      "raw workspace codes"
+    ]
+  },
+  "private_asset_transfer": {
+    "manifest_required": true,
+    "operator_approval_required": true,
+    "source_workspace_policy_required": true,
+    "public_repo_destination_allowed": false,
+    "forbidden_public_payloads": [
+      "private references",
+      "binary assets",
+      "registry exports",
+      "Drive linkage",
+      "Slack evidence",
+      "work logs",
+      "local absolute paths"
+    ]
+  },
+  "token_and_secret_handling": {
+    "read_print_copy_commit_allowed": false,
+    "github_actions_secrets_private_only": true,
+    "drive_links_require_explicit_permission_confirmation": true,
+    "slack_bridge_owns_tokens": true,
+    "support_bundle_secret_redaction_required": true,
+    "committed_artifact_secret_storage_allowed": false
+  },
+  "entitlement": {
+    "activation_model": "workspace_code_only",
+    "raw_workspace_code_storage_allowed": false,
+    "raw_workspace_code_committed_artifacts_allowed": false,
+    "hash_and_mask_only": true,
+    "usage_state_local_only": true,
+    "support_bundle_must_use_masked_state": true
+  },
+  "support_bundles": {
+    "explicit_user_action_required": true,
+    "automatic_upload_allowed": false,
+    "local_inspection_before_sharing": true,
+    "forbidden_content": [
+      "raw workspace codes",
+      "source documents",
+      "generated deck contents",
+      "raw references",
+      "tokens",
+      "secrets",
+      "Drive credentials",
+      "Slack credentials"
+    ]
+  },
+  "operator_approval_points": [
+    "public distribution",
+    "public gate repository write",
+    "private asset transfer",
+    "Drive sharing permission change",
+    "Slack delivery",
+    "production gateway activation",
+    "real workspace-code issuance service",
+    "telemetry or upload enablement",
+    "payment or premium recommendation activation"
+  ],
+  "separation_contract": {
+    "public_contribution": "metadata-only candidate intake and safety review",
+    "private_assetization": "private workspace/repository only with manifest and approval",
+    "permission_boundary": "operator approval required before crossing from private assets to public artifacts",
+    "artifact_boundary": "public artifacts must be rebuilt through clean export and validators",
+    "review_boundary": "private review evidence is not public contribution evidence"
+  }
+}

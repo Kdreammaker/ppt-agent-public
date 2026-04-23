@@ -1,0 +1,511 @@
+{
+  "$defs": {
+    "ApprovalMode": {
+      "enum": [
+        "none",
+        "assistant",
+        "operator_review",
+        "stakeholder_review"
+      ],
+      "title": "ApprovalMode",
+      "type": "string"
+    },
+    "Audience": {
+      "additionalProperties": false,
+      "properties": {
+        "primary": {
+          "title": "Primary",
+          "type": "string"
+        },
+        "secondary": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Secondary",
+          "type": "array"
+        },
+        "knowledge_level": {
+          "$ref": "#/$defs/KnowledgeLevel"
+        },
+        "decision_role": {
+          "$ref": "#/$defs/DecisionRole"
+        }
+      },
+      "required": [
+        "primary",
+        "knowledge_level",
+        "decision_role"
+      ],
+      "title": "Audience",
+      "type": "object"
+    },
+    "BrandOrTemplateScope": {
+      "additionalProperties": false,
+      "properties": {
+        "preferred_scope": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Preferred Scope"
+        },
+        "preferred_template_keys": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Preferred Template Keys",
+          "type": "array"
+        },
+        "required_template_library": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Required Template Library"
+        },
+        "theme_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Theme Path"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "preferred_scope"
+      ],
+      "title": "BrandOrTemplateScope",
+      "type": "object"
+    },
+    "ContentDensity": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "title": "ContentDensity",
+      "type": "string"
+    },
+    "DecisionRole": {
+      "enum": [
+        "decision_maker",
+        "influencer",
+        "reviewer",
+        "learner",
+        "mixed"
+      ],
+      "title": "DecisionRole",
+      "type": "string"
+    },
+    "DeckType": {
+      "enum": [
+        "report",
+        "sales",
+        "portfolio",
+        "strategy",
+        "training",
+        "status_update",
+        "proposal",
+        "analysis",
+        "other"
+      ],
+      "title": "DeckType",
+      "type": "string"
+    },
+    "DeliveryMode": {
+      "enum": [
+        "live",
+        "async_readout",
+        "leave_behind",
+        "workshop",
+        "email_attachment"
+      ],
+      "title": "DeliveryMode",
+      "type": "string"
+    },
+    "Industry": {
+      "enum": [
+        "business",
+        "travel",
+        "food_and_beverage",
+        "healthcare",
+        "entertainment",
+        "exhibition",
+        "technology",
+        "finance",
+        "other"
+      ],
+      "title": "Industry",
+      "type": "string"
+    },
+    "KnowledgeLevel": {
+      "enum": [
+        "general",
+        "informed",
+        "expert"
+      ],
+      "title": "KnowledgeLevel",
+      "type": "string"
+    },
+    "OutputPreferences": {
+      "additionalProperties": false,
+      "properties": {
+        "output_spec_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output Spec Path"
+        },
+        "output_deck_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output Deck Path"
+        },
+        "required_reports": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Reports",
+          "type": "array"
+        }
+      },
+      "title": "OutputPreferences",
+      "type": "object"
+    },
+    "PresentationContext": {
+      "additionalProperties": false,
+      "properties": {
+        "setting": {
+          "title": "Setting",
+          "type": "string"
+        },
+        "delivery_mode": {
+          "$ref": "#/$defs/DeliveryMode"
+        },
+        "duration_minutes": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration Minutes"
+        },
+        "presenter_role": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Presenter Role"
+        },
+        "locale": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Locale"
+        }
+      },
+      "required": [
+        "setting",
+        "delivery_mode"
+      ],
+      "title": "PresentationContext",
+      "type": "object"
+    },
+    "ReviewRequirements": {
+      "additionalProperties": false,
+      "properties": {
+        "needs_variant_review": {
+          "title": "Needs Variant Review",
+          "type": "boolean"
+        },
+        "requires_rationale_report": {
+          "title": "Requires Rationale Report",
+          "type": "boolean"
+        },
+        "requires_slot_map": {
+          "title": "Requires Slot Map",
+          "type": "boolean"
+        },
+        "reviewers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reviewers",
+          "type": "array"
+        },
+        "approval_mode": {
+          "$ref": "#/$defs/ApprovalMode"
+        }
+      },
+      "required": [
+        "needs_variant_review",
+        "requires_rationale_report",
+        "requires_slot_map",
+        "approval_mode"
+      ],
+      "title": "ReviewRequirements",
+      "type": "object"
+    },
+    "SlideCountRange": {
+      "additionalProperties": false,
+      "properties": {
+        "min": {
+          "minimum": 1,
+          "title": "Min",
+          "type": "integer"
+        },
+        "max": {
+          "minimum": 1,
+          "title": "Max",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "min",
+        "max"
+      ],
+      "title": "SlideCountRange",
+      "type": "object"
+    },
+    "SourceKind": {
+      "enum": [
+        "docx",
+        "xlsx",
+        "json",
+        "markdown",
+        "notes",
+        "other"
+      ],
+      "title": "SourceKind",
+      "type": "string"
+    },
+    "SourceMaterial": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/SourceKind"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        }
+      },
+      "required": [
+        "path",
+        "kind"
+      ],
+      "title": "SourceMaterial",
+      "type": "object"
+    },
+    "Tone": {
+      "enum": [
+        "executive",
+        "analytical",
+        "sales",
+        "technical",
+        "portfolio",
+        "conservative",
+        "visual",
+        "urgent",
+        "friendly"
+      ],
+      "title": "Tone",
+      "type": "string"
+    },
+    "VariationLevel": {
+      "enum": [
+        "single_path",
+        "light_variants",
+        "variant_review"
+      ],
+      "title": "VariationLevel",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "$Schema"
+    },
+    "intake_version": {
+      "pattern": "^1\\.0$",
+      "title": "Intake Version",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "audience": {
+      "$ref": "#/$defs/Audience"
+    },
+    "presentation_context": {
+      "$ref": "#/$defs/PresentationContext"
+    },
+    "primary_goal": {
+      "title": "Primary Goal",
+      "type": "string"
+    },
+    "deck_type": {
+      "$ref": "#/$defs/DeckType"
+    },
+    "industry": {
+      "$ref": "#/$defs/Industry",
+      "default": "other"
+    },
+    "tone": {
+      "items": {
+        "$ref": "#/$defs/Tone"
+      },
+      "minItems": 1,
+      "title": "Tone",
+      "type": "array"
+    },
+    "slide_count_range": {
+      "$ref": "#/$defs/SlideCountRange"
+    },
+    "brand_or_template_scope": {
+      "$ref": "#/$defs/BrandOrTemplateScope"
+    },
+    "content_density": {
+      "$ref": "#/$defs/ContentDensity"
+    },
+    "variation_level": {
+      "$ref": "#/$defs/VariationLevel"
+    },
+    "review_requirements": {
+      "$ref": "#/$defs/ReviewRequirements"
+    },
+    "must_include": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Must Include",
+      "type": "array"
+    },
+    "must_avoid": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Must Avoid",
+      "type": "array"
+    },
+    "source_materials": {
+      "items": {
+        "$ref": "#/$defs/SourceMaterial"
+      },
+      "title": "Source Materials",
+      "type": "array"
+    },
+    "output_preferences": {
+      "$ref": "#/$defs/OutputPreferences"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "intake_version",
+    "name",
+    "audience",
+    "presentation_context",
+    "primary_goal",
+    "deck_type",
+    "tone",
+    "slide_count_range",
+    "brand_or_template_scope",
+    "content_density",
+    "variation_level",
+    "review_requirements",
+    "must_include",
+    "must_avoid"
+  ],
+  "title": "PPTX Deck Intake",
+  "type": "object",
+  "$id": "https://local.ppt-test/deck_intake.schema.json"
+}

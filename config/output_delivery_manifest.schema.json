@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "output_delivery_manifest.schema.json",
+  "title": "PPT Output Delivery Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "created_at",
+    "project_id",
+    "project_manifest_path",
+    "local",
+    "google_drive_desktop",
+    "slack",
+    "reference_learning_loop",
+    "dry_run"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_manifest_path": {
+      "$ref": "#/$defs/base_relative_path"
+    },
+    "local": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["project_root", "deck_path", "delivery_manifest_path", "slack_message_path"],
+      "properties": {
+        "project_root": {
+          "$ref": "#/$defs/base_relative_path"
+        },
+        "deck_path": {
+          "$ref": "#/$defs/base_relative_path"
+        },
+        "delivery_manifest_path": {
+          "$ref": "#/$defs/base_relative_path"
+        },
+        "slack_message_path": {
+          "$ref": "#/$defs/base_relative_path"
+        }
+      }
+    },
+    "google_drive_desktop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "workspace_path",
+        "project_root",
+        "deck_path",
+        "drive_file_id",
+        "drive_link",
+        "share_default",
+        "status",
+        "share_permission_confirmed",
+        "copied_file_count"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "workspace_path": {
+          "type": ["string", "null"]
+        },
+        "project_root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deck_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "drive_file_id": {
+          "type": ["string", "null"]
+        },
+        "drive_link": {
+          "type": ["string", "null"]
+        },
+        "share_default": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["target", "role", "requires_google_drive_permission_update"]
+        },
+        "status": {
+          "enum": [
+            "share_ready",
+            "synced_to_drive_desktop",
+            "drive_link_recorded_permission_pending",
+            "drive_link_recorded",
+            "pending_google_drive_permission_update",
+            "pending_drive_link",
+            "disabled_in_policy"
+          ]
+        },
+        "share_permission_confirmed": {
+          "type": "boolean"
+        },
+        "copied_file_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "slack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "destination",
+        "send_mode",
+        "status",
+        "sent_confirmed",
+        "message_path"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "destination": {
+          "type": ["string", "null"]
+        },
+        "send_mode": {
+          "type": ["string", "null"]
+        },
+        "status": {
+          "enum": [
+            "sent",
+            "ready_for_connector_send",
+            "pending_slack_destination",
+            "pending_drive_link",
+            "disabled_in_policy"
+          ]
+        },
+        "sent_confirmed": {
+          "type": "boolean"
+        },
+        "message_path": {
+          "$ref": "#/$defs/base_relative_path"
+        },
+        "message_ts": {
+          "type": ["string", "null"]
+        },
+        "permalink": {
+          "type": ["string", "null"]
+        },
+        "sent_at": {
+          "type": ["string", "null"]
+        },
+        "send_evidence_path": {
+          "type": ["string", "null"]
+        },
+        "send_error": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "reference_learning_loop": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "enabled",
+        "capture_completed_decks",
+        "register_captured_decks",
+        "parse_captured_decks_by_default",
+        "capture_dedupe_mode",
+        "candidate_review_required"
+      ]
+    },
+    "reference_capture": {
+      "type": ["object", "null"],
+      "additionalProperties": true
+    },
+    "dry_run": {
+      "type": "boolean"
+    }
+  },
+  "$defs": {
+    "base_relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "not": {
+        "pattern": "^(?:[A-Za-z]:|/|\\\\|\\.\\.)"
+      },
+      "pattern": "^[^\\\\]+$"
+    }
+  }
+}

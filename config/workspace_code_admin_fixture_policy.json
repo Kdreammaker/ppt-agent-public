@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "workspace_code_admin_fixture_policy",
+  "status": "invite_beta_private_admin_fixture",
+  "raw_code_storage_allowed": false,
+  "git_storage_allowed": false,
+  "public_cli_admin_write_allowed": false,
+  "private_admin_owns": [
+    "issue",
+    "rotate",
+    "revoke",
+    "expire",
+    "backup",
+    "restore"
+  ],
+  "public_cli_sees_only": [
+    "workspace_code_hash",
+    "workspace_code_mask",
+    "status",
+    "entitlements",
+    "expires_at",
+    "package_channel",
+    "feature_flags",
+    "quota_summary",
+    "model_versions",
+    "reason"
+  ],
+  "quota_requirements": {
+    "max_activations_per_code": 3,
+    "daily_call_limit": 100,
+    "reset_policy": "local_midnight",
+    "raw_user_identity_storage_allowed": false,
+    "raw_machine_fingerprint_storage_allowed": false,
+    "public_user_list_allowed": false
+  },
+  "fixtures": [
+    {
+      "id": "adm_allowed_1001",
+      "operation": "issue",
+      "status": "allowed",
+      "workspace_code_hash": "8d72507765e06ca16fb06c193bd45a758422b1e93407cc8c21dd8612e66a3a6a",
+      "workspace_code_mask": "BETA...1001",
+      "entitlements": ["invite_beta_cli_mvp", "private_package_access", "mcp_developer_preview"],
+      "expires_at": "2026-06-30T23:59:59Z",
+      "package_channel": "invite_beta",
+      "quota_summary": {
+        "max_activations": 3,
+        "activation_count": 1,
+        "active_workspace_count": 1,
+        "registered_user_count": 1,
+        "daily_call_limit": 100,
+        "daily_calls_used": 12,
+        "daily_calls_remaining": 88,
+        "reset_at": "local_midnight"
+      },
+      "private_usage_records": [
+        {
+          "user_hash": "4d9b2e5a3f5bc6c4d4fb7f958d5f81c6e4cb7a5d6a65768816d615f2f9a39a4c",
+          "workspace_instance_hash": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
+          "last_seen_at": "2026-04-23T00:00:00Z"
+        }
+      ],
+      "backup_required": true
+    },
+    {
+      "id": "adm_rotated_1002",
+      "operation": "rotate",
+      "status": "rotated",
+      "workspace_code_hash": "19e42ed8d604c969aa7cd7e95fbb28202632fdeac65cf4c619d473533319b3d7",
+      "workspace_code_mask": "BETA...1002",
+      "replacement_mask": "BETA...1001",
+      "entitlements": [],
+      "expires_at": null,
+      "package_channel": "invite_beta",
+      "quota_summary": {
+        "max_activations": 3,
+        "activation_count": 3,
+        "active_workspace_count": 0,
+        "registered_user_count": 0,
+        "daily_call_limit": 100,
+        "daily_calls_used": 0,
+        "daily_calls_remaining": 0,
+        "reset_at": "local_midnight"
+      },
+      "backup_required": true
+    },
+    {
+      "id": "adm_revoked_1003",
+      "operation": "revoke",
+      "status": "revoked",
+      "workspace_code_hash": "f82e0262129b61a693f1909c72a05dc9acdcf225467325f044e736314bb5571c",
+      "workspace_code_mask": "BETA...1003",
+      "entitlements": [],
+      "expires_at": null,
+      "package_channel": null,
+      "quota_summary": {
+        "max_activations": 3,
+        "activation_count": 2,
+        "active_workspace_count": 0,
+        "registered_user_count": 0,
+        "daily_call_limit": 100,
+        "daily_calls_used": 0,
+        "daily_calls_remaining": 0,
+        "reset_at": "local_midnight"
+      },
+      "backup_required": true
+    },
+    {
+      "id": "adm_expired_1004",
+      "operation": "expire",
+      "status": "expired",
+      "workspace_code_hash": "16a697bc2ee556f5eb0a64f8c7c2fe72fb4745784350e02c20b00de25fc63090",
+      "workspace_code_mask": "BETA...1004",
+      "entitlements": [],
+      "expires_at": "2026-01-01T00:00:00Z",
+      "package_channel": "invite_beta",
+      "quota_summary": {
+        "max_activations": 3,
+        "activation_count": 1,
+        "active_workspace_count": 0,
+        "registered_user_count": 0,
+        "daily_call_limit": 100,
+        "daily_calls_used": 0,
+        "daily_calls_remaining": 0,
+        "reset_at": "local_midnight"
+      },
+      "backup_required": true
+    },
+    {
+      "id": "adm_denied_1005",
+      "operation": "backup",
+      "status": "denied",
+      "workspace_code_hash": "9d394062d0d5feb7377d075200b5514613911f80dbae491a839359614bc6bc78",
+      "workspace_code_mask": "BETA...1005",
+      "entitlements": [],
+      "expires_at": null,
+      "package_channel": null,
+      "quota_summary": {
+        "max_activations": 3,
+        "activation_count": 0,
+        "active_workspace_count": 0,
+        "registered_user_count": 0,
+        "daily_call_limit": 100,
+        "daily_calls_used": 0,
+        "daily_calls_remaining": 0,
+        "reset_at": "local_midnight"
+      },
+      "backup_required": true
+    },
+    {
+      "id": "adm_restored_1006",
+      "operation": "restore",
+      "status": "allowed",
+      "workspace_code_hash": "05a0cd054bdce66105e9a73273ea0d4be6d43beb227fb31913c3f1f498f2f28c",
+      "workspace_code_mask": "BETA...1006",
+      "restore_source_mask": "BETA...1001",
+      "entitlements": ["invite_beta_cli_mvp", "private_package_access", "mcp_developer_preview"],
+      "expires_at": "2026-06-30T23:59:59Z",
+      "package_channel": "invite_beta",
+      "quota_summary": {
+        "max_activations": 3,
+        "activation_count": 1,
+        "active_workspace_count": 1,
+        "registered_user_count": 1,
+        "daily_call_limit": 100,
+        "daily_calls_used": 0,
+        "daily_calls_remaining": 100,
+        "reset_at": "local_midnight"
+      },
+      "backup_required": true,
+      "restore_verified": true
+    }
+  ],
+  "forbidden_fields": [
+    "raw_code",
+    "workspace_code",
+    "license_key",
+    "payment_token",
+    "gateway_secret",
+    "raw_user_identity",
+    "raw_machine_fingerprint"
+  ],
+  "required_statuses": ["allowed", "rotated", "revoked", "expired", "denied"],
+  "required_operations": ["issue", "rotate", "revoke", "expire", "backup", "restore"]
+}

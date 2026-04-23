@@ -1,0 +1,137 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "JB Meeting Design Elevated Sample",
+  "theme_path": "../../config/pptx_theme.neutral_modern.json",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/jb_meeting_design_elevated_system.pptx",
+  "slides": [
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "sales",
+        "preferred_variant": "cover/narrative-sales"
+      },
+      "text_slots": {
+        "title": "전북은행 미팅\n사내 공유 브리프",
+        "subtitle": "서비스 활성화 구조와 운영 리스크를 함께 정리합니다",
+        "footer_note": "JB meeting design sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "issue",
+        "scope": "report",
+        "preferred_variant": "issue/2x2-cards"
+      },
+      "text_slots": {
+        "eyebrow": "고객 관점",
+        "title": "전북은행은 콘텐츠 자체보다\n활성화 효과와 운영 안정성을 보고 있습니다",
+        "subtitle": "Meeting Insight\n핵심은 콘텐츠 납품이 아니라 운영 가능한 구조 제안입니다",
+        "card_1_number": "1",
+        "card_1_title": "활성화 효과",
+        "card_1_body": "조회, 클릭, 재방문 지표\n단순 시세·이슈 제공만으로는 MAU 개선 근거가 약합니다",
+        "card_2_number": "2",
+        "card_2_title": "데이터 역할",
+        "card_2_body": "내부 거래 vs 외부 시장 정보\n은행 데이터와 시장 데이터를 어떤 역할로 나눌지 설명이 필요합니다",
+        "card_3_number": "3",
+        "card_3_title": "운영 안정성",
+        "card_3_body": "실시간 전달, 장애 대응, 책임 범위\n초기 비용 대비 효과를 작게 검증한 뒤 확장하는 접근이 안전합니다",
+        "card_4_number": "4",
+        "card_4_title": "Takeaway",
+        "card_4_body": "핵심은 콘텐츠 납품이 아니라 운영 가능한 구조 제안입니다",
+        "footer_note": "JB meeting design sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "chart",
+        "scope": "sales",
+        "preferred_variant": "chart/proof-metrics"
+      },
+      "text_slots": {
+        "title": "Value Proof",
+        "subtitle": "제안은 작은 ASP 검증에서 시작해 API 연계로 확장하는 구조가 적합합니다",
+        "text_1": "검증 항목",
+        "text_4": "초기에는 범위를 좁혀 검증하고, 효과가 확인되면 연동 범위를 넓힙니다",
+        "body_1": "초기 적용\nASP\n화면 단위 빠른 적용",
+        "body_2": "효과 검증\n2주\n조회·클릭·재방문 확인",
+        "body_3": "확장 방식\nAPI\n공시·이벤트 알림 연계",
+        "body_4": "시세·이슈 화면에서 사용자가 실제로 반응하는지 확인",
+        "body_5": "은행 내부 데이터와 외부 콘텐츠의 역할 충돌 여부 확인",
+        "body_6": "운영 책임, 장애 대응, 로그 기준을 미리 합의",
+        "footer_note": "JB meeting design sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "report",
+        "preferred_variant": "summary/4up-message-grid"
+      },
+      "text_slots": {
+        "eyebrow": "03",
+        "title": "다음 제안서는\n화면 예시와 운영 기준을 함께 보여줘야 합니다",
+        "subtitle": "Proposal Shape\nASP 화면 예시 · 시세와 이슈를 한 화면에서 제공\nsample screen package",
+        "message_1_title": "화면 우선",
+        "message_1_body": "실제 적용될 화면과 사용자 동선을 먼저 보여줍니다",
+        "message_2_title": "운영 기준",
+        "message_2_body": "업데이트 주기, 장애 대응, 로그 확인 기준을 명시합니다",
+        "message_3_title": "확장 옵션",
+        "message_3_body": "공시·이벤트 알림, WebSocket, API 연계는 2단계로 제안합니다",
+        "message_4_title": "Tags",
+        "message_4_body": "ASP / API / UI/UX / 운영 / 검증",
+        "footer_note": "JB meeting design sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "strategy",
+        "scope": "sales",
+        "preferred_variant": "strategy/sales-step-story",
+        "fallback_variants": [
+          "strategy/4-step-solution"
+        ]
+      },
+      "text_slots": {
+        "title": "Execution Flow",
+        "subtitle": "작게 시작하고,\n수치로 검증한 뒤 운영 기준을 합의합니다",
+        "footer_note": "고객 리스크를 줄이는 제안일수록 내부 승인 가능성이 높습니다",
+        "step_1_title": "화면 패키지",
+        "step_1_body": "ASP 적용 범위와 예시 화면 정리",
+        "step_2_title": "효과 지표",
+        "step_2_body": "조회·클릭·재방문 기준 합의",
+        "step_3_title": "운영 설계",
+        "step_3_body": "로그·장애·책임 범위 명확화",
+        "step_4_title": "API 확장",
+        "step_4_body": "공시·이벤트 알림 연동 검토"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "closing",
+        "scope": "sales",
+        "preferred_variant": "closing/discussion-next-step",
+        "fallback_variants": [
+          "closing/goal-grid"
+        ]
+      },
+      "text_slots": {
+        "title": "Next Actions",
+        "subtitle": "향후 2주 내 고객 의사결정에 필요한\n자료 패키지를 완성합니다",
+        "cta_title": "확인 필요",
+        "cta_body": "ASP 선도입 범위, API 확장 여부, UI/UX 반영 수준, 실시간 이벤트 연계 방식",
+        "footer_note": "05",
+        "text_1": "이번 주\nASP 제안 패키지\nOwner · 영업/사업\nDue · 이번 주\n화면 범위, 예시 캡처, 비용 구조",
+        "text_2": "다음 주\nAPI 확장 시나리오\nOwner · 제품/기술\nDue · 다음 주\n공시·이벤트 알림, WebSocket 연계",
+        "text_3": "후속 미팅\n우선순위 확정\nOwner · 공동\nDue · 차기 미팅\n도입 범위, 일정, 담당자 합의"
+      }
+    }
+  ]
+}

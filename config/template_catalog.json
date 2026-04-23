@@ -1,0 +1,95 @@
+{
+  "template_path": "C:/Users/kimjo/Downloads/ppt-test/assets/slides/references/template.pptx",
+  "validated_slide_library": [
+    {
+      "slide_no": 1,
+      "key": "cover_right_brand",
+      "source_title": "Cover / Right brand graphic",
+      "status": "validated",
+      "best_for": ["cover"],
+      "notes": "우측 세로 그래픽이 강한 표지형. 내부 보고서 표지에 적합."
+    },
+    {
+      "slide_no": 16,
+      "key": "two_panel_summary_canvas",
+      "source_title": "Customer Analysis",
+      "status": "validated",
+      "best_for": ["summary", "meeting_snapshot"],
+      "notes": "좌우 영역 분리가 쉬워 요약/미팅 한눈에 보기 용도로 재가공 가능."
+    },
+    {
+      "slide_no": 19,
+      "key": "milestone_timeline",
+      "source_title": "Business roadmap",
+      "status": "validated",
+      "best_for": ["timeline", "action_plan"],
+      "notes": "타임라인 배경을 유지한 채 액션 카드형으로 재구성 가능."
+    },
+    {
+      "slide_no": 20,
+      "key": "three_column_strategy",
+      "source_title": "Go To Market Strategies",
+      "status": "experimental",
+      "best_for": ["gtm", "three_point_plan"],
+      "notes": "3분할 전략 장표 후보. 실사용 전 렌더링 검증 권장."
+    },
+    {
+      "slide_no": 25,
+      "key": "team_profile",
+      "source_title": "Team",
+      "status": "experimental",
+      "best_for": ["team", "owner_map"],
+      "notes": "프로필/역할 매핑형 장표로 전환 가능."
+    },
+    {
+      "slide_no": 45,
+      "key": "issue_2x2_cards",
+      "source_title": "Problem 2x2",
+      "status": "validated",
+      "best_for": ["issues", "risks", "pain_points"],
+      "notes": "2x2 카드형 문제 정의 장표. 한국어 보고서용으로 재가공이 쉬움."
+    },
+    {
+      "slide_no": 46,
+      "key": "solution_4_step",
+      "source_title": "Solution 4-step",
+      "status": "validated",
+      "best_for": ["solution", "phased_plan", "recommendation_flow"],
+      "notes": "4단 흐름형 장표. 단계형 제안 구조에 적합."
+    },
+    {
+      "slide_no": 50,
+      "key": "proposal_message_grid",
+      "source_title": "Proposal",
+      "status": "validated",
+      "best_for": ["key_messages", "proposal_points"],
+      "notes": "메시지 나열/카드형 제안 장표로 재가공 가능."
+    }
+  ],
+  "recipes": {
+    "system_base": [1, 16, 19, 20, 25, 45, 46, 50],
+    "meeting_share_core": [1, 16, 45, 46, 50, 19]
+  },
+  "placeholder_translation": {
+    "Please fill in the content explaining the title.": "제목을 설명하는 핵심 메시지를 입력하세요.",
+    "Please enter a title": "슬라이드 제목",
+    "Please write the content": "내용 입력",
+    "Please write the detailed content": "상세 내용 입력",
+    "Please write a detailed description.": "상세 설명 입력",
+    "Please write the detailed description.": "상세 설명 입력",
+    "Please write the detailed content.": "상세 내용 입력",
+    "PROBLEM": "이슈",
+    "SOLUTION": "해결안",
+    "PROPOSAL": "제안",
+    "Write a description": "설명 입력",
+    "WRITE A TITLE": "제목 입력",
+    "KEYWORD": "키워드",
+    "Keyword": "키워드",
+    "KEYWORD (KEYWORD)": "키워드",
+    "Check Point": "체크 포인트",
+    "TEXT TEXT": "소제목",
+    "TEXT": "소제목",
+    "TITLE": "제목",
+    "Copyrights © All rights reserved.": ""
+  }
+}

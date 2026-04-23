@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "public_private_ci_boundary_policy",
+  "status": "active",
+  "public_ci": {
+    "workflow": ".github/workflows/smoke-test.yml",
+    "purpose": "public-thin import, schema, sample, healthcheck, and public gate smoke only",
+    "allowed_surfaces": [
+      "public CLI module imports",
+      "public JSON fixture parsing",
+      "local workspace init",
+      "local workspace healthcheck",
+      "public asset contribution gate dependency validation",
+      "public-safe sync manifest fixture validation",
+      "public gate project bootstrap smoke",
+      "public-thin PPT build smoke"
+    ],
+    "required_commands": [
+      "python -m py_compile .\\scripts\\ppt_cli_workspace.py .\\scripts\\ppt_workspace_entitlement.py .\\scripts\\ppt_support_bundle.py .\\system\\deck_models.py",
+      "python -m json.tool .\\config\\public_cli_command_contract.json | Out-Null",
+      "python -m json.tool .\\data\\specs\\public_smoke_blank_spec.json | Out-Null",
+      "python -m pip install -r .\\requirements.txt",
+      "python .\\scripts\\ppt_cli_workspace.py init --workspace .\\outputs\\smoke_workspace --force-readme",
+      "python .\\scripts\\ppt_cli_workspace.py healthcheck --workspace .\\outputs\\smoke_workspace",
+      "python .\\scripts\\validate_public_gate_toolkit_dependency.py",
+      "python .\\scripts\\validate_public_gate_sync_path.py",
+      "python .\\scripts\\bootstrap_public_gate_workspace.py --workspace .\\outputs\\smoke_bootstrap_workspace --force-readme",
+      "python .\\scripts\\build_deck.py .\\data\\specs\\public_smoke_blank_spec.json"
+    ],
+    "forbidden_default_surfaces": [
+      "private gateway deployment",
+      "secret or token reads",
+      "Drive linkage",
+      "Slack evidence",
+      "reference analysis outputs",
+      "private assetization results",
+      "binary assets",
+      "workspace manifests",
+      "work logs"
+    ]
+  },
+  "private_local_ci": {
+    "purpose": "internal boundary, packaging, entitlement, asset catalog, and leak-scan validation",
+    "required_commands": [
+      "python scripts/validate_clean_release_export.py",
+      "python scripts/validate_beta_packaging_dry_run.py",
+      "python scripts/validate_public_private_repo_split.py",
+      "python scripts/build_ppt_asset_catalog.py",
+      "python scripts/validate_ppt_asset_catalog.py",
+      "python scripts/validate_workspace_code_entitlement.py",
+      "python scripts/validate_workspace_code_issuance_masking.py",
+      "python scripts/validate_workspace_code_admin_fixtures.py",
+      "python scripts/validate_private_admin_gateway_activation_service.py",
+      "python scripts/validate_local_path_hardening.py",
+      "python scripts/validate_local_diagnostic_support_bundle.py",
+      "python scripts/validate_public_gate_toolkit_dependency.py",
+      "python scripts/validate_public_gate_sync_path.py",
+      "python scripts/bootstrap_public_gate_workspace.py --workspace outputs/bootstrap_smoke_workspace --force-readme",
+      "python scripts/validate_public_thin_ppt_smoke.py"
+    ],
+    "distribution_blocking_checks": [
+      "clean_release_export",
+      "beta_packaging_dry_run",
+      "public_private_repo_split",
+      "workspace_code_entitlement",
+      "workspace_code_issuance_masking",
+      "workspace_code_admin_fixtures",
+      "local_path_hardening",
+      "support_bundle_leak_scan",
+      "public_gate_dependency_boundary",
+      "public_gate_sync_boundary",
+      "public_gate_bootstrap",
+      "public_thin_ppt_build_smoke"
+    ]
+  },
+  "release_candidate_gate": {
+    "required_command": "python scripts/run_regression_gate.py",
+    "distribution_allowed_by_default": false,
+    "human_distribution_approval_required": true,
+    "promotion_blockers": [
+      "forbidden public content or path hit",
+      "raw workspace code leak",
+      "support bundle leak",
+      "public/private boundary regression",
+      "asset catalog invalid",
+      "private gateway enabled without approval",
+      "public repo write attempted without approval"
+    ]
+  },
+  "heavy_visual_regression": {
+    "default_lane": "private_local_ci",
+    "public_ci_allowed": false,
+    "reason": "public CI should not require private assets, binary templates, or heavyweight rendering dependencies unless separately reclassified as public-safe"
+  }
+}

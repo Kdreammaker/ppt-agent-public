@@ -1,0 +1,1003 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "Travel Experience Plan",
+  "project_id": "travel_experience_plan",
+  "theme_path": "../../config/pptx_theme.example.json",
+  "mode_policy": "assistant",
+  "recipe": "industry:travel",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/travel_experience_plan.pptx",
+  "doc_paths": [],
+  "asset_intents": [
+    {
+      "role": "theme",
+      "asset_class": "theme",
+      "asset_id": "theme.blue_green_report",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "slot_kind": "theme",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_config_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "palette",
+      "asset_class": "palette",
+      "asset_id": "palette.blue_green_report",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "slot_kind": "palette",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_config_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "typography",
+      "asset_class": "typography",
+      "asset_id": "typography.blue_green_report.malgun_gothic",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "slot_kind": "typography",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_config_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "chart_preset",
+      "asset_class": "chart_preset",
+      "asset_id": "chart_preset.simple_bar_chart",
+      "slide_number": null,
+      "slot": null,
+      "purpose": null,
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "slot_kind": "chart_preset",
+        "aspect_ratio": "16:9",
+        "source_policy": "production_eligible_catalog_only"
+      },
+      "source_policy": "finalized_catalog",
+      "materialization": "local_code_reference",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Composer-level recommendation; no binary asset is copied by this step."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 1,
+      "slot": "image_1",
+      "purpose": "cover",
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "purpose": "cover",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 2,
+      "slot": "image_1",
+      "purpose": "analysis",
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "icon",
+      "asset_class": "icon",
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_calendar_event_svg",
+      "slide_number": 2,
+      "slot": null,
+      "purpose": "analysis",
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "icon",
+        "aspect_ratio": "16:9",
+        "source_policy": "external_registry_metadata_only"
+      },
+      "source_policy": "external_registry_reference",
+      "materialization": "metadata_only",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [
+        "external.dashboard_report_icons.tabler_icons.icons_filled_calendar_event_svg",
+        "external.dashboard_report_icons.tabler_icons.icons_filled_shield_check_svg",
+        "external.default_ui_icons.lucide.icons_check_svg",
+        "external.default_ui_icons.lucide.icons_home_svg",
+        "external.default_ui_icons.lucide.icons_user_svg"
+      ],
+      "notes": "Icon recommendation metadata only; B31 does not materialize external registry files."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 3,
+      "slot": "image_1",
+      "purpose": "analysis",
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "icon",
+      "asset_class": "icon",
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_calendar_event_svg",
+      "slide_number": 3,
+      "slot": null,
+      "purpose": "analysis",
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "icon",
+        "aspect_ratio": "16:9",
+        "source_policy": "external_registry_metadata_only"
+      },
+      "source_policy": "external_registry_reference",
+      "materialization": "metadata_only",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [
+        "external.dashboard_report_icons.tabler_icons.icons_filled_calendar_event_svg",
+        "external.dashboard_report_icons.tabler_icons.icons_filled_shield_check_svg",
+        "external.default_ui_icons.lucide.icons_check_svg",
+        "external.default_ui_icons.lucide.icons_home_svg",
+        "external.default_ui_icons.lucide.icons_user_svg"
+      ],
+      "notes": "Icon recommendation metadata only; B31 does not materialize external registry files."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 4,
+      "slot": "image_1",
+      "purpose": "analysis",
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "icon",
+      "asset_class": "icon",
+      "asset_id": "external.dashboard_report_icons.tabler_icons.icons_filled_calendar_event_svg",
+      "slide_number": 4,
+      "slot": null,
+      "purpose": "analysis",
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "icon",
+        "aspect_ratio": "16:9",
+        "source_policy": "external_registry_metadata_only"
+      },
+      "source_policy": "external_registry_reference",
+      "materialization": "metadata_only",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [
+        "external.dashboard_report_icons.tabler_icons.icons_filled_calendar_event_svg",
+        "external.dashboard_report_icons.tabler_icons.icons_filled_shield_check_svg",
+        "external.default_ui_icons.lucide.icons_check_svg",
+        "external.default_ui_icons.lucide.icons_home_svg",
+        "external.default_ui_icons.lucide.icons_user_svg"
+      ],
+      "notes": "Icon recommendation metadata only; B31 does not materialize external registry files."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 5,
+      "slot": "image_1",
+      "purpose": "analysis",
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "purpose": "analysis",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    },
+    {
+      "role": "image_placeholder",
+      "asset_class": "image",
+      "asset_id": "image_policy.user_supplied_or_generated",
+      "slide_number": 6,
+      "slot": "image_1",
+      "purpose": "closing",
+      "industry": "travel",
+      "tone": [
+        "visual",
+        "friendly",
+        "analytical"
+      ],
+      "aspect_ratio": "16:9",
+      "query": {
+        "industry": "travel",
+        "tone": [
+          "visual",
+          "friendly",
+          "analytical"
+        ],
+        "purpose": "closing",
+        "slot_kind": "image",
+        "aspect_ratio": "16:9",
+        "license_policy": "user_supplied_or_generated_only",
+        "source_policy": "no_raw_folder_scan"
+      },
+      "source_policy": "local_user_asset_policy",
+      "materialization": "runtime_materialization_required",
+      "license_action": "none",
+      "risk_level": "low",
+      "candidate_asset_ids": [],
+      "notes": "Image slot intent only; materialization is a later consented step."
+    }
+  ],
+  "slides": [
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Travel Experience Plan",
+        "name": "Travel Experience Plan",
+        "tag_1": "#Destination",
+        "tag_2": "#Traveler",
+        "tag_3": "#Experience",
+        "tag_4": "#Route",
+        "footer_note": "Draft | travel_experience_plan"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링"
+      ],
+      "template_key": "portfolio_cover_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "name": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "tag_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "tag_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "tag_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "tag_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "footer_note": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "case_number": "Case 01",
+        "period": "Current planning cycle",
+        "project_title": "Destination hook",
+        "role": "Experience strategist",
+        "outcome_title": "Expected outcome",
+        "outcome_1": "why this route should feel memorable",
+        "outcome_2": "who the experience serves first",
+        "outcome_3": "what visitors should remember",
+        "capability_title": "Focus areas",
+        "capability_1": "why this route should feel memorable",
+        "capability_2": "who the experience serves first",
+        "capability_3": "what visitors should remember"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링"
+      ],
+      "template_key": "project_case_v1",
+      "slot_overrides": {
+        "case_number": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "period": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "project_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "role": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "outcome_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "outcome_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "outcome_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "outcome_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "capability_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "capability_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "capability_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "capability_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Traveler profile",
+        "subtitle": "Traveler profile",
+        "body_1": "who the experience serves first",
+        "body_2": "what visitors should remember",
+        "body_3": "which route concept moves forward",
+        "text_1": "who the experience serves first",
+        "text_2": "what visitors should remember",
+        "text_3": "which route concept moves forward"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링"
+      ],
+      "template_key": "project_case_v2",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_5": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_6": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_5": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_6": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_7": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Signature moment",
+        "subtitle": "Signature moment",
+        "body_1": "what visitors should remember",
+        "body_2": "which route concept moves forward",
+        "text_1": "what visitors should remember",
+        "text_2": "which route concept moves forward"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링"
+      ],
+      "template_key": "project_case_v3",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_5": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_6": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_5": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_6": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_7": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_8": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_9": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_10": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_11": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_12": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Prototype decision",
+        "subtitle": "Prototype decision",
+        "body_1": "which route concept moves forward",
+        "text_1": "which route concept moves forward"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링"
+      ],
+      "template_key": "improvement_case_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_5": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "body_6": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_1": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_2": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_3": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_4": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "text_5": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    },
+    {
+      "layout": "template_slide",
+      "clear_unfilled_slots": true,
+      "clear_unfilled_image_slots": true,
+      "text_slots": {
+        "title": "Next steps",
+        "subtitle": "Next steps",
+        "highlight_title": "Next steps",
+        "highlight_body": "Shape a concise destination experience narrative and decide which route concept to prototype first.",
+        "footer_note": "Draft | travel_experience_plan"
+      },
+      "clear_residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링"
+      ],
+      "template_key": "portfolio_closing_v1",
+      "slot_overrides": {
+        "title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "subtitle": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "highlight_title": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "highlight_body": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "email": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "mobile": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        },
+        "footer_note": {
+          "fit_strategy": "shrink",
+          "max_chars_per_line": 200,
+          "max_lines": 10
+        }
+      }
+    }
+  ]
+}

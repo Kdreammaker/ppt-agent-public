@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reference_quality_labels.schema.json",
+  "title": "Reference Quality Labels",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "deck_id", "source_pptx", "slides"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "deck_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_pptx": {
+      "type": "string",
+      "minLength": 1
+    },
+    "curation_root": {
+      "type": "string"
+    },
+    "slide_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "buckets": {
+      "type": "array",
+      "items": {
+        "enum": ["unlabeled", "good_candidate", "normal_candidate", "weak_candidate", "good", "normal", "weak"]
+      }
+    },
+    "contact_sheet": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slide", "quality", "preview_png", "one_slide_pptx", "status"],
+        "properties": {
+          "slide": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "quality": {
+            "enum": ["unlabeled", "good_candidate", "normal_candidate", "weak_candidate", "good", "normal", "weak"]
+          },
+          "status": {
+            "enum": ["unlabeled", "candidate", "classified"]
+          },
+          "asset_stem": {
+            "type": ["string", "null"]
+          },
+          "preview_png": {
+            "type": "string",
+            "minLength": 1
+          },
+          "one_slide_pptx": {
+            "type": "string",
+            "minLength": 1
+          },
+          "intent": {
+            "type": ["string", "null"]
+          },
+          "notes": {
+            "type": ["string", "null"]
+          },
+          "text_preview": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

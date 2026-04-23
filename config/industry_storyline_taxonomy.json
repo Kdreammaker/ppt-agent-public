@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0",
+  "default_industry": "other",
+  "industries": {
+    "business": {
+      "display_name": "Business / Executive",
+      "preferred_scope": "sales",
+      "template_sequence": [
+        "channel_cover_v1",
+        "core_technology_v1",
+        "vertical_use_cases_v1",
+        "roi_threepillars_v1",
+        "alpha_signal_timeline_v1",
+        "finance_closing_v1"
+      ],
+      "purpose_sequence": ["cover", "analysis", "analysis", "analysis", "strategy", "closing"],
+      "storyline_roles": ["context", "executive_summary", "evidence", "metrics", "decision_path", "next_steps"],
+      "selector_defaults": {
+        "prefer_high_quality": true,
+        "usage_policies": ["production_ready"],
+        "preferred_design_tier": "production"
+      },
+      "clear_unfilled_image_slots_without_assets": true,
+      "residual_text_patterns": [
+        "노이즈는 버리고",
+        "신호 (Signal)"
+      ],
+      "notes": "B57 beta hotfix: prefer medium-density production sales/finance templates for first business demo outputs until dedicated report production templates are promoted."
+    },
+    "travel": {
+      "display_name": "Travel / Experience",
+      "preferred_scope": "portfolio",
+      "template_sequence": [
+        "portfolio_cover_v1",
+        "project_case_v1",
+        "project_case_v2",
+        "project_case_v3",
+        "improvement_case_v1",
+        "portfolio_closing_v1"
+      ],
+      "purpose_sequence": ["cover", "analysis", "analysis", "analysis", "analysis", "closing"],
+      "storyline_roles": ["destination_hook", "traveler_profile", "experience_case", "route_option", "decision_case", "closing"],
+      "selector_defaults": {
+        "prefer_high_quality": true,
+        "usage_policies": ["production_ready"],
+        "preferred_design_tier": "production"
+      },
+      "clear_unfilled_image_slots_without_assets": true,
+      "residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링"
+      ],
+      "notes": "Use portfolio/case-study templates as the first production-safe visual proxy for travel narrative decks."
+    },
+    "food_and_beverage": {
+      "display_name": "Food & Beverage",
+      "preferred_scope": "portfolio",
+      "template_sequence": [
+        "cover_brand_right_v1",
+        "toc_visual_tiles_v1",
+        "summary_two_panel_v1",
+        "proposal_grid_4up_v1",
+        "issue_2x2_v1",
+        "summary_two_panel_v1",
+        "goal_grid_v1"
+      ],
+      "purpose_sequence": ["cover", "toc", "summary", "analysis", "analysis", "summary", "closing"],
+      "storyline_roles": ["menu_hook", "ingredient_story", "pairing_story", "market_story", "closing"],
+      "selector_defaults": {
+        "prefer_high_quality": true,
+        "usage_policies": ["production_ready"],
+        "preferred_design_tier": "production"
+      },
+      "clear_unfilled_image_slots_without_assets": true,
+      "residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링"
+      ],
+      "notes": "Editorial blank-slide path remains available when governed image assets exist; this profile is the template-first fallback."
+    },
+    "healthcare": {
+      "display_name": "Healthcare",
+      "preferred_scope": "sales",
+      "template_sequence": [
+        "finance_cover_v1",
+        "problem_story_v1",
+        "before_after_compare_v1",
+        "proof_metrics_v1",
+        "poc_process_v1",
+        "finance_closing_v1"
+      ],
+      "purpose_sequence": ["cover", "issue", "analysis", "chart", "process", "closing"],
+      "storyline_roles": ["clinical_context", "patient_or_ops_problem", "before_after", "outcome_metrics", "implementation", "decision"],
+      "selector_defaults": {
+        "prefer_high_quality": true,
+        "usage_policies": ["production_ready"],
+        "preferred_design_tier": "production"
+      },
+      "clear_unfilled_image_slots_without_assets": true,
+      "notes": "Use production sales/problem/proof templates until healthcare-specific templates are curated."
+    },
+    "entertainment": {
+      "display_name": "Entertainment",
+      "preferred_scope": "portfolio",
+      "template_sequence": [
+        "portfolio_cover_v1",
+        "project_case_v1",
+        "project_case_v2",
+        "improvement_case_v1",
+        "portfolio_closing_v1"
+      ],
+      "purpose_sequence": ["cover", "analysis", "analysis", "analysis", "closing"],
+      "storyline_roles": ["hook", "audience_case", "content_case", "growth_case", "closing"],
+      "selector_defaults": {
+        "prefer_high_quality": true,
+        "usage_policies": ["production_ready"],
+        "preferred_design_tier": "production"
+      },
+      "clear_unfilled_image_slots_without_assets": true,
+      "residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링"
+      ],
+      "notes": "Use portfolio templates as the first production-safe proxy for entertainment case narratives."
+    },
+    "exhibition": {
+      "display_name": "Exhibition / Venue",
+      "preferred_scope": "portfolio",
+      "template_sequence": [
+        "portfolio_cover_v1",
+        "profile_resume_v1",
+        "org_initiative_case_v1",
+        "project_case_v3",
+        "portfolio_closing_v1"
+      ],
+      "purpose_sequence": ["cover", "team", "analysis", "analysis", "closing"],
+      "storyline_roles": ["venue_hook", "audience_profile", "program_case", "operations_case", "closing"],
+      "selector_defaults": {
+        "prefer_high_quality": true,
+        "usage_policies": ["production_ready"],
+        "preferred_design_tier": "production"
+      },
+      "clear_unfilled_image_slots_without_assets": true,
+      "residual_text_patterns": [
+        "데이터와 기술로",
+        "지원자",
+        "기획부터 실행까지",
+        "End-to-End 전문가",
+        "대표 및 임원진",
+        "사업계획서",
+        "법률 등 관련",
+        "투자 유치",
+        "IR 스트리텔링"
+      ],
+      "notes": "Use portfolio templates until exhibition-specific layout references are promoted."
+    },
+    "technology": {
+      "display_name": "Technology",
+      "preferred_scope": "sales",
+      "template_sequence": [
+        "finance_cover_v1",
+        "core_technology_v1",
+        "service_components_v1",
+        "signal_speed_v1",
+        "poc_process_v1",
+        "finance_closing_v1"
+      ],
+      "purpose_sequence": ["cover", "analysis", "summary", "chart", "process", "closing"],
+      "storyline_roles": ["technical_hook", "architecture", "components", "proof_metric", "implementation", "closing"],
+      "selector_defaults": {
+        "prefer_high_quality": true,
+        "usage_policies": ["production_ready"],
+        "preferred_design_tier": "production"
+      },
+      "clear_unfilled_image_slots_without_assets": true,
+      "notes": "Use production technology/finance sales templates for technical proof narratives."
+    },
+    "finance": {
+      "display_name": "Finance",
+      "preferred_scope": "sales",
+      "template_sequence": [
+        "finance_cover_v1",
+        "problem_story_v1",
+        "proof_metrics_v1",
+        "roi_threepillars_v1",
+        "finance_closing_v1"
+      ],
+      "purpose_sequence": ["cover", "issue", "chart", "analysis", "closing"],
+      "storyline_roles": ["market_context", "problem", "proof", "roi", "decision"],
+      "selector_defaults": {
+        "prefer_high_quality": true,
+        "usage_policies": ["production_ready"],
+        "preferred_design_tier": "production"
+      },
+      "clear_unfilled_image_slots_without_assets": true,
+      "notes": "Use finance sales templates for ROI and proof-heavy decks."
+    },
+    "other": {
+      "display_name": "General",
+      "preferred_scope": null,
+      "template_sequence": [],
+      "purpose_sequence": [],
+      "storyline_roles": [],
+      "selector_defaults": {
+        "prefer_high_quality": true
+      },
+      "notes": "Fall back to deck_type purpose sequence and existing template selection."
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "post_cto_output_quality_gate_v1",
+  "thresholds": {
+    "min_repeated_text_chars": 18,
+    "max_repeated_text_per_slide": 2,
+    "max_repeated_text_per_deck": 6,
+    "must_include_min_coverage_ratio": 0.75
+  },
+  "sample_pairs": [
+    {
+      "intake": "data/intake/business_growth_review.json",
+      "spec": "data/specs/business_growth_review_spec.json"
+    },
+    {
+      "intake": "data/intake/travel_experience_plan.json",
+      "spec": "data/specs/travel_experience_plan_spec.json"
+    },
+    {
+      "intake": "data/intake/seasonal_seafood_guide.json",
+      "spec": "data/specs/seasonal_seafood_guide_spec.json"
+    }
+  ],
+  "reports": {
+    "json": "outputs/reports/output_quality_gate_validation.json",
+    "markdown": "outputs/reports/output_quality_gate_validation.md"
+  }
+}

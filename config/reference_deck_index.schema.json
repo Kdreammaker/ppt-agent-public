@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reference_deck_index.schema.json",
+  "title": "Reference Deck Index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "reference_root", "references"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "reference_root": {
+      "const": "assets/slides/references"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reference_id",
+          "reference_group",
+          "original_file_name",
+          "stored_file_name",
+          "source_path",
+          "source_kind",
+          "deck_type_primary",
+          "deck_type_secondary",
+          "language",
+          "source_country",
+          "source_locale",
+          "design_culture",
+          "checksum",
+          "status",
+          "inference",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "reference_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*_[0-9]{3}$"
+          },
+          "reference_group": {
+            "enum": ["portfolio", "proposal", "pitch_deck", "business_plan", "sales_deck", "report", "case_study", "company_intro", "research", "template_pack", "generated", "unknown"]
+          },
+          "original_file_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "stored_file_name": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_. -]+\\.pptx$"
+          },
+          "source_path": {
+            "type": "string",
+            "pattern": "^assets/slides/references/.+\\.pptx$"
+          },
+          "source_kind": {
+            "enum": ["external_reference", "generated_deck", "primary_template", "unknown"]
+          },
+          "deck_type_primary": {
+            "enum": ["portfolio", "proposal", "pitch_deck", "business_plan", "sales_deck", "report", "case_study", "company_intro", "research", "template_pack", "generated", "unknown"]
+          },
+          "deck_type_secondary": {
+            "type": "array",
+            "items": {
+              "enum": ["portfolio", "proposal", "pitch_deck", "business_plan", "sales_deck", "report", "case_study", "company_intro", "research", "template_pack", "generated", "unknown"]
+            }
+          },
+          "language": {
+            "type": ["string", "null"]
+          },
+          "source_country": {
+            "type": ["string", "null"]
+          },
+          "source_locale": {
+            "type": ["string", "null"]
+          },
+          "design_culture": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "checksum": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "status": {
+            "enum": ["raw_unparsed", "parsed", "classified", "promoted", "archived"]
+          },
+          "capture_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "last_seen_at": {
+            "type": "string"
+          },
+          "capture_dedupe_mode": {
+            "enum": ["always_new", "checksum_dedupe", "skip_regression_samples"]
+          },
+          "inference": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

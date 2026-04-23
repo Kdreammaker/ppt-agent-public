@@ -1,0 +1,7173 @@
+{
+  "version": "0.1",
+  "library_id": "template_library_03_v1",
+  "slides": {
+    "template_library_03_v1.improvement_case_v1": {
+      "slide_id": "template_library_03_v1.improvement_case_v1",
+      "template_key": "improvement_case_v1",
+      "library_id": "template_library_03_v1",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "library_slide_no": 9,
+      "purpose": "analysis",
+      "variant": "analysis/improvement-story",
+      "scope": "portfolio",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 5,
+          "shape_name": "slot:title",
+          "fingerprint": "Project #07",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.417,
+            "width": 1.063,
+            "height": 0.209
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 6,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "2025.03 - 현재",
+          "bounds": {
+            "left": 1.812,
+            "top": 0.417,
+            "width": 1.298,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 8,
+          "shape_name": "slot:body_1",
+          "fingerprint": "Role",
+          "bounds": {
+            "left": 12.371,
+            "top": 0.656,
+            "width": 0.344,
+            "height": 0.167
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 7,
+          "shape_name": "slot:body_2",
+          "fingerprint": "SEO 개선 및 자가 학습 사례",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.667,
+            "width": 6.02,
+            "height": 0.469
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 45,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 9,
+          "shape_name": "slot:body_3",
+          "fingerprint": "PM",
+          "bounds": {
+            "left": 12.423,
+            "top": 0.844,
+            "width": 0.292,
+            "height": 0.292
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 17,
+          "shape_name": "slot:body_4",
+          "fingerprint": "문제 발견 및 스스로 학습",
+          "bounds": {
+            "left": 7.542,
+            "top": 1.729,
+            "width": 4.032,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 30,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_5",
+          "shape_index": 21,
+          "shape_name": "slot:body_5",
+          "fingerprint": "웹 트래픽 4배 증가",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.688,
+            "width": 4.303,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 32,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_6",
+          "shape_index": 25,
+          "shape_name": "slot:body_6",
+          "fingerprint": "AI 도구 활용 프로세스 구축",
+          "bounds": {
+            "left": 7.542,
+            "top": 3.646,
+            "width": 4.063,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 30,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 28,
+          "shape_name": "slot:text_1",
+          "fingerprint": "핵심 역량",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.396,
+            "width": 5.834,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 43,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 32,
+          "shape_name": "slot:text_2",
+          "fingerprint": "자가 학습 능력",
+          "bounds": {
+            "left": 9.176,
+            "top": 6.646,
+            "width": 1.167,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 34,
+          "shape_name": "slot:text_3",
+          "fingerprint": "문제 해결력",
+          "bounds": {
+            "left": 10.417,
+            "top": 6.646,
+            "width": 0.99,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 14,
+          "shape_name": "slot:text_4",
+          "fingerprint": "SEO 개선 프로젝트 전후 점수 변화",
+          "bounds": {
+            "left": 2.451,
+            "top": 6.719,
+            "width": 2.704,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 20,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 35,
+          "shape_name": "slot:text_5",
+          "fingerprint": "09",
+          "bounds": {
+            "left": 12.933,
+            "top": 7.167,
+            "width": 0.157,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 10,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.625,
+            "top": 1.646,
+            "width": 5.833,
+            "height": 5.438
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 12,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.635,
+            "top": 1.656,
+            "width": 5.813,
+            "height": 4.917
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 16,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 7.021,
+            "top": 1.875,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 20,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 7.005,
+            "top": 2.833,
+            "width": 0.24,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 24,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 6.995,
+            "top": 3.792,
+            "width": 0.26,
+            "height": 0.208
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_03_v1.org_initiative_case_v1": {
+      "slide_id": "template_library_03_v1.org_initiative_case_v1",
+      "template_key": "org_initiative_case_v1",
+      "library_id": "template_library_03_v1",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "library_slide_no": 8,
+      "purpose": "analysis",
+      "variant": "analysis/org-initiative",
+      "scope": "portfolio",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 5,
+          "shape_name": "slot:title",
+          "fingerprint": "Project #06",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.417,
+            "width": 1.063,
+            "height": 0.209
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 6,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "2024.12 - 현재",
+          "bounds": {
+            "left": 1.812,
+            "top": 0.417,
+            "width": 1.298,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 8,
+          "shape_name": "slot:body_1",
+          "fingerprint": "Role",
+          "bounds": {
+            "left": 11.452,
+            "top": 0.656,
+            "width": 1.261,
+            "height": 0.167
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 7,
+          "shape_name": "slot:body_2",
+          "fingerprint": "전사 AI 도입 프로젝트",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.667,
+            "width": 4.918,
+            "height": 0.469
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 36,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 9,
+          "shape_name": "slot:body_3",
+          "fingerprint": "AI 도입 TF 리드",
+          "bounds": {
+            "left": 11.212,
+            "top": 0.844,
+            "width": 1.5,
+            "height": 0.292
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 17,
+          "shape_name": "slot:body_4",
+          "fingerprint": "조직 생산성 50% 향상",
+          "bounds": {
+            "left": 7.542,
+            "top": 1.729,
+            "width": 2.896,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 21,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_5",
+          "shape_index": 18,
+          "shape_name": "slot:body_5",
+          "fingerprint": "업무 자동화 등으로 실질적 업무 시간 단축",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.104,
+            "width": 3.529,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 26,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_6",
+          "shape_index": 21,
+          "shape_name": "slot:body_6",
+          "fingerprint": "전사 AI 도입 주도",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.688,
+            "width": 4.563,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 34,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 24,
+          "shape_name": "slot:text_1",
+          "fingerprint": "적극적 활용 시스템 구축",
+          "bounds": {
+            "left": 7.542,
+            "top": 3.646,
+            "width": 3.146,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 25,
+          "shape_name": "slot:text_2",
+          "fingerprint": "사내 AI 스터디 및 활용 가이드 배포",
+          "bounds": {
+            "left": 7.542,
+            "top": 4.021,
+            "width": 3.081,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 27,
+          "shape_name": "slot:text_3",
+          "fingerprint": "핵심 역량",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.396,
+            "width": 5.834,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 43,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 29,
+          "shape_name": "slot:text_4",
+          "fingerprint": "AI 도입 전략",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.646,
+            "width": 1.032,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 31,
+          "shape_name": "slot:text_5",
+          "fingerprint": "교육 체계 구축",
+          "bounds": {
+            "left": 7.983,
+            "top": 6.646,
+            "width": 1.167,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 33,
+          "shape_name": "slot:text_6",
+          "fingerprint": "업무 프로세스 혁신",
+          "bounds": {
+            "left": 9.224,
+            "top": 6.646,
+            "width": 1.428,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 14,
+          "shape_name": "slot:text_7",
+          "fingerprint": "사내 AI 스터디 운영",
+          "bounds": {
+            "left": 2.918,
+            "top": 6.719,
+            "width": 1.605,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_8",
+          "shape_index": 34,
+          "shape_name": "slot:text_8",
+          "fingerprint": "08",
+          "bounds": {
+            "left": 12.933,
+            "top": 7.167,
+            "width": 0.157,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 10,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.625,
+            "top": 1.646,
+            "width": 5.833,
+            "height": 5.438
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 12,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.635,
+            "top": 1.656,
+            "width": 5.813,
+            "height": 4.917
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 16,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 7.021,
+            "top": 1.875,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 20,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 7.021,
+            "top": 2.833,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 23,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 6.995,
+            "top": 3.792,
+            "width": 0.26,
+            "height": 0.208
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_03_v1.patent_case_v1": {
+      "slide_id": "template_library_03_v1.patent_case_v1",
+      "template_key": "patent_case_v1",
+      "library_id": "template_library_03_v1",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "library_slide_no": 7,
+      "purpose": "analysis",
+      "variant": "analysis/ip-case",
+      "scope": "portfolio",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 5,
+          "shape_name": "slot:title",
+          "fingerprint": "Project #05",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.417,
+            "width": 1.063,
+            "height": 0.209
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 6,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "2022.05 - 2023.04",
+          "bounds": {
+            "left": 1.812,
+            "top": 0.417,
+            "width": 1.671,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 8,
+          "shape_name": "slot:body_1",
+          "fingerprint": "Role",
+          "bounds": {
+            "left": 11.652,
+            "top": 0.656,
+            "width": 1.063,
+            "height": 0.167
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 7,
+          "shape_name": "slot:body_2",
+          "fingerprint": "지능형 추천 시스템 특허 포트폴리오",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.667,
+            "width": 7.721,
+            "height": 0.469
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 57,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 9,
+          "shape_name": "slot:body_3",
+          "fingerprint": "창업자 (대표)",
+          "bounds": {
+            "left": 11.35,
+            "top": 0.844,
+            "width": 1.364,
+            "height": 0.292
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 17,
+          "shape_name": "slot:body_4",
+          "fingerprint": "특허 4건 등록 완료",
+          "bounds": {
+            "left": 7.542,
+            "top": 1.729,
+            "width": 2.646,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 19,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_5",
+          "shape_index": 18,
+          "shape_name": "slot:body_5",
+          "fingerprint": "비즈니스 경쟁력을 법적 자산으로 확립",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.104,
+            "width": 3.169,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_6",
+          "shape_index": 21,
+          "shape_name": "slot:body_6",
+          "fingerprint": "개인화 추천 알고리즘 설계",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.688,
+            "width": 3.355,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 24,
+          "shape_name": "slot:text_1",
+          "fingerprint": "인증 및 결제 기술 특허",
+          "bounds": {
+            "left": 7.542,
+            "top": 3.646,
+            "width": 3.292,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 24,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 27,
+          "shape_name": "slot:text_2",
+          "fingerprint": "핵심 역량",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.396,
+            "width": 5.834,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 43,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 29,
+          "shape_name": "slot:text_3",
+          "fingerprint": "추천 서비스 설계",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.646,
+            "width": 1.292,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 31,
+          "shape_name": "slot:text_4",
+          "fingerprint": "데이터 기반 큐레이션",
+          "bounds": {
+            "left": 8.25,
+            "top": 6.646,
+            "width": 1.563,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 33,
+          "shape_name": "slot:text_5",
+          "fingerprint": "IP 전략",
+          "bounds": {
+            "left": 9.893,
+            "top": 6.646,
+            "width": 0.73,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 14,
+          "shape_name": "slot:text_6",
+          "fingerprint": "지능형 추천 시스템 특허 구조",
+          "bounds": {
+            "left": 2.626,
+            "top": 6.719,
+            "width": 2.3,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 17,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 34,
+          "shape_name": "slot:text_7",
+          "fingerprint": "07",
+          "bounds": {
+            "left": 12.933,
+            "top": 7.167,
+            "width": 0.157,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 10,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.625,
+            "top": 1.646,
+            "width": 5.833,
+            "height": 5.438
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 12,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.635,
+            "top": 1.656,
+            "width": 5.813,
+            "height": 4.917
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 16,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 7.047,
+            "top": 1.875,
+            "width": 0.156,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 20,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 7.021,
+            "top": 2.833,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 23,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 7.021,
+            "top": 3.792,
+            "width": 0.208,
+            "height": 0.208
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_03_v1.portfolio_closing_v1": {
+      "slide_id": "template_library_03_v1.portfolio_closing_v1",
+      "template_key": "portfolio_closing_v1",
+      "library_id": "template_library_03_v1",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "library_slide_no": 10,
+      "purpose": "closing",
+      "variant": "closing/portfolio-thank-you",
+      "scope": "portfolio",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 4,
+          "shape_name": "slot:title",
+          "fingerprint": "감사합니다",
+          "bounds": {
+            "left": 3.314,
+            "top": 1.497,
+            "width": 6.709,
+            "height": 0.625
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 9,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "동료 평가",
+          "bounds": {
+            "left": 3.01,
+            "top": 3.612,
+            "width": 1.688,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 32,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "highlight_title",
+          "shape_index": 14,
+          "shape_name": "slot:highlight_title",
+          "fingerprint": "AI 활용 보고서",
+          "bounds": {
+            "left": 7.635,
+            "top": 3.612,
+            "width": 1.375,
+            "height": 0.167
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "highlight_body",
+          "shape_index": 15,
+          "shape_name": "slot:highlight_body",
+          "fingerprint": "전사 AI 도입 및 생산성 50% 향상 성과",
+          "bounds": {
+            "left": 7.635,
+            "top": 3.82,
+            "width": 1.375,
+            "height": 0.407
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 28,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "email",
+          "shape_index": 23,
+          "shape_name": "slot:email",
+          "fingerprint": "dreammaker@kakao.com",
+          "bounds": {
+            "left": 3.896,
+            "top": 5.867,
+            "width": 2.386,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 32,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "mobile",
+          "shape_index": 28,
+          "shape_name": "slot:mobile",
+          "fingerprint": "010-7509-6930",
+          "bounds": {
+            "left": 7.635,
+            "top": 5.867,
+            "width": 1.566,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "center",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 20,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "footer_note",
+          "shape_index": 30,
+          "font_role": "body",
+          "color_token": "gray",
+          "bold": false,
+          "align": "center",
+          "max_lines": 1,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 90,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ],
+          "shape_name": "slot:footer_note"
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 3,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 6.333,
+            "top": 1.206,
+            "width": 0.667,
+            "height": 0.042
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 6,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 2.167,
+            "top": 3.435,
+            "width": 4.375,
+            "height": 0.964
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 8,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 2.51,
+            "top": 3.823,
+            "width": 0.167,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 11,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 6.792,
+            "top": 3.435,
+            "width": 4.375,
+            "height": 0.964
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 13,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 7.099,
+            "top": 3.823,
+            "width": 0.24,
+            "height": 0.188
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 16,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 4.881,
+            "top": 4.732,
+            "width": 3.573,
+            "height": 0.396
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 18,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 5.142,
+            "top": 4.865,
+            "width": 0.146,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_8",
+          "shape_index": 19,
+          "shape_name": "slot:image_8",
+          "bounds": {
+            "left": 3.208,
+            "top": 5.544,
+            "width": 3.333,
+            "height": 0.75
+          }
+        },
+        {
+          "slot": "image_9",
+          "shape_index": 21,
+          "shape_name": "slot:image_9",
+          "bounds": {
+            "left": 3.516,
+            "top": 5.836,
+            "width": 0.167,
+            "height": 0.167
+          }
+        },
+        {
+          "slot": "image_10",
+          "shape_index": 24,
+          "shape_name": "slot:image_10",
+          "bounds": {
+            "left": 6.792,
+            "top": 5.544,
+            "width": 3.333,
+            "height": 0.75
+          }
+        },
+        {
+          "slot": "image_11",
+          "shape_index": 26,
+          "shape_name": "slot:image_11",
+          "bounds": {
+            "left": 7.198,
+            "top": 5.836,
+            "width": 0.125,
+            "height": 0.167
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_03_v1.portfolio_cover_v1": {
+      "slide_id": "template_library_03_v1.portfolio_cover_v1",
+      "template_key": "portfolio_cover_v1",
+      "library_id": "template_library_03_v1",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "library_slide_no": 1,
+      "purpose": "cover",
+      "variant": "cover/portfolio",
+      "scope": "portfolio",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 5,
+          "shape_name": "slot:title",
+          "fingerprint": "Portfolio",
+          "bounds": {
+            "left": 0.0,
+            "top": 0.667,
+            "width": 13.334,
+            "height": 0.209
+          },
+          "font_role": "cover_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "name",
+          "shape_index": 7,
+          "shape_name": "slot:name",
+          "fingerprint": "이대근",
+          "bounds": {
+            "left": 4.765,
+            "top": 1.583,
+            "width": 3.807,
+            "height": 1.25
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "tag_1",
+          "shape_index": 10,
+          "shape_name": "slot:tag_1",
+          "fingerprint": "#특허4건등록",
+          "bounds": {
+            "left": 3.503,
+            "top": 4.646,
+            "width": 1.584,
+            "height": 0.542
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "tag_2",
+          "shape_index": 12,
+          "shape_name": "slot:tag_2",
+          "fingerprint": "#AI프론티어",
+          "bounds": {
+            "left": 5.246,
+            "top": 4.646,
+            "width": 1.48,
+            "height": 0.542
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "tag_3",
+          "shape_index": 14,
+          "shape_name": "slot:tag_3",
+          "fingerprint": "#B2C/B2B_PM",
+          "bounds": {
+            "left": 6.884,
+            "top": 4.646,
+            "width": 1.782,
+            "height": 0.542
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "tag_4",
+          "shape_index": 16,
+          "shape_name": "slot:tag_4",
+          "fingerprint": "#0to1",
+          "bounds": {
+            "left": 8.824,
+            "top": 4.646,
+            "width": 1.011,
+            "height": 0.542
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "footer_note",
+          "shape_index": 18,
+          "font_role": "body",
+          "color_token": "gray",
+          "bold": false,
+          "align": "center",
+          "max_lines": 1,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 90,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ],
+          "shape_name": "slot:footer_note"
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 6,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.0,
+            "top": 7.375,
+            "width": 13.333,
+            "height": 0.125
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 17,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 6.417,
+            "top": 5.854,
+            "width": 0.5,
+            "height": 0.063
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "hero_panel",
+          "left": 0.55,
+          "top": 0.78,
+          "width": 7.55,
+          "height": 5.95
+        },
+        {
+          "slot": "footer_meta",
+          "left": 0.95,
+          "top": 5.7,
+          "width": 5.5,
+          "height": 0.4
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_03_v1.profile_resume_v1": {
+      "slide_id": "template_library_03_v1.profile_resume_v1",
+      "template_key": "profile_resume_v1",
+      "library_id": "template_library_03_v1",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "library_slide_no": 2,
+      "purpose": "team",
+      "variant": "team/resume-card",
+      "scope": "portfolio",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 4,
+          "shape_name": "slot:title",
+          "fingerprint": "이대근",
+          "bounds": {
+            "left": 0.5,
+            "top": 0.667,
+            "width": 3.188,
+            "height": 0.5
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 22,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "비즈니스 설계 & 실행력",
+          "bounds": {
+            "left": 5.498,
+            "top": 0.862,
+            "width": 1.428,
+            "height": 0.521
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "profile_1_name",
+          "shape_index": 30,
+          "shape_name": "slot:profile_1_name",
+          "fingerprint": "데이터 기반 문제 해결",
+          "bounds": {
+            "left": 9.775,
+            "top": 0.862,
+            "width": 1.021,
+            "height": 0.521
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "profile_1_body",
+          "shape_index": 5,
+          "shape_name": "slot:profile_1_body",
+          "fingerprint": "비즈니스 성장 전문가",
+          "bounds": {
+            "left": 0.5,
+            "top": 1.292,
+            "width": 3.188,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "profile_2_name",
+          "shape_index": 23,
+          "shape_name": "slot:profile_2_name",
+          "fingerprint": "0→1 기획부터 시장 검증까지",
+          "bounds": {
+            "left": 4.832,
+            "top": 1.549,
+            "width": 3.428,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "profile_2_body",
+          "shape_index": 31,
+          "shape_name": "slot:profile_2_body",
+          "fingerprint": "정량적 분석을 통한 성과 개선",
+          "bounds": {
+            "left": 9.108,
+            "top": 1.549,
+            "width": 3.428,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "profile_3_name",
+          "shape_index": 24,
+          "shape_name": "slot:profile_3_name",
+          "fingerprint": "0→1 신규 사업 기획",
+          "bounds": {
+            "left": 4.832,
+            "top": 1.883,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "profile_3_body",
+          "shape_index": 32,
+          "shape_name": "slot:profile_3_body",
+          "fingerprint": "실패율 80% 감소",
+          "bounds": {
+            "left": 9.108,
+            "top": 1.883,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "profile_4_name",
+          "shape_index": 25,
+          "shape_name": "slot:profile_4_name",
+          "fingerprint": "MVP 빠른 검증 (1개월)",
+          "bounds": {
+            "left": 4.832,
+            "top": 2.216,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "profile_4_body",
+          "shape_index": 33,
+          "shape_name": "slot:profile_4_body",
+          "fingerprint": "CS 비용 30% 절감",
+          "bounds": {
+            "left": 9.108,
+            "top": 2.216,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 26,
+          "shape_name": "slot:text_1",
+          "fingerprint": "B2B/B2C 다중 모델 운용",
+          "bounds": {
+            "left": 4.832,
+            "top": 2.549,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 34,
+          "shape_name": "slot:text_2",
+          "fingerprint": "SEO 트래픽 4배 증가",
+          "bounds": {
+            "left": 9.108,
+            "top": 2.549,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 9,
+          "shape_name": "slot:text_3",
+          "fingerprint": "Education",
+          "bounds": {
+            "left": 0.5,
+            "top": 3.516,
+            "width": 3.188,
+            "height": 0.168
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 38,
+          "shape_name": "slot:text_4",
+          "fingerprint": "협업 리더십",
+          "bounds": {
+            "left": 5.498,
+            "top": 3.773,
+            "width": 0.584,
+            "height": 0.521
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 46,
+          "shape_name": "slot:text_5",
+          "fingerprint": "학습 민첩성 & 적응력",
+          "bounds": {
+            "left": 9.775,
+            "top": 3.773,
+            "width": 1.23,
+            "height": 0.521
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 10,
+          "shape_name": "slot:text_6",
+          "fingerprint": "성균관대학교",
+          "bounds": {
+            "left": 0.5,
+            "top": 3.943,
+            "width": 3.188,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 11,
+          "shape_name": "slot:text_7",
+          "fingerprint": "국정전문대학원 석사 | 2017",
+          "bounds": {
+            "left": 0.5,
+            "top": 4.234,
+            "width": 3.188,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_8",
+          "shape_index": 39,
+          "shape_name": "slot:text_8",
+          "fingerprint": "복잡한 이해관계 조율 및 협업",
+          "bounds": {
+            "left": 4.832,
+            "top": 4.461,
+            "width": 3.428,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_9",
+          "shape_index": 47,
+          "shape_name": "slot:text_9",
+          "fingerprint": "새로운 도메인과 기술의 내재화",
+          "bounds": {
+            "left": 9.108,
+            "top": 4.461,
+            "width": 3.428,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_10",
+          "shape_index": 12,
+          "shape_name": "slot:text_10",
+          "fingerprint": "동아대학교",
+          "bounds": {
+            "left": 0.5,
+            "top": 4.609,
+            "width": 3.188,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_11",
+          "shape_index": 40,
+          "shape_name": "slot:text_11",
+          "fingerprint": "전사 AI 도입 TF 리드",
+          "bounds": {
+            "left": 4.832,
+            "top": 4.794,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_12",
+          "shape_index": 48,
+          "shape_name": "slot:text_12",
+          "fingerprint": "다양한 도메인 빠른 적응",
+          "bounds": {
+            "left": 9.108,
+            "top": 4.794,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_13",
+          "shape_index": 13,
+          "shape_name": "slot:text_13",
+          "fingerprint": "공공정책학부 학사 | 2015",
+          "bounds": {
+            "left": 0.5,
+            "top": 4.901,
+            "width": 3.188,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_14",
+          "shape_index": 41,
+          "shape_name": "slot:text_14",
+          "fingerprint": "규제 샌드박스 추진",
+          "bounds": {
+            "left": 4.832,
+            "top": 5.128,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_15",
+          "shape_index": 49,
+          "shape_name": "slot:text_15",
+          "fingerprint": "필요 시 스스로 학습하여 해결",
+          "bounds": {
+            "left": 9.108,
+            "top": 5.128,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_16",
+          "shape_index": 42,
+          "shape_name": "slot:text_16",
+          "fingerprint": "외부 협력업체·유관 공공기관 협업",
+          "bounds": {
+            "left": 4.832,
+            "top": 5.461,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_17",
+          "shape_index": 50,
+          "shape_name": "slot:text_17",
+          "fingerprint": "문제 발견 → 학습 → 해결",
+          "bounds": {
+            "left": 9.108,
+            "top": 5.461,
+            "width": 3.428,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 25,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_18",
+          "shape_index": 15,
+          "shape_name": "slot:text_18",
+          "fingerprint": "dreammaker@kakao.com",
+          "bounds": {
+            "left": 1.052,
+            "top": 6.24,
+            "width": 2.417,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_19",
+          "shape_index": 54,
+          "shape_name": "slot:text_19",
+          "fingerprint": "Jira",
+          "bounds": {
+            "left": 5.507,
+            "top": 6.5,
+            "width": 0.391,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_20",
+          "shape_index": 56,
+          "shape_name": "slot:text_20",
+          "fingerprint": "Notion",
+          "bounds": {
+            "left": 6.195,
+            "top": 6.5,
+            "width": 0.597,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_21",
+          "shape_index": 58,
+          "shape_name": "slot:text_21",
+          "fingerprint": "Slack",
+          "bounds": {
+            "left": 7.106,
+            "top": 6.5,
+            "width": 0.496,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_22",
+          "shape_index": 60,
+          "shape_name": "slot:text_22",
+          "fingerprint": "ClickUp",
+          "bounds": {
+            "left": 7.94,
+            "top": 6.5,
+            "width": 0.694,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_23",
+          "shape_index": 62,
+          "shape_name": "slot:text_23",
+          "fingerprint": "Word",
+          "bounds": {
+            "left": 8.905,
+            "top": 6.5,
+            "width": 0.375,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_24",
+          "shape_index": 64,
+          "shape_name": "slot:text_24",
+          "fingerprint": "Excel",
+          "bounds": {
+            "left": 9.701,
+            "top": 6.5,
+            "width": 0.491,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_25",
+          "shape_index": 66,
+          "shape_name": "slot:text_25",
+          "fingerprint": "PowerPoint",
+          "bounds": {
+            "left": 10.479,
+            "top": 6.5,
+            "width": 0.997,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_26",
+          "shape_index": 68,
+          "shape_name": "slot:text_26",
+          "fingerprint": "Canva",
+          "bounds": {
+            "left": 11.748,
+            "top": 6.5,
+            "width": 0.438,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_27",
+          "shape_index": 52,
+          "shape_name": "slot:text_27",
+          "fingerprint": "Tool Stack",
+          "bounds": {
+            "left": 4.529,
+            "top": 6.542,
+            "width": 0.521,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_28",
+          "shape_index": 17,
+          "shape_name": "slot:text_28",
+          "fingerprint": "010-7509-6930",
+          "bounds": {
+            "left": 1.052,
+            "top": 6.573,
+            "width": 2.417,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_29",
+          "shape_index": 70,
+          "shape_name": "slot:text_29",
+          "fingerprint": "Readdy",
+          "bounds": {
+            "left": 5.528,
+            "top": 6.792,
+            "width": 0.604,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_30",
+          "shape_index": 72,
+          "shape_name": "slot:text_30",
+          "fingerprint": "GA4",
+          "bounds": {
+            "left": 6.486,
+            "top": 6.792,
+            "width": 0.282,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_31",
+          "shape_index": 74,
+          "shape_name": "slot:text_31",
+          "fingerprint": "[AI]",
+          "bounds": {
+            "left": 7.271,
+            "top": 6.813,
+            "width": 0.343,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_32",
+          "shape_index": 76,
+          "shape_name": "slot:text_32",
+          "fingerprint": "02",
+          "bounds": {
+            "left": 12.933,
+            "top": 7.167,
+            "width": 0.157,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 16,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.719,
+            "top": 6.271,
+            "width": 0.25,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 18,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.719,
+            "top": 6.604,
+            "width": 0.25,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 19,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 4.529,
+            "top": 0.5,
+            "width": 4.027,
+            "height": 2.661
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 21,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 4.977,
+            "top": 1.018,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 27,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 8.806,
+            "top": 0.5,
+            "width": 4.027,
+            "height": 2.661
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 29,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 9.254,
+            "top": 1.018,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 35,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 4.529,
+            "top": 3.411,
+            "width": 4.027,
+            "height": 2.661
+          }
+        },
+        {
+          "slot": "image_8",
+          "shape_index": 37,
+          "shape_name": "slot:image_8",
+          "bounds": {
+            "left": 4.951,
+            "top": 3.93,
+            "width": 0.26,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_9",
+          "shape_index": 43,
+          "shape_name": "slot:image_9",
+          "bounds": {
+            "left": 8.806,
+            "top": 3.411,
+            "width": 4.027,
+            "height": 2.661
+          }
+        },
+        {
+          "slot": "image_10",
+          "shape_index": 45,
+          "shape_name": "slot:image_10",
+          "bounds": {
+            "left": 9.239,
+            "top": 3.93,
+            "width": 0.24,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_11",
+          "shape_index": 53,
+          "shape_name": "slot:image_11",
+          "bounds": {
+            "left": 5.299,
+            "top": 6.531,
+            "width": 0.146,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_12",
+          "shape_index": 55,
+          "shape_name": "slot:image_12",
+          "bounds": {
+            "left": 6.018,
+            "top": 6.531,
+            "width": 0.115,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_13",
+          "shape_index": 57,
+          "shape_name": "slot:image_13",
+          "bounds": {
+            "left": 6.919,
+            "top": 6.531,
+            "width": 0.125,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_14",
+          "shape_index": 59,
+          "shape_name": "slot:image_14",
+          "bounds": {
+            "left": 7.731,
+            "top": 6.531,
+            "width": 0.146,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_15",
+          "shape_index": 61,
+          "shape_name": "slot:image_15",
+          "bounds": {
+            "left": 8.728,
+            "top": 6.531,
+            "width": 0.115,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_16",
+          "shape_index": 63,
+          "shape_name": "slot:image_16",
+          "bounds": {
+            "left": 9.524,
+            "top": 6.531,
+            "width": 0.115,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_17",
+          "shape_index": 65,
+          "shape_name": "slot:image_17",
+          "bounds": {
+            "left": 10.302,
+            "top": 6.531,
+            "width": 0.115,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_18",
+          "shape_index": 67,
+          "shape_name": "slot:image_18",
+          "bounds": {
+            "left": 11.54,
+            "top": 6.531,
+            "width": 0.146,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_19",
+          "shape_index": 69,
+          "shape_name": "slot:image_19",
+          "bounds": {
+            "left": 5.299,
+            "top": 6.823,
+            "width": 0.167,
+            "height": 0.146
+          }
+        },
+        {
+          "slot": "image_20",
+          "shape_index": 71,
+          "shape_name": "slot:image_20",
+          "bounds": {
+            "left": 6.298,
+            "top": 6.823,
+            "width": 0.125,
+            "height": 0.146
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_03_v1.project_case_v1": {
+      "slide_id": "template_library_03_v1.project_case_v1",
+      "template_key": "project_case_v1",
+      "library_id": "template_library_03_v1",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "library_slide_no": 3,
+      "purpose": "analysis",
+      "variant": "analysis/project-case-metric-1",
+      "scope": "portfolio",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "case_number",
+          "shape_index": 5,
+          "shape_name": "slot:case_number",
+          "fingerprint": "Project #01",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.417,
+            "width": 1.063,
+            "height": 0.209
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "period",
+          "shape_index": 6,
+          "shape_name": "slot:period",
+          "fingerprint": "2023.07 - 2024.12",
+          "bounds": {
+            "left": 1.812,
+            "top": 0.417,
+            "width": 1.671,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "project_title",
+          "shape_index": 7,
+          "shape_name": "slot:project_title",
+          "fingerprint": "투자형 크라우드펀딩 중개 및 IR 컨설팅",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.667,
+            "width": 8.391,
+            "height": 0.469
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 28,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "role",
+          "shape_index": 9,
+          "shape_name": "slot:role",
+          "fingerprint": "크라우드펀딩 매니저",
+          "bounds": {
+            "left": 10.798,
+            "top": 0.844,
+            "width": 1.92,
+            "height": 0.292
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "outcome_title",
+          "shape_index": 14,
+          "shape_name": "slot:outcome_title",
+          "fingerprint": "크라우드펀딩 프로젝트 성과",
+          "bounds": {
+            "left": 2.67,
+            "top": 6.719,
+            "width": 2.105,
+            "height": 0.209
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "outcome_1",
+          "shape_index": 17,
+          "shape_name": "slot:outcome_1",
+          "fingerprint": "스타트업 C-level B2B 세일즈",
+          "bounds": {
+            "left": 7.542,
+            "top": 1.729,
+            "width": 3.876,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 22,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "outcome_2",
+          "shape_index": 21,
+          "shape_name": "slot:outcome_2",
+          "fingerprint": "IR 자료 컨설팅 및 고도화",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.688,
+            "width": 3.865,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 22,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "outcome_3",
+          "shape_index": 24,
+          "shape_name": "slot:outcome_3",
+          "fingerprint": "증권 발행 관리 및 규제 컴플라이언스 대응",
+          "bounds": {
+            "left": 7.542,
+            "top": 3.646,
+            "width": 5.355,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 22,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "capability_title",
+          "shape_index": 27,
+          "shape_name": "slot:capability_title",
+          "fingerprint": "핵심 역량",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.396,
+            "width": 5.834,
+            "height": 0.167
+          },
+          "font_role": "card_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "capability_1",
+          "shape_index": 29,
+          "shape_name": "slot:capability_1",
+          "fingerprint": "규제 대응 및 컴플라이언스",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.646,
+            "width": 1.875,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "capability_2",
+          "shape_index": 31,
+          "shape_name": "slot:capability_2",
+          "fingerprint": "B2B 세일즈",
+          "bounds": {
+            "left": 8.828,
+            "top": 6.646,
+            "width": 1.0,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "capability_3",
+          "shape_index": 33,
+          "shape_name": "slot:capability_3",
+          "fingerprint": "IR 컨설팅",
+          "bounds": {
+            "left": 9.903,
+            "top": 6.646,
+            "width": 0.865,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 10,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.625,
+            "top": 1.646,
+            "width": 5.833,
+            "height": 5.438
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 12,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.635,
+            "top": 1.656,
+            "width": 5.813,
+            "height": 4.917
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 16,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 7.021,
+            "top": 1.875,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 20,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 7.047,
+            "top": 2.833,
+            "width": 0.156,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 23,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 6.995,
+            "top": 3.792,
+            "width": 0.26,
+            "height": 0.208
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_03_v1.project_case_v2": {
+      "slide_id": "template_library_03_v1.project_case_v2",
+      "template_key": "project_case_v2",
+      "library_id": "template_library_03_v1",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "library_slide_no": 4,
+      "purpose": "analysis",
+      "variant": "analysis/project-case-metric-2",
+      "scope": "portfolio",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 5,
+          "shape_name": "slot:title",
+          "fingerprint": "Project #02",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.417,
+            "width": 1.063,
+            "height": 0.209
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 6,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "2024.12 - 현재",
+          "bounds": {
+            "left": 1.812,
+            "top": 0.417,
+            "width": 1.298,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 8,
+          "shape_name": "slot:body_1",
+          "fingerprint": "Role",
+          "bounds": {
+            "left": 10.525,
+            "top": 0.656,
+            "width": 2.188,
+            "height": 0.167
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 9,
+          "shape_name": "slot:body_2",
+          "fingerprint": "B2B 신규 비즈니스 TF 리드",
+          "bounds": {
+            "left": 10.11,
+            "top": 0.844,
+            "width": 2.604,
+            "height": 0.292
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 19,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 17,
+          "shape_name": "slot:body_3",
+          "fingerprint": "1개월 내 빠른 추진",
+          "bounds": {
+            "left": 7.542,
+            "top": 1.729,
+            "width": 3.855,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 28,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 21,
+          "shape_name": "slot:body_4",
+          "fingerprint": "주요 상장사 B2B 고객 검증",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.563,
+            "width": 3.526,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 26,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_5",
+          "shape_index": 22,
+          "shape_name": "slot:body_5",
+          "fingerprint": "잠재 고객사 대상 세일즈 및 파트너십 논의",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.938,
+            "width": 3.529,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 26,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_6",
+          "shape_index": 24,
+          "shape_name": "slot:body_6",
+          "fingerprint": "AI 기반 자동화 시스템",
+          "bounds": {
+            "left": 7.542,
+            "top": 3.396,
+            "width": 3.25,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 24,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 31,
+          "shape_name": "slot:text_1",
+          "fingerprint": "전자 주주총회 프로토타입 확인하기",
+          "bounds": {
+            "left": 8.697,
+            "top": 4.896,
+            "width": 2.448,
+            "height": 0.542
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 33,
+          "shape_name": "slot:text_2",
+          "fingerprint": "핵심 역량",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.396,
+            "width": 5.834,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 43,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 35,
+          "shape_name": "slot:text_3",
+          "fingerprint": "B2B 서비스 기획",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.646,
+            "width": 1.303,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 39,
+          "shape_name": "slot:text_4",
+          "fingerprint": "AI 서비스 적용",
+          "bounds": {
+            "left": 9.191,
+            "top": 6.646,
+            "width": 1.167,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 14,
+          "shape_name": "slot:text_5",
+          "fingerprint": "IR SaaS 프로토타이핑 웹페이지",
+          "bounds": {
+            "left": 2.524,
+            "top": 6.719,
+            "width": 2.49,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 18,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 37,
+          "shape_name": "slot:text_6",
+          "fingerprint": "빠른 추진",
+          "bounds": {
+            "left": 8.395,
+            "top": 6.719,
+            "width": 0.695,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 40,
+          "shape_name": "slot:text_7",
+          "fingerprint": "04",
+          "bounds": {
+            "left": 12.933,
+            "top": 7.167,
+            "width": 0.157,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 10,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.625,
+            "top": 1.646,
+            "width": 5.833,
+            "height": 5.438
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 12,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.635,
+            "top": 1.656,
+            "width": 5.813,
+            "height": 4.917
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 16,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 7.031,
+            "top": 1.875,
+            "width": 0.188,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 20,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 6.995,
+            "top": 2.708,
+            "width": 0.26,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 23,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 6.995,
+            "top": 3.542,
+            "width": 0.26,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 26,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 6.875,
+            "top": 4.229,
+            "width": 5.833,
+            "height": 0.542
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 27,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 8.136,
+            "top": 4.417,
+            "width": 0.167,
+            "height": 0.167
+          }
+        },
+        {
+          "slot": "image_8",
+          "shape_index": 29,
+          "shape_name": "slot:image_8",
+          "bounds": {
+            "left": 6.875,
+            "top": 4.896,
+            "width": 5.833,
+            "height": 0.542
+          }
+        },
+        {
+          "slot": "image_9",
+          "shape_index": 30,
+          "shape_name": "slot:image_9",
+          "bounds": {
+            "left": 8.447,
+            "top": 5.083,
+            "width": 0.167,
+            "height": 0.167
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_03_v1.project_case_v3": {
+      "slide_id": "template_library_03_v1.project_case_v3",
+      "template_key": "project_case_v3",
+      "library_id": "template_library_03_v1",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "library_slide_no": 5,
+      "purpose": "analysis",
+      "variant": "analysis/project-case-metric-3",
+      "scope": "portfolio",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 5,
+          "shape_name": "slot:title",
+          "fingerprint": "Project #03",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.417,
+            "width": 1.063,
+            "height": 0.209
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 6,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "2024.12 - 현재",
+          "bounds": {
+            "left": 1.812,
+            "top": 0.417,
+            "width": 1.298,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 8,
+          "shape_name": "slot:body_1",
+          "fingerprint": "Role",
+          "bounds": {
+            "left": 12.371,
+            "top": 0.656,
+            "width": 0.344,
+            "height": 0.167
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 7,
+          "shape_name": "slot:body_2",
+          "fingerprint": "데이터 기반 운영 최적화",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.667,
+            "width": 5.336,
+            "height": 0.469
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 40,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 9,
+          "shape_name": "slot:body_3",
+          "fingerprint": "PM",
+          "bounds": {
+            "left": 12.423,
+            "top": 0.844,
+            "width": 0.292,
+            "height": 0.292
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 17,
+          "shape_name": "slot:body_4",
+          "fingerprint": "인증 실패율 80% 감소",
+          "bounds": {
+            "left": 7.542,
+            "top": 1.729,
+            "width": 2.857,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 21,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_5",
+          "shape_index": 18,
+          "shape_name": "slot:body_5",
+          "fingerprint": "운영 리스크 및 고객 이탈 방지",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.104,
+            "width": 2.611,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 19,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_6",
+          "shape_index": 21,
+          "shape_name": "slot:body_6",
+          "fingerprint": "CS 업무량 30% 절감",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.688,
+            "width": 2.57,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 19,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 22,
+          "shape_name": "slot:text_1",
+          "fingerprint": "반복 문의 자동화 및 선제적 대응",
+          "bounds": {
+            "left": 7.542,
+            "top": 3.063,
+            "width": 2.759,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 20,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 25,
+          "shape_name": "slot:text_2",
+          "fingerprint": "사용자 시나리오 재분석",
+          "bounds": {
+            "left": 7.542,
+            "top": 3.646,
+            "width": 2.997,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 22,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 26,
+          "shape_name": "slot:text_3",
+          "fingerprint": "이용자 및 업무 담당자 VoC 기반 개선",
+          "bounds": {
+            "left": 7.542,
+            "top": 4.021,
+            "width": 3.187,
+            "height": 0.25
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 23,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 27,
+          "shape_name": "slot:text_4",
+          "fingerprint": "관련 프로토타입",
+          "bounds": {
+            "left": 6.875,
+            "top": 4.688,
+            "width": 5.834,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 43,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 29,
+          "shape_name": "slot:text_5",
+          "fingerprint": "1번 - 문자 발송 화면",
+          "bounds": {
+            "left": 7.576,
+            "top": 4.938,
+            "width": 1.25,
+            "height": 0.5
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 32,
+          "shape_name": "slot:text_6",
+          "fingerprint": "2번 - 전송 내역 관리 화면",
+          "bounds": {
+            "left": 10.401,
+            "top": 4.938,
+            "width": 1.553,
+            "height": 0.5
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 35,
+          "shape_name": "slot:text_7",
+          "fingerprint": "핵심 역량",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.396,
+            "width": 5.834,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 43,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_8",
+          "shape_index": 37,
+          "shape_name": "slot:text_8",
+          "fingerprint": "데이터 분석",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.646,
+            "width": 0.99,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_9",
+          "shape_index": 39,
+          "shape_name": "slot:text_9",
+          "fingerprint": "UX 시나리오 설계",
+          "bounds": {
+            "left": 7.941,
+            "top": 6.646,
+            "width": 1.355,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_10",
+          "shape_index": 41,
+          "shape_name": "slot:text_10",
+          "fingerprint": "운영 정책 최적화",
+          "bounds": {
+            "left": 9.373,
+            "top": 6.646,
+            "width": 1.292,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_11",
+          "shape_index": 14,
+          "shape_name": "slot:text_11",
+          "fingerprint": "신분증 확인 가이드 UX 개선 프로세스",
+          "bounds": {
+            "left": 2.363,
+            "top": 6.719,
+            "width": 2.921,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 21,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_12",
+          "shape_index": 42,
+          "shape_name": "slot:text_12",
+          "fingerprint": "05",
+          "bounds": {
+            "left": 12.933,
+            "top": 7.167,
+            "width": 0.157,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 10,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.625,
+            "top": 1.646,
+            "width": 5.833,
+            "height": 5.438
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 12,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.635,
+            "top": 1.656,
+            "width": 5.813,
+            "height": 4.917
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 16,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 7.005,
+            "top": 1.875,
+            "width": 0.24,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 20,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 7.021,
+            "top": 2.833,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 24,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 6.995,
+            "top": 3.792,
+            "width": 0.26,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 30,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 8.903,
+            "top": 5.125,
+            "width": 0.125,
+            "height": 0.125
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 33,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 12.036,
+            "top": 5.125,
+            "width": 0.125,
+            "height": 0.125
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    },
+    "template_library_03_v1.single_owner_case_v1": {
+      "slide_id": "template_library_03_v1.single_owner_case_v1",
+      "template_key": "single_owner_case_v1",
+      "library_id": "template_library_03_v1",
+      "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
+      "library_slide_no": 6,
+      "purpose": "analysis",
+      "variant": "analysis/solo-builder-case",
+      "scope": "portfolio",
+      "mode": "overlay",
+      "preserve_shapes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "remove_shapes": [],
+      "editable_text_slots": [
+        {
+          "slot": "title",
+          "shape_index": 5,
+          "shape_name": "slot:title",
+          "fingerprint": "Project #04",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.417,
+            "width": 1.063,
+            "height": 0.209
+          },
+          "font_role": "hero_title",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 3,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "subtitle",
+          "shape_index": 6,
+          "shape_name": "slot:subtitle",
+          "fingerprint": "2024.12 - 현재",
+          "bounds": {
+            "left": 1.812,
+            "top": 0.417,
+            "width": 1.298,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": true,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_1",
+          "shape_index": 8,
+          "shape_name": "slot:body_1",
+          "fingerprint": "Role",
+          "bounds": {
+            "left": 10.449,
+            "top": 0.656,
+            "width": 2.261,
+            "height": 0.167
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 16,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_2",
+          "shape_index": 7,
+          "shape_name": "slot:body_2",
+          "fingerprint": "지능형 이메일 발송 시스템 구축",
+          "bounds": {
+            "left": 0.625,
+            "top": 0.667,
+            "width": 6.857,
+            "height": 0.469
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 51,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_3",
+          "shape_index": 9,
+          "shape_name": "slot:body_3",
+          "fingerprint": "PM / 기획·개발·운영 (단독)",
+          "bounds": {
+            "left": 10.019,
+            "top": 0.844,
+            "width": 2.69,
+            "height": 0.292
+          },
+          "font_role": "section_header",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 20,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_4",
+          "shape_index": 17,
+          "shape_name": "slot:body_4",
+          "fingerprint": "영업 프로세스 전주기 설계",
+          "bounds": {
+            "left": 7.542,
+            "top": 1.703,
+            "width": 3.303,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 24,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_5",
+          "shape_index": 18,
+          "shape_name": "slot:body_5",
+          "fingerprint": "문제정의→기획→개발→운영 전 과정 단독 수행",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.078,
+            "width": 3.629,
+            "height": 0.271
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 27,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "body_6",
+          "shape_index": 21,
+          "shape_name": "slot:body_6",
+          "fingerprint": "Gemini 등 AI 도구 적극 활용",
+          "bounds": {
+            "left": 7.542,
+            "top": 2.599,
+            "width": 3.719,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 27,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_1",
+          "shape_index": 24,
+          "shape_name": "slot:text_1",
+          "fingerprint": "맞춤형 시나리오 설계",
+          "bounds": {
+            "left": 7.542,
+            "top": 3.495,
+            "width": 3.042,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 22,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_2",
+          "shape_index": 25,
+          "shape_name": "slot:text_2",
+          "fingerprint": "유형별 조건부 발송 로직 및 리마인드 자동화",
+          "bounds": {
+            "left": 7.542,
+            "top": 3.87,
+            "width": 3.689,
+            "height": 0.271
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 27,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_3",
+          "shape_index": 28,
+          "shape_name": "slot:text_3",
+          "fingerprint": "안전장치 및 최적화",
+          "bounds": {
+            "left": 7.542,
+            "top": 4.391,
+            "width": 3.584,
+            "height": 0.334
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 26,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_4",
+          "shape_index": 31,
+          "shape_name": "slot:text_4",
+          "fingerprint": "관리 페이지 확인하기",
+          "bounds": {
+            "left": 8.94,
+            "top": 5.37,
+            "width": 1.48,
+            "height": 0.542
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_5",
+          "shape_index": 34,
+          "shape_name": "slot:text_5",
+          "fingerprint": "핵심 역량",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.422,
+            "width": 5.834,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 43,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_6",
+          "shape_index": 36,
+          "shape_name": "slot:text_6",
+          "fingerprint": "전체 프로세스 설계",
+          "bounds": {
+            "left": 6.875,
+            "top": 6.672,
+            "width": 1.428,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_7",
+          "shape_index": 38,
+          "shape_name": "slot:text_7",
+          "fingerprint": "AI 활용 개발",
+          "bounds": {
+            "left": 8.384,
+            "top": 6.672,
+            "width": 1.032,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_8",
+          "shape_index": 40,
+          "shape_name": "slot:text_8",
+          "fingerprint": "자동화 시스템 구축",
+          "bounds": {
+            "left": 9.493,
+            "top": 6.672,
+            "width": 1.428,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_9",
+          "shape_index": 42,
+          "shape_name": "slot:text_9",
+          "fingerprint": "실제 운영 경험",
+          "bounds": {
+            "left": 11.002,
+            "top": 6.672,
+            "width": 1.167,
+            "height": 0.355
+          },
+          "font_role": "body",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_10",
+          "shape_index": 14,
+          "shape_name": "slot:text_10",
+          "fingerprint": "실제 운영중인 B2B 영업 자동화 시스템",
+          "bounds": {
+            "left": 2.318,
+            "top": 6.719,
+            "width": 3.022,
+            "height": 0.209
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 22,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        },
+        {
+          "slot": "text_11",
+          "shape_index": 43,
+          "shape_name": "slot:text_11",
+          "fingerprint": "06",
+          "bounds": {
+            "left": 12.933,
+            "top": 7.167,
+            "width": 0.157,
+            "height": 0.167
+          },
+          "font_role": "body_strong",
+          "color_token": "primary",
+          "bold": false,
+          "align": "left",
+          "max_lines": 5,
+          "allow_shrink": true,
+          "fit_strategy": "preserve_template",
+          "max_chars_per_line": 12,
+          "protect_tokens": [
+            "API",
+            "WebSocket",
+            "UI/UX",
+            "TAM",
+            "SAM",
+            "SOM",
+            "PoC",
+            "ROI",
+            "MAU",
+            "KPI"
+          ]
+        }
+      ],
+      "editable_image_slots": [
+        {
+          "slot": "image_1",
+          "shape_index": 10,
+          "shape_name": "slot:image_1",
+          "bounds": {
+            "left": 0.625,
+            "top": 1.646,
+            "width": 5.833,
+            "height": 5.438
+          }
+        },
+        {
+          "slot": "image_2",
+          "shape_index": 12,
+          "shape_name": "slot:image_2",
+          "bounds": {
+            "left": 0.635,
+            "top": 1.656,
+            "width": 5.813,
+            "height": 4.917
+          }
+        },
+        {
+          "slot": "image_3",
+          "shape_index": 16,
+          "shape_name": "slot:image_3",
+          "bounds": {
+            "left": 7.005,
+            "top": 1.849,
+            "width": 0.24,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_4",
+          "shape_index": 20,
+          "shape_name": "slot:image_4",
+          "bounds": {
+            "left": 6.995,
+            "top": 2.745,
+            "width": 0.26,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_5",
+          "shape_index": 23,
+          "shape_name": "slot:image_5",
+          "bounds": {
+            "left": 7.021,
+            "top": 3.641,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_6",
+          "shape_index": 27,
+          "shape_name": "slot:image_6",
+          "bounds": {
+            "left": 7.021,
+            "top": 4.536,
+            "width": 0.208,
+            "height": 0.208
+          }
+        },
+        {
+          "slot": "image_7",
+          "shape_index": 32,
+          "shape_name": "slot:image_7",
+          "bounds": {
+            "left": 10.497,
+            "top": 5.568,
+            "width": 0.146,
+            "height": 0.146
+          }
+        }
+      ],
+      "editable_chart_slots": [],
+      "overlay_safe_zones": [
+        {
+          "slot": "content_primary",
+          "left": 0.8,
+          "top": 1.05,
+          "width": 11.7,
+          "height": 5.3
+        }
+      ],
+      "header_zone": {
+        "left": 0.58,
+        "top": 0.42,
+        "width": 3.38,
+        "height": 0.28
+      },
+      "footer_zone": {
+        "left": 0.0,
+        "top": 6.66,
+        "width": 13.33,
+        "height": 0.84
+      },
+      "page_zone": {
+        "left": 11.7,
+        "top": 6.84,
+        "width": 0.7,
+        "height": 0.34
+      },
+      "text_rules": {
+        "wrap_language": "ko",
+        "protect_tokens": [
+          "API",
+          "WebSocket",
+          "UI/UX",
+          "TAM",
+          "SAM",
+          "SOM",
+          "PoC",
+          "ROI",
+          "MAU",
+          "KPI"
+        ],
+        "section_number_mode": "header",
+        "page_number_mode": "page_number",
+        "page_number_position": "bottom_right"
+      }
+    }
+  }
+}

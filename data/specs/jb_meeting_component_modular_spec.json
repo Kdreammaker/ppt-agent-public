@@ -1,0 +1,127 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "JB Meeting Component Modular Sample",
+  "theme_path": "../../config/pptx_theme.neutral_modern.json",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/jb_meeting_component_modular_system.pptx",
+  "slides": [
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "sales",
+        "preferred_variant": "cover/narrative-sales"
+      },
+      "text_slots": {
+        "title": "전북은행 미팅\n컴포넌트 기반 공유안",
+        "subtitle": "슬라이드 템플릿과 디자인 유닛을 함께 활용합니다",
+        "footer_note": "JB meeting modular sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "toc",
+        "scope": "report",
+        "preferred_variant": "toc/visual-tiles"
+      },
+      "text_slots": {
+        "title": "Table of Contents",
+        "subtitle": "???? ?? ???? ?? ??",
+        "toc_1_number": "01",
+        "toc_1_title": "Meeting Insight",
+        "toc_1_body": "?? ???? ???",
+        "toc_2_number": "02",
+        "toc_2_title": "Customer Concerns",
+        "toc_2_body": "???? ?? ???",
+        "toc_3_number": "03",
+        "toc_3_title": "Execution Roadmap",
+        "toc_3_body": "ASP ?? ? API ??",
+        "toc_4_number": "04",
+        "toc_4_title": "Proposal Mock",
+        "toc_4_body": "??? ?? ?? ??",
+        "footer_note": "JB meeting modular sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "report",
+        "preferred_variant": "summary/4up-message-grid"
+      },
+      "text_slots": {
+        "eyebrow": "02",
+        "title": "Decision Signals",
+        "subtitle": "?? ?? ???? ??? ?? ??? ??????.",
+        "message_1_title": "???",
+        "message_1_body": "??, ??, ??? ??? ??? ?????.",
+        "message_2_title": "?? ??",
+        "message_2_body": "?? ?? ???? ?? ??? ??? ??? ????.",
+        "message_3_title": "?? ??",
+        "message_3_body": "??? ??, ?? ??, ?? ??? ?????.",
+        "message_4_title": "???",
+        "message_4_body": "ASP ?? ? API? ??? ???? ?????.",
+        "footer_note": "JB meeting modular sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "issue",
+        "scope": "report",
+        "preferred_variant": "issue/2x2-cards"
+      },
+      "text_slots": {
+        "eyebrow": "03",
+        "title": "Customer Concerns",
+        "subtitle": "?? ??? ? ?? ?? ???? ?????.",
+        "card_1_number": "1",
+        "card_1_title": "??",
+        "card_1_body": "??? ??? ?? MAU ???? ????? ??? ?????.",
+        "card_2_number": "2",
+        "card_2_title": "??",
+        "card_2_body": "?? ??? ?? ?? ??? ??? ??? ?? ???.",
+        "card_3_number": "3",
+        "card_3_title": "??",
+        "card_3_body": "?? ??? ?? ?? ?? ??? ?? ?????.",
+        "card_4_number": "4",
+        "card_4_title": "??",
+        "card_4_body": "?? ??? ?? ??? ?? ???? ?????.",
+        "footer_note": "JB meeting modular sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "timeline",
+        "scope": "report",
+        "preferred_variant": "timeline/horizontal-roadmap"
+      },
+      "text_slots": {
+        "title": "Execution Roadmap",
+        "subtitle": "2? ? ???? ??? ???? ?? ??",
+        "milestone_1": "?? ?\nASP ?? ???",
+        "milestone_2": "?? ?\nAPI???? ????",
+        "milestone_3": "?? ??\n?? ?? ??",
+        "footer_note": "JB meeting modular sample | template-first system"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "closing",
+        "scope": "report",
+        "preferred_variant": "closing/goal-grid"
+      },
+      "text_slots": {
+        "eyebrow": "05",
+        "title": "Proposal Mock",
+        "subtitle": "?? ??, ?? ??, ?? ??? ??? ?? ???? ????.",
+        "goal_statement": "??: ?? ???? ??? ??? ? ????? ?????.",
+        "footer_note": "JB meeting modular sample | template-first system"
+      }
+    }
+  ]
+}

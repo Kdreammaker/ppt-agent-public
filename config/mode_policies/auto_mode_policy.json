@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "mode": "auto",
+  "uses": {
+    "deck_intake": true,
+    "reference_knowledge_graph": true,
+    "template_pattern_catalog": true,
+    "template_design_dna": true,
+    "variant_review": true
+  },
+  "draft_count": 2,
+  "variant_strategy": "generate_distinct_conservative_and_visual_or_analytical_drafts_when_direction_is_ambiguous",
+  "template_retrieval_weights": {
+    "purpose_match": 1.0,
+    "deck_type_fit": 0.8,
+    "tone_fit": 0.6,
+    "pattern_fit": 0.5,
+    "quality_score": 0.7
+  },
+  "default_assumptions": [
+    "Minimize upfront questions when intake is adequate.",
+    "Prefer production-ready templates over raw reference material.",
+    "Use reviewed good patterns when available; otherwise fall back to Template Design DNA."
+  ],
+  "comparison_rubric": [
+    "audience fit",
+    "message clarity",
+    "content density",
+    "visual hierarchy",
+    "template readiness"
+  ],
+  "fallback_rules": [
+    "Do not use raw reference decks as production templates.",
+    "If graph or pattern artifacts are empty, select from production reference_catalog and template_design_dna.",
+    "If direction remains ambiguous, create a variant review deck before full production."
+  ],
+  "graph_query_strategy": "retrieve by deck_type, purpose, tone, layout, and quality_label, then explain rejected candidates in reports"
+}

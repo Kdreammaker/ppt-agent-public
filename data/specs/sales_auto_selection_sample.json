@@ -1,0 +1,122 @@
+{
+  "$schema": "../../config/deck_spec.schema.json",
+  "name": "Sales Auto Selection Sample",
+  "theme_path": "../../config/pptx_theme.example.json",
+  "reference_catalog_path": "../../config/reference_catalog.json",
+  "blueprint_path": "../../config/template_blueprints.json",
+  "output_path": "../../outputs/decks/sales_auto_selection_sample.pptx",
+  "slides": [
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "cover",
+        "scope": "sales",
+        "preferred_variant": "cover/narrative-sales",
+        "fallback_variants": [
+          "cover/finance-sales",
+          "cover/right-hero"
+        ]
+      },
+      "text_values": [
+        "Sales Deck Demo",
+        "Exact-scope sales cover selected before generic fallback."
+      ],
+      "text_slots": {
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "toc",
+        "scope": "sales",
+        "preferred_variant": "toc/visual-tiles",
+        "fallback_variants": [
+          "toc/simple-index"
+        ]
+      },
+      "text_values": [
+        "Sales Route",
+        "Sales scope falls back to generic TOC slides",
+        "Problem",
+        "Approach",
+        "Proof",
+        "Close",
+        "Pain summary",
+        "Process and motion",
+        "Evidence and metrics",
+        "Next-step ask"
+      ],
+      "text_slots": {
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "summary",
+        "scope": "sales",
+        "preferred_variant": "summary/service-intro-cards",
+        "fallback_variants": [
+          "summary/service-components",
+          "summary/two-panel"
+        ]
+      },
+      "text_values": [
+        "Offer Summary",
+        "Sales-specific summary chosen by default rank.",
+        "Why now",
+        "Partner-ready framing with a clearer service narrative.",
+        "What changes",
+        "Unified selection across multiple source libraries."
+      ],
+      "text_slots": {
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "issue",
+        "scope": "sales",
+        "preferred_variant": "issue/pain-story",
+        "fallback_variants": [
+          "issue/2x2-cards"
+        ]
+      },
+      "text_values": [
+        "Buyer Pain",
+        "Exact sales issue slide selected before generic fallback.",
+        "Fragmented process",
+        "Long review cycles",
+        "Weak evidence",
+        "Unclear ROI"
+      ],
+      "text_slots": {
+        "footer_note": "Template system sample"
+      }
+    },
+    {
+      "layout": "template_slide",
+      "slide_selector": {
+        "purpose": "closing",
+        "scope": "sales",
+        "preferred_variant": "closing/discussion-next-step",
+        "fallback_variants": [
+          "closing/partnership-goal",
+          "closing/finance-cta",
+          "closing/goal-grid"
+        ]
+      },
+      "text_values": [
+        "Next Step",
+        "Close with the most discussion-friendly sales variant.",
+        "Align on pilot scope",
+        "Confirm owner, timing, and proof plan."
+      ],
+      "text_slots": {
+        "footer_note": "Template system sample"
+      }
+    }
+  ]
+}

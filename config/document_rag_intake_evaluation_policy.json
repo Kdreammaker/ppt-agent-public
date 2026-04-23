@@ -1,0 +1,337 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "document_rag_intake_evaluation",
+  "status": "research_only",
+  "feature_shipping_allowed": false,
+  "default_dependency_allowed": false,
+  "gateway_upload_allowed_by_default": false,
+  "full_file_upload_requires_explicit_approval": true,
+  "license_review_date": "2026-04-23",
+  "official_sources": [
+    {
+      "id": "chandra_github",
+      "url": "https://github.com/datalab-to/chandra",
+      "notes": "Chandra OCR 2 repository, commercial usage, benchmark, and model license summary."
+    },
+    {
+      "id": "chandra_huggingface",
+      "url": "https://huggingface.co/datalab-to/chandra-ocr-2",
+      "notes": "Chandra OCR 2 model card with OpenRAIL label, usage, and benchmark scores."
+    },
+    {
+      "id": "paddleocr_github",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "notes": "PaddleOCR repository, Apache 2.0 license, document parsing claims, and release status."
+    },
+    {
+      "id": "olmocr_github",
+      "url": "https://github.com/allenai/olmocr",
+      "notes": "olmOCR toolkit, Apache 2.0 license, benchmark table, and remote/local inference options."
+    },
+    {
+      "id": "docling_github",
+      "url": "https://github.com/docling-project/docling",
+      "notes": "Docling document conversion toolkit, MIT license, OCR/layout support, and CLI integration."
+    },
+    {
+      "id": "granite_docling_docs",
+      "url": "https://www.ibm.com/granite/docs/models/docling",
+      "notes": "Granite Docling model documentation, Apache 2.0 license, enterprise document conversion fit."
+    },
+    {
+      "id": "tesseract_github",
+      "url": "https://github.com/tesseract-ocr/tesseract",
+      "notes": "Tesseract OCR engine, Apache 2.0 license, and integration baseline."
+    },
+    {
+      "id": "ocrmypdf_github",
+      "url": "https://github.com/ocrmypdf/OCRmyPDF",
+      "notes": "OCRmyPDF, MPL 2.0 license, Tesseract-backed searchable PDF OCR workflow."
+    }
+  ],
+  "fixture_set": [
+    {
+      "id": "company_intro_pdf",
+      "description": "Digital PDF company introduction with headings, product claims, and mixed visual hierarchy.",
+      "must_measure": [
+        "section_ordering",
+        "heading_detection",
+        "deck_intake_goal_extraction"
+      ]
+    },
+    {
+      "id": "pitch_deck_pdf",
+      "description": "Pitch or sales deck PDF with sparse slides, charts, logos, and image captions.",
+      "must_measure": [
+        "slide_boundary_detection",
+        "chart_caption_extraction",
+        "visual_context_preservation"
+      ]
+    },
+    {
+      "id": "long_report_pdf",
+      "description": "Long-form report with multi-column text, tables, footnotes, and appendix content.",
+      "must_measure": [
+        "reading_order",
+        "table_preservation",
+        "token_reduction_ratio"
+      ]
+    },
+    {
+      "id": "scanned_document_pdf",
+      "description": "Scanned or photographed PDF page set with skew, noise, and imperfect contrast.",
+      "must_measure": [
+        "ocr_text_accuracy",
+        "layout_recovery",
+        "latency"
+      ]
+    },
+    {
+      "id": "ko_en_mixed_profile",
+      "description": "Korean/English mixed company profile with tables and Korean section labels.",
+      "must_measure": [
+        "korean_text_accuracy",
+        "bilingual_ordering",
+        "deck_intake_locale_signal"
+      ]
+    }
+  ],
+  "metrics": [
+    "ocr_text_accuracy",
+    "layout_fidelity",
+    "table_preservation",
+    "chart_caption_preservation",
+    "section_ordering",
+    "korean_english_mixed_accuracy",
+    "deck_intake_json_validity",
+    "deck_intake_field_completeness",
+    "hallucination_or_invented_claim_rate",
+    "latency_per_page",
+    "cpu_memory_peak",
+    "gpu_vram_peak",
+    "install_complexity",
+    "local_offline_feasibility",
+    "token_reduction_ratio",
+    "downstream_llm_quality_delta"
+  ],
+  "chandra_2_review": {
+    "candidate_id": "chandra_ocr_2",
+    "code_license": "Apache-2.0",
+    "model_weights_license": "modified_OpenRAIL-M",
+    "commercial_use_status": "restricted_requires_legal_review",
+    "commercial_restrictions": [
+      "free for research and personal use",
+      "free for startups under USD 2M funding or revenue",
+      "cannot be used competitively with the hosted API",
+      "broader commercial use requires separate licensing"
+    ],
+    "hosted_api_status": "available_but_not_default_allowed",
+    "packaging_allowed": false,
+    "redistribution_allowed_without_legal_review": false,
+    "default_dependency_allowed": false,
+    "private_gateway_use_needs_license_review": true,
+    "reported_olmocr_overall": 85.9,
+    "performance_status": "strong_baseline_but_not_licensed_for_default_commercial_use"
+  },
+  "candidate_tools": [
+    {
+      "candidate_id": "paddleocr_vl_or_pp_structure",
+      "name": "PaddleOCR / PaddleOCR-VL / PP-Structure",
+      "license": "Apache-2.0",
+      "commercially_more_permissive_than_chandra_2": true,
+      "document_fit": "high",
+      "integration_fit": "high_cli_worker_or_local_adapter",
+      "local_offline_feasible": true,
+      "observed_strengths": [
+        "structured Markdown and JSON document parsing",
+        "100+ language project scope",
+        "resource-efficient OCR and document parsing paths"
+      ],
+      "direct_chandra_2_superiority_proven": false,
+      "replacement_status": "evaluate_but_do_not_select_yet",
+      "reason_not_selected": "permissive and practical, but no verified head-to-head evidence in this review proves better OCR/layout performance than Chandra 2 for our fixture mix"
+    },
+    {
+      "candidate_id": "docling_granite_docling",
+      "name": "Docling + Granite Docling",
+      "license": "MIT codebase plus Apache-2.0 Granite Docling model",
+      "commercially_more_permissive_than_chandra_2": true,
+      "document_fit": "high",
+      "integration_fit": "high_cli_python_sdk",
+      "local_offline_feasible": true,
+      "observed_strengths": [
+        "DoclingDocument/lossless JSON representation",
+        "Markdown and HTML export",
+        "compact 258M Granite Docling model",
+        "practical fit for DeckIntake pre-normalization"
+      ],
+      "direct_chandra_2_superiority_proven": false,
+      "replacement_status": "evaluate_as_low_cost_structuring_candidate",
+      "reason_not_selected": "license and integration fit are strong, but performance still needs our own Korean/company-introduction and table-heavy benchmark"
+    },
+    {
+      "candidate_id": "olmocr_2",
+      "name": "olmOCR 2",
+      "license": "Apache-2.0",
+      "commercially_more_permissive_than_chandra_2": true,
+      "document_fit": "medium_high",
+      "integration_fit": "medium_remote_or_gpu_worker",
+      "local_offline_feasible": true,
+      "observed_strengths": [
+        "open benchmark suite",
+        "Apache 2.0 license",
+        "local and OpenAI-compatible remote inference options"
+      ],
+      "direct_chandra_2_superiority_proven": false,
+      "replacement_status": "benchmark_reference_candidate",
+      "reason_not_selected": "public benchmark scores reviewed here are below Chandra 2 overall"
+    },
+    {
+      "candidate_id": "tesseract_ocrmypdf",
+      "name": "Tesseract + OCRmyPDF",
+      "license": "Apache-2.0 plus MPL-2.0 wrapper",
+      "commercially_more_permissive_than_chandra_2": true,
+      "document_fit": "medium_for_searchable_pdf_and_simple_scans",
+      "integration_fit": "high_cli_worker",
+      "local_offline_feasible": true,
+      "observed_strengths": [
+        "mature local OCR",
+        "simple searchable PDF workflow",
+        "good baseline for token savings on scanned PDFs"
+      ],
+      "direct_chandra_2_superiority_proven": false,
+      "replacement_status": "baseline_only",
+      "reason_not_selected": "not expected to match Chandra 2 on complex tables, layout, handwriting, or document understanding"
+    },
+    {
+      "candidate_id": "unstructured_local_inference",
+      "name": "Unstructured local partitioning",
+      "license": "Apache-2.0 project family",
+      "commercially_more_permissive_than_chandra_2": true,
+      "document_fit": "medium_high",
+      "integration_fit": "medium_python_partition_pipeline",
+      "local_offline_feasible": true,
+      "observed_strengths": [
+        "partitioning APIs for PDF and office formats",
+        "local inference path",
+        "LLM/RAG preprocessing ecosystem fit"
+      ],
+      "direct_chandra_2_superiority_proven": false,
+      "replacement_status": "evaluate_as_pipeline_component",
+      "reason_not_selected": "license fit is promising but OCR/layout performance must be measured on our fixtures"
+    }
+  ],
+  "selection_rules": {
+    "selected_replacement": null,
+    "qualified_replacement_minimum": 0,
+    "candidate_may_be_selected_only_if": [
+      "commercially_more_permissive_than_chandra_2 is true",
+      "direct_chandra_2_superiority_proven is true on project fixtures or accepted public head-to-head benchmark",
+      "DeckIntake JSON validity does not regress",
+      "token savings are material without reducing intake quality",
+      "CLI/MCP integration does not bypass consent, support-bundle, or local-only policies"
+    ],
+    "current_recommendation": "defer_adoption_and_run_project_fixture_benchmark",
+    "why_no_replacement_selected": "No reviewed alternative currently proves both a more permissive commercial license and better OCR/layout performance than Chandra 2 for the intended large PDF/company-introduction to DeckIntake workload."
+  },
+  "pipeline_options_to_measure": [
+    {
+      "pipeline_id": "local_parser_compact_markdown_then_llm",
+      "description": "OCR/layout parser -> compact Markdown/JSON -> LLM extraction -> DeckIntake",
+      "expected_token_effect": "large_reduction_vs_full_document_upload",
+      "requires_upload": false
+    },
+    {
+      "pipeline_id": "local_parser_json_then_rules_plus_llm_fill",
+      "description": "Parser JSON -> deterministic field mapping -> LLM fills missing DeckIntake fields",
+      "expected_token_effect": "largest_reduction_but_may_need_quality_guardrails",
+      "requires_upload": false
+    },
+    {
+      "pipeline_id": "direct_multimodal_llm_document_processing",
+      "description": "Claude/Codex/Gemini direct document reading where permitted by explicit consent",
+      "expected_token_effect": "highest_token_cost_baseline",
+      "requires_upload": true
+    }
+  ],
+  "consent_boundaries": {
+    "local_only_default": true,
+    "preflight_payload_preview_required": true,
+    "support_bundle_must_redact_document_content": true,
+    "gateway_full_file_upload_allowed_by_default": false,
+    "gateway_summary_upload_requires_explicit_approval": true,
+    "raw_references_must_not_be_used_as_runtime_assets": true,
+    "workspace_codes_must_not_be_in_payloads": true
+  },
+  "deck_intake_projection_sample": {
+    "intake_version": "1.0",
+    "name": "Document RAG Intake Evaluation Sample",
+    "audience": {
+      "primary": "executive product review team",
+      "secondary": [
+        "engineering",
+        "sales"
+      ],
+      "knowledge_level": "informed",
+      "decision_role": "mixed"
+    },
+    "presentation_context": {
+      "setting": "internal review",
+      "delivery_mode": "async_readout",
+      "duration_minutes": 15,
+      "presenter_role": "product lead",
+      "locale": "ko-KR"
+    },
+    "primary_goal": "Summarize a source company introduction into a concise decision-ready deck plan.",
+    "deck_type": "strategy",
+    "industry": "technology",
+    "tone": [
+      "executive",
+      "analytical"
+    ],
+    "slide_count_range": {
+      "min": 6,
+      "max": 8
+    },
+    "brand_or_template_scope": {
+      "preferred_scope": "template_slide",
+      "preferred_template_keys": []
+    },
+    "content_density": "medium",
+    "variation_level": "light_variants",
+    "review_requirements": {
+      "needs_variant_review": true,
+      "requires_rationale_report": true,
+      "requires_slot_map": true,
+      "reviewers": [
+        "operator"
+      ],
+      "approval_mode": "operator_review"
+    },
+    "must_include": [
+      "business context",
+      "core offering",
+      "market proof",
+      "next decision"
+    ],
+    "must_avoid": [
+      "unverified claims",
+      "raw source file excerpts",
+      "private workspace codes"
+    ],
+    "source_materials": [
+      {
+        "path": "local_document_summary.md",
+        "kind": "markdown",
+        "description": "Redacted parser output summary, not the raw source document."
+      }
+    ],
+    "output_preferences": {
+      "required_reports": [
+        "deck_intake_extraction_eval",
+        "consent_payload_preview"
+      ]
+    },
+    "notes": "Evaluation fixture only; not a shipped document/RAG intake feature."
+  }
+}

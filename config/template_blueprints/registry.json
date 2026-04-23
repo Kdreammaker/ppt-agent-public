@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "libraries": [
+    {
+      "library_id": "template_library_01_v1",
+      "path": "template_library_01_v1.json",
+      "slide_count": 10
+    },
+    {
+      "library_id": "template_library_02_v1",
+      "path": "template_library_02_v1.json",
+      "slide_count": 12
+    },
+    {
+      "library_id": "template_library_03_v1",
+      "path": "template_library_03_v1.json",
+      "slide_count": 10
+    },
+    {
+      "library_id": "template_library_04_v1",
+      "path": "template_library_04_v1.json",
+      "slide_count": 22
+    }
+  ]
+}

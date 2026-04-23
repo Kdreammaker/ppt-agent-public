@@ -1,0 +1,60 @@
+{
+  "$schema": "../../config/deck_intake.schema.json",
+  "intake_version": "1.0",
+  "name": "Growth Review",
+  "audience": {
+    "primary": "Executive leadership",
+    "secondary": ["Strategy", "Finance"],
+    "knowledge_level": "informed",
+    "decision_role": "decision_maker"
+  },
+  "presentation_context": {
+    "setting": "Monthly growth review",
+    "delivery_mode": "live",
+    "duration_minutes": 18,
+    "presenter_role": "Growth lead",
+    "locale": "en-US"
+  },
+  "primary_goal": "Align leaders on growth signals, operating priorities, and next investment decisions.",
+  "deck_type": "report",
+  "industry": "business",
+  "tone": ["executive", "analytical", "conservative"],
+  "slide_count_range": {
+    "min": 6,
+    "max": 6
+  },
+  "brand_or_template_scope": {
+    "preferred_scope": null,
+    "preferred_template_keys": [],
+    "required_template_library": null,
+    "theme_path": "../../config/pptx_theme.neutral_modern.json",
+    "notes": "Use the industry-aware business profile rather than the generic report sequence."
+  },
+  "content_density": "medium",
+  "variation_level": "single_path",
+  "review_requirements": {
+    "needs_variant_review": false,
+    "requires_rationale_report": true,
+    "requires_slot_map": true,
+    "reviewers": ["operator"],
+    "approval_mode": "operator_review"
+  },
+  "must_include": [
+    "Market momentum - demand is growing in priority segments",
+    "Operating focus - shorten cycle time while preserving quality",
+    "Proof metrics - conversion, cycle time, and risk trend",
+    "Decision path - sequence the next investment in two waves"
+  ],
+  "must_avoid": [
+    "Generic one-size-fits-all storyline",
+    "Unreviewed templates",
+    "Raw candidate references"
+  ],
+  "source_materials": [],
+  "output_preferences": {
+    "output_spec_path": "data/specs/business_growth_review_spec.json",
+    "output_deck_path": "outputs/decks/business_growth_review.pptx",
+    "required_reports": ["outputs/reports/slide_selection_rationale.json", "outputs/reports/deck_slot_map.json"]
+  },
+  "notes": "B27 sample for the business industry profile."
+}
