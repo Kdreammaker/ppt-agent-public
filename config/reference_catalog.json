@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "workspace": "C:/Users/kimjo/Downloads/ppt-test",
+  "workspace": ".",
   "libraries": [
     {
       "library_id": "template_library_04_v1",

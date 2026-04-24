@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "slack_intake_normalization_contract",
+  "status": "active",
+  "purpose": "Normalize a Slack maker request into a deterministic deck intake before spec composition or private runtime execution.",
+  "source_boundary": {
+    "slack_role": "Collect user intent, attachments, and clarification state.",
+    "ppt_test_role": "Normalize, validate, and write request-linked intake artifacts.",
+    "asset_boundary": "Reference approved asset manifests or brand/style IDs only; do not scan raw external asset folders."
+  },
+  "required_raw_fields": [
+    "workspace_id",
+    "channel_id",
+    "user_id",
+    "message_ts",
+    "text"
+  ],
+  "optional_raw_fields": [
+    "request_id",
+    "operating_mode",
+    "title",
+    "audience",
+    "primary_goal",
+    "deck_type",
+    "industry",
+    "tone",
+    "slide_count",
+    "content_density",
+    "approval_mode",
+    "brand_profile_id",
+    "approved_asset_manifest_id",
+    "deadline",
+    "attachments",
+    "must_include",
+    "must_avoid"
+  ],
+  "defaults": {
+    "operating_mode": "assistant",
+    "deck_type": "report",
+    "industry": "business",
+    "tone": [
+      "executive",
+      "visual"
+    ],
+    "content_density": "medium",
+    "slide_count_min": 5,
+    "slide_count_max": 8,
+    "approval_mode": "assistant",
+    "delivery_mode": "async_readout",
+    "knowledge_level": "informed",
+    "decision_role": "decision_maker"
+  },
+  "clarification_boundaries": {
+    "missing_title": "derive from first sentence when possible; otherwise mark needs_clarification",
+    "missing_primary_goal": "derive from message text when possible; otherwise mark needs_clarification",
+    "missing_audience": "default to leadership and record defaulted_field",
+    "unsupported_operating_mode": "block normalization",
+    "raw_asset_path_request": "record as blocked_asset_boundary_issue and request approved manifest or materialized package"
+  },
+  "normalized_outputs": {
+    "request_summary": "outputs/projects/<request_id>/intake/slack_request_summary.json",
+    "deck_intake": "outputs/projects/<request_id>/intake/deck_intake.json",
+    "normalization_report": "outputs/projects/<request_id>/reports/slack_intake_normalization.json"
+  },
+  "allowed_operating_modes": [
+    "auto",
+    "assistant"
+  ],
+  "blocked_statuses": [
+    "malformed",
+    "needs_clarification",
+    "blocked_asset_boundary_issue"
+  ],
+  "validation_report": "outputs/reports/slack_intake_contract_validation.json"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "template_library_grading_policy",
+  "status": "active",
+  "allowed_grades": [
+    "production_ready",
+    "curate_before_use",
+    "blocked"
+  ],
+  "operational_metadata_fields": [
+    "best_for",
+    "avoid_for",
+    "opener_quality_notes",
+    "domain_fit_notes",
+    "rejected_candidate_rationale"
+  ],
+  "routing_rules": {
+    "production_ready": "Selectable for unattended production when quality gates pass.",
+    "curate_before_use": "May appear as fallback or review candidate but must not be auto-routed into unattended delivery.",
+    "blocked": "Must not be selected for production builds."
+  },
+  "source_policy_grade_map": {
+    "production_ready": "production_ready",
+    "curate_before_use": "curate_before_use",
+    "structure_only": "curate_before_use",
+    "blocked": "blocked"
+  },
+  "asset_boundary": "Template grading may consume approved external asset-system exports, but must not own raw reference assetization.",
+  "validation_report": "outputs/reports/template_library_grades_validation.json"
+}

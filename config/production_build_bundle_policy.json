@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "production_build_bundle_policy",
+  "status": "active",
+  "purpose": "Standardize delivery-grade build outputs and block delivery when product quality gates fail.",
+  "required_artifacts": [
+    "pptx",
+    "html",
+    "project_manifest",
+    "run_manifest",
+    "delivery_manifest",
+    "quality_reports"
+  ],
+  "quality_reports": [
+    "first_slide_quality",
+    "output_quality_gates",
+    "deck_design_review",
+    "brand_style_contract",
+    "text_overflow",
+    "visual_smoke"
+  ],
+  "blocking_rules": [
+    "first_slide_quality_failure",
+    "font_hierarchy_failure",
+    "color_mismatch",
+    "dense_slide_failure",
+    "text_budget_overflow",
+    "curate_before_use_template_leakage",
+    "layout_monotony"
+  ],
+  "delivery_behavior": {
+    "block_unattended_drive_delivery_on_error": true,
+    "block_slack_success_reply_on_error": true,
+    "write_blocked_reply_with_findings": true,
+    "diagnostic_only_success_allowed": false
+  },
+  "asset_boundary": "Production bundles may reference approved manifests and brand profile IDs only, not raw external workspace paths.",
+  "validation_report": "outputs/reports/production_build_bundle_validation.json"
+}

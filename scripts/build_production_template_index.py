@@ -39,6 +39,11 @@ def ranked(slides: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def slim(slide: dict[str, Any]) -> dict[str, Any]:
+    usage_policy = slide.get("usage_policy")
+    operational_grade = "curate_before_use" if usage_policy == "structure_only" else str(usage_policy or "curate_before_use")
+    purpose = str(slide.get("purpose") or "content")
+    scope = str(slide.get("scope") or "general")
+    is_cover = purpose == "cover"
     return {
         "slide_id": slide["slide_id"],
         "library_id": slide["library_id"],
@@ -51,9 +56,23 @@ def slim(slide: dict[str, Any]) -> dict[str, Any]:
         "quality_score": slide.get("quality_score"),
         "design_tier": slide.get("design_tier"),
         "usage_policy": slide.get("usage_policy"),
+        "operational_grade": operational_grade,
         "library_path": slide["library_path"],
         "library_slide_no": slide["library_slide_no"],
         "design_notes": slide.get("design_notes", ""),
+        "best_for": [purpose, scope, str(slide.get("variant") or "default")],
+        "avoid_for": ["unattended_delivery"] if operational_grade != "production_ready" else [],
+        "opener_quality_notes": (
+            "Cover candidate; must pass first-slide quality when routed to slide 1."
+            if is_cover
+            else "Not an opener candidate unless explicitly reviewed."
+        ),
+        "domain_fit_notes": f"Best fit for {scope} / {purpose} content with {slide.get('density', 'unknown')} density.",
+        "rejected_candidate_rationale": (
+            ""
+            if operational_grade == "production_ready"
+            else f"Excluded from unattended production routing because operational_grade={operational_grade} from source usage_policy={usage_policy}."
+        ),
     }
 
 
@@ -92,7 +111,7 @@ def main() -> int:
 
     manifest = {
         "version": "0.1",
-        "workspace": BASE_DIR.as_posix(),
+        "workspace": "ppt-test",
         "production_ready_count": len(production_ready),
         "purpose_manifest": purpose_manifest,
         "recommended_sets": {

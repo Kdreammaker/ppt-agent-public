@@ -39,7 +39,7 @@ External icons remain `external_registry_reference` metadata. B31 does not mater
 ## Guardrails
 
 - Do not scan raw external folders as the source of truth.
-- Do not hard-code absolute paths to `C:\Users\kimjo\Downloads\assets achivement for work`.
+- Do not hard-code absolute paths to `<local-asset-library>`.
 - Do not copy external asset binaries during composer work.
 - Do not use assets that are not present in the finalized catalog.
 - Do not use assets with `production_eligible: false` or `allowed_for_ppt: false`.

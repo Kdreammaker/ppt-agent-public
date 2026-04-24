@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "delivery_summary_contract",
+  "status": "active",
+  "purpose": "Return stable delivery status, links, build rationale, quality findings, and remaining manual review points for Drive/Slack replies.",
+  "required_fields": [
+    "request_id",
+    "delivery_status",
+    "link_status",
+    "artifact_refs",
+    "build_rationale",
+    "quality_findings",
+    "remaining_manual_review_points",
+    "reply_summary"
+  ],
+  "delivery_statuses": [
+    "delivered",
+    "blocked",
+    "needs_review"
+  ],
+  "link_status": {
+    "drive_permission_default": "private_sync_default",
+    "public_editor_link_default": false,
+    "blocked_delivery_must_not_include_success_link": true
+  },
+  "build_rationale_fields": [
+    "selected_template_family",
+    "selected_brand_profile_id",
+    "selected_operating_mode",
+    "rejected_candidate_rationale"
+  ],
+  "quality_finding_sources": [
+    "first_slide_quality",
+    "output_quality_gates",
+    "deck_design_review",
+    "production_build_bundle",
+    "brand_style_contract"
+  ],
+  "blocked_reply_requirements": [
+    "request_id",
+    "blocking_findings",
+    "next_action",
+    "no_success_claim"
+  ],
+  "validation_report": "outputs/reports/delivery_summary_contract_validation.json"
+}

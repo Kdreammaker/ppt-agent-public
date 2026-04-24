@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "auto_mode_product_pipeline",
+  "status": "active",
+  "purpose": "Define Auto Mode as a bounded multi-pass production flow rather than accidental one-pass template selection.",
+  "stages": [
+    "intake",
+    "storyline",
+    "template_family",
+    "brand_style_contract",
+    "render",
+    "review",
+    "revise",
+    "rerender"
+  ],
+  "max_passes": 2,
+  "evidence_between_passes": [
+    "storyline_summary",
+    "selected_template_family",
+    "brand_style_contract_ref",
+    "render_artifact_refs",
+    "review_findings",
+    "revision_decision"
+  ],
+  "quick_draft_override": {
+    "allowed": true,
+    "requires_explicit_flag": true,
+    "delivery_status": "quick_draft_review_required",
+    "must_not_bypass_blocking_gates": true
+  },
+  "blocking_review_inputs": [
+    "first_slide_quality",
+    "output_quality_gates",
+    "deck_design_review",
+    "brand_style_contract"
+  ],
+  "validation_report": "outputs/reports/auto_mode_pipeline_validation.json"
+}

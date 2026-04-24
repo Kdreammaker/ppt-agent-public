@@ -15,6 +15,7 @@
       },
       "text_slots": {
         "title": "Template-first slot replacement",
+        "subtitle": "Cover hierarchy and hero-template smoke",
         "footer_note": "template_slide sample | placeholder style preserved"
       },
       "slot_overrides": {

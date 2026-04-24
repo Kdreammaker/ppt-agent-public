@@ -2,9 +2,13 @@
 
 This workspace is organized around a template-library-first PPT authoring workflow.
 
-## Public-Thin Smoke Path
+## Public CLI And Private Runtime Path
 
-For a public-safe install/build smoke that does not require private template binaries, raw references, telemetry, upload, or gateway credentials:
+This public repository is the installable CLI control plane. It installs runtime dependencies, initializes workspaces, runs public-safe smoke checks, and provides the connector that entitled users or operators use to install and call the private PPT runtime.
+
+The private layer remains responsible for full template-library based high-quality PPT generation, private template binaries, private Design DNA, premium assets, real activation counters, revocation, rotation, audit, and signed private package or gateway responses. The public smoke deck is only a fallback and install check; the useful production flow is the private runtime build path.
+
+Public-safe local smoke, requiring no private template binaries, raw references, telemetry, upload, or gateway credentials:
 
 ```powershell
 python -m venv .venv
@@ -22,7 +26,19 @@ Expected PPTX:
 outputs/decks/public_thin_smoke.pptx
 ```
 
-Full template-library builds may require private template binaries that are intentionally excluded from the public-thin clean export.
+Full template-library builds require private capabilities that are intentionally excluded from the public clean export.
+
+Private runtime connection, for entitled users/operators:
+
+```powershell
+python scripts\ppt_workspace_entitlement.py activate --workspace outputs\public_smoke_workspace --workspace-code <workspace-code>
+python scripts\ppt_private_connector.py configure --workspace outputs\public_smoke_workspace --enable --private-package-repo-env PPT_AGENT_PRIVATE_PACKAGE_REPO --private-build-command-env PPT_AGENT_PRIVATE_BUILD_COMMAND_JSON
+python scripts\ppt_private_connector.py status --workspace outputs\public_smoke_workspace --github-check
+python scripts\ppt_private_connector.py install --workspace outputs\public_smoke_workspace
+python scripts\ppt_private_connector.py build --workspace outputs\public_smoke_workspace --spec data\specs\business_growth_review_spec.json --execute
+```
+
+The connector writes local request summaries under `.ppt-agent/gateway_requests/`. It does not print tokens, store raw workspace codes, upload files, or include private templates in this repository. Real high-quality generation is performed by the private runtime command or gateway after entitlement, package access, and operator/user approval are in place.
 
 ## Main Folders
 - `assets/slides/references`

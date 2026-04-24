@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "first_slide_quality_policy",
+  "status": "active",
+  "purpose": "Treat slide 1 as a dedicated cover/opener quality gate before unattended delivery.",
+  "blocking_rules": {
+    "empty_cover": {
+      "max_title_missing": 0,
+      "min_total_text_chars": 8
+    },
+    "copy_budget": {
+      "max_title_chars": 90,
+      "max_total_text_chars": 360,
+      "max_text_blocks": 6
+    },
+    "hierarchy": {
+      "title_required": true,
+      "subtitle_or_supporting_signal_required": true
+    },
+    "hero_visual": {
+      "required": true,
+      "accepted_signals": [
+        "cover_template_key",
+        "image_slot",
+        "image",
+        "strong_blank_cover_shapes"
+      ]
+    },
+    "anti_collage": {
+      "max_images": 2,
+      "max_reference_fragment_terms": 0,
+      "forbidden_terms": [
+        "reference scrap",
+        "stitched",
+        "placeholder collage",
+        "random screenshot",
+        "lorem ipsum"
+      ]
+    }
+  },
+  "feedback_contract": {
+    "report_path": "outputs/reports/first_slide_quality_validation.json",
+    "finding_fields": [
+      "deck_id",
+      "slide",
+      "severity",
+      "rule",
+      "message",
+      "suggested_fix"
+    ],
+    "delivery_blocking_severities": [
+      "error"
+    ]
+  }
+}

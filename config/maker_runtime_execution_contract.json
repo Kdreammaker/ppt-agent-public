@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "maker_runtime_execution_path",
+  "status": "active",
+  "purpose": "Run a request-linked maker path from Slack intake through normalized intake, spec composition, private build request, validation summary, and reply artifact.",
+  "pipeline": [
+    "slack_request",
+    "normalize_intake",
+    "compose_spec",
+    "private_build",
+    "validate",
+    "reply"
+  ],
+  "request_fields": [
+    "request_id",
+    "operating_mode",
+    "slack_request_path",
+    "normalized_intake_path",
+    "spec_path",
+    "private_build_request_summary",
+    "reply_path"
+  ],
+  "statuses": {
+    "built": "Private runtime command executed and returned artifact refs.",
+    "ready_for_private_build_execution": "Request is normalized and spec is composed; private build is ready but execution was not requested.",
+    "blocked": "Entitlement, connector, intake, approval, or private runtime readiness blocked the build.",
+    "needs_review": "Intake normalized with clarification or review requirements before unattended delivery."
+  },
+  "blocked_reply_requirements": [
+    "state the blocking reason",
+    "include request_id",
+    "include next action",
+    "do not claim a deck was delivered"
+  ],
+  "success_reply_requirements": [
+    "include request_id",
+    "include relative artifact refs",
+    "include validation summary refs",
+    "include remaining review notes"
+  ],
+  "asset_boundary": "Use normalized approved manifest or metadata IDs only; do not scan external raw folders.",
+  "validation_report": "outputs/reports/maker_runtime_execution_validation.json"
+}

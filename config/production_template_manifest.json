@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "workspace": "C:/Users/kimjo/Downloads/ppt-test",
+  "workspace": "ppt-test",
   "production_ready_count": 32,
   "purpose_manifest": {
     "cover": {
@@ -25,9 +25,19 @@
           "quality_score": 4.5,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
           "library_slide_no": 1,
-          "design_notes": "Clean, high-contrast cover with strong blue field and centered title. Good model for branded opening slides."
+          "design_notes": "Clean, high-contrast cover with strong blue field and centered title. Good model for branded opening slides.",
+          "best_for": [
+            "cover",
+            "sales",
+            "cover/narrative-sales"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Cover candidate; must pass first-slide quality when routed to slide 1.",
+          "domain_fit_notes": "Best fit for sales / cover content with light density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_02_v1.finance_cover_v1",
@@ -47,9 +57,19 @@
           "quality_score": 4.4,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 1,
-          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template.",
+          "best_for": [
+            "cover",
+            "sales",
+            "cover/finance-sales"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Cover candidate; must pass first-slide quality when routed to slide 1.",
+          "domain_fit_notes": "Best fit for sales / cover content with medium density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_03_v1.portfolio_cover_v1",
@@ -70,9 +90,19 @@
           "quality_score": 4.1,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
           "library_slide_no": 1,
-          "design_notes": "Best reference for screenshot-led project cases, result bullets, pill tags, and portfolio-style narrative pages."
+          "design_notes": "Best reference for screenshot-led project cases, result bullets, pill tags, and portfolio-style narrative pages.",
+          "best_for": [
+            "cover",
+            "portfolio",
+            "cover/portfolio"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Cover candidate; must pass first-slide quality when routed to slide 1.",
+          "domain_fit_notes": "Best fit for portfolio / cover content with medium density.",
+          "rejected_candidate_rationale": ""
         }
       ],
       "fallback": [],
@@ -112,9 +142,21 @@
           "quality_score": 2.7,
           "design_tier": "structure",
           "usage_policy": "curate_before_use",
+          "operational_grade": "curate_before_use",
           "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
           "library_slide_no": 22,
-          "design_notes": "Conceptually useful TOC structure, but current slide still behaves like placeholder-heavy template material."
+          "design_notes": "Conceptually useful TOC structure, but current slide still behaves like placeholder-heavy template material.",
+          "best_for": [
+            "toc",
+            "generic",
+            "toc/visual-tiles"
+          ],
+          "avoid_for": [
+            "unattended_delivery"
+          ],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for generic / toc content with dense density.",
+          "rejected_candidate_rationale": "Excluded from unattended production routing because operational_grade=curate_before_use from source usage_policy=curate_before_use."
         },
         {
           "slide_id": "template_library_04_v1.toc_simple_index_v1",
@@ -136,9 +178,21 @@
           "quality_score": 2.4,
           "design_tier": "structure",
           "usage_policy": "structure_only",
+          "operational_grade": "curate_before_use",
           "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
           "library_slide_no": 21,
-          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation.",
+          "best_for": [
+            "toc",
+            "generic",
+            "toc/simple-index"
+          ],
+          "avoid_for": [
+            "unattended_delivery"
+          ],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for generic / toc content with light density.",
+          "rejected_candidate_rationale": "Excluded from unattended production routing because operational_grade=curate_before_use from source usage_policy=structure_only."
         }
       ],
       "recommended_selector": null
@@ -167,9 +221,19 @@
           "quality_score": 4.4,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 5,
-          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template.",
+          "best_for": [
+            "summary",
+            "sales",
+            "summary/service-components"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / summary content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_01_v1.service_intro_cards_v1",
@@ -192,9 +256,19 @@
           "quality_score": 4.3,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
           "library_slide_no": 2,
-          "design_notes": "Good reference for compact service cards and icon-led grouping."
+          "design_notes": "Good reference for compact service cards and icon-led grouping.",
+          "best_for": [
+            "summary",
+            "sales",
+            "summary/service-intro-cards"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / summary content with dense density.",
+          "rejected_candidate_rationale": ""
         }
       ],
       "fallback": [
@@ -218,9 +292,21 @@
           "quality_score": 2.9,
           "design_tier": "structure",
           "usage_policy": "curate_before_use",
+          "operational_grade": "curate_before_use",
           "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
           "library_slide_no": 2,
-          "design_notes": "Useful for meeting summary structure; visual polish should be supplied by builder-generated cards and footer."
+          "design_notes": "Useful for meeting summary structure; visual polish should be supplied by builder-generated cards and footer.",
+          "best_for": [
+            "summary",
+            "generic",
+            "summary/two-panel"
+          ],
+          "avoid_for": [
+            "unattended_delivery"
+          ],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for generic / summary content with medium density.",
+          "rejected_candidate_rationale": "Excluded from unattended production routing because operational_grade=curate_before_use from source usage_policy=curate_before_use."
         }
       ],
       "recommended_selector": {
@@ -258,9 +344,19 @@
           "quality_score": 4.6,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 2,
-          "design_notes": "Good reference for evidence-led problem framing with chart plus narrative bullets."
+          "design_notes": "Good reference for evidence-led problem framing with chart plus narrative bullets.",
+          "best_for": [
+            "issue",
+            "sales",
+            "issue/pain-story"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / issue content with dense density.",
+          "rejected_candidate_rationale": ""
         }
       ],
       "fallback": [
@@ -284,9 +380,21 @@
           "quality_score": 3.0,
           "design_tier": "structure",
           "usage_policy": "curate_before_use",
+          "operational_grade": "curate_before_use",
           "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
           "library_slide_no": 17,
-          "design_notes": "2x2 issue structure is reusable, but dense business content needs custom text sizing and card treatment."
+          "design_notes": "2x2 issue structure is reusable, but dense business content needs custom text sizing and card treatment.",
+          "best_for": [
+            "issue",
+            "generic",
+            "issue/2x2-cards"
+          ],
+          "avoid_for": [
+            "unattended_delivery"
+          ],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for generic / issue content with dense density.",
+          "rejected_candidate_rationale": "Excluded from unattended production routing because operational_grade=curate_before_use from source usage_policy=curate_before_use."
         }
       ],
       "recommended_selector": {
@@ -324,9 +432,19 @@
           "quality_score": 4.4,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
           "library_slide_no": 3,
-          "design_notes": "Good screenshot-plus-outcome slide for internal proof or case-study reporting."
+          "design_notes": "Good screenshot-plus-outcome slide for internal proof or case-study reporting.",
+          "best_for": [
+            "analysis",
+            "portfolio",
+            "analysis/project-case-metric-1"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for portfolio / analysis content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_02_v1.before_after_compare_v1",
@@ -349,9 +467,19 @@
           "quality_score": 4.4,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 3,
-          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template.",
+          "best_for": [
+            "analysis",
+            "sales",
+            "analysis/before-after"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / analysis content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_02_v1.core_technology_v1",
@@ -373,9 +501,19 @@
           "quality_score": 4.4,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 7,
-          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template.",
+          "best_for": [
+            "analysis",
+            "sales",
+            "analysis/core-technology"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / analysis content with medium density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_02_v1.vertical_use_cases_v1",
@@ -398,9 +536,19 @@
           "quality_score": 4.4,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 9,
-          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template.",
+          "best_for": [
+            "analysis",
+            "sales",
+            "analysis/vertical-use-cases"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / analysis content with medium density.",
+          "rejected_candidate_rationale": ""
         }
       ],
       "fallback": [],
@@ -439,9 +587,19 @@
           "quality_score": 4.4,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 6,
-          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template.",
+          "best_for": [
+            "chart",
+            "sales",
+            "chart/proof-metrics"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / chart content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_02_v1.signal_speed_v1",
@@ -464,9 +622,19 @@
           "quality_score": 4.4,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 8,
-          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template.",
+          "best_for": [
+            "chart",
+            "sales",
+            "chart/single-metric-story"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / chart content with dense density.",
+          "rejected_candidate_rationale": ""
         }
       ],
       "fallback": [
@@ -490,9 +658,21 @@
           "quality_score": 2.4,
           "design_tier": "structure",
           "usage_policy": "structure_only",
+          "operational_grade": "curate_before_use",
           "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
           "library_slide_no": 11,
-          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation.",
+          "best_for": [
+            "chart",
+            "report",
+            "chart/financial-timeline"
+          ],
+          "avoid_for": [
+            "unattended_delivery"
+          ],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for report / chart content with dense density.",
+          "rejected_candidate_rationale": "Excluded from unattended production routing because operational_grade=curate_before_use from source usage_policy=structure_only."
         }
       ],
       "recommended_selector": {
@@ -529,9 +709,19 @@
           "quality_score": 4.4,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 10,
-          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template.",
+          "best_for": [
+            "process",
+            "sales",
+            "process/poc-steps"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / process content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_01_v1.data_method_v1",
@@ -554,9 +744,19 @@
           "quality_score": 4.2,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
           "library_slide_no": 3,
-          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm.",
+          "best_for": [
+            "process",
+            "sales",
+            "process/method-diagram"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / process content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_01_v1.service_model_v1",
@@ -578,9 +778,19 @@
           "quality_score": 4.2,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
           "library_slide_no": 7,
-          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm.",
+          "best_for": [
+            "process",
+            "sales",
+            "process/service-operating-model"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / process content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_01_v1.pilot_program_v1",
@@ -603,9 +813,19 @@
           "quality_score": 4.2,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
           "library_slide_no": 8,
-          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm.",
+          "best_for": [
+            "process",
+            "sales",
+            "process/pilot-program"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / process content with dense density.",
+          "rejected_candidate_rationale": ""
         }
       ],
       "fallback": [],
@@ -644,9 +864,19 @@
           "quality_score": 4.4,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 4,
-          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template."
+          "design_notes": "Best reference for chart, proof, and data-storytelling pages. Navy plus orange accent gives clearer hierarchy than the primary template.",
+          "best_for": [
+            "strategy",
+            "sales",
+            "strategy/signal-timeline"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / strategy content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_01_v1.sales_strategy_steps_v1",
@@ -667,9 +897,19 @@
           "quality_score": 4.2,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
           "library_slide_no": 5,
-          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm.",
+          "best_for": [
+            "strategy",
+            "sales",
+            "strategy/sales-step-story"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / strategy content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_01_v1.expansion_story_v1",
@@ -692,9 +932,19 @@
           "quality_score": 4.2,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
           "library_slide_no": 6,
-          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm.",
+          "best_for": [
+            "strategy",
+            "sales",
+            "strategy/expansion-story"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / strategy content with dense density.",
+          "rejected_candidate_rationale": ""
         }
       ],
       "fallback": [],
@@ -725,17 +975,29 @@
             "company",
             "corporate",
             "history",
-            "light",
+            "medium",
             "structured",
             "timeline"
           ],
-          "density": "light",
+          "density": "medium",
           "quality_score": 2.4,
           "design_tier": "structure",
           "usage_policy": "structure_only",
+          "operational_grade": "curate_before_use",
           "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
           "library_slide_no": 13,
-          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation.",
+          "best_for": [
+            "timeline",
+            "report",
+            "timeline/company-history"
+          ],
+          "avoid_for": [
+            "unattended_delivery"
+          ],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for report / timeline content with medium density.",
+          "rejected_candidate_rationale": "Excluded from unattended production routing because operational_grade=curate_before_use from source usage_policy=structure_only."
         },
         {
           "slide_id": "template_library_04_v1.roadmap_timeline_v1",
@@ -757,9 +1019,21 @@
           "quality_score": 2.4,
           "design_tier": "structure",
           "usage_policy": "structure_only",
+          "operational_grade": "curate_before_use",
           "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
           "library_slide_no": 5,
-          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation.",
+          "best_for": [
+            "timeline",
+            "generic",
+            "timeline/horizontal-roadmap"
+          ],
+          "avoid_for": [
+            "unattended_delivery"
+          ],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for generic / timeline content with medium density.",
+          "rejected_candidate_rationale": "Excluded from unattended production routing because operational_grade=curate_before_use from source usage_policy=structure_only."
         }
       ],
       "recommended_selector": null
@@ -788,9 +1062,21 @@
           "quality_score": 2.4,
           "design_tier": "structure",
           "usage_policy": "structure_only",
+          "operational_grade": "curate_before_use",
           "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
           "library_slide_no": 3,
-          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation.",
+          "best_for": [
+            "market",
+            "report",
+            "market/tam-sam-som"
+          ],
+          "avoid_for": [
+            "unattended_delivery"
+          ],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for report / market content with medium density.",
+          "rejected_candidate_rationale": "Excluded from unattended production routing because operational_grade=curate_before_use from source usage_policy=structure_only."
         },
         {
           "slide_id": "template_library_04_v1.market_stat_cards_v1",
@@ -812,9 +1098,21 @@
           "quality_score": 2.4,
           "design_tier": "structure",
           "usage_policy": "structure_only",
+          "operational_grade": "curate_before_use",
           "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
           "library_slide_no": 14,
-          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation.",
+          "best_for": [
+            "market",
+            "report",
+            "market/stat-cards"
+          ],
+          "avoid_for": [
+            "unattended_delivery"
+          ],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for report / market content with medium density.",
+          "rejected_candidate_rationale": "Excluded from unattended production routing because operational_grade=curate_before_use from source usage_policy=structure_only."
         }
       ],
       "recommended_selector": null
@@ -842,9 +1140,19 @@
           "quality_score": 4.1,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
           "library_slide_no": 2,
-          "design_notes": "Best reference for screenshot-led project cases, result bullets, pill tags, and portfolio-style narrative pages."
+          "design_notes": "Best reference for screenshot-led project cases, result bullets, pill tags, and portfolio-style narrative pages.",
+          "best_for": [
+            "team",
+            "portfolio",
+            "team/resume-card"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for portfolio / team content with dense density.",
+          "rejected_candidate_rationale": ""
         }
       ],
       "fallback": [
@@ -868,9 +1176,21 @@
           "quality_score": 2.4,
           "design_tier": "structure",
           "usage_policy": "structure_only",
+          "operational_grade": "curate_before_use",
           "library_path": "assets/slides/templates/decks/template_library_04_v1.pptx",
           "library_slide_no": 10,
-          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation."
+          "design_notes": "Primary template is useful for slide intent and placeholder geometry, but most curated slides are visually sparse. Prefer custom layout builders or heavy overlay curation.",
+          "best_for": [
+            "team",
+            "report",
+            "team/profile-grid"
+          ],
+          "avoid_for": [
+            "unattended_delivery"
+          ],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for report / team content with medium density.",
+          "rejected_candidate_rationale": "Excluded from unattended production routing because operational_grade=curate_before_use from source usage_policy=structure_only."
         }
       ],
       "recommended_selector": {
@@ -906,9 +1226,19 @@
           "quality_score": 4.6,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_02_v1.pptx",
           "library_slide_no": 12,
-          "design_notes": "Strong closing page with CTA, proof image, and clear contact/action hierarchy."
+          "design_notes": "Strong closing page with CTA, proof image, and clear contact/action hierarchy.",
+          "best_for": [
+            "closing",
+            "sales",
+            "closing/finance-cta"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / closing content with medium density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_01_v1.partnership_goal_v1",
@@ -931,9 +1261,19 @@
           "quality_score": 4.2,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
           "library_slide_no": 9,
-          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm.",
+          "best_for": [
+            "closing",
+            "sales",
+            "closing/partnership-goal"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / closing content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_03_v1.portfolio_closing_v1",
@@ -954,9 +1294,19 @@
           "quality_score": 4.2,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_03_v1.pptx",
           "library_slide_no": 10,
-          "design_notes": "Balanced closing layout with large title and contact modules."
+          "design_notes": "Balanced closing layout with large title and contact modules.",
+          "best_for": [
+            "closing",
+            "portfolio",
+            "closing/portfolio-thank-you"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for portfolio / closing content with dense density.",
+          "rejected_candidate_rationale": ""
         },
         {
           "slide_id": "template_library_01_v1.discussion_closing_v1",
@@ -978,9 +1328,19 @@
           "quality_score": 4.2,
           "design_tier": "production",
           "usage_policy": "production_ready",
+          "operational_grade": "production_ready",
           "library_path": "assets/slides/templates/decks/template_library_01_v1.pptx",
           "library_slide_no": 10,
-          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm."
+          "design_notes": "Strong white/navy sales-system language with thin rules, light cards, icons, and clean footer rhythm.",
+          "best_for": [
+            "closing",
+            "sales",
+            "closing/discussion-next-step"
+          ],
+          "avoid_for": [],
+          "opener_quality_notes": "Not an opener candidate unless explicitly reviewed.",
+          "domain_fit_notes": "Best fit for sales / closing content with dense density.",
+          "rejected_candidate_rationale": ""
         }
       ],
       "fallback": [],

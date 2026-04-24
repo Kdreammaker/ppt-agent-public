@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "brand_style_contract",
+  "status": "active",
+  "toolkit_dependency": {
+    "repository_url": "https://github.com/Kdreammaker/ai-asset-contribution-gate",
+    "repository_full_name": "Kdreammaker/ai-asset-contribution-gate",
+    "pin_source": "config/public_gate_toolkit_dependency_policy.json",
+    "install_mode": "pinned_external_toolkit_or_reviewed_sync_export",
+    "submodule_default": false,
+    "vendored_default": false
+  },
+  "brand_profile_shape": {
+    "required_fields": [
+      "brand_profile_id",
+      "source_contract",
+      "approval_status",
+      "palette_id",
+      "typography_id",
+      "logo_asset_id",
+      "usage_notes"
+    ],
+    "allowed_approval_statuses": [
+      "draft",
+      "review_required",
+      "approved"
+    ],
+    "runtime_required_status": "approved"
+  },
+  "sample_brand_profiles": [
+    {
+      "brand_profile_id": "brand:sample-neutral-modern:v1",
+      "source_contract": "public_gate_pinned_toolkit",
+      "approval_status": "approved",
+      "palette_id": "palette.neutral_modern_report",
+      "typography_id": "typography.neutral_modern_report.malgun_gothic",
+      "logo_asset_id": "asset:placeholder-logo:metadata-only",
+      "usage_notes": [
+        "metadata-only sample profile",
+        "no raw external asset folder scan",
+        "safe for Assistant style contract and Auto review references"
+      ]
+    }
+  ],
+  "integration_points": {
+    "assistant_style_contract": "render_ascii_blueprint style contract should cite brand_profile_id when provided",
+    "auto_review": "Auto Mode review should compare rendered outputs against brand_profile_id and palette/typography IDs",
+    "delivery_validation": "production delivery must include brand profile ID and any remaining manual review notes"
+  },
+  "asset_boundary": {
+    "consume": [
+      "approved brand profile IDs",
+      "approved metadata exports",
+      "approved manifest refs",
+      "public toolkit schemas and validators"
+    ],
+    "do_not_consume": [
+      "raw reference folders",
+      "external workspace _inbox or _work internals",
+      "unapproved intermediate metadata",
+      "local absolute external workspace paths"
+    ]
+  },
+  "validation_report": "outputs/reports/brand_style_contract_validation.json"
+}

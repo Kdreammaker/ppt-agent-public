@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "public_private_runtime_connector",
+  "contract_version": "0.1.0",
+  "status": "public_safe_connector_contract",
+  "purpose": "Let the public CLI install and operate as the public control plane while entitled high-quality PPT generation stays in a private repository, private package, or private gateway.",
+  "public_repo_role": [
+    "install runtime dependencies",
+    "initialize local workspaces",
+    "run local public-safe smoke builds",
+    "activate or check workspace-code entitlement",
+    "configure private repository or gateway connectivity",
+    "install or update the private runtime package into a local workspace-controlled path",
+    "invoke the private CLI build entrypoint without exposing private source, templates, binaries, secrets, or work logs"
+  ],
+  "private_repo_or_gateway_role": [
+    "own high-quality template-library generation capability",
+    "own private template binaries and design DNA",
+    "own premium assets and materialization policy",
+    "own real activation counters, revocation, rotation, user audit, and daily quota",
+    "own signed private package or gateway response generation"
+  ],
+  "capabilities": {
+    "private_package_install": {
+      "required_entitlement": "private_package_access",
+      "expected_user_value": "install or update the private runtime package needed for production-quality PPT generation",
+      "public_cli_default": "dry_run_plan",
+      "real_execution_requires": [
+        "workspace-code entitlement",
+        "private package repository or signed package endpoint",
+        "GitHub CLI auth or operator-managed package credentials",
+        "no raw secret in committed files"
+      ]
+    },
+    "private_template_library_build": {
+      "required_entitlement": "private_package_access",
+      "expected_user_value": "full template-library based high-quality PPT generation",
+      "public_cli_default": "execute_private_cli_when_installed_and_configured",
+      "expected_outputs": [
+        "pptx",
+        "html"
+      ],
+      "expected_validation_signals": [
+        "pptx_package",
+        "html_output",
+        "design_quality",
+        "deck_design_review"
+      ],
+      "real_execution_requires": [
+        "workspace-code entitlement",
+        "private runtime package installed or private gateway endpoint configured",
+        "private build command configured by package, environment, or operator",
+        "no raw secret in committed files"
+      ],
+      "fallback": "public_smoke_blank_spec"
+    }
+  },
+  "operating_modes": {
+    "auto": {
+      "mode_policy_ref": "config/mode_policies/auto_mode_policy.json",
+      "private_capability": "private_template_library_build",
+      "approval_expectation": "nonblocking_policy_record",
+      "requires_explicit_continue_for_build": false,
+      "expected_report_artifacts": [
+        "request_summary",
+        "slide_selection_rationale",
+        "auto_self_correction",
+        "quality_gate_summary"
+      ]
+    },
+    "assistant": {
+      "mode_policy_ref": "config/mode_policies/assistant_mode_policy.json",
+      "private_capability": "private_template_library_build",
+      "approval_expectation": "explicit_approve_revise_continue_or_skip_before_final_build_when_review_is_requested",
+      "requires_explicit_continue_for_build": true,
+      "expected_report_artifacts": [
+        "request_summary",
+        "ascii_blueprint",
+        "assistant_visual_recommendations",
+        "quality_gate_summary"
+      ]
+    }
+  },
+  "configuration": {
+    "workspace_config_path": ".ppt-agent/private_connector.json",
+    "request_summary_dir": ".ppt-agent/gateway_requests/",
+    "private_package_install_root": ".ppt-agent/private_runtime",
+    "gateway_url_env": "PPT_AGENT_PRIVATE_GATEWAY_URL",
+    "private_package_repo_env": "PPT_AGENT_PRIVATE_PACKAGE_REPO",
+    "private_package_ref_env": "PPT_AGENT_PRIVATE_PACKAGE_REF",
+    "private_build_command_env": "PPT_AGENT_PRIVATE_BUILD_COMMAND_JSON",
+    "default_operating_mode": "auto",
+    "credential_policy": "Use OS keychain, GitHub CLI auth, or external operator-managed secret stores only. Never commit or print tokens.",
+    "github_cli_required_for_private_package_repo": true
+  },
+  "forbidden_public_payloads": [
+    "private_template_binaries",
+    "private_design_dna",
+    "private_asset_binaries",
+    "raw_workspace_code",
+    "gateway_token",
+    "github_token",
+    "source_file_contents",
+    "generated_pptx_binary",
+    "generated_html_document",
+    "work_logs",
+    "local_absolute_private_paths"
+  ],
+  "allowed_public_request_fields": [
+    "request_id",
+    "capability",
+    "workspace_policy",
+    "operating_mode",
+    "approval_expectation",
+    "mode_policy_ref",
+    "mode_report_artifacts",
+    "workspace_code_mask",
+    "entitlements",
+    "package_channel",
+    "gateway_endpoint_configured",
+    "private_package_repo_configured",
+    "private_package_installed",
+    "private_build_command_configured",
+    "consent_summary",
+    "artifact_manifest_refs",
+    "spec_path",
+    "output_path"
+  ],
+  "blockers_for_real_execution": [
+    "private package repository or signed package endpoint not configured for the operator",
+    "private runtime build command not installed or configured",
+    "real external user activation and quota system not deployed beyond invite-beta fixtures",
+    "legal/product approval for invite-beta private package distribution still required"
+  ],
+  "validation_expectations": [
+    "public connector status works without secrets",
+    "private package install dry run writes local summary only",
+    "private build dry run writes local summary only",
+    "raw workspace codes and tokens never appear in connector reports",
+    "CLI build execution is blocked unless a private build command is configured",
+    "private build execution can return dual-output artifact paths and validation summaries without exposing private absolute paths",
+    "Auto and Assistant operating modes are passed through as request metadata with distinct approval expectations",
+    "clean export includes connector code and contract but no private assets"
+  ]
+}

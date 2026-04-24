@@ -4,9 +4,9 @@
 
 `config/template_design_dna.json` stores selection metadata derived from the reference catalog and blueprints. It describes tone, structure, visual weight, capacity, and footer support without changing template geometry.
 
-For the current migration checkpoint, remaining work, and recommended next bundles, see [TEMPLATE_FIRST_ROADMAP.md](</C:/Users/kimjo/Downloads/ppt-test/docs/TEMPLATE_FIRST_ROADMAP.md>).
+For the current migration checkpoint, remaining work, and recommended next bundles, see [TEMPLATE_FIRST_ROADMAP.md](<docs/TEMPLATE_FIRST_ROADMAP.md>).
 
-For the next post-CTO execution bundles, see [TEMPLATE_FIRST_NEXT_EXECUTION_PLAN.md](</C:/Users/kimjo/Downloads/ppt-test/docs/TEMPLATE_FIRST_NEXT_EXECUTION_PLAN.md>).
+For the next post-CTO execution bundles, see [TEMPLATE_FIRST_NEXT_EXECUTION_PLAN.md](<docs/TEMPLATE_FIRST_NEXT_EXECUTION_PLAN.md>).
 
 ## Blueprint Model
 - `slide_id`

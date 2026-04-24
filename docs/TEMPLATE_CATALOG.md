@@ -1,6 +1,6 @@
 # Template Catalog
 
-원본 템플릿 [assets/slides/references/template.pptx](</C:/Users/kimjo/Downloads/ppt-test/assets/slides/references/template.pptx>)에서 실제 재사용 가치가 높은 슬라이드만 추려 정리한 카탈로그입니다.
+원본 템플릿 [assets/slides/references/template.pptx](<assets/slides/references/template.pptx>)에서 실제 재사용 가치가 높은 슬라이드만 추려 정리한 카탈로그입니다.
 
 ## Validated Slides
 - `1` `cover_right_brand`

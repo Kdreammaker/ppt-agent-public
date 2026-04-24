@@ -80,7 +80,7 @@
 - slide 전체를 가져오는 방식이 무겁거나 위험할 때는 `component_canvas`와 `source_mode: blank`를 쓴다.
 - 반복되는 디자인 유닛은 `title_block`, `kpi_card`, `insight_card`, `toc_tiles`, `process_flow`, `timeline`, `browser_mock`, `callout_bar`로 조립한다.
 - 컴포넌트는 원본 reference의 디자인 문법을 작게 분해한 단위다. 따라서 “좋은 slide를 통째로 복사”하는 대신 “좋은 slide의 문법을 재사용”할 수 있다.
-- 자세한 컴포넌트 규칙은 [COMPONENT_SYSTEM.md](</C:/Users/kimjo/Downloads/ppt-test/docs/COMPONENT_SYSTEM.md>)를 따른다.
+- 자세한 컴포넌트 규칙은 [COMPONENT_SYSTEM.md](<docs/COMPONENT_SYSTEM.md>)를 따른다.
 
 ## Quality Checklist
 - 제목이 2줄을 넘으면 의도된 줄바꿈인지 확인한다.
@@ -92,10 +92,10 @@
 - `pptx -> pdf -> preview image` 렌더링을 반드시 거친다.
 
 ## 산출물
-- 디자인 분석 결과: [REFERENCE_DESIGN_AUDIT.md](</C:/Users/kimjo/Downloads/ppt-test/docs/REFERENCE_DESIGN_AUDIT.md>)
-- 스타일 프로필: [reference_style_profiles.json](</C:/Users/kimjo/Downloads/ppt-test/config/reference_style_profiles.json>)
-- 품질 override: [template_quality_overrides.json](</C:/Users/kimjo/Downloads/ppt-test/config/template_quality_overrides.json>)
-- 통합 catalog: [reference_catalog.json](</C:/Users/kimjo/Downloads/ppt-test/config/reference_catalog.json>)
+- 디자인 분석 결과: [REFERENCE_DESIGN_AUDIT.md](<docs/REFERENCE_DESIGN_AUDIT.md>)
+- 스타일 프로필: [reference_style_profiles.json](<config/reference_style_profiles.json>)
+- 품질 override: [template_quality_overrides.json](<config/template_quality_overrides.json>)
+- 통합 catalog: [reference_catalog.json](<config/reference_catalog.json>)
 
 ## 현재 구현 상태
 - 주요 일반 레이아웃은 `system/layouts/` 모듈로 분리되어 `LayoutRegistry`에서 등록한다.

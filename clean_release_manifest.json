@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-04-23T06:34:03.031985Z",
+  "generated_at": "2026-04-24T02:32:11.652801Z",
   "policy_id": "clean_release_export_policy",
   "audience": "public_thin_installer_candidate",
   "source": "git ls-files",
-  "output_root": "C:/Users/kimjo/Downloads/ppt-test/outputs/clean_release_export/ppt-agent-public",
+  "output_root": "outputs/clean_release_export/ppt-agent-public",
   "summary": {
-    "tracked_files": 309,
-    "exported_files": 185,
-    "excluded_candidates": 94,
+    "tracked_files": 339,
+    "exported_files": 199,
+    "excluded_candidates": 110,
     "allowlisted_deny_matches": 0,
     "token_hits": 0,
     "required_missing": 0,
@@ -39,8 +39,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 3987,
-      "sha256": "fffc975002608c1617a7123f5531afe68c025a4d5d0498271a373b42c1d8fb2d"
+      "size_bytes": 5752,
+      "sha256": "ad82b97a8da50ae56875b10f4d32809741ce3d0815032741da26896d98dd4e4f"
     },
     {
       "path": "assets/fonts/README.md",
@@ -58,6 +58,11 @@
       "sha256": "24d82a73afeb8b008b457892b6367b9507023f78c65496bb32ebb1ff2581c0fb"
     },
     {
+      "path": "config/auto_mode_pipeline_policy.json",
+      "size_bytes": 1006,
+      "sha256": "106f54b144c27762e747ba182cca82748fd4c311ef3f98446b61655020722f2c"
+    },
+    {
       "path": "config/beta_output_quality_policy.json",
       "size_bytes": 1173,
       "sha256": "0291ed774110c543e2a42316ec0d785f169bc234bd171d3b0abf259cc17fbe7c"
@@ -66,6 +71,11 @@
       "path": "config/blueprint_mode_policy.json",
       "size_bytes": 990,
       "sha256": "10d6ff1022ccb767c868a4d1702ae5555f4d5732abb74c11ffa0038b5d80013d"
+    },
+    {
+      "path": "config/brand_style_contract.json",
+      "size_bytes": 2293,
+      "sha256": "358e0e9b65e078be5011b868723e73ec0bb6acd30ab199f11e3b9513fc18111a"
     },
     {
       "path": "config/deck_design_review_gate.json",
@@ -83,9 +93,19 @@
       "sha256": "e41b3b3942975e04bfba09cbb1a193b5aff611cdc6756dfe0ac2a4e17bd6bf52"
     },
     {
+      "path": "config/delivery_summary_contract.json",
+      "size_bytes": 1271,
+      "sha256": "3ecc9c0a111733dcd74b1a45353a512945931a63123e97864192766664866a78"
+    },
+    {
       "path": "config/document_rag_intake_evaluation_policy.json",
       "size_bytes": 12722,
       "sha256": "fd5e4f768aeb4cffbc31ac19dab5ff50b8b19d271a5ebbe9d54152a2e4e6ebb0"
+    },
+    {
+      "path": "config/first_slide_quality_policy.json",
+      "size_bytes": 1286,
+      "sha256": "4aff841294d4564b3b677cf4ad40f76ddd412d53d6197a054cac810de3287d21"
     },
     {
       "path": "config/gateway_metadata_recommendation_mock.json",
@@ -103,6 +123,11 @@
       "sha256": "0ccd1ca05eb1fd85cecba1a231d5f804eb12036a26f4e5cb354ec6c264d8ce02"
     },
     {
+      "path": "config/maker_runtime_execution_contract.json",
+      "size_bytes": 1602,
+      "sha256": "c978e89a46fc836f4443d32509af6ccad20e428789301e33d7bfc77fdfd1969a"
+    },
+    {
       "path": "config/mcp_adapter_manifest.json",
       "size_bytes": 4866,
       "sha256": "a31be54f4648acfa181f046e11dd285eeeb28741de1901cbb457b3d8f3c45050"
@@ -114,8 +139,8 @@
     },
     {
       "path": "config/mode_policies/auto_mode_policy.json",
-      "size_bytes": 1356,
-      "sha256": "dc9cdc81687972bec2824fae3d84016436fb9d5174f5b4804c60e4d5db06d778"
+      "size_bytes": 2074,
+      "sha256": "036c34a5034164608b598267526fd39669caa341b8461d933f264dffe5f5a532"
     },
     {
       "path": "config/mode_policies/schema.json",
@@ -158,9 +183,14 @@
       "sha256": "1e34801cc7fc33d0acc27a6fa598ffee37c08fd7dafe3ae222e24d7f4948c99e"
     },
     {
+      "path": "config/production_build_bundle_policy.json",
+      "size_bytes": 1209,
+      "sha256": "f8f9f3f7280e20f1493cd66de44fe68db3c78d6f8759ab624312be8c83789391"
+    },
+    {
       "path": "config/production_template_manifest.json",
-      "size_bytes": 37490,
-      "sha256": "2e028b203fe24d7321ca55240e2b6ec0b665eed8b958c936bbabe4f3276073f0"
+      "size_bytes": 53965,
+      "sha256": "61abd3c804f3bcd61c1f08e06f89600e292f748a142de11a19c8108310703f04"
     },
     {
       "path": "config/project_manifest.schema.json",
@@ -169,8 +199,8 @@
     },
     {
       "path": "config/public_cli_command_contract.json",
-      "size_bytes": 14208,
-      "sha256": "e77ed189ecd0b191d74f9f89311e4badb1704cb1a9f63452c45cd50b4f4569f3"
+      "size_bytes": 14910,
+      "sha256": "80a9d9cff4304cb3693f82f8bc126d5b232a20d7b1dd92434fa3ca633b46feba"
     },
     {
       "path": "config/public_gate_sync_manifest_fixture.json",
@@ -193,9 +223,14 @@
       "sha256": "d2e66b3a036704d39f59c24517314bd7535a613ced4366c489ba29bd5f781892"
     },
     {
+      "path": "config/public_private_runtime_connector_contract.json",
+      "size_bytes": 6152,
+      "sha256": "8f70db83a2b0292938665ac8348ecdce487fdde43187b4c0f2004899c29882df"
+    },
+    {
       "path": "config/reference_catalog.json",
-      "size_bytes": 65547,
-      "sha256": "85be07f66687d5f66886ff75f39079f04d6969a1416af15f874b64b68e94c326"
+      "size_bytes": 65515,
+      "sha256": "7063b7a8aede4c9b1f23e377bc6036a4494d52d2d8d68811d0a9f0ad10ae8c85"
     },
     {
       "path": "config/reference_curation_catalog.json",
@@ -239,8 +274,8 @@
     },
     {
       "path": "config/reference_style_profiles.json",
-      "size_bytes": 74961,
-      "sha256": "ce194230759877afaaa59af3fe4a7a6fa31d0c491d03057b573531fb459d16ae"
+      "size_bytes": 74929,
+      "sha256": "aac3aed298e4cebc77360b52048c7afa45977e82d65aa7b82fca03638563ee5b"
     },
     {
       "path": "config/run_manifest.schema.json",
@@ -251,6 +286,11 @@
       "path": "config/security_permission_policy.json",
       "size_bytes": 3956,
       "sha256": "b81542b293c7ad4faaf8d3a9633855695cd315573b58a0644ddc8abdd0fc9629"
+    },
+    {
+      "path": "config/slack_intake_contract.json",
+      "size_bytes": 2483,
+      "sha256": "c41fddcb04d26f1a8473c781613fc49817d6b492396a73e1f14af32e547270f2"
     },
     {
       "path": "config/slide_feedback_memory.json",
@@ -294,8 +334,8 @@
     },
     {
       "path": "config/template_catalog.json",
-      "size_bytes": 3427,
-      "sha256": "b06d5513b146a8969b3579fcf0872fb2d4cd667c3a8a1ffb06637090b51225b2"
+      "size_bytes": 3488,
+      "sha256": "5cf6579b5fac05d22784603afc07fd6c72176c6c6b114586104587ffd0ee85d0"
     },
     {
       "path": "config/template_design_dna.json",
@@ -309,8 +349,13 @@
     },
     {
       "path": "config/template_library_catalog.json",
-      "size_bytes": 14465,
-      "sha256": "6337d667e34bcc992918094d8795225d49790e7520929686d86bff27015bba3f"
+      "size_bytes": 14875,
+      "sha256": "d4293e3708abeb6c6b84fc6e6edd7d4927bf1dae5111047e5d2581fc3ef2e46a"
+    },
+    {
+      "path": "config/template_library_grading_policy.json",
+      "size_bytes": 1066,
+      "sha256": "7ca935152da8bb7f540d7f4826afba68de7df3bbaeaf1f24410e9ac1590100af"
     },
     {
       "path": "config/template_pattern_catalog.json",
@@ -464,8 +509,8 @@
     },
     {
       "path": "data/specs/template_slide_sample_spec.json",
-      "size_bytes": 851,
-      "sha256": "d53398030908e3d9d594d95daa2c1b309dc3479ceae660320f5ec1117d39e597"
+      "size_bytes": 910,
+      "sha256": "19a0b62df7eb2a5e2ab6d69217bde8b48a788a037142086836cee5f58aad48f7"
     },
     {
       "path": "data/specs/travel_experience_plan_spec.json",
@@ -489,8 +534,8 @@
     },
     {
       "path": "docs/ASSET_AWARE_SPEC_COMPOSER.md",
-      "size_bytes": 2592,
-      "sha256": "10054c098c27b5b5df880a5a2e1567de8d4d13c3d0c1a54fd69a28b1ca7ac03f"
+      "size_bytes": 2618,
+      "sha256": "572729d759beef2aa9201c365b9119bd2c2a274ef1ebc67f81338ec1282f2e68"
     },
     {
       "path": "docs/CI_PR_GATE.md",
@@ -514,8 +559,8 @@
     },
     {
       "path": "docs/DESIGN.md",
-      "size_bytes": 8106,
-      "sha256": "80b501f3ee272a0b413148a3894648fae0b4b8838264d7d87c23e31c6b5b717f"
+      "size_bytes": 8035,
+      "sha256": "462fac6b765e4f3d10476bc1bd2848ac6a85d9f44b7e5941476360736185d8fb"
     },
     {
       "path": "docs/DESIGN_AGENT_PROMPT_CROSSWALK.md",
@@ -573,6 +618,11 @@
       "sha256": "76d9b33d76bee69b0690b052dfb3d77bd72f441e9abbd624144f6321f70c3c28"
     },
     {
+      "path": "docs/PUBLIC_PRIVATE_RUNTIME_LINK.md",
+      "size_bytes": 4287,
+      "sha256": "2c0cbc0c2932a4bfa81914f56282f73cd6db8f3cbb2559c360257fcd89cbaea4"
+    },
+    {
       "path": "docs/REFERENCE_DESIGN_AUDIT.md",
       "size_bytes": 5391,
       "sha256": "cab577e370b42e11d83501e8f98dc1f3d271d92d44d7bececb599aaf7a3b8e62"
@@ -604,13 +654,13 @@
     },
     {
       "path": "docs/TEMPLATE_BLUEPRINT_GUIDE.md",
-      "size_bytes": 7773,
-      "sha256": "faf3c969c1031dcf5b9b20cbecc0037beef6f2f4e5aefce8292c8398565ce535"
+      "size_bytes": 7828,
+      "sha256": "60fe84efb5748560b6d0083715cc783f2f90c2ad190110e67486391b759627b0"
     },
     {
       "path": "docs/TEMPLATE_CATALOG.md",
-      "size_bytes": 1873,
-      "sha256": "707fb89088e56cea35342fe1d090b7f181a2f1cb96cd990b8e2af088875d13c8"
+      "size_bytes": 1882,
+      "sha256": "114e5c8a7d3ec170576aa1ed0324e08e970e6b1e0e12335fddde14f1a9c2bd38"
     },
     {
       "path": "docs/TEMPLATE_DESIGN_DNA.md",
@@ -693,6 +743,11 @@
       "sha256": "a7d04a284beff3346b0e71b9635530d3bcfd6730aebb4bfeb7f1065dbf216877"
     },
     {
+      "path": "scripts/build_delivery_summary.py",
+      "size_bytes": 5942,
+      "sha256": "2a4fbec663549e369764ccaec9de48eae2b7954824cb05002f27f924afef4d70"
+    },
+    {
       "path": "scripts/build_dual_outputs.py",
       "size_bytes": 5246,
       "sha256": "7f7bf36514e9be932b2bbfeafb04cd923e8ba1829577b9d909a3b6d870454628"
@@ -714,8 +769,8 @@
     },
     {
       "path": "scripts/build_production_template_index.py",
-      "size_bytes": 6685,
-      "sha256": "d545841504544304fc01458581a5db5ca67c2c71e3ec138130163cd47a8b7b3d"
+      "size_bytes": 7826,
+      "sha256": "a673784454eb6910ad2fb997060c21a44b32c7525bd1fbe87fbfc0ca1d941c76"
     },
     {
       "path": "scripts/build_reference_catalog.py",
@@ -798,6 +853,11 @@
       "sha256": "a8fe26d0c84e1a0af84f88b3473c65b3e592fa96fd490dd0da229963f6b4b576"
     },
     {
+      "path": "scripts/maker_runtime.py",
+      "size_bytes": 8013,
+      "sha256": "2a3b5c7c0bc60e9d9a6980f3cb7929888cc9c7274ff908be3fcf6c9f26ab2435"
+    },
+    {
       "path": "scripts/manage_template_slot_names.py",
       "size_bytes": 22469,
       "sha256": "a8da540bc2f04ee21df7796cca8da957ead29b4b1add804f5903b18d8c22527a"
@@ -816,6 +876,11 @@
       "path": "scripts/normalize_reference_files.py",
       "size_bytes": 10307,
       "sha256": "3e6dc077667945696848a7f06b75e72ddc23031421030845d8687d00ef324f91"
+    },
+    {
+      "path": "scripts/normalize_slack_intake.py",
+      "size_bytes": 10942,
+      "sha256": "f4503e04f31bf7d967fc7eb68cb4e5e2c4f9385112c08c4c44c5c3543d894260"
     },
     {
       "path": "scripts/output_bundles.py",
@@ -841,6 +906,11 @@
       "path": "scripts/ppt_cli_workspace.py",
       "size_bytes": 27744,
       "sha256": "631dbb1da20e88e0c3e9bdf321437e216bb8e5aee2cd667734665ce7e776babf"
+    },
+    {
+      "path": "scripts/ppt_private_connector.py",
+      "size_bytes": 31677,
+      "sha256": "b6a8004da2d8d73897683ebadc43868046d16f91293c459b39ed714b31aeeaa5"
     },
     {
       "path": "scripts/ppt_support_bundle.py",
@@ -943,577 +1013,6 @@
       "sha256": "36eb66d99e8a1d3925fba16f3d457779268d2031c9a905f7ffe9156fd50bf247"
     }
   ],
-  "excluded_candidates": [
-    {
-      "path": ".github/workflows/regression-gate.yml",
-      "patterns": [
-        "^\\.github/workflows/regression-gate\\.yml$"
-      ]
-    },
-    {
-      "path": "config/beta_documentation_pack_policy.json",
-      "patterns": [
-        "beta_documentation_pack_policy"
-      ]
-    },
-    {
-      "path": "config/beta_packaging_dry_run_policy.json",
-      "patterns": [
-        "beta_packaging_dry_run"
-      ]
-    },
-    {
-      "path": "config/clean_release_export_policy.json",
-      "patterns": [
-        "clean_release_export_policy"
-      ]
-    },
-    {
-      "path": "config/invite_beta_acceptance_matrix.json",
-      "patterns": [
-        "(^|/)invite_beta_.*"
-      ]
-    },
-    {
-      "path": "config/invite_beta_final_qa_policy.json",
-      "patterns": [
-        "(^|/)invite_beta_.*"
-      ]
-    },
-    {
-      "path": "config/invite_beta_release_boundary.json",
-      "patterns": [
-        "(^|/)invite_beta_.*"
-      ]
-    },
-    {
-      "path": "config/invite_beta_release_candidate_gate.json",
-      "patterns": [
-        "(^|/)invite_beta_.*"
-      ]
-    },
-    {
-      "path": "config/output_delivery_policy.json",
-      "patterns": [
-        "output_delivery_policy"
-      ]
-    },
-    {
-      "path": "config/output_delivery_policy.schema.json",
-      "patterns": [
-        "output_delivery_policy"
-      ]
-    },
-    {
-      "path": "config/post_beta_cto_product_review_policy.json",
-      "patterns": [
-        "^.*cto.*review.*$"
-      ]
-    },
-    {
-      "path": "config/private_admin_gateway_activation_service_contract.json",
-      "patterns": [
-        "(^|/)private_.*"
-      ]
-    },
-    {
-      "path": "config/private_gateway_contract_v0.json",
-      "patterns": [
-        "(^|/)private_.*"
-      ]
-    },
-    {
-      "path": "config/private_invite_installer_boundary.json",
-      "patterns": [
-        "(^|/)private_.*"
-      ]
-    },
-    {
-      "path": "config/public_private_repo_split_policy.json",
-      "patterns": [
-        "public_private_repo_split_policy"
-      ]
-    },
-    {
-      "path": "config/workspace_code_issuance_policy.json",
-      "patterns": [
-        "workspace_code_issuance"
-      ]
-    },
-    {
-      "path": "docs/EXTERNAL_ASSET_SYSTEM_INTEGRATION_PREP.md",
-      "patterns": [
-        "^docs/EXTERNAL_ASSET_SYSTEM_INTEGRATION_PREP\\.md$"
-      ]
-    },
-    {
-      "path": "docs/PPT_DESIGN_ASSET_LIBRARY.md",
-      "patterns": [
-        "^docs/PPT_DESIGN_ASSET_LIBRARY\\.md$"
-      ]
-    },
-    {
-      "path": "docs/PRIVATE_ADMIN_GATEWAY_ACTIVATION_SERVICE.md",
-      "patterns": [
-        "(^|/)private_.*"
-      ]
-    },
-    {
-      "path": "docs/reference_review_inputs/b19_legacy_seafood_canonical_labels.json",
-      "patterns": [
-        "(^|/)reference_review_inputs/"
-      ]
-    },
-    {
-      "path": "docs/reference_review_inputs/b9_generated_015_labels.json",
-      "patterns": [
-        "(^|/)reference_review_inputs/"
-      ]
-    },
-    {
-      "path": "scripts/build_beta_packaging_dry_run.py",
-      "patterns": [
-        "beta_packaging_dry_run"
-      ]
-    },
-    {
-      "path": "scripts/build_clean_release_export.py",
-      "patterns": [
-        "^scripts/build_clean_release_export\\.py$"
-      ]
-    },
-    {
-      "path": "scripts/run_regression_gate.py",
-      "patterns": [
-        "^scripts/run_regression_gate\\.py$"
-      ]
-    },
-    {
-      "path": "scripts/test_industry_spec_composer.py",
-      "patterns": [
-        "^scripts/test_"
-      ]
-    },
-    {
-      "path": "scripts/test_intake_composer_guardrails.py",
-      "patterns": [
-        "^scripts/test_"
-      ]
-    },
-    {
-      "path": "scripts/test_llm_summary_guardrail.py",
-      "patterns": [
-        "^scripts/test_"
-      ]
-    },
-    {
-      "path": "scripts/test_runtime_enhancements.py",
-      "patterns": [
-        "^scripts/test_"
-      ]
-    },
-    {
-      "path": "scripts/test_variation_penalty.py",
-      "patterns": [
-        "^scripts/test_"
-      ]
-    },
-    {
-      "path": "scripts/validate_ascii_blueprint.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_asset_aware_composer.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_assistant_visual_recommendations.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_auto_self_correction_report.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_beta_documentation_pack.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_beta_output_quality.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_beta_packaging_dry_run.py",
-      "patterns": [
-        "beta_packaging_dry_run",
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_blueprint_mode_policy.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_chart_table_slots.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_clean_release_export.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_cli_history.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_deck_design_review.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_deck_intake.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_design_quality.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_document_rag_intake_evaluation.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_dual_output_flow.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_gateway_contract_hardening.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_gateway_metadata_recommendation_mock.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_golden_path_beta_ux.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_html_output.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_invite_beta_acceptance_matrix.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_invite_beta_final_qa.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_invite_beta_release_boundary.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_invite_beta_release_candidate_gate.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_local_diagnostic_support_bundle.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_local_path_hardening.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_mcp_adapter.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_mode_policies.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_output_delivery_manifest.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_output_delivery_policy.py",
-      "patterns": [
-        "output_delivery_policy",
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_output_quality_gates.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_pattern_selection_intelligence.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_post_beta_cto_product_review.py",
-      "patterns": [
-        "^.*cto.*review.*$",
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_ppt_asset_catalog.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_pptx_package.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_private_admin_gateway_activation_service.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_private_gateway_contract.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_private_invite_installer.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_project_manifest.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_public_cli_contract.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_public_cli_workspace.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_public_gate_sync_path.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_public_gate_toolkit_dependency.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_public_private_ci_boundary.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_public_private_repo_split.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_public_thin_ppt_smoke.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_reference_curation.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_reference_deck_index.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_reference_knowledge_graph.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_reference_quality_dna.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_reference_slide_metadata.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_run_manifest.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_security_permission_policy.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_slide_feedback_memory.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_spec_patch_flow.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_template_blueprints.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_template_design_dna.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_template_pattern_catalog.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_template_text_dna_cleanup.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_visual_content_image_gate.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_visual_drift.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_visual_smoke.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_workspace_code_admin_fixtures.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_workspace_code_entitlement.py",
-      "patterns": [
-        "^scripts/validate_"
-      ]
-    },
-    {
-      "path": "scripts/validate_workspace_code_issuance_masking.py",
-      "patterns": [
-        "workspace_code_issuance",
-        "^scripts/validate_"
-      ]
-    }
-  ],
-  "allowlisted_deny_matches": [],
   "token_hits": [],
   "required_missing": [],
   "required_sample_missing": [],

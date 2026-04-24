@@ -277,8 +277,8 @@
     },
     {
       "name": "gateway",
-      "purpose": "Configure optional metadata-first gateway mode, activate workspace-code entitlement, inspect request summaries, and dry-run fixture-backed metadata recommendation mocks.",
-      "current_status": "implemented_workspace_code_entitlement_and_metadata_mock",
+      "purpose": "Configure optional metadata-first gateway mode, activate workspace-code entitlement, inspect request summaries, install/update the private runtime package, and invoke private package or gateway PPT generation without exposing private assets.",
+      "current_status": "implemented_workspace_code_entitlement_metadata_mock_and_private_cli_runtime_connector",
       "local_only_supported": true,
       "gateway_required": false,
       "upload_default": false,
@@ -288,6 +288,11 @@
           "python scripts/ppt_workspace_entitlement.py activate --workspace <workspace> --workspace-code <code>",
           "python scripts/ppt_workspace_entitlement.py status --workspace <workspace>",
           "python scripts/ppt_workspace_entitlement.py check --workspace <workspace> --feature <feature>",
+          "python scripts/ppt_private_connector.py configure --workspace <workspace> --enable",
+          "python scripts/ppt_private_connector.py status --workspace <workspace>",
+          "python scripts/ppt_private_connector.py install --workspace <workspace>",
+          "python scripts/ppt_private_connector.py preflight --workspace <workspace>",
+          "python scripts/ppt_private_connector.py build --workspace <workspace> --spec <spec> --execute",
           "python scripts/mock_gateway_metadata_recommendation.py --spec <spec> --check"
         ],
         "planned_entrypoint": "ppt-agent gateway configure"
@@ -298,11 +303,15 @@
         "requested_feature",
         "gateway_enabled",
         "metadata_visible",
+        "private_package_repo",
+        "private_package_ref",
+        "private_build_command",
         "file_upload_allowed",
         "mode"
       ],
       "outputs": [
         ".ppt-agent/gateway.json",
+        ".ppt-agent/private_connector.json",
         ".ppt-agent/entitlement.json",
         ".ppt-agent/gateway_requests/",
         "reports/gateway_metadata_recommendation_mock.json"
