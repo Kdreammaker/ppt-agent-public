@@ -925,6 +925,9 @@ def add_source_slides(
             continue
 
         path = resolved["presentation_path"]
+        if path is None or not Path(path).exists():
+            prs.slides.add_slide(find_blank_layout(prs))
+            continue
         if path not in source_cache:
             source_cache[path] = Presentation(str(path))
         src_slide = source_cache[path].slides[resolved["slide_no"] - 1]

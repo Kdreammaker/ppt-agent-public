@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "private_auto_assistant_mode_parity",
+  "status": "active",
+  "purpose": "Expose the existing private Auto and Assistant mode behaviors through the public/private connector without rebuilding private runtime logic in this repo.",
+  "runtime_boundary": {
+    "public_role": "Normalize and pass the requested operating_mode, approval expectation, spec path, output refs, and artifact manifest refs.",
+    "private_role": "Own actual Auto and Assistant generation behavior, review loops, template binaries, private design DNA, and premium assets.",
+    "asset_boundary": "Consume approved export manifests and metadata only; do not scan raw external asset-system folders."
+  },
+  "operating_modes": {
+    "auto": {
+      "mode_policy_file": "config/mode_policies/auto_mode_policy.json",
+      "private_entrypoint": "private_template_library_build",
+      "connector_argument": "--operating-mode auto",
+      "approval_expectation": "nonblocking_policy_record",
+      "review_behavior": "record preflight, assumptions, selected template family, validation signals, and revision evidence when the private runtime performs multi-pass work",
+      "requires_explicit_continue_for_build": false,
+      "expected_report_artifacts": [
+        "request_summary",
+        "slide_selection_rationale",
+        "auto_self_correction",
+        "quality_gate_summary"
+      ]
+    },
+    "assistant": {
+      "mode_policy_file": "config/mode_policies/assistant_mode_policy.json",
+      "private_entrypoint": "private_template_library_build",
+      "connector_argument": "--operating-mode assistant",
+      "approval_expectation": "explicit_approve_revise_continue_or_skip_before_final_build_when_review_is_requested",
+      "review_behavior": "surface structure/style choices, questions, approval points, and review-required findings before unattended delivery",
+      "requires_explicit_continue_for_build": true,
+      "expected_report_artifacts": [
+        "request_summary",
+        "ascii_blueprint",
+        "assistant_visual_recommendations",
+        "quality_gate_summary"
+      ]
+    }
+  },
+  "connector_fields": [
+    "operating_mode",
+    "approval_expectation",
+    "mode_policy_ref",
+    "mode_report_artifacts"
+  ],
+  "maker_runtime_request_shape": {
+    "required": [
+      "request_id",
+      "operating_mode",
+      "normalized_intake_ref",
+      "spec_path",
+      "private_build_capability"
+    ],
+    "private_build_capability": "private_template_library_build",
+    "allowed_operating_modes": [
+      "auto",
+      "assistant"
+    ],
+    "blocked_if": [
+      "operating_mode is missing or unsupported",
+      "private runtime connector is not ready for request",
+      "assistant approval expectation is review-required and no explicit continue/skip decision is recorded"
+    ]
+  },
+  "validation_report": "outputs/reports/private_mode_parity_validation.json"
+}

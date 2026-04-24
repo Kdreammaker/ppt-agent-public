@@ -7,6 +7,7 @@ from typing import Any
 
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 from pptx.enum.text import PP_ALIGN
+from pptx.util import Inches
 
 from system.pptx_system import (
     DEFAULT_PROTECTED_TOKENS,
@@ -33,6 +34,19 @@ CJK_UNIT_WIDTH = 1.7
 
 class SlotResolutionError(ValueError):
     pass
+
+
+def fallback_text_slot_bounds(slot_def: dict[str, Any], slide) -> dict[str, float]:
+    slot_name = str(slot_def.get("slot", "")).lower()
+    existing_text_shapes = [shape for shape in slide.shapes if hasattr(shape, "text_frame")]
+    if slot_name == "title":
+        return {"left": 0.72, "top": 0.55, "width": 11.9, "height": 0.72}
+    if slot_name in {"subtitle", "eyebrow", "section"}:
+        return {"left": 0.82, "top": 1.28, "width": 11.3, "height": 0.55}
+    if slot_name in {"footer", "source", "note"}:
+        return {"left": 0.82, "top": 6.88, "width": 11.3, "height": 0.28}
+    top = min(6.25, 1.95 + max(0, len(existing_text_shapes) - 2) * 0.7)
+    return {"left": 0.82, "top": top, "width": 11.3, "height": 0.62}
 
 
 def font_size_for_role(theme: ThemeConfig, role: str | None, fallback: str = "body") -> float:
@@ -215,7 +229,17 @@ def apply_text_slot(
     slide_id: str = "<unknown>",
 ) -> None:
     override = override or {}
-    shape = resolve_slot_shape(slide, slot_def, "text", slide_id=slide_id)
+    try:
+        shape = resolve_slot_shape(slide, slot_def, "text", slide_id=slide_id)
+    except SlotResolutionError:
+        bounds = slot_def.get("bounds") or fallback_text_slot_bounds(slot_def, slide)
+        shape = slide.shapes.add_textbox(
+            Inches(bounds["left"]),
+            Inches(bounds["top"]),
+            Inches(bounds["width"]),
+            Inches(bounds["height"]),
+        )
+        shape.name = expected_slot_shape_name(slot_def["slot"])
     font_role = override.get("font_role") or slot_def.get("font_role") or "body"
     font_size = override.get("font_size") or font_size_for_role(theme, font_role)
     font_color = resolve_color(theme, override.get("color") or slot_def.get("color_token"), "primary")
@@ -244,7 +268,10 @@ def apply_text_slot(
 
 
 def apply_image_slot(slide, slot_def: dict[str, Any], image_path: str | Path, *, slide_id: str = "<unknown>") -> None:
-    shape = resolve_slot_shape(slide, slot_def, "image", slide_id=slide_id)
+    try:
+        shape = resolve_slot_shape(slide, slot_def, "image", slide_id=slide_id)
+    except SlotResolutionError:
+        shape = None
     bounds = slot_def.get("bounds")
     if bounds is None and shape is not None:
         bounds = {

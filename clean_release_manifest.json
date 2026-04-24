@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-04-24T03:37:47.206461Z",
+  "generated_at": "2026-04-24T03:48:23.405777Z",
   "policy_id": "clean_release_export_policy",
   "audience": "public_thin_installer_candidate",
   "source": "git ls-files",
   "output_root": "outputs/clean_release_export/ppt-agent-public",
   "summary": {
     "tracked_files": 339,
-    "exported_files": 202,
-    "excluded_candidates": 107,
-    "allowlisted_deny_matches": 3,
+    "exported_files": 203,
+    "excluded_candidates": 106,
+    "allowlisted_deny_matches": 4,
     "token_hits": 0,
     "required_missing": 0,
     "required_sample_missing": 0,
@@ -181,6 +181,11 @@
       "path": "config/pptx_theme.neutral_modern.json",
       "size_bytes": 512,
       "sha256": "1e34801cc7fc33d0acc27a6fa598ffee37c08fd7dafe3ae222e24d7f4948c99e"
+    },
+    {
+      "path": "config/private_mode_parity_contract.json",
+      "size_bytes": 2913,
+      "sha256": "93ba460c5c620789a30a966669d17517c81b4905139db1026e71c4a99fda6fe6"
     },
     {
       "path": "config/production_build_bundle_policy.json",
@@ -739,8 +744,8 @@
     },
     {
       "path": "scripts/build_deck.py",
-      "size_bytes": 55490,
-      "sha256": "a7d04a284beff3346b0e71b9635530d3bcfd6730aebb4bfeb7f1065dbf216877"
+      "size_bytes": 55620,
+      "sha256": "22db1e537b490cc34899164ecb2d3d4cb10791ec13c4c6c61382e1916fd9bc04"
     },
     {
       "path": "scripts/build_delivery_summary.py",
@@ -1014,8 +1019,8 @@
     },
     {
       "path": "system/template_engine.py",
-      "size_bytes": 15773,
-      "sha256": "5615f4cebc8274e97dbb7bdaf0699fed1e88f41710b0d22d3f8ff46f559f0f6f"
+      "size_bytes": 16992,
+      "sha256": "38516dc3daaa602577324ca1cf579029b7f542500ca626c9a4fc2b6cd580ae0b"
     },
     {
       "path": "system/template_text_dna.py",
