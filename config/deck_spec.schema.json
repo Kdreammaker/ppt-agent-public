@@ -10,7 +10,9 @@
             "chart_preset",
             "palette",
             "typography",
-            "theme"
+            "theme",
+            "logo",
+            "reference"
           ],
           "title": "Role",
           "type": "string"
@@ -22,7 +24,10 @@
             "icon",
             "image",
             "chart_preset",
-            "theme"
+            "theme",
+            "reference",
+            "slides",
+            "document"
           ],
           "title": "Asset Class",
           "type": "string"
@@ -108,7 +113,8 @@
           "enum": [
             "finalized_catalog",
             "local_user_asset_policy",
-            "external_registry_reference"
+            "external_registry_reference",
+            "workspace_user_asset"
           ],
           "title": "Source Policy",
           "type": "string"
@@ -118,10 +124,59 @@
             "metadata_only",
             "runtime_materialization_required",
             "local_config_reference",
-            "local_code_reference"
+            "local_code_reference",
+            "local_workspace_file"
           ],
           "title": "Materialization",
           "type": "string"
+        },
+        "source_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Type"
+        },
+        "workspace_relative_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Workspace Relative Path"
+        },
+        "private_upload_allowed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Private Upload Allowed"
+        },
+        "usage_rationale": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Usage Rationale"
         },
         "license_action": {
           "title": "License Action",

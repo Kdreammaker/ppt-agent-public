@@ -7,8 +7,19 @@
     "repository_full_name": "Kdreammaker/ai-asset-contribution-gate",
     "default_branch": "main",
     "license": "Apache-2.0",
-    "observed_at": "2026-04-23T13:30:00+09:00",
-    "observed_head_sha": "57de80b808bd9cc28216a9e0b6f12058a666e227"
+    "observed_at": "2026-04-24T00:00:00+09:00",
+    "observed_head_sha": "3a05d9f549ce8227d4de59c72c0fcbf53284666e"
+  },
+  "private_connector_setup": {
+    "official_setup_doc": "docs/PRIVATE_WORKSPACE_CONNECTOR_SETUP.md",
+    "official_setup_script": "tools/setup-private-connector.ps1",
+    "local_connector_file": ".assetctl-private-connector.local.json",
+    "local_connector_file_must_be_ignored": true,
+    "private_workspace_root_source": "operator_supplied_path_or_environment",
+    "private_workspace_root_committed": false,
+    "expected_private_tool": "downloaded-assets/tools/assetctl.ps1",
+    "expected_private_registry": "downloaded-assets/registry/asset-registry.jsonl",
+    "expected_private_connector_schemas": "downloaded-assets/connector/schemas"
   },
   "dependency_decision": {
     "preferred_mode": "tagged_release_or_pinned_commit_external_toolkit",
@@ -64,6 +75,7 @@
   ],
   "validation_commands": [
     "python scripts/validate_public_gate_toolkit_dependency.py",
+    "python scripts/validate_asset_toolkit_private_connector_setup.py",
     "python scripts/validate_clean_release_export.py"
   ]
 }

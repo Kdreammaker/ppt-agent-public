@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "asset_usage_summary_contract",
+  "private_manifest_evidence_fields": [
+    "asset_uid",
+    "source_name",
+    "asset_type",
+    "license_class",
+    "license_action",
+    "risk_level",
+    "relative_registry_path",
+    "sha256",
+    "size_bytes"
+  ],
+  "public_summary_fields": [
+    "asset_id",
+    "asset_uid",
+    "source_type",
+    "asset_type",
+    "license_class",
+    "license_action",
+    "risk_level",
+    "sha256",
+    "size_bytes",
+    "usage_rationale"
+  ],
+  "forbidden_in_public_reports": [
+    "drive_id",
+    "approval_record",
+    "private_work_path",
+    "generated_connector_report_path",
+    "raw_registry_file",
+    "local_absolute_path"
+  ],
+  "sample_public_summary": {
+    "schema_version": "1.0",
+    "deck": "sample.pptx",
+    "assets": [
+      {
+        "asset_id": "private.font.pretendard.regular",
+        "asset_uid": "asset.font.pretendard.regular",
+        "source_type": "private_connector_approved_package",
+        "asset_type": "font",
+        "license_class": "open_font",
+        "license_action": "check-license-file",
+        "risk_level": "low",
+        "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "size_bytes": 1024,
+        "usage_rationale": "Selected by private runtime for Korean executive readability."
+      }
+    ]
+  }
+}

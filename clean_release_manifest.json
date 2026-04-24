@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-04-24T03:48:23.405777Z",
+  "generated_at": "2026-04-24T09:47:57.295716Z",
   "policy_id": "clean_release_export_policy",
   "audience": "public_thin_installer_candidate",
   "source": "git ls-files",
   "output_root": "outputs/clean_release_export/ppt-agent-public",
   "summary": {
-    "tracked_files": 339,
-    "exported_files": 203,
-    "excluded_candidates": 106,
+    "tracked_files": 354,
+    "exported_files": 208,
+    "excluded_candidates": 116,
     "allowlisted_deny_matches": 4,
     "token_hits": 0,
     "required_missing": 0,
@@ -29,8 +29,8 @@
     },
     {
       "path": ".gitignore",
-      "size_bytes": 576,
-      "sha256": "a4b3515ce9acc913e05f008756a6df4ed98c3383a5bec9aeabc1d356cc5a9b89"
+      "size_bytes": 661,
+      "sha256": "3bd892db054541faa8f48ca13a2b91c7b06051db8086ad02942e728d8661fba4"
     },
     {
       "path": "LICENSE",
@@ -39,8 +39,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 5752,
-      "sha256": "ad82b97a8da50ae56875b10f4d32809741ce3d0815032741da26896d98dd4e4f"
+      "size_bytes": 6948,
+      "sha256": "5fce6936aaba3e94343420b1dcfd53d2bbe76563d6c7e96a45f314f796f1d4e5"
     },
     {
       "path": "assets/fonts/README.md",
@@ -56,6 +56,21 @@
       "path": "config/agent_task_contract.schema.json",
       "size_bytes": 2568,
       "sha256": "24d82a73afeb8b008b457892b6367b9507023f78c65496bb32ebb1ff2581c0fb"
+    },
+    {
+      "path": "config/asset_connector_mapping_contract.json",
+      "size_bytes": 3487,
+      "sha256": "28f66e6c7403ee5981c8c900329da11be1187113338ec04e45963e94a5751b1e"
+    },
+    {
+      "path": "config/asset_connector_mode_policy.json",
+      "size_bytes": 1362,
+      "sha256": "39b1802eddd3dcace5dc6e5a549cfaac5c972b707cb3a3a2dafe9f2c20687e54"
+    },
+    {
+      "path": "config/asset_usage_summary_contract.json",
+      "size_bytes": 1361,
+      "sha256": "e92cac9133ae1b1a6f0696c7f3177112e241f964b4ee753e356fd6be8998067b"
     },
     {
       "path": "config/auto_mode_pipeline_policy.json",
@@ -89,8 +104,8 @@
     },
     {
       "path": "config/deck_spec.schema.json",
-      "size_bytes": 30522,
-      "sha256": "e41b3b3942975e04bfba09cbb1a193b5aff611cdc6756dfe0ac2a4e17bd6bf52"
+      "size_bytes": 31808,
+      "sha256": "6d5bab2775c2af02f2483799c893a6cd0a03a18a3b8efedd09578cae873a5444"
     },
     {
       "path": "config/delivery_summary_contract.json",
@@ -219,8 +234,8 @@
     },
     {
       "path": "config/public_gate_toolkit_dependency_policy.json",
-      "size_bytes": 2764,
-      "sha256": "e177cb4f407611fa97303bc21dc9f8e9840dd674fbd04420238ee0dc413f5de5"
+      "size_bytes": 3487,
+      "sha256": "57d952a5f9304c3d35b7e2867451b2d040471428dec6e7e482c31b490adfb6dc"
     },
     {
       "path": "config/public_private_ci_boundary_policy.json",
@@ -744,8 +759,8 @@
     },
     {
       "path": "scripts/build_deck.py",
-      "size_bytes": 55620,
-      "sha256": "22db1e537b490cc34899164ecb2d3d4cb10791ec13c4c6c61382e1916fd9bc04"
+      "size_bytes": 61610,
+      "sha256": "84e14650771bbb4ec43f0641af36a83bb0ad55dd1c9722e69b212e9f23b5477d"
     },
     {
       "path": "scripts/build_delivery_summary.py",
@@ -824,8 +839,8 @@
     },
     {
       "path": "scripts/compose_deck_spec_from_intake.py",
-      "size_bytes": 64086,
-      "sha256": "3ae3905223346baecc58302560ead871753cf67382d93118f3510e1a2db11d79"
+      "size_bytes": 67509,
+      "sha256": "d56eee461df5fd3487e8d2b0e1dfb587392766adda2afe058e18f240f31e2fb8"
     },
     {
       "path": "scripts/deliver_project_output.py",
@@ -909,8 +924,13 @@
     },
     {
       "path": "scripts/ppt_cli_workspace.py",
-      "size_bytes": 27744,
-      "sha256": "631dbb1da20e88e0c3e9bdf321437e216bb8e5aee2cd667734665ce7e776babf"
+      "size_bytes": 27915,
+      "sha256": "f9c08777cf6e8e713364529255a7c477dfde1e2792ed4a98949d469000512ae9"
+    },
+    {
+      "path": "scripts/ppt_install.py",
+      "size_bytes": 9255,
+      "sha256": "71d42612e4854f52976358bfd02f94699973b054162537c461825cf9d35a686c"
     },
     {
       "path": "scripts/ppt_private_connector.py",
@@ -926,6 +946,11 @@
       "path": "scripts/ppt_system.py",
       "size_bytes": 19617,
       "sha256": "33de54ebcf8a97b806151cbb0c59748348c18d904d639fd7dacd24a87e188658"
+    },
+    {
+      "path": "scripts/ppt_workspace_assets.py",
+      "size_bytes": 10814,
+      "sha256": "9fd2d1a1629d085564f6a0f277731e39d4232a2a1411d709db5f707eda3a30b5"
     },
     {
       "path": "scripts/ppt_workspace_entitlement.py",
@@ -999,8 +1024,8 @@
     },
     {
       "path": "system/deck_models.py",
-      "size_bytes": 12258,
-      "sha256": "51372d4a1f402ed636acfef99ccc90603fe212d618fcfa1ef6eb4dc647ba3722"
+      "size_bytes": 12530,
+      "sha256": "19466656421487f3c33aa0e3a9a12daddb8c44e35ac14ab9610d089986dce018"
     },
     {
       "path": "system/intake_models.py",

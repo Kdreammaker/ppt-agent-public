@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "asset_connector_mapping_contract",
+  "source": "public_ai_asset_toolkit_private_connector",
+  "request_shapes": {
+    "metadata_search": {
+      "delivery_mode": "metadata_only",
+      "include_private_storage_refs": false,
+      "approval_required_for_binary_release": true
+    },
+    "materialization": {
+      "plan_required_before_apply": true,
+      "dry_run_supported": true,
+      "approved_export_private_boundary_only": true
+    }
+  },
+  "expected_metadata_fields": [
+    "export_item_id",
+    "export_item_type",
+    "asset_uid",
+    "asset_type",
+    "name",
+    "risk_level",
+    "license_class",
+    "license_action",
+    "usage_groups",
+    "formats",
+    "relative_path",
+    "sha256",
+    "size_bytes",
+    "materialization.status",
+    "policy_notes"
+  ],
+  "ppt_mapping": {
+    "font": "typography",
+    "palette": "palette",
+    "icon": "icon",
+    "deck_component": "template_module_recommendation",
+    "deck_template_module": "template_module_recommendation",
+    "deck_template_composition": "template_composition_recommendation"
+  },
+  "sample_results": [
+    {
+      "export_item_id": "font:pretendard-regular",
+      "export_item_type": "font",
+      "asset_uid": "asset.font.pretendard.regular",
+      "asset_type": "font",
+      "name": "Pretendard Regular",
+      "risk_level": "low",
+      "license_class": "open_font",
+      "license_action": "check-license-file",
+      "usage_groups": ["presentation", "korean"],
+      "formats": ["otf"],
+      "relative_path": "fonts/pretendard/Pretendard-Regular.otf",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 1024,
+      "materialization": {"status": "metadata_only"},
+      "policy_notes": ["metadata sample only"]
+    },
+    {
+      "export_item_id": "palette:calm-blue-exec",
+      "export_item_type": "palette",
+      "asset_uid": "asset.palette.calm_blue_exec",
+      "asset_type": "palette",
+      "name": "Calm Blue Executive",
+      "risk_level": "low",
+      "license_class": "internal_metadata",
+      "license_action": "none",
+      "usage_groups": ["presentation", "executive"],
+      "formats": ["json"],
+      "relative_path": "palettes/calm-blue-exec.json",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "size_bytes": 512,
+      "materialization": {"status": "metadata_only"},
+      "policy_notes": ["safe palette metadata"]
+    },
+    {
+      "export_item_id": "deck_module:kpi-card-calm-blue",
+      "export_item_type": "deck_template_module",
+      "asset_uid": "asset.deck_component.kpi_card_calm_blue",
+      "asset_type": "deck_component",
+      "name": "Calm Blue KPI Card Module",
+      "risk_level": "medium",
+      "license_class": "private_template_metadata",
+      "license_action": "approval-required-before-binary-release",
+      "usage_groups": ["presentation", "b2b", "kpi"],
+      "formats": ["json"],
+      "relative_path": "templates/modules/kpi-card-calm-blue.module.json",
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "size_bytes": 2048,
+      "materialization": {"status": "proposal_required"},
+      "policy_notes": ["template metadata only", "binary export remains private"]
+    }
+  ],
+  "forbidden_public_fields": [
+    "drive_id",
+    "approval_record",
+    "private_work_path",
+    "generated_connector_report_path",
+    "local_absolute_path",
+    "raw_registry_record"
+  ]
+}

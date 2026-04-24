@@ -2,6 +2,31 @@
 
 This workspace is organized around a template-library-first PPT authoring workflow.
 
+## Install A Ready Workspace
+
+For a new public install, use one command. This creates `ppt-agent-public/` and a ready `workspace/` tree under the target:
+
+```powershell
+python scripts\ppt_install.py --target "C:\Users\kimjo\Downloads\ppt-workspaces\ppt-maker"
+```
+
+If an AI agent has already cloned the public repo, run this from the repo root instead:
+
+```powershell
+python scripts\ppt_install.py --workspace "C:\Users\kimjo\Downloads\ppt-workspaces\ppt-maker\workspace"
+```
+
+User files uploaded in chat or selected from disk should be imported into the workspace before use:
+
+```powershell
+python scripts\ppt_workspace_assets.py import --workspace "<workspace>" --file "<file>" --type image
+python scripts\ppt_workspace_assets.py import --workspace "<workspace>" --file "<file>" --type font
+python scripts\ppt_workspace_assets.py list --workspace "<workspace>"
+python scripts\ppt_workspace_assets.py validate --workspace "<workspace>"
+```
+
+Workspace manifests live under `.ppt-agent/` and may contain local paths for that user's machine. Do not commit workspace contents, uploaded assets, private connector files, generated reports, Drive IDs, approval records, or raw private asset payloads.
+
 ## Public CLI And Private Runtime Path
 
 This public repository is the installable CLI control plane. It installs runtime dependencies, initializes workspaces, runs public-safe smoke checks, and provides the connector that entitled users or operators use to install and call the private PPT runtime.

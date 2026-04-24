@@ -1472,10 +1472,81 @@ def write_feedback_application_report(intake: DeckIntake, spec: dict[str, Any], 
     md_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def load_workspace_manifest(workspace: Path) -> dict[str, Any]:
+    path = workspace / ".ppt-agent" / "asset_manifest.json"
+    if not path.exists():
+        return {"assets": []}
+    data = json.loads(path.read_text(encoding="utf-8-sig"))
+    return data if isinstance(data, dict) else {"assets": []}
+
+
+def workspace_asset_by_id(workspace: Path, asset_id: str) -> dict[str, Any] | None:
+    manifest = load_workspace_manifest(workspace)
+    for asset in manifest.get("assets", []):
+        if isinstance(asset, dict) and asset.get("asset_id") == asset_id:
+            return asset
+    return None
+
+
+def append_workspace_asset_intents(
+    spec: dict[str, Any],
+    *,
+    workspace: Path | None,
+    preferred_asset_ids: list[str],
+    operating_mode: str,
+) -> None:
+    if not workspace or not preferred_asset_ids:
+        return
+    intents = spec.setdefault("asset_intents", [])
+    first_image_slide = 1
+    first_image_slot = "image_1"
+    for asset_id in preferred_asset_ids:
+        asset = workspace_asset_by_id(workspace, asset_id)
+        if not asset:
+            raise ValueError(f"workspace asset_id not found: {asset_id}")
+        asset_class = asset.get("asset_class")
+        asset_type = asset.get("asset_type")
+        role = "image_placeholder" if asset_class == "image" else "typography" if asset_class == "typography" else "reference"
+        intent = {
+            "role": role,
+            "asset_class": asset_class,
+            "asset_id": asset_id,
+            "slide_number": first_image_slide if asset_class == "image" else None,
+            "slot": first_image_slot if asset_class == "image" else None,
+            "purpose": "user_requested_asset",
+            "industry": None,
+            "tone": [],
+            "aspect_ratio": "16:9",
+            "query": {
+                "source_type": "user_upload",
+                "asset_type": asset_type,
+                "selection": "explicit_user_asset_id",
+                "operating_mode": operating_mode,
+            },
+            "source_policy": "workspace_user_asset",
+            "materialization": "local_workspace_file",
+            "source_type": "user_upload",
+            "workspace_relative_path": asset.get("workspace_relative_path"),
+            "private_upload_allowed": False,
+            "license_action": "user_responsibility",
+            "risk_level": "user_responsibility",
+            "candidate_asset_ids": [asset_id],
+            "usage_rationale": (
+                "Explicit user-requested workspace asset; Auto Mode may use it directly and record rationale."
+                if operating_mode == "auto"
+                else "Assistant Mode candidate selected by stable workspace asset ID."
+            ),
+            "notes": "Workspace-relative asset reference; source attachment path is intentionally omitted.",
+        }
+        intents.append(intent)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Compose a deterministic draft deck spec from deck intake JSON.")
     parser.add_argument("intake_path")
     parser.add_argument("--output", default=None, help="Override output spec path. Defaults to intake output_preferences.")
+    parser.add_argument("--workspace", default=None, help="Optional installed PPT workspace for user asset lookup.")
+    parser.add_argument("--preferred-user-asset", action="append", default=[], help="Workspace asset_id to include in asset_intents.")
     args = parser.parse_args(argv)
 
     intake_path = Path(args.intake_path)
@@ -1489,6 +1560,14 @@ def main(argv: list[str] | None = None) -> int:
         output_path = (BASE_DIR / output_path).resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     spec = compose_spec(intake, intake_path, output_path)
+    workspace = Path(args.workspace).resolve() if args.workspace else None
+    append_workspace_asset_intents(
+        spec,
+        workspace=workspace,
+        preferred_asset_ids=list(args.preferred_user_asset),
+        operating_mode=spec.get("mode_policy", "auto"),
+    )
+    validate_deck_spec(spec)
     output_path.write_text(json.dumps(spec, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     write_feedback_application_report(intake, spec, output_path)
     print(output_path)

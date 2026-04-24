@@ -24,10 +24,10 @@ AspectRatio = Literal["16:9", "4:3"]
 HexColor = Annotated[str, Field(pattern=r"^#?[0-9A-Fa-f]{6}$")]
 ThemeAccentSlot = Literal["accent1", "accent2", "accent3", "accent4", "accent5", "accent6"]
 ModePolicyName = Literal["auto", "assistant"]
-AssetIntentRole = Literal["image_placeholder", "icon", "chart_preset", "palette", "typography", "theme"]
-AssetClass = Literal["palette", "typography", "icon", "image", "chart_preset", "theme"]
-AssetSourcePolicy = Literal["finalized_catalog", "local_user_asset_policy", "external_registry_reference"]
-AssetMaterialization = Literal["metadata_only", "runtime_materialization_required", "local_config_reference", "local_code_reference"]
+AssetIntentRole = Literal["image_placeholder", "icon", "chart_preset", "palette", "typography", "theme", "logo", "reference"]
+AssetClass = Literal["palette", "typography", "icon", "image", "chart_preset", "theme", "reference", "slides", "document"]
+AssetSourcePolicy = Literal["finalized_catalog", "local_user_asset_policy", "external_registry_reference", "workspace_user_asset"]
+AssetMaterialization = Literal["metadata_only", "runtime_materialization_required", "local_config_reference", "local_code_reference", "local_workspace_file"]
 
 
 class SlideSelector(StrictBase):
@@ -184,6 +184,10 @@ class AssetIntent(StrictBase):
     query: dict[str, Any] = Field(default_factory=dict)
     source_policy: AssetSourcePolicy
     materialization: AssetMaterialization
+    source_type: str | None = None
+    workspace_relative_path: str | None = None
+    private_upload_allowed: bool | None = None
+    usage_rationale: str | None = None
     license_action: str
     risk_level: str
     candidate_asset_ids: list[str] = Field(default_factory=list)

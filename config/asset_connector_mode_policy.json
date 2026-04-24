@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "asset_connector_mode_policy",
+  "public_repo_role": [
+    "create public-safe connector request shapes",
+    "validate mode summaries",
+    "store request summaries and public-safe manifests only"
+  ],
+  "private_repo_role": [
+    "rank font, palette, template, and module candidates",
+    "apply design judgment and approval policy",
+    "run Auto multi-pass production pipeline",
+    "run Assistant review loop",
+    "call private asset backend"
+  ],
+  "modes": {
+    "assistant": {
+      "candidate_display_required": true,
+      "rationale_required": true,
+      "policy_notes_required": true,
+      "explicit_continue_required_before_binary_materialization": true,
+      "explicit_continue_required_before_final_private_export": true
+    },
+    "auto": {
+      "explicit_user_workspace_assets_may_be_used": true,
+      "metadata_only_recommendations_may_be_used_when_policy_allows": true,
+      "usage_rationale_required": true,
+      "stop_before_binary_materialization_without_approval": true,
+      "needs_approval_state_required": true
+    }
+  },
+  "public_storage_boundary": {
+    "raw_private_payloads_allowed": false,
+    "private_asset_binaries_allowed": false,
+    "local_absolute_paths_allowed": false,
+    "request_summaries_allowed": true,
+    "public_safe_asset_usage_summaries_allowed": true
+  }
+}

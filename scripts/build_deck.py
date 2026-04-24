@@ -241,6 +241,136 @@ def resolve_slide_asset_paths(slide_spec: dict[str, Any], spec_dir: Path) -> dic
     return resolved
 
 
+def workspace_asset_root() -> Path | None:
+    value = os.environ.get("PPT_AGENT_WORKSPACE")
+    if not value:
+        return None
+    path = Path(value)
+    if not path.is_absolute():
+        path = (Path.cwd() / path).resolve()
+    return path
+
+
+def apply_workspace_asset_intents(spec: dict[str, Any], workspace: Path | None) -> list[dict[str, Any]]:
+    usage: list[dict[str, Any]] = []
+    if workspace is None:
+        return usage
+    for intent in spec.get("asset_intents", []):
+        if not isinstance(intent, dict) or intent.get("source_type") != "user_upload":
+            continue
+        asset_id = str(intent.get("asset_id") or "")
+        relative_path = str(intent.get("workspace_relative_path") or "")
+        if not asset_id or not relative_path or Path(relative_path).is_absolute() or ".." in Path(relative_path).parts:
+            usage.append(
+                {
+                    "asset_id": asset_id,
+                    "source_type": "user_upload",
+                    "status": "invalid_workspace_relative_path",
+                    "workspace_relative_path": relative_path,
+                }
+            )
+            continue
+        asset_path = (workspace / relative_path).resolve()
+        try:
+            asset_path.relative_to(workspace.resolve())
+        except ValueError:
+            usage.append(
+                {
+                    "asset_id": asset_id,
+                    "source_type": "user_upload",
+                    "status": "path_outside_workspace",
+                    "workspace_relative_path": relative_path,
+                }
+            )
+            continue
+        status = "resolved" if asset_path.exists() else "missing"
+        slide_number = intent.get("slide_number")
+        slot = intent.get("slot")
+        if status == "resolved" and intent.get("asset_class") == "image" and slide_number and slot:
+            slides = spec.get("slides", [])
+            index = int(slide_number) - 1
+            if 0 <= index < len(slides) and isinstance(slides[index], dict):
+                slides[index].setdefault("image_slots", {})[str(slot)] = asset_path.as_posix()
+                status = "resolved_to_image_slot"
+        usage.append(
+            {
+                "asset_id": asset_id,
+                "source_type": "user_upload",
+                "asset_class": intent.get("asset_class"),
+                "slide_number": slide_number,
+                "slot": slot,
+                "workspace_relative_path": relative_path,
+                "status": status,
+                "usage_rationale": intent.get("usage_rationale") or intent.get("notes"),
+                "private_upload_allowed": bool(intent.get("private_upload_allowed", False)),
+            }
+        )
+    return usage
+
+
+def write_asset_usage_report(output_path: Path, spec: dict[str, Any], usage: list[dict[str, Any]]) -> None:
+    reports_dir = BASE_DIR / "outputs" / "reports"
+    reports_dir.mkdir(parents=True, exist_ok=True)
+    all_intents = []
+    for intent in spec.get("asset_intents", []):
+        if not isinstance(intent, dict):
+            continue
+        all_intents.append(
+            {
+                "asset_id": intent.get("asset_id"),
+                "source_type": intent.get("source_type") or ("user_upload" if intent.get("source_policy") == "workspace_user_asset" else "catalog_or_connector"),
+                "asset_class": intent.get("asset_class"),
+                "role": intent.get("role"),
+                "slide_number": intent.get("slide_number"),
+                "slot": intent.get("slot"),
+                "workspace_relative_path": intent.get("workspace_relative_path"),
+                "materialization": intent.get("materialization"),
+                "license_action": intent.get("license_action"),
+                "risk_level": intent.get("risk_level"),
+                "usage_rationale": intent.get("usage_rationale") or intent.get("notes"),
+            }
+        )
+    payload = {
+        "schema_version": "1.0",
+        "deck": output_path.name,
+        "deck_name": spec.get("name"),
+        "summary": {
+            "asset_intents": len(all_intents),
+            "workspace_assets": len([item for item in all_intents if item.get("source_type") == "user_upload"]),
+            "resolved_workspace_assets": len([item for item in usage if str(item.get("status", "")).startswith("resolved")]),
+        },
+        "assets": all_intents,
+        "workspace_resolution": usage,
+        "public_boundary": {
+            "uses_asset_ids_not_absolute_paths": True,
+            "private_upload_allowed_default": False,
+            "raw_private_payloads_included": False,
+        },
+    }
+    report_json = reports_dir / f"{output_path.stem}_asset_usage_summary.json"
+    report_md = reports_dir / f"{output_path.stem}_asset_usage_summary.md"
+    latest_json = reports_dir / "asset_usage_summary.json"
+    for path in (report_json, latest_json):
+        path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    lines = [
+        "# Asset Usage Summary",
+        "",
+        f"- Deck: `{output_path.name}`",
+        f"- Asset intents: {payload['summary']['asset_intents']}",
+        f"- Workspace assets: {payload['summary']['workspace_assets']}",
+        "",
+        "| Asset ID | Source | Class | Slide | Slot | Status |",
+        "| --- | --- | --- | ---: | --- | --- |",
+    ]
+    status_by_id = {item.get("asset_id"): item.get("status") for item in usage}
+    for asset in all_intents:
+        lines.append(
+            f"| {asset.get('asset_id') or ''} | {asset.get('source_type') or ''} | {asset.get('asset_class') or ''} | "
+            f"{asset.get('slide_number') or ''} | {asset.get('slot') or ''} | {status_by_id.get(asset.get('asset_id'), '') or ''} |"
+        )
+    report_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def load_spec(spec_path: str | Path) -> tuple[dict[str, Any], Path]:
     spec_path = Path(spec_path).resolve()
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
@@ -1322,6 +1452,7 @@ def build_deck_from_spec(
     spec_path = Path(spec_path).resolve()
     spec, spec_dir = load_spec(spec_path)
     validate_supported_aspect_ratio(spec)
+    workspace_usage = apply_workspace_asset_intents(spec, workspace_asset_root())
 
     old_catalog_path = resolve_path(spec_dir, spec.get("catalog_path"))
     reference_catalog_path = resolve_path(spec_dir, spec.get("reference_catalog_path", "../../config/reference_catalog.json"))
@@ -1382,6 +1513,7 @@ def build_deck_from_spec(
     write_text_overflow_report(output_path, overflow_events)
     write_slide_selection_rationale_report(output_path, spec, slide_specs, sources)
     write_deck_slot_map_report(output_path, spec, slide_specs, sources, blueprint_index)
+    write_asset_usage_report(output_path, spec, workspace_usage)
     return output_path
 
 

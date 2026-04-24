@@ -13,6 +13,11 @@ Thumbs.db
 desktop.ini
 *.tmp
 *.log
+.assetctl-private-connector.local.json
+.codex/
+review/
+thumb-tour*.png
+v2-thumb*.png
 
 # Generated deck outputs and validation artifacts
 outputs/
