@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-04-24T03:09:55.827929Z",
+  "generated_at": "2026-04-24T03:37:47.206461Z",
   "policy_id": "clean_release_export_policy",
   "audience": "public_thin_installer_candidate",
   "source": "git ls-files",
   "output_root": "outputs/clean_release_export/ppt-agent-public",
   "summary": {
     "tracked_files": 339,
-    "exported_files": 199,
-    "excluded_candidates": 110,
-    "allowlisted_deny_matches": 0,
+    "exported_files": 202,
+    "excluded_candidates": 107,
+    "allowlisted_deny_matches": 3,
     "token_hits": 0,
     "required_missing": 0,
     "required_sample_missing": 0,
@@ -966,6 +966,21 @@
       "path": "scripts/sync_reference_quality_buckets.py",
       "size_bytes": 6612,
       "sha256": "e03ba566c6e8cfb5f2a08270bb7801cd0cdcba7a84c149faadefd52a91531598"
+    },
+    {
+      "path": "scripts/validate_deck_intake.py",
+      "size_bytes": 2801,
+      "sha256": "00550e96e0bf13ac1a1ccf9541c69930330c7918b8ac59f910d8f32a04eaa100"
+    },
+    {
+      "path": "scripts/validate_html_output.py",
+      "size_bytes": 7458,
+      "sha256": "580740bb9c51ce37c882823666a44e02ae918d5741f9bcc33916dd037960ce7b"
+    },
+    {
+      "path": "scripts/validate_pptx_package.py",
+      "size_bytes": 1501,
+      "sha256": "b8ec66640a415c909cf7351afcc9c53f53cd4f03bbbf6688622e37c92a252cc4"
     },
     {
       "path": "system/__init__.py",
