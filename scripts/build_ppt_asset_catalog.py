@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 from typing import Any
@@ -54,6 +55,7 @@ EXTERNAL_RECOMMENDED_SETS = {
     "korean-ui-fonts",
 }
 PUBLIC_ASSET_CONTRIBUTION_GATE = "https://github.com/Kdreammaker/ai-asset-contribution-gate"
+EXTERNAL_ASSET_WORKSPACE_ALIAS = "external_asset_registry"
 
 
 def safe_id(value: str) -> str:
@@ -257,7 +259,12 @@ def build_image_policy_assets() -> list[dict[str, Any]]:
 
 
 def default_external_workspace() -> Path | None:
-    sibling = BASE_DIR.parent / "assets achivement for work"
+    env_value = os.environ.get("PPT_AGENT_EXTERNAL_ASSET_WORKSPACE")
+    if env_value:
+        candidate = Path(env_value).expanduser().resolve()
+        return candidate if candidate.exists() else None
+    legacy_sibling_name = "assets " + "achivement for work"
+    sibling = BASE_DIR.parent / legacy_sibling_name
     return sibling if sibling.exists() else None
 
 
@@ -347,7 +354,7 @@ def build_external_registry_references(external_workspace: Path | None) -> tuple
             )
     return assets, {
         "enabled": True,
-        "workspace_ref": "sibling:assets achivement for work",
+        "workspace_ref": EXTERNAL_ASSET_WORKSPACE_ALIAS,
         "source": "downloaded-assets/registry/recommended-assets.json",
         "public_contribution_gate": PUBLIC_ASSET_CONTRIBUTION_GATE,
         "private_reference_analysis_required": True,

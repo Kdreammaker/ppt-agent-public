@@ -15,7 +15,7 @@
     ],
     "external_registry": {
       "enabled": true,
-      "workspace_ref": "sibling:assets achivement for work",
+      "workspace_ref": "external_asset_registry",
       "source": "downloaded-assets/registry/recommended-assets.json",
       "public_contribution_gate": "https://github.com/Kdreammaker/ai-asset-contribution-gate",
       "private_reference_analysis_required": true,

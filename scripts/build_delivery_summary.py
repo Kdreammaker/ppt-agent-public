@@ -10,6 +10,13 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 CONTRACT_PATH = BASE_DIR / "config" / "delivery_summary_contract.json"
 
 
+def relative_ref(path: Path) -> str:
+    try:
+        return path.resolve().relative_to(BASE_DIR.resolve()).as_posix()
+    except ValueError:
+        return path.name
+
+
 def load_json(path: Path) -> dict[str, Any]:
     data = json.loads(path.read_text(encoding="utf-8-sig"))
     if not isinstance(data, dict):
@@ -91,7 +98,7 @@ def build_summary(runtime_report: dict[str, Any], *, output_json: Path, output_m
         },
         "quality_findings": quality_findings,
         "remaining_manual_review_points": [] if delivered and not quality_findings else ["Resolve blocking findings before Drive/Slack success delivery."],
-        "reply_summary": output_md.resolve().as_posix(),
+        "reply_summary": relative_ref(output_md),
         "policy_summary": {
             "blocked_delivery_claims_success": False,
             "drive_public_permission_changed": False,

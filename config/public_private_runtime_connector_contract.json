@@ -103,6 +103,7 @@
     "source_file_contents",
     "generated_pptx_binary",
     "generated_html_document",
+    "private_runtime_stdout_stderr",
     "work_logs",
     "local_absolute_private_paths"
   ],

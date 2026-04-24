@@ -193,6 +193,16 @@ def maybe_parse_json_text(value: str) -> dict[str, Any] | None:
     return parsed if isinstance(parsed, dict) else None
 
 
+def private_execution_summary(result: subprocess.CompletedProcess[str]) -> dict[str, Any]:
+    return {
+        "returncode": result.returncode,
+        "stdout_captured": bool(result.stdout),
+        "stderr_captured": bool(result.stderr),
+        "output_omitted": True,
+        "omission_reason": "private runtime stdout/stderr may contain secrets, local paths, or generated content",
+    }
+
+
 def ensure_path_inside_workspace(path: Path, workspace: Path) -> None:
     try:
         path.resolve().relative_to(workspace.resolve())
@@ -586,11 +596,7 @@ def command_build(args: argparse.Namespace) -> int:
         result = run_command(rendered, timeout=args.timeout_seconds)
         executed = result.returncode == 0
         private_payload = maybe_parse_json_text(result.stdout)
-        private_result = {
-            "returncode": result.returncode,
-            "stdout_tail": result.stdout[-1200:],
-            "stderr_tail": result.stderr[-1200:],
-        }
+        private_result = private_execution_summary(result)
         if result.returncode != 0:
             errors.append("private build command failed")
 
@@ -610,13 +616,13 @@ def command_build(args: argparse.Namespace) -> int:
         },
         "mode_policy_summary": mode_summary,
         "private_result": private_result,
-        "private_payload": private_payload,
         "policy_summary": {
             "private_command_executed": executed,
             "tokens_printed": False,
             "raw_workspace_code_stored": False,
             "public_repo_contains_private_assets": False,
             "public_smoke_is_fallback_only": True,
+            "raw_private_payload_omitted": True,
         },
     }
     if isinstance(private_payload, dict):

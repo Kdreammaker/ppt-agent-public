@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-04-24T02:32:11.652801Z",
+  "generated_at": "2026-04-24T03:09:55.827929Z",
   "policy_id": "clean_release_export_policy",
   "audience": "public_thin_installer_candidate",
   "source": "git ls-files",
@@ -159,8 +159,8 @@
     },
     {
       "path": "config/ppt_asset_catalog.json",
-      "size_bytes": 72669,
-      "sha256": "37129b9a66be82511e8de91e05e33fcc4f3cb4bf486e8ef29a99223069933424"
+      "size_bytes": 72658,
+      "sha256": "b25fc8eddfa1edd27780b993e32badabea1ecf43ce9255fd4196c776a0239124"
     },
     {
       "path": "config/ppt_asset_catalog.schema.json",
@@ -224,8 +224,8 @@
     },
     {
       "path": "config/public_private_runtime_connector_contract.json",
-      "size_bytes": 6152,
-      "sha256": "8f70db83a2b0292938665ac8348ecdce487fdde43187b4c0f2004899c29882df"
+      "size_bytes": 6189,
+      "sha256": "f9435d0e676b17b69b015dbc26f38bd0db3ba0511085e7cb30eb62382f479076"
     },
     {
       "path": "config/reference_catalog.json",
@@ -744,8 +744,8 @@
     },
     {
       "path": "scripts/build_delivery_summary.py",
-      "size_bytes": 5942,
-      "sha256": "2a4fbec663549e369764ccaec9de48eae2b7954824cb05002f27f924afef4d70"
+      "size_bytes": 6104,
+      "sha256": "ad1e0eece150001c4164a43593b3789b25102fd849559fcd85e6131301c36ac7"
     },
     {
       "path": "scripts/build_dual_outputs.py",
@@ -764,8 +764,8 @@
     },
     {
       "path": "scripts/build_ppt_asset_catalog.py",
-      "size_bytes": 17837,
-      "sha256": "0ec69baf863fad0ed3520fe211e3a2a7461e4aa104d556d7754f0b2e64532c6a"
+      "size_bytes": 18154,
+      "sha256": "2b79c66b4191a7ca3e3337744bd2478f50a28c5c32607d97f1158ecbd71ae991"
     },
     {
       "path": "scripts/build_production_template_index.py",
@@ -909,8 +909,8 @@
     },
     {
       "path": "scripts/ppt_private_connector.py",
-      "size_bytes": 31677,
-      "sha256": "b6a8004da2d8d73897683ebadc43868046d16f91293c459b39ed714b31aeeaa5"
+      "size_bytes": 31955,
+      "sha256": "1742bb3305f8efc0bc80dd3cb09ad8142de757f81866098691ecbe7f340c084f"
     },
     {
       "path": "scripts/ppt_support_bundle.py",
