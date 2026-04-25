@@ -25,7 +25,7 @@ HexColor = Annotated[str, Field(pattern=r"^#?[0-9A-Fa-f]{6}$")]
 ThemeAccentSlot = Literal["accent1", "accent2", "accent3", "accent4", "accent5", "accent6"]
 ModePolicyName = Literal["auto", "assistant"]
 AssetIntentRole = Literal["image_placeholder", "icon", "chart_preset", "palette", "typography", "theme", "logo", "reference"]
-AssetClass = Literal["palette", "typography", "icon", "image", "chart_preset", "theme", "reference", "slides", "document"]
+AssetClass = Literal["palette", "typography", "icon", "illustration", "image", "chart_preset", "theme", "reference", "slides", "document"]
 AssetSourcePolicy = Literal["finalized_catalog", "local_user_asset_policy", "external_registry_reference", "workspace_user_asset"]
 AssetMaterialization = Literal["metadata_only", "runtime_materialization_required", "local_config_reference", "local_code_reference", "local_workspace_file"]
 
@@ -190,6 +190,8 @@ class AssetIntent(StrictBase):
     usage_rationale: str | None = None
     license_action: str
     risk_level: str
+    semantic_context: dict[str, Any] = Field(default_factory=dict)
+    template_media_policy: dict[str, Any] = Field(default_factory=dict)
     candidate_asset_ids: list[str] = Field(default_factory=list)
     notes: str | None = None
 

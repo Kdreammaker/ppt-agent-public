@@ -7,8 +7,28 @@
     "repository_full_name": "Kdreammaker/ai-asset-contribution-gate",
     "default_branch": "main",
     "license": "Apache-2.0",
-    "observed_at": "2026-04-24T00:00:00+09:00",
-    "observed_head_sha": "3a05d9f549ce8227d4de59c72c0fcbf53284666e"
+    "observed_at": "2026-04-25T00:00:00+09:00",
+    "observed_head_sha": "d5f268bd0996147525e51059bf7e4c3b17541d5e",
+    "client_role": "public_safe_asset_service_client_not_asset_dump_or_generator",
+    "official_creator_handoff_doc": "docs/ASSET_SERVICE_HANDOFF_FOR_CREATOR_AI.md"
+  },
+  "service_snapshot": {
+    "public_safe_observed_from_creator_handoff": true,
+    "request_asset_types": [
+      "palette",
+      "icon",
+      "illustration",
+      "font",
+      "deck_component"
+    ],
+    "promoted_one_slide_template_references": 4768,
+    "good_template_contracts": 3567,
+    "template_modules": 10108,
+    "template_compositions": 3567,
+    "deck_component_export_items": 13675,
+    "private_metadata_export_items": 50572,
+    "local_vector_index_records": 38236,
+    "metadata_graph_records": 38236
   },
   "private_connector_setup": {
     "official_setup_doc": "docs/PRIVATE_WORKSPACE_CONNECTOR_SETUP.md",
@@ -35,6 +55,7 @@
     "fixture_format",
     "cli_script_entrypoints",
     "public_safe_smoke_checks",
+    "metadata_only_request_examples",
     "license_notice"
   ],
   "private_only_surfaces": [
@@ -60,8 +81,10 @@
   },
   "update_flow": [
     "Fetch public gate release/tag metadata or default-branch commit SHA.",
+    "Read the official creator handoff and private connector setup docs before adopting new connector fields.",
     "Record the candidate version and pin in the private dependency manifest.",
     "Run public-safe schema/fixture/smoke checks against the candidate.",
+    "Run connector-client validate-fixtures and candidate-gate validate-fixtures against the public toolkit.",
     "Run private boundary validators before any sync or release-candidate promotion.",
     "Update the private pin only after operator review.",
     "Keep the previous known-good pin available for rollback."
@@ -76,6 +99,8 @@
   "validation_commands": [
     "python scripts/validate_public_gate_toolkit_dependency.py",
     "python scripts/validate_asset_toolkit_private_connector_setup.py",
-    "python scripts/validate_clean_release_export.py"
+    "python scripts/validate_clean_release_export.py",
+    ".\\tools\\connector-client.ps1 -Operation validate-fixtures",
+    ".\\tools\\candidate-gate.ps1 -Operation validate-fixtures -AssetsRoot ."
   ]
 }

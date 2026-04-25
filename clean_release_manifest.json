@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-04-24T09:47:57.295716Z",
+  "generated_at": "2026-04-25T06:23:52.688833Z",
   "policy_id": "clean_release_export_policy",
   "audience": "public_thin_installer_candidate",
   "source": "git ls-files",
   "output_root": "outputs/clean_release_export/ppt-agent-public",
   "summary": {
     "tracked_files": 354,
-    "exported_files": 208,
-    "excluded_candidates": 116,
-    "allowlisted_deny_matches": 4,
+    "exported_files": 211,
+    "excluded_candidates": 113,
+    "allowlisted_deny_matches": 7,
     "token_hits": 0,
     "required_missing": 0,
     "required_sample_missing": 0,
@@ -39,8 +39,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 6948,
-      "sha256": "5fce6936aaba3e94343420b1dcfd53d2bbe76563d6c7e96a45f314f796f1d4e5"
+      "size_bytes": 6898,
+      "sha256": "7d78f727d32417f56751dec4ac0fb84e20dfca5ff03e0153a9491fea6d17f9ff"
     },
     {
       "path": "assets/fonts/README.md",
@@ -59,18 +59,18 @@
     },
     {
       "path": "config/asset_connector_mapping_contract.json",
-      "size_bytes": 3487,
-      "sha256": "28f66e6c7403ee5981c8c900329da11be1187113338ec04e45963e94a5751b1e"
+      "size_bytes": 6762,
+      "sha256": "5449b2bf4e037da880bff412b03628dc41eece375dbc6c1c37d16a8951af073c"
     },
     {
       "path": "config/asset_connector_mode_policy.json",
-      "size_bytes": 1362,
-      "sha256": "39b1802eddd3dcace5dc6e5a549cfaac5c972b707cb3a3a2dafe9f2c20687e54"
+      "size_bytes": 1382,
+      "sha256": "1cbd2a1a9079275f6a6fe342655fa8e51e49c62c5c370f27148f78804898c542"
     },
     {
       "path": "config/asset_usage_summary_contract.json",
-      "size_bytes": 1361,
-      "sha256": "e92cac9133ae1b1a6f0696c7f3177112e241f964b4ee753e356fd6be8998067b"
+      "size_bytes": 1971,
+      "sha256": "94b08c569331ddf72bd707a7ec41aa912143a40d1e1a304c06fe702f383b3bdc"
     },
     {
       "path": "config/auto_mode_pipeline_policy.json",
@@ -104,8 +104,8 @@
     },
     {
       "path": "config/deck_spec.schema.json",
-      "size_bytes": 31808,
-      "sha256": "6d5bab2775c2af02f2483799c893a6cd0a03a18a3b8efedd09578cae873a5444"
+      "size_bytes": 32151,
+      "sha256": "a57969adda2928c05d55a997901edeca54d78dbdc240e28de5bdd8f52269db21"
     },
     {
       "path": "config/delivery_summary_contract.json",
@@ -234,8 +234,8 @@
     },
     {
       "path": "config/public_gate_toolkit_dependency_policy.json",
-      "size_bytes": 3487,
-      "sha256": "57d952a5f9304c3d35b7e2867451b2d040471428dec6e7e482c31b490adfb6dc"
+      "size_bytes": 4589,
+      "sha256": "dbac5964d7e850a22e1f0bf80f9057184762313e781008d11e18ec3eaab62173"
     },
     {
       "path": "config/public_private_ci_boundary_policy.json",
@@ -574,8 +574,8 @@
     },
     {
       "path": "docs/DECK_SPEC.md",
-      "size_bytes": 7545,
-      "sha256": "79cbf5a09fa614b3470abe87589921a275317a2ea815bf9975c89befff42edc6"
+      "size_bytes": 7651,
+      "sha256": "c65ae8a4691eea0e450a582faff488e2802ab0644b51a101d05520170a2e7575"
     },
     {
       "path": "docs/DESIGN.md",
@@ -759,8 +759,8 @@
     },
     {
       "path": "scripts/build_deck.py",
-      "size_bytes": 61610,
-      "sha256": "84e14650771bbb4ec43f0641af36a83bb0ad55dd1c9722e69b212e9f23b5477d"
+      "size_bytes": 61756,
+      "sha256": "89a33e08aa551611383a1957f957c8f2addf633ebc56ec978b34ce776293dd9e"
     },
     {
       "path": "scripts/build_delivery_summary.py",
@@ -839,8 +839,8 @@
     },
     {
       "path": "scripts/compose_deck_spec_from_intake.py",
-      "size_bytes": 67509,
-      "sha256": "d56eee461df5fd3487e8d2b0e1dfb587392766adda2afe058e18f240f31e2fb8"
+      "size_bytes": 68408,
+      "sha256": "2d2cd7611dd61af9742b3fe0266d3865e83ea6af4012b4bcfa0a16c8003f4e1b"
     },
     {
       "path": "scripts/deliver_project_output.py",
@@ -979,8 +979,8 @@
     },
     {
       "path": "scripts/render_template_thumbnails.py",
-      "size_bytes": 11338,
-      "sha256": "d81c7f5a785a662b9a8d6aa3714e4c93318331455191ab0d39070d6566f39b85"
+      "size_bytes": 11602,
+      "sha256": "9932277c732e23cc8ae481107bdecaf9544b55023b96dade45bb34adb77d57d7"
     },
     {
       "path": "scripts/run_auto_self_correction.py",
@@ -998,9 +998,19 @@
       "sha256": "e03ba566c6e8cfb5f2a08270bb7801cd0cdcba7a84c149faadefd52a91531598"
     },
     {
+      "path": "scripts/validate_deck_design_review.py",
+      "size_bytes": 15401,
+      "sha256": "53f7be6568dfa16d957730c4d7fee67619b13bf23997e820d7e032615a6aefc6"
+    },
+    {
       "path": "scripts/validate_deck_intake.py",
       "size_bytes": 2801,
       "sha256": "00550e96e0bf13ac1a1ccf9541c69930330c7918b8ac59f910d8f32a04eaa100"
+    },
+    {
+      "path": "scripts/validate_design_quality.py",
+      "size_bytes": 10410,
+      "sha256": "46796f57137d752e33614f0a9812afde82a669a7a85bd13af35a41b4bfbeb3d4"
     },
     {
       "path": "scripts/validate_html_output.py",
@@ -1011,6 +1021,11 @@
       "path": "scripts/validate_pptx_package.py",
       "size_bytes": 1501,
       "sha256": "b8ec66640a415c909cf7351afcc9c53f53cd4f03bbbf6688622e37c92a252cc4"
+    },
+    {
+      "path": "scripts/validate_visual_smoke.py",
+      "size_bytes": 14548,
+      "sha256": "0b4a207d61d6beda7ca94288412520152be0177893d26f2c34b2b0d9b528c869"
     },
     {
       "path": "system/__init__.py",
@@ -1024,8 +1039,8 @@
     },
     {
       "path": "system/deck_models.py",
-      "size_bytes": 12530,
-      "sha256": "19466656421487f3c33aa0e3a9a12daddb8c44e35ac14ab9610d089986dce018"
+      "size_bytes": 12685,
+      "sha256": "c1032bc4c93f153d6eab6f04f08cd50af74a28abd1289b5f0f07202abb2742fe"
     },
     {
       "path": "system/intake_models.py",

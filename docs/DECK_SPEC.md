@@ -35,7 +35,7 @@ They are copied into `outputs/projects/<project_id>/docs/` when project output i
 
 `mode_policy` selects the runtime design mode policy. Supported values are `auto` and `assistant`; when omitted, `auto` is used. Mode policies live in `config/mode_policies/` and are recorded in slide selection rationale reports.
 
-`asset_intents` records metadata-only recommendations from the composer for image placeholders, icons, chart presets, palettes, typography, and themes. These records cite approved `config/ppt_asset_catalog.json` asset IDs and policy metadata; they do not copy binaries or grant permission to scan local/external folders.
+`asset_intents` records metadata-only recommendations from the composer for image placeholders, illustrations, icons, chart presets, palettes, typography, and themes. These records cite approved `config/ppt_asset_catalog.json` asset IDs and policy metadata, including `semantic_context`, `template_media_policy`, `license_action`, and `risk_level`; they do not copy binaries or grant permission to scan local/external folders.
 
 HTML final output is built from the same deck spec with `scripts/build_html_deck.py` or `python scripts/ppt_system.py html <spec>`. HTML is a browser/share/presentation artifact; PPTX and Google Slides remain the preferred human-editable outputs.
 

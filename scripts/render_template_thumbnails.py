@@ -53,10 +53,10 @@ def extract_slide_preview_lines(slide) -> list[str]:
 
 def render_text_previews(library_path: Path, output_dir: Path, slides: list[dict[str, str]]) -> list[Path]:
     output_dir.mkdir(parents=True, exist_ok=True)
-    prs = Presentation(str(library_path))
+    prs = Presentation(str(library_path)) if library_path.exists() else None
     created: list[Path] = []
     for index, slide_meta in enumerate(slides, start=1):
-        slide = prs.slides[index - 1]
+        slide = prs.slides[index - 1] if prs is not None and index <= len(prs.slides) else None
         image = Image.new("RGB", (1280, 720), color=(16, 33, 59))
         draw = ImageDraw.Draw(image)
         draw.rectangle((40, 40, 1240, 680), fill=(255, 255, 255))
@@ -65,9 +65,11 @@ def render_text_previews(library_path: Path, output_dir: Path, slides: list[dict
         draw.text((80, 160), f"Fallback preview from PPT text | {library_path.name}", fill=(122, 132, 148))
 
         y = 230
-        for line in extract_slide_preview_lines(slide):
+        for line in extract_slide_preview_lines(slide) if slide is not None else []:
             draw.text((100, y), f"- {line[:120]}", fill=(39, 39, 39))
             y += 52
+        if slide is None:
+            draw.text((100, y), "- metadata-only preview; private template binary not included", fill=(39, 39, 39))
 
         output_path = output_dir / f"slide_{index:02d}.png"
         image.save(output_path)

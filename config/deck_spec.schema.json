@@ -22,6 +22,7 @@
             "palette",
             "typography",
             "icon",
+            "illustration",
             "image",
             "chart_preset",
             "theme",
@@ -185,6 +186,16 @@
         "risk_level": {
           "title": "Risk Level",
           "type": "string"
+        },
+        "semantic_context": {
+          "additionalProperties": true,
+          "title": "Semantic Context",
+          "type": "object"
+        },
+        "template_media_policy": {
+          "additionalProperties": true,
+          "title": "Template Media Policy",
+          "type": "object"
         },
         "candidate_asset_ids": {
           "items": {

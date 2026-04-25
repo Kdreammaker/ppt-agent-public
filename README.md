@@ -7,13 +7,13 @@ This workspace is organized around a template-library-first PPT authoring workfl
 For a new public install, use one command. This creates `ppt-agent-public/` and a ready `workspace/` tree under the target:
 
 ```powershell
-python scripts\ppt_install.py --target "C:\Users\kimjo\Downloads\ppt-workspaces\ppt-maker"
+python scripts\ppt_install.py --target "<install-root>\ppt-maker"
 ```
 
 If an AI agent has already cloned the public repo, run this from the repo root instead:
 
 ```powershell
-python scripts\ppt_install.py --workspace "C:\Users\kimjo\Downloads\ppt-workspaces\ppt-maker\workspace"
+python scripts\ppt_install.py --workspace "<install-root>\ppt-maker\workspace"
 ```
 
 User files uploaded in chat or selected from disk should be imported into the workspace before use:

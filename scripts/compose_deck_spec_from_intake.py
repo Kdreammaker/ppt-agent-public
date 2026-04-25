@@ -175,7 +175,7 @@ def asset_intent_record(
     candidate_asset_ids: list[str] | None = None,
     notes: str | None = None,
 ) -> dict[str, Any]:
-    return {
+    intent = {
         "role": role,
         "asset_class": asset["asset_class"],
         "asset_id": asset["asset_id"],
@@ -193,6 +193,13 @@ def asset_intent_record(
         "candidate_asset_ids": candidate_asset_ids or [],
         "notes": notes,
     }
+    semantic_context = asset.get("semantic_context")
+    if isinstance(semantic_context, dict) and semantic_context:
+        intent["semantic_context"] = semantic_context
+    template_media_policy = asset.get("template_media_policy")
+    if isinstance(template_media_policy, dict) and template_media_policy:
+        intent["template_media_policy"] = template_media_policy
+    return intent
 
 
 def first_asset_by_terms(
@@ -1530,6 +1537,18 @@ def append_workspace_asset_intents(
             "private_upload_allowed": False,
             "license_action": "user_responsibility",
             "risk_level": "user_responsibility",
+            "semantic_context": {
+                "intent": "Explicit user-uploaded workspace asset",
+                "domain": "user_supplied",
+                "audience": "deck_viewer",
+                "medium": "presentation",
+                "output_surface": "pptx",
+            },
+            "template_media_policy": {
+                "embedded_media_reusable": False,
+                "jpg_preview_reusable": False,
+                "allowed_use": "workspace_relative_user_asset_only",
+            },
             "candidate_asset_ids": [asset_id],
             "usage_rationale": (
                 "Explicit user-requested workspace asset; Auto Mode may use it directly and record rationale."

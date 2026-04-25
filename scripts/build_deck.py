@@ -327,6 +327,8 @@ def write_asset_usage_report(output_path: Path, spec: dict[str, Any], usage: lis
                 "materialization": intent.get("materialization"),
                 "license_action": intent.get("license_action"),
                 "risk_level": intent.get("risk_level"),
+                "semantic_context": intent.get("semantic_context"),
+                "template_media_policy": intent.get("template_media_policy"),
                 "usage_rationale": intent.get("usage_rationale") or intent.get("notes"),
             }
         )

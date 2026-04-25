@@ -7,7 +7,7 @@
     "store request summaries and public-safe manifests only"
   ],
   "private_repo_role": [
-    "rank font, palette, template, and module candidates",
+    "rank font, palette, icon, illustration, template, and module candidates",
     "apply design judgment and approval policy",
     "run Auto multi-pass production pipeline",
     "run Assistant review loop",

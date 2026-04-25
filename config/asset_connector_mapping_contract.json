@@ -6,7 +6,26 @@
     "metadata_search": {
       "delivery_mode": "metadata_only",
       "include_private_storage_refs": false,
-      "approval_required_for_binary_release": true
+      "approval_required_for_binary_release": true,
+      "required_request_dimensions": [
+        "intent",
+        "domain",
+        "audience",
+        "medium",
+        "output_surface"
+      ],
+      "recommended_request_dimensions": [
+        "locale",
+        "tone"
+      ],
+      "supported_asset_types": [
+        "palette",
+        "icon",
+        "illustration",
+        "font",
+        "deck_component"
+      ],
+      "request_strategy": "fan_out_by_asset_type_for_balanced_coverage"
     },
     "materialization": {
       "plan_required_before_apply": true,
@@ -24,6 +43,8 @@
     "license_class",
     "license_action",
     "usage_groups",
+    "semantic_context",
+    "template_media_policy",
     "formats",
     "relative_path",
     "sha256",
@@ -35,6 +56,7 @@
     "font": "typography",
     "palette": "palette",
     "icon": "icon",
+    "illustration": "image_metadata_recommendation",
     "deck_component": "template_module_recommendation",
     "deck_template_module": "template_module_recommendation",
     "deck_template_composition": "template_composition_recommendation"
@@ -50,6 +72,19 @@
       "license_class": "open_font",
       "license_action": "check-license-file",
       "usage_groups": ["presentation", "korean"],
+      "semantic_context": {
+        "intent": "Korean executive presentation typography",
+        "domain": "capital_markets",
+        "audience": "executives",
+        "medium": "presentation",
+        "output_surface": "pptx",
+        "locale": "ko-KR"
+      },
+      "template_media_policy": {
+        "embedded_media_reusable": false,
+        "jpg_preview_reusable": false,
+        "allowed_use": "metadata_and_manifest_only"
+      },
       "formats": ["otf"],
       "relative_path": "fonts/pretendard/Pretendard-Regular.otf",
       "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
@@ -67,6 +102,19 @@
       "license_class": "internal_metadata",
       "license_action": "none",
       "usage_groups": ["presentation", "executive"],
+      "semantic_context": {
+        "intent": "Calm executive financial briefing palette",
+        "domain": "capital_markets",
+        "audience": "executives",
+        "medium": "presentation",
+        "output_surface": "pptx",
+        "locale": "ko-KR"
+      },
+      "template_media_policy": {
+        "embedded_media_reusable": false,
+        "jpg_preview_reusable": false,
+        "allowed_use": "metadata_and_manifest_only"
+      },
       "formats": ["json"],
       "relative_path": "palettes/calm-blue-exec.json",
       "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
@@ -84,12 +132,55 @@
       "license_class": "private_template_metadata",
       "license_action": "approval-required-before-binary-release",
       "usage_groups": ["presentation", "b2b", "kpi"],
+      "semantic_context": {
+        "intent": "KOSPI and KOSDAQ KPI module for analyst briefing",
+        "domain": "capital_markets",
+        "audience": "analysts",
+        "medium": "presentation",
+        "output_surface": "pptx",
+        "locale": "ko-KR"
+      },
+      "template_media_policy": {
+        "embedded_media_reusable": false,
+        "jpg_preview_reusable": false,
+        "allowed_use": "shape_vector_template_metadata_only"
+      },
       "formats": ["json"],
       "relative_path": "templates/modules/kpi-card-calm-blue.module.json",
       "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
       "size_bytes": 2048,
       "materialization": {"status": "proposal_required"},
       "policy_notes": ["template metadata only", "binary export remains private"]
+    },
+    {
+      "export_item_id": "illustration:market-structure-network",
+      "export_item_type": "illustration",
+      "asset_uid": "asset.illustration.market_structure_network",
+      "asset_type": "illustration",
+      "name": "Market Structure Network Illustration",
+      "risk_level": "medium",
+      "license_class": "private_metadata_reference",
+      "license_action": "approval-required-before-binary-release",
+      "usage_groups": ["presentation", "finance", "hero_visual"],
+      "semantic_context": {
+        "intent": "Abstract market structure visual for reform briefing",
+        "domain": "capital_markets",
+        "audience": "executives",
+        "medium": "presentation",
+        "output_surface": "pptx",
+        "locale": "ko-KR"
+      },
+      "template_media_policy": {
+        "embedded_media_reusable": false,
+        "jpg_preview_reusable": false,
+        "allowed_use": "metadata_only_request_approved_package_when_needed"
+      },
+      "formats": ["json"],
+      "relative_path": "illustrations/market-structure-network.metadata.json",
+      "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "size_bytes": 1536,
+      "materialization": {"status": "proposal_required"},
+      "policy_notes": ["illustration metadata only", "no embedded slide photo or JPG preview reuse"]
     }
   ],
   "forbidden_public_fields": [
@@ -98,6 +189,8 @@
     "private_work_path",
     "generated_connector_report_path",
     "local_absolute_path",
-    "raw_registry_record"
+    "raw_registry_record",
+    "embedded_slide_photo",
+    "jpg_preview"
   ]
 }

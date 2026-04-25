@@ -8,6 +8,8 @@
     "license_class",
     "license_action",
     "risk_level",
+    "semantic_context",
+    "template_media_policy",
     "relative_registry_path",
     "sha256",
     "size_bytes"
@@ -20,6 +22,8 @@
     "license_class",
     "license_action",
     "risk_level",
+    "semantic_context",
+    "template_media_policy",
     "sha256",
     "size_bytes",
     "usage_rationale"
@@ -30,7 +34,9 @@
     "private_work_path",
     "generated_connector_report_path",
     "raw_registry_file",
-    "local_absolute_path"
+    "local_absolute_path",
+    "embedded_slide_photo",
+    "jpg_preview"
   ],
   "sample_public_summary": {
     "schema_version": "1.0",
@@ -44,6 +50,19 @@
         "license_class": "open_font",
         "license_action": "check-license-file",
         "risk_level": "low",
+        "semantic_context": {
+          "intent": "Korean executive readability",
+          "domain": "capital_markets",
+          "audience": "executives",
+          "medium": "presentation",
+          "output_surface": "pptx",
+          "locale": "ko-KR"
+        },
+        "template_media_policy": {
+          "embedded_media_reusable": false,
+          "jpg_preview_reusable": false,
+          "allowed_use": "approved_package_manifest_only"
+        },
         "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
         "size_bytes": 1024,
         "usage_rationale": "Selected by private runtime for Korean executive readability."
