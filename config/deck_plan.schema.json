@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.ppt-test/deck_plan.schema.json",
+  "title": "DeckPlan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plan_id",
+    "request_id",
+    "source_intake_path",
+    "operating_mode",
+    "audience",
+    "goal",
+    "narrative_arc",
+    "toc",
+    "slide_plans",
+    "brand_style_intent",
+    "assumptions",
+    "approval_state"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "plan_id": {"type": "string", "minLength": 3},
+    "request_id": {"type": "string", "minLength": 3},
+    "source_intake_path": {"type": "string", "minLength": 1},
+    "operating_mode": {"enum": ["auto", "assistant"]},
+    "audience": {"type": "string", "minLength": 1},
+    "goal": {"type": "string", "minLength": 1},
+    "narrative_arc": {"type": "string", "minLength": 1},
+    "toc": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "slide_plans": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "plan_slide_id",
+          "slide_number",
+          "working_title",
+          "message",
+          "supporting_points",
+          "visual_intent",
+          "layout_intent",
+          "asset_intents",
+          "content_budget"
+        ],
+        "properties": {
+          "plan_slide_id": {"type": "string", "minLength": 3},
+          "slide_number": {"type": "integer", "minimum": 1},
+          "working_title": {"type": "string", "minLength": 1},
+          "message": {"type": "string", "minLength": 1},
+          "supporting_points": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "visual_intent": {"type": "string", "minLength": 1},
+          "layout_intent": {"type": "string", "minLength": 1},
+          "asset_intents": {
+            "type": "array",
+            "items": {"type": "object"}
+          },
+          "content_budget": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["max_title_chars", "max_body_points", "density"],
+            "properties": {
+              "max_title_chars": {"type": "integer", "minimum": 12},
+              "max_body_points": {"type": "integer", "minimum": 1},
+              "density": {"enum": ["low", "medium", "high"]}
+            }
+          }
+        }
+      }
+    },
+    "brand_style_intent": {"type": "object"},
+    "assumptions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "approval_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "required_before_final_build", "approved_checkpoints"],
+      "properties": {
+        "status": {"enum": ["not_required", "pending", "approved", "revise_requested", "skipped", "blocked"]},
+        "required_before_final_build": {"type": "boolean"},
+        "approved_checkpoints": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

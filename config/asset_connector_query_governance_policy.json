@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "asset_connector_query_governance",
+  "status": "active",
+  "purpose": "Constrain repeated public/private connector metadata use so public summaries cannot reconstruct private catalog shape, ranking behavior, or asset availability.",
+  "limits": {
+    "max_results_per_asset_type": 8,
+    "max_asset_types_per_request": 5,
+    "max_queries_per_session": 24,
+    "max_similar_queries_per_session": 4,
+    "min_seconds_between_similar_queries": 20,
+    "max_public_summary_candidates": 8,
+    "diversity_cap_per_provider_or_family": 3
+  },
+  "supported_asset_types": [
+    "palette",
+    "icon",
+    "illustration",
+    "font",
+    "deck_component"
+  ],
+  "required_request_dimensions": [
+    "request_id",
+    "intent",
+    "domain",
+    "audience",
+    "medium",
+    "output_surface",
+    "asset_type",
+    "limit"
+  ],
+  "public_safe_request_example": {
+    "request_id": "asset-query-example-001",
+    "intent": "executive growth review deck with calm analytical tone",
+    "domain": "business",
+    "audience": "executive leadership",
+    "medium": "presentation",
+    "output_surface": "pptx",
+    "asset_type": "palette",
+    "limit": 8
+  },
+  "public_summary_fields": [
+    "request_id",
+    "asset_type",
+    "result_count",
+    "safe_metadata_fields",
+    "quota_status",
+    "scope_status",
+    "redaction_summary",
+    "abuse_state"
+  ],
+  "minimum_safe_metadata_fields": [
+    "asset_uid",
+    "asset_type",
+    "name",
+    "risk_level",
+    "license_class",
+    "license_action",
+    "usage_groups",
+    "formats",
+    "sha256",
+    "size_bytes",
+    "semantic_context",
+    "template_media_policy"
+  ],
+  "private_audit_fields": [
+    "tenant_id",
+    "actor_id",
+    "session_id",
+    "raw_query",
+    "normalized_query_hash",
+    "raw_result_count",
+    "raw_rank_scores",
+    "quota_bucket",
+    "throttle_decision",
+    "abuse_signal_reasons",
+    "private_registry_refs"
+  ],
+  "redaction_rules": {
+    "omit_raw_private_payloads": true,
+    "omit_raw_rank_scores": true,
+    "omit_registry_paths": true,
+    "omit_provider_family_counts": true,
+    "omit_unreturned_candidate_counts": true,
+    "hash_repeated_query_keys": true
+  },
+  "abuse_states": [
+    "ok",
+    "rate_limited",
+    "scope_limited",
+    "manual_review_required",
+    "blocked"
+  ],
+  "public_private_boundary": {
+    "public_repo_may": [
+      "validate request and summary shape",
+      "write local request summaries",
+      "show quota status and redaction summary",
+      "run metadata-only smoke fixtures"
+    ],
+    "private_backend_owns": [
+      "rate enforcement",
+      "scoring",
+      "raw audit trails",
+      "tenant counters",
+      "actor counters",
+      "materialization approval"
+    ]
+  }
+}

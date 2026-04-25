@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "public_reverse_engineering_risk",
+  "status": "active",
+  "threat_model": {
+    "assumption": "Public source, public CLI execution, public-safe reports, and connector summaries are inspectable and repeatable by an adversary.",
+    "abuse_surfaces": [
+      "public_source_inspection",
+      "repeated_local_smoke_execution",
+      "public_cli_output_scraping",
+      "connector_metadata_search_enumeration",
+      "asset_type_fan_out_abuse",
+      "prompt_or_playbook_leakage",
+      "clean_export_operational_intelligence_leakage"
+    ],
+    "red_team_checklist": [
+      "Run install and smoke commands repeatedly and verify reports do not reveal private ranking, catalog size, or raw connector payloads.",
+      "Vary connector queries by asset type and verify limits, diversity caps, and safe-field redaction hold.",
+      "Inspect clean export for work logs, local paths, private template details, private prompt text, raw assets, and generated reports.",
+      "Read all public playbooks as an attacker and verify they describe checkpoints, not proprietary reasoning examples.",
+      "Confirm public reports use stable IDs and summaries instead of private paths, Drive IDs, approval records, or raw registry rows."
+    ]
+  },
+  "classifications": {
+    "public": [
+      "public CLI commands",
+      "workspace bootstrap tree",
+      "schema names",
+      "generic mode stage names",
+      "public smoke fixtures",
+      "public-safe validator summaries"
+    ],
+    "public_safe_but_sensitive": [
+      "connector request shape",
+      "metadata-only response summary shape",
+      "mode playbook checkpoint structure",
+      "deck plan schema",
+      "prompt skeleton IDs",
+      "quota and rate-limit categories"
+    ],
+    "private_only": [
+      "private prompt wording",
+      "private ranking weights",
+      "private template binaries",
+      "private asset binaries",
+      "raw connector payloads",
+      "raw audit trails",
+      "tenant counters",
+      "private materialization decisions"
+    ],
+    "never_logged": [
+      "tokens",
+      "workspace codes",
+      "Drive IDs",
+      "approval records",
+      "local absolute private paths",
+      "Slack evidence",
+      "user-upload source attachment paths",
+      "raw private registry rows"
+    ]
+  },
+  "public_report_rules": {
+    "max_connector_results_per_report": 8,
+    "require_relative_artifact_refs": true,
+    "forbid_raw_rank_scores": true,
+    "forbid_full_candidate_lists": true,
+    "forbid_private_examples": true,
+    "allowed_connector_summary_fields": [
+      "request_id",
+      "intent",
+      "asset_type",
+      "result_count",
+      "safe_fields_present",
+      "policy_status",
+      "quota_status",
+      "redaction_summary"
+    ]
+  },
+  "clean_export_rules": {
+    "exclude_work_logs": true,
+    "exclude_handoff_prompts": true,
+    "exclude_internal_plans": true,
+    "exclude_generated_outputs": true,
+    "exclude_raw_references": true,
+    "exclude_private_prompt_packs": true,
+    "include_public_safe_playbooks": true,
+    "include_public_safe_schemas": true
+  }
+}

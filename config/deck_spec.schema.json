@@ -282,6 +282,25 @@
           "title": "Layout",
           "type": "string"
         },
+        "plan_slide_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Plan Slide Id"
+        },
+        "plan_decision_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Plan Decision Refs",
+          "type": "array"
+        },
         "base_slide_key": {
           "anyOf": [
             {
@@ -944,6 +963,25 @@
           "title": "Layout",
           "type": "string"
         },
+        "plan_slide_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Plan Slide Id"
+        },
+        "plan_decision_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Plan Decision Refs",
+          "type": "array"
+        },
         "base_slide_key": {
           "anyOf": [
             {
@@ -1253,6 +1291,30 @@
       ],
       "default": null,
       "title": "Project Id"
+    },
+    "deck_plan_ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Deck Plan Ref"
+    },
+    "plan_traceability_report_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Plan Traceability Report Path"
     },
     "aspect_ratio": {
       "default": "16:9",

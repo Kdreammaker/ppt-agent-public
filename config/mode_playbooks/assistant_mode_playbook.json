@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "playbook_id": "assistant_mode_playbook",
+  "mode": "assistant",
+  "status": "active",
+  "deck_plan_required": true,
+  "approval_model": "explicit_approval_before_final_build_when_review_is_requested",
+  "prompt_skeleton_refs": [
+    "docs/mode_playbooks/prompt_skeletons/assistant_checkpoint.skeleton.md",
+    "docs/mode_playbooks/prompt_skeletons/plan_to_spec.skeleton.md"
+  ],
+  "checkpoints": [
+    "intake_clarification",
+    "deck_plan_review",
+    "table_of_contents_review",
+    "slide_by_slide_content_plan_review",
+    "font_palette_layout_style_review",
+    "asset_metadata_candidate_review",
+    "final_build_continue_revise_skip_decision",
+    "delivery_review"
+  ],
+  "stages": [
+    {
+      "id": "intake_clarification",
+      "template": "docs/mode_playbooks/stages/assistant/01_intake_clarification.md",
+      "approval_required": true
+    },
+    {
+      "id": "deck_plan_review",
+      "template": "docs/mode_playbooks/stages/assistant/02_deck_plan_review.md",
+      "approval_required": true
+    },
+    {
+      "id": "table_of_contents_review",
+      "template": "docs/mode_playbooks/stages/assistant/03_table_of_contents_review.md",
+      "approval_required": true
+    },
+    {
+      "id": "slide_by_slide_content_plan_review",
+      "template": "docs/mode_playbooks/stages/assistant/04_slide_by_slide_content_plan_review.md",
+      "approval_required": true
+    },
+    {
+      "id": "font_palette_layout_style_review",
+      "template": "docs/mode_playbooks/stages/assistant/05_font_palette_layout_style_review.md",
+      "approval_required": true
+    },
+    {
+      "id": "asset_metadata_candidate_review",
+      "template": "docs/mode_playbooks/stages/assistant/06_asset_metadata_candidate_review.md",
+      "approval_required": true
+    },
+    {
+      "id": "final_build_continue_revise_skip_decision",
+      "template": "docs/mode_playbooks/stages/assistant/07_final_build_continue_revise_skip_decision.md",
+      "approval_required": true
+    },
+    {
+      "id": "delivery_review",
+      "template": "docs/mode_playbooks/stages/assistant/08_delivery_review.md",
+      "approval_required": true
+    }
+  ],
+  "review_summary_template": "docs/mode_playbooks/stages/assistant/plan_style_asset_review_summary.md",
+  "public_private_boundary": {
+    "public_repo_may_contain": [
+      "checkpoint IDs",
+      "generic review summary shape",
+      "public-safe skeleton templates"
+    ],
+    "private_runtime_owns": [
+      "proprietary prompt wording",
+      "hidden examples",
+      "private ranking",
+      "private artifact materialization"
+    ]
+  }
+}

@@ -189,10 +189,24 @@ def command_validate_intake(args: argparse.Namespace) -> int:
 
 
 def command_compose_spec(args: argparse.Namespace) -> int:
-    command = [sys.executable, "scripts/compose_deck_spec_from_intake.py", args.intake_path]
+    if args.direct_intake:
+        command = [sys.executable, "scripts/compose_deck_spec_from_intake.py", args.intake_path]
+        if args.output:
+            command.extend(["--output", args.output])
+        run_command(command)
+        return 0
+
+    intake_path = Path(args.intake_path)
+    intake_stem = intake_path.stem
+    plan_output = args.plan_output or f"outputs/projects/{intake_stem}/plans/deck_plan.json"
+    plan_command = [sys.executable, "scripts/compose_deck_plan_from_intake.py", args.intake_path, "--output", plan_output]
+    if args.operating_mode:
+        plan_command.extend(["--operating-mode", args.operating_mode])
+    run_command(plan_command)
+    spec_command = [sys.executable, "scripts/compose_deck_spec_from_plan.py", plan_output]
     if args.output:
-        command.extend(["--output", args.output])
-    run_command(command)
+        spec_command.extend(["--output", args.output])
+    run_command(spec_command)
     return 0
 
 
@@ -420,6 +434,9 @@ def build_parser() -> argparse.ArgumentParser:
     compose_spec = subparsers.add_parser("compose-spec")
     compose_spec.add_argument("intake_path")
     compose_spec.add_argument("--output", default=None)
+    compose_spec.add_argument("--plan-output", default=None)
+    compose_spec.add_argument("--operating-mode", choices=["auto", "assistant"], default=None)
+    compose_spec.add_argument("--direct-intake", action="store_true", help="Compatibility path that skips deck plan creation.")
     compose_spec.set_defaults(func=command_compose_spec)
 
     build = subparsers.add_parser("build")

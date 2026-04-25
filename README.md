@@ -116,6 +116,10 @@ The connector writes local request summaries under `.ppt-agent/gateway_requests/
   - Operator-facing wrapper for intake validation, deck builds, validation, run-scoped output, and project-scoped output.
 - `scripts/compose_deck_spec_from_intake.py`
   - Deterministically composes a draft deck spec from a validated intake JSON file.
+- `scripts/compose_deck_plan_from_intake.py`
+  - Creates a reviewable deck plan before slide content is written or rendered.
+- `scripts/compose_deck_spec_from_plan.py`
+  - Converts the approved or recorded deck plan into a deck spec with plan traceability.
 
 ## Suggested Workflow
 1. Update `config/template_library_catalog.json`.
@@ -125,10 +129,16 @@ The connector writes local request summaries under `.ppt-agent/gateway_requests/
 5. Run `validate_template_blueprints.py`.
 6. Build a deck from a spec in `data/specs`.
 
-To start from intake, compose the draft spec first:
+To start from intake, compose the plan-first draft spec:
 
 ```powershell
 python scripts/ppt_system.py compose-spec data/intake/report_exec_briefing.json
+```
+
+The compatibility path is still available when needed:
+
+```powershell
+python scripts/ppt_system.py compose-spec data/intake/report_exec_briefing.json --direct-intake
 ```
 
 For writer-facing output, prefer the wrapper:

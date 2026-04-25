@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "prompt_pack_boundary",
+  "status": "active",
+  "public_layer": {
+    "description": "Public-safe prompt skeletons with placeholders and no proprietary examples.",
+    "skeleton_root": "docs/mode_playbooks/prompt_skeletons",
+    "allowed_content": [
+      "stage objective",
+      "input placeholders",
+      "output placeholders",
+      "public safety reminders",
+      "prompt version ID placeholder"
+    ],
+    "forbidden_content": [
+      "private prompt wording",
+      "proprietary examples",
+      "private ranking logic",
+      "private template selection heuristics",
+      "raw connector payload examples"
+    ]
+  },
+  "private_layer": {
+    "manifest_env": "PPT_AGENT_PRIVATE_PROMPT_PACK_MANIFEST",
+    "manifest_schema_ref": "private_prompt_pack_manifest.schema.json",
+    "required_fields": [
+      "prompt_pack_id",
+      "version",
+      "compatible_public_skeleton_ids",
+      "mode",
+      "checksum",
+      "private_storage_ref"
+    ],
+    "missing_pack_real_execution_status": "blocked_missing_private_prompt_pack",
+    "missing_pack_public_smoke_status": "public_skeleton_smoke_only"
+  },
+  "public_report_rules": {
+    "cite_prompt_version_ids_only": true,
+    "never_echo_private_prompt_text": true,
+    "report_missing_private_pack_as_blocker_for_real_private_execution": true
+  },
+  "skeletons": [
+    {
+      "skeleton_id": "auto_deck_plan_v1",
+      "path": "docs/mode_playbooks/prompt_skeletons/auto_deck_plan.skeleton.md",
+      "mode": "auto"
+    },
+    {
+      "skeleton_id": "assistant_checkpoint_v1",
+      "path": "docs/mode_playbooks/prompt_skeletons/assistant_checkpoint.skeleton.md",
+      "mode": "assistant"
+    },
+    {
+      "skeleton_id": "plan_to_spec_v1",
+      "path": "docs/mode_playbooks/prompt_skeletons/plan_to_spec.skeleton.md",
+      "mode": "shared"
+    }
+  ]
+}

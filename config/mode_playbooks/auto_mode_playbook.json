@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "playbook_id": "auto_mode_playbook",
+  "mode": "auto",
+  "status": "active",
+  "deck_plan_required": true,
+  "approval_model": "nonblocking_policy_record",
+  "prompt_skeleton_refs": [
+    "docs/mode_playbooks/prompt_skeletons/auto_deck_plan.skeleton.md",
+    "docs/mode_playbooks/prompt_skeletons/plan_to_spec.skeleton.md"
+  ],
+  "required_runtime_report_fields": [
+    "deck_plan_ref",
+    "assumptions_ref",
+    "stage_artifacts",
+    "revision_decision"
+  ],
+  "stages": [
+    {
+      "id": "intake_normalization",
+      "template": "docs/mode_playbooks/stages/auto/01_intake_normalization.md",
+      "inputs": ["raw_request", "deck_intake_schema"],
+      "outputs": ["normalized_intake_ref"],
+      "blocking_conditions": ["invalid_intake"]
+    },
+    {
+      "id": "plan_creation",
+      "template": "docs/mode_playbooks/stages/auto/02_plan_creation.md",
+      "inputs": ["normalized_intake_ref"],
+      "outputs": ["deck_plan_ref"],
+      "blocking_conditions": ["missing_required_plan_field"]
+    },
+    {
+      "id": "assumption_recording",
+      "template": "docs/mode_playbooks/stages/auto/03_assumption_recording.md",
+      "inputs": ["deck_plan_ref"],
+      "outputs": ["assumptions_ref"],
+      "blocking_conditions": []
+    },
+    {
+      "id": "template_family_selection",
+      "template": "docs/mode_playbooks/stages/auto/04_template_family_selection.md",
+      "inputs": ["deck_plan_ref", "template_metadata"],
+      "outputs": ["template_family_ref"],
+      "blocking_conditions": ["no_public_safe_template_candidate"]
+    },
+    {
+      "id": "brand_style_contract_selection",
+      "template": "docs/mode_playbooks/stages/auto/05_brand_style_contract_selection.md",
+      "inputs": ["deck_plan_ref", "brand_style_contract"],
+      "outputs": ["brand_style_contract_ref"],
+      "blocking_conditions": ["brand_policy_mismatch"]
+    },
+    {
+      "id": "asset_metadata_search_plan",
+      "template": "docs/mode_playbooks/stages/auto/06_asset_metadata_search_stage.md",
+      "inputs": ["deck_plan_ref", "asset_connector_query_governance"],
+      "outputs": ["asset_metadata_request_summary_ref"],
+      "blocking_conditions": ["query_governance_blocked"]
+    },
+    {
+      "id": "render",
+      "template": "docs/mode_playbooks/stages/auto/07_render.md",
+      "inputs": ["deck_spec_ref"],
+      "outputs": ["pptx_ref", "html_ref"],
+      "blocking_conditions": ["render_failed"]
+    },
+    {
+      "id": "review",
+      "template": "docs/mode_playbooks/stages/auto/08_review.md",
+      "inputs": ["pptx_ref", "html_ref", "quality_gates"],
+      "outputs": ["quality_review_ref"],
+      "blocking_conditions": ["blocking_quality_failure"]
+    },
+    {
+      "id": "revise_rerender",
+      "template": "docs/mode_playbooks/stages/auto/09_revise_rerender.md",
+      "inputs": ["quality_review_ref", "deck_plan_ref"],
+      "outputs": ["revision_decision", "rerender_ref"],
+      "blocking_conditions": ["max_passes_exceeded"]
+    },
+    {
+      "id": "delivery_decision",
+      "template": "docs/mode_playbooks/stages/auto/10_delivery_decision.md",
+      "inputs": ["quality_review_ref", "revision_decision"],
+      "outputs": ["delivery_decision_ref"],
+      "blocking_conditions": ["delivery_gate_blocked"]
+    }
+  ],
+  "public_private_boundary": {
+    "public_repo_may_contain": [
+      "generic stage names",
+      "artifact contract names",
+      "public-safe prompt skeleton IDs",
+      "blocking condition categories"
+    ],
+    "private_runtime_owns": [
+      "private prompt wording",
+      "private ranking weights",
+      "private template decisions",
+      "private asset backend execution"
+    ]
+  }
+}

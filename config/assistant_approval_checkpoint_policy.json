@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "assistant_approval_checkpoint_policy",
+  "status": "active",
+  "final_build_rule": {
+    "when_review_is_requested": "block_until_required_checkpoints_are_approved",
+    "allowed_decisions": ["continue", "revise", "skip", "block"],
+    "missing_approval_status": "blocked_pending_assistant_approval"
+  },
+  "required_checkpoints_before_final_build": [
+    "deck_plan_review",
+    "table_of_contents_review",
+    "slide_by_slide_content_plan_review",
+    "font_palette_layout_style_review",
+    "asset_metadata_candidate_review",
+    "final_build_continue_revise_skip_decision"
+  ],
+  "public_summary_fields": [
+    "request_id",
+    "deck_plan_ref",
+    "approval_status",
+    "approved_checkpoints",
+    "missing_checkpoints",
+    "decision"
+  ],
+  "forbidden_summary_fields": [
+    "private_prompt_text",
+    "raw_connector_payload",
+    "raw_rank_scores",
+    "private_registry_path",
+    "local_absolute_path"
+  ]
+}

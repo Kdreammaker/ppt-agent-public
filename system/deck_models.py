@@ -130,6 +130,8 @@ class TableSlotData(StrictBase):
 
 class CommonSlide(StrictBase):
     layout: str
+    plan_slide_id: str | None = None
+    plan_decision_refs: list[str] = Field(default_factory=list)
     base_slide_key: str | None = None
     template_key: str | None = None
     base_slide_no: int | None = Field(default=None, ge=1)
@@ -234,6 +236,8 @@ class DeckSpec(StrictBase):
     schema_: str | None = Field(default=None, alias="$schema")
     name: str
     project_id: str | None = None
+    deck_plan_ref: str | None = None
+    plan_traceability_report_path: str | None = None
     aspect_ratio: AspectRatio = "16:9"
     catalog_path: str | None = None
     reference_catalog_path: str | None = None
