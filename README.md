@@ -16,6 +16,24 @@ If an AI agent has already cloned the public repo, run this from the repo root i
 python scripts\ppt_install.py --workspace "<install-root>\ppt-maker\workspace"
 ```
 
+For productized setup, prefer the setup wrapper. It installs the workspace, activates an optional workspace code, configures the private connector when credentials are present, writes a diagnostic report, and prints the exact next `ppt_make.py` commands:
+
+```powershell
+python scripts\ppt_setup.py --workspace "<install-root>\ppt-maker\workspace" --force
+```
+
+If you are starting from the public GitHub link on a new PC, this is the one-line PowerShell path:
+
+```powershell
+$Root="$env:USERPROFILE\Downloads\ppt-maker"; git clone https://github.com/Kdreammaker/ppt-agent-public.git "$Root\ppt-agent-public"; Set-Location "$Root\ppt-agent-public"; python scripts\ppt_setup.py --workspace "$Root\workspace" --force
+```
+
+Entitled private production setup uses the same wrapper after the operator supplies a workspace code and private connector settings through arguments or environment variables:
+
+```powershell
+python scripts\ppt_setup.py --workspace "<workspace>" --workspace-code "<workspace-code>" --enable-private --private-package-repo "<owner/private-repo>" --private-build-command-env PPT_AGENT_PRIVATE_BUILD_COMMAND_JSON --github-check
+```
+
 User files uploaded in chat or selected from disk should be imported into the workspace before use:
 
 ```powershell
@@ -26,6 +44,35 @@ python scripts\ppt_workspace_assets.py validate --workspace "<workspace>"
 ```
 
 Workspace manifests live under `.ppt-agent/` and may contain local paths for that user's machine. Do not commit workspace contents, uploaded assets, private connector files, generated reports, Drive IDs, approval records, or raw private asset payloads.
+
+## Make PPTs From Natural Language
+
+Once setup is complete, users and AI agents can make decks through one natural-language command. The wrapper records a local intake, creates a deck plan first, builds the spec, then produces PPTX and HTML outputs:
+
+```powershell
+python scripts\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" --workspace "<workspace>" --mode assistant
+```
+
+Auto Mode uses the same entrypoint:
+
+```powershell
+python scripts\ppt_make.py "Make a 6 slide growth update for leadership" --workspace "<workspace>" --mode auto
+```
+
+If the private connector is ready and a production build is required:
+
+```powershell
+python scripts\ppt_make.py "Make a production-ready executive growth review" --workspace "<workspace>" --mode assistant --production private --execute-private
+```
+
+Default permission posture:
+
+- local public PPTX/HTML build: enabled
+- Auto/Assistant plan-first public-safe build: enabled
+- user file import into the local workspace: enabled by explicit command only
+- telemetry and automatic upload: disabled
+- private connector/gateway: disabled until configured
+- private runtime execution and private asset materialization: requires entitlement plus connector readiness
 
 ## Public CLI And Private Runtime Path
 

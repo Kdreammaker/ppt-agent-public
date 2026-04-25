@@ -116,6 +116,68 @@
       }
     },
     {
+      "name": "setup",
+      "purpose": "Run the productized first-run path: install a ready workspace, optionally activate workspace-code entitlement, configure the private connector, and write a local setup diagnostic report.",
+      "current_status": "implemented_productized_wrapper",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_setup.py --workspace <workspace>",
+        "planned_entrypoint": "ppt-agent setup --workspace <workspace>"
+      },
+      "inputs": [
+        "workspace_path",
+        "workspace_code",
+        "private_package_repo",
+        "private_build_command",
+        "default_operating_mode"
+      ],
+      "outputs": [
+        "outputs/reports/ppt_setup_report.json",
+        ".ppt-agent/config.json",
+        ".ppt-agent/private_connector.json",
+        ".ppt-agent/entitlement.json"
+      ],
+      "exit_codes": {
+        "0": "workspace setup completed and status was written",
+        "2": "setup completed partially but entitlement or connector readiness needs attention"
+      }
+    },
+    {
+      "name": "make",
+      "purpose": "Create a deck from a natural-language request by writing a local intake, composing a deck plan first, building a spec, and producing public or private PPTX/HTML outputs.",
+      "current_status": "implemented_natural_language_wrapper",
+      "local_only_supported": true,
+      "gateway_required": false,
+      "upload_default": false,
+      "telemetry_default": "disabled",
+      "implementation_mapping": {
+        "current_entrypoint": "python scripts/ppt_make.py \"<request>\" --workspace <workspace> --mode assistant",
+        "planned_entrypoint": "ppt-agent make \"<request>\" --mode assistant"
+      },
+      "inputs": [
+        "natural_language_request",
+        "workspace_path",
+        "operating_mode",
+        "production_mode",
+        "execute_private"
+      ],
+      "outputs": [
+        "outputs/projects/<project_id>/intake/request.json",
+        "outputs/projects/<project_id>/plans/deck_plan.json",
+        "outputs/projects/<project_id>/specs/deck_spec.json",
+        "outputs/decks/<project_id>.pptx",
+        "outputs/html/<project_id>/index.html",
+        "outputs/projects/<project_id>/reports/ppt_make_report.json"
+      ],
+      "exit_codes": {
+        "0": "deck request built or private production request executed",
+        "2": "natural-language request could not be built or private production readiness failed"
+      }
+    },
+    {
       "name": "plan",
       "purpose": "Render an ASCII structure blueprint from intake or spec. Assistant Mode shows it before final output generation and requires an explicit approve/revise/continue/skip decision; Auto Mode skips it by default unless explicitly requested.",
       "current_status": "implemented_local_wrapper",
