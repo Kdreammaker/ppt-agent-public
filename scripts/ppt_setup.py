@@ -85,6 +85,12 @@ def maybe_json(stdout: str) -> dict[str, Any]:
 
 
 def connector_config_args(args: argparse.Namespace, workspace: Path) -> list[str]:
+    private_repo = args.private_package_repo
+    if not private_repo and args.auto_private_defaults and (args.enable_private or args.workspace_code):
+        private_repo = "Kdreammaker/template-based-ppt-system-with-ai"
+    private_ref = args.private_package_ref
+    if not private_ref and args.auto_private_defaults and (args.enable_private or args.workspace_code):
+        private_ref = "codex/project-scoped-output"
     command = [
         sys.executable,
         "scripts/ppt_private_connector.py",
@@ -95,14 +101,16 @@ def connector_config_args(args: argparse.Namespace, workspace: Path) -> list[str
         "--default-operating-mode",
         args.default_operating_mode,
     ]
-    if args.private_package_repo:
-        command.extend(["--private-package-repo", args.private_package_repo])
+    if private_repo:
+        command.extend(["--private-package-repo", private_repo])
     elif args.private_package_repo_env:
         command.extend(["--private-package-repo-env", args.private_package_repo_env])
-    if args.private_package_ref:
-        command.extend(["--private-package-ref", args.private_package_ref])
+    if private_ref:
+        command.extend(["--private-package-ref", private_ref])
     elif args.private_package_ref_env:
         command.extend(["--private-package-ref-env", args.private_package_ref_env])
+    if args.private_package_install_root:
+        command.extend(["--private-package-install-root", args.private_package_install_root])
     if args.private_build_command_json:
         command.extend(["--private-build-command-json", args.private_build_command_json])
     elif args.private_build_command_env:
@@ -114,10 +122,46 @@ def connector_config_args(args: argparse.Namespace, workspace: Path) -> list[str
     return command
 
 
+def dependency_step(args: argparse.Namespace) -> dict[str, Any]:
+    check = "import pptx, PIL, fitz, pydantic"
+    result = subprocess.run([sys.executable, "-c", check], cwd=BASE_DIR, capture_output=True, text=True, check=False, timeout=60)
+    if result.returncode == 0:
+        return {
+            "label": "dependency_check",
+            "command": ["python", "-c", check],
+            "returncode": 0,
+            "status": "passed",
+            "stdout_tail": "",
+            "stderr_tail": "",
+            "installed": False,
+        }
+    if args.skip_dependency_install:
+        return {
+            "label": "dependency_check",
+            "command": ["python", "-c", check],
+            "returncode": result.returncode,
+            "status": "failed",
+            "stdout_tail": result.stdout[-1200:],
+            "stderr_tail": result.stderr[-1200:],
+            "installed": False,
+        }
+    install = run_step(
+        "dependency_install",
+        [sys.executable, "-m", "pip", "install", "-r", "requirements.txt"],
+        timeout=600,
+    )
+    install["installed"] = install["returncode"] == 0
+    return install
+
+
 def command_setup(args: argparse.Namespace) -> int:
     workspace = workspace_from_args(args)
     steps: list[dict[str, Any]] = []
     errors: list[str] = []
+
+    steps.append(dependency_step(args))
+    if steps[-1]["returncode"] != 0:
+        errors.append("dependency installation/check failed")
 
     install_command = [sys.executable, "scripts/ppt_install.py"]
     if args.target:
@@ -161,6 +205,24 @@ def command_setup(args: argparse.Namespace) -> int:
             steps.append(run_step("configure_private_connector", connector_config_args(args, workspace)))
             if steps[-1]["returncode"] != 0:
                 errors.append("private connector configuration failed")
+
+            if args.install_private_runtime and not errors:
+                install_private = run_step(
+                    "install_private_runtime",
+                    [
+                        sys.executable,
+                        "scripts/ppt_private_connector.py",
+                        "install",
+                        "--workspace",
+                        workspace.as_posix(),
+                        "--execute",
+                        *(["--github-check"] if args.github_check else []),
+                    ],
+                    timeout=600,
+                )
+                steps.append(install_private)
+                if install_private["returncode"] != 0:
+                    errors.append("private runtime install failed or needs authenticated private repo access")
 
         steps.append(
             run_step(
@@ -238,15 +300,19 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--force", action="store_true", help="Overwrite workspace-local bootstrap files.")
     parser.add_argument("--workspace-code", default=os.environ.get("PPT_AGENT_WORKSPACE_CODE"), help="Workspace entitlement code. Can also be supplied by PPT_AGENT_WORKSPACE_CODE.")
     parser.add_argument("--enable-private", action="store_true", help="Enable the private connector using supplied args or environment defaults.")
+    parser.add_argument("--auto-private-defaults", action=argparse.BooleanOptionalAction, default=True, help="Use the default private repo/ref when private setup is requested and explicit values are absent.")
+    parser.add_argument("--install-private-runtime", action=argparse.BooleanOptionalAction, default=True, help="Clone/install the private runtime when private setup is requested and the repo is accessible.")
     parser.add_argument("--private-package-repo", default=os.environ.get("PPT_AGENT_PRIVATE_PACKAGE_REPO"))
     parser.add_argument("--private-package-repo-env", default="PPT_AGENT_PRIVATE_PACKAGE_REPO")
     parser.add_argument("--private-package-ref", default=os.environ.get("PPT_AGENT_PRIVATE_PACKAGE_REF"))
     parser.add_argument("--private-package-ref-env", default="PPT_AGENT_PRIVATE_PACKAGE_REF")
+    parser.add_argument("--private-package-install-root", default=os.environ.get("PPT_AGENT_PRIVATE_PACKAGE_INSTALL_ROOT"))
     parser.add_argument("--private-build-command-json", default=os.environ.get("PPT_AGENT_PRIVATE_BUILD_COMMAND_JSON"))
     parser.add_argument("--private-build-command-env", default="PPT_AGENT_PRIVATE_BUILD_COMMAND_JSON")
     parser.add_argument("--default-operating-mode", choices=["auto", "assistant"], default="assistant")
     parser.add_argument("--github-check", action="store_true")
     parser.add_argument("--reset-connector", action="store_true")
+    parser.add_argument("--skip-dependency-install", action="store_true")
     return parser
 
 

@@ -143,7 +143,7 @@ def configured_value(config: dict[str, Any], key: str, env_key: str) -> str | No
     return None
 
 
-def configured_command(config: dict[str, Any]) -> list[str] | None:
+def configured_command(config: dict[str, Any], workspace: Path | None = None) -> list[str] | None:
     value = config.get("private_build_command_json")
     if isinstance(value, str) and value.strip():
         try:
@@ -163,6 +163,30 @@ def configured_command(config: dict[str, Any]) -> list[str] | None:
                 return None
             if isinstance(parsed, list) and all(isinstance(item, str) and item for item in parsed):
                 return parsed
+    if workspace is not None:
+        install_root = install_root_path(workspace, config)
+        bridge = BASE_DIR / "scripts" / "ppt_private_runtime_bridge.py"
+        if install_root.exists() and (install_root / "scripts" / "ppt_system.py").exists() and bridge.exists():
+            return [
+                sys.executable,
+                bridge.as_posix(),
+                "--workspace",
+                "{workspace}",
+                "--private-runtime",
+                install_root.as_posix(),
+                "--spec",
+                "{spec}",
+                "--output",
+                "{output}",
+                "--html-output",
+                "{html_output}",
+                "--request-summary",
+                "{request_summary}",
+                "--capability",
+                "{capability}",
+                "--operating-mode",
+                "{operating_mode}",
+            ]
     return None
 
 
@@ -180,6 +204,18 @@ def default_html_output_path(workspace: Path, spec: Path, output: Path | None) -
             return (output.parent.parent / "html" / output.stem / "index.html").resolve()
         return (output.parent / output.stem / "index.html").resolve()
     return (workspace / "outputs" / "html" / spec.stem / "index.html").resolve()
+
+
+def output_path_from_spec(spec: Path) -> Path | None:
+    try:
+        payload = read_json(spec)
+    except (OSError, json.JSONDecodeError):
+        return None
+    output_value = payload.get("output_path")
+    if not isinstance(output_value, str) or not output_value.strip():
+        return None
+    path = Path(output_value)
+    return path.resolve() if path.is_absolute() else (spec.parent / path).resolve()
 
 
 def maybe_parse_json_text(value: str) -> dict[str, Any] | None:
@@ -307,7 +343,7 @@ def build_status(workspace: Path, *, include_github: bool = False) -> dict[str, 
     gateway = configured_value(config, "gateway_url", "gateway_url_env")
     private_repo = configured_value(config, "private_package_repo", "private_package_repo_env")
     install_root = install_root_path(workspace, config)
-    private_command = configured_command(config)
+    private_command = configured_command(config, workspace)
     default_operating_mode = normalize_operating_mode(str(config.get("default_operating_mode") or "auto"))
     private_package_installed = install_root.exists()
     entitlements = set(entitlement.get("entitlements", []))
@@ -536,12 +572,14 @@ def command_build(args: argparse.Namespace) -> int:
     if not spec.is_absolute():
         spec = (BASE_DIR / spec).resolve()
     output = Path(args.output).resolve() if args.output else None
+    if output is None and spec.exists():
+        output = output_path_from_spec(spec)
     html_output = Path(args.html_output).resolve() if args.html_output else default_html_output_path(workspace, spec, output)
     status = build_status(workspace, include_github=args.github_check)
     config = read_json(connector_path(workspace))
     if not config:
         config = default_config(workspace)
-    private_command = configured_command(config)
+    private_command = configured_command(config, workspace)
     operating_mode = normalize_operating_mode(args.operating_mode, str(config.get("default_operating_mode") or "auto"))
     mode_summary = mode_policy_summary(operating_mode)
     request_id = f"build_{uuid.uuid4().hex[:12]}"

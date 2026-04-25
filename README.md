@@ -28,11 +28,13 @@ If you are starting from the public GitHub link on a new PC, this is the one-lin
 $Root="$env:USERPROFILE\Downloads\ppt-maker"; git clone https://github.com/Kdreammaker/ppt-agent-public.git "$Root\ppt-agent-public"; Set-Location "$Root\ppt-agent-public"; python scripts\ppt_setup.py --workspace "$Root\workspace" --force
 ```
 
-Entitled private production setup uses the same wrapper after the operator supplies a workspace code and private connector settings through arguments or environment variables:
+Entitled private production setup uses the same wrapper after the operator supplies a workspace code. If private repo access is available through GitHub auth, setup can use the default private runtime repo/ref and install it into the workspace:
 
 ```powershell
-python scripts\ppt_setup.py --workspace "<workspace>" --workspace-code "<workspace-code>" --enable-private --private-package-repo "<owner/private-repo>" --private-build-command-env PPT_AGENT_PRIVATE_BUILD_COMMAND_JSON --github-check
+python scripts\ppt_setup.py --workspace "<workspace>" --workspace-code "<workspace-code>" --enable-private --github-check
 ```
+
+Advanced operators can override the private repo, ref, install root, or build command with `--private-package-repo`, `--private-package-ref`, `--private-package-install-root`, or `--private-build-command-env`. Most users should not need those switches.
 
 User files uploaded in chat or selected from disk should be imported into the workspace before use:
 
