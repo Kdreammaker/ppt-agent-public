@@ -6,6 +6,7 @@ import json
 import re
 import subprocess
 import sys
+import urllib.request
 from pathlib import Path
 from typing import Any
 
@@ -37,6 +38,67 @@ def resolve_workspace(value: str | None) -> Path:
 def write_json(path: Path, data: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def display_path(path: Path, root: Path) -> str:
+    try:
+        return path.resolve().relative_to(root.resolve()).as_posix()
+    except ValueError:
+        return path.resolve().as_posix()
+
+
+def read_text_limited(path: Path, limit: int = 8000) -> str:
+    data = path.read_text(encoding="utf-8-sig", errors="replace")
+    return " ".join(data[:limit].split())
+
+
+def fetch_url_summary(url: str, limit: int = 8000) -> dict[str, Any]:
+    req = urllib.request.Request(url, headers={"User-Agent": "ppt-agent-public/1.0"})
+    with urllib.request.urlopen(req, timeout=15) as response:
+        content_type = response.headers.get("content-type", "")
+        raw = response.read(limit)
+    text = raw.decode("utf-8", errors="replace")
+    return {
+        "source_type": "url",
+        "url": url,
+        "content_type": content_type,
+        "excerpt": " ".join(text.split())[:3000],
+        "stored_full_content": False,
+    }
+
+
+def collect_external_context(args: argparse.Namespace, project_root: Path) -> dict[str, Any]:
+    items: list[dict[str, Any]] = []
+    for value in args.source_file:
+        path = Path(value)
+        if not path.is_absolute():
+            path = (Path.cwd() / path).resolve()
+        if path.exists() and path.is_file():
+            items.append(
+                {
+                    "source_type": "file",
+                    "path_ref": path.name,
+                    "excerpt": read_text_limited(path),
+                    "stored_full_content": False,
+                }
+            )
+    for url in args.source_url:
+        try:
+            items.append(fetch_url_summary(url))
+        except Exception as exc:  # noqa: BLE001 - source availability is nonblocking context.
+            items.append({"source_type": "url", "url": url, "error": str(exc), "stored_full_content": False})
+    payload = {
+        "schema_version": SCHEMA_VERSION,
+        "items": items,
+        "policy_summary": {
+            "full_source_content_stored": False,
+            "tokens_printed": False,
+            "used_for_local_plan_only": True,
+        },
+    }
+    if items:
+        write_json(project_root / "context" / "source_context.json", payload)
+    return payload
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -138,7 +200,18 @@ def split_request_points(request: str) -> list[str]:
     return [request.strip()[:220]]
 
 
-def build_intake(request: str, *, project_id: str, mode: str) -> dict[str, Any]:
+def context_points(context: dict[str, Any]) -> list[str]:
+    points: list[str] = []
+    for item in context.get("items", []):
+        if not isinstance(item, dict):
+            continue
+        excerpt = str(item.get("excerpt") or "").strip()
+        if excerpt:
+            points.append(excerpt[:220])
+    return points[:4]
+
+
+def build_intake(request: str, *, project_id: str, mode: str, context: dict[str, Any]) -> dict[str, Any]:
     slide_count = detect_slide_count(request)
     title = request.strip().splitlines()[0].strip()
     title = title[:80] or "Natural Language Deck"
@@ -181,19 +254,73 @@ def build_intake(request: str, *, project_id: str, mode: str) -> dict[str, Any]:
             "reviewers": ["operator"],
             "approval_mode": approval_mode,
         },
-        "must_include": split_request_points(request),
+        "must_include": split_request_points(request) + context_points(context),
         "must_avoid": ["Unreviewed private payloads", "Raw private asset paths", "Generic filler"],
         "source_materials": [],
-        "output_preferences": {
-            "output_spec_path": f"outputs/projects/{project_id}/specs/deck_spec.json",
-            "output_deck_path": f"outputs/decks/{project_id}.pptx",
-            "required_reports": [
-                f"outputs/reports/{project_id}_slide_selection_rationale.json",
-                f"outputs/reports/{project_id}_deck_slot_map.json",
-            ],
-        },
-        "notes": "Natural-language request normalized locally; no model call or telemetry was used.",
+        "output_preferences": {},
+        "notes": "Natural-language request normalized locally; external source excerpts are stored as bounded context only; no telemetry was used.",
     }
+
+
+def write_design_brief(path: Path, request: str, plan: dict[str, Any], spec: dict[str, Any], context: dict[str, Any], version_report: dict[str, Any] | None) -> None:
+    style = plan.get("brand_style_intent", {}) if isinstance(plan.get("brand_style_intent"), dict) else {}
+    lines = [
+        f"# Draft Design Brief: {plan.get('request_id', spec.get('project_id', 'deck'))}",
+        "",
+        "## Request",
+        request.strip(),
+        "",
+        "## Version And Channel",
+    ]
+    if version_report:
+        summary = version_report.get("summary", {})
+        lines.append(f"- update available: `{summary.get('update_available', [])}`")
+        lines.append(f"- remote unreachable: `{summary.get('remote_unreachable', [])}`")
+        lines.append(f"- dirty repos: `{summary.get('dirty', [])}`")
+    else:
+        lines.append("- version check: not run")
+    lines.extend(
+        [
+            "",
+            "## External Context",
+            f"- bounded sources: `{len(context.get('items', []))}`",
+            "- full source content stored: `false`",
+            "",
+            "## Table Of Contents",
+        ]
+    )
+    for index, title in enumerate(plan.get("toc", []), start=1):
+        lines.append(f"{index}. {title}")
+    lines.extend(["", "## Slide Layout And Content Plan"])
+    for slide in plan.get("slide_plans", []):
+        lines.extend(
+            [
+                f"### Slide {slide.get('slide_number')}: {slide.get('working_title')}",
+                f"- layout: `{slide.get('layout_intent')}`",
+                f"- message: {slide.get('message')}",
+                f"- visual: {slide.get('visual_intent')}",
+                f"- max title chars: `{slide.get('content_budget', {}).get('max_title_chars')}`",
+                f"- max body points: `{slide.get('content_budget', {}).get('max_body_points')}`",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            "## Style Decisions",
+            f"- tone: `{style.get('tone', spec.get('mode_policy'))}`",
+            f"- theme: `{spec.get('theme_path')}`",
+            f"- template recipe: `{spec.get('recipe')}`",
+            "- font policy: editable Office text; private runtime may apply installed brand fonts when available",
+            "- color policy: theme-driven palette, no raw private style payload in public report",
+            "",
+            "## Reverse-Engineering Boundary",
+            "- public brief contains only plan IDs, layout intent, safe style refs, and bounded source excerpts",
+            "- private prompt text, ranking details, raw template binaries, raw asset payloads, and work logs are not written here",
+            "- connector reports omit private stdout/stderr and raw private payloads",
+        ]
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
 
 def connector_status(workspace: Path) -> dict[str, Any]:
@@ -221,17 +348,51 @@ def command_make(args: argparse.Namespace) -> int:
     workspace = resolve_workspace(args.workspace)
     mode = args.mode
     project_id = args.project_id or slugify(request)
-    project_root = BASE_DIR / "outputs" / "projects" / project_id
+    project_root = workspace / "outputs" / "projects" / project_id
     intake_path = project_root / "intake" / "request.json"
     plan_path = project_root / "plans" / "deck_plan.json"
     spec_path = project_root / "specs" / "deck_spec.json"
     report_path = project_root / "reports" / "ppt_make_report.json"
+    design_brief_path = project_root / "plans" / "draft_design_brief.md"
+    version_report_path = project_root / "reports" / "version_check.json"
+    deck_output_path = workspace / "outputs" / "decks" / f"{project_id}.pptx"
+    html_output_path = workspace / "outputs" / "html" / project_id / "index.html"
+    build_report_dir = workspace / "outputs" / "reports"
 
-    intake = build_intake(request, project_id=project_id, mode=mode)
+    context = collect_external_context(args, project_root)
+    intake = build_intake(request, project_id=project_id, mode=mode, context=context)
+    intake["output_preferences"] = {
+        "output_spec_path": spec_path.as_posix(),
+        "output_deck_path": deck_output_path.as_posix(),
+        "required_reports": [
+            (build_report_dir / f"{project_id}_slide_selection_rationale.json").as_posix(),
+            (build_report_dir / f"{project_id}_deck_slot_map.json").as_posix(),
+        ],
+    }
     write_json(intake_path, intake)
 
     steps: list[dict[str, Any]] = []
     errors: list[str] = []
+    version_report: dict[str, Any] | None = None
+    if not args.skip_version_check:
+        version_command = [
+            sys.executable,
+            "scripts/ppt_version_check.py",
+            "--workspace",
+            workspace.as_posix(),
+            "--report",
+            version_report_path.as_posix(),
+        ]
+        if args.skip_remote_version_check:
+            version_command.append("--skip-remote")
+        if args.require_latest:
+            version_command.append("--require-latest")
+        version_step = run_step("version_check", version_command, timeout=90)
+        steps.append(version_step)
+        if version_report_path.exists():
+            version_report = read_json(version_report_path)
+        if version_step["returncode"] != 0:
+            errors.append("version check blocked execution")
     steps.append(
         run_step(
             "compose_spec",
@@ -290,6 +451,10 @@ def command_make(args: argparse.Namespace) -> int:
                         "build-outputs",
                         spec_path.as_posix(),
                         "--validate",
+                        "--report-dir",
+                        build_report_dir.as_posix(),
+                        "--html-output",
+                        html_output_path.as_posix(),
                     ],
                     env={"PPT_AGENT_WORKSPACE": workspace.as_posix()},
                     timeout=args.timeout_seconds,
@@ -299,6 +464,9 @@ def command_make(args: argparse.Namespace) -> int:
                 errors.append("public PPTX/HTML build failed")
 
     spec = read_json(spec_path) if spec_path.exists() else {}
+    plan = read_json(plan_path) if plan_path.exists() else {}
+    if plan and spec:
+        write_design_brief(design_brief_path, request, plan, spec, context, version_report)
     deck_path = (spec_path.parent / str(spec.get("output_path", ""))).resolve() if spec.get("output_path") else None
     if deck_path and not deck_path.exists():
         deck_path = None
@@ -319,12 +487,15 @@ def command_make(args: argparse.Namespace) -> int:
             "telemetry_performed": False,
         },
         "artifact_paths": {
-            "intake": intake_path.relative_to(BASE_DIR).as_posix(),
-            "deck_plan": plan_path.relative_to(BASE_DIR).as_posix(),
-            "spec": spec_path.relative_to(BASE_DIR).as_posix(),
-            "pptx": deck_path.relative_to(BASE_DIR).as_posix() if deck_path else None,
-            "html": f"outputs/html/{project_id}/index.html",
-            "report": report_path.relative_to(BASE_DIR).as_posix(),
+            "intake": display_path(intake_path, workspace),
+            "deck_plan": display_path(plan_path, workspace),
+            "draft_design_brief": display_path(design_brief_path, workspace) if design_brief_path.exists() else None,
+            "source_context": display_path(project_root / "context" / "source_context.json", workspace) if context.get("items") else None,
+            "version_check": display_path(version_report_path, workspace) if version_report_path.exists() else None,
+            "spec": display_path(spec_path, workspace),
+            "pptx": display_path(deck_path, workspace) if deck_path else None,
+            "html": display_path(html_output_path, workspace) if html_output_path.exists() else None,
+            "report": display_path(report_path, workspace),
         },
         "connector_status": {
             "status": status_payload.get("status"),
@@ -354,6 +525,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--mode", choices=["auto", "assistant"], default="assistant")
     parser.add_argument("--project-id", default=None)
     parser.add_argument("--production", choices=["auto", "public", "private"], default="auto")
+    parser.add_argument("--source-file", action="append", default=[], help="Use a local text/markdown/json source as bounded context for the draft plan.")
+    parser.add_argument("--source-url", action="append", default=[], help="Fetch a URL excerpt as bounded context for the draft plan.")
+    parser.add_argument("--skip-version-check", action="store_true")
+    parser.add_argument("--skip-remote-version-check", action="store_true")
+    parser.add_argument("--require-latest", action="store_true")
     parser.add_argument("--execute-private", action="store_true", help="Execute the configured private runtime command when production=private/auto is ready.")
     parser.add_argument("--timeout-seconds", type=int, default=600)
     return parser

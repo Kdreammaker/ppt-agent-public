@@ -84,6 +84,10 @@ def maybe_json(stdout: str) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
+def env_has_value(name: str | None) -> bool:
+    return bool(name and os.environ.get(name))
+
+
 def connector_config_args(args: argparse.Namespace, workspace: Path) -> list[str]:
     private_repo = args.private_package_repo
     if not private_repo and args.auto_private_defaults and (args.enable_private or args.workspace_code):
@@ -158,10 +162,19 @@ def command_setup(args: argparse.Namespace) -> int:
     workspace = workspace_from_args(args)
     steps: list[dict[str, Any]] = []
     errors: list[str] = []
+    should_configure_private = False
 
     steps.append(dependency_step(args))
     if steps[-1]["returncode"] != 0:
         errors.append("dependency installation/check failed")
+
+    if not args.skip_version_check:
+        version_command = [sys.executable, "scripts/ppt_version_check.py"]
+        if args.workspace:
+            version_command.extend(["--workspace", workspace.as_posix()])
+        if args.skip_remote_version_check:
+            version_command.append("--skip-remote")
+        steps.append(run_step("version_check", version_command, timeout=90))
 
     install_command = [sys.executable, "scripts/ppt_install.py"]
     if args.target:
@@ -197,9 +210,10 @@ def command_setup(args: argparse.Namespace) -> int:
             args.enable_private
             or bool(args.workspace_code)
             or bool(args.private_package_repo)
-            or bool(args.private_package_repo_env)
+            or env_has_value(args.private_package_repo_env)
             or bool(args.private_build_command_json)
-            or bool(args.private_build_command_env)
+            or env_has_value(args.private_build_command_env)
+            or bool(args.private_package_install_root)
         )
         if should_configure_private:
             steps.append(run_step("configure_private_connector", connector_config_args(args, workspace)))
@@ -237,27 +251,33 @@ def command_setup(args: argparse.Namespace) -> int:
                 ],
             )
         )
-        if steps[-1]["returncode"] != 0:
+        if should_configure_private and steps[-1]["returncode"] != 0:
             errors.append("private connector status is not ready")
 
     status_payload = steps[-1].get("stdout_json", {}) if steps else {}
+    private_execution_ready = bool(
+        status_payload.get("capability_summary", {})
+        .get("private_template_library_build", {})
+        .get("ready_for_execution", False)
+    )
+    private_request_ready = bool(
+        status_payload.get("capability_summary", {})
+        .get("private_template_library_build", {})
+        .get("ready_for_request", False)
+    )
+    if should_configure_private and not private_request_ready:
+        if "private connector status is not ready" not in errors:
+            errors.append("private connector status is not ready")
     report = {
         "schema_version": SCHEMA_VERSION,
         "command": "ppt_setup",
         "generated_at": utc_now(),
         "status": "ready" if not errors else "needs_attention",
         "workspace_root": workspace.resolve().as_posix(),
+        "private_requested": should_configure_private,
         "private_status": status_payload.get("status"),
-        "private_execution_ready": bool(
-            status_payload.get("capability_summary", {})
-            .get("private_template_library_build", {})
-            .get("ready_for_execution", False)
-        ),
-        "private_request_ready": bool(
-            status_payload.get("capability_summary", {})
-            .get("private_template_library_build", {})
-            .get("ready_for_request", False)
-        ),
+        "private_execution_ready": private_execution_ready,
+        "private_request_ready": private_request_ready,
         "default_operating_mode": status_payload.get("default_operating_mode", args.default_operating_mode),
         "errors": errors,
         "steps": steps,
@@ -313,6 +333,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--github-check", action="store_true")
     parser.add_argument("--reset-connector", action="store_true")
     parser.add_argument("--skip-dependency-install", action="store_true")
+    parser.add_argument("--skip-version-check", action="store_true")
+    parser.add_argument("--skip-remote-version-check", action="store_true")
     return parser
 
 

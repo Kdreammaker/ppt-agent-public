@@ -55,6 +55,19 @@ Once setup is complete, users and AI agents can make decks through one natural-l
 python scripts\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" --workspace "<workspace>" --mode assistant
 ```
 
+Each run writes a local design brief before or alongside outputs:
+
+```text
+outputs/projects/<project_id>/plans/draft_design_brief.md
+```
+
+The brief includes the request, version/channel status, bounded source context, table of contents, slide-by-slide layout/content plan, style decisions, font/color policy, and reverse-engineering boundary. Local files or public URLs can be used as bounded planning context:
+
+```powershell
+python scripts\ppt_make.py "Make a board update from this source" --workspace "<workspace>" --mode assistant --source-file ".\notes.md"
+python scripts\ppt_make.py "Make a market brief" --workspace "<workspace>" --mode auto --source-url "https://example.com/report"
+```
+
 Auto Mode uses the same entrypoint:
 
 ```powershell
@@ -66,6 +79,8 @@ If the private connector is ready and a production build is required:
 ```powershell
 python scripts\ppt_make.py "Make a production-ready executive growth review" --workspace "<workspace>" --mode assistant --production private --execute-private
 ```
+
+By default, setup and make run a version/channel check and write a report such as `outputs/reports/version_check.json` or `outputs/projects/<project_id>/reports/version_check.json`. Use `--skip-remote-version-check` for offline installs, or `--require-latest` on `ppt_make.py` when stale public/private channels should block execution.
 
 Default permission posture:
 

@@ -48,9 +48,13 @@ def resolve_path(base_dir: Path, value: str | None) -> Path | None:
 
 def require_repo_output_path(path: Path, *, label: str) -> Path:
     resolved = path.resolve()
-    allowed_root = OUTPUTS_ROOT.resolve()
-    if resolved != allowed_root and not resolved.is_relative_to(allowed_root):
-        raise ValueError(f"{label} must stay under {allowed_root}: {resolved}")
+    allowed_roots = [OUTPUTS_ROOT.resolve()]
+    workspace = os.environ.get("PPT_AGENT_WORKSPACE")
+    if workspace:
+        allowed_roots.append((Path(workspace) / "outputs").resolve())
+    if not any(resolved == root or resolved.is_relative_to(root) for root in allowed_roots):
+        roots = ", ".join(root.as_posix() for root in allowed_roots)
+        raise ValueError(f"{label} must stay under one of [{roots}]: {resolved}")
     return resolved
 
 
@@ -59,7 +63,7 @@ def base_relative(path: Path) -> str:
     try:
         return resolved.relative_to(BASE_DIR).as_posix()
     except ValueError:
-        return Path(os.path.relpath(resolved, BASE_DIR)).as_posix()
+        return resolved.as_posix()
 
 
 def slugify(value: str) -> str:
