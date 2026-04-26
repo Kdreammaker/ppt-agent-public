@@ -7,8 +7,9 @@
     "repository_full_name": "Kdreammaker/ai-asset-contribution-gate",
     "default_branch": "main",
     "license": "Apache-2.0",
-    "observed_at": "2026-04-25T00:00:00+09:00",
-    "observed_head_sha": "d5f268bd0996147525e51059bf7e4c3b17541d5e",
+    "observed_at": "2026-04-26T17:30:00+09:00",
+    "observed_release_tag": "v0.3.11",
+    "observed_head_sha": "3c6317f42f4ed8853c7ef4b697a6d717b0ec54a2",
     "client_role": "public_safe_asset_service_client_not_asset_dump_or_generator",
     "official_creator_handoff_doc": "docs/ASSET_SERVICE_HANDOFF_FOR_CREATOR_AI.md"
   },
