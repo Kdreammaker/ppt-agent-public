@@ -1,0 +1,285 @@
+{
+  "contract": "ppt-maker.deck-intent-taxonomy.v1",
+  "classification_policy": {
+    "primary_method": "deterministic_keyword_entity_matching",
+    "optional_ai_method": "nearest_label_within_this_taxonomy_only",
+    "low_confidence_threshold": 0.55,
+    "public_safety": [
+      "Do not invent source facts.",
+      "Use request terms and bounded source summaries as evidence.",
+      "Never expose private paths, Drive IDs, tokens, or raw source payloads."
+    ]
+  },
+  "families": [
+    {
+      "id": "ir_pitch",
+      "label": "IR / Startup Pitch",
+      "keywords": ["ir", "investor", "investment", "seed", "series a", "fundraising", "pitch", "startup", "new business", "투자", "피치", "사업계획", "스타트업", "투자유치", "신사업"],
+      "default_audience": "investors and strategic decision makers",
+      "default_objective": "pitch",
+      "default_tone": ["confident", "vision-led", "credible"],
+      "default_density": "medium",
+      "subtypes": [
+        {"id": "startup_pitch", "keywords": ["startup", "seed", "fundraising", "스타트업", "투자유치"]},
+        {"id": "business_plan", "keywords": ["business plan", "new business", "사업계획", "신사업", "growth plan"]}
+      ]
+    },
+    {
+      "id": "executive_report",
+      "label": "Executive Report",
+      "keywords": ["board", "executive", "management", "quarterly", "briefing", "report", "ceo", "임원", "경영진", "분기", "보고", "이사회"],
+      "default_audience": "executives and decision makers",
+      "default_objective": "report",
+      "default_tone": ["executive", "analytical", "sober"],
+      "default_density": "high",
+      "subtypes": [
+        {"id": "status_report", "keywords": ["status", "progress", "update", "현황", "진척", "상태"]},
+        {"id": "financial_performance", "keywords": ["financial", "finance", "performance", "kpi", "매출", "실적", "성과", "손익"]},
+        {"id": "strategic_decision", "keywords": ["decision", "option", "tradeoff", "strategy", "의사결정", "전략", "대안"]}
+      ]
+    },
+    {
+      "id": "public_institution_report",
+      "label": "Public Institution Report",
+      "keywords": ["public agency", "policy", "grant", "procurement", "government", "municipal", "공공기관", "정책", "보조금", "조달", "입찰", "지자체", "정부"],
+      "default_audience": "public-sector reviewers and citizens",
+      "default_objective": "report",
+      "default_tone": ["formal", "accountable", "accessible"],
+      "default_density": "high",
+      "subtypes": [
+        {"id": "policy_brief", "keywords": ["policy", "정책", "제도"]},
+        {"id": "budget_program_report", "keywords": ["budget", "program", "예산", "사업보고"]},
+        {"id": "public_service_summary", "keywords": ["service", "citizen", "시민", "공공서비스"]},
+        {"id": "grant_application", "keywords": ["grant", "지원사업", "보조금"]},
+        {"id": "procurement_bid", "keywords": ["procurement", "rfp", "bid", "조달", "입찰", "제안요청"]},
+        {"id": "regional_development", "keywords": ["regional", "local", "지역", "도시"]},
+        {"id": "environment_safety", "keywords": ["environment", "safety", "환경", "안전"]},
+        {"id": "citizen_readout", "keywords": ["citizen", "resident", "시민", "주민"]}
+      ]
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio",
+      "keywords": ["portfolio", "works", "case study", "profile", "capability", "포트폴리오", "작품", "사례", "회사소개", "역량"],
+      "default_audience": "clients and reviewers",
+      "default_objective": "introduce",
+      "default_tone": ["visual", "selective", "credible"],
+      "default_density": "medium",
+      "subtypes": [
+        {"id": "creative_portfolio", "keywords": ["creative", "design", "studio", "visual", "디자인", "스튜디오", "크리에이티브"]},
+        {"id": "developer_portfolio", "keywords": ["developer", "engineering", "개발자", "엔지니어"]},
+        {"id": "agency_case_studies", "keywords": ["agency", "case study", "대행사", "사례"]},
+        {"id": "startup_company_profile", "keywords": ["company profile", "startup", "회사소개", "스타트업"]},
+        {"id": "architecture_interior", "keywords": ["architecture", "interior", "건축", "인테리어"]},
+        {"id": "fashion_beauty", "keywords": ["fashion", "beauty", "패션", "뷰티"]},
+        {"id": "media_production", "keywords": ["media", "production", "영상", "제작"]},
+        {"id": "consulting_capability", "keywords": ["consulting", "capability", "컨설팅", "역량"]}
+      ]
+    },
+    {
+      "id": "product_introduction",
+      "label": "Product Introduction",
+      "keywords": ["product", "launch", "catalog", "new item", "app", "service", "software", "b2c", "소개자료", "제품", "상품", "런칭", "출시", "카탈로그"],
+      "default_audience": "customers and buyers",
+      "default_objective": "introduce",
+      "default_tone": ["clear", "benefit-led", "polished"],
+      "default_density": "medium",
+      "subtypes": [
+        {"id": "food_beverage", "keywords": ["food", "beverage", "restaurant", "coffee", "식품", "음료", "푸드", "카페"]},
+        {"id": "travel_product", "keywords": ["travel package", "tour", "hotel", "여행상품", "투어", "호텔"]},
+        {"id": "film_drama_theater", "keywords": ["film", "drama", "theater", "movie", "영화", "드라마", "연극"]},
+        {"id": "consumer_electronics", "keywords": ["electronics", "device", "hardware", "gadget", "전자제품", "디바이스", "가전"]},
+        {"id": "b2b_saas", "keywords": ["b2b saas", "enterprise software", "업무용", "saas"]},
+        {"id": "b2c_it_service", "keywords": ["app", "mobile service", "it service", "consumer app", "앱", "모바일", "it 서비스"]},
+        {"id": "kpop_entertainment", "keywords": ["k-pop", "kpop", "idol", "comeback", "케이팝", "아이돌", "컴백"]},
+        {"id": "fashion_apparel", "keywords": ["fashion", "apparel", "collection", "패션", "의류", "컬렉션"]},
+        {"id": "automotive", "keywords": ["car", "vehicle", "mobility", "automotive", "자동차", "모빌리티"]},
+        {"id": "luxury_goods", "keywords": ["luxury", "premium", "watch", "jewelry", "명품", "프리미엄", "주얼리"]},
+        {"id": "beauty_health", "keywords": ["beauty", "cosmetic", "health", "뷰티", "화장품", "헬스"]},
+        {"id": "real_estate_space", "keywords": ["real estate", "space", "venue", "부동산", "공간", "시설"]},
+        {"id": "financial_product", "keywords": ["financial product", "fund", "insurance", "금융상품", "펀드", "보험"]},
+        {"id": "industrial_equipment", "keywords": ["industrial", "equipment", "machine", "산업장비", "설비"]}
+      ]
+    },
+    {
+      "id": "sales_proposal",
+      "label": "Sales Proposal",
+      "keywords": ["sales", "proposal", "partnership", "rfp", "buyer", "enterprise", "제안서", "영업", "세일즈", "파트너십"],
+      "default_audience": "buyers and procurement stakeholders",
+      "default_objective": "sell",
+      "default_tone": ["value-led", "credible", "actionable"],
+      "default_density": "high",
+      "subtypes": [
+        {"id": "enterprise_saas", "keywords": ["enterprise saas", "b2b", "roi", "엔터프라이즈", "업무솔루션"]},
+        {"id": "agency_service", "keywords": ["agency", "service proposal", "대행", "서비스 제안"]},
+        {"id": "manufacturing_supply", "keywords": ["manufacturing", "supply", "제조", "공급"]},
+        {"id": "retail_distribution", "keywords": ["retail", "distribution", "리테일", "유통"]},
+        {"id": "public_procurement", "keywords": ["public procurement", "rfp", "조달", "입찰"]},
+        {"id": "hospitality_travel", "keywords": ["hospitality", "travel", "호텔", "여행"]},
+        {"id": "education_service", "keywords": ["education service", "training", "교육서비스"]},
+        {"id": "media_sponsorship", "keywords": ["sponsorship", "media", "스폰서십", "미디어"]},
+        {"id": "luxury_partnership", "keywords": ["luxury partnership", "premium", "명품", "프리미엄"]}
+      ]
+    },
+    {
+      "id": "education_training",
+      "label": "Education / Training",
+      "keywords": ["education", "training", "lecture", "workshop", "onboarding", "curriculum", "교육", "강의", "워크숍", "온보딩", "커리큘럼"],
+      "default_audience": "learners",
+      "default_objective": "teach",
+      "default_tone": ["clear", "structured", "practical"],
+      "default_density": "high",
+      "subtypes": [
+        {"id": "corporate_onboarding", "keywords": ["onboarding", "신입", "온보딩"]},
+        {"id": "technical_training", "keywords": ["technical", "developer", "기술교육", "개발자"]},
+        {"id": "public_education", "keywords": ["public education", "시민교육"]},
+        {"id": "academic_lecture", "keywords": ["academic", "lecture", "대학", "강의"]},
+        {"id": "sales_enablement", "keywords": ["sales enablement", "영업교육"]},
+        {"id": "customer_training", "keywords": ["customer training", "고객교육"]},
+        {"id": "safety_compliance", "keywords": ["safety", "compliance", "안전", "준법"]},
+        {"id": "workshop_facilitation", "keywords": ["workshop", "facilitation", "워크숍"]}
+      ]
+    },
+    {
+      "id": "research_analysis",
+      "label": "Research / Analysis",
+      "keywords": ["research", "analysis", "market", "competitor", "trend", "benchmark", "리서치", "분석", "시장", "경쟁사", "트렌드", "벤치마크"],
+      "default_audience": "strategy and research stakeholders",
+      "default_objective": "analyze",
+      "default_tone": ["analytical", "evidence-led", "neutral"],
+      "default_density": "high",
+      "subtypes": [
+        {"id": "market_landscape", "keywords": ["market landscape", "industry", "tam", "sam", "som", "시장분석", "산업분석"]},
+        {"id": "competitor_benchmark", "keywords": ["competitor", "benchmark", "경쟁사", "벤치마크"]},
+        {"id": "consumer_insight", "keywords": ["consumer", "insight", "고객 인사이트"]},
+        {"id": "technology_trend", "keywords": ["technology trend", "tech trend", "기술트렌드"]},
+        {"id": "financial_analysis", "keywords": ["financial analysis", "재무분석"]},
+        {"id": "policy_research", "keywords": ["policy research", "정책연구"]},
+        {"id": "media_trend", "keywords": ["media trend", "미디어 트렌드"]},
+        {"id": "tourism_demand", "keywords": ["tourism demand", "관광 수요"]}
+      ]
+    },
+    {
+      "id": "marketing_campaign",
+      "label": "Marketing Campaign",
+      "keywords": ["campaign", "marketing", "activation", "promotion", "comeback", "캠페인", "마케팅", "프로모션", "홍보", "컴백"],
+      "default_audience": "marketing stakeholders",
+      "default_objective": "promote",
+      "default_tone": ["energetic", "audience-led", "actionable"],
+      "default_density": "medium",
+      "subtypes": [
+        {"id": "brand_activation", "keywords": ["brand activation", "브랜드 캠페인"]},
+        {"id": "event_promotion", "keywords": ["event promotion", "행사 홍보"]},
+        {"id": "kpop_comeback", "keywords": ["k-pop", "kpop", "comeback", "케이팝", "컴백"]},
+        {"id": "launch_campaign", "keywords": ["launch", "출시", "런칭"]},
+        {"id": "content_marketing", "keywords": ["content marketing", "콘텐츠 마케팅"]}
+      ]
+    },
+    {
+      "id": "event_travel",
+      "label": "Event / Travel",
+      "keywords": ["event", "travel", "package", "itinerary", "conference", "venue", "hospitality", "행사", "이벤트", "여행", "패키지", "일정", "컨퍼런스", "공간"],
+      "default_audience": "participants and organizers",
+      "default_objective": "introduce",
+      "default_tone": ["experiential", "clear", "warm"],
+      "default_density": "medium",
+      "subtypes": [
+        {"id": "travel_package", "keywords": ["travel package", "package", "tour", "여행상품", "여행 패키지", "패키지", "투어"]},
+        {"id": "event_operations", "keywords": ["operations", "production", "운영", "제작"]},
+        {"id": "venue_experience", "keywords": ["venue", "space", "공간", "장소"]},
+        {"id": "conference_plan", "keywords": ["conference", "컨퍼런스"]}
+      ]
+    },
+    {
+      "id": "media_entertainment",
+      "label": "Media / Entertainment",
+      "keywords": ["film", "drama", "theater", "game", "music", "artist", "entertainment", "film investment", "영화", "영화 투자", "드라마", "연극", "게임", "음악", "아티스트", "엔터"],
+      "default_audience": "creative and commercial stakeholders",
+      "default_objective": "introduce",
+      "default_tone": ["story-led", "immersive", "market-aware"],
+      "default_density": "medium",
+      "subtypes": [
+        {"id": "film_drama_theater", "keywords": ["film", "drama", "theater", "영화", "드라마", "연극"]},
+        {"id": "game_ip", "keywords": ["game", "게임"]},
+        {"id": "music_artist", "keywords": ["music", "artist", "음악", "아티스트"]},
+        {"id": "kpop_entertainment", "keywords": ["k-pop", "kpop", "idol", "케이팝", "아이돌"]}
+      ]
+    },
+    {
+      "id": "status_update",
+      "label": "Status Update",
+      "keywords": ["status update", "sprint", "project update", "project blueprint", "blueprint", "initiative", "ops report", "진행상황", "스프린트", "업데이트", "운영보고"],
+      "default_audience": "project stakeholders",
+      "default_objective": "report",
+      "default_tone": ["direct", "operational", "clear"],
+      "default_density": "high",
+      "subtypes": [
+        {"id": "project_status", "keywords": ["project", "project blueprint", "blueprint", "initiative", "프로젝트"]},
+        {"id": "sprint_review", "keywords": ["sprint", "스프린트"]},
+        {"id": "operational_report", "keywords": ["ops", "operations", "운영"]}
+      ]
+    }
+  ],
+  "audience_keywords": {
+    "investors": ["investor", "vc", "fund", "투자자", "vc"],
+    "executives": ["board", "executive", "ceo", "임원", "이사회", "경영진"],
+    "public_reviewers": ["public agency", "government", "공공기관", "정부", "지자체"],
+    "customers": ["customer", "buyer", "고객", "구매자"],
+    "learners": ["learner", "student", "trainee", "수강생", "학습자", "교육생"]
+  },
+  "objective_keywords": {
+    "summarize": ["summarize", "summary", "요약", "정리"],
+    "create": ["make", "create", "deck", "만들어", "제작"],
+    "redesign": ["redesign", "revise", "리디자인", "개편"],
+    "compare": ["compare", "benchmark", "비교", "벤치마크"],
+    "pitch": ["pitch", "fundraise", "피치", "투자유치"],
+    "report": ["report", "brief", "보고", "브리핑"],
+    "teach": ["teach", "training", "교육", "강의"],
+    "sell": ["sell", "sales", "proposal", "영업", "제안"],
+    "introduce": ["introduce", "intro", "소개"]
+  },
+  "examples": [
+    {"text": "이 자료로 공공기관 정책 보고자료 만들어줘", "family": "public_institution_report", "subtype": "policy_brief"},
+    {"text": "파일인데 참고해서 조달 제안서로 정리해줘", "family": "public_institution_report", "subtype": "procurement_bid"},
+    {"text": "분기 실적 경영진 보고서 만들어줘", "family": "executive_report", "subtype": "financial_performance"},
+    {"text": "board status report from the attached notes", "family": "executive_report", "subtype": "status_report"},
+    {"text": "strategic decision memo comparing three options", "family": "executive_report", "subtype": "strategic_decision"},
+    {"text": "Seed round investor pitch for AI startup", "family": "ir_pitch", "subtype": "startup_pitch"},
+    {"text": "B2B SaaS product introduction deck", "family": "product_introduction", "subtype": "b2b_saas"},
+    {"text": "enterprise sales proposal for workflow SaaS", "family": "sales_proposal", "subtype": "enterprise_saas"},
+    {"text": "creative portfolio for a design studio", "family": "portfolio", "subtype": "creative_portfolio"},
+    {"text": "consulting capability profile with case studies", "family": "portfolio", "subtype": "consulting_capability"},
+    {"text": "신제품 식품 소개자료 자동으로 만들어줘", "family": "product_introduction", "subtype": "food_beverage"},
+    {"text": "여행 패키지 소개서", "family": "event_travel", "subtype": "travel_package"},
+    {"text": "공간 경험 소개 발표자료", "family": "event_travel", "subtype": "venue_experience"},
+    {"text": "영화 투자 소개자료", "family": "media_entertainment", "subtype": "film_drama_theater"},
+    {"text": "consumer electronics launch deck", "family": "product_introduction", "subtype": "consumer_electronics"},
+    {"text": "B2C app service introduction", "family": "product_introduction", "subtype": "b2c_it_service"},
+    {"text": "K-POP comeback campaign proposal", "family": "marketing_campaign", "subtype": "kpop_comeback"},
+    {"text": "apparel collection introduction", "family": "product_introduction", "subtype": "fashion_apparel"},
+    {"text": "automotive new model introduction", "family": "product_introduction", "subtype": "automotive"},
+    {"text": "luxury watch product deck", "family": "product_introduction", "subtype": "luxury_goods"},
+    {"text": "technical training deck for developers", "family": "education_training", "subtype": "technical_training"},
+    {"text": "IT service blueprint for a new platform", "family": "product_introduction", "subtype": "b2c_it_service"},
+    {"text": "event operations planning deck", "family": "event_travel", "subtype": "event_operations"},
+    {"text": "new business project blueprint", "family": "status_update", "subtype": "project_status"},
+    {"text": "market research report about tourism demand", "family": "research_analysis", "subtype": "tourism_demand"},
+    {"text": "marketing campaign plan for a product launch", "family": "marketing_campaign", "subtype": "launch_campaign"},
+    {"text": "beauty product catalog", "family": "product_introduction", "subtype": "beauty_health"},
+    {"text": "real estate space introduction", "family": "product_introduction", "subtype": "real_estate_space"},
+    {"text": "financial product sales deck", "family": "product_introduction", "subtype": "financial_product"},
+    {"text": "industrial equipment spec comparison", "family": "product_introduction", "subtype": "industrial_equipment"},
+    {"text": "agency service proposal", "family": "sales_proposal", "subtype": "agency_service"},
+    {"text": "manufacturing supply proposal", "family": "sales_proposal", "subtype": "manufacturing_supply"},
+    {"text": "retail distribution partnership deck", "family": "sales_proposal", "subtype": "retail_distribution"},
+    {"text": "hospitality travel partnership", "family": "sales_proposal", "subtype": "hospitality_travel"},
+    {"text": "customer training deck", "family": "education_training", "subtype": "customer_training"},
+    {"text": "safety compliance workbook", "family": "education_training", "subtype": "safety_compliance"},
+    {"text": "competitor benchmark analysis", "family": "research_analysis", "subtype": "competitor_benchmark"},
+    {"text": "technology trend report", "family": "research_analysis", "subtype": "technology_trend"},
+    {"text": "game IP pitch deck", "family": "media_entertainment", "subtype": "game_ip"},
+    {"text": "music artist introduction", "family": "media_entertainment", "subtype": "music_artist"},
+    {"text": "sprint review status update", "family": "status_update", "subtype": "sprint_review"},
+    {"text": "운영보고 자료 만들어줘", "family": "status_update", "subtype": "operational_report"}
+  ]
+}

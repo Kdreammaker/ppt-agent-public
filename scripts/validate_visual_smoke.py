@@ -64,20 +64,23 @@ def soffice_path() -> Path:
 
 def convert_pptx_to_pdf(input_path: Path, output_dir: Path) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
-    process = subprocess.run(
-        [
-            str(soffice_path()),
-            "--headless",
-            "--convert-to",
-            "pdf",
-            "--outdir",
-            str(output_dir),
-            str(input_path),
-        ],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
+    with tempfile.TemporaryDirectory(prefix="lo-profile-") as profile_dir:
+        profile_uri = Path(profile_dir).resolve().as_uri()
+        process = subprocess.run(
+            [
+                str(soffice_path()),
+                "--headless",
+                f"-env:UserInstallation={profile_uri}",
+                "--convert-to",
+                "pdf",
+                "--outdir",
+                str(output_dir),
+                str(input_path),
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
     pdf_path = output_dir / f"{input_path.stem}.pdf"
     if not pdf_path.exists():
         raise FileNotFoundError(

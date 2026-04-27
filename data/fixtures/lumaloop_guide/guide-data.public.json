@@ -1,0 +1,511 @@
+{
+  "contract": {
+    "name": "b44.design_guide_packet",
+    "version": "1.0",
+    "compatibility": "additive_to_b44_asset_handoff"
+  },
+  "guide_identity": {
+    "guide_id": "sample:lumaloop-ai-pitch-deck-guide",
+    "guide_version": "1.0.0",
+    "status": "sample_public_fixture",
+    "language": "en-US",
+    "project_name": "LumaLoop AI",
+    "topic": "IR pitching deck for a Silicon Valley AI B2C startup targeting teens and twenty-somethings",
+    "slide_count": 15,
+    "created_at": "2026-04-27T00:00:00Z"
+  },
+  "project_brief": {
+    "audience": ["seed investors", "Series A investors", "consumer AI operators"],
+    "tone": ["bright", "social", "fast", "credible", "mobile first", "AI native"],
+    "objective": "Create a 15-slide investor pitch deck that explains a youth-focused AI social creation product before native PowerPoint assembly.",
+    "constraints": [
+      "Use public-safe metadata only.",
+      "Do not reuse source embedded images.",
+      "Do not treat the HTML guide preview as slide content.",
+      "Use approved package assets only when a manifest is present and checksums validate."
+    ]
+  },
+  "reference_files": [
+    {
+      "file_name": "PPT_MAKER_PRESENTATION_DESIGN_GUIDE_SAMPLE.html",
+      "extension": ".html",
+      "purpose": "Human review preview generated from guide data.",
+      "public_safe_note": "Preview is layout evidence only and must not be screenshotted into the deck."
+    },
+    {
+      "file_name": "PPT_MAKER_PRESENTATION_DESIGN_GUIDE_SAMPLE.machine.md",
+      "extension": ".md",
+      "purpose": "Machine-facing rendering notes mirrored by this JSON packet.",
+      "public_safe_note": "No private paths, Drive identifiers, raw private records, or unapproved assets."
+    }
+  ],
+  "palette": {
+    "palette_id": "sample-lumaloop-five-token",
+    "palette_name": "LumaLoop Bright Mobile Pitch",
+    "source": {
+      "kind": "sample_fixture",
+      "asset_ref": null
+    },
+    "colors": [
+      {
+        "role": "main",
+        "name": "Electric Blue",
+        "hex": "#315CFF",
+        "rgb": [49, 92, 255],
+        "usage": "Primary accent for the most important action, section signal, or hero emphasis.",
+        "accessibility_note": "Use white text on solid Electric Blue for short labels; avoid long body copy on this accent.",
+        "contrast": {
+          "recommended_text_color": "white",
+          "wcag_normal_text_aa": true,
+          "wcag_large_text_aa": true
+        }
+      },
+      {
+        "role": "support",
+        "name": "Signal Pink",
+        "hex": "#FF4DA6",
+        "rgb": [255, 77, 166],
+        "usage": "Secondary accent for social energy, creator moments, and selected highlights.",
+        "accessibility_note": "Use sparingly and pair with Ink for nearby explanatory text.",
+        "contrast": {
+          "recommended_text_color": "ink",
+          "wcag_normal_text_aa": false,
+          "wcag_large_text_aa": true
+        }
+      },
+      {
+        "role": "accent",
+        "name": "Mint",
+        "hex": "#22C7A9",
+        "rgb": [34, 199, 169],
+        "usage": "Positive growth, success, and healthy loop indicators.",
+        "accessibility_note": "Use for icons, chips, and chart accents; pair with Ink text for normal copy.",
+        "contrast": {
+          "recommended_text_color": "ink",
+          "wcag_normal_text_aa": true,
+          "wcag_large_text_aa": true
+        }
+      },
+      {
+        "role": "background",
+        "name": "Cloud",
+        "hex": "#F7F8FC",
+        "rgb": [247, 248, 252],
+        "usage": "Default slide background and low-noise card fill.",
+        "accessibility_note": "Use Ink for normal text on Cloud.",
+        "contrast": {
+          "recommended_text_color": "ink",
+          "wcag_normal_text_aa": true,
+          "wcag_large_text_aa": true
+        }
+      },
+      {
+        "role": "neutral",
+        "name": "Ink",
+        "hex": "#101828",
+        "rgb": [16, 24, 40],
+        "usage": "Primary readable text, dense labels, and outlines.",
+        "accessibility_note": "Use on Cloud or white backgrounds for accessible normal text.",
+        "contrast": {
+          "recommended_text_color": "not_applicable",
+          "wcag_normal_text_aa": true,
+          "wcag_large_text_aa": true
+        }
+      }
+    ]
+  },
+  "typography": {
+    "font_package_refs": [
+      {
+        "family": "Inter",
+        "asset_ref": "font-family:inter",
+        "license_action": "check-license-file",
+        "package_status": "metadata_only"
+      },
+      {
+        "family": "Pretendard",
+        "asset_ref": "font-family:pretendard",
+        "license_action": "check-license-file",
+        "package_status": "metadata_only"
+      }
+    ],
+    "roles": [
+      {
+        "role": "hero_title",
+        "font_stack": ["Inter", "Pretendard", "Aptos", "Arial", "Noto Sans KR", "sans-serif"],
+        "default_pt": 52,
+        "min_pt": 44,
+        "max_pt": 60,
+        "weight": "bold",
+        "line_limit": 2,
+        "fallback": "Aptos Display"
+      },
+      {
+        "role": "slide_title",
+        "font_stack": ["Inter", "Pretendard", "Aptos", "Arial", "Noto Sans KR", "sans-serif"],
+        "default_pt": 34,
+        "min_pt": 28,
+        "max_pt": 40,
+        "weight": "bold",
+        "line_limit": 2,
+        "fallback": "Aptos"
+      },
+      {
+        "role": "metric",
+        "font_stack": ["Inter", "Pretendard", "Aptos", "Arial", "Noto Sans KR", "sans-serif"],
+        "default_pt": 42,
+        "min_pt": 34,
+        "max_pt": 52,
+        "weight": "bold",
+        "line_limit": 1,
+        "fallback": "Aptos Display"
+      },
+      {
+        "role": "body",
+        "font_stack": ["Inter", "Pretendard", "Aptos", "Arial", "Noto Sans KR", "sans-serif"],
+        "default_pt": 18,
+        "min_pt": 14,
+        "max_pt": 22,
+        "weight": "regular",
+        "line_limit": 4,
+        "fallback": "Aptos"
+      },
+      {
+        "role": "caption",
+        "font_stack": ["Inter", "Pretendard", "Aptos", "Arial", "Noto Sans KR", "sans-serif"],
+        "default_pt": 12,
+        "min_pt": 10,
+        "max_pt": 14,
+        "weight": "regular",
+        "line_limit": 2,
+        "fallback": "Aptos"
+      }
+    ]
+  },
+  "slide_size": {
+    "size": "widescreen_16_9",
+    "width_in": 13.333,
+    "height_in": 7.5
+  },
+  "safe_area": {
+    "left_in": 0.35,
+    "top_in": 0.28,
+    "right_in": 12.98,
+    "bottom_in": 7.22
+  },
+  "background_policy": {
+    "default_mode": "single_solid_cloud",
+    "max_modes_per_deck": 3,
+    "allowed_types": ["solid", "subtle_gradient", "approved_image", "generated_image", "user_supplied_image", "approved_pattern"],
+    "forbidden_types": ["source_embedded_image", "html_preview_image", "unknown_stock_image"]
+  },
+  "header_footer_policy": {
+    "header": {
+      "mode": "optional",
+      "allowed_content": ["short slide title", "section label"]
+    },
+    "footer": {
+      "mode": "optional",
+      "allowed_content": ["page number", "short source note when needed"]
+    }
+  },
+  "slide_plan": {
+    "slides": [
+      {
+        "slide_no": 1,
+        "layout_archetype": "cover",
+        "content_brief": "Introduce LumaLoop AI as the social creation loop for mobile-native youth.",
+        "visible_content_candidates": ["LumaLoop AI", "AI social creation loops for the next generation"],
+        "asset_slots": [
+          {
+            "slot_id": "hero_mockup",
+            "slot_type": "mockup",
+            "required": false,
+            "allowed_sources": ["approved_package_asset", "generated_image_approved_for_deck", "native_shape_or_mockup_fallback"],
+            "preferred_asset_ref": null,
+            "fallback": "Render an editable native phone UI mockup.",
+            "crop_or_mask_policy": "If a real mockup image is approved, fit it inside the mockup bounds with contain behavior and preserve aspect ratio; if using native fallback, build the frame from editable shapes.",
+            "visible_text_allowed": false
+          }
+        ],
+        "qa_checks": ["No HTML screenshot", "No layout placeholder text"]
+      },
+      {
+        "slide_no": 2,
+        "layout_archetype": "big_thesis",
+        "content_brief": "State the thesis that Gen Z will not experience AI as a blank chat box.",
+        "visible_content_candidates": ["AI will not live in a blank chat box for Gen Z."],
+        "asset_slots": [],
+        "qa_checks": ["Text fits within two title lines"]
+      },
+      {
+        "slide_no": 3,
+        "layout_archetype": "three_cards",
+        "content_brief": "Explain three pain points in current AI tools for teen social life.",
+        "visible_content_candidates": ["Too blank", "Too private", "Too slow to share"],
+        "asset_slots": [
+          {
+            "slot_id": "problem_icons",
+            "slot_type": "icon",
+            "required": false,
+            "allowed_sources": ["approved_package_asset", "native_shape_or_mockup_fallback"],
+            "preferred_asset_ref": null,
+            "fallback": "Use simple native line icons.",
+            "crop_or_mask_policy": "Not applicable for native line icons; if an approved icon file is used, preserve aspect ratio and center within the icon bounds.",
+            "visible_text_allowed": false
+          }
+        ],
+        "qa_checks": ["Cards maintain equal width", "Icon fallback recorded if used"]
+      },
+      {
+        "slide_no": 4,
+        "layout_archetype": "behavior_shift",
+        "content_brief": "Show that the target audience creates before it searches.",
+        "visible_content_candidates": ["Gen Z creates before it searches.", "Creation is the new intent signal."],
+        "asset_slots": [
+          {
+            "slot_id": "edge_bleed_visual",
+            "slot_type": "image",
+            "required": false,
+            "allowed_sources": ["approved_package_asset", "generated_image_approved_for_deck", "native_shape_or_mockup_fallback"],
+            "preferred_asset_ref": null,
+            "fallback": "Use a native abstract shape cluster that bleeds only on the right edge.",
+            "crop_or_mask_policy": "Crop or mask to the right-edge visual bounds; allow visual bleed to the right edge only; keep all text and labels inside the safe area.",
+            "visible_text_allowed": false
+          }
+        ],
+        "qa_checks": ["Use one dominant accent only"]
+      },
+      {
+        "slide_no": 5,
+        "layout_archetype": "product_mockup",
+        "content_brief": "Reveal the product experience through a phone-focused layout.",
+        "visible_content_candidates": ["Meet LumaLoop", "Prompt, remix, share, repeat"],
+        "asset_slots": [
+          {
+            "slot_id": "phone_screen",
+            "slot_type": "image",
+            "required": true,
+            "allowed_sources": ["approved_package_asset", "user_supplied_approved_asset", "generated_image_approved_for_deck", "native_shape_or_mockup_fallback"],
+            "preferred_asset_ref": null,
+            "fallback": "Render a native UI mockup inside the phone screen and report the fallback.",
+            "crop_or_mask_policy": "Crop approved or generated screen imagery to the phone screen rectangle using cover fit, then mask to the rounded screen shape; never stretch the image; keep UI content inside the screen safe inset.",
+            "visible_text_allowed": false
+          }
+        ],
+        "qa_checks": ["Required image slot has an approved source or recorded fallback"]
+      },
+      {
+        "slide_no": 6,
+        "layout_archetype": "process_flow",
+        "content_brief": "Describe the loop from idea to shareable output in under 60 seconds.",
+        "visible_content_candidates": ["Idea", "AI remix", "Shareable loop"],
+        "asset_slots": [],
+        "qa_checks": ["Flow arrows are native shapes"]
+      },
+      {
+        "slide_no": 7,
+        "layout_archetype": "three_use_cases",
+        "content_brief": "Show three daily habit loops that make the product sticky.",
+        "visible_content_candidates": ["Friend challenge", "Creator remix", "Group story"],
+        "asset_slots": [],
+        "qa_checks": ["Each use case has title and short body only"]
+      },
+      {
+        "slide_no": 8,
+        "layout_archetype": "market_sizing",
+        "content_brief": "Frame the youth creation market without overloading the slide.",
+        "visible_content_candidates": ["Youth creation market", "Social content spend", "AI creation tools"],
+        "asset_slots": [
+          {
+            "slot_id": "background_texture",
+            "slot_type": "background",
+            "required": false,
+            "allowed_sources": ["approved_package_asset", "generated_image_approved_for_deck", "native_shape_or_mockup_fallback"],
+            "preferred_asset_ref": null,
+            "fallback": "Use a solid Cloud background with native circle shapes.",
+            "crop_or_mask_policy": "If an approved or generated background image is used, crop to full-slide cover, reduce opacity or blur enough for text readability, and keep text contrast compliant.",
+            "visible_text_allowed": false
+          }
+        ],
+        "qa_checks": ["Market circles do not overlap labels"]
+      },
+      {
+        "slide_no": 9,
+        "layout_archetype": "traction_metrics",
+        "content_brief": "Use three early usage metrics to demonstrate repeat behavior.",
+        "visible_content_candidates": ["D7 retention", "Loops per creator", "Share rate"],
+        "asset_slots": [],
+        "qa_checks": ["Metric role uses the metric typography token"]
+      },
+      {
+        "slide_no": 10,
+        "layout_archetype": "business_model",
+        "content_brief": "Explain freemium creation, paid identity, and marketplace revenue.",
+        "visible_content_candidates": ["Free creation", "Paid identity", "Brand-safe marketplace"],
+        "asset_slots": [],
+        "qa_checks": ["Three revenue lanes remain visually distinct"]
+      },
+      {
+        "slide_no": 11,
+        "layout_archetype": "positioning_matrix",
+        "content_brief": "Position the product between AI utility and social creation.",
+        "visible_content_candidates": ["AI utility", "Social creation", "LumaLoop"],
+        "asset_slots": [],
+        "qa_checks": ["Matrix labels remain readable"]
+      },
+      {
+        "slide_no": 12,
+        "layout_archetype": "flywheel",
+        "content_brief": "Show how creator loops compound through sharing and remixing.",
+        "visible_content_candidates": ["Create", "Share", "Remix", "Invite"],
+        "asset_slots": [],
+        "qa_checks": ["Flywheel is native shapes, not a bitmap unless approved"]
+      },
+      {
+        "slide_no": 13,
+        "layout_archetype": "roadmap",
+        "content_brief": "Lay out a phased GTM plan from creator squads to school networks.",
+        "visible_content_candidates": ["Creator squads", "Campus loops", "Brand channels"],
+        "asset_slots": [],
+        "qa_checks": ["Roadmap dates and phases do not collide"]
+      },
+      {
+        "slide_no": 14,
+        "layout_archetype": "financial_plan",
+        "content_brief": "Summarize efficient growth and creator-led acquisition assumptions.",
+        "visible_content_candidates": ["Creator-led acquisition", "Marketplace take rate", "Paid identity ARPU"],
+        "asset_slots": [],
+        "qa_checks": ["Financial table remains editable"]
+      },
+      {
+        "slide_no": 15,
+        "layout_archetype": "ask",
+        "content_brief": "Close with the funding ask and use of funds.",
+        "visible_content_candidates": ["We are raising $X.XM", "Own the AI social creation loop"],
+        "asset_slots": [],
+        "qa_checks": ["Ask amount remains explicit placeholder if not owner-provided"]
+      }
+    ]
+  },
+  "layout_archetypes": [
+    {
+      "id": "cover",
+      "description": "Hero title, subtitle, and optional phone mockup.",
+      "native_assembly_hint": "Use text boxes, native phone frame shapes, and optional approved image crop."
+    },
+    {
+      "id": "big_thesis",
+      "description": "Single dominant thesis statement with supporting microcopy.",
+      "native_assembly_hint": "Use a large text box, optional accent rule, and simple native background shapes; no bitmap is required."
+    },
+    {
+      "id": "three_cards",
+      "description": "Three equal cards with short labels and optional icons.",
+      "native_assembly_hint": "Use grouped rectangles, text boxes, and approved icons or native line shapes."
+    },
+    {
+      "id": "behavior_shift",
+      "description": "Behavior-change statement with optional right-edge visual bleed.",
+      "native_assembly_hint": "Use native text boxes, chart-like dots or arrows, and an optional image or shape cluster clipped to a right-edge bleed zone."
+    },
+    {
+      "id": "product_mockup",
+      "description": "Product reveal with required phone screen slot.",
+      "native_assembly_hint": "Use a native device frame and crop approved or generated image into the screen region."
+    },
+    {
+      "id": "process_flow",
+      "description": "Step-by-step product or user workflow.",
+      "native_assembly_hint": "Use native connectors, arrows, numbered pills, and short text boxes arranged on a horizontal or diagonal path."
+    },
+    {
+      "id": "three_use_cases",
+      "description": "Three habit-forming use cases with equal emphasis.",
+      "native_assembly_hint": "Use three grouped card modules with native icons, concise headings, and short body text."
+    },
+    {
+      "id": "market_sizing",
+      "description": "Market landscape or TAM/SAM/SOM style sizing view.",
+      "native_assembly_hint": "Use editable circles, labels, and callout shapes; optional background texture must be cropped behind all text."
+    },
+    {
+      "id": "traction_metrics",
+      "description": "Metric row plus short insight text.",
+      "native_assembly_hint": "Use native KPI cards and chart-like shapes."
+    },
+    {
+      "id": "business_model",
+      "description": "Revenue model lanes or monetization components.",
+      "native_assembly_hint": "Use native columns, lane dividers, icons, and short text boxes for each revenue stream."
+    },
+    {
+      "id": "positioning_matrix",
+      "description": "Two-axis competitive or category positioning matrix.",
+      "native_assembly_hint": "Use native axis lines, quadrant labels, and positioned marker shapes with accessible labels."
+    },
+    {
+      "id": "flywheel",
+      "description": "Compounding loop or network effect sequence.",
+      "native_assembly_hint": "Use curved arrows or segmented circular shapes, short labels, and a center text box."
+    },
+    {
+      "id": "roadmap",
+      "description": "Phased execution or go-to-market timeline.",
+      "native_assembly_hint": "Use native timeline lines, phase blocks, milestone dots, and compact labels."
+    },
+    {
+      "id": "financial_plan",
+      "description": "Financial assumptions, forecast, or allocation summary.",
+      "native_assembly_hint": "Use editable table-like shapes, bar charts, and metric callouts instead of flattened images."
+    },
+    {
+      "id": "ask",
+      "description": "Fundraising ask and use-of-funds close.",
+      "native_assembly_hint": "Use large text boxes, native allocation blocks or bars, and optional supporting callouts."
+    }
+  ],
+  "asset_slot_policy": {
+    "priority_order": [
+      "approved_package_asset",
+      "user_supplied_approved_asset",
+      "generated_image_approved_for_deck",
+      "native_shape_or_mockup_fallback"
+    ],
+    "notes": [
+      "The sample HTML phone mockup is a native placeholder, not proof that a reusable asset exists.",
+      "Every real file inserted into a deck must come from an approved manifest with checksum evidence."
+    ]
+  },
+  "qa_rules": [
+    {
+      "id": "no-visible-instruction-text",
+      "severity": "blocking",
+      "check": "Rendered slides must not show content_guidance, implementation_notes, slot IDs, or layout placeholder labels."
+    },
+    {
+      "id": "no-html-screenshot",
+      "severity": "blocking",
+      "check": "The HTML guide preview must not be screenshotted into the PPTX."
+    },
+    {
+      "id": "checksum-before-insert",
+      "severity": "blocking",
+      "check": "Approved package assets must validate sha256 and size before insertion."
+    }
+  ],
+  "fallback_policy": {
+    "missing_asset": "Use native shape or mockup fallback and report the fallback in final QA.",
+    "font_unavailable": "Use the role fallback font and report the font fallback.",
+    "overflow": "Summarize text before shrinking below min_pt; fail QA if text still overflows."
+  },
+  "approved_asset_references": [],
+  "public_safety": {
+    "private_refs_redacted": true,
+    "contains_raw_assets": false,
+    "contains_drive_ids": false,
+    "contains_private_paths": false,
+    "contains_generated_private_reports": false,
+    "contains_tokens": false
+  }
+}
