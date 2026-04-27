@@ -3,10 +3,12 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
 import tempfile
+import uuid
 from pathlib import Path
 from typing import Any
 
@@ -33,6 +35,7 @@ DEFAULT_RENDER_ROOT = BASE_DIR / "outputs" / "previews" / "visual_smoke"
 BLANK_STDDEV_THRESHOLD = 3.0
 FOREGROUND_RATIO_THRESHOLD = 0.0025
 MIN_RENDER_SIZE = 100
+LIBREOFFICE_TIMEOUT_SECONDS = 120
 
 try:
     fitz.TOOLS.mupdf_display_errors(False)
@@ -62,50 +65,121 @@ def soffice_path() -> Path:
     raise FileNotFoundError("LibreOffice soffice.exe not found")
 
 
-def convert_pptx_to_pdf(input_path: Path, output_dir: Path) -> Path:
+def public_safe_text(value: Any, limit: int = 1200) -> str:
+    text = str(value or "")
+    text = text.replace(str(BASE_DIR), "[workspace]")
+    text = re.sub(r"[A-Za-z]:\\(?:[^\\/:*?\"<>|\r\n]+\\)*[^\\/:*?\"<>|\r\n]*", "[local-path-redacted]", text)
+    text = re.sub(r"/(?:Users|home)/[^\s\"']+", "[local-path-redacted]", text)
+    text = re.sub(r"file:///[^\s\"']+", "[file-uri-redacted]", text)
+    return text[:limit]
+
+
+class RenderError(RuntimeError):
+    def __init__(self, message: str, details: dict[str, Any] | None = None) -> None:
+        super().__init__(message)
+        self.details = details or {}
+
+
+def render_error_details(exc: BaseException) -> dict[str, Any]:
+    details = getattr(exc, "details", None)
+    if isinstance(details, dict):
+        return details
+    return {"error_type": exc.__class__.__name__, "message": public_safe_text(exc)}
+
+
+def safe_rmtree(path: Path) -> None:
+    try:
+        if path.exists():
+            shutil.rmtree(path)
+    except OSError:
+        pass
+
+
+def convert_pptx_to_pdf(input_path: Path, output_dir: Path, *, timeout: int = LIBREOFFICE_TIMEOUT_SECONDS) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="lo-profile-") as profile_dir:
         profile_uri = Path(profile_dir).resolve().as_uri()
-        process = subprocess.run(
-            [
-                str(soffice_path()),
-                "--headless",
-                f"-env:UserInstallation={profile_uri}",
-                "--convert-to",
-                "pdf",
-                "--outdir",
-                str(output_dir),
-                str(input_path),
-            ],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
+        command = [
+            str(soffice_path()),
+            "--headless",
+            "--nologo",
+            "--nodefault",
+            "--nofirststartwizard",
+            "--norestore",
+            "--nolockcheck",
+            f"-env:UserInstallation={profile_uri}",
+            "--convert-to",
+            "pdf",
+            "--outdir",
+            str(output_dir),
+            str(input_path),
+        ]
+        try:
+            process = subprocess.run(
+                command,
+                check=False,
+                capture_output=True,
+                text=True,
+                timeout=timeout,
+            )
+        except subprocess.TimeoutExpired as exc:
+            raise RenderError(
+                "LibreOffice PDF conversion timed out.",
+                {
+                    "stage": "libreoffice_convert",
+                    "returncode": "timeout",
+                    "timeout_seconds": timeout,
+                    "stdout": public_safe_text(exc.stdout),
+                    "stderr": public_safe_text(exc.stderr),
+                },
+            ) from exc
+        if process.returncode != 0:
+            raise RenderError(
+                "LibreOffice PDF conversion failed.",
+                {
+                    "stage": "libreoffice_convert",
+                    "returncode": process.returncode,
+                    "stdout": public_safe_text(process.stdout),
+                    "stderr": public_safe_text(process.stderr),
+                },
+            )
     pdf_path = output_dir / f"{input_path.stem}.pdf"
     if not pdf_path.exists():
-        raise FileNotFoundError(
-            f"Failed to render {input_path.name} to PDF: {process.stdout} {process.stderr}"
+        raise RenderError(
+            "LibreOffice reported success but no PDF was produced.",
+            {
+                "stage": "libreoffice_convert",
+                "returncode": process.returncode,
+                "stdout": public_safe_text(process.stdout),
+                "stderr": public_safe_text(process.stderr),
+            },
         )
     return pdf_path
 
 
 def render_pdf_to_pngs(pdf_path: Path, output_dir: Path) -> list[Path]:
     output_dir.mkdir(parents=True, exist_ok=True)
-    doc = fitz.open(pdf_path)
     created: list[Path] = []
-    for index in range(len(doc)):
-        page = doc.load_page(index)
-        pix = page.get_pixmap(matrix=fitz.Matrix(1.6, 1.6), alpha=False)
-        output_path = output_dir / f"slide_{index + 1:02d}.png"
-        pix.save(output_path)
-        created.append(output_path)
+    with fitz.open(pdf_path) as doc:
+        for index in range(len(doc)):
+            page = doc.load_page(index)
+            pix = page.get_pixmap(matrix=fitz.Matrix(1.6, 1.6), alpha=False)
+            output_path = output_dir / f"slide_{index + 1:02d}.png"
+            pix.save(output_path)
+            created.append(output_path)
     return created
 
 
 def render_pptx(input_path: Path, output_dir: Path) -> list[Path]:
-    pdf_dir = output_dir / "_pdf"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    pdf_root = output_dir / "_pdf"
+    safe_rmtree(pdf_root)
+    pdf_dir = pdf_root / f"attempt-{uuid.uuid4().hex}"
     pdf_path = convert_pptx_to_pdf(input_path, pdf_dir)
-    return render_pdf_to_pngs(pdf_path, output_dir)
+    try:
+        return render_pdf_to_pngs(pdf_path, output_dir)
+    finally:
+        safe_rmtree(pdf_root)
 
 
 def normalize_text(value: str) -> str:
@@ -204,7 +278,8 @@ def foreground_ratio(image: Image.Image) -> float:
 
 
 def collect_image_metrics(image_path: Path, slide_no: int) -> dict[str, Any]:
-    image = Image.open(image_path).convert("RGB")
+    with Image.open(image_path) as opened:
+        image = opened.convert("RGB")
     gray = image.convert("L")
     stat = ImageStat.Stat(gray)
     return {
@@ -309,12 +384,14 @@ def validate(pptx_path: Path, spec_path: Path | None = None, render_dir: Path | 
         ]
         issues.extend(inspect_image_metrics(image_metrics))
     except Exception as exc:
+        details = render_error_details(exc)
         issues.append(
             {
                 "severity": "error",
                 "slide": None,
                 "type": "render_failed",
-                "message": str(exc),
+                "message": public_safe_text(exc),
+                "render_details": details,
             }
         )
     finally:
