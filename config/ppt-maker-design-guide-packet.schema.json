@@ -1,0 +1,419 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/asset-registry/ppt-maker-design-guide-packet.schema.json",
+  "title": "B44 Design Guide Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "guide_identity",
+    "project_brief",
+    "reference_files",
+    "palette",
+    "typography",
+    "slide_size",
+    "safe_area",
+    "background_policy",
+    "header_footer_policy",
+    "slide_plan",
+    "layout_archetypes",
+    "asset_slot_policy",
+    "qa_rules",
+    "fallback_policy",
+    "approved_asset_references",
+    "public_safety"
+  ],
+  "properties": {
+    "contract": { "$ref": "#/$defs/contract" },
+    "guide_identity": { "$ref": "#/$defs/guide_identity" },
+    "project_brief": { "$ref": "#/$defs/project_brief" },
+    "reference_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/reference_file" }
+    },
+    "palette": { "$ref": "#/$defs/palette" },
+    "typography": { "$ref": "#/$defs/typography" },
+    "slide_size": { "$ref": "#/$defs/slide_size" },
+    "safe_area": { "$ref": "#/$defs/safe_area" },
+    "background_policy": { "$ref": "#/$defs/background_policy" },
+    "header_footer_policy": { "$ref": "#/$defs/header_footer_policy" },
+    "slide_plan": { "$ref": "#/$defs/slide_plan" },
+    "layout_archetypes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/layout_archetype" }
+    },
+    "asset_slot_policy": { "$ref": "#/$defs/asset_slot_policy" },
+    "qa_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/qa_rule" }
+    },
+    "fallback_policy": { "$ref": "#/$defs/fallback_policy" },
+    "approved_asset_references": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/approved_asset_reference" }
+    },
+    "public_safety": { "$ref": "#/$defs/public_safety" }
+  },
+  "$defs": {
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "compatibility"],
+      "properties": {
+        "name": { "const": "b44.design_guide_packet" },
+        "version": { "const": "1.0" },
+        "compatibility": { "const": "additive_to_b44_asset_handoff" }
+      }
+    },
+    "guide_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "guide_id",
+        "guide_version",
+        "status",
+        "language",
+        "project_name",
+        "topic",
+        "slide_count",
+        "created_at"
+      ],
+      "properties": {
+        "guide_id": { "type": "string", "minLength": 1 },
+        "guide_version": { "type": "string", "minLength": 1 },
+        "status": {
+          "enum": ["sample_public_fixture", "draft", "approved_for_consumer", "superseded"]
+        },
+        "language": { "type": "string", "minLength": 2 },
+        "project_name": { "type": "string", "minLength": 1 },
+        "topic": { "type": "string", "minLength": 1 },
+        "slide_count": { "type": "integer", "minimum": 1 },
+        "created_at": { "type": "string", "minLength": 1 }
+      }
+    },
+    "project_brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["audience", "tone", "objective", "constraints"],
+      "properties": {
+        "audience": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "tone": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "objective": { "type": "string", "minLength": 1 },
+        "constraints": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "reference_file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file_name", "extension", "purpose"],
+      "properties": {
+        "file_name": { "type": "string", "minLength": 1 },
+        "extension": { "type": "string", "pattern": "^\\.[A-Za-z0-9]+$" },
+        "purpose": { "type": "string", "minLength": 1 },
+        "public_safe_note": { "type": "string" }
+      }
+    },
+    "palette": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["palette_id", "palette_name", "source", "colors"],
+      "properties": {
+        "palette_id": { "type": "string", "minLength": 1 },
+        "palette_name": { "type": "string", "minLength": 1 },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "asset_ref"],
+          "properties": {
+            "kind": { "enum": ["registry_palette", "project_defined", "sample_fixture"] },
+            "asset_ref": { "type": ["string", "null"] }
+          }
+        },
+        "colors": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/palette_color" }
+        }
+      }
+    },
+    "palette_color": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "name", "hex", "rgb", "usage"],
+      "properties": {
+        "role": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "hex": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "rgb": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": { "type": "integer", "minimum": 0, "maximum": 255 }
+        },
+        "usage": { "type": "string", "minLength": 1 },
+        "accessibility_note": { "type": "string" },
+        "contrast": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "recommended_text_color": { "enum": ["ink", "white", "black", "token_specific", "not_applicable"] },
+            "wcag_normal_text_aa": { "type": "boolean" },
+            "wcag_large_text_aa": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["font_package_refs", "roles"],
+      "properties": {
+        "font_package_refs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/font_package_ref" }
+        },
+        "roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/typography_role" }
+        }
+      }
+    },
+    "font_package_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "asset_ref", "license_action"],
+      "properties": {
+        "family": { "type": "string", "minLength": 1 },
+        "asset_ref": { "type": ["string", "null"] },
+        "license_action": { "type": "string", "minLength": 1 },
+        "package_status": {
+          "enum": ["metadata_only", "approved_package_available", "system_font_fallback", "not_applicable"]
+        }
+      }
+    },
+    "typography_role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "font_stack",
+        "default_pt",
+        "min_pt",
+        "max_pt",
+        "weight",
+        "line_limit",
+        "fallback"
+      ],
+      "properties": {
+        "role": { "type": "string", "minLength": 1 },
+        "font_stack": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "default_pt": { "type": "number", "exclusiveMinimum": 0 },
+        "min_pt": { "type": "number", "exclusiveMinimum": 0 },
+        "max_pt": { "type": "number", "exclusiveMinimum": 0 },
+        "weight": { "enum": ["regular", "medium", "semibold", "bold"] },
+        "line_limit": { "type": "integer", "minimum": 1 },
+        "fallback": { "type": "string", "minLength": 1 }
+      }
+    },
+    "slide_size": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["size", "width_in", "height_in"],
+      "properties": {
+        "size": { "enum": ["widescreen_16_9", "standard_4_3", "custom"] },
+        "width_in": { "type": "number", "exclusiveMinimum": 0 },
+        "height_in": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "safe_area": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left_in", "top_in", "right_in", "bottom_in"],
+      "properties": {
+        "left_in": { "type": "number", "minimum": 0 },
+        "top_in": { "type": "number", "minimum": 0 },
+        "right_in": { "type": "number", "exclusiveMinimum": 0 },
+        "bottom_in": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "background_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["default_mode", "max_modes_per_deck", "allowed_types", "forbidden_types"],
+      "properties": {
+        "default_mode": { "type": "string", "minLength": 1 },
+        "max_modes_per_deck": { "type": "integer", "minimum": 1 },
+        "allowed_types": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "forbidden_types": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "header_footer_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["header", "footer"],
+      "properties": {
+        "header": { "$ref": "#/$defs/module_policy" },
+        "footer": { "$ref": "#/$defs/module_policy" }
+      }
+    },
+    "module_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "allowed_content"],
+      "properties": {
+        "mode": { "enum": ["required", "optional", "forbidden"] },
+        "allowed_content": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "slide_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slides"],
+      "properties": {
+        "slides": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/slide_record" }
+        }
+      }
+    },
+    "slide_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slide_no",
+        "layout_archetype",
+        "content_brief",
+        "visible_content_candidates",
+        "asset_slots",
+        "qa_checks"
+      ],
+      "properties": {
+        "slide_no": { "type": "integer", "minimum": 1 },
+        "layout_archetype": { "type": "string", "minLength": 1 },
+        "content_brief": { "type": "string", "minLength": 1 },
+        "visible_content_candidates": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "asset_slots": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/asset_slot" }
+        },
+        "qa_checks": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "layout_archetype": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "description", "native_assembly_hint"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "native_assembly_hint": { "type": "string", "minLength": 1 }
+      }
+    },
+    "asset_slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slot_id", "slot_type", "required", "allowed_sources", "fallback", "crop_or_mask_policy"],
+      "properties": {
+        "slot_id": { "type": "string", "minLength": 1 },
+        "slot_type": { "enum": ["icon", "image", "mockup", "background", "chart", "shape", "none"] },
+        "required": { "type": "boolean" },
+        "allowed_sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/asset_source" }
+        },
+        "preferred_asset_ref": { "type": ["string", "null"] },
+        "fallback": { "type": "string", "minLength": 1 },
+        "crop_or_mask_policy": { "type": "string", "minLength": 1 },
+        "visible_text_allowed": { "type": "boolean" }
+      }
+    },
+    "asset_source": {
+      "enum": [
+        "approved_package_asset",
+        "user_supplied_approved_asset",
+        "generated_image_approved_for_deck",
+        "native_shape_or_mockup_fallback",
+        "not_applicable"
+      ]
+    },
+    "asset_slot_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["priority_order", "notes"],
+      "properties": {
+        "priority_order": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/asset_source" }
+        },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "qa_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "severity", "check"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "severity": { "enum": ["blocking", "warning"] },
+        "check": { "type": "string", "minLength": 1 }
+      }
+    },
+    "fallback_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["missing_asset", "font_unavailable", "overflow"],
+      "properties": {
+        "missing_asset": { "type": "string", "minLength": 1 },
+        "font_unavailable": { "type": "string", "minLength": 1 },
+        "overflow": { "type": "string", "minLength": 1 }
+      }
+    },
+    "approved_asset_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["asset_ref", "asset_role", "manifest_checksum"],
+      "properties": {
+        "asset_ref": { "type": "string", "minLength": 1 },
+        "asset_role": { "type": "string", "minLength": 1 },
+        "manifest_checksum": { "type": "string", "minLength": 1 }
+      }
+    },
+    "public_safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "private_refs_redacted",
+        "contains_raw_assets",
+        "contains_drive_ids",
+        "contains_private_paths",
+        "contains_generated_private_reports",
+        "contains_tokens"
+      ],
+      "properties": {
+        "private_refs_redacted": { "const": true },
+        "contains_raw_assets": { "const": false },
+        "contains_drive_ids": { "const": false },
+        "contains_private_paths": { "const": false },
+        "contains_generated_private_reports": { "const": false },
+        "contains_tokens": { "const": false }
+      }
+    }
+  }
+}

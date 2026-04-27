@@ -91,6 +91,41 @@ Default permission posture:
 - private connector/gateway: disabled until configured
 - private runtime execution and private asset materialization: requires entitlement plus connector readiness
 
+## Guide Packet Agent Mode
+
+The public-safe guide packet agent consumes `guide-data.public.json` as its
+primary machine input and writes local planning/QA artifacts before or during
+PPTX generation. Assistant mode is the default; Auto mode creates two
+strategy-routed variants with separate `deck-plan.json` and
+`renderer-contract.json` files.
+
+```powershell
+python scripts\ppt_agent.py doctor
+python scripts\ppt_agent.py make --mode assistant --guide-bundle data\fixtures\lumaloop_guide
+python scripts\ppt_agent.py make --mode auto --guide-bundle data\fixtures\lumaloop_guide
+```
+
+Sparse requests can be normalized into public-safe machine-facing documents:
+
+```powershell
+python scripts\ppt_agent.py make --mode assistant --prompt "파일인데 참고해서 공공기관 보고자료로 만들어줘" --source ".\input\memo.md"
+python scripts\ppt_agent.py make --mode auto --prompt "이 제품 소개자료 자동으로 만들어줘"
+```
+
+This path writes `request-intake.json`, `source-summary.json`,
+`intent-profile.json`, and `routing-report.json`, then composes or validates a
+guide packet. The strategy router is bounded by
+`config/deck_intent_taxonomy.json` and `config/variant_strategy_registry.json`.
+HTML guide output is review evidence only and is never inserted into PPTX
+content as a screenshot.
+
+Generic MCP clients can use the guide-packet adapter without replacing the
+existing public CLI MCP adapter:
+
+```powershell
+python scripts\ppt_agent_mcp_adapter.py --serve
+```
+
 ## Public CLI And Private Runtime Path
 
 This public repository is the installable CLI control plane. It installs runtime dependencies, initializes workspaces, runs public-safe smoke checks, and provides the connector that entitled users or operators use to install and call the private PPT runtime.
