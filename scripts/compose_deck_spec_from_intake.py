@@ -34,6 +34,20 @@ EDITORIAL_TEMPLATE_SEQUENCE = [
     "summary_two_panel_v1",
     "goal_grid_v1",
 ]
+EDITORIAL_CONTENT_TEMPLATE_SEQUENCE = [
+    "summary_two_panel_v1",
+    "proposal_grid_4up_v1",
+    "issue_2x2_v1",
+    "summary_two_panel_v1",
+    "goal_grid_v1",
+    "proposal_grid_4up_v1",
+]
+PUBLIC_FALLBACK_TEMPLATE_SEQUENCE = [
+    "summary_two_panel_v1",
+    "proposal_grid_4up_v1",
+    "issue_2x2_v1",
+    "goal_grid_v1",
+]
 BUSINESS_TEMPLATE_KEY_TERMS = ("financial", "funding", "market_", "competition", "tam_sam_som")
 CONSUMER_INAPPROPRIATE_TEMPLATE_KEY_TERMS = (
     *BUSINESS_TEMPLATE_KEY_TERMS,
@@ -442,6 +456,8 @@ def is_editorial_consumer_deck(intake: DeckIntake) -> bool:
         return False
     if locale_is_korean(intake) and any(token in topic_text for token in ("음식", "제철", "요리", "식품")):
         return True
+    if any(token in topic_text for token in ("editorial", "consumer", "coffee", "cafe", "beverage", "guide")):
+        return True
     if intake.industry.value == "food_and_beverage" and "visual" in tone:
         return True
     if {"friendly", "visual"} & tone and intake.audience.decision_role.value == "learner":
@@ -481,6 +497,10 @@ def preferred_template_keys(intake: DeckIntake, count: int, profile: dict[str, A
     if not preferred:
         preferred = list((profile or {}).get("template_sequence") or [])[:count]
     if not is_editorial_consumer_deck(intake):
+        index = 0
+        while len(preferred) < count:
+            preferred.append(PUBLIC_FALLBACK_TEMPLATE_SEQUENCE[index % len(PUBLIC_FALLBACK_TEMPLATE_SEQUENCE)])
+            index += 1
         return preferred
 
     sanitized: list[str] = []
@@ -490,7 +510,12 @@ def preferred_template_keys(intake: DeckIntake, count: int, profile: dict[str, A
         if current and not any(term in lowered for term in CONSUMER_INAPPROPRIATE_TEMPLATE_KEY_TERMS):
             sanitized.append(current)
             continue
-        sanitized.append(EDITORIAL_TEMPLATE_SEQUENCE[index % len(EDITORIAL_TEMPLATE_SEQUENCE)])
+        if index == 0:
+            sanitized.append(EDITORIAL_TEMPLATE_SEQUENCE[0])
+        elif index == 1:
+            sanitized.append(EDITORIAL_TEMPLATE_SEQUENCE[1])
+        else:
+            sanitized.append(EDITORIAL_CONTENT_TEMPLATE_SEQUENCE[(index - 2) % len(EDITORIAL_CONTENT_TEMPLATE_SEQUENCE)])
     return sanitized
 
 
@@ -499,6 +524,8 @@ def visible_primary_goal(intake: DeckIntake) -> str:
     detail = extract_common_item_detail(intake.primary_goal)
     if topics and detail:
         return f"{intake.name}: {detail}"
+    if not locale_is_korean(intake):
+        return f"{intake.name} overview"
     first_sentence = re.split(r"[。.!?\n]", intake.primary_goal.strip(), maxsplit=1)[0]
     cleaned = strip_korean_slide_meta(first_sentence)
     return cleaned or intake.name
@@ -543,7 +570,7 @@ def compact_for_slot_with_override(value: str, slot_def: dict[str, Any], overrid
 
 
 def short_footer(intake: DeckIntake) -> str:
-    return f"Draft | {slugify(intake.name)[:36]}"
+    return intake.name[:48] or slugify(intake.name)[:36]
 
 
 def numbered_item(slot_name: str, items: list[IncludeItem], offset: int = 0) -> IncludeItem | None:
@@ -561,7 +588,9 @@ def item_title(item: IncludeItem) -> str:
 def item_body(item: IncludeItem, intake: DeckIntake) -> str:
     if item.detail:
         return item.detail
-    return visible_primary_goal(intake)
+    if locale_is_korean(intake):
+        return f"{item.title}의 핵심 포인트"
+    return f"Key details for {item.title}"
 
 
 ROLE_TAG_LABELS = {
@@ -649,9 +678,7 @@ def text_for_slot(
     if lowered == "name":
         return slide_title
     if lowered == "eyebrow":
-        if locale_is_korean(intake) and is_editorial_consumer_deck(intake):
-            return None
-        return "가이드" if locale_is_korean(intake) else purpose.replace("_", " ").upper()
+        return None
     if lowered == "case_number":
         if is_editorial_consumer_deck(intake):
             return None

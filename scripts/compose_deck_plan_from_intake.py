@@ -51,7 +51,7 @@ def title_for(index: int, purpose: str, item_titles: list[str], intake_name: str
     if index == 0:
         return intake_name
     if index == 1 and purpose == "toc":
-        return "목차" if is_korean else "Discussion path"
+        return "목차" if is_korean else "Agenda"
     item_index = max(0, min(index - 2, len(item_titles) - 1))
     if item_titles and index >= 2:
         return item_titles[item_index]

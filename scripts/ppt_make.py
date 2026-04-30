@@ -146,10 +146,25 @@ def maybe_json(text: str) -> dict[str, Any]:
 
 
 def detect_slide_count(request: str) -> int:
-    match = re.search(r"(\d{1,2})\s*(?:slides?|장|페이지|page)", request, re.IGNORECASE)
+    match = re.search(r"(\d{1,2})\s*[- ]?\s*(?:slides?|장|쪽|페이지|page|pages)", request, re.IGNORECASE)
     if match:
         return max(1, min(20, int(match.group(1))))
     return 6
+
+
+def title_case_words(value: str) -> str:
+    small = {"a", "an", "and", "as", "at", "by", "for", "in", "of", "on", "or", "the", "to", "with"}
+    words = re.findall(r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)?|[가-힣]+", value)
+    output = []
+    for index, word in enumerate(words):
+        lowered = word.lower()
+        if index > 0 and lowered in small:
+            output.append(lowered)
+        elif word.isupper() and len(word) <= 4:
+            output.append(word)
+        else:
+            output.append(word[:1].upper() + word[1:].lower())
+    return " ".join(output)
 
 
 def extract_korean_topic_list(request: str) -> list[str]:
@@ -166,6 +181,26 @@ def extract_korean_topic_list(request: str) -> list[str]:
         if topic not in unique:
             unique.append(topic)
     return unique[:20]
+
+
+def extract_english_topic_list(request: str) -> list[str]:
+    topics: list[str] = []
+    for match in re.finditer(r"\b(?:include|cover|topics?|focus\s+on)\s*[:：]?\s*([^.\n]+)", request, flags=re.IGNORECASE):
+        raw = re.sub(r"\band\b", ";", match.group(1), flags=re.IGNORECASE)
+        for item in re.split(r"\s*(?:;|,|/)\s*", raw):
+            cleaned = re.sub(r"\s+", " ", item).strip(" \t\r\n-•,.;:：")
+            cleaned = re.sub(r"^(?:and|or)\s+", "", cleaned, flags=re.IGNORECASE)
+            if cleaned and len(cleaned) <= 56 and re.search(r"[A-Za-z0-9]", cleaned):
+                topics.append(title_case_words(cleaned))
+    unique: list[str] = []
+    for topic in topics:
+        if topic not in unique:
+            unique.append(topic)
+    return unique[:20]
+
+
+def extract_topic_list(request: str) -> list[str]:
+    return extract_korean_topic_list(request) or extract_english_topic_list(request)
 
 
 def extract_common_item_detail(request: str) -> str | None:
@@ -203,10 +238,18 @@ def derive_request_title(request: str) -> str:
     title = strip_korean_slide_meta(first_sentence)
     if re.search(r"[가-힣]", request) and title:
         return title[:80]
+    about = re.search(
+        r"\babout\s+(.+?)(?=\.\s+(?:Include|Cover|Topics?|Focus)\b|$)",
+        request,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if about:
+        return title_case_words(about.group(1))[:80] or "Natural Language Deck"
     title = re.sub(r"\b(?:create|make|generate|build)\b", " ", first_sentence, flags=re.IGNORECASE)
-    title = re.sub(r"\b\d{1,2}\s*(?:slides?|pages?)\b", " ", title, flags=re.IGNORECASE)
+    title = re.sub(r"\b\d{1,2}\s*[- ]?\s*(?:slides?|pages?)\b", " ", title, flags=re.IGNORECASE)
+    title = re.sub(r"\b(?:presentation|deck|guide)\b", " ", title, flags=re.IGNORECASE)
     title = re.sub(r"\s+", " ", title).strip(" \t\r\n-•,.;:")
-    return (title or "Natural Language Deck")[:80]
+    return (title_case_words(title) or "Natural Language Deck")[:80]
 
 
 def detect_deck_type(request: str) -> str:
@@ -235,6 +278,7 @@ def detect_industry(request: str) -> str:
         ("healthcare", ["health", "medical", "의료", "헬스"]),
         ("travel", ["travel", "tour", "여행"]),
         ("food_and_beverage", ["food", "restaurant", "식품", "음식"]),
+        ("food_and_beverage", ["coffee", "cafe", "beverage", "커피", "음료"]),
         ("entertainment", ["game", "media", "entertainment", "게임", "콘텐츠"]),
         ("exhibition", ["exhibition", "expo", "전시"]),
     ]
@@ -259,7 +303,7 @@ def detect_tone(request: str, mode: str) -> list[str]:
 
 
 def split_request_points(request: str) -> list[str]:
-    topics = extract_korean_topic_list(request)
+    topics = extract_topic_list(request)
     if topics:
         detail = extract_common_item_detail(request)
         return [f"{topic}: {detail}" if detail else topic for topic in topics][:18]
