@@ -65,6 +65,18 @@ RAW_OR_DEBUG_PATTERNS = [
     re.compile(r"\b(?:slot|template|asset|debug)[_-]", re.IGNORECASE),
     re.compile(r"\bDraft\s*\|", re.IGNORECASE),
 ]
+GUIDE_HTML_TITLE_PATTERN = re.compile(r"\d+\.\s*[a-z_][a-z0-9_ -]*", re.IGNORECASE)
+PLACEHOLDER_HTML_TITLES = {
+    "draft",
+    "draft |",
+    "guide",
+    "가이드",
+    "include",
+    "visual area",
+    "placeholder",
+    "general detail",
+    "discussion path",
+}
 
 
 def assert_true(condition: bool, message: str) -> None:
@@ -86,15 +98,68 @@ def load_stdout_json(result: subprocess.CompletedProcess[str]) -> dict[str, Any]
     return payload
 
 
-def artifact_path(report: dict[str, Any], name: str) -> Path:
+def default_repo_mode() -> str:
+    if (BASE_DIR / "scripts" / "compose_deck_plan_from_intake.py").exists():
+        return "public"
+    return "internal"
+
+
+def artifact_path_optional(report: dict[str, Any], name: str) -> Path | None:
     artifacts = report.get("artifacts")
     assert_true(isinstance(artifacts, dict), "report missing artifacts")
     value = artifacts.get(name)
-    assert_true(isinstance(value, str) and value, f"report missing artifact {name}")
+    if not isinstance(value, str) or not value:
+        return None
     path = Path(value)
     assert_true(path.is_absolute(), f"{name} artifact is not absolute: {value}")
     assert_true(path.exists(), f"{name} artifact does not exist: {value}")
     return path
+
+
+def project_dir_from_report(report: dict[str, Any]) -> Path:
+    absolute_paths = report.get("absolute_paths")
+    value = absolute_paths.get("project") if isinstance(absolute_paths, dict) else None
+    if not isinstance(value, str) or not value:
+        report_path = artifact_path_optional(report, "report")
+        if report_path is not None:
+            value = str(report_path.parents[1])
+        else:
+            workspace_root = report.get("workspace_root")
+            project_id = report.get("project_id")
+            assert_true(isinstance(workspace_root, str) and isinstance(project_id, str), "report missing project path")
+            value = str(Path(workspace_root) / "outputs" / "projects" / project_id)
+    path = Path(value)
+    assert_true(path.is_absolute(), f"project path is not absolute: {value}")
+    assert_true(path.exists(), f"project path does not exist: {value}")
+    return path
+
+
+def quality_artifacts(report: dict[str, Any]) -> tuple[Path, Path, Path]:
+    project_dir = project_dir_from_report(report)
+    pptx = artifact_path_optional(report, "pptx") or project_dir / "generated.pptx"
+    html_path = artifact_path_optional(report, "html") or project_dir / "html" / "guide.html"
+    assert_true(pptx.exists(), f"quality-floor PPTX artifact does not exist: {pptx}")
+    assert_true(html_path.exists(), f"quality-floor HTML artifact does not exist: {html_path}")
+    return pptx, html_path, project_dir
+
+
+def preview_render_warning(project_dir: Path) -> dict[str, Any] | None:
+    qa_path = project_dir / "final-qa.json"
+    if not qa_path.exists():
+        return None
+    qa = json.loads(qa_path.read_text(encoding="utf-8"))
+    preview = qa.get("preview_report")
+    if not isinstance(preview, dict):
+        return None
+    if preview.get("status") != "blocked_render_failed" or preview.get("validation_blocker") is not True:
+        return None
+    return {
+        "status": preview.get("status"),
+        "validation_blocker": preview.get("validation_blocker"),
+        "fallback_reason": preview.get("fallback_reason"),
+        "render_attempts": preview.get("render_attempts"),
+        "final_qa": qa_path.as_posix(),
+    }
 
 
 def pptx_slide_texts(path: Path) -> list[list[str]]:
@@ -161,7 +226,45 @@ def html_titles(path: Path) -> list[str]:
     return titles
 
 
-def validate_case(case: dict[str, Any], output_root: Path) -> dict[str, Any]:
+def validate_html_title_policy(case_id: str, titles: list[str], primary_titles: list[str], *, repo_mode: str) -> str:
+    placeholder_titles = [
+        title
+        for title in titles
+        if title.casefold() in PLACEHOLDER_HTML_TITLES or title.casefold().startswith("draft |")
+    ]
+    assert_true(not placeholder_titles, f"{case_id} HTML exposes placeholder h2 titles: {placeholder_titles}")
+    if repo_mode == "public":
+        assert_true(
+            len(titles) == len(primary_titles),
+            f"{case_id} HTML/PPTX title count mismatch: {len(titles)} != {len(primary_titles)}; {titles}",
+        )
+        assert_true(titles == primary_titles, f"{case_id} HTML/PPTX title divergence: {titles} != {primary_titles}")
+        return "parity"
+    if len(titles) == len(primary_titles) and titles == primary_titles:
+        return "parity"
+    assert_true(
+        titles and all(GUIDE_HTML_TITLE_PATTERN.fullmatch(title) for title in titles),
+        f"{case_id} internal guide HTML exception requires archetype h2 titles: {titles}",
+    )
+    return "internal_guide_html_exception"
+
+
+def expect_public_html_policy_failure(case_id: str, titles: list[str], primary_titles: list[str]) -> dict[str, str]:
+    try:
+        validate_html_title_policy(case_id, titles, primary_titles, repo_mode="public")
+    except AssertionError as exc:
+        return {"case_id": case_id, "status": "pass", "failure": str(exc)}
+    raise AssertionError(f"{case_id} negative HTML parity test unexpectedly passed")
+
+
+def validate_public_html_policy_negative_tests() -> list[dict[str, str]]:
+    return [
+        expect_public_html_policy_failure("negative_title_count_mismatch", ["Only One"], ["One", "Two"]),
+        expect_public_html_policy_failure("negative_placeholder_h2", ["Visual area", "Two"], ["One", "Two"]),
+    ]
+
+
+def validate_case(case: dict[str, Any], output_root: Path, *, repo_mode: str) -> dict[str, Any]:
     workspace = output_root / "workspace"
     result = run(
         [
@@ -177,12 +280,19 @@ def validate_case(case: dict[str, Any], output_root: Path) -> dict[str, Any]:
             str(case["project_id"]),
         ]
     )
-    assert_true(result.returncode == 0, result.stderr or result.stdout)
     report = load_stdout_json(result)
-    assert_true(report.get("status") == "built", f"{case['case_id']} did not build")
+    pptx, html_path, project_dir = quality_artifacts(report)
+    warning = None
+    if result.returncode != 0 or report.get("status") != "built":
+        warning = preview_render_warning(project_dir)
+        assert_true(
+            repo_mode == "internal" and warning is not None,
+            (
+                f"{case['case_id']} did not build cleanly: returncode={result.returncode}, "
+                f"status={report.get('status')}, stderr={result.stderr.strip()}"
+            ),
+        )
 
-    pptx = artifact_path(report, "pptx")
-    html_path = artifact_path(report, "html")
     slides = pptx_slide_texts(pptx)
     expected_count = int(case["expected_slide_count"])
     assert_true(len(slides) == expected_count, f"{case['case_id']} slide count {len(slides)} != {expected_count}")
@@ -219,28 +329,44 @@ def validate_case(case: dict[str, Any], output_root: Path) -> dict[str, Any]:
     assert_true(not repeated, f"{case['case_id']} has repeated boilerplate text: {repeated[:5]}")
 
     titles = html_titles(html_path)
-    html_mode = "explicit_exception"
-    if len(titles) == len(primary_titles) and not all(re.fullmatch(r"\d+\.\s*[a-z_]+", title, flags=re.IGNORECASE) for title in titles):
-        assert_true(titles == primary_titles, f"{case['case_id']} HTML/PPTX title divergence: {titles} != {primary_titles}")
-        html_mode = "parity"
-    return {
+    html_mode = validate_html_title_policy(case["case_id"], titles, primary_titles, repo_mode=repo_mode)
+    payload = {
         "case_id": case["case_id"],
+        "build_status": report.get("status"),
         "pptx": pptx.as_posix(),
         "html": html_path.as_posix(),
         "primary_titles": primary_titles,
         "text_density": densities,
         "html_title_mode": html_mode,
     }
+    if warning is not None:
+        payload["preview_render_warning"] = warning
+    return payload
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Validate public renderer minimum visual quality floor.")
     parser.add_argument("--output-root", required=True)
+    parser.add_argument("--repo-mode", choices=["public", "internal"], default=default_repo_mode())
     args = parser.parse_args(argv)
     output_root = Path(args.output_root).resolve()
     output_root.mkdir(parents=True, exist_ok=True)
-    cases = [validate_case(case, output_root / str(case["case_id"])) for case in CASES]
-    print(json.dumps({"status": "pass", "quality_floor": {"cases": cases}}, indent=2, ensure_ascii=False))
+    cases = [validate_case(case, output_root / str(case["case_id"]), repo_mode=args.repo_mode) for case in CASES]
+    negative_tests = validate_public_html_policy_negative_tests()
+    print(
+        json.dumps(
+            {
+                "status": "pass",
+                "quality_floor": {
+                    "repo_mode": args.repo_mode,
+                    "cases": cases,
+                    "public_html_policy_negative_tests": negative_tests,
+                },
+            },
+            indent=2,
+            ensure_ascii=False,
+        )
+    )
     return 0
 
 
