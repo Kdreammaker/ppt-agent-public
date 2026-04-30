@@ -282,8 +282,13 @@ def command_setup(args: argparse.Namespace) -> int:
         "errors": errors,
         "steps": steps,
         "next_commands": {
-            "natural_language_public": f'python scripts/ppt_make.py "Make a 6-slide executive growth review" --workspace "{workspace.as_posix()}" --mode assistant',
-            "natural_language_private": f'python scripts/ppt_make.py "Make a production-ready executive growth review" --workspace "{workspace.as_posix()}" --mode assistant --production private --execute-private',
+            "natural_language_public": {
+                "assistant_checkpoint": f'python scripts/ppt_make.py "Make a 6-slide executive growth review" --workspace "{workspace.as_posix()}" --mode assistant',
+                "assistant_final_after_review": f'python scripts/ppt_make.py "Make a 6-slide executive growth review" --workspace "{workspace.as_posix()}" --mode assistant --build-approved',
+                "auto_fast_draft": f'python scripts/ppt_make.py "Make a 6-slide growth update for leadership" --workspace "{workspace.as_posix()}" --mode auto',
+                "contract": "Assistant checkpoint writes planning artifacts and waits; final PPTX/HTML requires --build-approved or --continue-build.",
+            },
+            "natural_language_private": f'python scripts/ppt_make.py "Make a production-ready executive growth review" --workspace "{workspace.as_posix()}" --mode assistant --production private --build-approved --execute-private',
             "doctor": f'python scripts/ppt_private_connector.py status --workspace "{workspace.as_posix()}" --github-check',
         },
         "policy_summary": {

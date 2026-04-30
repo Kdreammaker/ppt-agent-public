@@ -15,6 +15,14 @@ python scripts\ppt_cli_history.py rollback --workspace .\ppt-workspace --run-id 
 
 Assistant Mode shows the ASCII structure blueprint by default and should wait for an explicit approve, revise, continue, skip, or `--build-approved` decision before final PPTX/HTML generation. Auto Mode skips the blueprint checkpoint by default unless a workflow explicitly requests it. The ASCII blueprint is not a visual preview; use HTML/PPTX preview or rendered thumbnails for visual approval.
 
+## Route Matrix
+
+| Route | Assistant Mode | Auto Mode |
+| --- | --- | --- |
+| `python scripts\ppt_make.py` | Natural-language first-run wrapper. It writes planning artifacts and `ppt_make_report.json`, returns `status=waiting_for_approval`, and only renders final PPTX/HTML after `--build-approved` or `--continue-build`. | Natural-language fast draft route; builds immediately. |
+| `python scripts\ppt_agent.py` | Guide-packet/sparse-prompt route. It plans first by default and requires `--build-approved` for final files. | Builds two strategy-routed variants. |
+| `python scripts\ppt_agent_mcp_adapter.py` | `deck_plan_compose` plans unless `build_approved=true`. | `two_variant_auto_build` renders variants. |
+
 ## Outputs
 
 - PPTX: editable enterprise handoff.

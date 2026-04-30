@@ -64,6 +64,14 @@ Once setup is complete, users and AI agents can make decks through one natural-l
 python scripts\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" --workspace "<workspace>" --mode assistant
 ```
 
+Assistant Mode is a planning checkpoint by default. The command above writes
+review artifacts and returns `status=waiting_for_approval`; it does not create
+final PPTX/HTML until the user or agent approves the plan:
+
+```powershell
+python scripts\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" --workspace "<workspace>" --mode assistant --build-approved
+```
+
 Each run writes a local design brief before or alongside outputs:
 
 ```text
@@ -82,6 +90,14 @@ Auto Mode uses the same entrypoint:
 ```powershell
 python scripts\ppt_make.py "Make a 6 slide growth update for leadership" --workspace "<workspace>" --mode auto
 ```
+
+## Route Matrix
+
+| Route | Assistant Mode | Auto Mode |
+| --- | --- | --- |
+| `scripts\ppt_make.py` | Natural-language first-run wrapper. Creates planning artifacts, `draft_design_brief.md`, and `ppt_make_report.json`; waits with `status=waiting_for_approval`. Final PPTX/HTML requires `--build-approved` or `--continue-build`. | Natural-language fast draft route. Builds immediately. |
+| `scripts\ppt_agent.py` | Guide-packet/sparse-prompt agent route. Plans first by default; final files require `--build-approved`. | Builds two strategy-routed variants plus comparison/recommendation reports. |
+| `scripts\ppt_agent_mcp_adapter.py` | `deck_plan_compose` returns planning artifacts unless `build_approved=true`. | `two_variant_auto_build` renders variants without an approval checkpoint. |
 
 If the private connector is ready and a production build is required:
 

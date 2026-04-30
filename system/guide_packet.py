@@ -2853,10 +2853,10 @@ def render_previews(pptx_path: Path, packet: GuidePacket, project_dir: Path) -> 
 
 
 def generate_html_guide(packet: GuidePacket, project_dir: Path, mode: str, requested: bool) -> dict[str, Any]:
-    if mode != "assistant" and not requested:
+    if not requested:
         return {
             "generated": False,
-            "reason": "Auto mode skips HTML guide unless guide review is explicitly requested.",
+            "reason": "HTML guide skipped until explicitly requested or final build is approved.",
             "file_path": None,
             "rendered_url": None,
             "viewport_size": None,

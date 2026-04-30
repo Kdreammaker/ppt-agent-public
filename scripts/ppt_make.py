@@ -47,6 +47,15 @@ def display_path(path: Path, root: Path) -> str:
         return path.resolve().as_posix()
 
 
+def resolve_path(value: str) -> Path:
+    path = Path(value)
+    return path.resolve() if path.is_absolute() else (Path.cwd() / path).resolve()
+
+
+def existing_path(path: Path | None) -> str | None:
+    return path.resolve().as_posix() if path and path.exists() else None
+
+
 def read_text_limited(path: Path, limit: int = 8000) -> str:
     data = path.read_text(encoding="utf-8-sig", errors="replace")
     return " ".join(data[:limit].split())
@@ -348,7 +357,8 @@ def command_make(args: argparse.Namespace) -> int:
     workspace = resolve_workspace(args.workspace)
     mode = args.mode
     project_id = args.project_id or slugify(request)
-    project_root = workspace / "outputs" / "projects" / project_id
+    project_base = resolve_path(args.output_root) if args.output_root else workspace / "outputs" / "projects"
+    project_root = project_base / project_id
     intake_path = project_root / "intake" / "request.json"
     plan_path = project_root / "plans" / "deck_plan.json"
     spec_path = project_root / "specs" / "deck_spec.json"
@@ -413,10 +423,16 @@ def command_make(args: argparse.Namespace) -> int:
     if steps[-1]["returncode"] != 0:
         errors.append("plan-first compose failed")
 
+    spec = read_json(spec_path) if spec_path.exists() else {}
+    plan = read_json(plan_path) if plan_path.exists() else {}
+    if plan and spec:
+        write_design_brief(design_brief_path, request, plan, spec, context, version_report)
+
+    assistant_waiting = mode == "assistant" and not args.build_approved and not errors
     status_payload = connector_status(workspace)
     requested_private = args.production == "private"
-    use_private = args.production == "private" or (
-        args.production == "auto" and private_ready(status_payload, execute=args.execute_private)
+    use_private = (not assistant_waiting) and (
+        args.production == "private" or (args.production == "auto" and private_ready(status_payload, execute=args.execute_private))
     )
     private_step: dict[str, Any] | None = None
     if not errors and use_private:
@@ -438,7 +454,7 @@ def command_make(args: argparse.Namespace) -> int:
         if private_step["returncode"] != 0:
             errors.append("private production build failed or is not ready")
 
-    if not errors and (args.production == "public" or not use_private):
+    if not errors and not assistant_waiting and (args.production == "public" or not use_private):
         if requested_private:
             errors.append("private production was requested but connector is not ready")
         else:
@@ -462,22 +478,21 @@ def command_make(args: argparse.Namespace) -> int:
             )
             if steps[-1]["returncode"] != 0:
                 errors.append("public PPTX/HTML build failed")
-
-    spec = read_json(spec_path) if spec_path.exists() else {}
-    plan = read_json(plan_path) if plan_path.exists() else {}
-    if plan and spec:
-        write_design_brief(design_brief_path, request, plan, spec, context, version_report)
     deck_path = (spec_path.parent / str(spec.get("output_path", ""))).resolve() if spec.get("output_path") else None
     if deck_path and not deck_path.exists():
         deck_path = None
+    status = "waiting_for_approval" if assistant_waiting else ("built" if not errors else "failed")
     report = {
         "schema_version": SCHEMA_VERSION,
         "command": "ppt_make",
         "generated_at": utc_now(),
-        "status": "built" if not errors else "failed",
+        "status": status,
         "project_id": project_id,
         "operating_mode": mode,
         "production_mode": args.production,
+        "approval_required": assistant_waiting,
+        "build_approved": bool(args.build_approved),
+        "next_action": "review_planning_artifacts_then_rerun_with_build_approved" if assistant_waiting else None,
         "private_attempted": bool(private_step),
         "private_executed": bool(private_step and "--execute" in private_step.get("command", [])),
         "workspace_root": workspace.as_posix(),
@@ -492,10 +507,23 @@ def command_make(args: argparse.Namespace) -> int:
             "draft_design_brief": display_path(design_brief_path, workspace) if design_brief_path.exists() else None,
             "source_context": display_path(project_root / "context" / "source_context.json", workspace) if context.get("items") else None,
             "version_check": display_path(version_report_path, workspace) if version_report_path.exists() else None,
+            "renderer_contract": None,
             "spec": display_path(spec_path, workspace),
             "pptx": display_path(deck_path, workspace) if deck_path else None,
             "html": display_path(html_output_path, workspace) if html_output_path.exists() else None,
             "report": display_path(report_path, workspace),
+        },
+        "artifacts": {
+            "intake": existing_path(intake_path),
+            "deck_plan": existing_path(plan_path),
+            "draft_design_brief": existing_path(design_brief_path),
+            "source_context": existing_path(project_root / "context" / "source_context.json") if context.get("items") else None,
+            "version_check": existing_path(version_report_path),
+            "renderer_contract": None,
+            "spec": existing_path(spec_path),
+            "pptx": existing_path(deck_path),
+            "html": existing_path(html_output_path),
+            "report": report_path.resolve().as_posix(),
         },
         "connector_status": {
             "status": status_payload.get("status"),
@@ -512,7 +540,7 @@ def command_make(args: argparse.Namespace) -> int:
         },
     }
     write_json(report_path, report)
-    print(json.dumps({k: report[k] for k in ("status", "project_id", "operating_mode", "production_mode", "artifact_paths", "connector_status", "errors")}, indent=2, ensure_ascii=False))
+    print(json.dumps({k: report[k] for k in ("status", "project_id", "operating_mode", "production_mode", "approval_required", "next_action", "artifact_paths", "artifacts", "connector_status", "errors")}, indent=2, ensure_ascii=False))
     return 0 if not errors else 2
 
 
@@ -522,6 +550,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--request", default=None, help="Natural-language deck request.")
     parser.add_argument("--request-file", default=None, help="Read the natural-language request from a text file.")
     parser.add_argument("--workspace", default=None)
+    parser.add_argument("--output-root", default=None, help="Optional project output root; defaults to <workspace>/outputs/projects.")
     parser.add_argument("--mode", choices=["auto", "assistant"], default="assistant")
     parser.add_argument("--project-id", default=None)
     parser.add_argument("--production", choices=["auto", "public", "private"], default="auto")
@@ -530,6 +559,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--skip-version-check", action="store_true")
     parser.add_argument("--skip-remote-version-check", action="store_true")
     parser.add_argument("--require-latest", action="store_true")
+    parser.add_argument(
+        "--build-approved",
+        "--continue-build",
+        action="store_true",
+        help="Render final Assistant PPTX/HTML after reviewing the planning checkpoint.",
+    )
     parser.add_argument("--execute-private", action="store_true", help="Execute the configured private runtime command when production=private/auto is ready.")
     parser.add_argument("--timeout-seconds", type=int, default=600)
     return parser

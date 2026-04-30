@@ -125,7 +125,7 @@
       "telemetry_default": "disabled",
       "implementation_mapping": {
         "current_entrypoint": "python scripts/ppt_setup.py --workspace <workspace>",
-        "planned_entrypoint": "ppt-agent setup --workspace <workspace>"
+        "planned_entrypoint": "python scripts/ppt_setup.py --workspace <workspace>"
       },
       "inputs": [
         "workspace_path",
@@ -155,7 +155,7 @@
       "telemetry_default": "disabled",
       "implementation_mapping": {
         "current_entrypoint": "python scripts/ppt_make.py \"<request>\" --workspace <workspace> --mode assistant",
-        "planned_entrypoint": "ppt-agent make \"<request>\" --mode assistant"
+        "planned_entrypoint": "python scripts/ppt_make.py \"<request>\" --workspace <workspace> --mode assistant"
       },
       "inputs": [
         "natural_language_request",
@@ -187,7 +187,7 @@
       "telemetry_default": "disabled",
       "implementation_mapping": {
         "current_entrypoint": "python scripts/ppt_system.py blueprint <input> --kind auto --approval-mode assistant",
-        "planned_entrypoint": "ppt-agent plan --intake intake/example.json --ascii-blueprint"
+        "planned_entrypoint": "python scripts/ppt_system.py blueprint intake/example.json --kind intake --approval-mode assistant"
       },
       "inputs": [
         "intake_or_spec_path",
@@ -214,7 +214,7 @@
       "telemetry_default": "disabled",
       "implementation_mapping": {
         "current_entrypoint": "python scripts/ppt_system.py compose-spec <intake>",
-        "planned_entrypoint": "ppt-agent compose --intake intake/example.json --output specs/example.json"
+        "planned_entrypoint": "python scripts/ppt_system.py compose-spec intake/example.json --output specs/example.json"
       },
       "inputs": [
         "intake_path",
@@ -268,7 +268,7 @@
       "telemetry_default": "disabled",
       "implementation_mapping": {
         "current_entrypoint": "python scripts/ppt_system.py build-outputs <spec> --validate",
-        "planned_entrypoint": "ppt-agent build --spec specs/example.json --pptx --html --validate"
+        "planned_entrypoint": "python scripts/ppt_system.py build-outputs specs/example.json --validate --report-dir reports --html-output html/example.html"
       },
       "inputs": [
         "spec_path",
@@ -295,7 +295,7 @@
       "telemetry_default": "disabled",
       "implementation_mapping": {
         "current_entrypoint": "python scripts/ppt_system.py gate",
-        "planned_entrypoint": "ppt-agent validate --spec specs/example.json --outputs all"
+        "planned_entrypoint": "python scripts/ppt_system.py gate"
       },
       "inputs": [
         "spec_path",

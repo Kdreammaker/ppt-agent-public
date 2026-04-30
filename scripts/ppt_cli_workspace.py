@@ -226,6 +226,14 @@ The first-run files also explain local-only defaults, upload/telemetry policy, m
 4. Build local PPTX and HTML outputs.
 5. Validate the generated artifacts.
 
+## Route Matrix
+
+| Route | Assistant Mode | Auto Mode |
+| --- | --- | --- |
+| `python scripts/ppt_make.py` | Natural-language first-run wrapper. Creates planning artifacts, `draft_design_brief.md`, and `ppt_make_report.json`; waits with `status=waiting_for_approval`. Final PPTX/HTML requires `--build-approved` or `--continue-build`. | Natural-language fast draft route. Builds immediately. |
+| `python scripts/ppt_agent.py` | Guide-packet/sparse-prompt route. Plans first by default; final files require `--build-approved`. | Builds two strategy-routed variants plus comparison/recommendation reports. |
+| `python scripts/ppt_agent_mcp_adapter.py` | `deck_plan_compose` returns planning artifacts unless `build_approved=true`. | `two_variant_auto_build` renders variants without an approval checkpoint. |
+
 ## Commands
 
 ```powershell

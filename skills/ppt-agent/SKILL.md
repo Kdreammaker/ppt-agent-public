@@ -4,9 +4,17 @@ Use this skill when a user asks the local PPT agent to create, validate, or conn
 
 ## Operating Modes
 
-- Assistant mode is the default. It creates `deck-plan.json`, `draft_design_brief.md`, `guide-data.public.json`, `renderer-contract.json`, `asset-slot-plan.json`, `qa-plan.json`, and QA reports before or during PPTX generation.
+- Assistant mode is the default. It creates `deck-plan.json`, `draft_design_brief.md`, `guide-data.public.json`, `renderer-contract.json`, `asset-slot-plan.json`, and `qa-plan.json`, then waits with `status=waiting_for_approval`. Final PPTX/HTML generation requires an explicit approved continuation such as `--build-approved`, `--continue-build`, or MCP `build_approved=true`.
 - Auto mode must generate two distinct PPTX variants, `variant-comparison-report.json`, `auto-mode-recommendation.md`, and QA for both variants.
 - On the first interactive deck-making request, offer Assistant mode or Auto mode. In non-interactive use, honor `--mode assistant` or `--mode auto`; otherwise default to Assistant mode.
+
+## Route Matrix
+
+| Route | Assistant Mode | Auto Mode |
+| --- | --- | --- |
+| `scripts\ppt_make.py` | Natural-language first-run wrapper; planning/checkpoint only until `--build-approved` or `--continue-build`. | Natural-language fast draft route; builds immediately. |
+| `scripts\ppt_agent.py` | Guide-packet/sparse-prompt route; planning/checkpoint only until `--build-approved`. | Builds two strategy-routed variants. |
+| `scripts\ppt_agent_mcp_adapter.py` | `deck_plan_compose` plans unless `build_approved=true`. | `two_variant_auto_build` renders variants. |
 
 ## Sparse Request Intake
 
@@ -32,7 +40,10 @@ HTML guide output is human review evidence only. Do not insert an HTML guide scr
 ## Commands
 
 ```powershell
+python scripts\ppt_make.py "Create a 5-slide deck about a library pilot" --mode assistant
+python scripts\ppt_make.py "Create a 5-slide deck about a library pilot" --mode assistant --build-approved
 python scripts\ppt_agent.py make --mode assistant --guide-bundle <bundle>
+python scripts\ppt_agent.py make --mode assistant --guide-bundle <bundle> --build-approved
 python scripts\ppt_agent.py make --mode auto --guide-bundle <bundle>
 python scripts\ppt_agent.py make --mode assistant --prompt "파일인데 참고해서 공공기관 보고자료로 만들어줘" --source ".\input\memo.md"
 python scripts\ppt_agent.py make --mode auto --prompt "ㅇㅇ 내용 찾아서 만들어줘" --search-topic "B2B SaaS market"

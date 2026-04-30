@@ -108,7 +108,7 @@ def error(message: str, request_id: Any = None) -> dict[str, Any]:
 def call_tool(name: str, arguments: dict[str, Any]) -> dict[str, Any]:
     if name == "mode_choice":
         return {
-            "assistant": "Plan first, generate machine artifacts, optionally create HTML guide evidence, then build.",
+            "assistant": "Plan first and wait with status=waiting_for_approval. Final PPTX generation requires deck_plan_compose build_approved=true.",
             "auto": "Build two distinct PPTX variants, comparison report, recommendation, and QA without approval checkpoints.",
             "default": "assistant",
         }
