@@ -5,15 +5,15 @@ This beta uses the CLI as the primary product surface. In short: CLI primary sur
 ## Requirements
 
 - Python 3.11 or newer.
-- The Python packages checked by `ppt-agent healthcheck`, including `python-pptx`, `Pillow`, `PyMuPDF`, and `pydantic`.
+- The Python packages checked by the healthcheck, including `python-pptx`, `Pillow`, `PyMuPDF`, and `pydantic`.
 - PowerShell on Windows for the documented command examples.
 - Optional: Node.js, npx, LibreOffice, and Korean/CJK fonts for preview or local tooling workflows.
 
 ## First Run
 
 ```powershell
-ppt-agent init --workspace .\ppt-workspace
-ppt-agent healthcheck --workspace .\ppt-workspace
+python scripts\ppt_cli_workspace.py init --workspace .\ppt-workspace
+python scripts\ppt_cli_workspace.py healthcheck --workspace .\ppt-workspace
 ```
 
 The healthcheck writes:
@@ -30,8 +30,8 @@ Workspace codes are stored locally only as a hash and mask. Raw codes should not
 Use the entitlement command only when private beta access is required:
 
 ```powershell
-ppt-agent gateway activate --workspace .\ppt-workspace --workspace-code <workspace-code>
-ppt-agent gateway status --workspace .\ppt-workspace
+python scripts\ppt_workspace_entitlement.py activate --workspace .\ppt-workspace --workspace-code <workspace-code>
+python scripts\ppt_workspace_entitlement.py status --workspace .\ppt-workspace
 ```
 
 If activation is denied, expired, revoked, rotated, malformed, or unavailable, local-only CLI features should continue to work.

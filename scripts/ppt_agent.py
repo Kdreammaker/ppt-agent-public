@@ -20,6 +20,7 @@ from system.guide_packet import (
     json_dump,
     load_guide_packet,
     load_routed_strategy_pair,
+    plan_from_guide_packet,
     safe_rel,
 )
 from system.strategy_router import run_sparse_request_pipeline
@@ -78,21 +79,34 @@ def command_make(args: argparse.Namespace) -> int:
             variant_strategy_a=strategy_a,
             variant_strategy_b=strategy_b,
             routing_report_path=args.routing_report,
+            approved_package_path=args.approved_package,
         )
     else:
         strategy = "investor_open"
         if sparse_artifacts:
             strategy = sparse_artifacts["routing_report"]["selected"]["variant_a"]["strategy_id"]
-        result = build_from_guide_packet(
-            guide_path,
-            mode="assistant",
-            output_root=args.output_root,
-            project_id=args.project_id,
-            html_guide_requested=args.html_guide or args.review_guide,
-            variant_strategy=strategy,
-        )
+        if args.build_approved:
+            result = build_from_guide_packet(
+                guide_path,
+                mode="assistant",
+                output_root=args.output_root,
+                project_id=args.project_id,
+                html_guide_requested=args.html_guide or args.review_guide,
+                variant_strategy=strategy,
+                approved_package_path=args.approved_package,
+            )
+        else:
+            result = plan_from_guide_packet(
+                guide_path,
+                mode="assistant",
+                output_root=args.output_root,
+                project_id=args.project_id,
+                html_guide_requested=True,
+                variant_strategy=strategy,
+                approved_package_path=args.approved_package,
+            )
     print_json(result)
-    return 0 if result["status"] in {"built", "pass"} else 1
+    return 0 if result["status"] in {"built", "pass", "waiting_for_approval"} else 1
 
 
 def command_validate_guide(args: argparse.Namespace) -> int:
@@ -158,7 +172,9 @@ def command_install_host(args: argparse.Namespace) -> int:
         "workspace": safe_rel(workspace) if workspace == BASE_DIR else "[selected-workspace]",
         "commands": {
             "assistant_mode": "python scripts\\ppt_agent.py make --mode assistant --guide-bundle <bundle>",
+            "assistant_final_build": "python scripts\\ppt_agent.py make --mode assistant --guide-bundle <bundle> --build-approved",
             "auto_mode": "python scripts\\ppt_agent.py make --mode auto --guide-bundle <bundle>",
+            "assistant_with_approved_package": "python scripts\\ppt_agent.py make --mode assistant --guide-packet <guide-data.public.json> --approved-package <approved-package-response.json> --build-approved",
             "sparse_assistant": "python scripts\\ppt_agent.py make --mode assistant --prompt \"파일인데 참고해서 만들어줘\" --source <local-source>",
             "sparse_auto": "python scripts\\ppt_agent.py make --mode auto --prompt \"ㅇㅇ 내용 찾아서 만들어줘\" --search-topic <topic>",
             "mcp": "python scripts\\mcp_adapter.py --serve",
@@ -185,7 +201,7 @@ def command_install_host(args: argparse.Namespace) -> int:
     (install_dir / "README.md").write_text(
         f"# PPT Agent Host Setup: {host}\n\n"
         f"Default command:\n\n```powershell\n{command}\n```\n\n"
-        "Use `--mode assistant` for planning first, or `--mode auto` for two variants.\n"
+        "Use `--mode assistant` for planning first, add `--build-approved` after review, or use `--mode auto` for two variants.\n"
         "Sparse prompts create request-intake, source-summary, intent-profile, and routing-report artifacts before guide packet composition.\n",
         encoding="utf-8",
     )
@@ -217,11 +233,18 @@ def build_parser() -> argparse.ArgumentParser:
     make.add_argument("--search-topic", action="append", help="Optional search topic to record without fetching by default.")
     make.add_argument("--strategy", help="Optional approved strategy id or alias to prefer during routing.")
     make.add_argument("--routing-report", help="Optional routing-report.json to consume when building Auto variants from an existing guide packet.")
+    make.add_argument("--approved-package", help="Optional approved package response JSON. Assets are checksum/size validated before insertion.")
     make.add_argument("--mode", choices=["assistant", "auto"], default="assistant")
     make.add_argument("--output-root", default=str(DEFAULT_PROJECTS_DIR))
     make.add_argument("--project-id")
     make.add_argument("--html-guide", action="store_true")
     make.add_argument("--review-guide", action="store_true")
+    make.add_argument(
+        "--build-approved",
+        "--continue-build",
+        action="store_true",
+        help="Render final Assistant PPTX after the planning checkpoint has been reviewed.",
+    )
     make.set_defaults(func=command_make)
 
     validate = subparsers.add_parser("validate-guide")

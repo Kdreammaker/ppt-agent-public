@@ -155,10 +155,10 @@ def default_config(workspace: Path, *, gateway_enabled: bool) -> dict[str, Any]:
             "previews": "previews/",
         },
         "commands": {
-            "plan": "ppt-agent plan --intake intake/example.json --ascii-blueprint",
-            "compose": "ppt-agent compose --intake intake/example.json --output specs/example.json",
-            "build": "ppt-agent build --spec specs/example.json --pptx --html --validate",
-            "validate": "ppt-agent validate --spec specs/example.json --outputs all",
+            "plan": "python scripts/ppt_system.py blueprint intake/example.json --kind intake --approval-mode assistant",
+            "compose": "python scripts/ppt_system.py compose-spec intake/example.json --output specs/example.json",
+            "build": "python scripts/ppt_system.py build-outputs specs/example.json --validate --report-dir reports --html-output html/example.html",
+            "validate": "python scripts/ppt_system.py gate",
         },
     }
 
@@ -214,7 +214,7 @@ This workspace stores local deck intake files, generated specs, PPTX decks, HTML
 
 ## First Run
 
-Run `ppt-agent healthcheck` after `ppt-agent init`. The healthcheck writes a JSON report for tools and a Markdown report for humans, covering OS, Python, package dependencies, PowerShell/PATH readiness, workspace write access, and the MCP adapter boundary.
+Run `python scripts/ppt_cli_workspace.py healthcheck --workspace {workspace.as_posix()}` after `python scripts/ppt_cli_workspace.py init --workspace {workspace.as_posix()}`. The healthcheck writes a JSON report for tools and a Markdown report for humans, covering OS, Python, package dependencies, PowerShell/PATH readiness, workspace write access, and the MCP adapter boundary.
 
 The first-run files also explain local-only defaults, upload/telemetry policy, model/contract versions, and private-beta workspace-code behavior. If private-beta entitlement is activated, `python scripts/ppt_workspace_entitlement.py usage --workspace <workspace>` shows today's remaining call allowance and reset time without printing the raw workspace code.
 
@@ -229,14 +229,14 @@ The first-run files also explain local-only defaults, upload/telemetry policy, m
 ## Commands
 
 ```powershell
-ppt-agent healthcheck
-ppt-agent plan --intake intake/example.json --ascii-blueprint
-ppt-agent compose --intake intake/example.json --output specs/example.json
-ppt-agent build --spec specs/example.json --pptx --html --validate
-ppt-agent validate --spec specs/example.json --outputs all
+python scripts/ppt_cli_workspace.py healthcheck --workspace {workspace.as_posix()}
+python scripts/ppt_system.py blueprint {workspace.as_posix()}/intake/example.json --kind intake --approval-mode assistant
+python scripts/ppt_system.py compose-spec {workspace.as_posix()}/intake/example.json --output {workspace.as_posix()}/specs/example.json
+python scripts/ppt_system.py build-outputs {workspace.as_posix()}/specs/example.json --validate --report-dir {workspace.as_posix()}/reports --html-output {workspace.as_posix()}/html/example.html
+python scripts/ppt_system.py gate
 python scripts/mcp_adapter.py --list-tools
-python scripts/ppt_workspace_entitlement.py status --workspace .
-python scripts/ppt_workspace_entitlement.py usage --workspace .
+python scripts/ppt_workspace_entitlement.py status --workspace {workspace.as_posix()}
+python scripts/ppt_workspace_entitlement.py usage --workspace {workspace.as_posix()}
 ```
 
 ## Output Folders

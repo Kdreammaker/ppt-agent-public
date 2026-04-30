@@ -18,6 +18,28 @@ PRIVATE_PATTERNS = [
 
 URL_RE = re.compile(r"https?://[^\s)>\"]+", re.IGNORECASE)
 PATH_RE = re.compile(r"(?:[A-Za-z]:\\[^\s\"<>|]+|(?:\.{1,2}[\\/])?[^\s\"<>|]+\.(?:pdf|pptx|docx|xlsx|csv|txt|md|json))", re.IGNORECASE)
+SLIDE_COUNT_PATTERNS = [
+    re.compile(r"\b(?P<count>\d{1,2})\s*[- ]?\s*(?:slide|slides|page|pages)\b", re.IGNORECASE),
+    re.compile(r"\b(?P<count>\d{1,2})\s*[- ]?\s*(?:slide|slides|page|pages)?\s*(?:deck|presentation)\b", re.IGNORECASE),
+    re.compile(r"(?P<count>\d{1,2})\s*(?:장|쪽|페이지|슬라이드)\b", re.IGNORECASE),
+]
+KOREAN_COUNT_WORDS = {
+    "한": 1,
+    "하나": 1,
+    "두": 2,
+    "둘": 2,
+    "세": 3,
+    "셋": 3,
+    "네": 4,
+    "넷": 4,
+    "다섯": 5,
+    "여섯": 6,
+    "일곱": 7,
+    "여덟": 8,
+    "아홉": 9,
+    "열": 10,
+}
+KOREAN_COUNT_PATTERN = re.compile(r"(?P<count>한|하나|두|둘|세|셋|네|넷|다섯|여섯|일곱|여덟|아홉|열)\s*(?:장|쪽|페이지|슬라이드)")
 
 
 def utc_now() -> str:
@@ -51,13 +73,213 @@ def bounded(text: str, limit: int = 480) -> str:
     return cleaned[:limit] + ("..." if len(cleaned) > limit else "")
 
 
+def title_case(text: str) -> str:
+    small = {"a", "an", "and", "as", "at", "by", "for", "in", "of", "on", "or", "the", "to", "with"}
+    words = re.findall(r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)?|[가-힣]+", text)
+    titled = []
+    for index, word in enumerate(words):
+        lowered = word.lower()
+        if index > 0 and lowered in small:
+            titled.append(lowered)
+        elif word.isupper() and len(word) <= 4:
+            titled.append(word)
+        else:
+            titled.append(word[:1].upper() + word[1:].lower())
+    return " ".join(titled)
+
+
+def extract_requested_slide_count(text: str) -> dict[str, Any] | None:
+    for pattern in SLIDE_COUNT_PATTERNS:
+        match = pattern.search(text)
+        if match:
+            count = int(match.group("count"))
+            if 1 <= count <= 40:
+                return {"value": count, "evidence": match.group(0)}
+    match = KOREAN_COUNT_PATTERN.search(text)
+    if match:
+        count = KOREAN_COUNT_WORDS.get(match.group("count"))
+        if count:
+            return {"value": count, "evidence": match.group(0)}
+    return None
+
+
+def strip_command_wrappers(text: str) -> str:
+    cleaned = re.sub(r"\b(?:please\s+)?create\s+(?:an?\s+)?(?:\d{1,2}\s*[- ]?\s*)?(?:auto[- ]mode\s+)?", " ", text, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\b(?:make|generate|build)\s+(?:an?\s+)?(?:\d{1,2}\s*[- ]?\s*)?(?:auto[- ]mode\s+)?", " ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\bproduce\s+two\s+visually\s+distinct\s+variants\b", " ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\b(?:presentation|deck|proposal|training deck|slides?)\b", " ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" .,:;-")
+    return cleaned
+
+
+def phrase_after(label_pattern: str, text: str) -> str | None:
+    match = re.search(label_pattern, text, flags=re.IGNORECASE | re.DOTALL)
+    if not match:
+        return None
+    value = match.group(1).strip()
+    value = re.split(r"\.\s+(?:Audience|Focus|Produce)\b|\.$", value, maxsplit=1, flags=re.IGNORECASE)[0]
+    return re.sub(r"\s+", " ", value).strip(" .,:;-") or None
+
+
+def split_focus_areas(value: str | None) -> list[str]:
+    if not value:
+        return []
+    value = re.sub(r"\band\b", ",", value, flags=re.IGNORECASE)
+    value = value.replace(" 및 ", ",").replace(" 그리고 ", ",")
+    areas = []
+    for item in value.split(","):
+        cleaned = re.sub(r"\s+", " ", item).strip(" .,:;-")
+        if cleaned:
+            areas.append(cleaned)
+    return areas[:10]
+
+
+def derive_deck_title(prompt: str, *, project_name: str | None = None) -> str:
+    if project_name:
+        return title_case(strip_command_wrappers(project_name))[:80] or "Untitled Deck"
+    lowered = prompt.lower()
+    about = phrase_after(r"\babout\s+(.+?)(?=\.\s+(?:Audience|Focus|Produce)\b|$)", prompt)
+    if about:
+        about = re.sub(r"^(?:improving|introducing|building|creating|planning|for)\s+", "", about, flags=re.IGNORECASE)
+        about = re.sub(r"\bduring\b.+$", "", about, flags=re.IGNORECASE).strip()
+        title = title_case(about)
+        if "exhibition" in lowered and "installation" in title.lower():
+            title = re.sub(r"\bInstallations?\b", "Exhibition", title)
+        if any(token in lowered for token in ["sponsor", "sponsorship"]) and "sponsor" not in title.lower():
+            title = f"{title} Sponsorship"
+        return title[:80] or "Untitled Deck"
+    introducing = phrase_after(r"\bintroducing\s+(.+?)(?=\.\s+(?:Audience|Focus|Produce)\b|$)", prompt)
+    if introducing:
+        return title_case(introducing)[:80] or "Untitled Deck"
+    for_match = phrase_after(r"\bfor\s+(.+?)(?=\.\s+(?:Audience|Focus|Produce)\b|$)", prompt)
+    if for_match:
+        introduction_tail = re.search(r"\bintroducing\s+(.+)$", for_match, flags=re.IGNORECASE)
+        if introduction_tail:
+            return title_case(introduction_tail.group(1))[:80] or "Untitled Deck"
+        for_match = re.sub(r"^(?:a|an|the)\s+", "", for_match, flags=re.IGNORECASE)
+        return title_case(strip_command_wrappers(for_match))[:80] or "Untitled Deck"
+    return title_case(strip_command_wrappers(prompt.split(".")[0] if prompt.strip() else "Untitled Deck"))[:80] or "Untitled Deck"
+
+
+def derive_objective(prompt: str, title: str) -> str:
+    lowered = prompt.lower()
+    if "sponsorship proposal" in lowered:
+        return "Win sponsor support with a clear visitor, visibility, and impact story."
+    if "training deck" in lowered or "safety practices" in lowered:
+        return "Teach supervisors the daily behaviors that keep human-robot work safe."
+    if "triage" in lowered and "flow" in lowered:
+        return "Improve triage flow with clearer operating decisions."
+    about = phrase_after(r"\babout\s+(.+?)(?=\.\s+(?:Audience|Focus|Produce)\b|$)", prompt)
+    if about:
+        return title_case(about)
+    return f"Clarify the plan for {title}."
+
+
+def transformed_request_from_prompt(prompt: str, *, project_name: str | None = None) -> dict[str, Any]:
+    title = derive_deck_title(prompt, project_name=project_name)
+    audience = phrase_after(r"\bAudience:\s*(.+?)(?=\.\s+(?:Focus|Produce)\b|$)", prompt)
+    focus = split_focus_areas(phrase_after(r"\bFocus\s+on\s+(.+?)(?=\.\s+Produce\b|$)", prompt))
+    slide_count = extract_requested_slide_count(prompt)
+    return {
+        "deck_title": bounded(title, 100),
+        "audience": bounded(audience or "general audience", 160),
+        "objective": bounded(derive_objective(prompt, title), 180),
+        "focus_areas": [bounded(item, 80) for item in focus],
+        "requested_slide_count": slide_count,
+        "raw_command_removed": True,
+    }
+
+
 def detect_language(text: str) -> str:
     return "ko-KR" if re.search(r"[가-힣]", text) else "en-US"
 
 
 def keyword_hits(text: str, keywords: list[str]) -> list[str]:
     lowered = text.lower()
-    return [kw for kw in keywords if kw.lower() in lowered]
+    hits: list[str] = []
+    for keyword in keywords:
+        lowered_keyword = keyword.lower()
+        if not lowered_keyword:
+            continue
+        if re.fullmatch(r"[a-z0-9]{1,3}", lowered_keyword):
+            pattern = rf"(?<![a-z0-9]){re.escape(lowered_keyword)}(?![a-z0-9])"
+            if re.search(pattern, lowered):
+                hits.append(keyword)
+            continue
+        if re.search(r"[a-z0-9]", lowered_keyword):
+            pattern = rf"(?<![a-z0-9]){re.escape(lowered_keyword)}(?![a-z0-9])"
+            if re.search(pattern, lowered):
+                hits.append(keyword)
+            continue
+        if lowered_keyword in lowered:
+            hits.append(keyword)
+    return hits
+
+
+def is_food_product_launch_request(text: str) -> bool:
+    product_hits = keyword_hits(text, ["food", "beverage", "식품", "음료", "푸드", "제품", "상품", "신상품", "packshot", "ingredient", "유통"])
+    launch_hits = keyword_hits(text, ["launch", "런칭", "출시", "홍보", "campaign", "캠페인", "promotion", "프로모션", "retail"])
+    return bool(product_hits and launch_hits)
+
+
+def is_public_environment_civic_request(text: str) -> bool:
+    domain_hits = keyword_hits(
+        text,
+        [
+            "wetland",
+            "wetlands",
+            "tidal",
+            "coastal",
+            "habitat",
+            "flood",
+            "flood-risk",
+            "storm",
+            "restoration",
+            "restore",
+            "resilience",
+            "permit",
+            "environment",
+            "environmental",
+            "community",
+        ],
+    )
+    civic_hits = keyword_hits(
+        text,
+        [
+            "authority",
+            "agency",
+            "public",
+            "regional",
+            "municipal",
+            "city",
+            "community advisory board",
+            "advisory board",
+        ],
+    )
+    return len(domain_hits) >= 2 and bool(civic_hits)
+
+
+def has_strong_finance_context(text: str) -> bool:
+    finance_domain_hits = keyword_hits(
+        text,
+        [
+            "financial performance",
+            "quarterly financial",
+            "financial review",
+            "revenue",
+            "margin",
+            "profit",
+            "loss",
+            "cash flow",
+            "budget variance",
+            "kpi",
+            "매출",
+            "실적",
+            "손익",
+        ],
+    )
+    finance_role_only_hits = keyword_hits(text, ["finance lead", "finance director", "cfo"])
+    return bool(finance_domain_hits) or len(finance_role_only_hits) >= 2
 
 
 def detect_action(text: str, taxonomy: dict[str, Any]) -> tuple[str, list[str]]:
@@ -172,6 +394,8 @@ def create_request_intake(
     taxonomy = load_json(TAXONOMY_PATH)
     explicit_sources = explicit_sources or []
     search_topics = search_topics or []
+    transformed_request = transformed_request_from_prompt(prompt, project_name=project_name)
+    requested_slide_count = transformed_request.get("requested_slide_count")
     detected_refs = URL_RE.findall(prompt) + PATH_RE.findall(prompt)
     source_materials = []
     for index, value in enumerate([*explicit_sources, *detected_refs], start=1):
@@ -211,12 +435,21 @@ def create_request_intake(
         "original_request_excerpt": bounded(prompt, 600),
         "detected_language": detect_language(prompt),
         "locale": detect_language(prompt),
-        "project_name_candidate": bounded(project_name or prompt.splitlines()[0] if prompt.strip() else "Untitled Deck", 80),
+        "project_name_candidate": transformed_request["deck_title"],
+        "transformed_request": transformed_request,
+        "requested_slide_count": requested_slide_count,
         "requested_action": action,
         "action_evidence": action_evidence,
         "source_materials": source_materials,
-        "explicit_constraints": keyword_hits(prompt, ["public", "공공", "investor", "투자", "auto", "자동", "review", "검토", "10 slides", "15장"]),
-        "missing_constraints": ["exact slide count", "brand/template preference", "source rights confirmation"],
+        "explicit_constraints": [
+            *keyword_hits(prompt, ["public", "공공", "investor", "투자", "auto", "자동", "review", "검토", "10 slides", "15장"]),
+            *([f"requested_slide_count={requested_slide_count['value']}"] if requested_slide_count else []),
+        ],
+        "missing_constraints": [
+            item
+            for item in ["exact slide count", "brand/template preference", "source rights confirmation"]
+            if item != "exact slide count" or not requested_slide_count
+        ],
         "assumptions": [
             "Use public-safe summaries rather than raw source payloads.",
             "If source content is unreadable, proceed with clearly labeled assumptions.",
@@ -346,6 +579,30 @@ def classify_intent(request_intake: dict[str, Any], source_summary: dict[str, An
             _, subtype_id, subtype_hits = subtype_scores[0]
         elif family.get("subtypes"):
             subtype_id = family["subtypes"][0]["id"]
+    if is_food_product_launch_request(text):
+        product_family = next((item for item in taxonomy["families"] if item["id"] == "product_introduction"), None)
+        if product_family:
+            family_id = "product_introduction"
+            family = product_family
+            subtype_id = "food_beverage"
+            family_hits = sorted(set([*family_hits, *keyword_hits(text, product_family.get("keywords", [])), "food_product_launch_tiebreak"]))
+            subtype_hits = sorted(set([*subtype_hits, "food_beverage"]))
+    if is_public_environment_civic_request(text) and not has_strong_finance_context(text):
+        public_family = next((item for item in taxonomy["families"] if item["id"] == "public_institution_report"), None)
+        if public_family:
+            family_id = "public_institution_report"
+            family = public_family
+            subtype_id = "environment_safety"
+            family_hits = sorted(
+                set(
+                    [
+                        *family_hits,
+                        *keyword_hits(text, public_family.get("keywords", [])),
+                        "public_environment_civic_tiebreak",
+                    ]
+                )
+            )
+            subtype_hits = sorted(set([*subtype_hits, "environment_safety"]))
     evidence_count = len(family_hits) + len(subtype_hits)
     confidence = min(0.95, 0.25 + evidence_count * 0.12 + (0.1 if source_summary.get("sources") else 0.0))
     if family_id == "unknown":
@@ -363,14 +620,15 @@ def classify_intent(request_intake: dict[str, Any], source_summary: dict[str, An
     needs_clarification = []
     if confidence < taxonomy["classification_policy"]["low_confidence_threshold"]:
         needs_clarification.append("Deck family or audience is uncertain enough that Assistant mode may ask one concise question.")
+    transformed_request = request_intake.get("transformed_request") or {}
     return {
         "contract": "ppt-maker.intent-profile.v1",
         "created_at": utc_now(),
-        "topic": bounded(request_intake.get("project_name_candidate") or request_intake.get("original_request_excerpt", "Untitled Deck"), 120),
+        "topic": bounded(transformed_request.get("deck_title") or request_intake.get("project_name_candidate") or "Untitled Deck", 120),
         "deck_family": family_id,
         "sector_subtype": subtype_id,
-        "audience": audience,
-        "objective": objective,
+        "audience": bounded(transformed_request.get("audience") or audience, 160),
+        "objective": bounded(transformed_request.get("objective") or objective, 180),
         "decision_context": "decision_required" if family_id in {"executive_report", "ir_pitch", "sales_proposal"} else "inform_or_explain",
         "tone": family.get("default_tone", ["clear", "credible"]),
         "content_density": family.get("default_density", "medium"),

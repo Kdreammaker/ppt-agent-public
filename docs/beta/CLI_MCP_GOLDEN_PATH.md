@@ -3,18 +3,17 @@
 The first beta path is local and file-based:
 
 ```powershell
-ppt-agent init --workspace .\ppt-workspace
-ppt-agent healthcheck --workspace .\ppt-workspace
-ppt-agent plan --intake intake\example.json --ascii-blueprint
-ppt-agent compose --intake intake\example.json --output specs\example.json
-ppt-agent build --spec specs\example.json --pptx --html --validate
-ppt-agent validate --spec specs\example.json --outputs all
-ppt-agent patch --spec specs\example.json --slide 3 --slot title --value "Updated title"
-ppt-agent history --workspace .\ppt-workspace
-ppt-agent rollback --workspace .\ppt-workspace --run-id <run-id>
+python scripts\ppt_cli_workspace.py init --workspace .\ppt-workspace
+python scripts\ppt_cli_workspace.py healthcheck --workspace .\ppt-workspace
+python scripts\ppt_system.py blueprint .\ppt-workspace\intake\example.json --kind intake --approval-mode assistant
+python scripts\ppt_system.py compose-spec .\ppt-workspace\intake\example.json --output .\ppt-workspace\specs\example.json
+python scripts\ppt_system.py build-outputs .\ppt-workspace\specs\example.json --validate --report-dir .\ppt-workspace\reports --html-output .\ppt-workspace\html\example.html
+python scripts\ppt_system.py patch-spec .\ppt-workspace\specs\example.json --slide 3 --text-slot title --value "Updated title" --dry-run
+python scripts\ppt_cli_history.py history --workspace .\ppt-workspace
+python scripts\ppt_cli_history.py rollback --workspace .\ppt-workspace --run-id <run-id>
 ```
 
-Assistant Mode shows the ASCII structure blueprint by default and should wait for an explicit approve, revise, continue, or skip decision before final PPTX/HTML generation. Auto Mode skips the blueprint checkpoint by default unless a workflow explicitly requests it. The ASCII blueprint is not a visual preview; use HTML/PPTX preview or rendered thumbnails for visual approval.
+Assistant Mode shows the ASCII structure blueprint by default and should wait for an explicit approve, revise, continue, skip, or `--build-approved` decision before final PPTX/HTML generation. Auto Mode skips the blueprint checkpoint by default unless a workflow explicitly requests it. The ASCII blueprint is not a visual preview; use HTML/PPTX preview or rendered thumbnails for visual approval.
 
 ## Outputs
 

@@ -23,7 +23,7 @@ If gateway checks are unavailable, skipped by consent, denied, or out of policy,
 Run a support bundle and inspect it locally before sharing:
 
 ```powershell
-ppt-agent support-bundle --workspace .\ppt-workspace
+python scripts\ppt_support_bundle.py --workspace .\ppt-workspace
 ```
 
 The support bundle may include bounded redacted failed-command snippets, but it should not include source documents, generated deck contents, raw references, secrets, or raw workspace codes.

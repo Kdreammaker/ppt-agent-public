@@ -1,32 +1,41 @@
-# PPT Authoring System Workspace
+# PPT Agent Public
 
-This workspace is organized around a template-library-first PPT authoring workflow.
+Public-safe local setup for testing the PPT agent from a link, a cloned repo,
+an included Codex skill, or a thin MCP adapter. Telemetry, upload, private
+assets, Drive IDs, tokens, and private runtime access are off unless explicitly
+configured by the operator.
 
-## Install A Ready Workspace
+## Fast Start
 
-For a new public install, use one command. This creates `ppt-agent-public/` and a ready `workspace/` tree under the target:
+Link-only agent instruction:
+Give an agent this repo link and ask it to run the one-line setup below:
+`https://github.com/Kdreammaker/ppt-agent-public`
 
-```powershell
-python scripts\ppt_install.py --target "<install-root>\ppt-maker"
-```
-
-If an AI agent has already cloned the public repo, run this from the repo root instead:
-
-```powershell
-python scripts\ppt_install.py --workspace "<install-root>\ppt-maker\workspace"
-```
-
-For productized setup, prefer the setup wrapper. It installs the workspace, activates an optional workspace code, configures the private connector when credentials are present, writes a diagnostic report, and prints the exact next `ppt_make.py` commands:
-
-```powershell
-python scripts\ppt_setup.py --workspace "<install-root>\ppt-maker\workspace" --force
-```
-
-If you are starting from the public GitHub link on a new PC, this is the one-line PowerShell path:
+One-line PowerShell setup from a new PC:
 
 ```powershell
 $Root="$env:USERPROFILE\Downloads\ppt-maker"; git clone https://github.com/Kdreammaker/ppt-agent-public.git "$Root\ppt-agent-public"; Set-Location "$Root\ppt-agent-public"; python scripts\ppt_setup.py --workspace "$Root\workspace" --force
 ```
+
+Already cloned setup from the repo root:
+
+```powershell
+python scripts\ppt_setup.py --workspace "<workspace>" --force
+```
+
+Included agent skill route:
+Use `skills/ppt-agent/SKILL.md`, then run `python scripts\ppt_agent.py doctor`
+and `python scripts\ppt_agent.py make --mode assistant --prompt "<prompt>"`.
+
+MCP/extension route:
+Run `python scripts\ppt_agent_mcp_adapter.py --serve`; Assistant planning
+artifacts are returned by default, and final build requires `build_approved=true`.
+
+## Install A Ready Workspace
+
+The setup wrapper installs the workspace, activates an optional workspace code,
+configures the private connector when credentials are present, writes a
+diagnostic report, and prints the exact next `ppt_make.py` commands.
 
 Entitled private production setup uses the same wrapper after the operator supplies a workspace code. If private repo access is available through GitHub auth, setup can use the default private runtime repo/ref and install it into the workspace:
 

@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-from system.guide_packet import build_auto_variants, build_from_guide_packet, compose_guide_packet_from_intent, json_dump, load_guide_packet, safe_rel
+from system.guide_packet import build_auto_variants, build_from_guide_packet, compose_guide_packet_from_intent, json_dump, load_guide_packet, plan_from_guide_packet, safe_rel
 from system.strategy_router import run_sparse_request_pipeline
 
 
@@ -58,7 +58,7 @@ TOOLS: list[dict[str, Any]] = [
     },
     {
         "name": "deck_plan_compose",
-        "description": "Build Assistant-mode planning artifacts and generated.pptx from a guide packet.",
+        "description": "Build Assistant-mode planning artifacts by default; final PPTX requires build_approved=true.",
         "input_schema": {
             "type": "object",
             "required": ["guide_path"],
@@ -66,6 +66,7 @@ TOOLS: list[dict[str, Any]] = [
                 "guide_path": {"type": "string"},
                 "project_id": {"type": "string"},
                 "output_root": {"type": "string"},
+                "build_approved": {"type": "boolean"},
             },
         },
     },
@@ -158,11 +159,20 @@ def call_tool(name: str, arguments: dict[str, Any]) -> dict[str, Any]:
             result["artifacts"]["guide_packet"] = safe_rel(guide_path)
         return result
     if name == "deck_plan_compose":
-        return build_from_guide_packet(
+        if arguments.get("build_approved") is True:
+            return build_from_guide_packet(
+                arguments["guide_path"],
+                mode="assistant",
+                output_root=arguments.get("output_root", BASE_DIR / "outputs" / "projects"),
+                project_id=arguments.get("project_id"),
+                html_guide_requested=True,
+            )
+        return plan_from_guide_packet(
             arguments["guide_path"],
             mode="assistant",
             output_root=arguments.get("output_root", BASE_DIR / "outputs" / "projects"),
             project_id=arguments.get("project_id"),
+            html_guide_requested=True,
         )
     if name == "two_variant_auto_build":
         return build_auto_variants(

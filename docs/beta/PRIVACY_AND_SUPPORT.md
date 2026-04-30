@@ -24,7 +24,7 @@ Every future gateway-facing recommendation or document-intake call should show a
 Support bundles are created only by explicit user command:
 
 ```powershell
-ppt-agent support-bundle --workspace .\ppt-workspace
+python scripts\ppt_support_bundle.py --workspace .\ppt-workspace
 ```
 
 The bundle is written locally so the user can inspect it before sharing. It may include runtime, consent, entitlement, healthcheck, validation, gateway summary, B49, B50, clean-export, and bounded redacted failed-command snippets.
