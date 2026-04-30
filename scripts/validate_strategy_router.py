@@ -34,6 +34,48 @@ def assert_public_safe(path: Path) -> None:
     assert_true(not any(marker in raw_lower for marker in markers), f"private marker leaked in {path.name}")
 
 
+def load_json_if_exists(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def render_failure_diagnostics(auto_root: Path, fixture_id: str) -> dict:
+    diagnostics = {"fixture": fixture_id, "variants": {}}
+    for variant_name in ["variant-a", "variant-b"]:
+        final_qa_path = auto_root / variant_name / "final-qa.json"
+        qa = load_json_if_exists(final_qa_path)
+        preview = qa.get("preview_report", {}) if qa else {}
+        blockers = qa.get("unresolved_blockers", []) if qa else []
+        diagnostics["variants"][variant_name] = {
+            "final_qa_exists": final_qa_path.exists(),
+            "final_qa_status": qa.get("status") if qa else None,
+            "pptx_render_failed": [
+                blocker
+                for blocker in blockers
+                if blocker.get("type") == "pptx_render_failed"
+            ],
+            "preview_status": preview.get("status"),
+            "preview_method": preview.get("method"),
+            "rendered_slide_count": preview.get("rendered_slide_count"),
+            "fallback_reason": preview.get("fallback_reason"),
+            "render_attempts": preview.get("render_attempts"),
+            "render_attempt_details": preview.get("render_attempt_details"),
+            "validation_blocker": preview.get("validation_blocker"),
+        }
+    return diagnostics
+
+
+def auto_failure_message(fixture: dict, result: dict, auto_root: Path) -> str:
+    payload = {
+        "fixture": fixture["id"],
+        "result_status": result.get("status"),
+        "result": result,
+        "render_diagnostics": render_failure_diagnostics(auto_root, fixture["id"]),
+    }
+    return json.dumps(payload, indent=2, ensure_ascii=False)
+
+
 AUTO_BUILD_FIXTURE_IDS = {
     "public_agency_sparse_ko",
     "ir_pitch_en",
@@ -123,7 +165,14 @@ def validate_auto_build_output(auto_root: Path, fixture: dict, expected_slides: 
         pptx_path = variant_dir / "generated.pptx"
         assert_true(pptx_path.exists(), f"{fixture['id']} {variant_name} missing generated.pptx")
         previews = sorted((variant_dir / "previews").glob("slide_*.png"))
-        assert_true(len(previews) == expected_slides, f"{fixture['id']} {variant_name} preview count mismatch")
+        assert_true(
+            len(previews) == expected_slides,
+            (
+                f"{fixture['id']} {variant_name} preview count mismatch: "
+                f"actual={len(previews)}, expected={expected_slides}, "
+                f"diagnostics={json.dumps(render_failure_diagnostics(auto_root, fixture['id']), ensure_ascii=False)}"
+            ),
+        )
         assert_public_safe(variant_dir / "deck-plan.json")
         assert_public_safe(variant_dir / "renderer-contract.json")
     result["layout_recipe_diff"] = assert_layout_recipe_diff(
@@ -237,7 +286,7 @@ def main() -> int:
                 output_root=output_root / "auto-builds",
                 project_id=fixture["id"],
             )
-            assert_true(result["status"] == "pass", f"{fixture['id']} auto build did not pass: {result}")
+            assert_true(result["status"] == "pass", f"{fixture['id']} auto build did not pass: {auto_failure_message(fixture, result, auto_root)}")
             auto_builds.append(validate_auto_build_output(auto_root, fixture, packet.guide_identity.slide_count))
         passed.append(fixture["id"])
     assert_true(len(auto_builds) >= 12, f"expected at least 12 Auto fixture builds, got {len(auto_builds)}")

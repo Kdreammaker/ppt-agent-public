@@ -2,7 +2,8 @@
 
 Date: 2026-04-28
 
-Status: Ready for asset-system owner review.
+Status: Ready for asset-system owner review after handoff render-stability
+blocker remediation.
 
 ## Scope
 
@@ -22,7 +23,8 @@ The asset-system relevant contract remains:
 
 ## Current Validation Result
 
-Final validation passed on 2026-04-28.
+Final validation passed on 2026-04-28 after the LibreOffice preview-render
+stability remediation.
 
 Commands run:
 
@@ -40,10 +42,34 @@ Observed results:
 
 - `validate_auto_strategy_registry.py`: pass, 23 strategies, 24 mappings
 - `validate_intent_taxonomy.py`: pass, 12 families, 42 examples
-- `validate_strategy_router.py`: pass, 30 fixtures, 12 Auto builds, 24 registry mappings checked, 12 Auto visual diffs checked
+- `validate_strategy_router.py`: pass in 3 consecutive runs, each with 30 fixtures, 12 Auto builds, 24 registry mappings checked, 12 Auto visual diffs checked
 - `validate_guide_packet_pipeline.py`: pass
 - `validate_agent_skill_contract.py`: pass
 - `validate_agent_skill_smoke.py`: pass
+
+Render-stability evidence from the latest strategy-router validation:
+
+- `market_research_en` Auto build: pass
+  - `variant-a/final-qa.json`: status `pass`, no `pptx_render_failed`, preview status `rendered`, rendered slide count `7`, render attempts `1`, no fallback reason
+  - `variant-b/final-qa.json`: status `pass`, no `pptx_render_failed`, preview status `rendered`, rendered slide count `7`, render attempts `1`, no fallback reason
+- `b2c_it_service_ko` Auto build: pass
+  - `variant-a/final-qa.json`: status `pass`, no `pptx_render_failed`, preview status `rendered`, rendered slide count `7`, render attempts `1`, no fallback reason
+  - `variant-b/final-qa.json`: status `pass`, no `pptx_render_failed`, preview status `rendered`, rendered slide count `7`, render attempts `1`, no fallback reason
+- The rendered preview visual diff gate remained enabled for all 12 Auto build fixtures.
+
+Preview-render stability changes applied:
+
+- LibreOffice conversion now uses a unique output directory and unique
+  `-env:UserInstallation` profile for each render attempt.
+- The headless command includes `--nologo`, `--nodefault`,
+  `--nofirststartwizard`, `--norestore`, and `--nolockcheck`.
+- LibreOffice conversion uses a bounded subprocess timeout.
+- PDF and PNG file handles are explicitly closed through context managers.
+- Render failures record public-safe return code, stdout/stderr summary, retry
+  details, and fallback reason without exposing local absolute paths.
+- `render_previews()` retries if the rendered preview count does not match the
+  guide packet slide count, and records `render_attempt_details` in
+  `final-qa.json`.
 
 The latest guide-packet pipeline Auto output reported:
 

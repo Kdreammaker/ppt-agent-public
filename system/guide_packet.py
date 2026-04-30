@@ -1493,15 +1493,55 @@ def synthetic_previews(packet: GuidePacket, output_dir: Path) -> list[Path]:
 
 def render_previews(pptx_path: Path, packet: GuidePacket, project_dir: Path) -> dict[str, Any]:
     preview_dir = project_dir / "previews"
-    if preview_dir.exists():
-        shutil.rmtree(preview_dir)
-    preview_dir.mkdir(parents=True, exist_ok=True)
+    cleanup_warnings: list[dict[str, Any]] = []
+
+    def cleanup_preview_dir(reason: str) -> None:
+        try:
+            if preview_dir.exists():
+                shutil.rmtree(preview_dir)
+        except OSError as exc:
+            cleanup_warnings.append(
+                {
+                    "reason": reason,
+                    "path": safe_rel(preview_dir),
+                    "error_type": exc.__class__.__name__,
+                    "message": sanitize_report_text(str(exc)),
+                }
+            )
+        preview_dir.mkdir(parents=True, exist_ok=True)
+        stale_pdf = preview_dir / "_pdf"
+        try:
+            if stale_pdf.exists():
+                shutil.rmtree(stale_pdf)
+        except OSError as exc:
+            cleanup_warnings.append(
+                {
+                    "reason": f"{reason}_stale_pdf_cleanup",
+                    "path": safe_rel(stale_pdf),
+                    "error_type": exc.__class__.__name__,
+                    "message": sanitize_report_text(str(exc)),
+                }
+            )
+
+    cleanup_preview_dir("initial")
     last_error: Exception | None = None
+    attempt_details: list[dict[str, Any]] = []
     for attempt in range(3):
         try:
             from scripts.validate_visual_smoke import render_pptx
 
             paths = render_pptx(pptx_path, preview_dir)
+            expected = packet.guide_identity.slide_count
+            if len(paths) != expected:
+                raise ValueError(f"preview slide count mismatch: rendered={len(paths)}, expected={expected}")
+            attempt_details.append(
+                {
+                    "attempt": attempt + 1,
+                    "status": "pass",
+                    "rendered_slide_count": len(paths),
+                    "expected_slide_count": expected,
+                }
+            )
             return {
                 "status": "rendered",
                 "method": "libreoffice_pdf_png",
@@ -1509,14 +1549,25 @@ def render_previews(pptx_path: Path, packet: GuidePacket, project_dir: Path) -> 
                 "rendered_slide_count": len(paths),
                 "fallback_used": False,
                 "render_attempts": attempt + 1,
+                "render_attempt_details": attempt_details,
+                "cleanup_warnings": cleanup_warnings,
             }
         except Exception as exc:
             last_error = exc
+            details = getattr(exc, "details", None)
+            attempt_details.append(
+                {
+                    "attempt": attempt + 1,
+                    "status": "fail",
+                    "error_type": exc.__class__.__name__,
+                    "message": sanitize_report_text(str(exc)),
+                    "details": sanitize_report_text(details) if isinstance(details, dict) else None,
+                }
+            )
             if attempt < 2:
                 time.sleep(0.75 * (attempt + 1))
-                if preview_dir.exists():
-                    shutil.rmtree(preview_dir)
-                preview_dir.mkdir(parents=True, exist_ok=True)
+                cleanup_preview_dir(f"retry_{attempt + 2}")
+    cleanup_preview_dir("synthetic_fallback")
     paths = synthetic_previews(packet, preview_dir)
     reason = f"PPTX preview rendering failed ({last_error.__class__.__name__ if last_error else 'unknown'}); local command details redacted."
     return {
@@ -1528,6 +1579,8 @@ def render_previews(pptx_path: Path, packet: GuidePacket, project_dir: Path) -> 
         "validation_blocker": True,
         "fallback_reason": reason,
         "render_attempts": 3,
+        "render_attempt_details": attempt_details,
+        "cleanup_warnings": cleanup_warnings,
     }
 
 
