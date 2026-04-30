@@ -22,6 +22,8 @@ from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Inches, Pt
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
+from system.typography_diagnostics import annotate_title_body_ratio, diagnose_text_box, diagnostics_summary
+
 BASE_DIR = Path(__file__).resolve().parents[1]
 GUIDE_SCHEMA_PATH = BASE_DIR / "config" / "ppt-maker-design-guide-packet.schema.json"
 STRATEGY_REGISTRY_PATH = BASE_DIR / "config" / "variant_strategy_registry.json"
@@ -1425,6 +1427,26 @@ def add_text(
         run.font.color.rgb = ctx.color(color_role)
     if ctx.current_slide_no is not None:
         actual_bounds = {"x": x, "y": y, "w": w, "h": h}
+        typography_role = ctx.typography.get(role)
+        typography_diagnostics = diagnose_text_box(
+            text=text,
+            role=role,
+            locale=ctx.packet.guide_identity.language,
+            font_size=size,
+            min_pt=typography_role.min_pt if typography_role else None,
+            default_pt=typography_role.default_pt if typography_role else None,
+            max_pt=typography_role.max_pt if typography_role else None,
+            target_lines=typography_role.line_limit if typography_role else None,
+            max_lines=typography_role.line_limit if typography_role else None,
+            box_width=w,
+            box_height=h,
+        )
+        typography_diagnostics.update(
+            {
+                "slide_number": ctx.current_slide_no,
+                "slot_name": role,
+            }
+        )
         ctx.text_boxes.append(
             {
                 "slide_no": ctx.current_slide_no,
@@ -1433,6 +1455,7 @@ def add_text(
                 "text_excerpt": safe_string(str(text or "")[:80]),
                 "bounds_in": actual_bounds,
                 "estimated_text_bounds_in": estimated_text_bounds(str(text or ""), x, y, w, h, size),
+                "typography_diagnostics": typography_diagnostics,
             }
         )
 
@@ -2893,6 +2916,31 @@ def generate_html_guide(packet: GuidePacket, project_dir: Path, mode: str, reque
         encoding="utf-8",
     )
     button_count = len(re.findall(r"<button\b", path.read_text(encoding="utf-8"), flags=re.IGNORECASE))
+    html_typography_diagnostics = [
+        diagnose_text_box(
+            text=packet.guide_identity.project_name,
+            role="title",
+            locale=packet.guide_identity.language,
+            font_size=32.0,
+        )
+    ]
+    for slide in packet.slide_plan.slides:
+        title_diagnostic = diagnose_text_box(
+            text=f"{slide.slide_no}. {slide.layout_archetype}",
+            role="title",
+            locale=packet.guide_identity.language,
+            font_size=22.0,
+        )
+        title_diagnostic["slide_number"] = slide.slide_no
+        body_diagnostic = diagnose_text_box(
+            text=slide.content_brief,
+            role="body",
+            locale=packet.guide_identity.language,
+            font_size=16.0,
+        )
+        body_diagnostic["slide_number"] = slide.slide_no
+        html_typography_diagnostics.extend([title_diagnostic, body_diagnostic])
+    annotate_title_body_ratio(html_typography_diagnostics)
     return {
         "generated": True,
         "reason": "Assistant mode guide review evidence.",
@@ -2903,6 +2951,12 @@ def generate_html_guide(packet: GuidePacket, project_dir: Path, mode: str, reque
         "javascript_runtime_errors": [],
         "button_control_count": button_count,
         "html_screenshot_used_in_pptx": False,
+        "typography_diagnostics": {
+            "status": "warning" if any(item.get("overflow_risk") or item.get("korean_broken_token_risk") or item.get("title_body_ratio_risk") for item in html_typography_diagnostics) else "pass",
+            "blocking": False,
+            "summary": diagnostics_summary(html_typography_diagnostics),
+            "items": html_typography_diagnostics,
+        },
     }
 
 
@@ -3990,6 +4044,23 @@ def final_qa_report(
     color_scan = color_spread_scan(packet, ctx)
     contrast_scan = palette_contrast_scan(packet)
     palette_resolution = infer_palette_resolution(packet)
+    typography_diagnostics = [
+        box["typography_diagnostics"]
+        for box in ctx.text_boxes
+        if box.get("typography_diagnostics")
+    ]
+    annotate_title_body_ratio(typography_diagnostics)
+    typography_status = (
+        "warning"
+        if any(
+            item.get("overflow_risk")
+            or item.get("korean_broken_token_risk")
+            or item.get("title_body_ratio_risk")
+            or item.get("degraded_output_exception")
+            for item in typography_diagnostics
+        )
+        else "pass"
+    )
     if visual_scan["status"] == "fail":
         unresolved_blockers.append(
             {
@@ -4077,6 +4148,12 @@ def final_qa_report(
         "palette_roles_used": sorted(ctx.used_palette_roles),
         "palette_resolution": palette_resolution,
         "typography_roles_used": sorted(ctx.used_typography_roles),
+        "typography_diagnostics": {
+            "status": typography_status,
+            "blocking": False,
+            "summary": diagnostics_summary(typography_diagnostics),
+            "items": typography_diagnostics,
+        },
         "safe_area_applied": packet.safe_area.model_dump(mode="json"),
         "background_policy_applied": packet.background_policy.model_dump(mode="json"),
         "header_footer_omissions": ctx.omitted_header_footer,

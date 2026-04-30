@@ -77,6 +77,23 @@ PLACEHOLDER_HTML_TITLES = {
     "general detail",
     "discussion path",
 }
+REQUIRED_TYPOGRAPHY_DIAGNOSTIC_FIELDS = {
+    "role",
+    "locale",
+    "font_size",
+    "min_pt",
+    "default_pt",
+    "max_pt",
+    "weighted_cjk_latin_units",
+    "estimated_lines",
+    "target_lines",
+    "max_lines",
+    "box_width",
+    "box_height",
+    "overflow_risk",
+    "korean_broken_token_risk",
+    "title_body_ratio_risk",
+}
 
 
 def assert_true(condition: bool, message: str) -> None:
@@ -264,6 +281,54 @@ def validate_public_html_policy_negative_tests() -> list[dict[str, str]]:
     ]
 
 
+def assert_typography_diagnostic_item(item: dict[str, Any], *, source: str) -> None:
+    missing = sorted(REQUIRED_TYPOGRAPHY_DIAGNOSTIC_FIELDS - set(item))
+    assert_true(not missing, f"{source} missing typography diagnostic fields: {missing}")
+    assert_true(item["min_pt"] <= item["recommended_font_size"] <= item["max_pt"], f"{source} recommended font size outside bounds")
+    if item["font_size"] < item["min_pt"]:
+        assert_true(item.get("degraded_output_exception") is True, f"{source} below-min font should be explicit degraded-output exception")
+
+
+def validate_typography_diagnostics(report: dict[str, Any], project_dir: Path, *, repo_mode: str) -> dict[str, Any]:
+    qa_path = project_dir / "final-qa.json"
+    if qa_path.exists():
+        qa = json.loads(qa_path.read_text(encoding="utf-8"))
+        diagnostics = qa.get("typography_diagnostics")
+        assert_true(isinstance(diagnostics, dict), f"{qa_path} missing typography_diagnostics")
+        assert_true(diagnostics.get("blocking") is False, f"{qa_path} typography diagnostics must be non-blocking")
+        items = diagnostics.get("items")
+        assert_true(isinstance(items, list) and items, f"{qa_path} typography diagnostics has no items")
+        for index, item in enumerate(items[:5]):
+            assert_true(isinstance(item, dict), f"{qa_path} typography diagnostic item is not an object")
+            assert_typography_diagnostic_item(item, source=f"{qa_path}:items[{index}]")
+        return {"source": "final_qa", "items": len(items), "status": diagnostics.get("status")}
+
+    absolute_paths = report.get("absolute_paths")
+    workspace_root = report.get("workspace_root")
+    if not workspace_root and isinstance(absolute_paths, dict):
+        workspace_root = absolute_paths.get("workspace")
+    if not workspace_root and len(project_dir.parents) >= 3:
+        workspace_root = project_dir.parents[2].as_posix()
+    assert_true(isinstance(workspace_root, str) and workspace_root, "report missing workspace_root for typography diagnostics")
+    slot_map = Path(workspace_root) / "outputs" / "reports" / "deck_slot_map.json"
+    assert_true(repo_mode == "public", "missing final-qa typography diagnostics is only expected for public plan/spec route")
+    assert_true(slot_map.exists(), f"public typography diagnostics slot map missing: {slot_map}")
+    payload = json.loads(slot_map.read_text(encoding="utf-8"))
+    summary = payload.get("summary", {}).get("typography_diagnostics")
+    assert_true(isinstance(summary, dict), f"{slot_map} missing typography diagnostics summary")
+    text_slots = [
+        slot
+        for slot in payload.get("slots", [])
+        if isinstance(slot, dict) and slot.get("slot_kind") == "text"
+    ]
+    assert_true(text_slots, f"{slot_map} has no text slots")
+    for slot in text_slots[:8]:
+        diagnostic = slot.get("typography_diagnostics")
+        assert_true(isinstance(diagnostic, dict), f"{slot_map} text slot missing typography diagnostics")
+        assert_typography_diagnostic_item(diagnostic, source=f"{slot_map}:{slot.get('slot_name')}")
+    return {"source": "deck_slot_map", "items": len(text_slots), "summary": summary}
+
+
 def validate_case(case: dict[str, Any], output_root: Path, *, repo_mode: str) -> dict[str, Any]:
     workspace = output_root / "workspace"
     result = run(
@@ -330,6 +395,7 @@ def validate_case(case: dict[str, Any], output_root: Path, *, repo_mode: str) ->
 
     titles = html_titles(html_path)
     html_mode = validate_html_title_policy(case["case_id"], titles, primary_titles, repo_mode=repo_mode)
+    typography_diagnostics = validate_typography_diagnostics(report, project_dir, repo_mode=repo_mode)
     payload = {
         "case_id": case["case_id"],
         "build_status": report.get("status"),
@@ -338,6 +404,7 @@ def validate_case(case: dict[str, Any], output_root: Path, *, repo_mode: str) ->
         "primary_titles": primary_titles,
         "text_density": densities,
         "html_title_mode": html_mode,
+        "typography_diagnostics": typography_diagnostics,
     }
     if warning is not None:
         payload["preview_render_warning"] = warning

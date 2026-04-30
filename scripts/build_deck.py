@@ -34,6 +34,7 @@ from system.pptx_system import (
 )
 from system.template_engine import render_template_slide, slot_text_budget
 from system.template_text_dna import load_template_text_dna_cleanup, slide_spec_with_text_dna_cleanup
+from system.typography_diagnostics import annotate_title_body_ratio, diagnose_text_box, diagnostics_summary
 
 WORKDIR = BASE_DIR
 REPORTS_DIR = BASE_DIR / "outputs" / "reports"
@@ -1277,12 +1278,49 @@ def text_values_for_slide(slide_spec: dict[str, Any], blueprint: dict[str, Any])
     return text_values, source_kind_by_slot
 
 
+def typography_diagnostics_for_slot(
+    *,
+    slide_number: int,
+    slide_id: str,
+    slot_name: str,
+    slot_def: dict[str, Any],
+    override: dict[str, Any],
+    value: Any,
+    theme: ThemeConfig,
+) -> dict[str, Any]:
+    bounds = slot_bounds(slot_def)
+    font_role = override.get("font_role") or slot_def.get("font_role") or slot_name
+    font_size = override.get("font_size") or theme.sizes.get(str(font_role), theme.sizes.get("body", 12.0))
+    diagnostic = diagnose_text_box(
+        text=value,
+        role=str(font_role) if font_role is not None else None,
+        locale=None,
+        font_size=float(font_size),
+        target_lines=None,
+        max_lines=override.get("max_lines") or slot_def.get("max_lines"),
+        box_width=bounds.get("width") if bounds else None,
+        box_height=bounds.get("height") if bounds else None,
+        max_chars_per_line=override.get("max_chars_per_line") or slot_def.get("max_chars_per_line"),
+        slot_name=slot_name,
+    )
+    diagnostic.update(
+        {
+            "slide_number": slide_number,
+            "slide_id": slide_id,
+            "slot_name": slot_name,
+        }
+    )
+    return diagnostic
+
+
 def deck_slot_map_rows(
     slide_specs: list[dict[str, Any]],
     sources: list[dict[str, Any]],
     blueprint_index: dict[str, dict[str, Any]],
+    theme: ThemeConfig,
 ) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
+    text_diagnostics: list[dict[str, Any]] = []
     for slide_no, (slide_spec, resolved) in enumerate(zip(slide_specs, sources, strict=False), start=1):
         slide_id = resolved.get("slide_id")
         if not slide_id:
@@ -1297,6 +1335,16 @@ def deck_slot_map_rows(
             slot_name = slot_def["slot"]
             override = slide_spec.get("slot_overrides", {}).get(slot_name, {})
             current_value = text_values.get(slot_name, "" if clear_unfilled_slots else None)
+            typography_diagnostics = typography_diagnostics_for_slot(
+                slide_number=slide_no,
+                slide_id=slide_id,
+                slot_name=slot_name,
+                slot_def=slot_def,
+                override=override,
+                value=current_value,
+                theme=theme,
+            )
+            text_diagnostics.append(typography_diagnostics)
             rows.append(
                 {
                     "slide_number": slide_no,
@@ -1310,6 +1358,7 @@ def deck_slot_map_rows(
                     "font_role": override.get("font_role") or slot_def.get("font_role"),
                     "fit_strategy": override.get("fit_strategy") or slot_def.get("fit_strategy") or "preserve_template",
                     "budget": slot_text_budget(slot_def, override),
+                    "typography_diagnostics": typography_diagnostics,
                     "shape_name": slot_def.get("shape_name"),
                     "shape_index": slot_def.get("shape_index"),
                 }
@@ -1376,6 +1425,7 @@ def deck_slot_map_rows(
                     "shape_index": slot_def.get("shape_index"),
                 }
             )
+    annotate_title_body_ratio(text_diagnostics)
     return rows
 
 
@@ -1397,11 +1447,12 @@ def write_deck_slot_map_report(
     slide_specs: list[dict[str, Any]],
     sources: list[dict[str, Any]],
     blueprint_index: dict[str, dict[str, Any]],
+    theme: ThemeConfig,
     report_dir: Path | None = None,
 ) -> None:
     reports_dir = default_reports_dir(report_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
-    rows = deck_slot_map_rows(slide_specs, sources, blueprint_index)
+    rows = deck_slot_map_rows(slide_specs, sources, blueprint_index, theme)
     by_kind: dict[str, int] = {}
     filled_slots = 0
     for row in rows:
@@ -1417,6 +1468,13 @@ def write_deck_slot_map_report(
             "mapped_slots": len(rows),
             "filled_slots": filled_slots,
             "by_kind": by_kind,
+            "typography_diagnostics": diagnostics_summary(
+                [
+                    row["typography_diagnostics"]
+                    for row in rows
+                    if row.get("slot_kind") == "text" and row.get("typography_diagnostics")
+                ]
+            ),
         },
         "slots": rows,
     }
@@ -1525,7 +1583,7 @@ def build_deck_from_spec(
     apply_theme_accent_overrides(output_path, spec.get("theme_accent_overrides"))
     write_text_overflow_report(output_path, overflow_events, report_dir)
     write_slide_selection_rationale_report(output_path, spec, slide_specs, sources, report_dir)
-    write_deck_slot_map_report(output_path, spec, slide_specs, sources, blueprint_index, report_dir)
+    write_deck_slot_map_report(output_path, spec, slide_specs, sources, blueprint_index, theme, report_dir)
     write_asset_usage_report(output_path, spec, workspace_usage, report_dir)
     return output_path
 
