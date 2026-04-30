@@ -352,6 +352,62 @@ def spec_path_ref(target: Path, spec_dir: Path) -> str:
     return Path(os.path.relpath(target.resolve(), spec_dir.resolve())).as_posix()
 
 
+def extract_korean_topic_list(value: str) -> list[str]:
+    topics: list[str] = []
+    for match in re.finditer(r"(?:다음|아래|목록|항목)[^:：\n]{0,80}[:：]\s*([^。.\n]+)", value):
+        for item in re.split(r"\s*(?:,|，|、|ㆍ|·|/| 및 | 그리고 )\s*", match.group(1)):
+            cleaned = re.sub(r"\s+", " ", item).strip(" \t\r\n-•,.;:：")
+            cleaned = re.sub(r"^(?:각\s*)?슬라이드(?:에|마다)?\s*", "", cleaned)
+            if cleaned and len(cleaned) <= 32 and re.search(r"[가-힣A-Za-z0-9]", cleaned):
+                topics.append(cleaned)
+    unique: list[str] = []
+    for topic in topics:
+        if topic not in unique:
+            unique.append(topic)
+    return unique[:20]
+
+
+def extract_common_item_detail(value: str) -> str | None:
+    match = re.search(r"각\s*(?:음식|항목|주제)의?\s*([^。.\n]{2,90}?)(?:을|를)?\s*(?:간단히\s*)?포함", value)
+    if not match:
+        return None
+    detail = re.sub(r"\s+", " ", match.group(1)).strip(" ,.;:：")
+    return detail or None
+
+
+def strip_korean_slide_meta(value: str) -> str:
+    text = re.sub(r"\s+", " ", value).strip(" \t\r\n-•,.;:：")
+    text = re.sub(r"^\d{1,2}\s*번\s*슬라이드(?:는|은)?\s*", "", text)
+    text = re.sub(r"^\d{1,2}\s*번\s*부터\s*\d{1,2}\s*번\s*까지(?:는|은)?\s*", "", text)
+    text = re.sub(r"^(?:각\s*)?슬라이드(?:에|마다)?\s*", "", text)
+    text = re.sub(
+        r"\s*(?:으로|로)?\s*슬라이드\s*총?\s*\d{1,2}\s*(?:장|쪽|페이지|슬라이드)?\s*(?:구성|작성|제작)?\s*$",
+        "",
+        text,
+    )
+    text = re.sub(r"\s+(?:으로|로)$", "", text)
+    return text.strip(" \t\r\n-•,.;:：")
+
+
+def is_structural_slide_instruction(value: str) -> bool:
+    text = re.sub(r"\s+", " ", value).strip()
+    return bool(
+        re.fullmatch(r"\d{1,2}\s*번\s*슬라이드(?:는|은)?\s*(?:표지|커버|목차|구성)\s*\.?", text)
+        or re.fullmatch(r"슬라이드\s*총?\s*\d{1,2}\s*(?:장|쪽|페이지|슬라이드)?\s*(?:구성|작성|제작)?\s*\.?", text)
+    )
+
+
+def expand_include_item_values(value: str) -> list[str]:
+    topics = extract_korean_topic_list(value)
+    if topics:
+        detail = extract_common_item_detail(value)
+        return [f"{topic}: {detail}" if detail else topic for topic in topics]
+    if is_structural_slide_instruction(value):
+        return []
+    cleaned = strip_korean_slide_meta(value)
+    return [cleaned] if cleaned else []
+
+
 def split_include_item(value: str) -> tuple[str, str | None]:
     text = " ".join(value.strip().split())
     for separator in (" — ", " – ", " - ", ": "):
@@ -365,7 +421,10 @@ def split_include_item(value: str) -> tuple[str, str | None]:
 
 
 def include_items(intake: DeckIntake) -> list[IncludeItem]:
-    return [IncludeItem(item) for item in intake.must_include]
+    expanded: list[str] = []
+    for item in intake.must_include:
+        expanded.extend(expand_include_item_values(item))
+    return [IncludeItem(item) for item in expanded]
 
 
 def locale_is_korean(intake: DeckIntake) -> bool:
@@ -378,8 +437,11 @@ def is_editorial_consumer_deck(intake: DeckIntake) -> bool:
     setting = intake.presentation_context.setting.lower()
     audience = intake.audience.primary.lower()
     notes = (intake.brand_or_template_scope.notes or "").lower()
+    topic_text = f"{intake.name} {intake.primary_goal}".lower()
     if "allow_business_templates" in notes:
         return False
+    if locale_is_korean(intake) and any(token in topic_text for token in ("음식", "제철", "요리", "식품")):
+        return True
     if intake.industry.value == "food_and_beverage" and "visual" in tone:
         return True
     if {"friendly", "visual"} & tone and intake.audience.decision_role.value == "learner":
@@ -430,6 +492,16 @@ def preferred_template_keys(intake: DeckIntake, count: int, profile: dict[str, A
             continue
         sanitized.append(EDITORIAL_TEMPLATE_SEQUENCE[index % len(EDITORIAL_TEMPLATE_SEQUENCE)])
     return sanitized
+
+
+def visible_primary_goal(intake: DeckIntake) -> str:
+    topics = extract_korean_topic_list(intake.primary_goal)
+    detail = extract_common_item_detail(intake.primary_goal)
+    if topics and detail:
+        return f"{intake.name}: {detail}"
+    first_sentence = re.split(r"[。.!?\n]", intake.primary_goal.strip(), maxsplit=1)[0]
+    cleaned = strip_korean_slide_meta(first_sentence)
+    return cleaned or intake.name
 
 
 def blueprint_by_template_key(blueprints: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -489,7 +561,7 @@ def item_title(item: IncludeItem) -> str:
 def item_body(item: IncludeItem, intake: DeckIntake) -> str:
     if item.detail:
         return item.detail
-    return intake.primary_goal
+    return visible_primary_goal(intake)
 
 
 ROLE_TAG_LABELS = {
@@ -553,7 +625,7 @@ def sequenced_text(slot_name: str, include_text: str | None, include_detail: str
             item = items[index]
             return item_body(item, intake) if include_detail else item_title(item)
         return None
-    return include_detail or include_text or intake.primary_goal
+    return include_detail or include_text or visible_primary_goal(intake)
 
 
 def text_for_slot(
@@ -601,7 +673,7 @@ def text_for_slot(
     if lowered == "left_card_title":
         return include_text or slide_title
     if lowered == "left_card_body":
-        return include_detail or intake.primary_goal
+        return include_detail or visible_primary_goal(intake)
     if lowered == "right_card_title":
         next_item = items[item_offset + 1] if item_offset + 1 < len(items) else None
         return item_title(next_item) if next_item else ("추천 포인트" if locale_is_korean(intake) else "Recommendation")
@@ -628,11 +700,11 @@ def text_for_slot(
     if "title" in lowered or lowered in {"headline", "section"}:
         return slide_title
     if "subtitle" in lowered or "summary" in lowered or "description" in lowered:
-        return include_detail or include_text or intake.primary_goal
+        return include_detail or include_text or visible_primary_goal(intake)
     if lowered in {"conclusion", "goal_statement", "call_to_action"}:
-        return intake.primary_goal
+        return visible_primary_goal(intake)
     if any(token in lowered for token in ("body", "message", "point", "card", "item", "note")):
-        return include_detail or include_text or intake.primary_goal
+        return include_detail or include_text or visible_primary_goal(intake)
     return None
 
 
@@ -679,7 +751,7 @@ def slide_title_for(
 ) -> tuple[str, str | None, str | None, int]:
     if index == 0:
         cover_title = intake.name.split(" / ")[-1] if locale_is_korean(intake) and " / " in intake.name else intake.name
-        return cover_title, intake.primary_goal, intake.primary_goal, 0
+        return cover_title, visible_primary_goal(intake), visible_primary_goal(intake), 0
     include_index = index - (2 if has_toc else 1) if purpose != "toc" else None
     if include_index is not None and 0 <= include_index < len(items):
         item = items[include_index]
@@ -688,8 +760,8 @@ def slide_title_for(
         title = "구성" if locale_is_korean(intake) else "Decision agenda"
         return title, " / ".join(item_title(item) for item in items[:4]), None, 0
     if purpose == "closing":
-        return ("마무리" if locale_is_korean(intake) else "Next steps"), intake.primary_goal, intake.primary_goal, max(0, len(items) - 1)
-    return purpose.replace("_", " ").title(), intake.primary_goal, intake.primary_goal, 0
+        return ("마무리" if locale_is_korean(intake) else "Next steps"), visible_primary_goal(intake), visible_primary_goal(intake), max(0, len(items) - 1)
+    return purpose.replace("_", " ").title(), visible_primary_goal(intake), visible_primary_goal(intake), 0
 
 
 def project_root_for_material(path: Path) -> Path | None:

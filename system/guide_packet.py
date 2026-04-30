@@ -63,6 +63,9 @@ PROMPT_LITERAL_COMMAND_PATTERNS = [
         r"슬라이드\s*만들어",
         r"PPT\s*만들어",
         r"보고서\s*만들어",
+        r"슬라이드\s*총?\s*\d{1,2}\s*(?:장|쪽|페이지|슬라이드)?\s*(?:구성|작성|제작)?",
+        r"\d{1,2}\s*번\s*슬라이드(?:는|은)?",
+        r"\d{1,2}\s*번\s*부터\s*\d{1,2}\s*번\s*까지(?:는|은)?",
         r"create\s+(?:an?\s+)?\d{1,2}\s*[- ]?\s*(?:slide|slides|page|pages)(?:\s+(?:deck|presentation|proposal))?",
         r"make\s+(?:an?\s+)?\d{1,2}\s*[- ]?\s*(?:(?:slide|slides|page|pages)\s+)?(?:deck|presentation|proposal)",
         r"generate\s+\d{1,2}\s*(?:slides|pages)",
@@ -84,6 +87,9 @@ PROMPT_LITERAL_COMMAND_LABELS = [
     "슬라이드 만들어",
     "PPT 만들어",
     "보고서 만들어",
+    "Korean slide count composition request",
+    "Korean numbered slide instruction",
+    "Korean slide range instruction",
     "create numbered slide request",
     "make numbered deck request",
     "generate numbered slides request",
@@ -258,6 +264,7 @@ def sanitize_prompt_literal_text(value: Any, *, fallback: str = "Untitled Deck")
     text = re.sub(r"\s+(를|을)(?=[.。]|$)", "", text).strip()
     text = re.sub(r"\s+(를|을)\s*[.。]\s*", ". ", text).strip()
     text = re.split(r"(?<=[.。])\s+", text, maxsplit=1)[0].strip(" .。")
+    text = re.sub(r"\s+(?:으로|로)$", "", text).strip()
     lowered = text.lower()
     if all(token in text for token in ["식품", "신상품"]) and "런칭" in text:
         return "신제품 런칭 캠페인 전략"
@@ -4671,6 +4678,18 @@ def sparse_slide_labels(
         if any(token in lowered for token in ["staffing", "operations", "lane", "protocol", "checklist"]):
             return f"Turn {focus.lower()} into repeatable operating behavior."
         return f"Make {focus.lower()} concrete for {audience}."
+
+    explicit_items = [
+        clean_visible_phrase(item, fallback="", limit=48)
+        for item in transformed.get("explicit_list_items", [])
+        if clean_visible_phrase(item, fallback="", limit=48)
+    ]
+    if explicit_items and count == len(explicit_items) + 2:
+        labels = [("Opening", topic, objective), ("목차", "목차", "제철 음식별 흐름을 한눈에 정리합니다.")]
+        for item in explicit_items:
+            title = display_title(item)
+            labels.append((title, title, f"{item}의 제철 이유, 맛, 추천 조리법을 간단히 정리합니다."))
+        return labels[:count]
 
     grouped_focus = split_focus_for_pairing(focus_areas, max(0, count - 2))
     base = [("Opening", topic, family_openers.get(family, objective))]

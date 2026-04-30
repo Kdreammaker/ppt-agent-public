@@ -108,8 +108,39 @@ def strip_command_wrappers(text: str) -> str:
     cleaned = re.sub(r"\b(?:make|generate|build)\s+(?:an?\s+)?(?:\d{1,2}\s*[- ]?\s*)?(?:auto[- ]mode\s+)?", " ", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"\bproduce\s+two\s+visually\s+distinct\s+variants\b", " ", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"\b(?:presentation|deck|proposal|training deck|slides?)\b", " ", cleaned, flags=re.IGNORECASE)
+    cleaned = strip_korean_slide_meta(cleaned)
     cleaned = re.sub(r"\s+", " ", cleaned).strip(" .,:;-")
     return cleaned
+
+
+def extract_korean_topic_list(text: str) -> list[str]:
+    topics: list[str] = []
+    for match in re.finditer(r"(?:다음|아래|목록|항목)[^:：\n]{0,80}[:：]\s*([^。.\n]+)", text):
+        raw = match.group(1)
+        for item in re.split(r"\s*(?:,|，|、|ㆍ|·|/| 및 | 그리고 )\s*", raw):
+            cleaned = re.sub(r"\s+", " ", item).strip(" \t\r\n-•,.;:：")
+            cleaned = re.sub(r"^(?:각\s*)?슬라이드(?:에|마다)?\s*", "", cleaned)
+            if cleaned and len(cleaned) <= 32 and re.search(r"[가-힣A-Za-z0-9]", cleaned):
+                topics.append(cleaned)
+    unique: list[str] = []
+    for topic in topics:
+        if topic not in unique:
+            unique.append(topic)
+    return unique[:20]
+
+
+def strip_korean_slide_meta(value: str) -> str:
+    text = re.sub(r"\s+", " ", value).strip(" \t\r\n-•,.;:：")
+    text = re.sub(r"^\d{1,2}\s*번\s*슬라이드(?:는|은)?\s*", "", text)
+    text = re.sub(r"^\d{1,2}\s*번\s*부터\s*\d{1,2}\s*번\s*까지(?:는|은)?\s*", "", text)
+    text = re.sub(r"^(?:각\s*)?슬라이드(?:에|마다)?\s*", "", text)
+    text = re.sub(
+        r"\s*(?:으로|로)?\s*슬라이드\s*총?\s*\d{1,2}\s*(?:장|쪽|페이지|슬라이드)?\s*(?:구성|작성|제작)?\s*$",
+        "",
+        text,
+    )
+    text = re.sub(r"\s+(?:으로|로)$", "", text)
+    return text.strip(" \t\r\n-•,.;:：")
 
 
 def phrase_after(label_pattern: str, text: str) -> str | None:
@@ -138,6 +169,11 @@ def derive_deck_title(prompt: str, *, project_name: str | None = None) -> str:
     if project_name:
         return title_case(strip_command_wrappers(project_name))[:80] or "Untitled Deck"
     lowered = prompt.lower()
+    if re.search(r"[가-힣]", prompt):
+        first_sentence = re.split(r"[。.!?\n]", prompt.strip(), maxsplit=1)[0]
+        korean_title = strip_korean_slide_meta(first_sentence)
+        if korean_title:
+            return bounded(korean_title, 80)
     about = phrase_after(r"\babout\s+(.+?)(?=\.\s+(?:Audience|Focus|Produce)\b|$)", prompt)
     if about:
         about = re.sub(r"^(?:improving|introducing|building|creating|planning|for)\s+", "", about, flags=re.IGNORECASE)
@@ -178,13 +214,15 @@ def derive_objective(prompt: str, title: str) -> str:
 def transformed_request_from_prompt(prompt: str, *, project_name: str | None = None) -> dict[str, Any]:
     title = derive_deck_title(prompt, project_name=project_name)
     audience = phrase_after(r"\bAudience:\s*(.+?)(?=\.\s+(?:Focus|Produce)\b|$)", prompt)
-    focus = split_focus_areas(phrase_after(r"\bFocus\s+on\s+(.+?)(?=\.\s+Produce\b|$)", prompt))
+    explicit_list_items = extract_korean_topic_list(prompt)
+    focus = split_focus_areas(phrase_after(r"\bFocus\s+on\s+(.+?)(?=\.\s+Produce\b|$)", prompt)) or explicit_list_items
     slide_count = extract_requested_slide_count(prompt)
     return {
         "deck_title": bounded(title, 100),
         "audience": bounded(audience or "general audience", 160),
         "objective": bounded(derive_objective(prompt, title), 180),
         "focus_areas": [bounded(item, 80) for item in focus],
+        "explicit_list_items": [bounded(item, 80) for item in explicit_list_items],
         "requested_slide_count": slide_count,
         "raw_command_removed": True,
     }

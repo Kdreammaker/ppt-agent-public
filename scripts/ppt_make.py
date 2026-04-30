@@ -152,6 +152,63 @@ def detect_slide_count(request: str) -> int:
     return 6
 
 
+def extract_korean_topic_list(request: str) -> list[str]:
+    topics: list[str] = []
+    for match in re.finditer(r"(?:다음|아래|목록|항목)[^:：\n]{0,80}[:：]\s*([^。.\n]+)", request):
+        raw = match.group(1)
+        for item in re.split(r"\s*(?:,|，|、|ㆍ|·|/| 및 | 그리고 )\s*", raw):
+            cleaned = re.sub(r"\s+", " ", item).strip(" \t\r\n-•,.;:：")
+            cleaned = re.sub(r"^(?:각\s*)?슬라이드(?:에|마다)?\s*", "", cleaned)
+            if cleaned and len(cleaned) <= 32 and re.search(r"[가-힣A-Za-z0-9]", cleaned):
+                topics.append(cleaned)
+    unique: list[str] = []
+    for topic in topics:
+        if topic not in unique:
+            unique.append(topic)
+    return unique[:20]
+
+
+def extract_common_item_detail(request: str) -> str | None:
+    match = re.search(r"각\s*(?:음식|항목|주제)의?\s*([^。.\n]{2,90}?)(?:을|를)?\s*(?:간단히\s*)?포함", request)
+    if not match:
+        return None
+    detail = re.sub(r"\s+", " ", match.group(1)).strip(" ,.;:：")
+    return detail or None
+
+
+def strip_korean_slide_meta(value: str) -> str:
+    text = re.sub(r"\s+", " ", value).strip(" \t\r\n-•,.;:：")
+    text = re.sub(r"^\d{1,2}\s*번\s*슬라이드(?:는|은)?\s*", "", text)
+    text = re.sub(r"^\d{1,2}\s*번\s*부터\s*\d{1,2}\s*번\s*까지(?:는|은)?\s*", "", text)
+    text = re.sub(r"^(?:각\s*)?슬라이드(?:에|마다)?\s*", "", text)
+    text = re.sub(
+        r"\s*(?:으로|로)?\s*슬라이드\s*총?\s*\d{1,2}\s*(?:장|쪽|페이지|슬라이드)?\s*(?:구성|작성|제작)?\s*$",
+        "",
+        text,
+    )
+    text = re.sub(r"\s+(?:으로|로)$", "", text)
+    return text.strip(" \t\r\n-•,.;:：")
+
+
+def is_structural_slide_instruction(value: str) -> bool:
+    text = re.sub(r"\s+", " ", value).strip()
+    return bool(
+        re.fullmatch(r"\d{1,2}\s*번\s*슬라이드(?:는|은)?\s*(?:표지|커버|목차|구성)\s*\.?", text)
+        or re.fullmatch(r"슬라이드\s*총?\s*\d{1,2}\s*(?:장|쪽|페이지|슬라이드)?\s*(?:구성|작성|제작)?\s*\.?", text)
+    )
+
+
+def derive_request_title(request: str) -> str:
+    first_sentence = re.split(r"[。.!?\n]", request.strip(), maxsplit=1)[0]
+    title = strip_korean_slide_meta(first_sentence)
+    if re.search(r"[가-힣]", request) and title:
+        return title[:80]
+    title = re.sub(r"\b(?:create|make|generate|build)\b", " ", first_sentence, flags=re.IGNORECASE)
+    title = re.sub(r"\b\d{1,2}\s*(?:slides?|pages?)\b", " ", title, flags=re.IGNORECASE)
+    title = re.sub(r"\s+", " ", title).strip(" \t\r\n-•,.;:")
+    return (title or "Natural Language Deck")[:80]
+
+
 def detect_deck_type(request: str) -> str:
     lowered = request.casefold()
     candidates = [
@@ -202,8 +259,19 @@ def detect_tone(request: str, mode: str) -> list[str]:
 
 
 def split_request_points(request: str) -> list[str]:
+    topics = extract_korean_topic_list(request)
+    if topics:
+        detail = extract_common_item_detail(request)
+        return [f"{topic}: {detail}" if detail else topic for topic in topics][:18]
     parts = [part.strip(" -•\t\r\n") for part in re.split(r"[;\n。.!?]", request) if part.strip()]
-    points = [part for part in parts if len(part) > 6][:5]
+    points = []
+    for part in parts:
+        if is_structural_slide_instruction(part):
+            continue
+        cleaned = strip_korean_slide_meta(part)
+        if cleaned and len(cleaned) > 6:
+            points.append(cleaned)
+    points = points[:5]
     if points:
         return points
     return [request.strip()[:220]]
@@ -222,8 +290,7 @@ def context_points(context: dict[str, Any]) -> list[str]:
 
 def build_intake(request: str, *, project_id: str, mode: str, context: dict[str, Any]) -> dict[str, Any]:
     slide_count = detect_slide_count(request)
-    title = request.strip().splitlines()[0].strip()
-    title = title[:80] or "Natural Language Deck"
+    title = derive_request_title(request)
     approval_mode = "assistant" if mode == "assistant" else "operator_review"
     return {
         "$schema": "../../config/deck_intake.schema.json",

@@ -47,11 +47,11 @@ def sentence(value: str, fallback: str) -> str:
     return compact.rstrip(".") + "." if compact else fallback
 
 
-def title_for(index: int, purpose: str, item_titles: list[str], intake_name: str) -> str:
+def title_for(index: int, purpose: str, item_titles: list[str], intake_name: str, *, is_korean: bool = False) -> str:
     if index == 0:
         return intake_name
     if index == 1 and purpose == "toc":
-        return "Discussion path"
+        return "목차" if is_korean else "Discussion path"
     item_index = max(0, min(index - 2, len(item_titles) - 1))
     if item_titles and index >= 2:
         return item_titles[item_index]
@@ -93,7 +93,8 @@ def compose_plan(intake_path: Path, output_path: Path, mode_override: str | None
     mode = mode_override or mode_policy_for_intake(intake)
     if mode not in {"auto", "assistant"}:
         raise ValueError(f"unsupported operating mode: {mode}")
-    toc = [title_for(index, purpose, item_titles, intake.name) for index, purpose in enumerate(purposes)]
+    is_korean = (intake.presentation_context.locale or "").lower().startswith("ko")
+    toc = [title_for(index, purpose, item_titles, intake.name, is_korean=is_korean) for index, purpose in enumerate(purposes)]
     slide_plans = []
     for index, purpose in enumerate(purposes):
         slide_number = index + 1
