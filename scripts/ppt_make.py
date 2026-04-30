@@ -417,6 +417,8 @@ def command_make(args: argparse.Namespace) -> int:
                 plan_path.as_posix(),
                 "--output",
                 spec_path.as_posix(),
+                "--report-dir",
+                build_report_dir.as_posix(),
             ],
         )
     )

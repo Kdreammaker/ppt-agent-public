@@ -64,10 +64,10 @@ def build_dual_outputs(
     html_output: Path | None = None,
 ) -> dict[str, Any]:
     spec_path = spec_path.resolve()
-    pptx_path = build_deck_from_spec(spec_path)
+    report_root = report_dir.resolve() if report_dir else BASE_DIR / "outputs" / "reports"
+    pptx_path = build_deck_from_spec(spec_path, report_dir=report_root)
     html_path, html_manifest_path = build_html(spec_path, html_output.resolve() if html_output else None)
     deck_id = pptx_path.stem
-    report_root = report_dir.resolve() if report_dir else BASE_DIR / "outputs" / "reports"
     validation_results: list[dict[str, Any]] = []
     if validate:
         validation_results.append(
@@ -81,6 +81,8 @@ def build_dual_outputs(
                     base_relative(html_path),
                     "--manifest",
                     base_relative(html_manifest_path),
+                    "--output-json",
+                    str(report_root / f"{deck_id}_html_validation.json"),
                 ]
             )
         )

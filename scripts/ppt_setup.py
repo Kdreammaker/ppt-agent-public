@@ -172,6 +172,7 @@ def command_setup(args: argparse.Namespace) -> int:
         version_command = [sys.executable, "scripts/ppt_version_check.py"]
         if args.workspace:
             version_command.extend(["--workspace", workspace.as_posix()])
+        version_command.extend(["--report", (workspace / "outputs" / "reports" / "version_check.json").as_posix()])
         if args.skip_remote_version_check:
             version_command.append("--skip-remote")
         steps.append(run_step("version_check", version_command, timeout=90))

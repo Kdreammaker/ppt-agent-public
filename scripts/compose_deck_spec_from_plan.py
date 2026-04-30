@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -41,14 +42,23 @@ def resolve_base_relative(value: str) -> Path:
     return path if path.is_absolute() else (BASE_DIR / path).resolve()
 
 
-def apply_plan_to_spec(spec: dict[str, Any], plan: dict[str, Any], plan_path: Path, output_path: Path) -> dict[str, Any]:
+def apply_plan_to_spec(
+    spec: dict[str, Any],
+    plan: dict[str, Any],
+    plan_path: Path,
+    output_path: Path,
+    *,
+    report_dir: Path | None = None,
+) -> dict[str, Any]:
     spec_dir = output_path.parent.resolve()
     spec["deck_plan_ref"] = base_relative(plan_path, spec_dir)
     mode = plan.get("operating_mode")
     if mode in {"auto", "assistant"}:
         spec["mode_policy"] = mode
     project_id = spec.get("project_id") or plan.get("request_id") or slugify(str(spec.get("name") or "deck"))
-    trace_report = BASE_DIR / "outputs" / "reports" / f"{project_id}_plan_traceability.json"
+    trace_root = report_dir.resolve() if report_dir else BASE_DIR / "outputs" / "reports"
+    trace_name = re.sub(r"[^A-Za-z0-9_.-]+", "_", str(project_id)).strip("._-")[:56] or "deck"
+    trace_report = trace_root / f"{trace_name}_plan_traceability.json"
     spec["plan_traceability_report_path"] = base_relative(trace_report, spec_dir)
     slide_plans = plan.get("slide_plans", [])
     trace_slides: list[dict[str, Any]] = []
@@ -119,6 +129,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("plan_path")
     parser.add_argument("--output", default=None)
     parser.add_argument("--workspace", default=None)
+    parser.add_argument("--report-dir", default=None)
     parser.add_argument("--preferred-user-asset", action="append", default=[])
     args = parser.parse_args(argv)
 
@@ -134,7 +145,7 @@ def main(argv: list[str] | None = None) -> int:
         output_path = (BASE_DIR / output_path).resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     spec = compose_spec(intake, intake_path, output_path)
-    spec = apply_plan_to_spec(spec, plan, plan_path, output_path)
+    spec = apply_plan_to_spec(spec, plan, plan_path, output_path, report_dir=Path(args.report_dir) if args.report_dir else None)
     workspace = Path(args.workspace).resolve() if args.workspace else None
     append_workspace_asset_intents(
         spec,

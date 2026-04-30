@@ -12,6 +12,7 @@ from typing import Any
 BASE_DIR = Path(__file__).resolve().parents[1]
 PROMPT = "Create a 5-slide planning-first presentation about a city library after-hours study-space pilot."
 STALE_COMMANDS = [("ppt-" + "agent " + suffix) for suffix in ["healthcheck", "plan", "compose", "build", "validate"]]
+REPO_REPORT_ROOT = BASE_DIR / "outputs" / "reports"
 
 
 def run(command: list[str], *, timeout: int = 420) -> subprocess.CompletedProcess[str]:
@@ -27,6 +28,27 @@ def load_json(path: Path) -> dict[str, Any]:
     data = json.loads(path.read_text(encoding="utf-8-sig"))
     assert_true(isinstance(data, dict), f"{path} must contain an object")
     return data
+
+
+def repo_report_snapshot() -> dict[str, tuple[int, int]]:
+    if not REPO_REPORT_ROOT.exists():
+        return {}
+    snapshot: dict[str, tuple[int, int]] = {}
+    for path in REPO_REPORT_ROOT.rglob("*"):
+        if not path.is_file():
+            continue
+        stat = path.stat()
+        snapshot[path.relative_to(REPO_REPORT_ROOT).as_posix()] = (stat.st_size, stat.st_mtime_ns)
+    return snapshot
+
+
+def repo_report_changes(before: dict[str, tuple[int, int]]) -> list[str]:
+    after = repo_report_snapshot()
+    changes: list[str] = []
+    for name, state in after.items():
+        if before.get(name) != state:
+            changes.append(name)
+    return sorted(changes)
 
 
 def assert_existing_artifact_paths(report_path: Path, required: list[str]) -> dict[str, str | None]:
@@ -173,6 +195,7 @@ def main(argv: list[str] | None = None) -> int:
     output_root = Path(args.output_root).resolve()
     workspace = output_root / "workspace"
     output_root.mkdir(parents=True, exist_ok=True)
+    before_reports = repo_report_snapshot()
     result = {
         "status": "pass",
         "setup_contract": validate_setup_contract(workspace),
@@ -181,6 +204,9 @@ def main(argv: list[str] | None = None) -> int:
         "stale_command_scan": validate_stale_command_scan(workspace),
         "public_private_scan": validate_public_private_scan(output_root),
     }
+    changes = repo_report_changes(before_reports)
+    assert_true(not changes, f"repo checkout outputs/reports changed during smoke: {changes}")
+    result["repo_report_leak_scan"] = {"repo_report_root": REPO_REPORT_ROOT.as_posix(), "changed_files": []}
     print(json.dumps(result, indent=2, ensure_ascii=False))
     return 0
 

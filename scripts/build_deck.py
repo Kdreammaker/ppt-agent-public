@@ -312,8 +312,12 @@ def apply_workspace_asset_intents(spec: dict[str, Any], workspace: Path | None) 
     return usage
 
 
-def write_asset_usage_report(output_path: Path, spec: dict[str, Any], usage: list[dict[str, Any]]) -> None:
-    reports_dir = BASE_DIR / "outputs" / "reports"
+def default_reports_dir(report_dir: Path | None = None) -> Path:
+    return report_dir.resolve() if report_dir else BASE_DIR / "outputs" / "reports"
+
+
+def write_asset_usage_report(output_path: Path, spec: dict[str, Any], usage: list[dict[str, Any]], report_dir: Path | None = None) -> None:
+    reports_dir = default_reports_dir(report_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
     all_intents = []
     for intent in spec.get("asset_intents", []):
@@ -1102,8 +1106,8 @@ def render_slide(
     apply_extras(slide, slide_spec, theme)
 
 
-def write_text_overflow_report(output_path: Path, events: list[dict[str, Any]]) -> None:
-    reports_dir = BASE_DIR / "outputs" / "reports"
+def write_text_overflow_report(output_path: Path, events: list[dict[str, Any]], report_dir: Path | None = None) -> None:
+    reports_dir = default_reports_dir(report_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
     report_json = reports_dir / f"{output_path.stem}_text_overflow.json"
     report_md = reports_dir / f"{output_path.stem}_text_overflow.md"
@@ -1179,8 +1183,9 @@ def write_slide_selection_rationale_report(
     spec: dict[str, Any],
     slide_specs: list[dict[str, Any]],
     sources: list[dict[str, Any]],
+    report_dir: Path | None = None,
 ) -> None:
-    reports_dir = BASE_DIR / "outputs" / "reports"
+    reports_dir = default_reports_dir(report_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
     rows = slide_selection_rationale_rows(slide_specs, sources)
     by_source_type: dict[str, int] = {}
@@ -1392,8 +1397,9 @@ def write_deck_slot_map_report(
     slide_specs: list[dict[str, Any]],
     sources: list[dict[str, Any]],
     blueprint_index: dict[str, dict[str, Any]],
+    report_dir: Path | None = None,
 ) -> None:
-    reports_dir = BASE_DIR / "outputs" / "reports"
+    reports_dir = default_reports_dir(report_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
     rows = deck_slot_map_rows(slide_specs, sources, blueprint_index)
     by_kind: dict[str, int] = {}
@@ -1449,6 +1455,7 @@ def build_deck_from_spec(
     spec_path: str | Path,
     run_id: str | None = None,
     project_id: str | None = None,
+    report_dir: Path | None = None,
 ) -> Path:
     """Build the deck and deck-specific reports.
 
@@ -1516,10 +1523,10 @@ def build_deck_from_spec(
 
     prs.save(str(output_path))
     apply_theme_accent_overrides(output_path, spec.get("theme_accent_overrides"))
-    write_text_overflow_report(output_path, overflow_events)
-    write_slide_selection_rationale_report(output_path, spec, slide_specs, sources)
-    write_deck_slot_map_report(output_path, spec, slide_specs, sources, blueprint_index)
-    write_asset_usage_report(output_path, spec, workspace_usage)
+    write_text_overflow_report(output_path, overflow_events, report_dir)
+    write_slide_selection_rationale_report(output_path, spec, slide_specs, sources, report_dir)
+    write_deck_slot_map_report(output_path, spec, slide_specs, sources, blueprint_index, report_dir)
+    write_asset_usage_report(output_path, spec, workspace_usage, report_dir)
     return output_path
 
 
@@ -1527,9 +1534,10 @@ def main(argv: list[str] | None = None) -> int:
     argv = argv or sys.argv[1:]
     parser = argparse.ArgumentParser()
     parser.add_argument("spec_path", nargs="?", default=str(WORKDIR / "data" / "specs" / "jb_meeting_deck_spec.json"))
+    parser.add_argument("--report-dir", default=None)
     args = parser.parse_args(argv)
     spec_path = Path(args.spec_path).resolve()
-    output = build_deck_from_spec(spec_path)
+    output = build_deck_from_spec(spec_path, report_dir=Path(args.report_dir) if args.report_dir else None)
     print(output)
     return 0
 
