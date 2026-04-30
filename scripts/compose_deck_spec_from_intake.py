@@ -649,6 +649,8 @@ def text_for_slot(
     if lowered == "name":
         return slide_title
     if lowered == "eyebrow":
+        if locale_is_korean(intake) and is_editorial_consumer_deck(intake):
+            return None
         return "가이드" if locale_is_korean(intake) else purpose.replace("_", " ").upper()
     if lowered == "case_number":
         if is_editorial_consumer_deck(intake):

@@ -24,6 +24,7 @@ PROMPT = (
 PROJECT_CHECKPOINT = "semantic-korean-list-checkpoint"
 PROJECT_APPROVED = "semantic-korean-list-approved"
 EXPECTED_TITLES = ["한국의 5월 제철 음식", "목차", "두릅", "죽순", "오이", "멍게", "주꾸미", "장어", "매실", "참외"]
+GENERIC_PRIMARY_LABELS = {"가이드", "guide", "detail", "general detail", "proof loop"}
 META_PATTERNS = [
     re.compile(r"슬라이드\s*총?\s*\d{1,2}\s*(?:장|쪽|페이지|슬라이드)?\s*구성"),
     re.compile(r"\d{1,2}\s*번\s*슬라이드(?:는|은)?"),
@@ -124,6 +125,34 @@ def assert_no_meta_text(values: list[str], *, source: str) -> None:
     assert_true(not hits, f"{source} contains visible meta-command text: {hits[:5]}")
 
 
+def primary_title_candidate(texts: list[str]) -> str:
+    for text in texts:
+        cleaned = normalize_title(text)
+        if not cleaned:
+            continue
+        if re.fullmatch(r"\d{1,2}", cleaned):
+            continue
+        if cleaned.startswith("Draft |") or re.search(r"\|\s*\d{1,2}/\d{1,2}$", cleaned):
+            continue
+        return cleaned
+    return ""
+
+
+def assert_pptx_primary_titles(slides: list[list[str]]) -> list[str]:
+    primary_titles = [primary_title_candidate(texts) for texts in slides]
+    assert_true(primary_titles == EXPECTED_TITLES, f"PPTX primary titles diverged: {primary_titles}")
+    generic_hits = [
+        {"slide": index + 1, "title": title}
+        for index, title in enumerate(primary_titles)
+        if index >= 2 and title.casefold() in GENERIC_PRIMARY_LABELS
+    ]
+    assert_true(not generic_hits, f"PPTX item slides have generic primary labels: {generic_hits}")
+    assert_no_meta_text(primary_titles, source="pptx primary titles")
+    duplicates = sorted({title for title in primary_titles if primary_titles.count(title) > 1})
+    assert_true(not duplicates, f"PPTX duplicate primary titles found: {duplicates}")
+    return primary_titles
+
+
 def assert_titles_are_semantic(titles: list[str], *, source: str) -> None:
     assert_true(titles == EXPECTED_TITLES, f"{source} titles diverged: {titles}")
     normalized = [normalize_title(title).casefold() for title in titles]
@@ -183,8 +212,9 @@ def validate_approved(workspace: Path) -> dict[str, Any]:
     assert_true(not blank, f"PPTX contains blank slides: {blank}")
     flattened = [" ".join(texts) for texts in slides]
     assert_no_meta_text(flattened, source="pptx")
+    pptx_primary_titles = assert_pptx_primary_titles(slides)
     for index, expected in enumerate(EXPECTED_TITLES):
-        assert_true(any(expected == text or expected in text for text in slides[index]), f"PPTX slide {index + 1} missing title {expected}")
+        assert_true(pptx_primary_titles[index] == expected, f"PPTX slide {index + 1} primary title mismatch: {pptx_primary_titles[index]} != {expected}")
 
     titles = html_titles(html_path)
     guide_titles = title_candidates_from_guide(artifact_path(report, "guide_packet"))
@@ -201,6 +231,7 @@ def validate_approved(workspace: Path) -> dict[str, Any]:
         "pptx": pptx.as_posix(),
         "html": html_path.as_posix(),
         "title_source": title_source,
+        "pptx_primary_titles": pptx_primary_titles,
     }
 
 
