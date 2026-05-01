@@ -264,6 +264,18 @@ def html_titles(path: Path) -> list[str]:
     return titles
 
 
+def validate_html_wrap_policy(case_id: str, html_text: str) -> dict[str, str]:
+    assert_true(
+        not re.search(r"overflow-wrap\s*:\s*anywhere", html_text, flags=re.IGNORECASE),
+        f"{case_id} HTML uses overflow-wrap:anywhere; use Korean-safe wrapping CSS instead",
+    )
+    return {"case_id": case_id, "status": "pass", "policy": "no_overflow_wrap_anywhere"}
+
+
+def validate_html_file_wrap_policy(case_id: str, path: Path) -> dict[str, str]:
+    return validate_html_wrap_policy(case_id, path.read_text(encoding="utf-8", errors="ignore"))
+
+
 def validate_html_title_policy(case_id: str, titles: list[str], primary_titles: list[str], *, repo_mode: str) -> str:
     placeholder_titles = [
         title
@@ -295,10 +307,19 @@ def expect_public_html_policy_failure(case_id: str, titles: list[str], primary_t
     raise AssertionError(f"{case_id} negative HTML parity test unexpectedly passed")
 
 
+def expect_html_wrap_policy_failure(case_id: str, html_text: str) -> dict[str, str]:
+    try:
+        validate_html_wrap_policy(case_id, html_text)
+    except AssertionError as exc:
+        return {"case_id": case_id, "status": "pass", "failure": str(exc)}
+    raise AssertionError(f"{case_id} negative HTML wrapping test unexpectedly passed")
+
+
 def validate_public_html_policy_negative_tests() -> list[dict[str, str]]:
     return [
         expect_public_html_policy_failure("negative_title_count_mismatch", ["Only One"], ["One", "Two"]),
         expect_public_html_policy_failure("negative_placeholder_h2", ["Visual area", "Two"], ["One", "Two"]),
+        expect_html_wrap_policy_failure("negative_overflow_wrap_anywhere", "<style>.slot{overflow-wrap:anywhere}</style>"),
     ]
 
 
@@ -433,6 +454,7 @@ def validate_case(case: dict[str, Any], output_root: Path, *, repo_mode: str) ->
 
     titles = html_titles(html_path)
     html_mode = validate_html_title_policy(case["case_id"], titles, primary_titles, repo_mode=repo_mode)
+    html_wrap_policy = validate_html_file_wrap_policy(case["case_id"], html_path)
     typography_diagnostics = validate_typography_diagnostics(report, project_dir, repo_mode=repo_mode)
     payload = {
         "case_id": case["case_id"],
@@ -442,6 +464,7 @@ def validate_case(case: dict[str, Any], output_root: Path, *, repo_mode: str) ->
         "primary_titles": primary_titles,
         "text_density": densities,
         "html_title_mode": html_mode,
+        "html_wrap_policy": html_wrap_policy,
         "typography_diagnostics": typography_diagnostics,
     }
     if warning is not None:

@@ -141,6 +141,35 @@ def validate_helper_cases() -> dict[str, Any]:
     return {"status": "pass", "items": 4, "summary": summary}
 
 
+def expect_diagnostic_shape_failure(name: str, item: dict[str, Any], expected: str) -> dict[str, str]:
+    try:
+        assert_diagnostic_shape(item, source=f"negative:{name}")
+    except AssertionError as exc:
+        message = str(exc)
+        assert_true(expected in message, f"negative:{name} failed for unexpected reason: {message}")
+        return {"case_id": name, "status": "pass", "failure": message}
+    raise AssertionError(f"negative:{name} unexpectedly passed")
+
+
+def validate_negative_contract_cases() -> list[dict[str, str]]:
+    baseline = diagnose_text_box(
+        text="한국어 진단 필드 검증",
+        role="body",
+        locale="ko-KR",
+        font_size=12.5,
+        box_width=2.0,
+        box_height=0.5,
+    )
+    missing_render_font = dict(baseline)
+    missing_render_font.pop("render_font_size", None)
+    bad_render_font = dict(baseline)
+    bad_render_font["render_font_size"] = bad_render_font["max_pt"] + 10
+    return [
+        expect_diagnostic_shape_failure("missing_render_font_size", missing_render_font, "missing typography diagnostic fields"),
+        expect_diagnostic_shape_failure("render_font_outside_bounds", bad_render_font, "render font outside bounds"),
+    ]
+
+
 def validate_final_qa(path: Path) -> dict[str, Any]:
     payload = load_json(path)
     diagnostics = payload.get("typography_diagnostics")
@@ -199,6 +228,7 @@ def main(argv: list[str] | None = None) -> int:
 
     result = {
         "helper_cases": validate_helper_cases(),
+        "negative_contract_cases": validate_negative_contract_cases(),
         "report_roots": [
             {"root": str(Path(root).resolve()), **validate_report_tree(Path(root).resolve())}
             for root in args.report_root
