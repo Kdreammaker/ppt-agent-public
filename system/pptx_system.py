@@ -15,6 +15,8 @@ from pptx.enum.text import MSO_ANCHOR, MSO_AUTO_SIZE, PP_ALIGN
 from pptx.opc.constants import RELATIONSHIP_TYPE as RT
 from pptx.util import Inches, Pt
 
+from system.typography_diagnostics import safe_wrap_text
+
 
 EMU_PER_INCH = 914400
 DEFAULT_PROTECTED_TOKENS = [
@@ -214,27 +216,12 @@ def wrap_text_for_layout(
     if max_chars_per_line is None or max_chars_per_line <= 0:
         return protected
 
-    wrapped_paragraphs: list[str] = []
-    for paragraph in protected.splitlines():
-        words = paragraph.split(" ")
-        if len(words) <= 1:
-            wrapped_paragraphs.append(paragraph)
-            continue
-
-        lines: list[str] = []
-        current = ""
-        for word in words:
-            trial = word if not current else f"{current} {word}"
-            visible_len = len(trial.replace("\u00a0", " "))
-            if current and visible_len > max_chars_per_line:
-                lines.append(current)
-                current = word
-            else:
-                current = trial
-        if current:
-            lines.append(current)
-        wrapped_paragraphs.append("\n".join(lines))
-    return "\n".join(wrapped_paragraphs)
+    wrapped = safe_wrap_text(
+        protected,
+        font_size_pt=12.0,
+        max_chars_per_line=max_chars_per_line,
+    )
+    return str(wrapped["text"])
 
 
 def set_text(
@@ -312,7 +299,9 @@ def set_text(
         if is_placeholder:
             if template_run_style.get("name") is not None:
                 run.font.name = template_run_style["name"]
-            if template_run_style.get("size") is not None:
+            if fit_strategy in {"shrink", "manual_wrap"}:
+                run.font.size = Pt(font_size)
+            elif template_run_style.get("size") is not None:
                 run.font.size = template_run_style["size"]
             if template_run_style.get("bold") is not None:
                 run.font.bold = template_run_style["bold"]

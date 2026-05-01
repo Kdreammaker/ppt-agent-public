@@ -455,7 +455,9 @@ def build_html(spec_path: Path, output_path: Path | None = None) -> tuple[Path, 
       color: var(--dark);
       font-size: clamp(14px, 1.4vw, 18px);
       line-height: 1.38;
-      overflow-wrap: anywhere;
+      line-break: strict;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }}
     .media-panel {{
       min-width: 0;

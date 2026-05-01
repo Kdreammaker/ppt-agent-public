@@ -20,6 +20,7 @@ from system.pptx_system import (
     resolve_color,
     set_text,
 )
+from system.typography_diagnostics import fit_text_for_box
 from system.text_summarizer import llm_summary_enabled, summarize_to_budget
 
 ALIGNMENTS = {
@@ -141,6 +142,19 @@ def coerce_text_to_slot_budget(
         "budget": budget,
         "original_chars": len(text),
         "original_units": original_units,
+        "compression_request": {
+            "status": "requested",
+            "reason": "slot_budget_exceeded",
+            "slot_id": slot_def.get("slot"),
+            "role": slot_def.get("font_role") or slot_def.get("slot") or "body",
+            "locale": "und",
+            "current_units": original_units,
+            "target_units": budget,
+            "current_lines": None,
+            "target_lines": slot_def.get("max_lines"),
+            "max_lines": slot_def.get("max_lines"),
+            "priority": "high" if original_units > budget * 1.5 else "medium",
+        },
         "truncated_chars": len(final_text),
         "summary_units": text_budget_units(final_text),
         "language_weight": "cjk_weighted" if original_units > len(text) else "default",
@@ -249,13 +263,32 @@ def apply_text_slot(
     fit_strategy = slot_fit_strategy(slot_def, override)
     max_chars_per_line = override.get("max_chars_per_line") or slot_def.get("max_chars_per_line")
     protected_tokens = slot_def.get("protect_tokens") or DEFAULT_PROTECTED_TOKENS
+    bounds = slot_def.get("bounds")
+    if bounds is None and shape is not None:
+        bounds = {
+            "width": shape.width / 914400,
+            "height": shape.height / 914400,
+        }
+    fitting = fit_text_for_box(
+        text=value,
+        role=str(font_role),
+        locale=None,
+        font_size=float(font_size),
+        max_lines=override.get("max_lines") or slot_def.get("max_lines"),
+        box_width=bounds.get("width") if bounds else None,
+        box_height=bounds.get("height") if bounds else None,
+        max_chars_per_line=max_chars_per_line,
+        slot_name=str(slot_def.get("slot")),
+    )
+    rendered_value = str(fitting["text"])
+    rendered_font_size = float(fitting["font_size"])
 
     if shape is not None and hasattr(shape, "text_frame"):
         set_text(
             shape,
-            value,
+            rendered_value,
             font_name=theme.font_family,
-            font_size=font_size,
+            font_size=rendered_font_size,
             font_color=font_color,
             bold=bold,
             align=align,

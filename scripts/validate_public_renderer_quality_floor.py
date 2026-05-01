@@ -93,6 +93,16 @@ REQUIRED_TYPOGRAPHY_DIAGNOSTIC_FIELDS = {
     "overflow_risk",
     "korean_broken_token_risk",
     "title_body_ratio_risk",
+    "render_font_size",
+    "fit_status",
+    "target_units",
+    "max_units",
+    "line_capacity_units",
+    "safe_wrapped_text",
+    "safe_wrapped_lines",
+    "safe_wrap_applied",
+    "emergency_break_used",
+    "compression_request",
 }
 TYPOGRAPHY_SUMMARY_FIELDS = (
     "items",
@@ -100,6 +110,9 @@ TYPOGRAPHY_SUMMARY_FIELDS = (
     "korean_broken_token_risk_count",
     "title_body_ratio_risk_count",
     "degraded_output_exception_count",
+    "compression_request_count",
+    "safe_wrap_count",
+    "font_size_adjustment_count",
 )
 REQUIRED_TYPOGRAPHY_SUMMARY_FIELDS = set(TYPOGRAPHY_SUMMARY_FIELDS)
 
@@ -295,6 +308,12 @@ def assert_typography_diagnostic_item(item: dict[str, Any], *, source: str) -> N
     assert_true(item["min_pt"] <= item["recommended_font_size"] <= item["max_pt"], f"{source} recommended font size outside bounds")
     if item["font_size"] < item["min_pt"]:
         assert_true(item.get("degraded_output_exception") is True, f"{source} below-min font should be explicit degraded-output exception")
+    assert_true(item["min_pt"] <= item["render_font_size"] <= item["max_pt"], f"{source} render font size outside bounds")
+    request = item.get("compression_request")
+    if request is not None:
+        assert_true(isinstance(request, dict), f"{source} compression_request must be an object")
+        for key in ("slot_id", "role", "locale", "current_units", "target_units", "target_lines", "max_lines", "priority"):
+            assert_true(key in request, f"{source} compression_request missing {key}")
 
 
 def assert_typography_summary(summary: dict[str, Any], *, source: str) -> None:

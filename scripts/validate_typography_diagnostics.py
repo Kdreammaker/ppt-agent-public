@@ -29,6 +29,16 @@ REQUIRED_DIAGNOSTIC_FIELDS = {
     "overflow_risk",
     "korean_broken_token_risk",
     "title_body_ratio_risk",
+    "render_font_size",
+    "fit_status",
+    "target_units",
+    "max_units",
+    "line_capacity_units",
+    "safe_wrapped_text",
+    "safe_wrapped_lines",
+    "safe_wrap_applied",
+    "emergency_break_used",
+    "compression_request",
 }
 SUMMARY_FIELDS = (
     "items",
@@ -36,6 +46,9 @@ SUMMARY_FIELDS = (
     "korean_broken_token_risk_count",
     "title_body_ratio_risk_count",
     "degraded_output_exception_count",
+    "compression_request_count",
+    "safe_wrap_count",
+    "font_size_adjustment_count",
 )
 REQUIRED_SUMMARY_FIELDS = set(SUMMARY_FIELDS)
 
@@ -57,6 +70,12 @@ def assert_diagnostic_shape(item: dict[str, Any], *, source: str) -> None:
     assert_true(item["min_pt"] <= item["recommended_font_size"] <= item["max_pt"], f"{source} recommended font outside bounds")
     if item["font_size"] < item["min_pt"]:
         assert_true(item["degraded_output_exception"] is True, f"{source} below-min font was not flagged as degraded")
+    assert_true(item["min_pt"] <= item["render_font_size"] <= item["max_pt"], f"{source} render font outside bounds")
+    request = item.get("compression_request")
+    if request is not None:
+        assert_true(isinstance(request, dict), f"{source} compression_request must be an object")
+        for key in ("slot_id", "role", "locale", "current_units", "target_units", "target_lines", "max_lines", "priority"):
+            assert_true(key in request, f"{source} compression_request missing {key}")
 
 
 def assert_summary_shape(summary: dict[str, Any], *, source: str) -> None:
@@ -91,14 +110,35 @@ def validate_helper_cases() -> dict[str, Any]:
         box_width=0.42,
         box_height=0.4,
     )
-    annotate_title_body_ratio([title, body])
-    for name, item in {"title": title, "body": body}.items():
+    wrapped = diagnose_text_box(
+        text="두릅 무침 제철 향과 식감을 한 줄씩 안전하게 나누는 설명",
+        role="body",
+        locale="ko-KR",
+        font_size=12.5,
+        box_width=1.2,
+        box_height=0.65,
+        max_lines=2,
+    )
+    compressed = diagnose_text_box(
+        text="장어의 제철 이유와 맛과 추천 조리법을 아주 길게 설명하여 슬롯 예산을 넘는 본문입니다",
+        role="body",
+        locale="ko-KR",
+        font_size=12.5,
+        box_width=0.9,
+        box_height=0.38,
+        max_lines=1,
+        slot_name="body_fixture",
+    )
+    annotate_title_body_ratio([title, body, wrapped, compressed])
+    for name, item in {"title": title, "body": body, "wrapped": wrapped, "compressed": compressed}.items():
         assert_diagnostic_shape(item, source=f"helper:{name}")
     assert_true(body["degraded_output_exception"], "helper body below min_pt should be flagged")
     assert_true(body["korean_broken_token_risk"], "helper Korean broken-token fixture should be flagged")
-    summary = diagnostics_summary([title, body])
+    assert_true(wrapped["safe_wrap_applied"], "helper Korean wrapping fixture should emit safe line breaks")
+    assert_true(compressed["compression_request"] is not None, "helper overflow fixture should emit compression handoff metadata")
+    summary = diagnostics_summary([title, body, wrapped, compressed])
     assert_summary_shape(summary, source="helper:summary")
-    return {"status": "pass", "items": 2, "summary": summary}
+    return {"status": "pass", "items": 4, "summary": summary}
 
 
 def validate_final_qa(path: Path) -> dict[str, Any]:

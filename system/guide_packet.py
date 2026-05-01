@@ -22,7 +22,7 @@ from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Inches, Pt
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from system.typography_diagnostics import annotate_title_body_ratio, diagnose_text_box, diagnostics_summary
+from system.typography_diagnostics import annotate_title_body_ratio, diagnose_text_box, diagnostics_summary, fit_text_for_box
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 GUIDE_SCHEMA_PATH = BASE_DIR / "config" / "ppt-maker-design-guide-packet.schema.json"
@@ -1406,6 +1406,23 @@ def add_text(
     qa_text_role: str = "content",
 ) -> None:
     font_name, size, bold = ctx.font(role)
+    typography_role = ctx.typography.get(role)
+    fitting = fit_text_for_box(
+        text=text,
+        role=role,
+        locale=ctx.packet.guide_identity.language,
+        font_size=size,
+        min_pt=typography_role.min_pt if typography_role else None,
+        default_pt=typography_role.default_pt if typography_role else None,
+        max_pt=typography_role.max_pt if typography_role else None,
+        target_lines=typography_role.line_limit if typography_role else None,
+        max_lines=typography_role.line_limit if typography_role else None,
+        box_width=w,
+        box_height=h,
+        slot_name=role,
+    )
+    rendered_text = str(fitting["text"])
+    rendered_size = float(fitting["font_size"])
     box = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
     tf = box.text_frame
     tf.clear()
@@ -1415,32 +1432,19 @@ def add_text(
     tf.margin_top = Pt(2)
     tf.margin_bottom = Pt(2)
     tf.vertical_anchor = vertical
-    lines = str(text or "").split("\n") or [""]
+    lines = rendered_text.split("\n") or [""]
     for idx, line in enumerate(lines):
         paragraph = tf.paragraphs[0] if idx == 0 else tf.add_paragraph()
         paragraph.alignment = align if align is not None else PP_ALIGN.LEFT
         run = paragraph.add_run()
         run.text = line
         run.font.name = font_name
-        run.font.size = Pt(size)
+        run.font.size = Pt(rendered_size)
         run.font.bold = bold
         run.font.color.rgb = ctx.color(color_role)
     if ctx.current_slide_no is not None:
         actual_bounds = {"x": x, "y": y, "w": w, "h": h}
-        typography_role = ctx.typography.get(role)
-        typography_diagnostics = diagnose_text_box(
-            text=text,
-            role=role,
-            locale=ctx.packet.guide_identity.language,
-            font_size=size,
-            min_pt=typography_role.min_pt if typography_role else None,
-            default_pt=typography_role.default_pt if typography_role else None,
-            max_pt=typography_role.max_pt if typography_role else None,
-            target_lines=typography_role.line_limit if typography_role else None,
-            max_lines=typography_role.line_limit if typography_role else None,
-            box_width=w,
-            box_height=h,
-        )
+        typography_diagnostics = fitting["diagnostic"]
         typography_diagnostics.update(
             {
                 "slide_number": ctx.current_slide_no,
@@ -1454,7 +1458,7 @@ def add_text(
                 "typography_role": role,
                 "text_excerpt": safe_string(str(text or "")[:80]),
                 "bounds_in": actual_bounds,
-                "estimated_text_bounds_in": estimated_text_bounds(str(text or ""), x, y, w, h, size),
+                "estimated_text_bounds_in": estimated_text_bounds(rendered_text, x, y, w, h, rendered_size),
                 "typography_diagnostics": typography_diagnostics,
             }
         )
@@ -2909,7 +2913,7 @@ def generate_html_guide(packet: GuidePacket, project_dir: Path, mode: str, reque
     )
     path.write_text(
         "<!doctype html><html><head><meta charset='utf-8'><title>Guide</title>"
-        "<style>body{font-family:Arial,sans-serif;margin:32px;background:#f7f8fc;color:#101828}"
+        "<style>body{font-family:Arial,sans-serif;margin:32px;background:#f7f8fc;color:#101828;line-break:strict;word-break:keep-all;overflow-wrap:break-word}"
         "section{border:1px solid #d0d5dd;padding:16px;margin:12px 0;background:white}"
         "span{display:inline-block;width:16px;height:16px;margin-right:8px;vertical-align:middle}</style></head><body>"
         f"<h1>{html.escape(packet.guide_identity.project_name)}</h1><ul>{palette}</ul>{slides}</body></html>",

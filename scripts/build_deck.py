@@ -34,7 +34,7 @@ from system.pptx_system import (
 )
 from system.template_engine import render_template_slide, slot_text_budget
 from system.template_text_dna import load_template_text_dna_cleanup, slide_spec_with_text_dna_cleanup
-from system.typography_diagnostics import annotate_title_body_ratio, diagnose_text_box, diagnostics_summary
+from system.typography_diagnostics import annotate_title_body_ratio, diagnose_text_box, diagnostics_summary, fit_text_for_box
 
 WORKDIR = BASE_DIR
 REPORTS_DIR = BASE_DIR / "outputs" / "reports"
@@ -216,15 +216,26 @@ def apply_extras(slide, slide_spec: dict[str, Any], theme: ThemeConfig) -> None:
         if font_size is None:
             role = box.get("font_role") or "body"
             font_size = theme.sizes.get(role, theme.sizes["body"])
+        font_role = box.get("font_role") or "body"
+        fitting = fit_text_for_box(
+            text=box["text"],
+            role=str(font_role),
+            locale=None,
+            font_size=float(font_size),
+            box_width=box.get("width"),
+            box_height=box.get("height"),
+            max_chars_per_line=box.get("max_chars_per_line"),
+            slot_name=str(box.get("slot_name") or font_role),
+        )
         add_textbox(
             slide,
             box["left"],
             box["top"],
             box["width"],
             box["height"],
-            box["text"],
+            str(fitting["text"]),
             font_name=theme.font_family,
-            font_size=font_size,
+            font_size=float(fitting["font_size"]),
             font_color=resolve_color(theme, box.get("color"), "primary"),
             bold=box.get("bold", False),
             align=alignments.get(box.get("align")),
