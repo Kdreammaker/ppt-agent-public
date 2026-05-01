@@ -224,10 +224,18 @@ def annotate_title_body_ratio(diagnostics: list[dict[str, Any]], *, threshold: f
 
 
 def diagnostics_summary(diagnostics: list[dict[str, Any]]) -> dict[str, Any]:
+    overflow_risk_count = sum(1 for item in diagnostics if item.get("overflow_risk"))
+    korean_broken_token_risk_count = sum(1 for item in diagnostics if item.get("korean_broken_token_risk"))
+    title_body_ratio_risk_count = sum(1 for item in diagnostics if item.get("title_body_ratio_risk"))
+    degraded_output_exception_count = sum(1 for item in diagnostics if item.get("degraded_output_exception"))
     return {
         "items": len(diagnostics),
-        "overflow_risks": sum(1 for item in diagnostics if item.get("overflow_risk")),
-        "korean_broken_token_risks": sum(1 for item in diagnostics if item.get("korean_broken_token_risk")),
-        "title_body_ratio_risks": sum(1 for item in diagnostics if item.get("title_body_ratio_risk")),
-        "degraded_output_exceptions": sum(1 for item in diagnostics if item.get("degraded_output_exception")),
+        "overflow_risk_count": overflow_risk_count,
+        "korean_broken_token_risk_count": korean_broken_token_risk_count,
+        "title_body_ratio_risk_count": title_body_ratio_risk_count,
+        "degraded_output_exception_count": degraded_output_exception_count,
+        "overflow_risks": overflow_risk_count,
+        "korean_broken_token_risks": korean_broken_token_risk_count,
+        "title_body_ratio_risks": title_body_ratio_risk_count,
+        "degraded_output_exceptions": degraded_output_exception_count,
     }

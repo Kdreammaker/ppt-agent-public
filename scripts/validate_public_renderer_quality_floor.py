@@ -94,6 +94,14 @@ REQUIRED_TYPOGRAPHY_DIAGNOSTIC_FIELDS = {
     "korean_broken_token_risk",
     "title_body_ratio_risk",
 }
+TYPOGRAPHY_SUMMARY_FIELDS = (
+    "items",
+    "overflow_risk_count",
+    "korean_broken_token_risk_count",
+    "title_body_ratio_risk_count",
+    "degraded_output_exception_count",
+)
+REQUIRED_TYPOGRAPHY_SUMMARY_FIELDS = set(TYPOGRAPHY_SUMMARY_FIELDS)
 
 
 def assert_true(condition: bool, message: str) -> None:
@@ -289,6 +297,13 @@ def assert_typography_diagnostic_item(item: dict[str, Any], *, source: str) -> N
         assert_true(item.get("degraded_output_exception") is True, f"{source} below-min font should be explicit degraded-output exception")
 
 
+def assert_typography_summary(summary: dict[str, Any], *, source: str) -> None:
+    missing = sorted(REQUIRED_TYPOGRAPHY_SUMMARY_FIELDS - set(summary))
+    assert_true(not missing, f"{source} missing typography summary fields: {missing}")
+    for key in TYPOGRAPHY_SUMMARY_FIELDS:
+        assert_true(isinstance(summary.get(key), int), f"{source} typography summary field {key} must be an integer")
+
+
 def validate_typography_diagnostics(report: dict[str, Any], project_dir: Path, *, repo_mode: str) -> dict[str, Any]:
     qa_path = project_dir / "final-qa.json"
     if qa_path.exists():
@@ -298,10 +313,13 @@ def validate_typography_diagnostics(report: dict[str, Any], project_dir: Path, *
         assert_true(diagnostics.get("blocking") is False, f"{qa_path} typography diagnostics must be non-blocking")
         items = diagnostics.get("items")
         assert_true(isinstance(items, list) and items, f"{qa_path} typography diagnostics has no items")
+        summary = diagnostics.get("summary")
+        assert_true(isinstance(summary, dict), f"{qa_path} missing typography diagnostics summary")
+        assert_typography_summary(summary, source=f"{qa_path}:summary")
         for index, item in enumerate(items[:5]):
             assert_true(isinstance(item, dict), f"{qa_path} typography diagnostic item is not an object")
             assert_typography_diagnostic_item(item, source=f"{qa_path}:items[{index}]")
-        return {"source": "final_qa", "items": len(items), "status": diagnostics.get("status")}
+        return {"source": "final_qa", "items": len(items), "status": diagnostics.get("status"), "summary": summary}
 
     absolute_paths = report.get("absolute_paths")
     workspace_root = report.get("workspace_root")
@@ -316,6 +334,7 @@ def validate_typography_diagnostics(report: dict[str, Any], project_dir: Path, *
     payload = json.loads(slot_map.read_text(encoding="utf-8"))
     summary = payload.get("summary", {}).get("typography_diagnostics")
     assert_true(isinstance(summary, dict), f"{slot_map} missing typography diagnostics summary")
+    assert_typography_summary(summary, source=f"{slot_map}:summary")
     text_slots = [
         slot
         for slot in payload.get("slots", [])

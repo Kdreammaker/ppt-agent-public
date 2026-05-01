@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-from system.typography_diagnostics import annotate_title_body_ratio, diagnose_text_box
+from system.typography_diagnostics import annotate_title_body_ratio, diagnose_text_box, diagnostics_summary
 
 
 REQUIRED_DIAGNOSTIC_FIELDS = {
@@ -30,6 +30,14 @@ REQUIRED_DIAGNOSTIC_FIELDS = {
     "korean_broken_token_risk",
     "title_body_ratio_risk",
 }
+SUMMARY_FIELDS = (
+    "items",
+    "overflow_risk_count",
+    "korean_broken_token_risk_count",
+    "title_body_ratio_risk_count",
+    "degraded_output_exception_count",
+)
+REQUIRED_SUMMARY_FIELDS = set(SUMMARY_FIELDS)
 
 
 def assert_true(condition: bool, message: str) -> None:
@@ -49,6 +57,21 @@ def assert_diagnostic_shape(item: dict[str, Any], *, source: str) -> None:
     assert_true(item["min_pt"] <= item["recommended_font_size"] <= item["max_pt"], f"{source} recommended font outside bounds")
     if item["font_size"] < item["min_pt"]:
         assert_true(item["degraded_output_exception"] is True, f"{source} below-min font was not flagged as degraded")
+
+
+def assert_summary_shape(summary: dict[str, Any], *, source: str) -> None:
+    missing = sorted(REQUIRED_SUMMARY_FIELDS - set(summary))
+    assert_true(not missing, f"{source} missing typography summary fields: {missing}")
+    for key in SUMMARY_FIELDS:
+        assert_true(isinstance(summary.get(key), int), f"{source} summary field {key} must be an integer")
+
+
+def combine_summaries(summaries: list[dict[str, Any]]) -> dict[str, int]:
+    aggregate = {key: 0 for key in SUMMARY_FIELDS}
+    for summary in summaries:
+        for key in SUMMARY_FIELDS:
+            aggregate[key] += int(summary.get(key, 0))
+    return aggregate
 
 
 def validate_helper_cases() -> dict[str, Any]:
@@ -73,7 +96,9 @@ def validate_helper_cases() -> dict[str, Any]:
         assert_diagnostic_shape(item, source=f"helper:{name}")
     assert_true(body["degraded_output_exception"], "helper body below min_pt should be flagged")
     assert_true(body["korean_broken_token_risk"], "helper Korean broken-token fixture should be flagged")
-    return {"status": "pass", "items": 2}
+    summary = diagnostics_summary([title, body])
+    assert_summary_shape(summary, source="helper:summary")
+    return {"status": "pass", "items": 2, "summary": summary}
 
 
 def validate_final_qa(path: Path) -> dict[str, Any]:
@@ -83,16 +108,20 @@ def validate_final_qa(path: Path) -> dict[str, Any]:
     assert_true(diagnostics.get("blocking") is False, f"{path} typography diagnostics must be non-blocking")
     items = diagnostics.get("items")
     assert_true(isinstance(items, list) and items, f"{path} typography diagnostics has no items")
+    summary = diagnostics.get("summary")
+    assert_true(isinstance(summary, dict), f"{path} missing typography diagnostics summary")
+    assert_summary_shape(summary, source=f"{path}:summary")
     for index, item in enumerate(items[:5]):
         assert_true(isinstance(item, dict), f"{path} diagnostic item {index} is not an object")
         assert_diagnostic_shape(item, source=f"{path}:items[{index}]")
-    return {"path": path.as_posix(), "items": len(items), "status": diagnostics.get("status")}
+    return {"path": path.as_posix(), "items": len(items), "status": diagnostics.get("status"), "summary": summary}
 
 
 def validate_deck_slot_map(path: Path) -> dict[str, Any]:
     payload = load_json(path)
     summary = payload.get("summary", {}).get("typography_diagnostics")
     assert_true(isinstance(summary, dict), f"{path} missing typography diagnostics summary")
+    assert_summary_shape(summary, source=f"{path}:summary")
     text_slots = [
         slot
         for slot in payload.get("slots", [])
@@ -109,11 +138,17 @@ def validate_deck_slot_map(path: Path) -> dict[str, Any]:
 
 
 def validate_report_tree(root: Path) -> dict[str, Any]:
-    final_qa_reports = sorted(root.rglob("final-qa.json")) if root.exists() else []
-    slot_maps = sorted(root.rglob("deck_slot_map.json")) if root.exists() else []
+    assert_true(root.exists(), f"report root does not exist: {root}")
+    final_qa_paths = sorted(root.rglob("final-qa.json"))
+    slot_map_paths = sorted(root.rglob("deck_slot_map.json"))
+    assert_true(final_qa_paths or slot_map_paths, f"{root} has no final-qa.json or deck_slot_map.json reports")
+    final_qa_reports = [validate_final_qa(path) for path in final_qa_paths]
+    slot_maps = [validate_deck_slot_map(path) for path in slot_map_paths]
+    summaries = [item["summary"] for item in final_qa_reports] + [item["summary"] for item in slot_maps]
     return {
-        "final_qa_reports": [validate_final_qa(path) for path in final_qa_reports],
-        "deck_slot_maps": [validate_deck_slot_map(path) for path in slot_maps],
+        "final_qa_reports": final_qa_reports,
+        "deck_slot_maps": slot_maps,
+        "aggregate_summary": combine_summaries(summaries),
     }
 
 
