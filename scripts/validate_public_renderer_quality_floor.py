@@ -13,6 +13,10 @@ from typing import Any
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
+from system.typography_diagnostics import diagnose_text_box
 
 CASES = [
     {
@@ -115,6 +119,7 @@ TYPOGRAPHY_SUMMARY_FIELDS = (
     "font_size_adjustment_count",
 )
 REQUIRED_TYPOGRAPHY_SUMMARY_FIELDS = set(TYPOGRAPHY_SUMMARY_FIELDS)
+BLOCKING_KOREAN_BROKEN_TOKEN_REASONS = {"explicit_line_break_splits_hangul_sequence"}
 
 
 def assert_true(condition: bool, message: str) -> None:
@@ -323,6 +328,23 @@ def validate_public_html_policy_negative_tests() -> list[dict[str, str]]:
     ]
 
 
+def blocking_korean_broken_token_reasons(item: dict[str, Any]) -> list[str]:
+    if not item.get("korean_broken_token_risk"):
+        return []
+    reasons = item.get("korean_broken_token_reasons") or []
+    if not isinstance(reasons, list):
+        return []
+    return sorted(str(reason) for reason in reasons if reason in BLOCKING_KOREAN_BROKEN_TOKEN_REASONS)
+
+
+def assert_no_blocking_korean_broken_token(item: dict[str, Any], *, source: str) -> None:
+    blocking_reasons = blocking_korean_broken_token_reasons(item)
+    assert_true(
+        not blocking_reasons,
+        f"{source} has blocking Korean broken-token reasons: {blocking_reasons}",
+    )
+
+
 def assert_typography_diagnostic_item(item: dict[str, Any], *, source: str) -> None:
     missing = sorted(REQUIRED_TYPOGRAPHY_DIAGNOSTIC_FIELDS - set(item))
     assert_true(not missing, f"{source} missing typography diagnostic fields: {missing}")
@@ -335,6 +357,66 @@ def assert_typography_diagnostic_item(item: dict[str, Any], *, source: str) -> N
         assert_true(isinstance(request, dict), f"{source} compression_request must be an object")
         for key in ("slot_id", "role", "locale", "current_units", "target_units", "target_lines", "max_lines", "priority"):
             assert_true(key in request, f"{source} compression_request missing {key}")
+    assert_no_blocking_korean_broken_token(item, source=source)
+
+
+def expect_typography_policy_failure(case_id: str, item: dict[str, Any], expected: str) -> dict[str, str]:
+    try:
+        assert_typography_diagnostic_item(item, source=case_id)
+    except AssertionError as exc:
+        message = str(exc)
+        assert_true(expected in message, f"{case_id} failed for unexpected reason: {message}")
+        return {"case_id": case_id, "status": "pass", "failure": message}
+    raise AssertionError(f"{case_id} typography policy negative test unexpectedly passed")
+
+
+def validate_typography_policy_tests() -> list[dict[str, Any]]:
+    explicit_split = diagnose_text_box(
+        text="고객데이\n터분석 지표를 검토합니다",
+        role="body",
+        locale="ko-KR",
+        font_size=12.5,
+        box_width=1.6,
+        box_height=0.7,
+        max_lines=3,
+    )
+    safe_wrap = diagnose_text_box(
+        text="고객 데이터 분석과 운영 개선을 어절 단위로 안전하게 나누는 설명입니다",
+        role="body",
+        locale="ko-KR",
+        font_size=12.5,
+        box_width=1.2,
+        box_height=1.2,
+        max_lines=5,
+    )
+    long_token = diagnose_text_box(
+        text="초개인화고객세분화자동화분석플랫폼",
+        role="body",
+        locale="ko-KR",
+        font_size=12.5,
+        box_width=0.7,
+        box_height=0.7,
+        max_lines=3,
+    )
+    explicit_failure = expect_typography_policy_failure(
+        "negative_explicit_hangul_split",
+        explicit_split,
+        "blocking Korean broken-token reasons",
+    )
+    assert_typography_diagnostic_item(safe_wrap, source="positive_safe_korean_wrap")
+    assert_true(not safe_wrap["korean_broken_token_risk"], "safe Korean wrapping control should not be a risk")
+    assert_typography_diagnostic_item(long_token, source="positive_long_korean_token_warning")
+    assert_true(long_token["korean_broken_token_risk"], "long Korean token should remain a warning risk")
+    return [
+        explicit_failure,
+        {"case_id": "positive_safe_korean_wrap", "status": "pass", "risk": safe_wrap["korean_broken_token_risk"]},
+        {
+            "case_id": "positive_long_korean_token_warning",
+            "status": "pass",
+            "risk": long_token["korean_broken_token_risk"],
+            "reasons": long_token["korean_broken_token_reasons"],
+        },
+    ]
 
 
 def assert_typography_summary(summary: dict[str, Any], *, source: str) -> None:
@@ -481,6 +563,7 @@ def main(argv: list[str] | None = None) -> int:
     output_root.mkdir(parents=True, exist_ok=True)
     cases = [validate_case(case, output_root / str(case["case_id"]), repo_mode=args.repo_mode) for case in CASES]
     negative_tests = validate_public_html_policy_negative_tests()
+    typography_policy_tests = validate_typography_policy_tests()
     print(
         json.dumps(
             {
@@ -489,6 +572,7 @@ def main(argv: list[str] | None = None) -> int:
                     "repo_mode": args.repo_mode,
                     "cases": cases,
                     "public_html_policy_negative_tests": negative_tests,
+                    "typography_policy_tests": typography_policy_tests,
                 },
             },
             indent=2,

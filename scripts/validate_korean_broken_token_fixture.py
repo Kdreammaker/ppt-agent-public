@@ -74,7 +74,7 @@ def build_diagnostic(case: dict[str, Any], *, artifact_side: str) -> dict[str, A
             "fixture_artifact_side": artifact_side,
         }
     )
-    assert_diagnostic_shape(diagnostic, source=f"{artifact_side}:{case['case_id']}")
+    assert_diagnostic_shape(diagnostic, source=f"{artifact_side}:{case['case_id']}", enforce_blocking=False)
     assert_true(
         diagnostic["korean_broken_token_risk"] is case["expected_risk"],
         f"{artifact_side}:{case['case_id']} expected korean_broken_token_risk={case['expected_risk']}",
@@ -90,8 +90,8 @@ def build_diagnostic(case: dict[str, Any], *, artifact_side: str) -> dict[str, A
     return diagnostic
 
 
-def fixture_diagnostics(*, artifact_side: str) -> list[dict[str, Any]]:
-    return [build_diagnostic(case, artifact_side=artifact_side) for case in FIXTURE_CASES]
+def fixture_diagnostics(cases: tuple[dict[str, Any], ...], *, artifact_side: str) -> list[dict[str, Any]]:
+    return [build_diagnostic(case, artifact_side=artifact_side) for case in cases]
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -99,15 +99,16 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def write_fixture_reports(output_root: Path) -> dict[str, str]:
-    pptx_items = fixture_diagnostics(artifact_side="pptx")
-    html_items = fixture_diagnostics(artifact_side="html_report")
+def write_fixture_reports(output_root: Path, cases: tuple[dict[str, Any], ...]) -> dict[str, str]:
+    pptx_items = fixture_diagnostics(cases, artifact_side="pptx")
+    html_items = fixture_diagnostics(cases, artifact_side="html_report")
     pptx_summary = diagnostics_summary(pptx_items)
     html_summary = diagnostics_summary(html_items)
     assert_summary_shape(pptx_summary, source="pptx:summary")
     assert_summary_shape(html_summary, source="html_report:summary")
-    assert_true(pptx_summary["korean_broken_token_risk_count"] == 2, "pptx fixture should report two broken-token risks")
-    assert_true(html_summary["korean_broken_token_risk_count"] == 2, "HTML/report fixture should report two broken-token risks")
+    expected_risks = sum(1 for case in cases if case["expected_risk"])
+    assert_true(pptx_summary["korean_broken_token_risk_count"] == expected_risks, "unexpected PPTX fixture risk count")
+    assert_true(html_summary["korean_broken_token_risk_count"] == expected_risks, "unexpected HTML/report fixture risk count")
 
     final_qa_path = output_root / "pptx_side" / "workspace" / "outputs" / "projects" / "korean-broken-token-fixture" / "final-qa.json"
     deck_slot_map_path = output_root / "html_report_side" / "workspace" / "outputs" / "reports" / "deck_slot_map.json"
@@ -144,25 +145,49 @@ def write_fixture_reports(output_root: Path) -> dict[str, str]:
     return {"final_qa": final_qa_path.as_posix(), "deck_slot_map": deck_slot_map_path.as_posix()}
 
 
+def expect_report_tree_failure(case_id: str, root: Path, expected: str) -> dict[str, str]:
+    try:
+        validate_report_tree(root)
+    except AssertionError as exc:
+        message = str(exc)
+        assert_true(expected in message, f"{case_id} failed for unexpected reason: {message}")
+        return {"case_id": case_id, "status": "pass", "failure": message}
+    raise AssertionError(f"{case_id} report validation unexpectedly passed")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generate and validate Korean broken-token typography fixture evidence.")
     parser.add_argument("--output-root", required=True, help="Evidence root for generated fixture reports.")
     args = parser.parse_args(argv)
 
     output_root = Path(args.output_root).resolve()
-    written = write_fixture_reports(output_root)
-    report_validation = validate_report_tree(output_root)
+    explicit_root = output_root / "explicit_split_should_fail"
+    warning_root = output_root / "safe_and_long_warning_should_pass"
+    explicit_case = tuple(case for case in FIXTURE_CASES if case["case_id"] == "bad_manual_hangul_break")
+    warning_cases = tuple(case for case in FIXTURE_CASES if case["case_id"] != "bad_manual_hangul_break")
+    written_explicit = write_fixture_reports(explicit_root, explicit_case)
+    explicit_failure = expect_report_tree_failure(
+        "explicit_hangul_split_blocks",
+        explicit_root,
+        "blocking Korean broken-token reasons",
+    )
+    written_warning = write_fixture_reports(warning_root, warning_cases)
+    report_validation = validate_report_tree(warning_root)
     aggregate = report_validation["aggregate_summary"]
     assert_true(
-        aggregate["korean_broken_token_risk_count"] == 4,
-        f"fixture aggregate should report four duplicated artifact-side risks, got {aggregate['korean_broken_token_risk_count']}",
+        aggregate["korean_broken_token_risk_count"] == 2,
+        f"warning fixture aggregate should report two duplicated long-token risks, got {aggregate['korean_broken_token_risk_count']}",
     )
     result = {
         "status": "pass",
         "output_root": str(output_root),
-        "written": written,
-        "decision": "evidence_only_policy_still_deferred",
-        "report_validation": report_validation,
+        "written": {
+            "explicit_split_should_fail": written_explicit,
+            "safe_and_long_warning_should_pass": written_warning,
+        },
+        "decision": "explicit_hangul_split_blocks_long_token_warning_only",
+        "explicit_split_negative_test": explicit_failure,
+        "warning_report_validation": report_validation,
     }
     print(json.dumps(result, indent=2, ensure_ascii=False))
     return 0

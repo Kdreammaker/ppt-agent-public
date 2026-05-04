@@ -51,6 +51,7 @@ SUMMARY_FIELDS = (
     "font_size_adjustment_count",
 )
 REQUIRED_SUMMARY_FIELDS = set(SUMMARY_FIELDS)
+BLOCKING_KOREAN_BROKEN_TOKEN_REASONS = {"explicit_line_break_splits_hangul_sequence"}
 
 
 def assert_true(condition: bool, message: str) -> None:
@@ -64,7 +65,24 @@ def load_json(path: Path) -> dict[str, Any]:
     return data
 
 
-def assert_diagnostic_shape(item: dict[str, Any], *, source: str) -> None:
+def blocking_korean_broken_token_reasons(item: dict[str, Any]) -> list[str]:
+    if not item.get("korean_broken_token_risk"):
+        return []
+    reasons = item.get("korean_broken_token_reasons") or []
+    if not isinstance(reasons, list):
+        return []
+    return sorted(str(reason) for reason in reasons if reason in BLOCKING_KOREAN_BROKEN_TOKEN_REASONS)
+
+
+def assert_no_blocking_korean_broken_token(item: dict[str, Any], *, source: str) -> None:
+    blocking_reasons = blocking_korean_broken_token_reasons(item)
+    assert_true(
+        not blocking_reasons,
+        f"{source} has blocking Korean broken-token reasons: {blocking_reasons}",
+    )
+
+
+def assert_diagnostic_shape(item: dict[str, Any], *, source: str, enforce_blocking: bool = True) -> None:
     missing = sorted(REQUIRED_DIAGNOSTIC_FIELDS - set(item))
     assert_true(not missing, f"{source} missing typography diagnostic fields: {missing}")
     assert_true(item["min_pt"] <= item["recommended_font_size"] <= item["max_pt"], f"{source} recommended font outside bounds")
@@ -76,6 +94,8 @@ def assert_diagnostic_shape(item: dict[str, Any], *, source: str) -> None:
         assert_true(isinstance(request, dict), f"{source} compression_request must be an object")
         for key in ("slot_id", "role", "locale", "current_units", "target_units", "target_lines", "max_lines", "priority"):
             assert_true(key in request, f"{source} compression_request missing {key}")
+    if enforce_blocking:
+        assert_no_blocking_korean_broken_token(item, source=source)
 
 
 def assert_summary_shape(summary: dict[str, Any], *, source: str) -> None:
@@ -131,7 +151,7 @@ def validate_helper_cases() -> dict[str, Any]:
     )
     annotate_title_body_ratio([title, body, wrapped, compressed])
     for name, item in {"title": title, "body": body, "wrapped": wrapped, "compressed": compressed}.items():
-        assert_diagnostic_shape(item, source=f"helper:{name}")
+        assert_diagnostic_shape(item, source=f"helper:{name}", enforce_blocking=name != "body")
     assert_true(body["degraded_output_exception"], "helper body below min_pt should be flagged")
     assert_true(body["korean_broken_token_risk"], "helper Korean broken-token fixture should be flagged")
     assert_true(wrapped["safe_wrap_applied"], "helper Korean wrapping fixture should emit safe line breaks")
@@ -167,6 +187,60 @@ def validate_negative_contract_cases() -> list[dict[str, str]]:
     return [
         expect_diagnostic_shape_failure("missing_render_font_size", missing_render_font, "missing typography diagnostic fields"),
         expect_diagnostic_shape_failure("render_font_outside_bounds", bad_render_font, "render font outside bounds"),
+    ]
+
+
+def validate_korean_threshold_cases() -> list[dict[str, Any]]:
+    explicit_split = diagnose_text_box(
+        text="고객데이\n터분석 지표를 검토합니다",
+        role="body",
+        locale="ko-KR",
+        font_size=12.5,
+        box_width=1.6,
+        box_height=0.7,
+        max_lines=3,
+    )
+    safe_wrap = diagnose_text_box(
+        text="고객 데이터 분석과 운영 개선을 어절 단위로 안전하게 나누는 설명입니다",
+        role="body",
+        locale="ko-KR",
+        font_size=12.5,
+        box_width=1.2,
+        box_height=1.2,
+        max_lines=5,
+    )
+    long_token = diagnose_text_box(
+        text="초개인화고객세분화자동화분석플랫폼",
+        role="body",
+        locale="ko-KR",
+        font_size=12.5,
+        box_width=0.7,
+        box_height=0.7,
+        max_lines=3,
+    )
+    explicit_failure = expect_diagnostic_shape_failure(
+        "blocking_explicit_hangul_split",
+        explicit_split,
+        "blocking Korean broken-token reasons",
+    )
+    assert_diagnostic_shape(safe_wrap, source="korean_threshold:safe_wrap")
+    assert_true(not safe_wrap["korean_broken_token_risk"], "safe Korean wrapping control should not be a risk")
+    assert_true(safe_wrap["safe_wrap_applied"], "safe Korean wrapping control should apply safe wrapping")
+    assert_diagnostic_shape(long_token, source="korean_threshold:long_token")
+    assert_true(long_token["korean_broken_token_risk"], "long Korean token should still be reported as warning risk")
+    assert_true(
+        "single_korean_token_exceeds_estimated_line_capacity" in long_token.get("korean_broken_token_reasons", []),
+        "long Korean token should keep non-blocking long-token reason",
+    )
+    return [
+        explicit_failure,
+        {"case_id": "safe_eojeol_wrapping_control", "status": "pass", "risk": safe_wrap["korean_broken_token_risk"]},
+        {
+            "case_id": "long_korean_token_warning_only",
+            "status": "pass",
+            "risk": long_token["korean_broken_token_risk"],
+            "reasons": long_token["korean_broken_token_reasons"],
+        },
     ]
 
 
@@ -229,6 +303,7 @@ def main(argv: list[str] | None = None) -> int:
     result = {
         "helper_cases": validate_helper_cases(),
         "negative_contract_cases": validate_negative_contract_cases(),
+        "korean_threshold_cases": validate_korean_threshold_cases(),
         "report_roots": [
             {"root": str(Path(root).resolve()), **validate_report_tree(Path(root).resolve())}
             for root in args.report_root
