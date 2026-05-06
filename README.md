@@ -60,6 +60,13 @@ The summary also explains why one-slide review exists, what uploaded
 knowledge/asset counts mean, that PPTX is the native editable primary output,
 that HTML is a companion, and that chart/table readiness is metadata only. It
 does not change renderer behavior or enable native chart/table rendering.
+When a public-safe B49 asset request summary is available, setup may also show
+asset request counts and user actions with `--b49-asset-request-summary
+"<path-to-b49-asset-request-summary.json>"`. Only public fields are shown:
+request id, slide number, state, asset type, required flag, user action, user
+message, and public-safe reason. Raw asset refs, slot IDs, private paths, Drive
+links, tokens, private prompts, raw payloads, source attachments, and
+unapproved asset records are not exposed.
 
 Entitled private production setup uses the same wrapper after the operator supplies a workspace code. If private repo access is available through GitHub auth, setup can use the default private runtime repo/ref and install it into the workspace:
 
@@ -92,6 +99,13 @@ The same metadata-only output intent can be recorded on make reports:
 
 ```powershell
 python scripts\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" --workspace "<workspace>" --mode assistant --output-intent design_visual
+```
+
+If a B49 asset request summary exists for the project, the make report can also
+surface the same public-safe asset actions:
+
+```powershell
+python scripts\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" --workspace "<workspace>" --mode assistant --output-intent design_visual --b49-asset-request-summary "<path-to-b49-asset-request-summary.json>"
 ```
 
 Assistant Mode is a planning checkpoint by default. The command above writes

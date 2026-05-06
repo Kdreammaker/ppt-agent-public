@@ -190,6 +190,7 @@ def command_setup(args: argparse.Namespace) -> int:
         errors.append("workspace install failed")
     else:
         setup_summary_path = workspace / "outputs" / "reports" / "public_setup_summary.json"
+        b49_asset_request_summary_path = resolve_path(args.b49_asset_request_summary) if args.b49_asset_request_summary else None
         steps.append(
             run_step(
                 "public_setup_summary",
@@ -202,6 +203,11 @@ def command_setup(args: argparse.Namespace) -> int:
                     setup_summary_path.as_posix(),
                     "--output-intent",
                     args.output_intent,
+                    *(
+                        ["--b49-asset-request-summary", b49_asset_request_summary_path.as_posix()]
+                        if b49_asset_request_summary_path
+                        else []
+                    ),
                 ],
             )
         )
@@ -288,6 +294,10 @@ def command_setup(args: argparse.Namespace) -> int:
     if should_configure_private and not private_request_ready:
         if "private connector status is not ready" not in errors:
             errors.append("private connector status is not ready")
+    setup_summary_report = {}
+    setup_summary_path = workspace / "outputs" / "reports" / "public_setup_summary.json"
+    if setup_summary_path.exists():
+        setup_summary_report = json.loads(setup_summary_path.read_text(encoding="utf-8-sig"))
     report = {
         "schema_version": SCHEMA_VERSION,
         "command": "ppt_setup",
@@ -303,6 +313,9 @@ def command_setup(args: argparse.Namespace) -> int:
         "setup_summary": "outputs/reports/public_setup_summary.json",
         "setup_summary_markdown": "outputs/reports/public_setup_summary.md",
         "output_intent": args.output_intent,
+        "asset_request_summary": setup_summary_report.get("asset_request_summary")
+        if isinstance(setup_summary_report, dict)
+        else None,
         "steps": steps,
         "next_commands": {
             "natural_language_public": {
@@ -360,6 +373,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--private-build-command-env", default="PPT_AGENT_PRIVATE_BUILD_COMMAND_JSON")
     parser.add_argument("--default-operating-mode", choices=["auto", "assistant"], default="assistant")
     parser.add_argument("--output-intent", choices=["design_visual", "editable_office", "balanced"], default="balanced", help="Metadata-only output intent recorded in public setup summary.")
+    parser.add_argument("--b49-asset-request-summary", help="Optional public-safe b49-asset-request-summary.json to expose in setup reports.")
     parser.add_argument("--github-check", action="store_true")
     parser.add_argument("--reset-connector", action="store_true")
     parser.add_argument("--skip-dependency-install", action="store_true")

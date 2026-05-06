@@ -18,6 +18,17 @@ CLASSIFICATIONS = [
     "design_visual_allowed",
     "not_applicable",
 ]
+ASSET_STATES = ("approved", "requested", "unknown")
+ALLOWED_B49_FIELDS = {
+    "request_id",
+    "slide_no",
+    "state",
+    "asset_type",
+    "required",
+    "user_action",
+    "user_message",
+    "public_safe_reason",
+}
 PRIVATE_PATTERNS = (
     re.compile(r"[A-Za-z]:\\"),
     re.compile(r"/Users/"),
@@ -66,6 +77,7 @@ def validate_markdown(path: Path, *, expected_intent: str = "balanced") -> dict[
         "balanced",
         "One-Slide Review",
         "Knowledge And Assets",
+        "Asset Requests",
         "native editable PPTX",
         "HTML screenshots are not used as PPTX content",
         "metadata only",
@@ -119,6 +131,20 @@ def validate_summary(path: Path, *, expected_intent: str = "balanced") -> dict[s
     for key in ("approved", "requested", "unknown"):
         assert_true(isinstance(asset_state.get(key), int), f"{path} asset count {key} must be integer")
         assert_true(isinstance(meanings.get(key), str) and meanings[key], f"{path} missing meaning for {key}")
+
+    asset_requests = payload.get("asset_request_summary")
+    assert_true(isinstance(asset_requests, dict), f"{path} missing asset request summary")
+    assert_true(asset_requests.get("metadata_only") is True, f"{path} asset requests must remain metadata-only")
+    assert_true(asset_requests.get("renderer_behavior") == "unchanged", f"{path} renderer behavior changed")
+    assert_true(asset_requests.get("asset_insertion_behavior") == "unchanged", f"{path} asset insertion changed")
+    request_counts = asset_requests.get("summary")
+    assert_true(isinstance(request_counts, dict), f"{path} missing asset request counts")
+    for key in (*ASSET_STATES, "total_request_items"):
+        assert_true(isinstance(request_counts.get(key), int), f"{path} asset request count {key} must be integer")
+    for item in asset_requests.get("asset_request_items", []):
+        assert_true(isinstance(item, dict), f"{path} B49 request item must be object")
+        assert_true(set(item) <= ALLOWED_B49_FIELDS, f"{path} exposed disallowed B49 fields: {sorted(set(item) - ALLOWED_B49_FIELDS)}")
+        assert_true(item.get("state") in ASSET_STATES, f"{path} invalid B49 state")
 
     roles = payload.get("editable_output_roles")
     assert_true(isinstance(roles, dict), f"{path} missing editable output roles")
@@ -204,6 +230,51 @@ def write_fixture(root: Path) -> tuple[Path, Path]:
     return setup_path, readiness_path
 
 
+def write_b49_fixture(root: Path) -> Path:
+    payload = {
+        "contract": "ppt-maker.b49-asset-request-summary.v0",
+        "status": "internal_b49_asset_request_readiness_report",
+        "summary": {"approved": 1, "requested": 1, "unknown": 1},
+        "request_items": [
+            {
+                "request_id": "asset-request-public-approved",
+                "slide_no": 1,
+                "state": "approved",
+                "asset_type": "hero_image",
+                "required": True,
+                "user_action": "no_user_action_needed",
+                "user_message": "An approved asset is already available.",
+                "public_safe_reason": "Approved asset is ready for this slot.",
+                "approved_asset_ref": r"C:\private\approved.png",
+            },
+            {
+                "request_id": "asset-request-public-requested",
+                "slide_no": 2,
+                "state": "requested",
+                "asset_type": "detail_image",
+                "required": False,
+                "user_action": "upload_or_select_recommended_asset",
+                "user_message": "Upload or select a recommended image.",
+                "public_safe_reason": "A declared asset need has no approved asset yet.",
+            },
+            {
+                "request_id": "asset-request-public-unknown",
+                "slide_no": None,
+                "state": "unknown",
+                "asset_type": "unknown_asset",
+                "required": False,
+                "user_action": "clarify_asset_need",
+                "user_message": "Clarify what asset is needed.",
+                "public_safe_reason": "The asset need is incomplete.",
+                "slot_id": "SHOULD_NOT_LEAK",
+            },
+        ],
+    }
+    path = root / "fixture_b49_asset_request_summary.json"
+    write_json(path, payload)
+    return path
+
+
 def validate_setup_wrapper(output_root: Path, *, intent: str = "balanced") -> dict[str, Any]:
     workspace = output_root / f"workspace-{intent}"
     result = run(
@@ -235,6 +306,7 @@ def validate_setup_wrapper(output_root: Path, *, intent: str = "balanced") -> di
 def validate_fixture_export(output_root: Path, *, intent: str = "editable_office") -> dict[str, Any]:
     fixture_root = output_root / "fixture"
     setup_path, readiness_path = write_fixture(fixture_root)
+    b49_path = write_b49_fixture(fixture_root)
     output = output_root / "fixture_public_setup_summary.json"
     markdown = output_root / "fixture_public_setup_summary.md"
     result = run(
@@ -245,6 +317,8 @@ def validate_fixture_export(output_root: Path, *, intent: str = "editable_office
             setup_path.as_posix(),
             "--editable-office-readiness",
             readiness_path.as_posix(),
+            "--b49-asset-request-summary",
+            b49_path.as_posix(),
             "--output",
             output.as_posix(),
             "--markdown-output",
@@ -265,6 +339,18 @@ def validate_fixture_export(output_root: Path, *, intent: str = "editable_office
         and summary["classification_counts"]["not_applicable"] == 2,
         "fixture classification counts were not preserved",
     )
+    exported = load_json(output)
+    assert_true(
+        exported["asset_request_summary"]["summary"] == {
+            "approved": 1,
+            "requested": 1,
+            "unknown": 1,
+            "total_request_items": 3,
+        },
+        "fixture B49 request counts were not exposed",
+    )
+    for item in exported["asset_request_summary"]["asset_request_items"]:
+        assert_true(set(item) <= ALLOWED_B49_FIELDS, "fixture B49 request item exposed disallowed fields")
     return {**summary, "markdown": markdown_summary}
 
 

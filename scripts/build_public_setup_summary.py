@@ -7,6 +7,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from public_b49_asset_request import expose_b49_asset_request_summary
+
 
 CONTRACT_ID = "ppt-maker.public-setup-summary.v0"
 OUTPUT_INTENTS = ("design_visual", "editable_office", "balanced")
@@ -177,10 +179,12 @@ def build_summary(
     *,
     setup_summary_path: Path | None = None,
     editable_readiness_path: Path | None = None,
+    b49_asset_request_summary_path: Path | None = None,
     selected_output_intent: str = "balanced",
 ) -> dict[str, Any]:
     setup_summary = load_json(setup_summary_path)
     editable_readiness = load_json(editable_readiness_path)
+    asset_request_summary = expose_b49_asset_request_summary(b49_asset_request_summary_path)
     payload = {
         "contract": CONTRACT_ID,
         "generated_at": utc_now(),
@@ -188,10 +192,12 @@ def build_summary(
         "source_artifacts": {
             "setup_ux_summary": artifact_status(setup_summary_path),
             "editable_office_readiness": artifact_status(editable_readiness_path),
+            "b49_asset_request_summary": artifact_status(b49_asset_request_summary_path),
         },
         "output_intent_options": setup_output_intents(setup_summary, selected_output_intent),
         "one_slide_sample_checkpoint": setup_sample_checkpoint(setup_summary),
         "uploaded_knowledge_assets_summary": uploaded_knowledge_assets(setup_summary),
+        "asset_request_summary": asset_request_summary,
         "editable_output_roles": editable_output_roles(setup_summary),
         "editable_chart_table_readiness": editable_chart_table_readiness(editable_readiness),
         "user_guidance": {
@@ -213,7 +219,7 @@ def build_summary(
             "native_editable_chart_table_rendering_enabled": False,
             "shared_ir_renderer_consumption_enabled": False,
             "auto_two_variant_policy_redesigned": False,
-            "b49_asset_request_ux_enabled": False,
+            "b49_asset_insertion_enabled": False,
         },
     }
     public_safe(payload)
@@ -230,6 +236,7 @@ def markdown_text(payload: dict[str, Any]) -> str:
     intents = payload["output_intent_options"]
     knowledge = payload["uploaded_knowledge_assets_summary"]
     asset_counts = knowledge["asset_state_summary"]
+    asset_requests = payload["asset_request_summary"]
     roles = payload["editable_output_roles"]
     readiness = payload["editable_chart_table_readiness"]
     class_counts = readiness["classification_counts"]
@@ -262,6 +269,32 @@ def markdown_text(payload: dict[str, Any]) -> str:
         f"- Unknown asset slots: {asset_counts['unknown']}",
         "- Counts are summaries only; raw sources and private asset details are not included.",
         "",
+        "## Asset Requests",
+        "",
+        f"- Status: `{asset_requests['status']}`",
+        f"- Metadata only: {str(asset_requests['metadata_only']).lower()}",
+        f"- Approved: {asset_requests['summary']['approved']}",
+        f"- Requested: {asset_requests['summary']['requested']}",
+        f"- Unknown: {asset_requests['summary']['unknown']}",
+        f"- Total request items: {asset_requests['summary']['total_request_items']}",
+        "- Renderer output and asset insertion are unchanged.",
+        "",
+    ]
+    if asset_requests["asset_request_items"]:
+        lines.extend(
+            [
+                "| Slide | State | Asset Type | Action | Message |",
+                "| --- | --- | --- | --- | --- |",
+            ]
+        )
+        for item in asset_requests["asset_request_items"]:
+            slide = item.get("slide_no") if item.get("slide_no") is not None else ""
+            lines.append(
+                f"| {slide} | {item['state']} | {item['asset_type']} | {item['user_action']} | {item['user_message']} |"
+            )
+        lines.append("")
+    lines.extend(
+        [
         "## Editable Outputs",
         "",
         "- The deck output is native editable PPTX.",
@@ -278,7 +311,8 @@ def markdown_text(payload: dict[str, Any]) -> str:
         f"- Not applicable: {class_counts['not_applicable']} - {meanings['not_applicable']}",
         "- This is metadata only; native chart/table rendering is not enabled here.",
         "",
-    ]
+        ]
+    )
     return "\n".join(lines)
 
 
@@ -287,6 +321,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--workspace", help="Workspace root for default output location.")
     parser.add_argument("--setup-ux-summary", help="Optional internal setup-ux-summary.json to summarize.")
     parser.add_argument("--editable-office-readiness", help="Optional editable-office-readiness.json to summarize.")
+    parser.add_argument("--b49-asset-request-summary", help="Optional public-safe b49-asset-request-summary.json to expose.")
     parser.add_argument("--output-intent", default="balanced", choices=OUTPUT_INTENTS, help="Selected output intent metadata.")
     parser.add_argument("--output", help="Output JSON path.")
     parser.add_argument("--markdown-output", help="Output Markdown path.")
@@ -298,6 +333,7 @@ def main(argv: list[str] | None = None) -> int:
     payload = build_summary(
         setup_summary_path=resolve_path(args.setup_ux_summary),
         editable_readiness_path=resolve_path(args.editable_office_readiness),
+        b49_asset_request_summary_path=resolve_path(args.b49_asset_request_summary),
         selected_output_intent=args.output_intent,
     )
     write_json(output, payload)
@@ -313,6 +349,7 @@ def main(argv: list[str] | None = None) -> int:
                 "contract": payload["contract"],
                 "output_intents": payload["output_intent_options"]["available"],
                 "selected_output_intent": payload["output_intent_options"]["selected"],
+                "asset_request_summary": payload["asset_request_summary"]["summary"],
                 "editable_chart_table_counts": payload["editable_chart_table_readiness"]["classification_counts"],
             },
             indent=2,
