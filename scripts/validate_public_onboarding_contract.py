@@ -109,6 +109,8 @@ def validate_setup_contract(workspace: Path) -> dict[str, Any]:
     checkpoint = str(commands.get("assistant_checkpoint", ""))
     approved = str(commands.get("assistant_final_after_review", ""))
     assert_true("--mode assistant" in checkpoint, "missing Assistant checkpoint command")
+    assert_true("--output-intent balanced" in checkpoint, "checkpoint command missing default output intent metadata")
+    assert_true("--output-intent balanced" in approved, "approved command missing default output intent metadata")
     assert_true("--build-approved" not in checkpoint and "--continue-build" not in checkpoint, "checkpoint command should not pre-approve build")
     assert_true("--build-approved" in approved or "--continue-build" in approved, "missing approved continuation command")
     readme = (workspace / "README.md").read_text(encoding="utf-8")
@@ -143,6 +145,14 @@ def validate_assistant_checkpoint(workspace: Path) -> dict[str, Any]:
     report_path = project_dir / "reports" / "ppt_make_report.json"
     report = load_json(report_path)
     assert_true(report.get("status") == "waiting_for_approval", f"unexpected Assistant status: {report.get('status')}")
+    assert_true(report.get("output_intent") == "balanced", "Assistant checkpoint default output intent changed")
+    intent_metadata = report.get("output_intent_metadata")
+    assert_true(isinstance(intent_metadata, dict), "Assistant checkpoint missing output intent metadata")
+    assert_true(intent_metadata.get("selected") == "balanced", "Assistant checkpoint selected intent mismatch")
+    assert_true(
+        intent_metadata.get("behavior") == "metadata_only_no_renderer_change",
+        "Assistant checkpoint output intent must remain metadata-only",
+    )
     assert_true((project_dir / "plans" / "deck_plan.json").exists(), "missing deck_plan.json")
     assert_true((project_dir / "plans" / "draft_design_brief.md").exists(), "missing draft_design_brief.md")
     assert_true(not (workspace / "outputs" / "decks" / f"{project_id}.pptx").exists(), "Assistant checkpoint created PPTX")
@@ -175,6 +185,14 @@ def validate_assistant_approved(workspace: Path) -> dict[str, Any]:
     report_path = project_dir / "reports" / "ppt_make_report.json"
     report = load_json(report_path)
     assert_true(report.get("status") == "built", f"approved Assistant did not build: {report.get('status')}")
+    assert_true(report.get("output_intent") == "balanced", "approved Assistant default output intent changed")
+    intent_metadata = report.get("output_intent_metadata")
+    assert_true(isinstance(intent_metadata, dict), "approved Assistant missing output intent metadata")
+    assert_true(intent_metadata.get("selected") == "balanced", "approved Assistant selected intent mismatch")
+    assert_true(
+        intent_metadata.get("behavior") == "metadata_only_no_renderer_change",
+        "approved Assistant output intent must remain metadata-only",
+    )
     pptx = workspace / "outputs" / "decks" / f"{project_id}.pptx"
     html = workspace / "outputs" / "html" / project_id / "index.html"
     assert_true(pptx.exists(), "approved Assistant did not create PPTX")

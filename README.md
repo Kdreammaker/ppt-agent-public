@@ -88,6 +88,12 @@ Once setup is complete, users and AI agents can make decks through one natural-l
 python scripts\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" --workspace "<workspace>" --mode assistant
 ```
 
+The same metadata-only output intent can be recorded on make reports:
+
+```powershell
+python scripts\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" --workspace "<workspace>" --mode assistant --output-intent design_visual
+```
+
 Assistant Mode is a planning checkpoint by default. The command above writes
 review artifacts and returns `status=waiting_for_approval`; it does not create
 final PPTX/HTML until the user or agent approves the plan:

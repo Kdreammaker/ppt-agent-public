@@ -13,6 +13,7 @@ from typing import Any
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 SCHEMA_VERSION = "1.0"
+OUTPUT_INTENTS = ("design_visual", "editable_office", "balanced")
 
 
 def utc_now() -> str:
@@ -603,6 +604,13 @@ def command_make(args: argparse.Namespace) -> int:
         "project_id": project_id,
         "operating_mode": mode,
         "production_mode": args.production,
+        "output_intent": args.output_intent,
+        "output_intent_metadata": {
+            "available": list(OUTPUT_INTENTS),
+            "default": "balanced",
+            "selected": args.output_intent,
+            "behavior": "metadata_only_no_renderer_change",
+        },
         "approval_required": assistant_waiting,
         "build_approved": bool(args.build_approved),
         "next_action": "review_planning_artifacts_then_rerun_with_build_approved" if assistant_waiting else None,
@@ -653,7 +661,7 @@ def command_make(args: argparse.Namespace) -> int:
         },
     }
     write_json(report_path, report)
-    print(json.dumps({k: report[k] for k in ("status", "project_id", "operating_mode", "production_mode", "approval_required", "next_action", "artifact_paths", "artifacts", "connector_status", "errors")}, indent=2, ensure_ascii=False))
+    print(json.dumps({k: report[k] for k in ("status", "project_id", "operating_mode", "production_mode", "output_intent", "approval_required", "next_action", "artifact_paths", "artifacts", "connector_status", "errors")}, indent=2, ensure_ascii=False))
     return 0 if not errors else 2
 
 
@@ -665,6 +673,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--workspace", default=None)
     parser.add_argument("--output-root", default=None, help="Optional project output root; defaults to <workspace>/outputs/projects.")
     parser.add_argument("--mode", choices=["auto", "assistant"], default="assistant")
+    parser.add_argument("--output-intent", choices=OUTPUT_INTENTS, default="balanced", help="Metadata-only output intent recorded in public make reports.")
     parser.add_argument("--project-id", default=None)
     parser.add_argument("--production", choices=["auto", "public", "private"], default="auto")
     parser.add_argument("--source-file", action="append", default=[], help="Use a local text/markdown/json source as bounded context for the draft plan.")
