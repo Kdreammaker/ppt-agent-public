@@ -33,6 +33,10 @@ PRIVATE_PATTERNS = {
         r"\bprivate_prompt\b|\braw_payload\b|\bsource_attachment\b|\bapproved_asset_ref\b|\bpreferred_asset_ref\b|\bunapproved_asset_records\b|\bslot_id\b",
         re.IGNORECASE,
     ),
+    "package_internal_marker": re.compile(
+        r"\bpackage_manifest_id\b|\bstructured_data_id\b|\bpackage[-_: ]manifest[-_: ][A-Za-z0-9_.:-]+\b|\bstructured[-_: ]data[-_: ][A-Za-z0-9_.:-]+\b|\bpackage manifest\b|\binternal package\b|\braw manifest\b|\braw package\b|\braw structured[-_ ]data\b",
+        re.IGNORECASE,
+    ),
 }
 
 
@@ -117,11 +121,23 @@ def write_auto_fixture(path: Path, *, malicious: bool = False) -> Path:
     }
     if malicious:
         payload["renderer_capabilities"]["output_intent_bounded_effects"] = "sk-THISSHOULDNOTLEAK123456"
+        payload["renderer_capabilities"]["approved_structured_native_chart_table_rendering"] = (
+            "allowed only for structured_data_id=structured-data:SHOULDNOTLEAK"
+        )
+        payload["renderer_capabilities"]["approved_package_asset_insertion"] = (
+            "allowed only from package_manifest_id=package-manifest:SHOULDNOTLEAK"
+        )
+        payload["asset_system_interpretation"]["insertable_assets"] = (
+            "approved internal package reference package manifest SHOULDNOTLEAK"
+        )
+        payload["asset_system_interpretation"]["font_handoff"] = "raw package identifier SHOULDNOTLEAK"
         payload["package_manifest_id"] = "xoxb-THISSHOULDNOTLEAK123456"
         payload["structured_data_id"] = "AIzaTHISSHOULDNOTLEAK1234567890"
         payload["private_path"] = r"C:\private\package\manifest.json"
         payload["docs_url"] = "https://docs.google.com/document/d/SHOULDNOTLEAK"
         payload["blocked_behavior"]["sk-THISSHOULDNOTLEAK123456"] = True
+        payload["blocked_behavior"]["package_manifest_id=package-manifest:SHOULDNOTLEAK"] = True
+        payload["blocked_behavior"]["structured_data_id=structured-data:SHOULDNOTLEAK"] = True
     return write_json(path, payload)
 
 
@@ -142,6 +158,14 @@ def assert_auto_available(summary: dict[str, Any], *, malicious: bool = False) -
         assert_true(key in capabilities, f"missing capability {key}")
     if malicious:
         assert_true(capabilities["output_intent_bounded_effects"] == "not_available", "token-shaped capability was not replaced")
+        assert_true(
+            capabilities["approved_structured_native_chart_table_rendering"] == "not_available",
+            "structured-data marker inside capability was not replaced",
+        )
+        assert_true(
+            capabilities["approved_package_asset_insertion"] == "not_available",
+            "package manifest marker inside capability was not replaced",
+        )
     counts = summary.get("native_chart_table_supported_candidate_counts")
     assert_true(counts.get("variant_a", {}).get("supported_candidate_count") == 5, "variant A native count missing")
     assert_true(counts.get("variant_b", {}).get("supported_candidate_count") == 5, "variant B native count missing")
@@ -151,6 +175,15 @@ def assert_auto_available(summary: dict[str, Any], *, malicious: bool = False) -
     assert_true(BLOCKER_KEYS <= blockers, "public-safe blocker categories missing")
     if malicious:
         assert_true("sensitive_blocker_category_redacted" in blockers, "sensitive blocker category was not redacted")
+        interpretation = summary.get("asset_system_interpretation")
+        assert_true(
+            interpretation.get("insertable_assets") == "approved_package_handoffs_only",
+            "package-internal asset interpretation was not replaced",
+        )
+        assert_true(
+            interpretation.get("font_handoff") == "metadata_only_without_approved_opaque_package",
+            "raw package font interpretation was not replaced",
+        )
 
 
 def assert_auto_unavailable(summary: dict[str, Any]) -> None:

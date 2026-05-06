@@ -47,6 +47,17 @@ PRIVATE_PATTERNS = (
     re.compile(r"\bAIza[A-Za-z0-9_-]{20,}\b"),
     re.compile(r"\b(?:drive|docs)\.google\.com\b", re.IGNORECASE),
 )
+PACKAGE_INTERNAL_PATTERNS = (
+    re.compile(r"\bpackage_manifest_id\b", re.IGNORECASE),
+    re.compile(r"\bstructured_data_id\b", re.IGNORECASE),
+    re.compile(r"\bpackage[-_: ]manifest[-_: ][A-Za-z0-9_.:-]+\b", re.IGNORECASE),
+    re.compile(r"\bstructured[-_: ]data[-_: ][A-Za-z0-9_.:-]+\b", re.IGNORECASE),
+    re.compile(r"\bpackage manifest\b", re.IGNORECASE),
+    re.compile(r"\binternal package\b", re.IGNORECASE),
+    re.compile(r"\braw manifest\b", re.IGNORECASE),
+    re.compile(r"\braw package\b", re.IGNORECASE),
+    re.compile(r"\braw structured[-_ ]data\b", re.IGNORECASE),
+)
 SAFE_TEXT = re.compile(r"^[A-Za-z0-9_ .:/,-]{1,160}$")
 
 
@@ -70,7 +81,7 @@ def first_existing_path(*candidates: Path | None) -> Path | None:
 
 def public_safe(payload: dict[str, Any], *, source: str) -> None:
     raw = json.dumps(payload, ensure_ascii=False)
-    hits = [pattern.pattern for pattern in PRIVATE_PATTERNS if pattern.search(raw)]
+    hits = [pattern.pattern for pattern in (*PRIVATE_PATTERNS, *PACKAGE_INTERNAL_PATTERNS) if pattern.search(raw)]
     if hits:
         raise PublicAutoCapabilityMetadataError(f"{source} contains private or sensitive marker patterns: {hits}")
 
@@ -119,7 +130,7 @@ def unavailable_auto_capability_metadata(reason: str = "auto_capability_metadata
 def safe_string(value: Any, *, fallback: str = "not_available") -> str:
     if not isinstance(value, str) or not value:
         return fallback
-    if any(pattern.search(value) for pattern in PRIVATE_PATTERNS):
+    if any(pattern.search(value) for pattern in (*PRIVATE_PATTERNS, *PACKAGE_INTERNAL_PATTERNS)):
         return fallback
     if not SAFE_TEXT.fullmatch(value):
         return fallback
@@ -195,7 +206,11 @@ def safe_blocker_categories(policy: dict[str, Any]) -> list[str]:
     if not isinstance(raw, dict):
         return []
     categories = [key for key in BLOCKER_KEYS if raw.get(key) is True]
-    if any(key not in BLOCKER_KEYS and any(pattern.search(str(key)) for pattern in PRIVATE_PATTERNS) for key in raw):
+    if any(
+        key not in BLOCKER_KEYS
+        and any(pattern.search(str(key)) for pattern in (*PRIVATE_PATTERNS, *PACKAGE_INTERNAL_PATTERNS))
+        for key in raw
+    ):
         categories.append("sensitive_blocker_category_redacted")
     return categories
 
