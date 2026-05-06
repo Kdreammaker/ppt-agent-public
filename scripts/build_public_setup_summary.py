@@ -86,6 +86,11 @@ def setup_output_intents(setup_summary: dict[str, Any]) -> dict[str, Any]:
     return {
         "available": list(OUTPUT_INTENTS),
         "default": default,
+        "definitions": {
+            "design_visual": "Prioritize visual storytelling and infographic composition.",
+            "editable_office": "Prioritize PowerPoint-native objects and editable chart/table data where available.",
+            "balanced": "Default: keep strong design while preserving native PPTX editability.",
+        },
         "behavior": "explanatory_metadata_only_no_renderer_change",
     }
 
@@ -116,6 +121,11 @@ def uploaded_knowledge_assets(setup_summary: dict[str, Any]) -> dict[str, Any]:
         "reference_file_count": reference_count if isinstance(reference_count, int) and reference_count >= 0 else 0,
         "asset_state_summary": asset_state,
         "counts_only": True,
+        "counts_meaning": {
+            "approved": "Assets already approved for possible use.",
+            "requested": "Assets or knowledge still needed before the best version can be built.",
+            "unknown": "Items that need a clearer slot or approval state.",
+        },
         "raw_sources_included": False,
     }
 
@@ -143,6 +153,12 @@ def editable_chart_table_readiness(editable_readiness: dict[str, Any]) -> dict[s
         if isinstance(diagnostics.get("candidate_count"), int)
         else 0,
         "summary_only": True,
+        "classification_meaning": {
+            "native_editable_required": "Future renderer work should prove native Office chart/table editability before changing output.",
+            "editable_shape_table_allowed": "Editable PowerPoint shapes may be enough for structured non-data layouts.",
+            "design_visual_allowed": "A designed visual composition is acceptable for conceptual storytelling.",
+            "not_applicable": "No chart/table editability signal was detected.",
+        },
         "native_chart_table_rendering_enabled": False,
         "behavior": "explanatory_metadata_only_no_renderer_change",
     }
@@ -172,6 +188,11 @@ def build_summary(
         "uploaded_knowledge_assets_summary": uploaded_knowledge_assets(setup_summary),
         "editable_output_roles": editable_output_roles(setup_summary),
         "editable_chart_table_readiness": editable_chart_table_readiness(editable_readiness),
+        "user_guidance": {
+            "why_one_slide_review_exists": "A one-slide review helps confirm direction before spending time on a full deck.",
+            "what_this_report_changes": "Nothing in rendering; this report only explains setup choices and readiness signals.",
+            "where_to_find_outputs": "Final decks are native editable PPTX; HTML is a companion for review or presentation.",
+        },
         "public_private_hygiene": {
             "raw_refs_included": False,
             "local_paths_included": False,
@@ -179,7 +200,7 @@ def build_summary(
             "tokens_included": False,
             "raw_payloads_included": False,
             "private_prompts_included": False,
-            "unapproved_asset_records_included": False,
+            "external_asset_records_included": False,
         },
         "non_goals": {
             "renderer_layout_or_content_changed": False,
@@ -199,12 +220,68 @@ def default_output(workspace: Path | None) -> Path:
     return Path("outputs") / "reports" / "public_setup_summary.json"
 
 
+def markdown_text(payload: dict[str, Any]) -> str:
+    intents = payload["output_intent_options"]
+    knowledge = payload["uploaded_knowledge_assets_summary"]
+    asset_counts = knowledge["asset_state_summary"]
+    roles = payload["editable_output_roles"]
+    readiness = payload["editable_chart_table_readiness"]
+    class_counts = readiness["classification_counts"]
+    definitions = intents["definitions"]
+    meanings = readiness["classification_meaning"]
+    lines = [
+        "# Public Setup Summary",
+        "",
+        "This report explains setup choices and readiness signals. It does not change renderer behavior.",
+        "",
+        "## Output Intent",
+        "",
+        f"- `design_visual`: {definitions['design_visual']}",
+        f"- `editable_office`: {definitions['editable_office']}",
+        f"- `balanced`: {definitions['balanced']}",
+        f"- Default: `{intents['default']}`",
+        "",
+        "## One-Slide Review",
+        "",
+        "- Recommended: yes",
+        "- Purpose: confirm direction on one representative slide before a full deck build.",
+        "- Full build still requires explicit approval in Assistant-style review flows.",
+        "",
+        "## Knowledge And Assets",
+        "",
+        f"- Reference files counted: {knowledge['reference_file_count']}",
+        f"- Approved asset slots: {asset_counts['approved']}",
+        f"- Requested asset slots: {asset_counts['requested']}",
+        f"- Unknown asset slots: {asset_counts['unknown']}",
+        "- Counts are summaries only; raw sources and private asset details are not included.",
+        "",
+        "## Editable Outputs",
+        "",
+        "- The deck output is native editable PPTX.",
+        f"- PPTX: `{roles['pptx']}`",
+        f"- HTML: `{roles['html']}`",
+        f"- Shared IR: `{roles['shared_ir_role']}`",
+        "- HTML screenshots are not used as PPTX content.",
+        "",
+        "## Chart And Table Readiness",
+        "",
+        f"- Native editable required: {class_counts['native_editable_required']} - {meanings['native_editable_required']}",
+        f"- Editable shape table allowed: {class_counts['editable_shape_table_allowed']} - {meanings['editable_shape_table_allowed']}",
+        f"- Design visual allowed: {class_counts['design_visual_allowed']} - {meanings['design_visual_allowed']}",
+        f"- Not applicable: {class_counts['not_applicable']} - {meanings['not_applicable']}",
+        "- This is metadata only; native chart/table rendering is not enabled here.",
+        "",
+    ]
+    return "\n".join(lines)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build a public-safe setup UX summary report.")
     parser.add_argument("--workspace", help="Workspace root for default output location.")
     parser.add_argument("--setup-ux-summary", help="Optional internal setup-ux-summary.json to summarize.")
     parser.add_argument("--editable-office-readiness", help="Optional editable-office-readiness.json to summarize.")
     parser.add_argument("--output", help="Output JSON path.")
+    parser.add_argument("--markdown-output", help="Output Markdown path.")
     args = parser.parse_args(argv)
 
     workspace = resolve_path(args.workspace)
@@ -215,11 +292,15 @@ def main(argv: list[str] | None = None) -> int:
         editable_readiness_path=resolve_path(args.editable_office_readiness),
     )
     write_json(output, payload)
+    markdown_output = resolve_path(args.markdown_output) or output.with_suffix(".md")
+    markdown_output.parent.mkdir(parents=True, exist_ok=True)
+    markdown_output.write_text(markdown_text(payload), encoding="utf-8")
     print(
         json.dumps(
             {
                 "status": payload["status"],
                 "report": output.name,
+                "markdown_report": markdown_output.name,
                 "contract": payload["contract"],
                 "output_intents": payload["output_intent_options"]["available"],
                 "editable_chart_table_counts": payload["editable_chart_table_readiness"]["classification_counts"],

@@ -81,7 +81,9 @@ def validate_setup_contract(workspace: Path) -> dict[str, Any]:
     report_path = workspace / "outputs" / "reports" / "ppt_setup_report.json"
     report = load_json(report_path)
     setup_summary_path = workspace / "outputs" / "reports" / "public_setup_summary.json"
+    setup_summary_md = workspace / "outputs" / "reports" / "public_setup_summary.md"
     assert_true(setup_summary_path.exists(), "missing public_setup_summary.json")
+    assert_true(setup_summary_md.exists(), "missing public_setup_summary.md")
     setup_summary = load_json(setup_summary_path)
     assert_true(
         setup_summary.get("contract") == "ppt-maker.public-setup-summary.v0",
@@ -91,6 +93,12 @@ def validate_setup_contract(workspace: Path) -> dict[str, Any]:
         report.get("setup_summary") == "outputs/reports/public_setup_summary.json",
         "setup report missing public setup summary path",
     )
+    assert_true(
+        report.get("setup_summary_markdown") == "outputs/reports/public_setup_summary.md",
+        "setup report missing public setup summary Markdown path",
+    )
+    md_text = setup_summary_md.read_text(encoding="utf-8", errors="ignore")
+    assert_true("metadata only" in md_text and "HTML screenshots are not used as PPTX content" in md_text, "setup summary Markdown missing explanatory policy text")
     commands = report.get("next_commands", {}).get("natural_language_public")
     assert_true(isinstance(commands, dict), "natural_language_public must be structured commands")
     checkpoint = str(commands.get("assistant_checkpoint", ""))
@@ -106,6 +114,7 @@ def validate_setup_contract(workspace: Path) -> dict[str, Any]:
         "workspace": workspace.as_posix(),
         "setup_report": report_path.as_posix(),
         "public_setup_summary": setup_summary_path.as_posix(),
+        "public_setup_summary_md": setup_summary_md.as_posix(),
     }
 
 

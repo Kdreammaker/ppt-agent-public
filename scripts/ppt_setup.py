@@ -299,6 +299,7 @@ def command_setup(args: argparse.Namespace) -> int:
         "default_operating_mode": status_payload.get("default_operating_mode", args.default_operating_mode),
         "errors": errors,
         "setup_summary": "outputs/reports/public_setup_summary.json",
+        "setup_summary_markdown": "outputs/reports/public_setup_summary.md",
         "steps": steps,
         "next_commands": {
             "natural_language_public": {

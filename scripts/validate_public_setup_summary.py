@@ -56,6 +56,25 @@ def assert_public_safe(path: Path) -> None:
     assert_true(not hits, f"{path} contains private marker patterns: {hits}")
 
 
+def validate_markdown(path: Path) -> dict[str, Any]:
+    assert_true(path.exists(), f"missing Markdown companion report: {path}")
+    assert_public_safe(path)
+    text = path.read_text(encoding="utf-8-sig", errors="ignore")
+    required = [
+        "design_visual",
+        "editable_office",
+        "balanced",
+        "One-Slide Review",
+        "Knowledge And Assets",
+        "native editable PPTX",
+        "HTML screenshots are not used as PPTX content",
+        "metadata only",
+    ]
+    missing = [item for item in required if item not in text]
+    assert_true(not missing, f"{path} missing explanatory text: {missing}")
+    return {"path": path.as_posix(), "status": "pass"}
+
+
 def run(command: list[str], *, timeout: int = 240) -> subprocess.CompletedProcess[str]:
     return subprocess.run(command, cwd=BASE_DIR, capture_output=True, text=True, check=False, timeout=timeout)
 
@@ -70,6 +89,10 @@ def validate_summary(path: Path) -> dict[str, Any]:
     assert_true(isinstance(intents, dict), f"{path} missing output intent options")
     assert_true(intents.get("available") == OUTPUT_INTENTS, f"{path} output intent options changed")
     assert_true(intents.get("default") == "balanced", f"{path} default output intent changed")
+    definitions = intents.get("definitions")
+    assert_true(isinstance(definitions, dict), f"{path} missing output intent definitions")
+    for key in OUTPUT_INTENTS:
+        assert_true(isinstance(definitions.get(key), str) and definitions[key], f"{path} missing definition for {key}")
     assert_true(
         intents.get("behavior") == "explanatory_metadata_only_no_renderer_change",
         f"{path} output intent must remain explanatory",
@@ -89,8 +112,11 @@ def validate_summary(path: Path) -> dict[str, Any]:
     assert_true(knowledge.get("raw_sources_included") is False, f"{path} raw sources must not be included")
     asset_state = knowledge.get("asset_state_summary")
     assert_true(isinstance(asset_state, dict), f"{path} missing asset state counts")
+    meanings = knowledge.get("counts_meaning")
+    assert_true(isinstance(meanings, dict), f"{path} missing asset count meanings")
     for key in ("approved", "requested", "unknown"):
         assert_true(isinstance(asset_state.get(key), int), f"{path} asset count {key} must be integer")
+        assert_true(isinstance(meanings.get(key), str) and meanings[key], f"{path} missing meaning for {key}")
 
     roles = payload.get("editable_output_roles")
     assert_true(isinstance(roles, dict), f"{path} missing editable output roles")
@@ -104,8 +130,11 @@ def validate_summary(path: Path) -> dict[str, Any]:
     assert_true(readiness.get("classification_values") == CLASSIFICATIONS, f"{path} classification values changed")
     counts = readiness.get("classification_counts")
     assert_true(isinstance(counts, dict), f"{path} missing classification counts")
+    class_meaning = readiness.get("classification_meaning")
+    assert_true(isinstance(class_meaning, dict), f"{path} missing classification meanings")
     for key in CLASSIFICATIONS:
         assert_true(isinstance(counts.get(key), int), f"{path} classification count {key} must be integer")
+        assert_true(isinstance(class_meaning.get(key), str) and class_meaning[key], f"{path} missing meaning for {key}")
     assert_true(readiness.get("summary_only") is True, f"{path} readiness must remain summary-only")
     assert_true(
         readiness.get("native_chart_table_rendering_enabled") is False,
@@ -118,6 +147,10 @@ def validate_summary(path: Path) -> dict[str, Any]:
     non_goals = payload.get("non_goals")
     assert_true(isinstance(non_goals, dict), f"{path} missing non-goals")
     assert_true(not any(non_goals.values()), f"{path} non-goals must remain false")
+    guidance = payload.get("user_guidance")
+    assert_true(isinstance(guidance, dict), f"{path} missing user guidance")
+    for key in ("why_one_slide_review_exists", "what_this_report_changes", "where_to_find_outputs"):
+        assert_true(isinstance(guidance.get(key), str) and guidance[key], f"{path} missing guidance {key}")
     return {
         "path": path.as_posix(),
         "asset_state_summary": asset_state,
@@ -183,15 +216,21 @@ def validate_setup_wrapper(output_root: Path) -> dict[str, Any]:
     )
     assert_true(result.returncode == 0, result.stderr or result.stdout)
     report = workspace / "outputs" / "reports" / "public_setup_summary.json"
+    markdown = workspace / "outputs" / "reports" / "public_setup_summary.md"
     setup_report = load_json(workspace / "outputs" / "reports" / "ppt_setup_report.json")
     assert_true(setup_report.get("setup_summary") == "outputs/reports/public_setup_summary.json", "setup report missing setup summary path")
-    return validate_summary(report)
+    assert_true(
+        setup_report.get("setup_summary_markdown") == "outputs/reports/public_setup_summary.md",
+        "setup report missing setup summary Markdown path",
+    )
+    return {**validate_summary(report), "markdown": validate_markdown(markdown)}
 
 
 def validate_fixture_export(output_root: Path) -> dict[str, Any]:
     fixture_root = output_root / "fixture"
     setup_path, readiness_path = write_fixture(fixture_root)
     output = output_root / "fixture_public_setup_summary.json"
+    markdown = output_root / "fixture_public_setup_summary.md"
     result = run(
         [
             sys.executable,
@@ -202,10 +241,13 @@ def validate_fixture_export(output_root: Path) -> dict[str, Any]:
             readiness_path.as_posix(),
             "--output",
             output.as_posix(),
+            "--markdown-output",
+            markdown.as_posix(),
         ]
     )
     assert_true(result.returncode == 0, result.stderr or result.stdout)
     summary = validate_summary(output)
+    markdown_summary = validate_markdown(markdown)
     assert_true(
         summary["asset_state_summary"] == {"approved": 1, "requested": 2, "unknown": 1},
         "fixture asset-state counts were not preserved",
@@ -215,7 +257,7 @@ def validate_fixture_export(output_root: Path) -> dict[str, Any]:
         and summary["classification_counts"]["not_applicable"] == 2,
         "fixture classification counts were not preserved",
     )
-    return summary
+    return {**summary, "markdown": markdown_summary}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -231,7 +273,9 @@ def main(argv: list[str] | None = None) -> int:
         "public_private_scan": {
             "scanned_files": [
                 (output_root / "setup-wrapper" / "workspace" / "outputs" / "reports" / "public_setup_summary.json").as_posix(),
+                (output_root / "setup-wrapper" / "workspace" / "outputs" / "reports" / "public_setup_summary.md").as_posix(),
                 (output_root / "fixture-export" / "fixture_public_setup_summary.json").as_posix(),
+                (output_root / "fixture-export" / "fixture_public_setup_summary.md").as_posix(),
             ],
             "issues": 0,
         },
