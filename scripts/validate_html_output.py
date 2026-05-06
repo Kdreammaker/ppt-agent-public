@@ -15,7 +15,7 @@ DEFAULT_SCREENSHOT_ROOT = BASE_DIR / "outputs" / "playwright" / "html_validation
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-from scripts.public_report_safety import artifact_ref, sanitize_public_report
+from scripts.public_report_safety import artifact_ref, public_report_issues, sanitize_public_report
 
 
 class DeckHtmlParser(HTMLParser):
@@ -25,6 +25,7 @@ class DeckHtmlParser(HTMLParser):
         self.output_role = ""
         self.slide_count_attr = ""
         self.meta_role = ""
+        self.source_spec_attr = ""
         self.buttons = 0
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
@@ -36,6 +37,8 @@ class DeckHtmlParser(HTMLParser):
             self.output_role = attr["data-output-role"]
         if attr.get("data-slide-count"):
             self.slide_count_attr = attr["data-slide-count"]
+        if attr.get("data-source-spec"):
+            self.source_spec_attr = attr["data-source-spec"]
         if tag == "meta" and attr.get("name") == "ppt-output-role":
             self.meta_role = attr.get("content", "")
         if tag == "button":
@@ -61,6 +64,14 @@ def workspace_from_report_path(report_path: Path) -> Path | None:
     return None
 
 
+def workspace_from_artifact_path(path: Path) -> Path | None:
+    resolved = path.resolve()
+    for parent in resolved.parents:
+        if parent.name == "outputs":
+            return parent.parent
+    return None
+
+
 def validate_html(html_path: Path, manifest_path: Path) -> tuple[dict[str, Any], list[str]]:
     errors: list[str] = []
     html_path = html_path.resolve()
@@ -74,6 +85,9 @@ def validate_html(html_path: Path, manifest_path: Path) -> tuple[dict[str, Any],
     manifest = load_json(manifest_path)
     parser = DeckHtmlParser()
     parser.feed(html)
+    workspace = workspace_from_artifact_path(html_path)
+    expected_html_ref = artifact_ref(html_path, workspace=workspace)
+    expected_manifest_ref = artifact_ref(manifest_path, workspace=workspace)
 
     if "<!doctype html>" not in html[:80].lower():
         errors.append("HTML output must start with <!doctype html>")
@@ -83,8 +97,19 @@ def validate_html(html_path: Path, manifest_path: Path) -> tuple[dict[str, Any],
         errors.append("HTML metadata must declare ppt-output-role=final_html")
     if manifest.get("output_role") != "final_html":
         errors.append("Manifest output_role must be final_html")
-    if manifest.get("html_path") != base_relative(html_path):
+    if manifest.get("html_path") != expected_html_ref:
         errors.append("Manifest html_path must match the validated HTML path")
+    source_spec_path = manifest.get("source_spec_path")
+    if not isinstance(source_spec_path, str) or not source_spec_path:
+        errors.append("Manifest source_spec_path must be a public artifact ref")
+    elif parser.source_spec_attr != source_spec_path:
+        errors.append("HTML data-source-spec must match manifest source_spec_path")
+    html_boundary_issues = sorted(set(public_report_issues(html)))
+    if html_boundary_issues:
+        errors.append(f"HTML output contains private marker patterns: {html_boundary_issues}")
+    manifest_boundary_issues = sorted(set(public_report_issues(json.dumps(manifest, ensure_ascii=False))))
+    if manifest_boundary_issues:
+        errors.append(f"HTML manifest contains private marker patterns: {manifest_boundary_issues}")
     expected_slides = int(manifest.get("slide_count") or 0)
     if expected_slides <= 0:
         errors.append("Manifest slide_count must be positive")
@@ -100,8 +125,8 @@ def validate_html(html_path: Path, manifest_path: Path) -> tuple[dict[str, Any],
         errors.append("HTML output must not hard-code the external asset workspace path")
 
     report = {
-        "html_path": base_relative(html_path),
-        "manifest_path": base_relative(manifest_path),
+        "html_path": expected_html_ref,
+        "manifest_path": expected_manifest_ref,
         "slide_sections": parser.slide_sections,
         "manifest_slide_count": expected_slides,
         "output_role": manifest.get("output_role"),

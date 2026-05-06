@@ -15,6 +15,7 @@ if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
 from system.deck_models import validate_deck_spec
+from scripts.public_report_safety import artifact_ref, sanitize_public_report
 
 DEFAULT_HTML_ROOT = BASE_DIR / "outputs" / "html"
 OUTPUTS_ROOT = BASE_DIR / "outputs"
@@ -64,6 +65,22 @@ def base_relative(path: Path) -> str:
         return resolved.relative_to(BASE_DIR).as_posix()
     except ValueError:
         return resolved.as_posix()
+
+
+def workspace_from_env() -> Path | None:
+    value = os.environ.get("PPT_AGENT_WORKSPACE")
+    if not value:
+        return None
+    path = Path(value)
+    return path.resolve() if path.is_absolute() else (Path.cwd() / path).resolve()
+
+
+def workspace_from_artifact_path(path: Path) -> Path | None:
+    resolved = path.resolve()
+    for parent in resolved.parents:
+        if parent.name == "outputs":
+            return parent.parent
+    return None
 
 
 def slugify(value: str) -> str:
@@ -304,6 +321,9 @@ def build_html(spec_path: Path, output_path: Path | None = None) -> tuple[Path, 
     intents_by_slide = asset_intents_by_slide(spec)
     colors = theme["colors"]
     created_at = dt.datetime.now(dt.UTC).isoformat().replace("+00:00", "Z")
+    workspace = workspace_from_env() or workspace_from_artifact_path(output_path)
+    source_spec_ref = artifact_ref(spec_path, workspace=workspace) or spec_path.name
+    html_ref = artifact_ref(output_path, workspace=workspace) or output_path.name
     slide_markup = "\n".join(
         render_slide(slide, index, len(slides), intents_by_slide.get(index, []))
         for index, slide in enumerate(slides, start=1)
@@ -581,7 +601,7 @@ def build_html(spec_path: Path, output_path: Path | None = None) -> tuple[Path, 
   </style>
 </head>
 <body>
-  <div class="deck-root" data-output-role="final_html" data-slide-count="{len(slides)}" data-source-spec="{escape(base_relative(spec_path))}">
+  <div class="deck-root" data-output-role="final_html" data-slide-count="{len(slides)}" data-source-spec="{escape(source_spec_ref)}">
     <nav class="deck-toolbar" aria-label="Deck controls">
       <div><strong>{escape(str(spec.get("name", output_path.stem)))}</strong><br><span>HTML final output</span></div>
       <div class="deck-actions">
@@ -619,8 +639,8 @@ def build_html(spec_path: Path, output_path: Path | None = None) -> tuple[Path, 
         "schema_version": "1.0",
         "created_at": created_at,
         "output_role": "final_html",
-        "source_spec_path": base_relative(spec_path),
-        "html_path": base_relative(output_path),
+        "source_spec_path": source_spec_ref,
+        "html_path": html_ref,
         "deck_name": spec.get("name"),
         "slide_count": len(slides),
         "asset_policy": "single_file_no_remote_assets",
@@ -629,6 +649,7 @@ def build_html(spec_path: Path, output_path: Path | None = None) -> tuple[Path, 
         "preview_derivatives": ["pdf", "png"],
         "notes": "HTML is a final browser/share/presentation output. PPTX and Google Slides remain preferred human-editable outputs.",
     }
+    manifest = sanitize_public_report(manifest, workspace=workspace)
     manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return output_path, manifest_path
 
