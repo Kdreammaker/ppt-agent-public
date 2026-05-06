@@ -56,7 +56,7 @@ def assert_public_safe(path: Path) -> None:
     assert_true(not hits, f"{path} contains private marker patterns: {hits}")
 
 
-def validate_markdown(path: Path) -> dict[str, Any]:
+def validate_markdown(path: Path, *, expected_intent: str = "balanced") -> dict[str, Any]:
     assert_true(path.exists(), f"missing Markdown companion report: {path}")
     assert_public_safe(path)
     text = path.read_text(encoding="utf-8-sig", errors="ignore")
@@ -69,17 +69,18 @@ def validate_markdown(path: Path) -> dict[str, Any]:
         "native editable PPTX",
         "HTML screenshots are not used as PPTX content",
         "metadata only",
+        f"Selected: `{expected_intent}`",
     ]
     missing = [item for item in required if item not in text]
     assert_true(not missing, f"{path} missing explanatory text: {missing}")
-    return {"path": path.as_posix(), "status": "pass"}
+    return {"path": path.as_posix(), "status": "pass", "selected_output_intent": expected_intent}
 
 
 def run(command: list[str], *, timeout: int = 240) -> subprocess.CompletedProcess[str]:
     return subprocess.run(command, cwd=BASE_DIR, capture_output=True, text=True, check=False, timeout=timeout)
 
 
-def validate_summary(path: Path) -> dict[str, Any]:
+def validate_summary(path: Path, *, expected_intent: str = "balanced") -> dict[str, Any]:
     payload = load_json(path)
     assert_public_safe(path)
     assert_true(payload.get("contract") == CONTRACT_ID, f"{path} contract mismatch")
@@ -89,6 +90,7 @@ def validate_summary(path: Path) -> dict[str, Any]:
     assert_true(isinstance(intents, dict), f"{path} missing output intent options")
     assert_true(intents.get("available") == OUTPUT_INTENTS, f"{path} output intent options changed")
     assert_true(intents.get("default") == "balanced", f"{path} default output intent changed")
+    assert_true(intents.get("selected") == expected_intent, f"{path} selected output intent mismatch")
     definitions = intents.get("definitions")
     assert_true(isinstance(definitions, dict), f"{path} missing output intent definitions")
     for key in OUTPUT_INTENTS:
@@ -153,6 +155,7 @@ def validate_summary(path: Path) -> dict[str, Any]:
         assert_true(isinstance(guidance.get(key), str) and guidance[key], f"{path} missing guidance {key}")
     return {
         "path": path.as_posix(),
+        "selected_output_intent": intents.get("selected"),
         "asset_state_summary": asset_state,
         "classification_counts": counts,
     }
@@ -201,8 +204,8 @@ def write_fixture(root: Path) -> tuple[Path, Path]:
     return setup_path, readiness_path
 
 
-def validate_setup_wrapper(output_root: Path) -> dict[str, Any]:
-    workspace = output_root / "workspace"
+def validate_setup_wrapper(output_root: Path, *, intent: str = "balanced") -> dict[str, Any]:
+    workspace = output_root / f"workspace-{intent}"
     result = run(
         [
             sys.executable,
@@ -211,6 +214,8 @@ def validate_setup_wrapper(output_root: Path) -> dict[str, Any]:
             workspace.as_posix(),
             "--force",
             "--skip-version-check",
+            "--output-intent",
+            intent,
         ],
         timeout=360,
     )
@@ -223,10 +228,11 @@ def validate_setup_wrapper(output_root: Path) -> dict[str, Any]:
         setup_report.get("setup_summary_markdown") == "outputs/reports/public_setup_summary.md",
         "setup report missing setup summary Markdown path",
     )
-    return {**validate_summary(report), "markdown": validate_markdown(markdown)}
+    assert_true(setup_report.get("output_intent") == intent, "setup report selected intent mismatch")
+    return {**validate_summary(report, expected_intent=intent), "markdown": validate_markdown(markdown, expected_intent=intent)}
 
 
-def validate_fixture_export(output_root: Path) -> dict[str, Any]:
+def validate_fixture_export(output_root: Path, *, intent: str = "editable_office") -> dict[str, Any]:
     fixture_root = output_root / "fixture"
     setup_path, readiness_path = write_fixture(fixture_root)
     output = output_root / "fixture_public_setup_summary.json"
@@ -243,11 +249,13 @@ def validate_fixture_export(output_root: Path) -> dict[str, Any]:
             output.as_posix(),
             "--markdown-output",
             markdown.as_posix(),
+            "--output-intent",
+            intent,
         ]
     )
     assert_true(result.returncode == 0, result.stderr or result.stdout)
-    summary = validate_summary(output)
-    markdown_summary = validate_markdown(markdown)
+    summary = validate_summary(output, expected_intent=intent)
+    markdown_summary = validate_markdown(markdown, expected_intent=intent)
     assert_true(
         summary["asset_state_summary"] == {"approved": 1, "requested": 2, "unknown": 1},
         "fixture asset-state counts were not preserved",
@@ -260,6 +268,43 @@ def validate_fixture_export(output_root: Path) -> dict[str, Any]:
     return {**summary, "markdown": markdown_summary}
 
 
+def validate_invalid_intent_rejected(output_root: Path) -> dict[str, Any]:
+    workspace = output_root / "workspace-invalid"
+    result = run(
+        [
+            sys.executable,
+            "scripts/ppt_setup.py",
+            "--workspace",
+            workspace.as_posix(),
+            "--force",
+            "--skip-version-check",
+            "--output-intent",
+            "invalid_intent",
+        ],
+        timeout=120,
+    )
+    assert_true(result.returncode != 0, "ppt_setup accepted an invalid output intent")
+    output = output_root / "invalid_public_setup_summary.json"
+    direct = run(
+        [
+            sys.executable,
+            "scripts/build_public_setup_summary.py",
+            "--output",
+            output.as_posix(),
+            "--output-intent",
+            "invalid_intent",
+        ],
+        timeout=120,
+    )
+    assert_true(direct.returncode != 0, "build_public_setup_summary accepted an invalid output intent")
+    assert_true(not output.exists(), "invalid intent wrote a public setup summary")
+    return {
+        "status": "pass",
+        "ppt_setup_returncode": result.returncode,
+        "summary_builder_returncode": direct.returncode,
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Validate public setup summary generation.")
     parser.add_argument("--output-root", required=True)
@@ -268,12 +313,19 @@ def main(argv: list[str] | None = None) -> int:
     output_root.mkdir(parents=True, exist_ok=True)
     result = {
         "status": "pass",
-        "setup_wrapper": validate_setup_wrapper(output_root / "setup-wrapper"),
+        "setup_wrapper": {
+            intent: validate_setup_wrapper(output_root / "setup-wrapper", intent=intent)
+            for intent in OUTPUT_INTENTS
+        },
         "fixture_export": validate_fixture_export(output_root / "fixture-export"),
+        "invalid_intent_rejected": validate_invalid_intent_rejected(output_root / "invalid-intent"),
         "public_private_scan": {
             "scanned_files": [
-                (output_root / "setup-wrapper" / "workspace" / "outputs" / "reports" / "public_setup_summary.json").as_posix(),
-                (output_root / "setup-wrapper" / "workspace" / "outputs" / "reports" / "public_setup_summary.md").as_posix(),
+                *[
+                    (output_root / "setup-wrapper" / f"workspace-{intent}" / "outputs" / "reports" / name).as_posix()
+                    for intent in OUTPUT_INTENTS
+                    for name in ("public_setup_summary.json", "public_setup_summary.md")
+                ],
                 (output_root / "fixture-export" / "fixture_public_setup_summary.json").as_posix(),
                 (output_root / "fixture-export" / "fixture_public_setup_summary.md").as_posix(),
             ],

@@ -200,6 +200,8 @@ def command_setup(args: argparse.Namespace) -> int:
                     workspace.as_posix(),
                     "--output",
                     setup_summary_path.as_posix(),
+                    "--output-intent",
+                    args.output_intent,
                 ],
             )
         )
@@ -300,6 +302,7 @@ def command_setup(args: argparse.Namespace) -> int:
         "errors": errors,
         "setup_summary": "outputs/reports/public_setup_summary.json",
         "setup_summary_markdown": "outputs/reports/public_setup_summary.md",
+        "output_intent": args.output_intent,
         "steps": steps,
         "next_commands": {
             "natural_language_public": {
@@ -328,6 +331,7 @@ def command_setup(args: argparse.Namespace) -> int:
                 "private_status": report["private_status"],
                 "private_request_ready": report["private_request_ready"],
                 "private_execution_ready": report["private_execution_ready"],
+                "output_intent": report["output_intent"],
                 "report": rel_workspace(report_path, workspace),
                 "next_commands": report["next_commands"],
             },
@@ -355,6 +359,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--private-build-command-json", default=os.environ.get("PPT_AGENT_PRIVATE_BUILD_COMMAND_JSON"))
     parser.add_argument("--private-build-command-env", default="PPT_AGENT_PRIVATE_BUILD_COMMAND_JSON")
     parser.add_argument("--default-operating-mode", choices=["auto", "assistant"], default="assistant")
+    parser.add_argument("--output-intent", choices=["design_visual", "editable_office", "balanced"], default="balanced", help="Metadata-only output intent recorded in public setup summary.")
     parser.add_argument("--github-check", action="store_true")
     parser.add_argument("--reset-connector", action="store_true")
     parser.add_argument("--skip-dependency-install", action="store_true")

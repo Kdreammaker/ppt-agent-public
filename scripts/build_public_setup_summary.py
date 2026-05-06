@@ -77,7 +77,11 @@ def as_counts(value: Any, keys: tuple[str, ...]) -> dict[str, int]:
     return counts
 
 
-def setup_output_intents(setup_summary: dict[str, Any]) -> dict[str, Any]:
+def setup_output_intents(setup_summary: dict[str, Any], selected_output_intent: str) -> dict[str, Any]:
+    if selected_output_intent not in OUTPUT_INTENTS:
+        raise PublicSetupSummaryError(
+            f"invalid output intent {selected_output_intent!r}; expected one of {', '.join(OUTPUT_INTENTS)}"
+        )
     options = setup_summary.get("output_intent_options")
     if isinstance(options, dict) and options.get("available") == list(OUTPUT_INTENTS):
         default = options.get("default") if options.get("default") in OUTPUT_INTENTS else "balanced"
@@ -86,6 +90,7 @@ def setup_output_intents(setup_summary: dict[str, Any]) -> dict[str, Any]:
     return {
         "available": list(OUTPUT_INTENTS),
         "default": default,
+        "selected": selected_output_intent,
         "definitions": {
             "design_visual": "Prioritize visual storytelling and infographic composition.",
             "editable_office": "Prioritize PowerPoint-native objects and editable chart/table data where available.",
@@ -172,6 +177,7 @@ def build_summary(
     *,
     setup_summary_path: Path | None = None,
     editable_readiness_path: Path | None = None,
+    selected_output_intent: str = "balanced",
 ) -> dict[str, Any]:
     setup_summary = load_json(setup_summary_path)
     editable_readiness = load_json(editable_readiness_path)
@@ -183,7 +189,7 @@ def build_summary(
             "setup_ux_summary": artifact_status(setup_summary_path),
             "editable_office_readiness": artifact_status(editable_readiness_path),
         },
-        "output_intent_options": setup_output_intents(setup_summary),
+        "output_intent_options": setup_output_intents(setup_summary, selected_output_intent),
         "one_slide_sample_checkpoint": setup_sample_checkpoint(setup_summary),
         "uploaded_knowledge_assets_summary": uploaded_knowledge_assets(setup_summary),
         "editable_output_roles": editable_output_roles(setup_summary),
@@ -240,6 +246,7 @@ def markdown_text(payload: dict[str, Any]) -> str:
         f"- `editable_office`: {definitions['editable_office']}",
         f"- `balanced`: {definitions['balanced']}",
         f"- Default: `{intents['default']}`",
+        f"- Selected: `{intents['selected']}`",
         "",
         "## One-Slide Review",
         "",
@@ -280,6 +287,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--workspace", help="Workspace root for default output location.")
     parser.add_argument("--setup-ux-summary", help="Optional internal setup-ux-summary.json to summarize.")
     parser.add_argument("--editable-office-readiness", help="Optional editable-office-readiness.json to summarize.")
+    parser.add_argument("--output-intent", default="balanced", choices=OUTPUT_INTENTS, help="Selected output intent metadata.")
     parser.add_argument("--output", help="Output JSON path.")
     parser.add_argument("--markdown-output", help="Output Markdown path.")
     args = parser.parse_args(argv)
@@ -290,6 +298,7 @@ def main(argv: list[str] | None = None) -> int:
     payload = build_summary(
         setup_summary_path=resolve_path(args.setup_ux_summary),
         editable_readiness_path=resolve_path(args.editable_office_readiness),
+        selected_output_intent=args.output_intent,
     )
     write_json(output, payload)
     markdown_output = resolve_path(args.markdown_output) or output.with_suffix(".md")
@@ -303,6 +312,7 @@ def main(argv: list[str] | None = None) -> int:
                 "markdown_report": markdown_output.name,
                 "contract": payload["contract"],
                 "output_intents": payload["output_intent_options"]["available"],
+                "selected_output_intent": payload["output_intent_options"]["selected"],
                 "editable_chart_table_counts": payload["editable_chart_table_readiness"]["classification_counts"],
             },
             indent=2,

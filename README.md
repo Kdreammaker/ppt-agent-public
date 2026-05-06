@@ -23,6 +23,12 @@ Already cloned setup from the repo root:
 python scripts\ppt_setup.py --workspace "<workspace>" --force
 ```
 
+To record a preferred setup intent without changing renderer behavior:
+
+```powershell
+python scripts\ppt_setup.py --workspace "<workspace>" --force --output-intent editable_office
+```
+
 Included agent skill route:
 Use `skills/ppt-agent/SKILL.md`, then run `python scripts\ppt_agent.py doctor`
 and `python scripts\ppt_agent.py make --mode assistant --prompt "<prompt>"`.
@@ -45,6 +51,10 @@ explain output intent choices:
   chart/table data when that capability is available.
 - `balanced`: the default; keep strong design while preserving native PPTX
   editability.
+
+Users may choose one of these with `--output-intent`; the selected value is
+recorded in `public_setup_summary.json` and `public_setup_summary.md` as
+metadata only. The default remains `balanced`.
 
 The summary also explains why one-slide review exists, what uploaded
 knowledge/asset counts mean, that PPTX is the native editable primary output,

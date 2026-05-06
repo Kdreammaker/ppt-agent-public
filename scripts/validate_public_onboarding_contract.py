@@ -89,6 +89,10 @@ def validate_setup_contract(workspace: Path) -> dict[str, Any]:
         setup_summary.get("contract") == "ppt-maker.public-setup-summary.v0",
         "public setup summary contract mismatch",
     )
+    intents = setup_summary.get("output_intent_options")
+    assert_true(isinstance(intents, dict), "public setup summary missing output intent options")
+    assert_true(intents.get("default") == "balanced", "public setup summary default output intent changed")
+    assert_true(intents.get("selected") == "balanced", "default setup should select balanced output intent")
     assert_true(
         report.get("setup_summary") == "outputs/reports/public_setup_summary.json",
         "setup report missing public setup summary path",
@@ -97,6 +101,7 @@ def validate_setup_contract(workspace: Path) -> dict[str, Any]:
         report.get("setup_summary_markdown") == "outputs/reports/public_setup_summary.md",
         "setup report missing public setup summary Markdown path",
     )
+    assert_true(report.get("output_intent") == "balanced", "setup report default output intent changed")
     md_text = setup_summary_md.read_text(encoding="utf-8", errors="ignore")
     assert_true("metadata only" in md_text and "HTML screenshots are not used as PPTX content" in md_text, "setup summary Markdown missing explanatory policy text")
     commands = report.get("next_commands", {}).get("natural_language_public")
