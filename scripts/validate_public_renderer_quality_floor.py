@@ -355,8 +355,12 @@ def assert_typography_diagnostic_item(item: dict[str, Any], *, source: str) -> N
     request = item.get("compression_request")
     if request is not None:
         assert_true(isinstance(request, dict), f"{source} compression_request must be an object")
-        for key in ("slot_id", "role", "locale", "current_units", "target_units", "target_lines", "max_lines", "priority"):
+        for key in ("role", "locale", "current_units", "target_units", "target_lines", "max_lines", "priority"):
             assert_true(key in request, f"{source} compression_request missing {key}")
+        assert_true(
+            "slot_ref" in request or "slot_id" in request,
+            f"{source} compression_request missing public slot reference",
+        )
     assert_no_blocking_korean_broken_token(item, source=source)
 
 
@@ -466,7 +470,7 @@ def validate_typography_diagnostics(report: dict[str, Any], project_dir: Path, *
     for slot in text_slots[:8]:
         diagnostic = slot.get("typography_diagnostics")
         assert_true(isinstance(diagnostic, dict), f"{slot_map} text slot missing typography diagnostics")
-        assert_typography_diagnostic_item(diagnostic, source=f"{slot_map}:{slot.get('slot_name')}")
+        assert_typography_diagnostic_item(diagnostic, source=f"{slot_map}:{slot.get('slot_ref') or slot.get('slot_name')}")
     return {"source": "deck_slot_map", "items": len(text_slots), "summary": summary}
 
 

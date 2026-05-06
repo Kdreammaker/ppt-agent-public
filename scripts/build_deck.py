@@ -1452,6 +1452,42 @@ def value_preview(value: Any, limit: int = 80) -> str:
     return text if len(text) <= limit else text[: limit - 3].rstrip() + "..."
 
 
+def public_safe_slot_map_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    safe_rows: list[dict[str, Any]] = []
+    counters: dict[tuple[int, str], int] = {}
+    for row in rows:
+        slide_number = int(row.get("slide_number") or 0)
+        slot_kind = str(row.get("slot_kind") or "slot")
+        counter_key = (slide_number, slot_kind)
+        counters[counter_key] = counters.get(counter_key, 0) + 1
+        slot_ref = f"{slot_kind}-{slide_number:02d}-{counters[counter_key]:02d}"
+        safe_row = {
+            key: value
+            for key, value in row.items()
+            if key not in {"slot_name", "slide_id", "shape_name", "shape_index"}
+        }
+        safe_row["slot_ref"] = slot_ref
+        diagnostic = safe_row.get("typography_diagnostics")
+        if isinstance(diagnostic, dict):
+            safe_diagnostic = {
+                key: value
+                for key, value in diagnostic.items()
+                if key not in {"slot_name", "slide_id"}
+            }
+            request = safe_diagnostic.get("compression_request")
+            if isinstance(request, dict):
+                safe_request = {
+                    key: value
+                    for key, value in request.items()
+                    if key != "slot_id"
+                }
+                safe_request["slot_ref"] = slot_ref
+                safe_diagnostic["compression_request"] = safe_request
+            safe_row["typography_diagnostics"] = safe_diagnostic
+        safe_rows.append(safe_row)
+    return safe_rows
+
+
 def write_deck_slot_map_report(
     output_path: Path,
     spec: dict[str, Any],
@@ -1463,7 +1499,7 @@ def write_deck_slot_map_report(
 ) -> None:
     reports_dir = default_reports_dir(report_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
-    rows = deck_slot_map_rows(slide_specs, sources, blueprint_index, theme)
+    rows = public_safe_slot_map_rows(deck_slot_map_rows(slide_specs, sources, blueprint_index, theme))
     by_kind: dict[str, int] = {}
     filled_slots = 0
     for row in rows:
@@ -1488,6 +1524,11 @@ def write_deck_slot_map_report(
             ),
         },
         "slots": rows,
+        "public_private_hygiene": {
+            "raw_slot_ids_included": False,
+            "shape_names_included": False,
+            "slide_internal_ids_included": False,
+        },
     }
 
     report_json = reports_dir / f"{output_path.stem}_deck_slot_map.json"
@@ -1505,14 +1546,14 @@ def write_deck_slot_map_report(
         f"- Mapped slots: {len(rows)}",
         f"- Filled slots: {filled_slots}",
         "",
-        "| Slide | Template | Kind | Slot | Value source | Budget | Current value |",
+        "| Slide | Template | Kind | Slot Ref | Value source | Budget | Current value |",
         "| ---: | --- | --- | --- | --- | ---: | --- |",
     ]
     for row in rows:
         budget = "" if row.get("budget") is None else str(row["budget"])
         lines.append(
             f"| {row['slide_number']} | {row.get('template_key') or ''} | {row['slot_kind']} | "
-            f"{row['slot_name']} | {row.get('value_source') or ''} | {budget} | "
+            f"{row['slot_ref']} | {row.get('value_source') or ''} | {budget} | "
             f"{value_preview(row.get('current_value'))} |"
         )
     markdown = "\n".join(lines) + "\n"

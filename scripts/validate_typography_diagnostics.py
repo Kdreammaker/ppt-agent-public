@@ -92,8 +92,12 @@ def assert_diagnostic_shape(item: dict[str, Any], *, source: str, enforce_blocki
     request = item.get("compression_request")
     if request is not None:
         assert_true(isinstance(request, dict), f"{source} compression_request must be an object")
-        for key in ("slot_id", "role", "locale", "current_units", "target_units", "target_lines", "max_lines", "priority"):
+        for key in ("role", "locale", "current_units", "target_units", "target_lines", "max_lines", "priority"):
             assert_true(key in request, f"{source} compression_request missing {key}")
+        assert_true(
+            "slot_ref" in request or "slot_id" in request,
+            f"{source} compression_request missing public slot reference",
+        )
     if enforce_blocking:
         assert_no_blocking_korean_broken_token(item, source=source)
 
