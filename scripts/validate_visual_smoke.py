@@ -74,6 +74,16 @@ def public_safe_text(value: Any, limit: int = 1200) -> str:
     return text[:limit]
 
 
+def public_artifact_ref(path: Path | None, *, role: str = "artifact") -> str | None:
+    if path is None:
+        return None
+    resolved = path.resolve()
+    try:
+        return f"repo:{resolved.relative_to(BASE_DIR.resolve()).as_posix()}"
+    except ValueError:
+        return f"local-artifact:{role}:{resolved.name}"
+
+
 class RenderError(RuntimeError):
     def __init__(self, message: str, details: dict[str, Any] | None = None) -> None:
         super().__init__(message)
@@ -284,7 +294,7 @@ def collect_image_metrics(image_path: Path, slide_no: int) -> dict[str, Any]:
     stat = ImageStat.Stat(gray)
     return {
         "slide": slide_no,
-        "path": str(image_path),
+        "path": public_artifact_ref(image_path, role="visual-smoke-preview"),
         "width": image.width,
         "height": image.height,
         "stddev": round(float(stat.stddev[0]), 4),
@@ -411,7 +421,7 @@ def validate(pptx_path: Path, spec_path: Path | None = None, render_dir: Path | 
     issues.extend(inspect_major_text(prs, spec_path))
 
     return {
-        "file": str(pptx_path),
+        "file": public_artifact_ref(pptx_path, role="pptx"),
         "slide_count": len(prs.slides),
         "rendered_slide_count": len(rendered_paths),
         "errors": sum(1 for issue in issues if issue["severity"] == "error"),

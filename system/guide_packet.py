@@ -32,12 +32,17 @@ DEFAULT_PROJECTS_DIR = BASE_DIR / "outputs" / "projects"
 
 APPROVED_ASSET_BLOCKING_REASONS = {
     "approved_asset_file_missing",
+    "approved_asset_checksum_missing",
     "approved_asset_checksum_mismatch",
+    "approved_asset_size_missing",
     "approved_asset_size_mismatch",
     "approved_asset_type_unsupported_for_slot",
     "approved_asset_ref_not_found_in_manifest",
     "approved_asset_path_unsafe",
     "approved_asset_insert_failed",
+    "approved_package_not_approved",
+    "approved_package_not_materialized",
+    "approved_package_manifest_missing",
     "policy_blocked",
     "license_blocked",
 }
@@ -1791,6 +1796,7 @@ def canonical_approved_asset_reason(reason: str) -> str:
         "checksum_or_file_size_validation_failed": "approved_asset_checksum_mismatch",
         "no valid approved package asset": "approved_asset_insert_failed",
         "no approved package asset with valid checksum and size": "approved_asset_insert_failed",
+        "approved_package_file_missing": "approved_asset_file_missing",
     }
     normalized = generic_reasons.get(reason, reason)
     return normalized if normalized in APPROVED_ASSET_BLOCKING_REASONS else "approved_asset_insert_failed"
@@ -1820,6 +1826,8 @@ def public_package_path_or_none(value: Any) -> str | None:
 
 def public_asset_event(event: dict[str, Any]) -> dict[str, Any]:
     item = dict(event)
+    if item.pop("package_manifest_id", None):
+        item.setdefault("package_ref", "approved-package-evidence")
     for field in ["relative_package_path", "source_asset_ref"]:
         if field not in item:
             continue
@@ -1833,6 +1841,8 @@ def public_asset_event(event: dict[str, Any]) -> dict[str, Any]:
 
 def public_asset_failure(failure: dict[str, Any]) -> dict[str, Any]:
     item = dict(failure)
+    if item.pop("package_manifest_id", None):
+        item.setdefault("package_ref", "approved-package-evidence")
     for field in ["asset_ref", "relative_package_path", "source_asset_ref"]:
         if field not in item or not item.get(field):
             continue
@@ -1856,11 +1866,39 @@ def approved_asset_type_usable_for_slot(asset: ApprovedAssetReference, slot: Ass
     return bool(media_type.startswith("image/") or insert_as in {"icon", "mockup", "approved_image"} or "image" in role)
 
 
+def package_envelope_failure(package_response: dict[str, Any]) -> str | None:
+    status = str(package_response.get("status") or "").strip().lower()
+    approval = package_response.get("approval") if isinstance(package_response.get("approval"), dict) else {}
+    approval_status = str(approval.get("status") or package_response.get("approval_status") or "").strip().lower()
+    materialization_status = str(package_response.get("materialization_status") or "").strip().lower()
+    manifest_available = str(package_response.get("package_manifest_available") or "").strip().lower()
+    manifest = package_response.get("package_manifest") if isinstance(package_response.get("package_manifest"), dict) else {}
+    if status not in {"approved", "approved_package", "approved_bundle"} or approval_status not in {"approved", "not_required"}:
+        return "approved_package_not_approved"
+    if materialization_status and materialization_status not in {"materialized", "complete", "completed"}:
+        return "approved_package_not_materialized"
+    if manifest_available and manifest_available not in {"yes", "true", "available"}:
+        return "approved_package_manifest_missing"
+    if not isinstance(manifest, dict) or not isinstance(manifest.get("assets"), list):
+        return "approved_package_manifest_missing"
+    return None
+
+
+def package_asset_manifest_failure(asset: dict[str, Any] | None) -> str | None:
+    if not isinstance(asset, dict):
+        return "approved_asset_ref_not_found_in_manifest"
+    if not normalized_sha256(str(asset.get("sha256") or "")):
+        return "approved_asset_checksum_missing"
+    if asset.get("size_bytes") is None:
+        return "approved_asset_size_missing"
+    return None
+
+
 def resolve_asset(ctx: BuildContext, slot: AssetSlot) -> dict[str, Any]:
     matches = [
         asset
         for asset in ctx.packet.approved_asset_references
-        if (asset.approved or asset.manifest_checksum)
+        if (asset.approved or asset.manifest_checksum or (asset.model_extra or {}).get("package_validation_failure"))
         and (asset.slot_id == slot.slot_id or asset.asset_ref == slot.preferred_asset_ref or asset.asset_role == slot.slot_type)
     ]
     for asset in matches:
@@ -1928,11 +1966,40 @@ def resolve_asset(ctx: BuildContext, slot: AssetSlot) -> dict[str, Any]:
         checksum_valid = None
         size_valid = None
         if path.exists():
-            if asset.sha256:
-                checksum_valid = hashlib.sha256(path.read_bytes()).hexdigest().lower() == normalized_sha256(asset.sha256)
-            if asset.file_size_bytes is not None:
-                size_valid = path.stat().st_size == asset.file_size_bytes
-            if checksum_valid is not False and size_valid is not False:
+            expected_sha256 = normalized_sha256(asset.sha256)
+            if not expected_sha256:
+                reason = "approved_asset_checksum_missing"
+                add_asset_validation_failure(
+                    ctx,
+                    {
+                        "slot_id": slot.slot_id,
+                        "asset_ref": asset.asset_ref,
+                        "relative_package_path": public_package_path_or_none((asset.model_extra or {}).get("relative_package_path")),
+                        "reason": reason,
+                        "checksum_valid": None,
+                        "file_size_valid": None,
+                        "status": "fail",
+                    },
+                )
+                return {"status": "native_fallback", "asset_ref": asset.asset_ref, "path": None, "fallback_reason": reason}
+            if asset.file_size_bytes is None:
+                reason = "approved_asset_size_missing"
+                add_asset_validation_failure(
+                    ctx,
+                    {
+                        "slot_id": slot.slot_id,
+                        "asset_ref": asset.asset_ref,
+                        "relative_package_path": public_package_path_or_none((asset.model_extra or {}).get("relative_package_path")),
+                        "reason": reason,
+                        "checksum_valid": None,
+                        "file_size_valid": None,
+                        "status": "fail",
+                    },
+                )
+                return {"status": "native_fallback", "asset_ref": asset.asset_ref, "path": None, "fallback_reason": reason}
+            checksum_valid = hashlib.sha256(path.read_bytes()).hexdigest().lower() == expected_sha256
+            size_valid = path.stat().st_size == asset.file_size_bytes
+            if checksum_valid and size_valid:
                 manifest_info = package_asset_manifest_info(asset)
                 return {
                     "status": "approved_asset",
@@ -3394,7 +3461,7 @@ def approved_package_assets_for_asset_system(ctx: BuildContext) -> list[dict[str
         grouped.setdefault(key, set()).add(int(event.get("slide_no") or 1))
     return [
         {
-            "package_manifest_id": key[0],
+            "package_ref": "approved-package-evidence",
             "relative_package_path": key[1],
             "sha256": key[2],
             "used_on_slides": sorted(slides),
@@ -3427,7 +3494,6 @@ def approved_events_for_asset(ctx: BuildContext, asset: dict[str, Any]) -> list[
         if not event.get("fallback_used")
         and event.get("resolution") == "approved_package_asset"
         and normalize_package_relative_path(str(event.get("relative_package_path") or "")) == asset_path
-        and str(event.get("package_manifest_id") or "package-manifest:unknown") == str(asset.get("package_manifest_id") or "package-manifest:unknown")
         and str(event.get("sha256") or "") == str(asset.get("sha256") or "")
     ]
 
@@ -3871,6 +3937,7 @@ def inject_approved_package_references(raw: dict[str, Any], approved_package_pat
     package_response = json.loads(package_path.read_text(encoding="utf-8-sig"))
     manifest = package_response.get("package_manifest", {})
     package_manifest_id = manifest.get("package_manifest_id")
+    envelope_failure = package_envelope_failure(package_response)
     manifest_assets = {
         normalized_path: asset
         for asset in manifest.get("assets", [])
@@ -3887,6 +3954,7 @@ def inject_approved_package_references(raw: dict[str, Any], approved_package_pat
     references = list(raw.get("approved_asset_references") or [])
 
     def append_reference(asset: dict[str, Any] | None, slot_id: str, asset_ref: str, package_slot: dict[str, Any] | None = None, failure: str | None = None) -> None:
+        failure = failure or envelope_failure or package_asset_manifest_failure(asset)
         relative_path = public_package_path_or_none((asset or {}).get("relative_package_path") or asset_ref) or str(asset_ref or "")
         local_path = resolve_package_file(package_path, relative_path) if asset and not failure else None
         references.append(
@@ -3895,11 +3963,11 @@ def inject_approved_package_references(raw: dict[str, Any], approved_package_pat
                 "slot_id": slot_id,
                 "asset_type": (asset or {}).get("insert_as") or (asset or {}).get("media_type") or package_slot_type(package_slot or {}, asset),
                 "asset_role": (asset or {}).get("insert_as") or (asset or {}).get("asset_role") or (package_slot or {}).get("slot_role"),
-                "approved": True,
+                "approved": failure is None,
                 "local_path": str(local_path) if local_path else None,
                 "sha256": (asset or {}).get("sha256"),
                 "file_size_bytes": (asset or {}).get("size_bytes"),
-                "package_status": "approved_package_file",
+                "package_status": "approved_package_file" if failure is None else "blocked_package_file",
                 "package_manifest_id": package_manifest_id,
                 "relative_package_path": relative_path,
                 "approved_asset_ref": public_package_path_or_none(asset_ref) or relative_path,
@@ -4022,8 +4090,10 @@ def final_qa_report(
     required_archetypes = {slide.layout_archetype for slide in packet.slide_plan.slides}
     rendered_archetypes = {event["layout_archetype"] for event in ctx.native_renderer_events}
     fallback_count = sum(1 for event in ctx.asset_events if event.get("fallback_used"))
-    approved_events = [event for event in ctx.asset_events if not event.get("fallback_used")]
-    fallback_events = [event for event in ctx.asset_events if event.get("fallback_used")]
+    raw_approved_events = [event for event in ctx.asset_events if not event.get("fallback_used")]
+    raw_fallback_events = [event for event in ctx.asset_events if event.get("fallback_used")]
+    approved_events = [public_asset_event(event) for event in raw_approved_events]
+    fallback_events = [public_asset_event(event) for event in raw_fallback_events]
     required_slots = [slot for slide in packet.slide_plan.slides for slot in slide.asset_slots if slot.required]
     unresolved_blockers = []
     recorded_slot_ids = {event.get("slot_id") for event in ctx.asset_events}
@@ -4163,7 +4233,7 @@ def final_qa_report(
         "header_footer_omissions": ctx.omitted_header_footer,
         "asset_fallback_count": fallback_count,
         "approved_assets_used": {
-            "status": "pass" if approved_events else "not_applicable",
+            "status": "pass" if raw_approved_events else "not_applicable",
             "count": len(approved_events),
             "items": approved_events,
         },
