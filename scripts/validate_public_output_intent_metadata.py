@@ -224,6 +224,22 @@ def validate_public_private_scan(output_root: Path) -> dict[str, Any]:
     return {"scanned_root": output_root.as_posix(), "issues": 0}
 
 
+def validate_readme_output_intent_sequence() -> dict[str, Any]:
+    text = (BASE_DIR / "README.md").read_text(encoding="utf-8", errors="ignore")
+    checkpoint = (
+        'python scripts\\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" '
+        '--workspace "<workspace>" --mode assistant --output-intent design_visual'
+    )
+    approved = (
+        'python scripts\\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" '
+        '--workspace "<workspace>" --mode assistant --build-approved --output-intent design_visual'
+    )
+    assert_true(checkpoint in text, "README checkpoint example missing design_visual output intent")
+    assert_true(approved in text, "README approved build example does not preserve design_visual output intent")
+    assert_true(text.index(checkpoint) < text.index(approved), "README approved example should follow checkpoint example")
+    return {"status": "pass", "checkpoint_intent": "design_visual", "approved_intent": "design_visual"}
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Validate public output intent metadata across setup and make flows.")
     parser.add_argument("--output-root", required=True)
@@ -242,6 +258,7 @@ def main(argv: list[str] | None = None) -> int:
     assert_true(not changes, f"repo checkout outputs/reports changed during validation: {changes}")
     result = {
         "status": "pass",
+        "readme_output_intent_sequence": validate_readme_output_intent_sequence(),
         "valid_intents": valid,
         "invalid_intent_rejected": validate_invalid_intent(output_root / "invalid-intent"),
         "public_private_scan": validate_public_private_scan(output_root),
