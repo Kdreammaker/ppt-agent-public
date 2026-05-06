@@ -53,6 +53,10 @@ def repo_report_changes(before: dict[str, tuple[int, int]]) -> list[str]:
 
 def assert_existing_artifact_paths(report_path: Path, required: list[str]) -> dict[str, str | None]:
     report = load_json(report_path)
+    workspace = next(
+        (parent.parent for parent in report_path.parents if parent.name == "outputs"),
+        report_path.parent,
+    )
     artifacts = report.get("artifacts")
     assert_true(isinstance(artifacts, dict), f"{report_path} missing artifacts object")
     checked: dict[str, str | None] = {}
@@ -60,7 +64,8 @@ def assert_existing_artifact_paths(report_path: Path, required: list[str]) -> di
         value = artifacts.get(name)
         assert_true(isinstance(value, str) and value.strip(), f"{report_path} artifact {name} must be a usable path")
         path = Path(value)
-        assert_true(path.is_absolute(), f"{report_path} artifact {name} is not absolute: {value}")
+        if not path.is_absolute():
+            path = workspace / path
         assert_true(path.exists(), f"{report_path} artifact {name} does not exist: {value}")
         checked[name] = path.as_posix()
     for name, value in artifacts.items():
@@ -69,7 +74,8 @@ def assert_existing_artifact_paths(report_path: Path, required: list[str]) -> di
             continue
         if isinstance(value, str):
             path = Path(value)
-            assert_true(path.is_absolute(), f"{report_path} artifact {name} is not absolute: {value}")
+            if not path.is_absolute():
+                path = workspace / path
             assert_true(path.exists(), f"{report_path} artifact {name} does not exist: {value}")
             checked[name] = path.as_posix()
     return checked

@@ -14,6 +14,7 @@ if str(BASE_DIR) not in sys.path:
 
 from scripts.build_deck import build_deck_from_spec
 from scripts.build_html_deck import build_html
+from scripts.public_report_safety import artifact_ref, sanitize_public_report
 
 
 def base_relative(path: Path) -> str:
@@ -21,6 +22,13 @@ def base_relative(path: Path) -> str:
         return path.resolve().relative_to(BASE_DIR).as_posix()
     except ValueError:
         return path.resolve().as_posix()
+
+
+def workspace_from_report_dir(report_dir: Path) -> Path | None:
+    resolved = report_dir.resolve()
+    if len(resolved.parts) >= 2 and resolved.parts[-2:] == ("outputs", "reports"):
+        return resolved.parents[1]
+    return None
 
 
 def run_validation(args: list[str]) -> dict[str, Any]:
@@ -65,6 +73,7 @@ def build_dual_outputs(
 ) -> dict[str, Any]:
     spec_path = spec_path.resolve()
     report_root = report_dir.resolve() if report_dir else BASE_DIR / "outputs" / "reports"
+    workspace = workspace_from_report_dir(report_root)
     pptx_path = build_deck_from_spec(spec_path, report_dir=report_root)
     html_path, html_manifest_path = build_html(spec_path, html_output.resolve() if html_output else None)
     deck_id = pptx_path.stem
@@ -93,13 +102,13 @@ def build_dual_outputs(
         "command": "build_dual_outputs",
         "status": status,
         "deck_id": deck_id,
-        "spec_path": base_relative(spec_path),
+        "spec_path": artifact_ref(spec_path, workspace=workspace),
         "artifact_paths": {
-            "pptx": base_relative(pptx_path),
-            "html": base_relative(html_path),
-            "html_manifest": base_relative(html_manifest_path),
-            "summary_json": base_relative(json_path),
-            "summary_md": base_relative(md_path),
+            "pptx": artifact_ref(pptx_path, workspace=workspace),
+            "html": artifact_ref(html_path, workspace=workspace),
+            "html_manifest": artifact_ref(html_manifest_path, workspace=workspace),
+            "summary_json": artifact_ref(json_path, workspace=workspace),
+            "summary_md": artifact_ref(md_path, workspace=workspace),
         },
         "validation_summary": {
             "enabled": validate,
@@ -115,6 +124,7 @@ def build_dual_outputs(
             "outputs": ["pptx", "html"],
         },
     }
+    payload = sanitize_public_report(payload, workspace=workspace)
     write_reports(payload, json_path, md_path)
     if status != "passed":
         raise RuntimeError(f"Dual output validation failed: {base_relative(json_path)}")

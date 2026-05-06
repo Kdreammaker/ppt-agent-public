@@ -11,6 +11,10 @@ from typing import Any
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 SCHEMA_VERSION = "1.0"
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
+from scripts.public_report_safety import artifact_ref, sanitize_public_report
 
 
 def utc_now() -> str:
@@ -53,7 +57,7 @@ def remote_head(repo: Path, remote: str, branch: str, *, skip_remote: bool) -> t
     return line.split()[0], None
 
 
-def repo_status(repo: Path, *, label: str, skip_remote: bool) -> dict[str, Any]:
+def repo_status(repo: Path, *, label: str, skip_remote: bool, workspace: Path | None = None) -> dict[str, Any]:
     branch = git_value(repo, ["rev-parse", "--abbrev-ref", "HEAD"]) or "unknown"
     local = git_value(repo, ["rev-parse", "HEAD"])
     remote = git_value(repo, ["config", f"branch.{branch}.remote"]) or "origin"
@@ -71,7 +75,7 @@ def repo_status(repo: Path, *, label: str, skip_remote: bool) -> dict[str, Any]:
         status = "remote_unreachable"
     return {
         "label": label,
-        "path": repo.as_posix(),
+        "path": artifact_ref(repo, workspace=workspace),
         "branch": branch,
         "remote": remote,
         "remote_url_configured": bool(url),
@@ -118,9 +122,9 @@ def main(argv: list[str] | None = None) -> int:
     if not report_path.is_absolute():
         report_path = (BASE_DIR / report_path).resolve()
 
-    repos = [repo_status(BASE_DIR, label="public_control_plane", skip_remote=args.skip_remote)]
+    repos = [repo_status(BASE_DIR, label="public_control_plane", skip_remote=args.skip_remote, workspace=workspace)]
     if private_runtime and (private_runtime / ".git").exists():
-        repos.append(repo_status(private_runtime, label="private_runtime", skip_remote=args.skip_remote))
+        repos.append(repo_status(private_runtime, label="private_runtime", skip_remote=args.skip_remote, workspace=workspace))
 
     blocking = [
         repo["label"]
@@ -141,6 +145,7 @@ def main(argv: list[str] | None = None) -> int:
         },
         "repositories": repos,
     }
+    payload = sanitize_public_report(payload, workspace=workspace)
     write_json(report_path, payload)
     print(json.dumps({"status": payload["status"], "summary": payload["summary"], "report": report_path.as_posix()}, indent=2))
     return 0 if not blocking else 2

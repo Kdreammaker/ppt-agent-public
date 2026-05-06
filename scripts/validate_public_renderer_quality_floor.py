@@ -154,7 +154,10 @@ def artifact_path_optional(report: dict[str, Any], name: str) -> Path | None:
     if not isinstance(value, str) or not value:
         return None
     path = Path(value)
-    assert_true(path.is_absolute(), f"{name} artifact is not absolute: {value}")
+    if not path.is_absolute():
+        workspace = report.get("_workspace_root_for_validation")
+        assert_true(isinstance(workspace, str) and workspace, f"{name} artifact is relative but workspace is unavailable: {value}")
+        path = Path(workspace) / path
     assert_true(path.exists(), f"{name} artifact does not exist: {value}")
     return path
 
@@ -169,6 +172,8 @@ def project_dir_from_report(report: dict[str, Any]) -> Path:
         else:
             workspace_root = report.get("workspace_root")
             project_id = report.get("project_id")
+            if not isinstance(workspace_root, str) or workspace_root == "<workspace>":
+                workspace_root = report.get("_workspace_root_for_validation")
             assert_true(isinstance(workspace_root, str) and isinstance(project_id, str), "report missing project path")
             value = str(Path(workspace_root) / "outputs" / "projects" / project_id)
     path = Path(value)
@@ -449,6 +454,8 @@ def validate_typography_diagnostics(report: dict[str, Any], project_dir: Path, *
 
     absolute_paths = report.get("absolute_paths")
     workspace_root = report.get("workspace_root")
+    if workspace_root == "<workspace>":
+        workspace_root = report.get("_workspace_root_for_validation")
     if not workspace_root and isinstance(absolute_paths, dict):
         workspace_root = absolute_paths.get("workspace")
     if not workspace_root and len(project_dir.parents) >= 3:
@@ -491,6 +498,7 @@ def validate_case(case: dict[str, Any], output_root: Path, *, repo_mode: str) ->
         ]
     )
     report = load_stdout_json(result)
+    report["_workspace_root_for_validation"] = workspace.as_posix()
     pptx, html_path, project_dir = quality_artifacts(report)
     warning = None
     if result.returncode != 0 or report.get("status") != "built":

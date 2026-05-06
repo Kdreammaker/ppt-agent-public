@@ -9,9 +9,12 @@ import sys
 from pathlib import Path
 from typing import Any
 
-
 BASE_DIR = Path(__file__).resolve().parents[1]
 SCHEMA_VERSION = "1.0"
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
+from scripts.public_report_safety import artifact_ref, sanitize_public_report
 
 
 def utc_now() -> str:
@@ -37,7 +40,7 @@ def rel_workspace(path: Path, workspace: Path) -> str:
     try:
         return path.resolve().relative_to(workspace.resolve()).as_posix()
     except ValueError:
-        return path.resolve().as_posix()
+        return artifact_ref(path, workspace=workspace) or "[local-path-redacted]"
 
 
 def write_json(path: Path, data: dict[str, Any]) -> None:
@@ -304,12 +307,13 @@ def command_setup(args: argparse.Namespace) -> int:
     setup_summary_path = workspace / "outputs" / "reports" / "public_setup_summary.json"
     if setup_summary_path.exists():
         setup_summary_report = json.loads(setup_summary_path.read_text(encoding="utf-8-sig"))
+    public_workspace_ref = "<workspace>"
     report = {
         "schema_version": SCHEMA_VERSION,
         "command": "ppt_setup",
         "generated_at": utc_now(),
         "status": "ready" if not errors else "needs_attention",
-        "workspace_root": workspace.resolve().as_posix(),
+        "workspace_root": public_workspace_ref,
         "private_requested": should_configure_private,
         "private_status": status_payload.get("status"),
         "private_execution_ready": private_execution_ready,
@@ -328,13 +332,13 @@ def command_setup(args: argparse.Namespace) -> int:
         "steps": steps,
         "next_commands": {
             "natural_language_public": {
-                "assistant_checkpoint": f'python scripts/ppt_make.py "Make a 6-slide executive growth review" --workspace "{workspace.as_posix()}" --mode assistant --output-intent {args.output_intent}',
-                "assistant_final_after_review": f'python scripts/ppt_make.py "Make a 6-slide executive growth review" --workspace "{workspace.as_posix()}" --mode assistant --build-approved --output-intent {args.output_intent}',
-                "auto_fast_draft": f'python scripts/ppt_make.py "Make a 6-slide growth update for leadership" --workspace "{workspace.as_posix()}" --mode auto --output-intent {args.output_intent}',
+                "assistant_checkpoint": f'python scripts/ppt_make.py "Make a 6-slide executive growth review" --workspace "{public_workspace_ref}" --mode assistant --output-intent {args.output_intent}',
+                "assistant_final_after_review": f'python scripts/ppt_make.py "Make a 6-slide executive growth review" --workspace "{public_workspace_ref}" --mode assistant --build-approved --output-intent {args.output_intent}',
+                "auto_fast_draft": f'python scripts/ppt_make.py "Make a 6-slide growth update for leadership" --workspace "{public_workspace_ref}" --mode auto --output-intent {args.output_intent}',
                 "contract": "Assistant checkpoint writes planning artifacts and waits; final PPTX/HTML requires --build-approved or --continue-build.",
             },
-            "natural_language_private": f'python scripts/ppt_make.py "Make a production-ready executive growth review" --workspace "{workspace.as_posix()}" --mode assistant --production private --build-approved --execute-private',
-            "doctor": f'python scripts/ppt_private_connector.py status --workspace "{workspace.as_posix()}" --github-check',
+            "natural_language_private": f'python scripts/ppt_make.py "Make a production-ready executive growth review" --workspace "{public_workspace_ref}" --mode assistant --production private --build-approved --execute-private',
+            "doctor": f'python scripts/ppt_private_connector.py status --workspace "{public_workspace_ref}" --github-check',
         },
         "policy_summary": {
             "raw_workspace_code_stored": False,
@@ -343,6 +347,7 @@ def command_setup(args: argparse.Namespace) -> int:
             "local_paths_allowed_only_in_workspace_reports": True,
         },
     }
+    report = sanitize_public_report(report, workspace=workspace)
     report_path = workspace / "outputs" / "reports" / "ppt_setup_report.json"
     write_json(report_path, report)
     print(

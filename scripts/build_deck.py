@@ -35,6 +35,7 @@ from system.pptx_system import (
 from system.template_engine import render_template_slide, slot_text_budget
 from system.template_text_dna import load_template_text_dna_cleanup, slide_spec_with_text_dna_cleanup
 from system.typography_diagnostics import annotate_title_body_ratio, diagnose_text_box, diagnostics_summary, fit_text_for_box
+from scripts.public_report_safety import artifact_ref, sanitize_public_report
 
 WORKDIR = BASE_DIR
 REPORTS_DIR = BASE_DIR / "outputs" / "reports"
@@ -328,8 +329,16 @@ def default_reports_dir(report_dir: Path | None = None) -> Path:
     return report_dir.resolve() if report_dir else BASE_DIR / "outputs" / "reports"
 
 
+def workspace_from_report_dir(report_dir: Path) -> Path | None:
+    resolved = report_dir.resolve()
+    if len(resolved.parts) >= 2 and resolved.parts[-2:] == ("outputs", "reports"):
+        return resolved.parents[1]
+    return None
+
+
 def write_asset_usage_report(output_path: Path, spec: dict[str, Any], usage: list[dict[str, Any]], report_dir: Path | None = None) -> None:
     reports_dir = default_reports_dir(report_dir)
+    workspace = workspace_from_report_dir(reports_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
     all_intents = []
     for intent in spec.get("asset_intents", []):
@@ -1120,17 +1129,43 @@ def render_slide(
 
 def write_text_overflow_report(output_path: Path, events: list[dict[str, Any]], report_dir: Path | None = None) -> None:
     reports_dir = default_reports_dir(report_dir)
+    workspace = workspace_from_report_dir(reports_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
     report_json = reports_dir / f"{output_path.stem}_text_overflow.json"
     report_md = reports_dir / f"{output_path.stem}_text_overflow.md"
+    safe_events: list[dict[str, Any]] = []
+    for index, event in enumerate(events, start=1):
+        slot_ref = f"text-overflow-{index:02d}"
+        safe_event = {
+            key: value
+            for key, value in event.items()
+            if key not in {"slot", "slide_id", "slot_name"}
+        }
+        safe_event["slot_ref"] = slot_ref
+        request = safe_event.get("compression_request")
+        if isinstance(request, dict):
+            safe_request = {
+                key: value
+                for key, value in request.items()
+                if key not in {"slot_id", "slot_name"}
+            }
+            safe_request["slot_ref"] = slot_ref
+            safe_event["compression_request"] = safe_request
+        safe_events.append(sanitize_public_report(safe_event, workspace=workspace))
     payload = {
-        "deck": output_path.as_posix(),
+        "deck": artifact_ref(output_path),
         "summary": {
             "cutoff_events": len(events),
-            "affected_slots": len({(event["slide_id"], event["slot"]) for event in events}),
+            "affected_slots": len(safe_events),
         },
-        "events": events,
+        "events": safe_events,
+        "public_private_hygiene": {
+            "raw_slot_ids_included": False,
+            "raw_slot_names_included": False,
+            "local_paths_included": False,
+        },
     }
+    payload = sanitize_public_report(payload, workspace=workspace)
     report_json.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     lines = [
@@ -1143,15 +1178,15 @@ def write_text_overflow_report(output_path: Path, events: list[dict[str, Any]], 
     if events:
         lines.extend(
             [
-                "| Slide ID | Slot | Resolution | LLM | Fallback | Original chars | Budget | Final text |",
-                "| --- | --- | --- | --- | --- | ---: | ---: | --- |",
+                "| Slot Ref | Resolution | LLM | Fallback | Original chars | Budget | Final text |",
+                "| --- | --- | --- | --- | ---: | ---: | --- |",
             ]
         )
-        for event in events:
+        for event in safe_events:
             truncated = str(event["truncated_text"]).replace("\n", " / ").replace("|", "\\|")
             llm_state = "used" if event.get("llm_used") else "attempted" if event.get("llm_attempted") else "off"
             lines.append(
-                f"| {event['slide_id']} | {event['slot']} | {event.get('resolution', '')} | "
+                f"| {event['slot_ref']} | {event.get('resolution', '')} | "
                 f"{llm_state} | {event.get('fallback_reason') or ''} | {event['original_chars']} | "
                 f"{event['budget']} | {truncated[:120]} |"
             )
@@ -1198,6 +1233,7 @@ def write_slide_selection_rationale_report(
     report_dir: Path | None = None,
 ) -> None:
     reports_dir = default_reports_dir(report_dir)
+    workspace = workspace_from_report_dir(reports_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
     rows = slide_selection_rationale_rows(slide_specs, sources)
     by_source_type: dict[str, int] = {}
@@ -1210,7 +1246,7 @@ def write_slide_selection_rationale_report(
         by_mode_policy[mode] = by_mode_policy.get(mode, 0) + 1
 
     payload = {
-        "deck": output_path.as_posix(),
+        "deck": artifact_ref(output_path),
         "deck_name": spec.get("name"),
         "summary": {
             "slides": len(rows),
@@ -1219,6 +1255,7 @@ def write_slide_selection_rationale_report(
         },
         "slides": rows,
     }
+    payload = sanitize_public_report(payload, workspace=workspace)
 
     report_json = reports_dir / f"{output_path.stem}_slide_selection_rationale.json"
     report_md = reports_dir / f"{output_path.stem}_slide_selection_rationale.md"
@@ -1498,8 +1535,12 @@ def write_deck_slot_map_report(
     report_dir: Path | None = None,
 ) -> None:
     reports_dir = default_reports_dir(report_dir)
+    workspace = workspace_from_report_dir(reports_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
-    rows = public_safe_slot_map_rows(deck_slot_map_rows(slide_specs, sources, blueprint_index, theme))
+    rows = [
+        sanitize_public_report(row, workspace=workspace)
+        for row in public_safe_slot_map_rows(deck_slot_map_rows(slide_specs, sources, blueprint_index, theme))
+    ]
     by_kind: dict[str, int] = {}
     filled_slots = 0
     for row in rows:
@@ -1508,7 +1549,7 @@ def write_deck_slot_map_report(
             filled_slots += 1
 
     payload = {
-        "deck": output_path.as_posix(),
+        "deck": artifact_ref(output_path),
         "deck_name": spec.get("name"),
         "summary": {
             "slides": len(slide_specs),
@@ -1530,6 +1571,7 @@ def write_deck_slot_map_report(
             "slide_internal_ids_included": False,
         },
     }
+    payload = sanitize_public_report(payload, workspace=workspace)
 
     report_json = reports_dir / f"{output_path.stem}_deck_slot_map.json"
     report_md = reports_dir / f"{output_path.stem}_deck_slot_map.md"

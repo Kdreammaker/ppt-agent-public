@@ -10,11 +10,15 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+BASE_DIR = Path(__file__).resolve().parents[1]
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
 from public_auto_capability_metadata import expose_auto_capability_metadata
 from public_b49_asset_request import expose_b49_asset_request_summary, first_existing_path, resolve_path as resolve_optional_path
+from scripts.public_report_safety import artifact_ref, sanitize_public_report
 
 
-BASE_DIR = Path(__file__).resolve().parents[1]
 SCHEMA_VERSION = "1.0"
 OUTPUT_INTENTS = ("design_visual", "editable_office", "balanced")
 
@@ -48,7 +52,7 @@ def display_path(path: Path, root: Path) -> str:
     try:
         return path.resolve().relative_to(root.resolve()).as_posix()
     except ValueError:
-        return path.resolve().as_posix()
+        return artifact_ref(path, workspace=root) or "[local-path-redacted]"
 
 
 def resolve_path(value: str) -> Path:
@@ -56,8 +60,8 @@ def resolve_path(value: str) -> Path:
     return path.resolve() if path.is_absolute() else (Path.cwd() / path).resolve()
 
 
-def existing_path(path: Path | None) -> str | None:
-    return path.resolve().as_posix() if path and path.exists() else None
+def existing_path(path: Path | None, workspace: Path) -> str | None:
+    return display_path(path, workspace) if path and path.exists() else None
 
 
 def read_text_limited(path: Path, limit: int = 8000) -> str:
@@ -637,7 +641,7 @@ def command_make(args: argparse.Namespace) -> int:
         "next_action": "review_planning_artifacts_then_rerun_with_build_approved" if assistant_waiting else None,
         "private_attempted": bool(private_step),
         "private_executed": bool(private_step and "--execute" in private_step.get("command", [])),
-        "workspace_root": workspace.as_posix(),
+        "workspace_root": "<workspace>",
         "request_summary": {
             "source": "natural_language",
             "characters": len(request),
@@ -656,16 +660,16 @@ def command_make(args: argparse.Namespace) -> int:
             "report": display_path(report_path, workspace),
         },
         "artifacts": {
-            "intake": existing_path(intake_path),
-            "deck_plan": existing_path(plan_path),
-            "draft_design_brief": existing_path(design_brief_path),
-            "source_context": existing_path(project_root / "context" / "source_context.json") if context.get("items") else None,
-            "version_check": existing_path(version_report_path),
+            "intake": existing_path(intake_path, workspace),
+            "deck_plan": existing_path(plan_path, workspace),
+            "draft_design_brief": existing_path(design_brief_path, workspace),
+            "source_context": existing_path(project_root / "context" / "source_context.json", workspace) if context.get("items") else None,
+            "version_check": existing_path(version_report_path, workspace),
             "renderer_contract": None,
-            "spec": existing_path(spec_path),
-            "pptx": existing_path(deck_path),
-            "html": existing_path(html_output_path),
-            "report": report_path.resolve().as_posix(),
+            "spec": existing_path(spec_path, workspace),
+            "pptx": existing_path(deck_path, workspace),
+            "html": existing_path(html_output_path, workspace),
+            "report": display_path(report_path, workspace),
         },
         "connector_status": {
             "status": status_payload.get("status"),
@@ -681,6 +685,7 @@ def command_make(args: argparse.Namespace) -> int:
             "public_fallback_used": args.production != "private" and not bool(private_step),
         },
     }
+    report = sanitize_public_report(report, workspace=workspace)
     write_json(report_path, report)
     print(json.dumps({k: report[k] for k in ("status", "project_id", "operating_mode", "production_mode", "output_intent", "approval_required", "next_action", "artifact_paths", "artifacts", "connector_status", "errors")}, indent=2, ensure_ascii=False))
     return 0 if not errors else 2

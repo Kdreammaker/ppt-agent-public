@@ -10,6 +10,11 @@ from typing import Any
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
+from scripts.public_report_safety import public_report_issues
+
 PROMPT = "Create a 4-slide planning-first presentation about a beta launch readiness review."
 REPO_REPORT_ROOT = BASE_DIR / "outputs" / "reports"
 CAPABILITY_KEYS = (
@@ -262,16 +267,11 @@ def assert_public_safe(output_root: Path) -> dict[str, Any]:
         path_text = path.as_posix()
         if "/fixtures/" in path_text or "/.ppt-agent/" in path_text:
             continue
-        if path.name not in {"public_setup_summary.json", "public_setup_summary.md", "ppt_setup_report.json", "ppt_make_report.json"}:
+        if "reports" not in path.parts:
             continue
-        if path.name in {"ppt_setup_report.json", "ppt_make_report.json"}:
-            payload = load_json(path)
-            text = json.dumps(payload.get("auto_capability_metadata", {}), ensure_ascii=False)
-        else:
-            text = path.read_text(encoding="utf-8", errors="ignore")
-        for name, pattern in PRIVATE_PATTERNS.items():
-            if pattern.search(text):
-                issues.append({"path": path.as_posix(), "issue": name})
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for name in sorted(set(public_report_issues(text))):
+            issues.append({"path": path.as_posix(), "issue": name})
     assert_true(not issues, f"public/private scan failed: {issues[:5]}")
     return {"scanned_root": output_root.as_posix(), "issues": 0}
 

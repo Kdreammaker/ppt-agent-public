@@ -12,6 +12,10 @@ from typing import Any
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 SCHEMA_VERSION = "1.0"
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
+from scripts.public_report_safety import artifact_ref, sanitize_public_report
 
 WORKSPACE_DIRS = [
     ".ppt-agent",
@@ -193,7 +197,7 @@ def create_workspace_tree(workspace: Path, *, force: bool) -> dict[str, Any]:
         "command": "ppt_install",
         "status": "installed",
         "generated_at": utc_now(),
-        "workspace_root": workspace.as_posix(),
+        "workspace_root": "<workspace>",
         "artifact_paths": {
             "config": ".ppt-agent/config.json",
             "consent": ".ppt-agent/consent.json",
@@ -209,6 +213,7 @@ def create_workspace_tree(workspace: Path, *, force: bool) -> dict[str, Any]:
             "absolute_paths_allowed_only_in_workspace_local_config": True,
         },
     }
+    report = sanitize_public_report(report, workspace=workspace)
     write_json(workspace / "outputs" / "reports" / "ppt_install_report.json", report)
     return report
 
@@ -234,8 +239,9 @@ def command_install(args: argparse.Namespace) -> int:
         public_repo = BASE_DIR
 
     report = create_workspace_tree(workspace, force=args.force)
-    report["install_root"] = install_root.as_posix()
-    report["public_repo"] = public_repo.as_posix()
+    report["install_root"] = artifact_ref(install_root, workspace=workspace)
+    report["public_repo"] = artifact_ref(public_repo, workspace=workspace)
+    report = sanitize_public_report(report, workspace=workspace)
     write_json(workspace / "outputs" / "reports" / "ppt_install_report.json", report)
     print(json.dumps({"status": "installed", "workspace": workspace.as_posix(), "report": "outputs/reports/ppt_install_report.json"}, indent=2))
     return 0

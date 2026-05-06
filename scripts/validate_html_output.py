@@ -12,6 +12,10 @@ from typing import Any
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 DEFAULT_SCREENSHOT_ROOT = BASE_DIR / "outputs" / "playwright" / "html_validation"
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
+from scripts.public_report_safety import artifact_ref, sanitize_public_report
 
 
 class DeckHtmlParser(HTMLParser):
@@ -48,6 +52,13 @@ def base_relative(path: Path) -> str:
         return resolved.relative_to(BASE_DIR).as_posix()
     except ValueError:
         return resolved.as_posix()
+
+
+def workspace_from_report_path(report_path: Path) -> Path | None:
+    parent = report_path.resolve().parent
+    if len(parent.parts) >= 2 and parent.parts[-2:] == ("outputs", "reports"):
+        return parent.parents[1]
+    return None
 
 
 def validate_html(html_path: Path, manifest_path: Path) -> tuple[dict[str, Any], list[str]]:
@@ -127,6 +138,7 @@ def run_playwright_screenshot(html_path: Path, screenshot_path: Path) -> dict[st
 
 def write_report(path: Path, report: dict[str, Any], errors: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+    workspace = workspace_from_report_path(path)
     payload = {
         "summary": {
             "errors": len(errors),
@@ -135,6 +147,7 @@ def write_report(path: Path, report: dict[str, Any], errors: list[str]) -> None:
         **report,
         "errors": errors,
     }
+    payload = sanitize_public_report(payload, workspace=workspace)
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 

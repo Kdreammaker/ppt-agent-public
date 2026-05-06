@@ -87,6 +87,10 @@ def validate_setup(workspace: Path, intent: str) -> dict[str, Any]:
 
 def validate_make_report(report_path: Path, *, intent: str, expected_status: str, should_build: bool) -> dict[str, Any]:
     report = load_json(report_path)
+    workspace = next(
+        (parent.parent for parent in report_path.parents if parent.name == "outputs"),
+        report_path.parent,
+    )
     assert_true(report.get("status") == expected_status, f"{report_path} status mismatch: {report.get('status')}")
     assert_true(report.get("output_intent") == intent, f"{report_path} selected output intent mismatch")
     metadata = report.get("output_intent_metadata")
@@ -101,8 +105,14 @@ def validate_make_report(report_path: Path, *, intent: str, expected_status: str
     artifacts = report.get("artifacts")
     assert_true(isinstance(artifacts, dict), f"{report_path} missing artifacts")
     if should_build:
-        assert_true(isinstance(artifacts.get("pptx"), str) and Path(artifacts["pptx"]).exists(), "approved build missing PPTX")
-        assert_true(isinstance(artifacts.get("html"), str) and Path(artifacts["html"]).exists(), "approved build missing HTML")
+        pptx = Path(str(artifacts.get("pptx") or ""))
+        html = Path(str(artifacts.get("html") or ""))
+        if not pptx.is_absolute():
+            pptx = workspace / pptx
+        if not html.is_absolute():
+            html = workspace / html
+        assert_true(pptx.exists(), "approved build missing PPTX")
+        assert_true(html.exists(), "approved build missing HTML")
     else:
         assert_true(artifacts.get("pptx") is None, "checkpoint should not expose PPTX")
         assert_true(artifacts.get("html") is None, "checkpoint should not expose HTML")
