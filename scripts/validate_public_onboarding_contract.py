@@ -80,6 +80,17 @@ def validate_setup_contract(workspace: Path) -> dict[str, Any]:
     assert_true(result.returncode == 0, result.stderr or result.stdout)
     report_path = workspace / "outputs" / "reports" / "ppt_setup_report.json"
     report = load_json(report_path)
+    setup_summary_path = workspace / "outputs" / "reports" / "public_setup_summary.json"
+    assert_true(setup_summary_path.exists(), "missing public_setup_summary.json")
+    setup_summary = load_json(setup_summary_path)
+    assert_true(
+        setup_summary.get("contract") == "ppt-maker.public-setup-summary.v0",
+        "public setup summary contract mismatch",
+    )
+    assert_true(
+        report.get("setup_summary") == "outputs/reports/public_setup_summary.json",
+        "setup report missing public setup summary path",
+    )
     commands = report.get("next_commands", {}).get("natural_language_public")
     assert_true(isinstance(commands, dict), "natural_language_public must be structured commands")
     checkpoint = str(commands.get("assistant_checkpoint", ""))
@@ -91,7 +102,11 @@ def validate_setup_contract(workspace: Path) -> dict[str, Any]:
     hits = [item for item in STALE_COMMANDS if item in readme]
     assert_true(not hits, f"generated README references unavailable commands: {hits}")
     assert_true("Route Matrix" in readme, "generated README missing route matrix")
-    return {"workspace": workspace.as_posix(), "setup_report": report_path.as_posix()}
+    return {
+        "workspace": workspace.as_posix(),
+        "setup_report": report_path.as_posix(),
+        "public_setup_summary": setup_summary_path.as_posix(),
+    }
 
 
 def validate_assistant_checkpoint(workspace: Path) -> dict[str, Any]:

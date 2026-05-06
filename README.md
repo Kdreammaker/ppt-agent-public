@@ -36,6 +36,11 @@ artifacts are returned by default, and final build requires `build_approved=true
 The setup wrapper installs the workspace, activates an optional workspace code,
 configures the private connector when credentials are present, writes a
 diagnostic report, and prints the exact next `ppt_make.py` commands.
+It also writes `outputs/reports/public_setup_summary.json`, a public-safe setup
+summary that explains output intent options, the one-slide review checkpoint,
+uploaded knowledge/asset counts, editable PPTX/HTML/shared IR roles, and
+chart/table readiness counts as metadata only. It does not change renderer
+behavior or enable native chart/table rendering.
 
 Entitled private production setup uses the same wrapper after the operator supplies a workspace code. If private repo access is available through GitHub auth, setup can use the default private runtime repo/ref and install it into the workspace:
 

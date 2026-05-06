@@ -189,6 +189,23 @@ def command_setup(args: argparse.Namespace) -> int:
     if steps[-1]["returncode"] != 0:
         errors.append("workspace install failed")
     else:
+        setup_summary_path = workspace / "outputs" / "reports" / "public_setup_summary.json"
+        steps.append(
+            run_step(
+                "public_setup_summary",
+                [
+                    sys.executable,
+                    "scripts/build_public_setup_summary.py",
+                    "--workspace",
+                    workspace.as_posix(),
+                    "--output",
+                    setup_summary_path.as_posix(),
+                ],
+            )
+        )
+        if steps[-1]["returncode"] != 0:
+            errors.append("public setup summary generation failed")
+
         if args.workspace_code:
             steps.append(
                 run_step(
@@ -281,6 +298,7 @@ def command_setup(args: argparse.Namespace) -> int:
         "private_request_ready": private_request_ready,
         "default_operating_mode": status_payload.get("default_operating_mode", args.default_operating_mode),
         "errors": errors,
+        "setup_summary": "outputs/reports/public_setup_summary.json",
         "steps": steps,
         "next_commands": {
             "natural_language_public": {
