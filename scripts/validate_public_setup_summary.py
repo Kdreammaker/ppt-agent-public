@@ -42,6 +42,11 @@ PRIVATE_PATTERNS = (
     re.compile(r"\bapproved_asset_ref\b", re.IGNORECASE),
     re.compile(r"\bpreferred_asset_ref\b", re.IGNORECASE),
     re.compile(r"\bunapproved_asset_records\b", re.IGNORECASE),
+    re.compile(r"\bslot_id\b", re.IGNORECASE),
+    re.compile(r"\bsk-[A-Za-z0-9_-]{12,}\b"),
+    re.compile(r"\bxox(?:[abprs]|c|d)-[A-Za-z0-9-]{10,}\b", re.IGNORECASE),
+    re.compile(r"\bAIza[A-Za-z0-9_-]{20,}\b"),
+    re.compile(r"\b(?:drive|docs)\.google\.com\b", re.IGNORECASE),
 )
 
 
@@ -78,6 +83,7 @@ def validate_markdown(path: Path, *, expected_intent: str = "balanced") -> dict[
         "One-Slide Review",
         "Knowledge And Assets",
         "Asset Requests",
+        "Auto / Beta Capabilities",
         "native editable PPTX",
         "HTML screenshots are not used as PPTX content",
         "metadata only",
@@ -145,6 +151,29 @@ def validate_summary(path: Path, *, expected_intent: str = "balanced") -> dict[s
         assert_true(isinstance(item, dict), f"{path} B49 request item must be object")
         assert_true(set(item) <= ALLOWED_B49_FIELDS, f"{path} exposed disallowed B49 fields: {sorted(set(item) - ALLOWED_B49_FIELDS)}")
         assert_true(item.get("state") in ASSET_STATES, f"{path} invalid B49 state")
+
+    auto_metadata = payload.get("auto_capability_metadata")
+    assert_true(isinstance(auto_metadata, dict), f"{path} missing Auto capability metadata")
+    assert_true(auto_metadata.get("metadata_only") is True, f"{path} Auto metadata must remain metadata-only")
+    assert_true(auto_metadata.get("renderer_behavior") == "unchanged", f"{path} Auto metadata changed renderer behavior")
+    assert_true(
+        auto_metadata.get("auto_policy_redesign_enabled") is False,
+        f"{path} Auto two-variant policy was redesigned",
+    )
+    if auto_metadata.get("status") == "available":
+        assert_true(
+            auto_metadata.get("selected_output_intent") == "editable_office",
+            f"{path} fixture Auto selected intent mismatch",
+        )
+        assert_true(
+            auto_metadata.get("two_variant_policy_status") == "current_two_variant_policy",
+            f"{path} fixture Auto policy status mismatch",
+        )
+        counts = auto_metadata.get("native_chart_table_supported_candidate_counts")
+        assert_true(counts.get("variant_a", {}).get("supported_candidate_count") == 5, f"{path} Auto variant A count missing")
+        assert_true(counts.get("variant_b", {}).get("supported_candidate_count") == 5, f"{path} Auto variant B count missing")
+    else:
+        assert_true(auto_metadata.get("status") == "not_available", f"{path} unexpected Auto metadata status")
 
     roles = payload.get("editable_output_roles")
     assert_true(isinstance(roles, dict), f"{path} missing editable output roles")
@@ -275,6 +304,44 @@ def write_b49_fixture(root: Path) -> Path:
     return path
 
 
+def write_auto_fixture(root: Path) -> Path:
+    payload = {
+        "contract": "ppt-maker.auto-output-intent-policy.v0",
+        "status": "ready_for_public_beta_metadata",
+        "selected_output_intent": "editable_office",
+        "two_variant_policy": {
+            "variant_count": 2,
+            "redesign_enabled": False,
+            "variants_receive_same_output_intent": True,
+            "selection_policy": "render_two_distinct_variants_then_recommend_variant_a_by_default",
+        },
+        "renderer_capabilities": {
+            "output_intent_bounded_effects": "allowed_when_selected_intent_is_design_visual_or_editable_office",
+            "approved_package_asset_insertion": "allowed_only_with_manifest_checksum_size_policy_license_and_slot_evidence",
+            "approved_structured_native_chart_table_rendering": "allowed_only_with_approved_structured_data_package_evidence",
+            "shared_ir_safe_area_native_chart_table_bounds": "allowed_when_shared_ir_is_explicitly_supplied_and_preflight_passes",
+            "b54_style_token_guidance": "spacing_radius_elevation_typography_guidance_only",
+        },
+        "variant_native_chart_table_counts": {
+            "variant_a": {"supported_candidate_count": 5, "blocked_candidate_count": 0},
+            "variant_b": {"supported_candidate_count": 5, "blocked_candidate_count": 0},
+        },
+        "variant_b54_status": {
+            "variant_a": {"status": "guidance_consumed", "font_materialization_enabled": False},
+            "variant_b": {"status": "guidance_consumed", "font_materialization_enabled": False},
+        },
+        "blocked_behavior": {
+            "shared_ir_layout_density_geometry_text_slot_asset_slot_consumption": True,
+            "font_materialization_without_approved_opaque_package_evidence": True,
+            "html_screenshots_inserted_into_pptx": True,
+            "public_exposure_of_package_internals_or_private_ids": True,
+        },
+    }
+    path = root / "fixture_auto_capability_metadata.json"
+    write_json(path, payload)
+    return path
+
+
 def validate_setup_wrapper(output_root: Path, *, intent: str = "balanced") -> dict[str, Any]:
     workspace = output_root / f"workspace-{intent}"
     result = run(
@@ -307,6 +374,7 @@ def validate_fixture_export(output_root: Path, *, intent: str = "editable_office
     fixture_root = output_root / "fixture"
     setup_path, readiness_path = write_fixture(fixture_root)
     b49_path = write_b49_fixture(fixture_root)
+    auto_path = write_auto_fixture(fixture_root)
     output = output_root / "fixture_public_setup_summary.json"
     markdown = output_root / "fixture_public_setup_summary.md"
     result = run(
@@ -319,6 +387,8 @@ def validate_fixture_export(output_root: Path, *, intent: str = "editable_office
             readiness_path.as_posix(),
             "--b49-asset-request-summary",
             b49_path.as_posix(),
+            "--auto-capability-metadata",
+            auto_path.as_posix(),
             "--output",
             output.as_posix(),
             "--markdown-output",

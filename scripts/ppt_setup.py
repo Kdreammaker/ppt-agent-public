@@ -191,6 +191,7 @@ def command_setup(args: argparse.Namespace) -> int:
     else:
         setup_summary_path = workspace / "outputs" / "reports" / "public_setup_summary.json"
         b49_asset_request_summary_path = resolve_path(args.b49_asset_request_summary) if args.b49_asset_request_summary else None
+        auto_capability_metadata_path = resolve_path(args.auto_capability_metadata) if args.auto_capability_metadata else None
         steps.append(
             run_step(
                 "public_setup_summary",
@@ -206,6 +207,11 @@ def command_setup(args: argparse.Namespace) -> int:
                     *(
                         ["--b49-asset-request-summary", b49_asset_request_summary_path.as_posix()]
                         if b49_asset_request_summary_path
+                        else []
+                    ),
+                    *(
+                        ["--auto-capability-metadata", auto_capability_metadata_path.as_posix()]
+                        if auto_capability_metadata_path
                         else []
                     ),
                 ],
@@ -316,6 +322,9 @@ def command_setup(args: argparse.Namespace) -> int:
         "asset_request_summary": setup_summary_report.get("asset_request_summary")
         if isinstance(setup_summary_report, dict)
         else None,
+        "auto_capability_metadata": setup_summary_report.get("auto_capability_metadata")
+        if isinstance(setup_summary_report, dict)
+        else None,
         "steps": steps,
         "next_commands": {
             "natural_language_public": {
@@ -374,6 +383,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--default-operating-mode", choices=["auto", "assistant"], default="assistant")
     parser.add_argument("--output-intent", choices=["design_visual", "editable_office", "balanced"], default="balanced", help="Metadata-only output intent recorded in public setup summary.")
     parser.add_argument("--b49-asset-request-summary", help="Optional public-safe b49-asset-request-summary.json to expose in setup reports.")
+    parser.add_argument("--auto-capability-metadata", help="Optional public-safe Auto capability metadata to expose in setup reports.")
     parser.add_argument("--github-check", action="store_true")
     parser.add_argument("--reset-connector", action="store_true")
     parser.add_argument("--skip-dependency-install", action="store_true")

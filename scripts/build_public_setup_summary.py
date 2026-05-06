@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 from typing import Any
 
+from public_auto_capability_metadata import expose_auto_capability_metadata
 from public_b49_asset_request import expose_b49_asset_request_summary
 
 
@@ -31,6 +32,11 @@ PRIVATE_PATTERNS = (
     re.compile(r"\bapproved_asset_ref\b", re.IGNORECASE),
     re.compile(r"\bpreferred_asset_ref\b", re.IGNORECASE),
     re.compile(r"\bunapproved_asset_records\b", re.IGNORECASE),
+    re.compile(r"\bslot_id\b", re.IGNORECASE),
+    re.compile(r"\bsk-[A-Za-z0-9_-]{12,}\b"),
+    re.compile(r"\bxox(?:[abprs]|c|d)-[A-Za-z0-9-]{10,}\b", re.IGNORECASE),
+    re.compile(r"\bAIza[A-Za-z0-9_-]{20,}\b"),
+    re.compile(r"\b(?:drive|docs)\.google\.com\b", re.IGNORECASE),
 )
 
 
@@ -180,11 +186,13 @@ def build_summary(
     setup_summary_path: Path | None = None,
     editable_readiness_path: Path | None = None,
     b49_asset_request_summary_path: Path | None = None,
+    auto_capability_metadata_path: Path | None = None,
     selected_output_intent: str = "balanced",
 ) -> dict[str, Any]:
     setup_summary = load_json(setup_summary_path)
     editable_readiness = load_json(editable_readiness_path)
     asset_request_summary = expose_b49_asset_request_summary(b49_asset_request_summary_path)
+    auto_capability_metadata = expose_auto_capability_metadata(auto_capability_metadata_path)
     payload = {
         "contract": CONTRACT_ID,
         "generated_at": utc_now(),
@@ -193,11 +201,13 @@ def build_summary(
             "setup_ux_summary": artifact_status(setup_summary_path),
             "editable_office_readiness": artifact_status(editable_readiness_path),
             "b49_asset_request_summary": artifact_status(b49_asset_request_summary_path),
+            "auto_capability_metadata": artifact_status(auto_capability_metadata_path),
         },
         "output_intent_options": setup_output_intents(setup_summary, selected_output_intent),
         "one_slide_sample_checkpoint": setup_sample_checkpoint(setup_summary),
         "uploaded_knowledge_assets_summary": uploaded_knowledge_assets(setup_summary),
         "asset_request_summary": asset_request_summary,
+        "auto_capability_metadata": auto_capability_metadata,
         "editable_output_roles": editable_output_roles(setup_summary),
         "editable_chart_table_readiness": editable_chart_table_readiness(editable_readiness),
         "user_guidance": {
@@ -219,6 +229,7 @@ def build_summary(
             "native_editable_chart_table_rendering_enabled": False,
             "shared_ir_renderer_consumption_enabled": False,
             "auto_two_variant_policy_redesigned": False,
+            "auto_renderer_behavior_changed": False,
             "b49_asset_insertion_enabled": False,
         },
     }
@@ -237,6 +248,7 @@ def markdown_text(payload: dict[str, Any]) -> str:
     knowledge = payload["uploaded_knowledge_assets_summary"]
     asset_counts = knowledge["asset_state_summary"]
     asset_requests = payload["asset_request_summary"]
+    auto_metadata = payload["auto_capability_metadata"]
     roles = payload["editable_output_roles"]
     readiness = payload["editable_chart_table_readiness"]
     class_counts = readiness["classification_counts"]
@@ -278,6 +290,19 @@ def markdown_text(payload: dict[str, Any]) -> str:
         f"- Unknown: {asset_requests['summary']['unknown']}",
         f"- Total request items: {asset_requests['summary']['total_request_items']}",
         "- Renderer output and asset insertion are unchanged.",
+        "",
+        "## Auto / Beta Capabilities",
+        "",
+        f"- Status: `{auto_metadata['status']}`",
+        f"- Metadata only: {str(auto_metadata['metadata_only']).lower()}",
+        f"- Renderer behavior: `{auto_metadata['renderer_behavior']}`",
+        f"- Selected output intent: `{auto_metadata['selected_output_intent'] or 'not_available'}`",
+        f"- Two-variant policy: `{auto_metadata['two_variant_policy_status']}`",
+        f"- Native chart/table counts: `{auto_metadata['native_chart_table_supported_candidate_counts']}`",
+        f"- B54 guidance: `{auto_metadata['b54_and_font_status']['b54_style_token_guidance']}`",
+        f"- Font materialization: `{auto_metadata['b54_and_font_status']['font_materialization']}`",
+        f"- Blocker categories: `{', '.join(auto_metadata['public_safe_blocker_categories']) or 'none_reported'}`",
+        "- Capability metadata does not expose package internals or raw renderer reports.",
         "",
     ]
     if asset_requests["asset_request_items"]:
@@ -322,6 +347,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--setup-ux-summary", help="Optional internal setup-ux-summary.json to summarize.")
     parser.add_argument("--editable-office-readiness", help="Optional editable-office-readiness.json to summarize.")
     parser.add_argument("--b49-asset-request-summary", help="Optional public-safe b49-asset-request-summary.json to expose.")
+    parser.add_argument("--auto-capability-metadata", help="Optional public-safe Auto capability metadata to expose.")
     parser.add_argument("--output-intent", default="balanced", choices=OUTPUT_INTENTS, help="Selected output intent metadata.")
     parser.add_argument("--output", help="Output JSON path.")
     parser.add_argument("--markdown-output", help="Output Markdown path.")
@@ -334,6 +360,7 @@ def main(argv: list[str] | None = None) -> int:
         setup_summary_path=resolve_path(args.setup_ux_summary),
         editable_readiness_path=resolve_path(args.editable_office_readiness),
         b49_asset_request_summary_path=resolve_path(args.b49_asset_request_summary),
+        auto_capability_metadata_path=resolve_path(args.auto_capability_metadata),
         selected_output_intent=args.output_intent,
     )
     write_json(output, payload)
@@ -350,6 +377,11 @@ def main(argv: list[str] | None = None) -> int:
                 "output_intents": payload["output_intent_options"]["available"],
                 "selected_output_intent": payload["output_intent_options"]["selected"],
                 "asset_request_summary": payload["asset_request_summary"]["summary"],
+                "auto_capability_metadata": {
+                    "status": payload["auto_capability_metadata"]["status"],
+                    "selected_output_intent": payload["auto_capability_metadata"]["selected_output_intent"],
+                    "two_variant_policy_status": payload["auto_capability_metadata"]["two_variant_policy_status"],
+                },
                 "editable_chart_table_counts": payload["editable_chart_table_readiness"]["classification_counts"],
             },
             indent=2,

@@ -10,6 +10,7 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+from public_auto_capability_metadata import expose_auto_capability_metadata
 from public_b49_asset_request import expose_b49_asset_request_summary, first_existing_path, resolve_path as resolve_optional_path
 
 
@@ -488,6 +489,14 @@ def command_make(args: argparse.Namespace) -> int:
         project_root / "reports" / "b49-asset-request-summary.json",
         workspace / "outputs" / "reports" / "b49-asset-request-summary.json",
     )
+    auto_capability_metadata_path = first_existing_path(
+        resolve_optional_path(args.auto_capability_metadata),
+        project_root / "auto-capability-metadata.json",
+        project_root / "reports" / "auto-capability-metadata.json",
+        project_root / "variant-comparison-report.json",
+        project_root / "reports" / "variant-comparison-report.json",
+        workspace / "outputs" / "reports" / "auto-capability-metadata.json",
+    )
 
     context = collect_external_context(args, project_root)
     intake = build_intake(request, project_id=project_id, mode=mode, context=context)
@@ -605,6 +614,7 @@ def command_make(args: argparse.Namespace) -> int:
         deck_path = None
     status = "waiting_for_approval" if assistant_waiting else ("built" if not errors else "failed")
     asset_request_summary = expose_b49_asset_request_summary(asset_request_summary_path)
+    auto_capability_metadata = expose_auto_capability_metadata(auto_capability_metadata_path)
     report = {
         "schema_version": SCHEMA_VERSION,
         "command": "ppt_make",
@@ -621,6 +631,7 @@ def command_make(args: argparse.Namespace) -> int:
             "behavior": "metadata_only_no_renderer_change",
         },
         "asset_request_summary": asset_request_summary,
+        "auto_capability_metadata": auto_capability_metadata,
         "approval_required": assistant_waiting,
         "build_approved": bool(args.build_approved),
         "next_action": "review_planning_artifacts_then_rerun_with_build_approved" if assistant_waiting else None,
@@ -685,6 +696,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--mode", choices=["auto", "assistant"], default="assistant")
     parser.add_argument("--output-intent", choices=OUTPUT_INTENTS, default="balanced", help="Metadata-only output intent recorded in public make reports.")
     parser.add_argument("--b49-asset-request-summary", help="Optional public-safe b49-asset-request-summary.json to expose in make reports.")
+    parser.add_argument("--auto-capability-metadata", help="Optional public-safe Auto capability metadata to expose in make reports.")
     parser.add_argument("--project-id", default=None)
     parser.add_argument("--production", choices=["auto", "public", "private"], default="auto")
     parser.add_argument("--source-file", action="append", default=[], help="Use a local text/markdown/json source as bounded context for the draft plan.")

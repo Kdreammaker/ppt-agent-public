@@ -68,6 +68,20 @@ message, and public-safe reason. Raw asset refs, slot IDs, private paths, Drive
 links, tokens, private prompts, raw payloads, source attachments, and
 unapproved asset records are not exposed.
 
+When an internal Auto capability report has already been approved for public
+beta metadata, setup can show its public-safe status projection:
+
+```powershell
+python scripts\ppt_setup.py --workspace "<workspace>" --force --auto-capability-metadata "<path-to-auto-capability-metadata.json>"
+```
+
+This exposes capability/status metadata only: selected output intent, current
+two-variant policy status, bounded renderer capability status, native
+chart/table supported counts, B54 guidance status, font materialization blocked
+status, and public-safe blocker categories. It does not expose raw internal
+renderer reports, package internals, private identifiers, private paths, Drive
+links, tokens, prompts, or unapproved asset details.
+
 Entitled private production setup uses the same wrapper after the operator supplies a workspace code. If private repo access is available through GitHub auth, setup can use the default private runtime repo/ref and install it into the workspace:
 
 ```powershell
@@ -106,6 +120,13 @@ surface the same public-safe asset actions:
 
 ```powershell
 python scripts\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" --workspace "<workspace>" --mode assistant --output-intent design_visual --b49-asset-request-summary "<path-to-b49-asset-request-summary.json>"
+```
+
+Make reports can also carry the same public-safe Auto capability projection
+when the approved metadata file is supplied:
+
+```powershell
+python scripts\ppt_make.py "Make a 6 slide executive market review for AI launch priorities" --workspace "<workspace>" --mode assistant --output-intent design_visual --auto-capability-metadata "<path-to-auto-capability-metadata.json>"
 ```
 
 Assistant Mode is a planning checkpoint by default. The command above writes
