@@ -1,0 +1,11 @@
+{
+  "locale": "ko",
+  "brand": "A.DreamMaker",
+  "modeAssistant": "어시스턴트",
+  "modeAuto": "자동",
+  "slides": "슬라이드",
+  "canvas": "HTML 슬라이드 캔버스",
+  "properties": "속성",
+  "exportPdf": "PDF 내보내기",
+  "exportPptx": "PPTX 내보내기"
+}

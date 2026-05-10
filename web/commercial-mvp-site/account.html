@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A.DreamMaker account entry placeholder for tier, credits, device, session, entitlement, and future billing status."
+    />
+    <title>A.DreamMaker Account Entry</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="account">
+    <header class="site-header">
+      <a class="brand-lockup" href="./index.html" aria-label="A.DreamMaker home">
+        <span class="brand-mark" aria-hidden="true">A.</span>
+        <span>
+          <span class="brand-name">A.DreamMaker</span>
+          <span class="brand-subline">ADOTDREAMMAKER</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./index.html#product" data-i18n="nav.product">Product</a>
+        <a href="./index.html#plans" data-i18n="nav.plans">Plans</a>
+        <a href="./account.html" data-i18n="nav.account">Account</a>
+      </nav>
+      <div class="header-actions">
+        <span class="status-pill status-warning" data-i18n="badges.paymentNotAttached">payment not attached</span>
+        <div class="locale-switch" aria-label="Language" data-i18n-attr="aria-label:labels.language">
+          <button type="button" data-locale-switch="en" aria-pressed="true">EN</button>
+          <button type="button" data-locale-switch="ko" aria-pressed="false">KO</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="account-hero">
+        <p class="eyebrow" data-i18n="account.eyebrow">AUTHENTICATED ACCOUNT ENTRY</p>
+        <h1 data-i18n="account.title">Account dashboard placeholder</h1>
+        <p class="hero-lede" data-i18n="account.lede">
+          This local surface shows the shape of Free/Paid account status without implementing login, payment, subscription mutation, or hosted dashboard sync.
+        </p>
+      </section>
+
+      <section class="section-grid">
+        <article class="panel span-two">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow" data-i18n="account.summaryEyebrow">ACCOUNT SUMMARY</p>
+              <h2 data-i18n="account.summaryTitle">Public-safe account fields</h2>
+            </div>
+            <span class="status-pill status-muted" data-i18n="badges.placeholder">placeholder</span>
+          </div>
+          <div id="account-fields" class="flag-grid"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow" data-i18n="account.billingEyebrow">BILLING</p>
+              <h2 data-i18n="account.billingTitle">Future entry only</h2>
+            </div>
+            <span class="status-pill status-warning" data-i18n="valueLabels.future_payment_not_attached">future payment, not attached</span>
+          </div>
+          <p class="body-copy" data-i18n="account.billingCopy">
+            Payment is not attached. Checkout, subscription edits, invoices, and billing portal links are intentionally absent.
+          </p>
+        </article>
+      </section>
+
+      <section class="section-grid">
+        <article class="panel">
+          <p class="eyebrow" data-i18n="account.entitlementEyebrow">ENTITLEMENT</p>
+          <h2 data-i18n="account.entitlementTitle">Free / Paid access</h2>
+          <p class="body-copy" data-i18n="account.entitlementCopy">
+            Free is limited-credit, watermarked viewer, and preview-oriented. Paid opens the practical editor, Style Memory, Reference Design Library, and watermark-free viewer sharing.
+          </p>
+        </article>
+        <article class="panel">
+          <p class="eyebrow" data-i18n="account.authEyebrow">AUTH STATUS</p>
+          <h2 data-i18n="account.authTitle">Login not implemented here</h2>
+          <p class="body-copy" data-i18n="account.authCopy">
+            This placeholder reserves space for authenticated account records without creating a login flow.
+          </p>
+        </article>
+        <article class="panel">
+          <p class="eyebrow" data-i18n="account.adminEyebrow">OPERATOR CONSOLE</p>
+          <h2 data-i18n="account.adminTitle">Separate local surface</h2>
+          <p class="body-copy" data-i18n="account.adminCopy">
+            Admin mutation evidence is not displayed in the user-facing account entry.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>A.DreamMaker</span>
+      <span data-i18n="footer.copy">Local static MVP surface. Payment and hosted generation are not attached.</span>
+    </footer>
+
+    <script src="./site.js"></script>
+  </body>
+</html>

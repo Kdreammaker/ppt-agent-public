@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A.DreamMaker HTML Slide Workbench</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="workbench-shell" data-theme="light">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true">A.</div>
+          <div>
+            <p class="eyebrow">PPT Maker</p>
+            <h1>A.DreamMaker</h1>
+            <p id="deck-label" class="subbrand">HTML slide workbench</p>
+          </div>
+        </div>
+        <div class="mode-switch" role="tablist" aria-label="Mode">
+          <button type="button" data-mode="assistant" aria-selected="true">Assistant</button>
+          <button type="button" data-mode="auto" aria-selected="false">Auto</button>
+        </div>
+        <div class="export-actions">
+          <div class="locale-switch" aria-label="Language">
+            <button type="button" data-locale="ko" aria-pressed="true">KO</button>
+            <button type="button" data-locale="en" aria-pressed="false">EN</button>
+          </div>
+          <button type="button" data-action="toggle-theme">Light/Dark</button>
+          <span id="save-status" class="status-pill">Saved local</span>
+          <button type="button" data-surface="master-style">Master Style</button>
+          <button type="button" data-surface="design-library">Design Library</button>
+          <button type="button" data-surface="memory-share">Memory / Share</button>
+          <button type="button" data-action="export-pdf">Export PDF</button>
+          <button type="button" data-action="export-pptx">Export PPTX</button>
+          <button type="button" data-surface="export-handoff">Export Status</button>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="Slide editing toolbar">
+        <div class="tool-group" aria-label="History">
+          <button class="icon-button" type="button" data-action="undo" title="Undo" aria-label="Undo">↶</button>
+          <button class="icon-button" type="button" data-action="redo" title="Redo" aria-label="Redo">↷</button>
+        </div>
+        <div class="tool-group" aria-label="Text controls" data-tool-scope="text">
+          <label class="toolbar-field">Role
+            <select id="text-role">
+              <option>Title</option>
+              <option>H1</option>
+              <option>H2</option>
+              <option>H3</option>
+              <option>Body</option>
+              <option>Caption</option>
+              <option>Bullet</option>
+            </select>
+          </label>
+          <label class="toolbar-field">Font
+            <select id="text-font">
+              <option value="heading">Heading</option>
+              <option value="body">Body</option>
+              <option value="caption">Caption</option>
+            </select>
+          </label>
+          <label class="toolbar-field compact">Size <input id="text-size" type="text" inputmode="numeric" pattern="[0-9]*" value="24" /></label>
+          <label class="toolbar-field compact">Color <input id="text-color" type="color" value="#151515" /></label>
+          <button class="icon-button" type="button" data-action="text-bold" title="Bold" aria-label="Bold">B</button>
+          <button class="icon-button" type="button" data-action="text-bullet" title="Bullet paragraph" aria-label="Bullet paragraph">•</button>
+          <button class="icon-button" type="button" data-action="align-text-left" title="Text align left" aria-label="Text align left">L</button>
+          <button class="icon-button" type="button" data-action="align-text-center" title="Text align center" aria-label="Text align center">C</button>
+          <button class="icon-button" type="button" data-action="align-text-right" title="Text align right" aria-label="Text align right">R</button>
+        </div>
+        <div class="tool-group" aria-label="Object controls">
+          <button class="icon-button wide" type="button" data-action="duplicate-object" title="Duplicate" aria-label="Duplicate">Copy</button>
+          <button class="icon-button wide" type="button" data-action="delete-object" title="Delete" aria-label="Delete">Del</button>
+          <button class="icon-button" type="button" data-action="bring-forward" title="Bring forward" aria-label="Bring forward">↑</button>
+          <button class="icon-button" type="button" data-action="send-backward" title="Send backward" aria-label="Send backward">↓</button>
+        </div>
+        <div class="tool-group" aria-label="Align and distribute">
+          <button class="icon-button" type="button" data-action="align-left" title="Align left" aria-label="Align left">|L</button>
+          <button class="icon-button" type="button" data-action="align-center" title="Align center" aria-label="Align center">|C</button>
+          <button class="icon-button" type="button" data-action="align-right" title="Align right" aria-label="Align right">R|</button>
+          <button class="icon-button" type="button" data-action="align-top" title="Align top" aria-label="Align top">T</button>
+          <button class="icon-button" type="button" data-action="align-middle" title="Align middle" aria-label="Align middle">M</button>
+          <button class="icon-button" type="button" data-action="align-bottom" title="Align bottom" aria-label="Align bottom">B</button>
+          <button class="icon-button wide" type="button" data-action="distribute-horizontal" title="Distribute horizontal" aria-label="Distribute horizontal">Dist H</button>
+          <button class="icon-button wide" type="button" data-action="distribute-vertical" title="Distribute vertical" aria-label="Distribute vertical">Dist V</button>
+          <label class="toolbar-field">Align to
+            <select id="align-target">
+              <option value="selection">Selection</option>
+              <option value="slide">Slide</option>
+            </select>
+          </label>
+        </div>
+        <div class="tool-group" aria-label="Shape and image transforms" data-tool-scope="shape-image">
+          <button class="icon-button wide" type="button" data-action="rotate-minus-15" title="Rotate -15 degrees" aria-label="Rotate -15 degrees">-15</button>
+          <button class="icon-button wide" type="button" data-action="rotate-plus-15" title="Rotate +15 degrees" aria-label="Rotate +15 degrees">+15</button>
+          <button class="icon-button wide" type="button" data-action="rotate-minus-90" title="Rotate -90 degrees" aria-label="Rotate -90 degrees">-90</button>
+          <button class="icon-button wide" type="button" data-action="rotate-plus-90" title="Rotate +90 degrees" aria-label="Rotate +90 degrees">+90</button>
+          <button class="icon-button wide" type="button" data-action="rotate-reset" title="Reset rotation" aria-label="Reset rotation">0</button>
+          <button class="icon-button wide" type="button" data-action="flip-horizontal" title="Flip horizontal" aria-label="Flip horizontal">Flip H</button>
+          <button class="icon-button wide" type="button" data-action="flip-vertical" title="Flip vertical" aria-label="Flip vertical">Flip V</button>
+          <label class="toolbar-field compact">Radius <input id="shape-radius" type="text" inputmode="numeric" pattern="[0-9]*" value="8" /></label>
+        </div>
+        <div class="tool-group" aria-label="Canvas zoom and insert">
+          <button class="icon-button" type="button" data-action="zoom-out" title="Zoom out" aria-label="Zoom out">−</button>
+          <button class="icon-button wide" type="button" data-action="zoom-fit" title="Fit canvas" aria-label="Fit canvas">Fit</button>
+          <button class="icon-button" type="button" data-action="zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
+          <span id="zoom-label" class="status-pill">Fit</span>
+          <button class="icon-button wide" type="button" data-action="add-text" title="Add text box" aria-label="Add text box">T+</button>
+          <button class="icon-button wide" type="button" data-action="add-shape" title="Add shape" aria-label="Add shape">□+</button>
+        </div>
+        <span id="command-feedback" class="command-feedback" role="status" aria-live="polite"></span>
+      </section>
+
+      <section id="feature-surface" class="feature-surface" aria-label="Workbench feature surface" hidden>
+        <div class="feature-surface-header">
+          <div>
+            <p class="eyebrow">Deck surface</p>
+            <h2 id="feature-surface-title">Master Style</h2>
+          </div>
+          <button type="button" data-action="close-surface">Close</button>
+        </div>
+        <div class="feature-panels">
+          <article class="feature-panel" data-feature-panel="master-style">
+            <div class="master-preview" aria-hidden="true">
+              <span class="preview-title-line"></span>
+              <span class="preview-body-line"></span>
+              <span class="preview-chip-line"></span>
+            </div>
+            <div>
+              <h3>Theme and master style</h3>
+              <p class="summary-text">Deck-level typography, palette, shape defaults, and slide chrome live here. The inspector only shows the selected object's resolved role.</p>
+              <div class="master-controls" aria-label="Master style controls">
+                <label>Palette
+                  <select id="master-palette">
+                    <option value="baseline">Neutral yellow</option>
+                    <option value="contrast">High contrast</option>
+                    <option value="editorial">Editorial green</option>
+                  </select>
+                </label>
+                <label>Typography
+                  <select id="master-type-scale">
+                    <option value="standard">Standard</option>
+                    <option value="compact">Compact</option>
+                    <option value="spacious">Spacious</option>
+                  </select>
+                </label>
+                <label>Shape radius
+                  <select id="master-radius">
+                    <option value="4">Crisp</option>
+                    <option value="8">Default</option>
+                    <option value="16">Soft</option>
+                  </select>
+                </label>
+              </div>
+              <div id="style-summary" class="style-summary"></div>
+              <div class="inline-actions">
+                <button type="button" data-action="master-apply">Apply</button>
+                <button type="button" data-action="master-override">Override</button>
+                <button type="button" data-action="master-reset">Reset</button>
+                <button type="button" data-action="master-lock" aria-pressed="false">Lock</button>
+              </div>
+            </div>
+          </article>
+          <article class="feature-panel" data-feature-panel="design-library" hidden>
+            <div>
+              <h3>Reference Design Library</h3>
+              <p class="summary-text">Local host AI may import only content-free recipes from IR, sales, and portfolio benchmark families. Original content, source screenshots, source structure, image URLs, paths, and filenames stay out.</p>
+              <div id="reference-library" class="compact-list"></div>
+              <p id="reference-apply-summary" class="summary-text">No recipe has been applied in this session.</p>
+              <div class="inline-actions">
+                <button type="button" data-action="import-reference-recipes">Import design recipes</button>
+                <button type="button" data-action="reset-reference-recipe">Reset recipe</button>
+              </div>
+            </div>
+            <div>
+              <h3>Asset-system readiness</h3>
+              <p class="summary-text">에셋 시스템 연결 준비는 되어 있지만 실제 디자인 패키지는 아직 연결되지 않았습니다.</p>
+              <div id="local-assets" class="compact-list"></div>
+            </div>
+          </article>
+          <article class="feature-panel" data-feature-panel="memory-share" hidden>
+            <div>
+              <h3>AI revision memory</h3>
+              <div id="revision-memory" class="revision-memory"></div>
+            </div>
+            <div>
+              <h3>Style Memory</h3>
+              <div id="style-memory" class="compact-list"></div>
+              <div class="inline-actions">
+                <button type="button" data-action="style-memory-reset">Reset</button>
+                <button type="button" data-action="style-memory-delete">Delete</button>
+              </div>
+            </div>
+            <div>
+              <h3>Published viewer</h3>
+              <div id="published-view" class="compact-list"></div>
+              <a class="viewer-link" href="./viewer.html" target="_blank" rel="noreferrer">Open viewer</a>
+            </div>
+            <div>
+              <h3>Referral and credits</h3>
+              <div id="referral-credit" class="compact-list"></div>
+            </div>
+          </article>
+          <article class="feature-panel" data-feature-panel="export-handoff" hidden>
+            <div>
+              <h3>Host-AI export handoff</h3>
+              <p id="export-status" class="export-status" data-export-state="handoff_ready">핸드오프 준비</p>
+              <p id="export-summary" class="summary-text">PDF/PPTX 요청을 Host AI에 넘길 준비가 되었습니다. 아직 최종 파일은 없습니다.</p>
+              <div class="export-state-actions">
+                <button type="button" data-action="proposal-ready">Proposal ready</button>
+                <button type="button" data-action="blocked">Blocked</button>
+                <button type="button" data-action="final-received" disabled title="Enabled only when a real host-AI result reference exists">Final received</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace-grid">
+        <aside class="slide-rail" aria-label="Slides">
+          <div class="panel-heading">
+            <p class="eyebrow">Slides</p>
+            <span id="slide-count" class="status-pill">0</span>
+          </div>
+          <div id="slide-list" class="slide-list"></div>
+        </aside>
+
+        <section class="stage">
+          <div class="stage-heading">
+            <div>
+              <p class="eyebrow">HTML slide canvas</p>
+              <h2 id="slide-title">Slide</h2>
+            </div>
+            <div>
+              <p id="mode-note" class="mode-note">Assistant mode is ready</p>
+              <p id="work-state-summary" class="work-state-summary">Sample work · design ready</p>
+            </div>
+          </div>
+          <div id="canvas-frame" class="canvas-frame">
+            <div id="canvas-viewport" class="canvas-viewport">
+              <div id="slide-canvas" class="slide-canvas" tabindex="0" aria-label="Editable fixed-canvas HTML slide"></div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="inspector" aria-label="Properties" data-inspector-state="none">
+          <div class="panel-heading">
+            <p class="eyebrow">Properties</p>
+            <span id="selected-label" class="status-pill">No selection</span>
+          </div>
+          <p id="inspector-state" class="inspector-state">Select an object to edit text, geometry, or transforms.</p>
+          <section class="field-block">
+            <h3>Position and size</h3>
+            <div class="field-grid">
+              <label>X <input id="prop-x" type="text" inputmode="numeric" pattern="-?[0-9]*" /></label>
+              <label>Y <input id="prop-y" type="text" inputmode="numeric" pattern="-?[0-9]*" /></label>
+              <label>W <input id="prop-w" type="text" inputmode="numeric" pattern="[0-9]*" /></label>
+              <label>H <input id="prop-h" type="text" inputmode="numeric" pattern="[0-9]*" /></label>
+            </div>
+          </section>
+          <section class="field-block">
+            <h3>Text</h3>
+            <textarea id="text-editor" rows="5" placeholder="Double-click text on the canvas to edit directly."></textarea>
+            <button type="button" data-action="apply-text">Apply text</button>
+          </section>
+          <section class="field-block">
+            <h3>Resolved style</h3>
+            <div id="object-style-summary" class="compact-list"></div>
+          </section>
+          <details class="diagnostics" data-dev-diagnostics hidden>
+            <summary>Diagnostics</summary>
+            <pre id="operation-log"></pre>
+            <pre id="handoff-envelope"></pre>
+          </details>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="./workbench.js"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+{
+  "schema_version": "commercial_mvp_generated_work_state.v1",
+  "source_kind": "host_ai_generated_work_state",
+  "deck_id": "safe-generated-work-state-example",
+  "safe_label": "Generated Work State Example",
+  "language": "ko-KR",
+  "canvas": { "width": 1600, "height": 900 },
+  "design_package": {
+    "design_package_id": "design-package-generated-loader-proof-v1",
+    "manifest_hash": "manifest-safe-generated-loader-proof-v1",
+    "source_kind": "server_manifest",
+    "asset_system_package_ref": null,
+    "safe_public_summary": "Generated-state proof package with safe ids only."
+  },
+  "theme_tokens": {
+    "theme_id": "theme-generated-loader-proof-green-v1",
+    "token_set_id": "token-set-generated-loader-proof-v1",
+    "palette": {
+      "canvas": "#FFFFFF",
+      "surface": "#F4F7F2",
+      "ink": "#16201C",
+      "muted": "#52635A",
+      "accent": "#9FD4B3",
+      "deep": "#183D31"
+    },
+    "font_tokens": {
+      "heading": "Pretendard, Noto Sans KR, Segoe UI, Arial, sans-serif",
+      "body": "Pretendard, Noto Sans KR, Segoe UI, Arial, sans-serif",
+      "caption": "Pretendard, Noto Sans KR, Segoe UI, Arial, sans-serif"
+    },
+    "radius": { "card": 16, "pill": 30 },
+    "spacing": { "base": 18, "safe_margin": 80 },
+    "stroke": { "default": "#9DB0A7" }
+  },
+  "master_styles": [
+    {
+      "master_style_id": "master-style-generated-loader-proof-v1",
+      "theme_id": "theme-generated-loader-proof-green-v1",
+      "shape_defaults": { "radius": 16, "stroke": "#9DB0A7" },
+      "common_chrome": { "page_numbers": true, "footer_safe": true },
+      "text_style_role_ids": ["Title", "H1", "H2", "H3", "Body", "Caption", "Bullet"]
+    }
+  ],
+  "master_style_surface": {
+    "surface_id": "deck-theme-style-surface-v1",
+    "active_style_id": "master-style-generated-loader-proof-v1",
+    "preview_enabled": true,
+    "apply_semantics": "apply_role_palette_shape_defaults_to_deck",
+    "override_semantics": "selected_object_or_slide_safe_token_override",
+    "reset_semantics": "return_to_baseline_master_style",
+    "lock_semantics": "prevent_accidental_deck_style_mutation",
+    "locked": false,
+    "selected_palette_id": "editorial",
+    "type_scale_id": "spacious",
+    "shape_radius": 16,
+    "raw_ids_only_in_normal_inspector": false
+  },
+  "slides": [
+    {
+      "id": "generated-slide-01",
+      "title": "생성 작업 상태 예시",
+      "section": "Generated",
+      "background": "#FFFFFF",
+      "objects": [
+        { "id": "generated-bg", "type": "shape", "shape": "rect", "x": 0, "y": 0, "w": 1600, "h": 900, "z": 0, "fill": "#FFFFFF", "stroke": "transparent" },
+        { "id": "generated-title", "type": "text", "x": 112, "y": 108, "w": 860, "h": 140, "z": 2, "text": "Host-AI generated state", "fontSize": 64, "fontWeight": 800, "color": "#151515", "lineHeight": 1.14 },
+        { "id": "generated-body", "type": "text", "x": 116, "y": 286, "w": 720, "h": 120, "z": 2, "text": "This example proves the loader path is separate from the fixture deck.", "fontSize": 26, "fontWeight": 500, "color": "#576267", "lineHeight": 1.24 },
+        { "id": "generated-slot", "type": "image", "x": 1040, "y": 140, "w": 360, "h": 560, "z": 2, "safeRef": "asset:generated-safe-slot", "label": "safe asset slot", "fit": "cover", "fill": "#E8ECEA" },
+        { "id": "generated-page", "type": "text", "x": 1408, "y": 812, "w": 70, "h": 32, "z": 3, "text": "01", "fontSize": 22, "fontWeight": 700, "color": "#151515", "lineHeight": 1.16 }
+      ]
+    }
+  ],
+  "revision_memory": [
+    {
+      "memory_id": "revmem-generated-example",
+      "kind": "host_ai_generated_state_loaded",
+      "mode": "assistant",
+      "summary": "Safe generated work-state example loaded without fixture claim.",
+      "undo_redo_independent": true
+    }
+  ],
+  "export_hooks": {
+    "allowed_statuses": ["handoff_ready", "handoff_sent", "awaiting_host_ai", "proposal_ready", "blocked", "final_received"],
+    "current_status": "handoff_ready",
+    "real_host_result_ref": null,
+    "proposal_return_handling": {
+      "enabled": true,
+      "accepted_payload": "bounded_public_safe_patch",
+      "preview_before_apply": true,
+      "apply_mutates_work_state": true,
+      "reject_keeps_work_state": true,
+      "raw_payload_stored": false
+    },
+    "result_return_handling": {
+      "enabled": true,
+      "final_received_requires_real_result_ref": true,
+      "real_result_ref_pattern": "host-result-safe-ref",
+      "binary_file_in_envelope": false
+    },
+    "direct_browser_dom_export": false,
+    "html_parsing_for_export": false,
+    "fake_completion_enabled": false
+  },
+  "forbidden_content_absent": true
+}

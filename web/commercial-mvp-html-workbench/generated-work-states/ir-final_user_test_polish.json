@@ -1,0 +1,992 @@
+{
+  "schema_version": "commercial_mvp_generated_work_state.v1",
+  "source_kind": "host_ai_generated_work_state",
+  "fixture": false,
+  "fixture_metadata": {
+    "is_fixture": false,
+    "source_kind": "host_ai_generated_work_state",
+    "not_benchmark_copy": true
+  },
+  "deck_id": "generated-ir-state-final-user-test",
+  "safe_label": "Generated IR Work State",
+  "family_id": "ir",
+  "language": "ko-KR",
+  "canvas": {
+    "width": 1600,
+    "height": 900
+  },
+  "design_package": {
+    "design_package_id": "design-package-ir-content-free-final-user-test-v1",
+    "manifest_hash": "manifest-safe-ir-final-user-test-v1",
+    "source_kind": "server_manifest",
+    "source_status": "asset-system-ready",
+    "asset_system_package_ref": null,
+    "approved_asset_system_package": false,
+    "safe_public_summary": "Content-free generated-state design package with safe ids only."
+  },
+  "theme_tokens": {
+    "theme_id": "theme-ir-final-user-test-v1",
+    "token_set_id": "token-set-ir-final-user-test-v1",
+    "palette": {
+      "canvas": "#FFFFFF",
+      "surface": "#F0F3FF",
+      "ink": "#151515",
+      "muted": "#526064",
+      "accent": "#6C8CFF",
+      "deep": "#17224A"
+    },
+    "font_tokens": {
+      "heading": "Pretendard, Noto Sans KR, Segoe UI, Arial, sans-serif",
+      "body": "Pretendard, Noto Sans KR, Segoe UI, Arial, sans-serif",
+      "caption": "Pretendard, Noto Sans KR, Segoe UI, Arial, sans-serif"
+    },
+    "radius": {
+      "card": 12,
+      "pill": 28
+    },
+    "spacing": {
+      "base": 18,
+      "safe_margin": 80
+    },
+    "stroke": {
+      "default": "#D8E0DD"
+    }
+  },
+  "master_styles": [
+    {
+      "master_style_id": "master-style-ir-final-user-test-v1",
+      "theme_id": "theme-ir-final-user-test-v1",
+      "shape_defaults": {
+        "radius": 12,
+        "stroke": "#D8E0DD"
+      },
+      "common_chrome": {
+        "page_numbers": true,
+        "footer_safe": true
+      },
+      "text_style_role_ids": [
+        "Title",
+        "H1",
+        "H2",
+        "H3",
+        "Body",
+        "Caption",
+        "Bullet"
+      ]
+    }
+  ],
+  "layout_recipes": [
+    {
+      "layout_recipe_id": "layout-investor_sequence",
+      "safe_label": "investor_sequence",
+      "density": "medium_high"
+    },
+    {
+      "layout_recipe_id": "layout-ir-media-proof",
+      "safe_label": "media plus proof",
+      "density": "medium"
+    }
+  ],
+  "component_recipes": [
+    {
+      "component_recipe_id": "component-metric_band",
+      "safe_label": "metric band"
+    },
+    {
+      "component_recipe_id": "component-comparison_table",
+      "safe_label": "comparison table"
+    },
+    {
+      "component_recipe_id": "component-timeline",
+      "safe_label": "timeline"
+    }
+  ],
+  "reference_design_library": {
+    "library_id": "rdl-ir-content-free-final-user-test",
+    "extraction_source": "local_host_ai_design_analysis_only",
+    "server_storage_policy": {
+      "stores_original_files": false,
+      "stores_source_text": false,
+      "stores_slide_images": false,
+      "stores_local_paths": false,
+      "stores_private_urls": false,
+      "stores_prompt_payloads": false
+    },
+    "recipes": [
+      {
+        "recipe_id": "rdl-import-ir-content-free-v2",
+        "family_id": "ir",
+        "source_kind": "local_pptx_html_family_metric_analysis",
+        "stored_source_content": false,
+        "analysis_metrics": {
+          "source_pptx_count": 1,
+          "source_html_or_visual_count": 8,
+          "slide_count_bucket": "multi_slide",
+          "object_density": "high",
+          "image_slot_presence": true,
+          "table_presence": true,
+          "chart_presence": true,
+          "palette_color_rank_count": 5,
+          "typography_bucket_count": 0,
+          "stores_source_filenames": false,
+          "stores_exact_coordinates": false
+        },
+        "palette_roles": [
+          {
+            "role": "ink_or_deep",
+            "observed_family_color_rank": 1,
+            "sample_value_stored": false
+          },
+          {
+            "role": "accent",
+            "observed_family_color_rank": 2,
+            "sample_value_stored": false
+          },
+          {
+            "role": "surface",
+            "observed_family_color_rank": 3,
+            "sample_value_stored": false
+          },
+          {
+            "role": "muted",
+            "observed_family_color_rank": 4,
+            "sample_value_stored": false
+          },
+          {
+            "role": "support",
+            "observed_family_color_rank": 5,
+            "sample_value_stored": false
+          }
+        ],
+        "typography_roles": [
+          {
+            "role": "Title",
+            "observed_size_bucket": "heading",
+            "exact_source_size_stored": false
+          },
+          {
+            "role": "H1",
+            "observed_size_bucket": "heading",
+            "exact_source_size_stored": false
+          },
+          {
+            "role": "Body",
+            "observed_size_bucket": "body",
+            "exact_source_size_stored": false
+          },
+          {
+            "role": "Caption",
+            "observed_size_bucket": "caption",
+            "exact_source_size_stored": false
+          }
+        ],
+        "layout_archetypes": [
+          "cover",
+          "market_context",
+          "traction",
+          "ask"
+        ],
+        "component_recipes": [
+          "metric_band",
+          "comparison_table",
+          "timeline"
+        ],
+        "image_slot_treatment": "large_safe_ref_slot_with_crop_policy",
+        "chart_table_style": "editable_native_chart_table_guidance",
+        "density": "high",
+        "spacing_rhythm": "regular_safe_margin_with_binned_density",
+        "synthetic_placeholder_preview": {
+          "preview_id": "rdl-preview-ir-synthetic-v2",
+          "placeholder_labels_only": true,
+          "uses_source_slide_text": false,
+          "uses_source_slide_image": false,
+          "uses_source_dom": false,
+          "uses_source_coordinates": false,
+          "uses_source_filename": false,
+          "preview_slide_count": 3
+        }
+      }
+    ],
+    "apply_flow": {
+      "last_applied_recipe_id": "rdl-import-ir-content-free-v2",
+      "before_after_summary": "Recipe references were applied to theme/layout/style ids only; source content stayed excluded.",
+      "affected_tokens": [
+        "palette",
+        "typography",
+        "layout_recipe",
+        "component_recipe"
+      ],
+      "undo_available": true,
+      "reset_available": true,
+      "content_excluded": true
+    }
+  },
+  "slides": [
+    {
+      "id": "ir-generated-slide-01",
+      "title": "IR generated safe slide 01",
+      "section": "Generated",
+      "background": "#FFFFFF",
+      "layout_recipe_id": "layout-investor_sequence",
+      "component_recipe_id": "component-metric_band",
+      "objects": [
+        {
+          "id": "ir-01-bg",
+          "type": "shape",
+          "shape": "rect",
+          "x": 0,
+          "y": 0,
+          "w": 1600,
+          "h": 900,
+          "z": 0,
+          "fill": "#FFFFFF",
+          "stroke": "transparent"
+        },
+        {
+          "id": "ir-01-rail",
+          "type": "shape",
+          "shape": "rect",
+          "x": 0,
+          "y": 0,
+          "w": 34,
+          "h": 900,
+          "z": 1,
+          "fill": "#6C8CFF",
+          "stroke": "transparent"
+        },
+        {
+          "id": "ir-01-eyebrow",
+          "type": "text",
+          "x": 96,
+          "y": 70,
+          "w": 520,
+          "h": 38,
+          "z": 2,
+          "text": "IR GENERATED",
+          "fontSize": 22,
+          "fontWeight": 800,
+          "color": "#17224A",
+          "lineHeight": 1.18,
+          "textRole": "Caption"
+        },
+        {
+          "id": "ir-01-title",
+          "type": "text",
+          "x": 96,
+          "y": 116,
+          "w": 780,
+          "h": 132,
+          "z": 2,
+          "text": "IR generated state",
+          "fontSize": 60,
+          "fontWeight": 850,
+          "color": "#151515",
+          "lineHeight": 1.14,
+          "textRole": "Title"
+        },
+        {
+          "id": "ir-01-body",
+          "type": "text",
+          "x": 100,
+          "y": 270,
+          "w": 640,
+          "h": 112,
+          "z": 2,
+          "text": "Content-safe placeholder copy for beta rehearsal. Source business text is excluded.",
+          "fontSize": 24,
+          "fontWeight": 540,
+          "color": "#526064",
+          "lineHeight": 1.25,
+          "textRole": "Body"
+        },
+        {
+          "id": "ir-01-hero-slot",
+          "type": "image",
+          "x": 950,
+          "y": 94,
+          "w": 500,
+          "h": 330,
+          "z": 2,
+          "safeRef": "asset:ir:hero-safe-slot",
+          "label": "safe image slot",
+          "fit": "cover",
+          "fill": "#F0F3FF",
+          "radius": 14
+        },
+        {
+          "id": "ir-01-metric-a",
+          "type": "shape",
+          "shape": "rect",
+          "x": 94,
+          "y": 470,
+          "w": 280,
+          "h": 132,
+          "z": 2,
+          "fill": "#F0F3FF",
+          "stroke": "#D8E0DD",
+          "radius": 12
+        },
+        {
+          "id": "ir-01-metric-b",
+          "type": "shape",
+          "shape": "rect",
+          "x": 400,
+          "y": 470,
+          "w": 280,
+          "h": 132,
+          "z": 2,
+          "fill": "#F7F7F4",
+          "stroke": "#D8E0DD",
+          "radius": 12
+        },
+        {
+          "id": "ir-01-metric-c",
+          "type": "shape",
+          "shape": "rect",
+          "x": 706,
+          "y": 470,
+          "w": 280,
+          "h": 132,
+          "z": 2,
+          "fill": "#FFFFFF",
+          "stroke": "#D8E0DD",
+          "radius": 12
+        },
+        {
+          "id": "ir-01-metric-label-a",
+          "type": "text",
+          "x": 118,
+          "y": 498,
+          "w": 230,
+          "h": 64,
+          "z": 3,
+          "text": "Placeholder metric",
+          "fontSize": 26,
+          "fontWeight": 800,
+          "color": "#151515",
+          "lineHeight": 1.15,
+          "textRole": "H3"
+        },
+        {
+          "id": "ir-01-metric-label-b",
+          "type": "text",
+          "x": 424,
+          "y": 498,
+          "w": 230,
+          "h": 64,
+          "z": 3,
+          "text": "Design-only proof",
+          "fontSize": 26,
+          "fontWeight": 800,
+          "color": "#151515",
+          "lineHeight": 1.15,
+          "textRole": "H3"
+        },
+        {
+          "id": "ir-01-metric-label-c",
+          "type": "text",
+          "x": 730,
+          "y": 498,
+          "w": 230,
+          "h": 64,
+          "z": 3,
+          "text": "Safe asset refs",
+          "fontSize": 26,
+          "fontWeight": 800,
+          "color": "#151515",
+          "lineHeight": 1.15,
+          "textRole": "H3"
+        },
+        {
+          "id": "ir-01-table",
+          "type": "table",
+          "x": 1010,
+          "y": 470,
+          "w": 430,
+          "h": 190,
+          "z": 2,
+          "fill": "#FFFFFF",
+          "stroke": "#D8E0DD",
+          "radius": 10,
+          "rows": [
+            [
+              "Slot",
+              "State"
+            ],
+            [
+              "Chart",
+              "ready"
+            ],
+            [
+              "Table",
+              "ready"
+            ],
+            [
+              "Media",
+              "safe"
+            ]
+          ]
+        },
+        {
+          "id": "ir-01-connector",
+          "type": "line",
+          "x": 790,
+          "y": 394,
+          "w": 170,
+          "h": 0,
+          "z": 2,
+          "stroke": "#6C8CFF",
+          "strokeWidth": 4
+        },
+        {
+          "id": "ir-01-page",
+          "type": "text",
+          "x": 1408,
+          "y": 812,
+          "w": 70,
+          "h": 32,
+          "z": 4,
+          "text": "01",
+          "fontSize": 22,
+          "fontWeight": 760,
+          "color": "#151515",
+          "lineHeight": 1.16,
+          "textRole": "Caption"
+        }
+      ]
+    },
+    {
+      "id": "ir-generated-slide-02",
+      "title": "IR generated safe slide 02",
+      "section": "Generated",
+      "background": "#FFFFFF",
+      "layout_recipe_id": "layout-investor_sequence",
+      "component_recipe_id": "component-comparison_table",
+      "objects": [
+        {
+          "id": "ir-02-bg",
+          "type": "shape",
+          "shape": "rect",
+          "x": 0,
+          "y": 0,
+          "w": 1600,
+          "h": 900,
+          "z": 0,
+          "fill": "#FFFFFF",
+          "stroke": "transparent"
+        },
+        {
+          "id": "ir-02-rail",
+          "type": "shape",
+          "shape": "rect",
+          "x": 0,
+          "y": 0,
+          "w": 34,
+          "h": 900,
+          "z": 1,
+          "fill": "#6C8CFF",
+          "stroke": "transparent"
+        },
+        {
+          "id": "ir-02-eyebrow",
+          "type": "text",
+          "x": 96,
+          "y": 70,
+          "w": 520,
+          "h": 38,
+          "z": 2,
+          "text": "IR GENERATED",
+          "fontSize": 22,
+          "fontWeight": 800,
+          "color": "#17224A",
+          "lineHeight": 1.18,
+          "textRole": "Caption"
+        },
+        {
+          "id": "ir-02-title",
+          "type": "text",
+          "x": 96,
+          "y": 98,
+          "w": 780,
+          "h": 132,
+          "z": 2,
+          "text": "IR safe section 02",
+          "fontSize": 46,
+          "fontWeight": 850,
+          "color": "#151515",
+          "lineHeight": 1.14,
+          "textRole": "H1"
+        },
+        {
+          "id": "ir-02-body",
+          "type": "text",
+          "x": 100,
+          "y": 270,
+          "w": 640,
+          "h": 112,
+          "z": 2,
+          "text": "Content-safe placeholder copy for beta rehearsal. Source business text is excluded.",
+          "fontSize": 24,
+          "fontWeight": 540,
+          "color": "#526064",
+          "lineHeight": 1.25,
+          "textRole": "Body"
+        },
+        {
+          "id": "ir-02-hero-slot",
+          "type": "image",
+          "x": 950,
+          "y": 94,
+          "w": 500,
+          "h": 330,
+          "z": 2,
+          "safeRef": "asset:ir:hero-safe-slot",
+          "label": "safe image slot",
+          "fit": "cover",
+          "fill": "#F0F3FF",
+          "radius": 14
+        },
+        {
+          "id": "ir-02-metric-a",
+          "type": "shape",
+          "shape": "rect",
+          "x": 94,
+          "y": 470,
+          "w": 280,
+          "h": 132,
+          "z": 2,
+          "fill": "#F0F3FF",
+          "stroke": "#D8E0DD",
+          "radius": 12
+        },
+        {
+          "id": "ir-02-metric-b",
+          "type": "shape",
+          "shape": "rect",
+          "x": 400,
+          "y": 470,
+          "w": 280,
+          "h": 132,
+          "z": 2,
+          "fill": "#F7F7F4",
+          "stroke": "#D8E0DD",
+          "radius": 12
+        },
+        {
+          "id": "ir-02-metric-c",
+          "type": "shape",
+          "shape": "rect",
+          "x": 706,
+          "y": 470,
+          "w": 280,
+          "h": 132,
+          "z": 2,
+          "fill": "#FFFFFF",
+          "stroke": "#D8E0DD",
+          "radius": 12
+        },
+        {
+          "id": "ir-02-metric-label-a",
+          "type": "text",
+          "x": 118,
+          "y": 498,
+          "w": 230,
+          "h": 64,
+          "z": 3,
+          "text": "Placeholder metric",
+          "fontSize": 26,
+          "fontWeight": 800,
+          "color": "#151515",
+          "lineHeight": 1.15,
+          "textRole": "H3"
+        },
+        {
+          "id": "ir-02-metric-label-b",
+          "type": "text",
+          "x": 424,
+          "y": 498,
+          "w": 230,
+          "h": 64,
+          "z": 3,
+          "text": "Design-only proof",
+          "fontSize": 26,
+          "fontWeight": 800,
+          "color": "#151515",
+          "lineHeight": 1.15,
+          "textRole": "H3"
+        },
+        {
+          "id": "ir-02-metric-label-c",
+          "type": "text",
+          "x": 730,
+          "y": 498,
+          "w": 230,
+          "h": 64,
+          "z": 3,
+          "text": "Safe asset refs",
+          "fontSize": 26,
+          "fontWeight": 800,
+          "color": "#151515",
+          "lineHeight": 1.15,
+          "textRole": "H3"
+        },
+        {
+          "id": "ir-02-table",
+          "type": "table",
+          "x": 1010,
+          "y": 470,
+          "w": 430,
+          "h": 190,
+          "z": 2,
+          "fill": "#FFFFFF",
+          "stroke": "#D8E0DD",
+          "radius": 10,
+          "rows": [
+            [
+              "Slot",
+              "State"
+            ],
+            [
+              "Chart",
+              "ready"
+            ],
+            [
+              "Table",
+              "ready"
+            ],
+            [
+              "Media",
+              "safe"
+            ]
+          ]
+        },
+        {
+          "id": "ir-02-connector",
+          "type": "line",
+          "x": 790,
+          "y": 394,
+          "w": 170,
+          "h": 0,
+          "z": 2,
+          "stroke": "#6C8CFF",
+          "strokeWidth": 4
+        },
+        {
+          "id": "ir-02-page",
+          "type": "text",
+          "x": 1408,
+          "y": 812,
+          "w": 70,
+          "h": 32,
+          "z": 4,
+          "text": "02",
+          "fontSize": 22,
+          "fontWeight": 760,
+          "color": "#151515",
+          "lineHeight": 1.16,
+          "textRole": "Caption"
+        }
+      ]
+    },
+    {
+      "id": "ir-generated-slide-03",
+      "title": "IR generated safe slide 03",
+      "section": "Generated",
+      "background": "#FFFFFF",
+      "layout_recipe_id": "layout-investor_sequence",
+      "component_recipe_id": "component-timeline",
+      "objects": [
+        {
+          "id": "ir-03-bg",
+          "type": "shape",
+          "shape": "rect",
+          "x": 0,
+          "y": 0,
+          "w": 1600,
+          "h": 900,
+          "z": 0,
+          "fill": "#FFFFFF",
+          "stroke": "transparent"
+        },
+        {
+          "id": "ir-03-rail",
+          "type": "shape",
+          "shape": "rect",
+          "x": 0,
+          "y": 0,
+          "w": 34,
+          "h": 900,
+          "z": 1,
+          "fill": "#6C8CFF",
+          "stroke": "transparent"
+        },
+        {
+          "id": "ir-03-eyebrow",
+          "type": "text",
+          "x": 96,
+          "y": 70,
+          "w": 520,
+          "h": 38,
+          "z": 2,
+          "text": "IR GENERATED",
+          "fontSize": 22,
+          "fontWeight": 800,
+          "color": "#17224A",
+          "lineHeight": 1.18,
+          "textRole": "Caption"
+        },
+        {
+          "id": "ir-03-title",
+          "type": "text",
+          "x": 96,
+          "y": 98,
+          "w": 780,
+          "h": 132,
+          "z": 2,
+          "text": "IR safe section 03",
+          "fontSize": 46,
+          "fontWeight": 850,
+          "color": "#151515",
+          "lineHeight": 1.14,
+          "textRole": "H1"
+        },
+        {
+          "id": "ir-03-body",
+          "type": "text",
+          "x": 100,
+          "y": 270,
+          "w": 640,
+          "h": 112,
+          "z": 2,
+          "text": "Content-safe placeholder copy for beta rehearsal. Source business text is excluded.",
+          "fontSize": 24,
+          "fontWeight": 540,
+          "color": "#526064",
+          "lineHeight": 1.25,
+          "textRole": "Body"
+        },
+        {
+          "id": "ir-03-hero-slot",
+          "type": "image",
+          "x": 950,
+          "y": 94,
+          "w": 500,
+          "h": 330,
+          "z": 2,
+          "safeRef": "asset:ir:hero-safe-slot",
+          "label": "safe image slot",
+          "fit": "cover",
+          "fill": "#F0F3FF",
+          "radius": 14
+        },
+        {
+          "id": "ir-03-metric-a",
+          "type": "shape",
+          "shape": "rect",
+          "x": 94,
+          "y": 470,
+          "w": 280,
+          "h": 132,
+          "z": 2,
+          "fill": "#F0F3FF",
+          "stroke": "#D8E0DD",
+          "radius": 12
+        },
+        {
+          "id": "ir-03-metric-b",
+          "type": "shape",
+          "shape": "rect",
+          "x": 400,
+          "y": 470,
+          "w": 280,
+          "h": 132,
+          "z": 2,
+          "fill": "#F7F7F4",
+          "stroke": "#D8E0DD",
+          "radius": 12
+        },
+        {
+          "id": "ir-03-metric-c",
+          "type": "shape",
+          "shape": "rect",
+          "x": 706,
+          "y": 470,
+          "w": 280,
+          "h": 132,
+          "z": 2,
+          "fill": "#FFFFFF",
+          "stroke": "#D8E0DD",
+          "radius": 12
+        },
+        {
+          "id": "ir-03-metric-label-a",
+          "type": "text",
+          "x": 118,
+          "y": 498,
+          "w": 230,
+          "h": 64,
+          "z": 3,
+          "text": "Placeholder metric",
+          "fontSize": 26,
+          "fontWeight": 800,
+          "color": "#151515",
+          "lineHeight": 1.15,
+          "textRole": "H3"
+        },
+        {
+          "id": "ir-03-metric-label-b",
+          "type": "text",
+          "x": 424,
+          "y": 498,
+          "w": 230,
+          "h": 64,
+          "z": 3,
+          "text": "Design-only proof",
+          "fontSize": 26,
+          "fontWeight": 800,
+          "color": "#151515",
+          "lineHeight": 1.15,
+          "textRole": "H3"
+        },
+        {
+          "id": "ir-03-metric-label-c",
+          "type": "text",
+          "x": 730,
+          "y": 498,
+          "w": 230,
+          "h": 64,
+          "z": 3,
+          "text": "Safe asset refs",
+          "fontSize": 26,
+          "fontWeight": 800,
+          "color": "#151515",
+          "lineHeight": 1.15,
+          "textRole": "H3"
+        },
+        {
+          "id": "ir-03-table",
+          "type": "table",
+          "x": 1010,
+          "y": 470,
+          "w": 430,
+          "h": 190,
+          "z": 2,
+          "fill": "#FFFFFF",
+          "stroke": "#D8E0DD",
+          "radius": 10,
+          "rows": [
+            [
+              "Slot",
+              "State"
+            ],
+            [
+              "Chart",
+              "ready"
+            ],
+            [
+              "Table",
+              "ready"
+            ],
+            [
+              "Media",
+              "safe"
+            ]
+          ]
+        },
+        {
+          "id": "ir-03-connector",
+          "type": "line",
+          "x": 790,
+          "y": 394,
+          "w": 170,
+          "h": 0,
+          "z": 2,
+          "stroke": "#6C8CFF",
+          "strokeWidth": 4
+        },
+        {
+          "id": "ir-03-page",
+          "type": "text",
+          "x": 1408,
+          "y": 812,
+          "w": 70,
+          "h": 32,
+          "z": 4,
+          "text": "03",
+          "fontSize": 22,
+          "fontWeight": 760,
+          "color": "#151515",
+          "lineHeight": 1.16,
+          "textRole": "Caption"
+        }
+      ]
+    }
+  ],
+  "revision_memory": [
+    {
+      "memory_id": "revmem-ir-final-user-test",
+      "kind": "host_ai_generated_state_loaded",
+      "mode": "assistant",
+      "summary": "Safe generated work state prepared for internal beta rehearsal.",
+      "undo_redo_independent": true
+    },
+    {
+      "memory_id": "revmem-ir-rdl-apply",
+      "kind": "reference_design_recipe_applied",
+      "mode": "assistant",
+      "summary": "Content-free Reference Design Library recipe applied to theme and layout ids.",
+      "undo_redo_independent": true
+    }
+  ],
+  "export_hooks": {
+    "allowed_statuses": [
+      "handoff_ready",
+      "handoff_sent",
+      "awaiting_host_ai",
+      "proposal_ready",
+      "blocked",
+      "final_received"
+    ],
+    "current_status": "handoff_ready",
+    "real_host_result_ref": null,
+    "proposal_return_handling": {
+      "enabled": true,
+      "accepted_payload": "bounded_public_safe_patch",
+      "preview_before_apply": true,
+      "apply_mutates_work_state": true,
+      "reject_keeps_work_state": true,
+      "raw_payload_stored": false
+    },
+    "result_return_handling": {
+      "enabled": true,
+      "final_received_requires_real_result_ref": true,
+      "real_result_ref_pattern": "host-result-safe-ref",
+      "binary_file_in_envelope": false
+    },
+    "direct_browser_dom_export": false,
+    "html_parsing_for_export": false,
+    "fake_completion_enabled": false
+  },
+  "safe_asset_refs": [
+    {
+      "slot_id": "ir-hero-media-slot",
+      "safe_asset_ref": "asset:ir:hero-safe-slot"
+    },
+    {
+      "slot_id": "ir-proof-media-slot",
+      "safe_asset_ref": "asset:ir:proof-safe-slot"
+    },
+    {
+      "slot_id": "ir-icon-system-slot",
+      "safe_asset_ref": "asset:ir:icon-safe-set"
+    }
+  ],
+  "asset_system_consumption": {
+    "status": "asset-system-ready",
+    "approved_package_consumed": false,
+    "approved_design_package_consumed": false,
+    "ui_claim": "asset-system-ready",
+    "copy_must_not_claim_fused_assets": true
+  },
+  "forbidden_content_absent": true
+}

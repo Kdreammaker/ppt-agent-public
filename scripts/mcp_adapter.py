@@ -50,13 +50,20 @@ def resolve_base_path(value: str) -> Path:
 
 def run_command(args: list[str], *, timeout: int = 240) -> dict[str, Any]:
     result = subprocess.run(args, cwd=BASE_DIR, capture_output=True, text=True, check=False, timeout=timeout)
-    return {
+    payload: dict[str, Any] = {
         "command": ["python" if item == sys.executable else item for item in args],
         "status": "passed" if result.returncode == 0 else "failed",
         "returncode": result.returncode,
         "stdout_head": (result.stdout or "").strip().splitlines()[:12],
         "stderr_head": (result.stderr or "").strip().splitlines()[:12],
     }
+    try:
+        parsed = json.loads((result.stdout or "").strip())
+    except json.JSONDecodeError:
+        parsed = None
+    if isinstance(parsed, dict):
+        payload["stdout_json"] = parsed
+    return payload
 
 
 def mcp_tools() -> list[dict[str, Any]]:
@@ -186,6 +193,66 @@ def call_summarize_project(arguments: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def call_open_html_workbench(arguments: dict[str, Any]) -> dict[str, Any]:
+    return run_command([sys.executable, "scripts/ppt_commercial_mvp_workbench.py", "open"])
+
+
+def call_emit_workbench_handoff(arguments: dict[str, Any]) -> dict[str, Any]:
+    target = str(arguments["target"])
+    mode = str(arguments.get("mode", "assistant"))
+    report = arguments.get("report")
+    command = [
+        sys.executable,
+        "scripts/ppt_commercial_mvp_workbench.py",
+        "handoff",
+        "--target",
+        target,
+        "--mode",
+        mode,
+    ]
+    if report:
+        command.extend(["--report", base_relative(resolve_base_path(str(report)))])
+    return run_command(command)
+
+
+def call_validate_reference_design_recipe(arguments: dict[str, Any]) -> dict[str, Any]:
+    command = [sys.executable, "scripts/ppt_commercial_mvp_workbench.py", "design-recipe"]
+    report = arguments.get("report")
+    if report:
+        command.extend(["--report", base_relative(resolve_base_path(str(report)))])
+    return run_command(command)
+
+
+def call_publish_html_viewer(arguments: dict[str, Any]) -> dict[str, Any]:
+    command = [
+        sys.executable,
+        "scripts/ppt_commercial_mvp_workbench.py",
+        "viewer",
+        "--plan",
+        str(arguments.get("plan", "free")),
+    ]
+    report = arguments.get("report")
+    if report:
+        command.extend(["--report", base_relative(resolve_base_path(str(report)))])
+    return run_command(command)
+
+
+def call_handle_workbench_return(arguments: dict[str, Any]) -> dict[str, Any]:
+    command = [
+        sys.executable,
+        "scripts/ppt_commercial_mvp_workbench.py",
+        "host-return",
+        "--return-kind",
+        str(arguments["return_kind"]),
+    ]
+    if arguments.get("return_ref"):
+        command.extend(["--return-ref", str(arguments["return_ref"])])
+    report = arguments.get("report")
+    if report:
+        command.extend(["--report", base_relative(resolve_base_path(str(report)))])
+    return run_command(command)
+
+
 TOOL_DISPATCH = {
     "plan_blueprint": call_plan_blueprint,
     "compose_spec": call_compose_spec,
@@ -193,6 +260,11 @@ TOOL_DISPATCH = {
     "patch_slide_slot": call_patch_slide_slot,
     "validate_outputs": call_validate_outputs,
     "summarize_project": call_summarize_project,
+    "open_html_workbench": call_open_html_workbench,
+    "emit_workbench_handoff": call_emit_workbench_handoff,
+    "validate_reference_design_recipe": call_validate_reference_design_recipe,
+    "publish_html_viewer": call_publish_html_viewer,
+    "handle_workbench_return": call_handle_workbench_return,
 }
 
 

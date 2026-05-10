@@ -10,9 +10,9 @@
     "gateway_required": false,
     "upload_allowed_default": false,
     "telemetry_default": "disabled",
-    "max_tools": 6,
+    "max_tools": 11,
     "max_tool_description_chars": 360,
-    "max_total_description_chars": 1800,
+    "max_total_description_chars": 2600,
     "result_policy": "structured_summary_and_paths_only"
   },
   "forbidden_tool_families": [
@@ -182,6 +182,123 @@
           }
         },
         "required": []
+      }
+    },
+    {
+      "name": "open_html_workbench",
+      "description": "Return the local HTML workbench entrypoint and fixture status. Does not deploy or upload anything.",
+      "cli_mapping": "python scripts/ppt_commercial_mvp_workbench.py open",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [
+              "assistant",
+              "auto"
+            ]
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "emit_workbench_handoff",
+      "description": "Emit a sanitized PDF/PPTX host-AI handoff envelope from the local HTML workbench state.",
+      "cli_mapping": "python scripts/ppt_commercial_mvp_workbench.py handoff --target <pdf|pptx>",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "enum": [
+              "pdf",
+              "pptx"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "assistant",
+              "auto"
+            ]
+          },
+          "report": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "target"
+        ]
+      }
+    },
+    {
+      "name": "validate_reference_design_recipe",
+      "description": "Emit or import content-free Reference Design Library recipes for local IR/sales/portfolio benchmark families.",
+      "cli_mapping": "python scripts/ppt_commercial_mvp_workbench.py import-design-recipes",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "family": {
+            "type": "string",
+            "enum": [
+              "ir",
+              "sales",
+              "portfolio"
+            ]
+          },
+          "report": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "publish_html_viewer",
+      "description": "Return local read-only published viewer metadata for Free watermarked or Paid watermark-free sharing.",
+      "cli_mapping": "python scripts/ppt_commercial_mvp_workbench.py viewer --plan <free|paid>",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "free",
+              "paid"
+            ]
+          },
+          "report": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "handle_workbench_return",
+      "description": "Handle host-AI proposal or final-result refs without allowing final_received unless a safe result ref exists.",
+      "cli_mapping": "python scripts/ppt_commercial_mvp_workbench.py host-return --return-kind <proposal|final>",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "return_kind": {
+            "type": "string",
+            "enum": [
+              "proposal",
+              "final"
+            ]
+          },
+          "return_ref": {
+            "type": "string"
+          },
+          "report": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "return_kind"
+        ]
       }
     }
   ]

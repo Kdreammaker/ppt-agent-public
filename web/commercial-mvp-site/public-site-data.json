@@ -1,0 +1,134 @@
+{
+  "schema_version": "commercial_mvp_public_site.v1",
+  "brand": {
+    "primary_display": "A.DreamMaker",
+    "full_brand": "ADOTDREAMMAKER",
+    "product_name": "A.DreamMaker PPT Maker",
+    "category": "host_ai_assistive_extension"
+  },
+  "surface_separation": {
+    "public_landing": {
+      "surface": "public_landing",
+      "status": "korean_first_local_landing",
+      "purpose": "seo_safe_product_explanation_and_google_signup_cta",
+      "admin_route_evidence_exposed": false
+    },
+    "account_entry": {
+      "surface": "account_entry",
+      "status": "authenticated_placeholder",
+      "purpose": "account_and_billing_entry_placeholder",
+      "admin_route_evidence_exposed": false
+    },
+    "operator_admin": {
+      "surface": "operator_admin",
+      "status": "separate_local_console",
+      "path_hint": "web/commercial-mvp-admin",
+      "purpose": "route_backed_evidence_and_mutation_boundary"
+    }
+  },
+  "product_boundary": {
+    "host_ai_responsibilities": [
+      "interpretation",
+      "planning",
+      "writing",
+      "visual_direction",
+      "revision_decision",
+      "source_use_judgment",
+      "asset_need_judgment"
+    ],
+    "ppt_maker_responsibilities": [
+      "tool_execution",
+      "templates_and_guides",
+      "asset_system_mediation",
+      "rule_based_hooks",
+      "native_pptx_rendering",
+      "evidence",
+      "account_free_credit_and_paid_fair_use_controls",
+      "public_private_safety"
+    ],
+    "modes": [
+      "assistant",
+      "auto"
+    ],
+    "default_mode": "assistant",
+    "self_hosted_ai_claimed": false,
+    "hosted_generation_enabled": false,
+    "backend_ai_authoring_enabled": false,
+    "renderer_visual_consumption_changed": false
+  },
+  "plan_teaser": [
+    {
+      "tier": "free",
+      "status": "limited_free_credits",
+      "credit_policy": "limited_credits_referral_replenishable",
+      "editor_access": "preview_only",
+      "viewer_sharing": "watermarked",
+      "reference_design_library": "limited_preview",
+      "style_memory": "limited_preview",
+      "asset_design_packages": "not_included"
+    },
+    {
+      "tier": "paid",
+      "status": "paid_fair_use",
+      "credit_policy": "no_visible_per_edit_credit_for_normal_workflows",
+      "editor_access": "practical_editor",
+      "viewer_sharing": "watermark_free",
+      "reference_design_library": "useful_capacity",
+      "style_memory": "included",
+      "asset_design_packages": "approved_safe_manifest_when_entitled"
+    }
+  ],
+  "commercial_stack_direction": {
+    "cloudflare_gateway": "planned_not_deployed",
+    "supabase_control_plane": "local_draft_not_remote_applied",
+    "vercel_web": "local_static_skeleton_not_deployed",
+    "payment": "not_attached",
+    "google_oauth": "target_provider_not_verified"
+  },
+  "account_entry_placeholder": {
+    "requires_authenticated_account": true,
+    "login_implemented": false,
+    "payment_attached": false,
+    "subscription_mutation_enabled": false,
+    "hosted_dashboard_sync_enabled": false,
+    "display_fields": {
+      "plan": "free_example",
+      "free_credits": "limited_example",
+      "paid_fair_use": "not_active_fixture",
+      "referral_status": "scaffold_pending",
+      "ai_client_session_status": "active_fixture",
+      "entitlement_status": "active_fixture",
+      "viewer_sharing": "watermarked_free_fixture",
+      "style_memory": "preview_only_fixture",
+      "reference_design_library": "preview_only_fixture",
+      "asset_design_packages": "paid_safe_manifest_when_entitled",
+      "billing_entry": "future_payment_not_attached"
+    }
+  },
+  "public_ctas": {
+    "primary": "google_signup_cta_pending_provider_verification",
+    "secondary": "open_html_workbench_fixture",
+    "billing": "future_payment_not_attached"
+  },
+  "public_landing_content": {
+    "korean_first": true,
+    "seo_metadata_present": true,
+    "google_signup_cta_present": true,
+    "assistant_auto_explained": true,
+    "html_workbench_explained": true,
+    "pdf_pptx_handoff_explained": true,
+    "privacy_security_explained": true,
+    "faq_present": true
+  },
+  "safety_boundary": {
+    "raw_prompts_included": false,
+    "source_or_slide_text_included": false,
+    "local_paths_or_filenames_included": false,
+    "previews_or_pptx_binaries_included": false,
+    "package_internals_included": false,
+    "credentials_or_tokens_included": false,
+    "raw_db_urls_included": false,
+    "drive_or_docs_identifiers_included": false,
+    "admin_route_evidence_in_public_site": false
+  }
+}

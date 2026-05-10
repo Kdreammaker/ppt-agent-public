@@ -1,0 +1,11 @@
+{
+  "name": "commercial-mvp-html-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,11 @@
+{
+  "locale": "en",
+  "brand": "A.DreamMaker",
+  "modeAssistant": "Assistant",
+  "modeAuto": "Auto",
+  "slides": "Slides",
+  "canvas": "HTML slide canvas",
+  "properties": "Properties",
+  "exportPdf": "Export PDF",
+  "exportPptx": "Export PPTX"
+}

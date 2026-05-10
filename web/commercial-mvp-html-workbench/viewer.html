@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A.DreamMaker Published Viewer</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="published-viewer" data-plan="free">
+      <header class="viewer-topbar">
+        <div>
+          <p class="eyebrow">Published deck</p>
+          <h1 id="viewer-title">A.DreamMaker</h1>
+        </div>
+        <p id="viewer-status" class="status-pill">read-only</p>
+      </header>
+      <section class="viewer-stage" aria-label="Read-only published slides">
+        <div id="viewer-slides" class="viewer-slides"></div>
+      </section>
+      <footer id="viewer-watermark" class="viewer-watermark">Made with A.DreamMaker PPT Maker</footer>
+    </main>
+    <script type="module" src="./viewer.js"></script>
+  </body>
+</html>

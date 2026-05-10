@@ -1,0 +1,554 @@
+{
+  "schema_version": "commercial_mvp_html_workbench.v1",
+  "surface": "html_slide_workbench",
+  "product_boundary": {
+    "modes": ["assistant", "auto"],
+    "default_mode": "assistant",
+    "backend_ai_chat_embedded": false,
+    "diagnostics_hidden_in_normal_mode": true
+  },
+  "fixture_metadata": {
+    "is_fixture": true,
+    "fixture_id": "commercial_mvp_html_workbench_v2_generic_fixture",
+    "source_kind": "tracked_public_safe_fixture",
+    "not_host_ai_generated_output": true,
+    "not_benchmark_copy": true
+  },
+  "design_guide_package": {
+    "version": "commercial_mvp_presentation_design_guide.v1",
+    "design_package_id": "design-package-commercial-mvp-baseline",
+    "manifest_hash": "manifest-safe-baseline-v1",
+    "source_kind": "tracked_doc",
+    "theme_id": "theme-adreammaker-neutral-yellow-v1",
+    "master_style_ids": ["master-style-commercial-mvp-v1"],
+    "layout_recipe_ids": ["cover_title", "executive_summary", "opportunity_map", "solution_overview", "process_timeline", "metric_cards", "comparison_table", "image_plus_insight", "icon_label_grid", "roadmap", "closing_next_step"],
+    "component_recipe_ids": ["metric_card", "timeline_step", "safe_image_slot", "comparison_table", "icon_label_card"],
+    "text_style_role_ids": ["Title", "H1", "H2", "H3", "Body", "Caption", "Bullet"],
+    "token_set_ids": ["token-set-commercial-mvp-v1"],
+    "asset_system_package_ref": null,
+    "source_doc": "COMMERCIAL_MVP_PRESENTATION_DESIGN_GUIDE",
+    "system_prompt_summary": [
+      "Generate fixed 16:9 HTML slides in a 1600x900 logical canvas.",
+      "Use Korean-first typography with safe line height and no negative letter spacing.",
+      "Build benchmark-family proposal composition with headers, footers, diagrams, cards, image slots, and page numbers.",
+      "Use public-safe asset refs and placeholders only; never include raw local paths, raw filenames, private URLs, or binary assets.",
+      "Return editable object records so PPT Maker can support direct local edits before host-AI export handoff."
+    ],
+    "recipes_used": [
+      "cover_title",
+      "executive_summary",
+      "opportunity_map",
+      "solution_overview",
+      "process_timeline",
+      "metric_cards",
+      "comparison_table",
+      "image_plus_insight",
+      "icon_label_grid",
+      "roadmap",
+      "closing_next_step"
+    ]
+  },
+  "design_package": {
+    "design_package_id": "design-package-commercial-mvp-baseline",
+    "manifest_hash": "manifest-safe-baseline-v1",
+    "source_kind": "tracked_doc",
+    "source_status": "local_contract_ready",
+    "asset_system_package_ref": null,
+    "approved_asset_system_package": false,
+    "safe_public_summary": "Local baseline design package with safe ids only."
+  },
+  "theme_tokens": {
+    "theme_id": "theme-adreammaker-neutral-yellow-v1",
+    "token_set_id": "token-set-commercial-mvp-v1",
+    "palette": {
+      "canvas": "#FFFFFF",
+      "surface": "#F7F5EF",
+      "ink": "#151515",
+      "muted": "#576267",
+      "accent": "#F2D76B",
+      "deep": "#132326"
+    },
+    "font_tokens": {
+      "heading": "Pretendard, Noto Sans KR, Segoe UI, Arial, sans-serif",
+      "body": "Pretendard, Noto Sans KR, Segoe UI, Arial, sans-serif",
+      "caption": "Pretendard, Noto Sans KR, Segoe UI, Arial, sans-serif"
+    },
+    "radius": { "card": 8, "pill": 30 },
+    "spacing": { "base": 16, "safe_margin": 72 },
+    "stroke": { "default": "#CAD4D2" },
+    "elevation": { "card": "none" }
+  },
+  "master_styles": [
+    {
+      "master_style_id": "master-style-commercial-mvp-v1",
+      "theme_id": "theme-adreammaker-neutral-yellow-v1",
+      "shape_defaults": { "radius": 8, "stroke": "#CAD4D2" },
+      "common_chrome": { "page_numbers": true, "footer_safe": true },
+      "text_style_role_ids": ["Title", "H1", "H2", "H3", "Body", "Caption", "Bullet"]
+    }
+  ],
+  "master_style_surface": {
+    "surface_id": "deck-theme-style-surface-v1",
+    "active_style_id": "master-style-commercial-mvp-v1",
+    "preview_enabled": true,
+    "apply_semantics": "apply_role_palette_shape_defaults_to_deck",
+    "override_semantics": "selected_object_or_slide_safe_token_override",
+    "reset_semantics": "return_to_baseline_master_style",
+    "lock_semantics": "prevent_accidental_deck_style_mutation",
+    "locked": false,
+    "selected_palette_id": "baseline",
+    "type_scale_id": "standard",
+    "shape_radius": 8,
+    "preview_diff": {
+      "palette_changed": false,
+      "typography_changed": false,
+      "shape_defaults_changed": false,
+      "selected_overrides": 0
+    },
+    "raw_ids_only_in_normal_inspector": false
+  },
+  "text_style_roles": {
+    "Title": { "fontFamilyToken": "heading", "fontSize": 68, "fontWeight": 800, "color": "#151515", "lineHeight": 1.12, "paragraphSpacing": 10, "overflowPolicy": "fit_box", "letterSpacing": 0 },
+    "H1": { "fontFamilyToken": "heading", "fontSize": 50, "fontWeight": 800, "color": "#151515", "lineHeight": 1.15, "paragraphSpacing": 8, "overflowPolicy": "fit_box", "letterSpacing": 0 },
+    "H2": { "fontFamilyToken": "heading", "fontSize": 38, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "paragraphSpacing": 8, "overflowPolicy": "wrap", "letterSpacing": 0 },
+    "H3": { "fontFamilyToken": "heading", "fontSize": 30, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "paragraphSpacing": 6, "overflowPolicy": "wrap", "letterSpacing": 0 },
+    "Body": { "fontFamilyToken": "body", "fontSize": 24, "fontWeight": 500, "color": "#576267", "lineHeight": 1.24, "paragraphSpacing": 8, "overflowPolicy": "wrap", "letterSpacing": 0 },
+    "Caption": { "fontFamilyToken": "caption", "fontSize": 20, "fontWeight": 600, "color": "#576267", "lineHeight": 1.22, "paragraphSpacing": 4, "overflowPolicy": "wrap", "letterSpacing": 0 },
+    "Bullet": { "fontFamilyToken": "body", "fontSize": 23, "fontWeight": 600, "color": "#293437", "lineHeight": 1.24, "paragraphSpacing": 4, "overflowPolicy": "wrap", "letterSpacing": 0, "bulletIndent": 24, "marker": "disc" }
+  },
+  "layout_recipes": [
+    { "layout_recipe_id": "cover_title", "safe_label": "cover title", "editable_regions": ["title", "subtitle", "safe_image_slot"], "density": "medium" },
+    { "layout_recipe_id": "executive_summary", "safe_label": "three cards", "editable_regions": ["heading", "cards"], "density": "medium" },
+    { "layout_recipe_id": "process_timeline", "safe_label": "timeline", "editable_regions": ["steps"], "density": "dense" },
+    { "layout_recipe_id": "image_plus_insight", "safe_label": "image plus insight", "editable_regions": ["safe_image_slot", "insight_card"], "density": "medium" }
+  ],
+  "component_recipes": [
+    { "component_recipe_id": "metric_card", "safe_label": "metric card" },
+    { "component_recipe_id": "timeline_step", "safe_label": "timeline step" },
+    { "component_recipe_id": "safe_image_slot", "safe_label": "safe image slot" },
+    { "component_recipe_id": "comparison_table", "safe_label": "comparison table" },
+    { "component_recipe_id": "icon_label_card", "safe_label": "icon label card" }
+  ],
+  "reference_design_library": {
+    "library_id": "rdl-account-project-safe-demo",
+    "account_scope": "account_or_project",
+    "extraction_source": "local_host_ai_design_analysis_only",
+    "server_storage_policy": {
+      "stores_original_files": false,
+      "stores_source_text": false,
+      "stores_slide_images": false,
+      "stores_local_paths": false,
+      "stores_private_urls": false,
+      "stores_prompt_payloads": false
+    },
+    "allowed_recipe_fields": [
+      "theme_tokens",
+      "text_role_defaults",
+      "layout_recipes",
+      "component_recipes",
+      "slide_archetypes",
+      "spacing_rhythm",
+      "synthetic_placeholder_preview"
+    ],
+    "importer": {
+      "schema_version": "commercial_mvp_reference_design_importer.v2",
+      "status": "content_free_metric_importer_ready",
+      "benchmark_family_ids": ["ir", "sales", "portfolio"],
+      "source_kinds": ["pptx", "html"],
+      "stores_source_dom": false,
+      "stores_source_text": false,
+      "stores_source_coordinates": false,
+      "stores_source_screenshots": false,
+      "stores_image_urls": false,
+      "stores_source_filenames": false,
+      "stores_business_content": false,
+      "output_only": ["palette_roles", "typography_roles", "layout_archetypes", "component_recipes", "image_slot_treatment", "chart_table_style", "density", "spacing_rhythm", "synthetic_placeholder_preview"]
+    },
+    "recipes": [
+      {
+        "recipe_id": "rdl-recipe-metric-import-v2",
+        "source_kind": "local_pptx_html_family_metric_analysis",
+        "analysis_metrics": {
+          "source_pptx_count": 3,
+          "source_html_or_visual_count": 3,
+          "slide_count_bucket": "multi_slide",
+          "object_density": "medium",
+          "stores_source_filenames": false,
+          "stores_exact_coordinates": false
+        },
+        "palette_roles": [
+          { "role": "ink_or_deep", "observed_family_color_rank": 1, "sample_value_stored": false },
+          { "role": "accent", "observed_family_color_rank": 2, "sample_value_stored": false },
+          { "role": "surface", "observed_family_color_rank": 3, "sample_value_stored": false }
+        ],
+        "typography_roles": [
+          { "role": "Title", "observed_size_bucket": "display", "exact_source_size_stored": false },
+          { "role": "H1", "observed_size_bucket": "heading", "exact_source_size_stored": false },
+          { "role": "Body", "observed_size_bucket": "body", "exact_source_size_stored": false },
+          { "role": "Caption", "observed_size_bucket": "caption", "exact_source_size_stored": false }
+        ],
+        "layout_archetypes": ["cover", "summary", "roadmap"],
+        "component_recipes": ["metric_card", "safe_image_slot", "timeline_step"],
+        "image_slot_treatment": "safe_ref_placeholder_only",
+        "chart_table_style": "editable_native_chart_table_guidance",
+        "density": "medium",
+        "spacing_rhythm": "regular_safe_margin_with_binned_density",
+        "synthetic_placeholder_preview": {
+          "preview_id": "rdl-preview-metric-import-v2",
+          "placeholder_labels_only": true,
+          "uses_source_slide_text": false,
+          "uses_source_slide_image": false,
+          "uses_source_dom": false,
+          "uses_source_coordinates": false,
+          "uses_source_filename": false
+        }
+      }
+    ]
+  },
+  "style_memory_profiles": [
+    {
+      "profile_id": "stylemem-account-project-demo",
+      "scope": "account_project",
+      "visibility": "user_visible",
+      "user_controls": ["view", "reset", "delete"],
+      "separate_from_undo_redo": true,
+      "separate_from_ai_revision_memory": true,
+      "preferences": {
+        "preferred_text_role_refs": ["Title", "H2", "Body"],
+        "preferred_palette_refs": ["theme-adreammaker-neutral-yellow-v1"],
+        "accepted_layout_recipe_refs": ["metric_cards", "image_plus_insight"],
+        "rejected_layout_recipe_refs": ["dense_table_first"],
+        "density_preference": "medium",
+        "logo_placement": "top_left",
+        "font_preference": "korean_sans",
+        "recurring_local_edits": ["increase_body_line_height", "prefer_image_right"]
+      },
+      "public_handoff_summary": {
+        "summary_id": "stylemem-summary-demo",
+        "content_free": true,
+        "preference_count": 7,
+        "includes_private_content": false
+      }
+    }
+  ],
+  "published_views": [
+    {
+      "view_id": "pub-view-free-fixture-v1",
+      "deck_version_id": "safe-deck-smart-clinic-ops-v1",
+      "route": "viewer.html",
+      "read_only": true,
+      "editing_api_exposed": false,
+      "raw_workbench_state_exposed": false,
+      "raw_asset_urls_exposed": false,
+      "package_internals_exposed": false,
+      "plan": "free",
+      "watermark": "made_with_attribution",
+      "future_controls": ["expiration", "password", "noindex", "download_permission"]
+    },
+    {
+      "view_id": "pub-view-paid-fixture-v1",
+      "deck_version_id": "safe-deck-smart-clinic-ops-v1",
+      "route": "viewer.html?plan=paid",
+      "read_only": true,
+      "editing_api_exposed": false,
+      "raw_workbench_state_exposed": false,
+      "raw_asset_urls_exposed": false,
+      "package_internals_exposed": false,
+      "plan": "paid",
+      "watermark": "none"
+    }
+  ],
+  "referral_entitlement": {
+    "plan_model": {
+      "public_plans": ["free", "paid"],
+      "paid_visible_per_edit_credit": false,
+      "pdf_pptx_handoff_primary_paywall": false
+    },
+    "referral_code": {
+      "code_ref": "ref-safe-demo-01",
+      "owner_account_ref": "acct-safe-demo",
+      "raw_signup_reward": false
+    },
+    "attribution": {
+      "attribution_ref": "attrib-safe-demo-01",
+      "source": "user_shared_viewer",
+      "first_touch_recorded": true
+    },
+    "activation_events": [
+      { "event": "first_deck_created", "reward_eligible": true },
+      { "event": "first_published_view", "reward_eligible": true },
+      { "event": "paid_conversion", "reward_eligible": true }
+    ],
+    "free_credit_ledger": [
+      {
+        "ledger_ref": "free-credit-ledger-demo-01",
+        "kind": "referral_activation_reward",
+        "activation_event": "first_published_view",
+        "credit_delta": 2,
+        "state": "pending_activation"
+      }
+    ],
+    "paid_fair_use_entitlement": {
+      "entitlement_ref": "paid-fair-use-demo",
+      "normal_editing_visible_credit_meter": false,
+      "abuse_controls_internal": true
+    },
+    "abuse_signal_scaffold": {
+      "signals": ["duplicate_device_cluster", "activation_loop", "payment_reversal"],
+      "public_ui_exposes_signal_details": false
+    }
+  },
+  "generated_work_state_loading": {
+    "fixture_only_current_deck": true,
+    "accepted_input_kinds": ["fixture_state", "host_ai_generated_work_state", "server_manifest_state"],
+    "required_safe_fields": ["deck_id", "safe_label", "canvas", "slides", "design_package", "theme_tokens"],
+    "blocked_input_families": ["script_payload", "style_payload", "embed_payload", "binary_asset_payload", "package_internal_payload"],
+    "load_path_status": "safe_loader_ready",
+    "separate_from_fixture_data": true,
+    "fixture_path": "workbench-data.json",
+    "generated_example_path": "generated-work-state.example.json"
+  },
+  "asset_system_consumption": {
+    "status": "asset_system_ready_no_approved_package_evidence",
+    "ui_claim": "asset-system-ready",
+    "approved_package_consumed": false,
+    "approved_design_package_consumed": false,
+    "render_use_evidence": false,
+    "safe_manifest_ids_only": true,
+    "copy_must_not_claim_fused_assets": true
+  },
+  "local_asset_connection_ux": {
+    "font_connection": {
+      "status": "scaffold_ready",
+      "stores_font_file": false,
+      "stores_font_metadata": true,
+      "allowed_metadata": ["font_family_token", "fallback_stack", "license_policy_ref"]
+    },
+    "image_connection": {
+      "status": "safe_ref_slot_only",
+      "stores_original_image": false,
+      "stores_raw_image_path": false,
+      "allowed_metadata": ["safe_asset_ref", "fit", "crop_mode", "license_policy_ref"]
+    }
+  },
+  "revision_memory": [
+    {
+      "memory_id": "revmem-initial-fixture",
+      "kind": "fixture_loaded",
+      "mode": "assistant",
+      "summary": "Public-safe fixture loaded for local workbench editing.",
+      "undo_redo_independent": true
+    }
+  ],
+  "export_hooks": {
+    "allowed_statuses": [
+      "handoff_ready",
+      "handoff_sent",
+      "awaiting_host_ai",
+      "proposal_ready",
+      "blocked",
+      "final_received"
+    ],
+    "current_status": "handoff_ready",
+    "real_host_result_ref": null,
+    "proposal_return_handling": {
+      "enabled": true,
+      "accepted_payload": "bounded_public_safe_patch",
+      "preview_before_apply": true,
+      "apply_mutates_work_state": true,
+      "reject_keeps_work_state": true,
+      "raw_payload_stored": false
+    },
+    "result_return_handling": {
+      "enabled": true,
+      "final_received_requires_real_result_ref": true,
+      "real_result_ref_pattern": "host-result-safe-ref",
+      "binary_file_in_envelope": false
+    },
+    "direct_browser_dom_export": false,
+    "html_parsing_for_export": false,
+    "fake_completion_enabled": false
+  },
+  "deck": {
+    "deck_id": "safe-deck-smart-clinic-ops",
+    "safe_label": "Smart Clinic Operations Playbook",
+    "language": "ko-KR",
+    "canvas": { "width": 1600, "height": 900 },
+    "slides": [
+      {
+        "id": "slide-01",
+        "title": "운영 경험을 다시 설계하는 90일 실행안",
+        "section": "Opening",
+        "background": "#F7F5EF",
+        "objects": [
+          { "id": "s01-band", "type": "shape", "shape": "rect", "x": 0, "y": 0, "w": 1600, "h": 900, "z": 0, "fill": "#F7F5EF", "stroke": "transparent" },
+          { "id": "s01-accent", "type": "shape", "shape": "rect", "x": 1070, "y": 0, "w": 530, "h": 900, "z": 1, "fill": "#132326", "stroke": "transparent" },
+          { "id": "s01-chip", "type": "text", "x": 118, "y": 96, "w": 330, "h": 38, "z": 3, "text": "A.DreamMaker PPT Maker", "fontSize": 22, "fontWeight": 700, "color": "#1C2A2D", "lineHeight": 1.18 },
+          { "id": "s01-title", "type": "text", "x": 118, "y": 210, "w": 780, "h": 190, "z": 3, "text": "운영 경험을 다시 설계하는\n90일 실행안", "fontSize": 68, "fontWeight": 800, "color": "#121212", "lineHeight": 1.12 },
+          { "id": "s01-subtitle", "type": "text", "x": 124, "y": 430, "w": 690, "h": 84, "z": 3, "text": "예약, 접수, 상담, 사후관리 흐름을 한 화면에서 정렬해 반복 가능한 개선 리듬으로 전환합니다.", "fontSize": 28, "fontWeight": 500, "color": "#465054", "lineHeight": 1.22 },
+          { "id": "s01-pill-a", "type": "text", "x": 126, "y": 610, "w": 230, "h": 62, "z": 3, "text": "Assistant 기본", "fontSize": 24, "fontWeight": 700, "color": "#121212", "lineHeight": 1.16, "fill": "#F2D76B", "radius": 30 },
+          { "id": "s01-pill-b", "type": "text", "x": 378, "y": 610, "w": 250, "h": 62, "z": 3, "text": "HTML 편집 가능", "fontSize": 24, "fontWeight": 700, "color": "#121212", "lineHeight": 1.16, "fill": "#FFFFFF", "radius": 30 },
+          { "id": "s01-visual", "type": "image", "x": 1150, "y": 128, "w": 314, "h": 574, "z": 3, "safeRef": "asset:clinic-flow-abstract", "label": "운영 흐름 이미지 슬롯", "fit": "cover", "fill": "#E8ECEA" },
+          { "id": "s01-line", "type": "line", "x": 116, "y": 754, "w": 628, "h": 0, "z": 4, "stroke": "#121212", "strokeWidth": 3 },
+          { "id": "s01-page", "type": "text", "x": 1385, "y": 800, "w": 90, "h": 34, "z": 5, "text": "01", "fontSize": 24, "fontWeight": 700, "color": "#F2D76B", "lineHeight": 1.16 }
+        ]
+      },
+      {
+        "id": "slide-02",
+        "title": "세 가지 병목을 먼저 해소합니다",
+        "section": "Summary",
+        "background": "#FFFFFF",
+        "objects": [
+          { "id": "s02-header", "type": "text", "x": 90, "y": 64, "w": 880, "h": 76, "z": 2, "text": "세 가지 병목을 먼저 해소합니다", "fontSize": 48, "fontWeight": 800, "color": "#151515", "lineHeight": 1.15 },
+          { "id": "s02-note", "type": "text", "x": 94, "y": 146, "w": 650, "h": 54, "z": 2, "text": "현장 피로도를 낮추는 개선은 대기, 안내, 후속 연락의 반복 업무에서 시작됩니다.", "fontSize": 22, "fontWeight": 500, "color": "#576267", "lineHeight": 1.24 },
+          { "id": "s02-card1", "type": "shape", "shape": "rect", "x": 94, "y": 262, "w": 420, "h": 342, "z": 1, "fill": "#F7F5EF", "stroke": "#E4DED0", "radius": 8 },
+          { "id": "s02-card2", "type": "shape", "shape": "rect", "x": 590, "y": 262, "w": 420, "h": 342, "z": 1, "fill": "#F2D76B", "stroke": "#E0C352", "radius": 8 },
+          { "id": "s02-card3", "type": "shape", "shape": "rect", "x": 1086, "y": 262, "w": 420, "h": 342, "z": 1, "fill": "#14272A", "stroke": "#14272A", "radius": 8 },
+          { "id": "s02-t1", "type": "text", "x": 136, "y": 306, "w": 330, "h": 184, "z": 3, "text": "01\n예약-방문 간격", "fontSize": 38, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18 },
+          { "id": "s02-b1", "type": "text", "x": 138, "y": 484, "w": 316, "h": 72, "z": 3, "text": "누락되는 확인 연락을 자동 안내 문구와 체크리스트로 줄입니다.", "fontSize": 21, "fontWeight": 500, "color": "#4A5357", "lineHeight": 1.24 },
+          { "id": "s02-t2", "type": "text", "x": 632, "y": 306, "w": 330, "h": 184, "z": 3, "text": "02\n현장 안내 흐름", "fontSize": 38, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18 },
+          { "id": "s02-b2", "type": "text", "x": 634, "y": 484, "w": 316, "h": 72, "z": 3, "text": "접수부터 상담실 이동까지 단계별 표준 멘트를 정리합니다.", "fontSize": 21, "fontWeight": 500, "color": "#2D3030", "lineHeight": 1.24 },
+          { "id": "s02-t3", "type": "text", "x": 1128, "y": 306, "w": 330, "h": 184, "z": 3, "text": "03\n사후관리 공백", "fontSize": 38, "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.18 },
+          { "id": "s02-b3", "type": "text", "x": 1130, "y": 484, "w": 316, "h": 72, "z": 3, "text": "후속 안내 기준을 하나로 묶어 환자별 차이를 줄입니다.", "fontSize": 21, "fontWeight": 500, "color": "#DCE5E4", "lineHeight": 1.24 },
+          { "id": "s02-page", "type": "text", "x": 1420, "y": 810, "w": 80, "h": 30, "z": 4, "text": "02", "fontSize": 22, "fontWeight": 700, "color": "#151515", "lineHeight": 1.16 }
+        ]
+      },
+      {
+        "id": "slide-03",
+        "title": "현재 여정에서 마찰이 생기는 지점",
+        "section": "Opportunity",
+        "background": "#F8FAFA",
+        "objects": [
+          { "id": "s03-title", "type": "text", "x": 92, "y": 70, "w": 800, "h": 64, "z": 2, "text": "현재 여정에서 마찰이 생기는 지점", "fontSize": 46, "fontWeight": 800, "color": "#151515", "lineHeight": 1.15 },
+          { "id": "s03-map", "type": "shape", "shape": "rect", "x": 116, "y": 210, "w": 1360, "h": 404, "z": 1, "fill": "#FFFFFF", "stroke": "#D7DFDE", "radius": 8 },
+          { "id": "s03-line", "type": "line", "x": 198, "y": 410, "w": 1190, "h": 0, "z": 2, "stroke": "#263739", "strokeWidth": 4 },
+          { "id": "s03-p1", "type": "text", "x": 160, "y": 300, "w": 210, "h": 160, "z": 3, "text": "예약\n확인", "fontSize": 32, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#F2D76B", "radius": 90 },
+          { "id": "s03-p2", "type": "text", "x": 448, "y": 300, "w": 210, "h": 160, "z": 3, "text": "접수\n대기", "fontSize": 32, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#EFF3F2", "radius": 90 },
+          { "id": "s03-p3", "type": "text", "x": 736, "y": 300, "w": 210, "h": 160, "z": 3, "text": "상담\n전환", "fontSize": 32, "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.18, "fill": "#14272A", "radius": 90 },
+          { "id": "s03-p4", "type": "text", "x": 1024, "y": 300, "w": 210, "h": 160, "z": 3, "text": "후속\n안내", "fontSize": 32, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#F7F5EF", "radius": 90 },
+          { "id": "s03-p5", "type": "text", "x": 1280, "y": 300, "w": 110, "h": 160, "z": 3, "text": "재방문", "fontSize": 26, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18 },
+          { "id": "s03-bottom", "type": "text", "x": 136, "y": 675, "w": 950, "h": 74, "z": 2, "text": "핵심은 새 시스템을 크게 바꾸는 것이 아니라, 반복되는 작은 결정을 같은 언어로 정렬하는 것입니다.", "fontSize": 27, "fontWeight": 700, "color": "#253236", "lineHeight": 1.22 },
+          { "id": "s03-page", "type": "text", "x": 1420, "y": 810, "w": 80, "h": 30, "z": 4, "text": "03", "fontSize": 22, "fontWeight": 700, "color": "#151515", "lineHeight": 1.16 }
+        ]
+      },
+      {
+        "id": "slide-04",
+        "title": "워크벤치가 제공하는 세 가지 편집 가치",
+        "section": "Solution",
+        "background": "#132326",
+        "objects": [
+          { "id": "s04-title", "type": "text", "x": 96, "y": 76, "w": 980, "h": 126, "z": 2, "text": "워크벤치가 제공하는\n세 가지 편집 가치", "fontSize": 54, "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.15 },
+          { "id": "s04-visual", "type": "image", "x": 1090, "y": 76, "w": 330, "h": 250, "z": 2, "safeRef": "asset:interface-preview-safe", "label": "HTML 편집 화면 이미지 슬롯", "fit": "cover", "fill": "#E8ECEA" },
+          { "id": "s04-row1", "type": "text", "x": 128, "y": 310, "w": 1220, "h": 88, "z": 3, "text": "직접 텍스트 수정  -  눈에 보이는 문장을 캔버스에서 바로 바꿉니다.", "fontSize": 32, "fontWeight": 700, "color": "#F7F5EF", "lineHeight": 1.2, "fill": "#20383C", "radius": 8 },
+          { "id": "s04-row2", "type": "text", "x": 128, "y": 432, "w": 1220, "h": 88, "z": 3, "text": "오브젝트 조정  -  카드, 이미지 슬롯, 도형을 이동하고 크기를 조절합니다.", "fontSize": 32, "fontWeight": 700, "color": "#F7F5EF", "lineHeight": 1.2, "fill": "#20383C", "radius": 8 },
+          { "id": "s04-row3", "type": "text", "x": 128, "y": 554, "w": 1220, "h": 88, "z": 3, "text": "정직한 내보내기  -  PDF/PPTX 요청은 host AI에게 넘기는 안전한 handoff입니다.", "fontSize": 32, "fontWeight": 700, "color": "#151515", "lineHeight": 1.2, "fill": "#F2D76B", "radius": 8 },
+          { "id": "s04-page", "type": "text", "x": 1420, "y": 810, "w": 80, "h": 30, "z": 4, "text": "04", "fontSize": 22, "fontWeight": 700, "color": "#F2D76B", "lineHeight": 1.16 }
+        ]
+      },
+      {
+        "id": "slide-05",
+        "title": "90일 실행 리듬",
+        "section": "Timeline",
+        "background": "#FFFFFF",
+        "objects": [
+          { "id": "s05-title", "type": "text", "x": 92, "y": 68, "w": 660, "h": 62, "z": 2, "text": "90일 실행 리듬", "fontSize": 50, "fontWeight": 800, "color": "#151515", "lineHeight": 1.15 },
+          { "id": "s05-sub", "type": "text", "x": 94, "y": 144, "w": 870, "h": 50, "z": 2, "text": "큰 개편보다 작고 검증 가능한 개선 단위를 세 번 반복합니다.", "fontSize": 24, "fontWeight": 500, "color": "#586166", "lineHeight": 1.22 },
+          { "id": "s05-base", "type": "line", "x": 142, "y": 442, "w": 1280, "h": 0, "z": 1, "stroke": "#CAD4D2", "strokeWidth": 6 },
+          { "id": "s05-step1", "type": "text", "x": 144, "y": 304, "w": 310, "h": 246, "z": 3, "text": "1-30일\n기준선 정리\n\n대기/문의 유형을 표준 태그로 묶습니다.", "fontSize": 25, "fontWeight": 700, "color": "#151515", "lineHeight": 1.24, "fill": "#F7F5EF", "radius": 8 },
+          { "id": "s05-step2", "type": "text", "x": 486, "y": 304, "w": 310, "h": 246, "z": 3, "text": "31-60일\n현장 흐름 개선\n\n안내 문구와 체크리스트를 팀 단위로 적용합니다.", "fontSize": 25, "fontWeight": 700, "color": "#151515", "lineHeight": 1.24, "fill": "#F2D76B", "radius": 8 },
+          { "id": "s05-step3", "type": "text", "x": 828, "y": 304, "w": 310, "h": 246, "z": 3, "text": "61-90일\n성과 확인\n\n재문의, 예약 변경, 후속 응답을 비교합니다.", "fontSize": 25, "fontWeight": 700, "color": "#FFFFFF", "lineHeight": 1.24, "fill": "#132326", "radius": 8 },
+          { "id": "s05-step4", "type": "text", "x": 1170, "y": 304, "w": 250, "h": 246, "z": 3, "text": "다음 분기\n확장 결정\n\n좋았던 패턴만 운영 규칙에 남깁니다.", "fontSize": 25, "fontWeight": 700, "color": "#151515", "lineHeight": 1.24, "fill": "#EFF3F2", "radius": 8 },
+          { "id": "s05-page", "type": "text", "x": 1420, "y": 810, "w": 80, "h": 30, "z": 4, "text": "05", "fontSize": 22, "fontWeight": 700, "color": "#151515", "lineHeight": 1.16 }
+        ]
+      },
+      {
+        "id": "slide-06",
+        "title": "성과 지표는 작게 시작합니다",
+        "section": "Metrics",
+        "background": "#F7F5EF",
+        "objects": [
+          { "id": "s06-title", "type": "text", "x": 92, "y": 70, "w": 760, "h": 64, "z": 2, "text": "성과 지표는 작게 시작합니다", "fontSize": 48, "fontWeight": 800, "color": "#151515", "lineHeight": 1.15 },
+          { "id": "s06-m1", "type": "text", "x": 114, "y": 246, "w": 390, "h": 320, "z": 3, "text": "18%\n예약 변경 문의 감소", "fontSize": 46, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#FFFFFF", "radius": 8 },
+          { "id": "s06-m2", "type": "text", "x": 606, "y": 246, "w": 390, "h": 320, "z": 3, "text": "2.4h\n일일 반복 안내 절감", "fontSize": 46, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#F2D76B", "radius": 8 },
+          { "id": "s06-m3", "type": "text", "x": 1098, "y": 246, "w": 390, "h": 320, "z": 3, "text": "91%\n후속 안내 발송 안정화", "fontSize": 46, "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.18, "fill": "#132326", "radius": 8 },
+          { "id": "s06-note", "type": "text", "x": 116, "y": 650, "w": 1120, "h": 74, "z": 3, "text": "초기 지표는 의사결정을 돕는 가설입니다. 실제 결과는 host AI가 최종 산출물에서 별도 검토하도록 handoff에 포함됩니다.", "fontSize": 25, "fontWeight": 600, "color": "#3F4A4D", "lineHeight": 1.24 },
+          { "id": "s06-page", "type": "text", "x": 1420, "y": 810, "w": 80, "h": 30, "z": 4, "text": "06", "fontSize": 22, "fontWeight": 700, "color": "#151515", "lineHeight": 1.16 }
+        ]
+      },
+      {
+        "id": "slide-07",
+        "title": "운영 선택지를 비교합니다",
+        "section": "Comparison",
+        "background": "#FFFFFF",
+        "objects": [
+          { "id": "s07-title", "type": "text", "x": 92, "y": 68, "w": 760, "h": 60, "z": 2, "text": "운영 선택지를 비교합니다", "fontSize": 48, "fontWeight": 800, "color": "#151515", "lineHeight": 1.15 },
+          { "id": "s07-accent", "type": "shape", "shape": "rect", "x": 90, "y": 150, "w": 10, "h": 610, "z": 1, "fill": "#F2D76B", "stroke": "transparent", "radius": 4 },
+          { "id": "s07-table", "type": "table", "x": 104, "y": 190, "w": 1350, "h": 500, "z": 2, "rows": [["구분", "현 상태 유지", "워크벤치 적용", "확장 운영"], ["속도", "느림", "빠른 수정", "팀 단위 반영"], ["품질", "개인별 편차", "표준 문구 유지", "분기별 개선"], ["비용", "재작업 증가", "토큰 절감", "운영 정책화"]], "headerFill": "#132326", "bodyFill": "#F8FAFA", "accentFill": "#F2D76B", "color": "#151515" },
+          { "id": "s07-rule", "type": "line", "x": 104, "y": 708, "w": 1050, "h": 0, "z": 2, "stroke": "#CAD4D2", "strokeWidth": 3 },
+          { "id": "s07-caption", "type": "text", "x": 108, "y": 728, "w": 980, "h": 52, "z": 3, "text": "이 표는 사용자가 캔버스에서 수정 가능한 일반 객체로 표시됩니다.", "fontSize": 23, "fontWeight": 600, "color": "#4D575A", "lineHeight": 1.24 },
+          { "id": "s07-page", "type": "text", "x": 1420, "y": 810, "w": 80, "h": 30, "z": 4, "text": "07", "fontSize": 22, "fontWeight": 700, "color": "#151515", "lineHeight": 1.16 }
+        ]
+      },
+      {
+        "id": "slide-08",
+        "title": "이미지 슬롯과 인사이트를 함께 둡니다",
+        "section": "Insight",
+        "background": "#F8FAFA",
+        "objects": [
+          { "id": "s08-img", "type": "image", "x": 82, "y": 88, "w": 670, "h": 644, "z": 2, "safeRef": "asset:waiting-room-pattern", "label": "현장 흐름 이미지 슬롯", "fit": "cover", "fill": "#DFE8E5" },
+          { "id": "s08-title", "type": "text", "x": 835, "y": 106, "w": 560, "h": 112, "z": 3, "text": "이미지 슬롯과\n인사이트를 함께 둡니다", "fontSize": 48, "fontWeight": 800, "color": "#151515", "lineHeight": 1.15 },
+          { "id": "s08-card", "type": "text", "x": 840, "y": 282, "w": 560, "h": 224, "z": 3, "text": "Safe asset ref만 사용합니다.\n\n민감한 원본 자료 세부값은 handoff에 포함하지 않습니다.", "fontSize": 28, "fontWeight": 700, "color": "#FFFFFF", "lineHeight": 1.23, "fill": "#132326", "radius": 8 },
+          { "id": "s08-note", "type": "text", "x": 846, "y": 554, "w": 540, "h": 94, "z": 3, "text": "이미지는 현재 단계에서 대체 가능한 슬롯입니다. 최종 결과는 host AI가 승인된 자료 기준으로 생성합니다.", "fontSize": 24, "fontWeight": 500, "color": "#485256", "lineHeight": 1.25 },
+          { "id": "s08-page", "type": "text", "x": 1420, "y": 810, "w": 80, "h": 30, "z": 4, "text": "08", "fontSize": 22, "fontWeight": 700, "color": "#151515", "lineHeight": 1.16 }
+        ]
+      },
+      {
+        "id": "slide-09",
+        "title": "팀이 쓰는 언어를 하나로 묶습니다",
+        "section": "Grid",
+        "background": "#FFFFFF",
+        "objects": [
+          { "id": "s09-title", "type": "text", "x": 92, "y": 70, "w": 820, "h": 62, "z": 2, "text": "팀이 쓰는 언어를 하나로 묶습니다", "fontSize": 48, "fontWeight": 800, "color": "#151515", "lineHeight": 1.15 },
+          { "id": "s09-c1", "type": "text", "x": 120, "y": 226, "w": 310, "h": 180, "z": 3, "text": "예약\n확정 기준", "fontSize": 30, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#F7F5EF", "radius": 8 },
+          { "id": "s09-c2", "type": "text", "x": 486, "y": 226, "w": 310, "h": 180, "z": 3, "text": "접수\n우선순위", "fontSize": 30, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#F2D76B", "radius": 8 },
+          { "id": "s09-c3", "type": "text", "x": 852, "y": 226, "w": 310, "h": 180, "z": 3, "text": "상담\n전달 메모", "fontSize": 30, "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.18, "fill": "#132326", "radius": 8 },
+          { "id": "s09-c4", "type": "text", "x": 1218, "y": 226, "w": 250, "h": 180, "z": 3, "text": "후속\n연락", "fontSize": 30, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#EFF3F2", "radius": 8 },
+          { "id": "s09-c5", "type": "text", "x": 120, "y": 458, "w": 310, "h": 180, "z": 3, "text": "이탈\n신호", "fontSize": 30, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#EFF3F2", "radius": 8 },
+          { "id": "s09-c6", "type": "text", "x": 486, "y": 458, "w": 310, "h": 180, "z": 3, "text": "불만\n대응", "fontSize": 30, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#F7F5EF", "radius": 8 },
+          { "id": "s09-c7", "type": "text", "x": 852, "y": 458, "w": 310, "h": 180, "z": 3, "text": "재방문\n제안", "fontSize": 30, "fontWeight": 800, "color": "#151515", "lineHeight": 1.18, "fill": "#F2D76B", "radius": 8 },
+          { "id": "s09-c8", "type": "text", "x": 1218, "y": 458, "w": 250, "h": 180, "z": 3, "text": "공유\n회고", "fontSize": 30, "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.18, "fill": "#132326", "radius": 8 },
+          { "id": "s09-page", "type": "text", "x": 1420, "y": 810, "w": 80, "h": 30, "z": 4, "text": "09", "fontSize": 22, "fontWeight": 700, "color": "#151515", "lineHeight": 1.16 }
+        ]
+      },
+      {
+        "id": "slide-10",
+        "title": "다음 분기 확장 로드맵",
+        "section": "Roadmap",
+        "background": "#132326",
+        "objects": [
+          { "id": "s10-title", "type": "text", "x": 96, "y": 78, "w": 760, "h": 66, "z": 2, "text": "다음 분기 확장 로드맵", "fontSize": 50, "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.15 },
+          { "id": "s10-sub", "type": "text", "x": 100, "y": 154, "w": 800, "h": 54, "z": 2, "text": "검증된 문구와 편집 패턴만 운영 규칙으로 승격합니다.", "fontSize": 24, "fontWeight": 500, "color": "#DCE5E4", "lineHeight": 1.24 },
+          { "id": "s10-q1", "type": "text", "x": 118, "y": 292, "w": 330, "h": 330, "z": 3, "text": "Q1\n기준선 수집\n\n작업 유형과 문의량을 통합합니다.", "fontSize": 30, "fontWeight": 800, "color": "#151515", "lineHeight": 1.24, "fill": "#F2D76B", "radius": 8 },
+          { "id": "s10-q2", "type": "text", "x": 486, "y": 292, "w": 330, "h": 330, "z": 3, "text": "Q2\n팀 확산\n\n상담/접수 팀의 문구를 맞춥니다.", "fontSize": 30, "fontWeight": 800, "color": "#151515", "lineHeight": 1.24, "fill": "#F7F5EF", "radius": 8 },
+          { "id": "s10-q3", "type": "text", "x": 854, "y": 292, "w": 330, "h": 330, "z": 3, "text": "Q3\n자동화 후보\n\n반복 안내를 도구 흐름으로 묶습니다.", "fontSize": 30, "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.24, "fill": "#20383C", "radius": 8 },
+          { "id": "s10-q4", "type": "text", "x": 1222, "y": 292, "w": 250, "h": 330, "z": 3, "text": "Q4\n성과 회고\n\n확장 여부를 결정합니다.", "fontSize": 30, "fontWeight": 800, "color": "#151515", "lineHeight": 1.24, "fill": "#FFFFFF", "radius": 8 },
+          { "id": "s10-page", "type": "text", "x": 1420, "y": 810, "w": 80, "h": 30, "z": 4, "text": "10", "fontSize": 22, "fontWeight": 700, "color": "#F2D76B", "lineHeight": 1.16 }
+        ]
+      },
+      {
+        "id": "slide-11",
+        "title": "오늘 결정할 세 가지",
+        "section": "Close",
+        "background": "#F7F5EF",
+        "objects": [
+          { "id": "s11-title", "type": "text", "x": 96, "y": 78, "w": 720, "h": 64, "z": 2, "text": "오늘 결정할 세 가지", "fontSize": 52, "fontWeight": 800, "color": "#151515", "lineHeight": 1.15 },
+          { "id": "s11-a", "type": "text", "x": 128, "y": 252, "w": 390, "h": 300, "z": 3, "text": "1\n첫 30일 범위", "fontSize": 44, "fontWeight": 800, "color": "#151515", "lineHeight": 1.2, "fill": "#FFFFFF", "radius": 8 },
+          { "id": "s11-b", "type": "text", "x": 604, "y": 252, "w": 390, "h": 300, "z": 3, "text": "2\n담당자와 회고일", "fontSize": 44, "fontWeight": 800, "color": "#151515", "lineHeight": 1.2, "fill": "#F2D76B", "radius": 8 },
+          { "id": "s11-c", "type": "text", "x": 1080, "y": 252, "w": 390, "h": 300, "z": 3, "text": "3\nExport handoff 대상", "fontSize": 44, "fontWeight": 800, "color": "#FFFFFF", "lineHeight": 1.2, "fill": "#132326", "radius": 8 },
+          { "id": "s11-footer", "type": "text", "x": 128, "y": 672, "w": 1080, "h": 80, "z": 3, "text": "PDF/PPTX 버튼은 최종 파일을 가장하지 않습니다. 현재 편집 상태와 요약만 host AI에게 안전하게 전달합니다.", "fontSize": 28, "fontWeight": 700, "color": "#293437", "lineHeight": 1.23 },
+          { "id": "s11-page", "type": "text", "x": 1420, "y": 810, "w": 80, "h": 30, "z": 4, "text": "11", "fontSize": 22, "fontWeight": 700, "color": "#151515", "lineHeight": 1.16 }
+        ]
+      }
+    ]
+  }
+}

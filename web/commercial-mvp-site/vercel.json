@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-A-DreamMaker-Surface",
+          "value": "commercial-mvp-local-static"
+        }
+      ]
+    }
+  ]
+}
