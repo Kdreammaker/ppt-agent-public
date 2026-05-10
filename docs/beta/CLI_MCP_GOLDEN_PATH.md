@@ -153,3 +153,7 @@ Expected MCP tools are high-level wrappers such as:
 - `validate_reference_design_recipe`
 - `publish_html_viewer`
 - `handle_workbench_return`
+
+## Public-Repo MCP Install Beta Status
+
+Branch codex/commercial-mvp-workbench-mcp-install-beta is validated for the Commercial MVP 11-tool MCP install beta. Use the MCP server config in docs/COMMERCIAL_MVP_PUBLIC_REPO_MCP_INSTALL_PACKET.md. Public closed beta remains No-go.

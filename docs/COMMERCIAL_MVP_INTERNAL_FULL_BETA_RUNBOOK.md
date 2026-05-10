@@ -185,3 +185,7 @@ Until those exist, the decision is:
 - local developer rehearsal: Go if no open P1/P2 exists;
 - public-repo MCP install beta: No-go, candidate/publication pending;
 - public closed beta: No-go.
+
+## Public-Repo Install Beta Status
+
+The public-repo MCP install beta is Go on branch codex/commercial-mvp-workbench-mcp-install-beta after clean public clone validation and Codex CLI local stdio MCP host harness validation. Public closed beta remains No-go.
